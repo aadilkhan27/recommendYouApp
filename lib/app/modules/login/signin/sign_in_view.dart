@@ -1,0 +1,180 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get.dart';
+import 'package:recommend_you/app/core/values/colors.dart';
+import 'package:recommend_you/app/core/values/keys.dart';
+import 'package:recommend_you/app/core/values/strings.dart';
+import 'package:recommend_you/app/modules/login/signin/sign_in_controller.dart';
+import 'package:recommend_you/app/routes/pages.dart';
+
+class SignInView extends GetView<SignInController> {
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        FocusScope.of(context).unfocus();
+      },
+      child: Scaffold(
+        resizeToAvoidBottomInset: false,
+        backgroundColor: whiteColor,
+        body: SafeArea(
+          child: Stack(
+            children: [
+              Container(
+                height: MediaQuery.of(context).size.height,
+                width: MediaQuery.of(context).size.width,
+                child: Column(
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(top: 20),
+                      height: 40,
+                      width: MediaQuery.of(context).size.width,
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            height: 0,
+                            width: 10,
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(left: 20),
+                            child: InkWell(
+                              onTap: (){
+                                Get.back();
+                              },
+                              child: Image(
+                                image: AssetImage(backArrow),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      width: 60,
+                      height: 60,
+                      child: Image(
+                        image: AssetImage(bgSplash),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      'Login to your account',
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.normal),
+                    ),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    Text(
+                      'SIGN IN',
+                      style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 30, right: 30, top: 10),
+                      child: TextField(
+                        decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                  color: primaryDarkColor, width: 1.0),
+                              borderRadius: BorderRadius.circular(5.0),
+                            ),
+                            labelText: 'Username',
+                            labelStyle: TextStyle(color: primaryDarkColor),
+                            contentPadding: EdgeInsets.all(10),
+                            hintText: 'Username'),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 30, right: 30, top: 10),
+                      child: TextField(
+                        decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                  color: primaryDarkColor, width: 1.0),
+                              borderRadius: BorderRadius.circular(5.0),
+                            ),
+                            labelStyle: TextStyle(color: primaryDarkColor),
+                            labelText: 'Password',
+                            contentPadding: EdgeInsets.all(10),
+                            hintText: 'Password'),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    InkWell(
+                      onTap: (){
+                        //do something
+                        //do something
+                        Get.offNamed(Routes.dashboard);
+                        // ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                        //   content: Text('Coming soon'),
+                        // ));
+                      },
+                      child: Container(
+                        margin: const EdgeInsets.all(30),
+                        height: 40,
+                        width: MediaQuery
+                            .of(context)
+                            .size
+                            .width,
+                        decoration: BoxDecoration(
+                            color: primaryDarkColor,
+                            border: Border.all(color: primaryDarkColor),
+                            borderRadius: const BorderRadius.all(Radius.circular(10))
+                        ),
+                        alignment: Alignment.center,
+                        child: const Text('SIGN IN',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
+                      ),
+                    ),
+                    SizedBox(height: 10,),
+                    InkWell(
+                      onTap: (){
+                        Get.toNamed(Routes.forgotPassword);
+                      },
+                      child: Text(
+                        'Forgot your password?',
+                        style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.normal,
+                            color: primaryDarkColor,
+                            decoration: TextDecoration.underline),
+                      ),
+                    ),
+                    SizedBox(height: 10,),
+                    InkWell(
+                      onTap: (){
+                        Get.toNamed(Routes.otpVerifyUsername);
+                      },
+                      child: Text(
+                        'Forgot username?',
+                        style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.normal,
+                            color: primaryDarkColor,
+                            decoration: TextDecoration.underline),
+                      ),
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

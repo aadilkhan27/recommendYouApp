@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25" height="25" viewBox="0 0 25 25">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="right_icon" width="25" height="25" transform="translate(-21.261 2.121)" fill="#00b01d" stroke="#fff" stroke-width="0.4"/>
+    </clipPath>
+  </defs>
+  <g id="right_icon-2" data-name="right_icon" transform="translate(21.261 -2.121)" clip-path="url(#clip-path)">
+    <g id="tick" transform="translate(-20.004 3.256)">
+      <path id="Path_77547" data-name="Path 77547" d="M11.344-.074a11.344,11.344,0,1,0,8.02,3.324,11.342,11.342,0,0,0-8.02-3.324Zm0,21.632A10.289,10.289,0,1,1,21.633,11.27,10.3,10.3,0,0,1,11.344,21.558Zm0,0" transform="translate(0 0.074)" fill="#00b01d"/>
+      <path id="Path_77548" data-name="Path 77548" d="M137,182.412l-6.811,6.511-3.715-3.709a.526.526,0,0,0-.744.744l4.079,4.079a.519.519,0,0,0,.375.153.511.511,0,0,0,.364-.148l7.181-6.864a.528.528,0,0,0-.728-.765Zm0,0" transform="translate(-120.264 -174.556)" fill="#00b01d"/>
+    </g>
+  </g>
+</svg>

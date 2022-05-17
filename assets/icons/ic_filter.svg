@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16">
+  <g id="filter_icon" transform="translate(-331.317 -59)">
+    <rect id="Rectangle_2047" data-name="Rectangle 2047" width="16" height="16" transform="translate(332 59)" fill="none"/>
+    <g id="Group_46767" data-name="Group 46767" transform="translate(-1.683 -2.376)">
+      <g id="Group_49067" data-name="Group 49067">
+        <g id="Group_46797" data-name="Group 46797" transform="translate(336.529 67.019)">
+          <g id="Group_46793" data-name="Group 46793">
+            <g id="Group_46797-2" data-name="Group 46797">
+              <g id="Ellipse_237" data-name="Ellipse 237" transform="translate(-2.846 -3.643)" fill="none" stroke="#f47458" stroke-width="1.366">
+                <circle cx="2.784" cy="2.784" r="2.784" stroke="none"/>
+                <circle cx="2.784" cy="2.784" r="2.1" fill="none"/>
+              </g>
+              <line id="Line_550" data-name="Line 550" x2="7.391" transform="translate(5.397 -0.86)" fill="none" stroke="#f47458" stroke-linecap="round" stroke-width="1.366"/>
+            </g>
+          </g>
+          <g id="Group_46798" data-name="Group 46798" transform="translate(-2.846 3.038)">
+            <g id="Group_46797-3" data-name="Group 46797">
+              <g id="Ellipse_237-2" data-name="Ellipse 237" transform="translate(10.065 0)" fill="none" stroke="#f47458" stroke-width="1.366">
+                <circle cx="2.784" cy="2.784" r="2.784" stroke="none"/>
+                <circle cx="2.784" cy="2.784" r="2.1" fill="none"/>
+              </g>
+              <line id="Line_550-2" data-name="Line 550" x1="7.391" transform="translate(0 2.784)" fill="none" stroke="#f47458" stroke-linecap="round" stroke-width="1.366"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

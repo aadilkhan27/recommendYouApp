@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="message" transform="translate(0.744 2.502)">
+    <rect id="Rectangle_2050" data-name="Rectangle 2050" width="24" height="24" transform="translate(-0.744 -2.502)" fill="none"/>
+    <g id="new_messages_icon" transform="translate(0.256 0.498)">
+      <path id="Path_38917" data-name="Path 38917" d="M17.472.5H4.508A4.513,4.513,0,0,0,0,5.007v6.962a4.435,4.435,0,0,0,3.189,4.264L5.366,18.41a.644.644,0,0,0,.911,0l2-2h9.2a4.513,4.513,0,0,0,4.508-4.508v-6.9A4.513,4.513,0,0,0,17.472.5Zm3.22,11.405a3.223,3.223,0,0,1-3.22,3.22H8.007a.644.644,0,0,0-.455.189l-1.73,1.73L3.979,15.2a.643.643,0,0,0-.3-.17,3.149,3.149,0,0,1-2.391-3.062V5.007a3.223,3.223,0,0,1,3.22-3.22H17.472a3.223,3.223,0,0,1,3.22,3.22Zm0,0" transform="translate(0 -0.5)" fill="#be6f60"/>
+      <path id="Path_38918" data-name="Path 38918" d="M154.579,144.328H146.4a.644.644,0,0,0,0,1.288h8.177a.644.644,0,1,0,0-1.288Zm0,0" transform="translate(-139.5 -138.154)" fill="#be6f60"/>
+      <path id="Path_38919" data-name="Path 38919" d="M154.579,197.352H146.4a.644.644,0,1,0,0,1.288h8.177a.644.644,0,1,0,0-1.288Zm0,0" transform="translate(-139.5 -188.901)" fill="#be6f60"/>
+    </g>
+  </g>
+</svg>
