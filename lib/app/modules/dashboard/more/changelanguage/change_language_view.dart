@@ -26,7 +26,7 @@ class ChangeLangugaeView extends GetView<ChangeLanguageController> {
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
-        resizeToAvoidBottomInset: false,
+        resizeToAvoidBottomInset: true,
         backgroundColor: whiteColor,
         body: Container(
           height: MediaQuery

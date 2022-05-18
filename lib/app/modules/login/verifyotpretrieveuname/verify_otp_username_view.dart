@@ -16,7 +16,7 @@ class VerifyOtpUsernameView extends GetView<VerifyOtpUsernameController>{
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
-        resizeToAvoidBottomInset: false,
+        resizeToAvoidBottomInset: true,
         backgroundColor: whiteColor,
     body: SafeArea(
         child: Stack(

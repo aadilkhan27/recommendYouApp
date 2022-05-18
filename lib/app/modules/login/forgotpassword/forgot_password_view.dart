@@ -16,7 +16,7 @@ class ForgotPasswordView extends GetView<ForgotPasswordController> {
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
-        resizeToAvoidBottomInset: false,
+        resizeToAvoidBottomInset: true,
         backgroundColor: whiteColor,
     body: SafeArea(
       child: Stack(

@@ -30,7 +30,7 @@ class SearchPeopleView extends GetView<SearchPeopleController> {
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
-        resizeToAvoidBottomInset: false,
+        resizeToAvoidBottomInset: true,
         backgroundColor: whiteColor,
         body: Container(
           height: MediaQuery.of(context).size.height,

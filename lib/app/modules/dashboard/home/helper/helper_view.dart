@@ -32,7 +32,7 @@ class HelperView extends GetView<ChangeContactController>{
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
-        resizeToAvoidBottomInset: false,
+        resizeToAvoidBottomInset: true,
         backgroundColor: whiteColor,
         body: Stack(
           children: [

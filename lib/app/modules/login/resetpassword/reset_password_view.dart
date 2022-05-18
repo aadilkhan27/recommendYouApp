@@ -16,7 +16,7 @@ class ResetPasswordView extends GetView<ResetPasswordController>{
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
-        resizeToAvoidBottomInset: false,
+        resizeToAvoidBottomInset: true,
         backgroundColor: whiteColor,
         body: SafeArea(
           child: Stack(

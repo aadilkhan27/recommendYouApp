@@ -5,6 +5,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:recommend_you/app/core/values/colors.dart';
 import 'package:recommend_you/app/core/values/keys.dart';
+import 'package:recommend_you/app/core/values/strings.dart';
 import 'package:recommend_you/app/modules/login/signin/sign_in_controller.dart';
 import 'package:recommend_you/app/routes/pages.dart';
 
@@ -16,7 +17,7 @@ class SignInView extends GetView<SignInController> {
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
-        resizeToAvoidBottomInset: false,
+        resizeToAvoidBottomInset: true,
         backgroundColor: whiteColor,
         body: SafeArea(
           child: SingleChildScrollView(
@@ -133,6 +134,7 @@ class SignInView extends GetView<SignInController> {
                           // ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                           //   content: Text('Coming soon'),
                           // ));
+
                         },
                         child: Container(
                           margin: const EdgeInsets.only(
@@ -196,3 +198,5 @@ class SignInView extends GetView<SignInController> {
     );
   }
 }
+
+

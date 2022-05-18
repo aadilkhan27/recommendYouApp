@@ -23,7 +23,7 @@ class TermsConditionView extends GetView<TermsConditionController> {
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
-        resizeToAvoidBottomInset: false,
+        resizeToAvoidBottomInset: true,
         backgroundColor: whiteColor,
         body: Stack(
           children: [

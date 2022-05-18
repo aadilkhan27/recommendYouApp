@@ -21,135 +21,137 @@ class ContactUsView extends GetView<ContactUsController> {
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
-        resizeToAvoidBottomInset: false,
+        resizeToAvoidBottomInset: true,
         backgroundColor: whiteColor,
         body: Stack(
           children: [
-            SafeArea(
-              child: Container(
-                height: MediaQuery.of(context).size.height,
-                width: MediaQuery.of(context).size.width,
-                child: Column(
-                  children: [
-                    Container(
-                      height: 50,
-                      width: MediaQuery.of(context).size.width,
-                      padding: EdgeInsets.all(10),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            SizedBox(
-                              width: 10,
-                            ),
-                            InkWell(
-                              onTap: () {
-                                Get.back();
-                              },
-                              child: SvgPicture.asset(
-                                icLeftArrow,
-                                semanticsLabel: 'logo',
+            SingleChildScrollView(
+              child: SafeArea(
+                child: Container(
+                  height: MediaQuery.of(context).size.height,
+                  width: MediaQuery.of(context).size.width,
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 50,
+                        width: MediaQuery.of(context).size.width,
+                        padding: EdgeInsets.all(10),
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              SizedBox(
+                                width: 10,
                               ),
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Text('Contact Us')
-                          ],
+                              InkWell(
+                                onTap: () {
+                                  Get.back();
+                                },
+                                child: SvgPicture.asset(
+                                  icLeftArrow,
+                                  semanticsLabel: 'logo',
+                                ),
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text('Contact Us')
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                    Divider(
-                      height: 1,
-                      color: Colors.black,
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Text(
-                      'Contact Us',
-                      style:
-                          TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    const Text(
-                      'Lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
-                      style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.normal,
-                          color: Colors.grey),
-                    ),
-                    SizedBox(
-                      height: 40,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 30, right: 30, top: 10),
-                      child: TextField(
-                        decoration: InputDecoration(
-                            border: OutlineInputBorder(),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: Colors.purple, width: 1.0),
-                              borderRadius: BorderRadius.circular(5.0),
-                            ),
-                            labelStyle: TextStyle(color: Colors.black),
-                            labelText: 'Name',
-                            contentPadding: EdgeInsets.all(10),
-                            hintText: 'Ramon Doe'),
+                      Divider(
+                        height: 1,
+                        color: Colors.black,
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 30, right: 30, top: 20),
-                      child: TextField(
-                        decoration: InputDecoration(
-                            border: OutlineInputBorder(),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: Colors.purple, width: 1.0),
-                              borderRadius: BorderRadius.circular(5.0),
-                            ),
-                            labelStyle: TextStyle(color: Colors.black),
-                            labelText: 'Email',
-                            contentPadding: EdgeInsets.all(10),
-                            hintText: 'last name'),
+                      SizedBox(
+                        height: 20,
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 30, right: 30, top: 20),
-                      child: TextField(
-                        decoration: InputDecoration(
-                            border: OutlineInputBorder(),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: Colors.purple, width: 1.0),
-                              borderRadius: BorderRadius.circular(5.0),
-                            ),
-                            labelStyle: TextStyle(color: Colors.black),
-                            labelText: 'Mobile number',
-                            contentPadding: EdgeInsets.all(10),
-                            hintText: '01234567890'),
+                      Text(
+                        'Contact Us',
+                        style:
+                            TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 30, right: 30, top: 20),
-                      child: TextField(
-                        decoration: InputDecoration(
-                            border: OutlineInputBorder(),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: Colors.purple, width: 1.0),
-                              borderRadius: BorderRadius.circular(5.0),
-                            ),
-                            labelStyle: TextStyle(color: Colors.black),
-                            labelText: 'Message',
-                            contentPadding: EdgeInsets.all(10),
-                            hintText: 'Lorem ipsum'),
+                      SizedBox(
+                        height: 10,
                       ),
-                    ),
-                  ],
+                      const Text(
+                        'Lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
+                        style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.normal,
+                            color: Colors.grey),
+                      ),
+                      SizedBox(
+                        height: 40,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 30, right: 30, top: 10),
+                        child: TextField(
+                          decoration: InputDecoration(
+                              border: OutlineInputBorder(),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide:
+                                    BorderSide(color: Colors.purple, width: 1.0),
+                                borderRadius: BorderRadius.circular(5.0),
+                              ),
+                              labelStyle: TextStyle(color: Colors.black),
+                              labelText: 'Name',
+                              contentPadding: EdgeInsets.all(10),
+                              hintText: 'Ramon Doe'),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 30, right: 30, top: 20),
+                        child: TextField(
+                          decoration: InputDecoration(
+                              border: OutlineInputBorder(),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide:
+                                    BorderSide(color: Colors.purple, width: 1.0),
+                                borderRadius: BorderRadius.circular(5.0),
+                              ),
+                              labelStyle: TextStyle(color: Colors.black),
+                              labelText: 'Email',
+                              contentPadding: EdgeInsets.all(10),
+                              hintText: 'last name'),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 30, right: 30, top: 20),
+                        child: TextField(
+                          decoration: InputDecoration(
+                              border: OutlineInputBorder(),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide:
+                                    BorderSide(color: Colors.purple, width: 1.0),
+                                borderRadius: BorderRadius.circular(5.0),
+                              ),
+                              labelStyle: TextStyle(color: Colors.black),
+                              labelText: 'Mobile number',
+                              contentPadding: EdgeInsets.all(10),
+                              hintText: '01234567890'),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 30, right: 30, top: 20),
+                        child: TextField(
+                          decoration: InputDecoration(
+                              border: OutlineInputBorder(),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide:
+                                    BorderSide(color: Colors.purple, width: 1.0),
+                                borderRadius: BorderRadius.circular(5.0),
+                              ),
+                              labelStyle: TextStyle(color: Colors.black),
+                              labelText: 'Message',
+                              contentPadding: EdgeInsets.all(10),
+                              hintText: 'Lorem ipsum'),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

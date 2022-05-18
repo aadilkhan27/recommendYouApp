@@ -24,7 +24,7 @@ class LanguageView extends GetView<LanguageController> {
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
-        resizeToAvoidBottomInset: false,
+        resizeToAvoidBottomInset: true,
         backgroundColor: whiteColor,
         body: Container(
           height: MediaQuery
@@ -145,21 +145,7 @@ class LanguageView extends GetView<LanguageController> {
               ),
               InkWell(
                 onTap: (){
-
-                  // Get.defaultDialog(
-                  //     title: "Privacy Policy",
-                  //     middleText: dummyLoremIpsum,
-                  //     backgroundColor: Colors.white,
-                  //     titleStyle: TextStyle(color: Colors.black),
-                  //     middleTextStyle: TextStyle(color: Colors.black),
-                  //     textConfirm: "Confirm",
-                  //     cancelTextColor: Colors.white,
-                  //     confirmTextColor: Colors.white,
-                  //     buttonColor: primaryDarkColor,
-                  //     barrierDismissible: true,
-                  //     radius: 20,
-                  // );
-                  Get.toNamed(Routes.signUpStepOne);
+                  showAlertDialog(context);
                 },
                 child: Container(
                   margin: const EdgeInsets.only(right: 45,left: 45,top: 25),
@@ -204,4 +190,49 @@ class LanguageView extends GetView<LanguageController> {
       ),
     );
   }
+}
+showAlertDialog(BuildContext context) {
+  // set up the buttons
+  Widget continueButton = TextButton(
+    child: Container(
+      height: 40,
+      width: 130,
+      decoration: BoxDecoration(
+          color: primaryDarkColor,
+          border: Border.all(color: primaryDarkColor),
+          borderRadius: const BorderRadius.all(Radius.circular(7))),
+      alignment: Alignment.center,
+      child: const Text(
+        'CONFIRM',
+        style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+      ),
+    ),
+    onPressed: () {
+      Navigator.of(context).pop();
+      Get.toNamed(Routes.signUpStepOne);
+    },
+  );
+
+  // set up the AlertDialog
+  AlertDialog alert = AlertDialog(
+    title: Text(
+      "Privacy Info",
+      style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+    ),
+    content: Text(
+      dummyLoremIpsum,
+      style: TextStyle(color: Colors.black, fontSize: 12),
+    ),
+    actions: [
+      continueButton,
+    ],
+  );
+
+  // show the dialog
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return alert;
+    },
+  );
 }
