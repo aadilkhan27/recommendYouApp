@@ -241,9 +241,17 @@ class CreateView extends GetView<CreateController> {
                   margin: EdgeInsets.all(12),
                   height: 5 * 24,
                   child: TextField(
+                    cursorColor: Colors.black,
                     maxLines: 5,
                     decoration: InputDecoration(
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Colors.purple),
+                      ),
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Colors.purple),
+                      ),
                       hintText: "Write a message here.....",
+                      hintStyle: TextStyle(color: Colors.black),
                       filled: false,
                     ),
                   ),

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:recommend_you/app/core/values/colors.dart';
 import 'package:recommend_you/app/core/values/keys.dart';
@@ -17,7 +18,8 @@ class OtpVerificationView extends GetView<OtpVerificationController> {
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: whiteColor,
-        body: Stack(
+    body: SafeArea(
+        child: Stack(
           children: [
             Container(
               height: MediaQuery.of(context).size.height,
@@ -25,7 +27,7 @@ class OtpVerificationView extends GetView<OtpVerificationController> {
               child: Column(
                 children: [
                   Container(
-                    margin: EdgeInsets.only(top: 50),
+                    margin: EdgeInsets.only(top: 20),
                     height: 40,
                     width: MediaQuery.of(context).size.width,
                     child: Row(
@@ -41,8 +43,8 @@ class OtpVerificationView extends GetView<OtpVerificationController> {
                             onTap: (){
                               Get.back();
                             },
-                            child: Image(
-                              image: AssetImage(backArrow),
+                            child:  SvgPicture.asset(
+                              icLeftArrow,
                             ),
                           ),
                         ),
@@ -71,6 +73,7 @@ class OtpVerificationView extends GetView<OtpVerificationController> {
                     margin: EdgeInsets.only(left: 35, right: 35),
                     child: Center(
                       child: RichText(
+                        textAlign: TextAlign.center,
                         text: TextSpan(children: [
                           TextSpan(
                               text: 'Enter your ',
@@ -82,7 +85,7 @@ class OtpVerificationView extends GetView<OtpVerificationController> {
                                   color: primaryDarkColor, fontSize: 13)),
                           TextSpan(
                               text:
-                                  '(Temporary password) to reset your password.',
+                                  '(Temporary password) \n to reset your password.',
                               style:
                                   TextStyle(color: Colors.black, fontSize: 13)),
                         ]),
@@ -113,7 +116,9 @@ class OtpVerificationView extends GetView<OtpVerificationController> {
                           child: Container(
                             margin: EdgeInsets.only(right: 10),
                             child: TextField(
+                              cursorColor: Colors.black,
                               textAlign: TextAlign.center,
+                              keyboardType: TextInputType.number,
                               maxLength: 1,
                               decoration: InputDecoration(
                                 counterText: "",
@@ -139,7 +144,9 @@ class OtpVerificationView extends GetView<OtpVerificationController> {
                           child: Container(
                             margin: EdgeInsets.only(right: 10),
                             child: TextField(
+                              cursorColor: Colors.black,
                               textAlign: TextAlign.center,
+                              keyboardType: TextInputType.number,
                               maxLength: 1,
                               decoration: InputDecoration(
                                 counterText: "",
@@ -165,7 +172,9 @@ class OtpVerificationView extends GetView<OtpVerificationController> {
                           child: Container(
                             margin: EdgeInsets.only(right: 10),
                             child: TextField(
+                              cursorColor: Colors.black,
                               textAlign: TextAlign.center,
+                              keyboardType: TextInputType.number,
                               maxLength: 1,
                               decoration: InputDecoration(
                                 counterText: "",
@@ -191,7 +200,9 @@ class OtpVerificationView extends GetView<OtpVerificationController> {
                           child: Container(
                             margin: EdgeInsets.only(right: 10),
                             child: TextField(
+                              cursorColor: Colors.black,
                               textAlign: TextAlign.center,
+                              keyboardType: TextInputType.number,
                               maxLength: 1,
                               decoration: InputDecoration(
                                 counterText: "",
@@ -217,7 +228,9 @@ class OtpVerificationView extends GetView<OtpVerificationController> {
                           child: Container(
                             margin: EdgeInsets.only(right: 10),
                             child: TextField(
+                              cursorColor: Colors.black,
                               textAlign: TextAlign.center,
+                              keyboardType: TextInputType.number,
                               maxLength: 1,
                               decoration: InputDecoration(
                                 counterText: "",
@@ -242,13 +255,14 @@ class OtpVerificationView extends GetView<OtpVerificationController> {
                     ),
                   ),
                   SizedBox(
-                    height: 30,
+                    height: 40,
                   ),
                   Text(
                     'Didn\'t receive a code',
                     style: TextStyle(
-                      fontSize: 14,
+                      fontSize: 12,
                       fontWeight: FontWeight.normal,
+                      color: Colors.black
                     ),
                   ),
                   SizedBox(
@@ -274,14 +288,14 @@ class OtpVerificationView extends GetView<OtpVerificationController> {
                       Get.toNamed(Routes.resetPassword);
                     },
                     child: Container(
-                      margin: const EdgeInsets.all(30),
-                      height: 40,
+                      margin: const EdgeInsets.only(left: 45, right: 45),
+                      height: 50,
                       width: MediaQuery.of(context).size.width,
                       decoration: BoxDecoration(
                           color: primaryDarkColor,
                           border: Border.all(color: primaryDarkColor),
                           borderRadius:
-                              const BorderRadius.all(Radius.circular(5))),
+                              const BorderRadius.all(Radius.circular(10))),
                       alignment: Alignment.center,
                       child: const Text(
                         'VERIFY',
@@ -293,17 +307,18 @@ class OtpVerificationView extends GetView<OtpVerificationController> {
                     ),
                   ),
                   SizedBox(
-                    height: 30,
+                    height: 50,
                   ),
                   Container(
-                    margin: EdgeInsets.only(left: 30, right: 30),
+                    margin: EdgeInsets.only(left: 40, right: 40),
                     padding: EdgeInsets.only(bottom: 20),
                     child: Center(
                       child: RichText(
+                        textAlign: TextAlign.center,
                         text: TextSpan(children: [
                           TextSpan(
                             text:
-                                'Havn\'t received the OTP? send a message to ',
+                                'Haven\'t received the OTP? send a message to ',
                             style: TextStyle(
                                 fontSize: 12,
                                 fontWeight: FontWeight.normal,
@@ -333,6 +348,7 @@ class OtpVerificationView extends GetView<OtpVerificationController> {
           ],
         ),
       ),
+      )
     );
   }
 }

@@ -86,7 +86,7 @@ class SearchPostView extends GetView<SearchedPostController> {
                         isExpanded: true,
                         hint: const Text(
                           'All Messages',
-                          style: TextStyle(fontSize: 14, color: Colors.white),
+                          style: TextStyle(fontSize: 12, color: Colors.white),
                         ),
                         icon: const Icon(
                           Icons.arrow_drop_down,
@@ -97,7 +97,7 @@ class SearchPostView extends GetView<SearchedPostController> {
                         buttonPadding: const EdgeInsets.only(left: 20, right: 10),
                         dropdownDecoration: BoxDecoration(
                           color: Colors.purpleAccent,
-                          borderRadius: BorderRadius.circular(15),
+                          borderRadius: BorderRadius.circular(5),
                         ),
                         items: spinnerItems
                             .map((item) => DropdownMenuItem<String>(
@@ -146,7 +146,7 @@ class SearchPostView extends GetView<SearchedPostController> {
                                           shape: BoxShape.circle,
                                           image: new DecorationImage(
                                               fit: BoxFit.fill,
-                                              image: AssetImage(profileImage)))),
+                                              image: AssetImage(user1)))),
                                   SizedBox(
                                     width: 20,
                                   ),
@@ -306,7 +306,7 @@ class SearchPostView extends GetView<SearchedPostController> {
                             ),
                             Divider(
                               height: 1,
-                              color: Colors.black,
+                              color: Colors.grey,
                             )
                           ],
                         ),
@@ -327,7 +327,7 @@ class SearchPostView extends GetView<SearchedPostController> {
                                           shape: BoxShape.circle,
                                           image: new DecorationImage(
                                               fit: BoxFit.fill,
-                                              image: AssetImage(profileImage)))),
+                                              image: AssetImage(user2)))),
                                   SizedBox(
                                     width: 20,
                                   ),
@@ -487,7 +487,7 @@ class SearchPostView extends GetView<SearchedPostController> {
                             ),
                             Divider(
                               height: 1,
-                              color: Colors.black,
+                              color: Colors.grey,
                             )
                           ],
                         ),
@@ -669,7 +669,7 @@ class SearchPostView extends GetView<SearchedPostController> {
                             ),
                             Divider(
                               height: 1,
-                              color: Colors.black,
+                              color: Colors.grey,
                             )
                           ],
                         ),
@@ -690,7 +690,7 @@ class SearchPostView extends GetView<SearchedPostController> {
                                           shape: BoxShape.circle,
                                           image: new DecorationImage(
                                               fit: BoxFit.fill,
-                                              image: AssetImage(profileImage)))),
+                                              image: AssetImage(user3)))),
                                   SizedBox(
                                     width: 20,
                                   ),
@@ -850,7 +850,7 @@ class SearchPostView extends GetView<SearchedPostController> {
                             ),
                             Divider(
                               height: 1,
-                              color: Colors.black,
+                              color: Colors.grey,
                             )
                           ],
                         ),

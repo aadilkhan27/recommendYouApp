@@ -9,6 +9,7 @@ import 'package:recommend_you/app/modules/dashboard/more/contactus/contact_us_vi
 import 'package:recommend_you/app/modules/dashboard/more/more_controller.dart';
 import 'package:recommend_you/app/modules/dashboard/more/settingpreference/preference_view.dart';
 
+import '../../../routes/pages.dart';
 import 'deletaccount/delete_account_view.dart';
 
 class MoreView extends GetView<MoreController> {
@@ -194,9 +195,7 @@ class MoreView extends GetView<MoreController> {
                   leading: Icon(Icons.phone),
                   title: Text('Change contact details'),
                   onTap: () {
-                    // Get.offNamed(Routes.changeContact);
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (builder) => ContactUsView()));
+                    Get.offNamed(Routes.changeContact);
                   },
                 ),
               ),

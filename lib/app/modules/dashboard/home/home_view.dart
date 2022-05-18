@@ -107,7 +107,7 @@ class HomeView extends GetView<HomeController> {
                           buttonPadding:
                           const EdgeInsets.only(left: 20, right: 10),
                           dropdownDecoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
+                            borderRadius: BorderRadius.circular(5),
                           ),
                           items: spinnerItems
                               .map((item) => DropdownMenuItem<String>(
@@ -181,7 +181,7 @@ class HomeView extends GetView<HomeController> {
                                           shape: BoxShape.circle,
                                           image: new DecorationImage(
                                               fit: BoxFit.fill,
-                                              image: AssetImage(profileImage)))),
+                                              image: AssetImage(user1)))),
                                   SizedBox(
                                     width: 20,
                                   ),
@@ -239,11 +239,10 @@ class HomeView extends GetView<HomeController> {
                               ),
                             ),
                             Container(
-                              margin: EdgeInsets.only(
-                                  left: 20, right: 20, bottom: 10),
+                              margin: EdgeInsets.only(left: 20, right: 20,top: 5, bottom: 10),
                               child: Text(
                                 dummyLoremIpsum,
-                                style: TextStyle(
+                                style: TextStyle(color: Colors.black,
                                     fontSize: 12, fontWeight: FontWeight.normal),
                               ),
                             ),
@@ -332,7 +331,7 @@ class HomeView extends GetView<HomeController> {
                             ),
                             Divider(
                               height: 1,
-                              color: Colors.black,
+                              color: Colors.grey,
                             )
                           ],
                         ),
@@ -353,7 +352,7 @@ class HomeView extends GetView<HomeController> {
                                           shape: BoxShape.circle,
                                           image: new DecorationImage(
                                               fit: BoxFit.fill,
-                                              image: AssetImage(profileImage)))),
+                                              image: AssetImage(user2)))),
                                   SizedBox(
                                     width: 20,
                                   ),
@@ -378,7 +377,7 @@ class HomeView extends GetView<HomeController> {
                                                 width: 120,
                                               ),
                                               SizedBox(
-                                                width: 20,
+                                                width: 60,
                                               ),
                                               SvgPicture.asset(icMoreHorizontal)
                                             ],
@@ -404,7 +403,7 @@ class HomeView extends GetView<HomeController> {
                               decoration: BoxDecoration(
                                 border: Border.all(color: Colors.grey),
                                 borderRadius: const BorderRadius.all(
-                                  Radius.circular(5),
+                                  Radius.circular(1),
                                 ),
                               ),
                               margin: EdgeInsets.only(left: 20, right: 20, bottom: 10),
@@ -427,7 +426,7 @@ class HomeView extends GetView<HomeController> {
                                                   shape: BoxShape.circle,
                                                   image: new DecorationImage(
                                                       fit: BoxFit.fill,
-                                                      image: AssetImage(profileImage)))),
+                                                      image: AssetImage(user3)))),
                                           SizedBox(
                                             width: 20,
                                           ),
@@ -476,10 +475,10 @@ class HomeView extends GetView<HomeController> {
                                     ),
                                     Container(
                                       margin: EdgeInsets.only(
-                                          left: 10, right: 10, bottom: 10),
+                                          left: 10, right: 10,top: 5, bottom: 10),
                                       child: Text(
                                         dummyLoremIpsum,
-                                        style: TextStyle(
+                                        style: TextStyle(color: Colors.black,
                                             fontSize: 12, fontWeight: FontWeight.normal),
                                       ),
                                     ),
@@ -578,7 +577,7 @@ class HomeView extends GetView<HomeController> {
                             ),
                             Divider(
                               height: 1,
-                              color: Colors.black,
+                              color: Colors.grey,
                             )
                           ],
                         ),
@@ -599,7 +598,7 @@ class HomeView extends GetView<HomeController> {
                                           shape: BoxShape.circle,
                                           image: new DecorationImage(
                                               fit: BoxFit.fill,
-                                              image: AssetImage(profileImage)))),
+                                              image: AssetImage(user4)))),
                                   SizedBox(
                                     width: 20,
                                   ),
@@ -658,12 +657,12 @@ class HomeView extends GetView<HomeController> {
                             ),
                             Container(
                               margin: EdgeInsets.only(
-                                  left: 20, right: 20, bottom: 10),
+                                  left: 20, right: 20, top: 5, bottom: 10),
                               child: Column(
                                 children: [
                                   Text(
                                     dummyLoremIpsum,
-                                    style: TextStyle(
+                                    style: TextStyle(color: Colors.black,
                                         fontSize: 12,
                                         fontWeight: FontWeight.normal),
                                   ),
@@ -780,7 +779,7 @@ class HomeView extends GetView<HomeController> {
                                           shape: BoxShape.circle,
                                           image: new DecorationImage(
                                               fit: BoxFit.fill,
-                                              image: AssetImage(profileImage)))),
+                                              image: AssetImage(user1)))),
                                   SizedBox(
                                     width: 20,
                                   ),
@@ -839,10 +838,10 @@ class HomeView extends GetView<HomeController> {
                             ),
                             Container(
                               margin: EdgeInsets.only(
-                                  left: 20, right: 20, bottom: 10),
+                                  left: 20, right: 20,top: 5, bottom: 10),
                               child: Text(
                                 dummyLoremIpsum,
-                                style: TextStyle(
+                                style: TextStyle(color: Colors.black,
                                     fontSize: 14, fontWeight: FontWeight.normal),
                               ),
                             ),
@@ -931,7 +930,7 @@ class HomeView extends GetView<HomeController> {
                             ),
                             Divider(
                               height: 1,
-                              color: Colors.black,
+                              color: Colors.grey,
                             )
                           ],
                         ),
@@ -952,7 +951,7 @@ class HomeView extends GetView<HomeController> {
                                           shape: BoxShape.circle,
                                           image: new DecorationImage(
                                               fit: BoxFit.fill,
-                                              image: AssetImage(profileImage)))),
+                                              image: AssetImage(user2)))),
                                   SizedBox(
                                     width: 20,
                                   ),
@@ -1011,12 +1010,12 @@ class HomeView extends GetView<HomeController> {
                             ),
                             Container(
                               margin: EdgeInsets.only(
-                                  left: 20, right: 20, bottom: 10),
+                                  left: 20, right: 20,top: 5, bottom: 10),
                               child: Column(
                                 children: [
                                   Text(
                                     dummyLoremIpsum,
-                                    style: TextStyle(
+                                    style: TextStyle(color: Colors.black,
                                         fontSize: 12,
                                         fontWeight: FontWeight.normal),
                                   ),
@@ -1112,7 +1111,7 @@ class HomeView extends GetView<HomeController> {
                             ),
                             Divider(
                               height: 1,
-                              color: Colors.black,
+                              color: Colors.grey,
                             )
                           ],
                         ),
@@ -1133,7 +1132,7 @@ class HomeView extends GetView<HomeController> {
                                           shape: BoxShape.circle,
                                           image: new DecorationImage(
                                               fit: BoxFit.fill,
-                                              image: AssetImage(profileImage)))),
+                                              image: AssetImage(user4)))),
                                   SizedBox(
                                     width: 20,
                                   ),
@@ -1158,7 +1157,7 @@ class HomeView extends GetView<HomeController> {
                                                 width: 120,
                                               ),
                                               SizedBox(
-                                                width: 20,
+                                                width: 60,
                                               ),
                                               SvgPicture.asset(icMoreHorizontal)
                                             ],
@@ -1184,7 +1183,7 @@ class HomeView extends GetView<HomeController> {
                               decoration: BoxDecoration(
                                 border: Border.all(color: Colors.grey),
                                 borderRadius: const BorderRadius.all(
-                                  Radius.circular(5),
+                                  Radius.circular(1),
                                 ),
                               ),
                               margin: EdgeInsets.only(left: 20, right: 20, bottom: 10),
@@ -1207,7 +1206,7 @@ class HomeView extends GetView<HomeController> {
                                                   shape: BoxShape.circle,
                                                   image: new DecorationImage(
                                                       fit: BoxFit.fill,
-                                                      image: AssetImage(profileImage)))),
+                                                      image: AssetImage(user3)))),
                                           SizedBox(
                                             width: 20,
                                           ),
@@ -1256,7 +1255,7 @@ class HomeView extends GetView<HomeController> {
                                     ),
                                     Container(
                                       margin: EdgeInsets.only(
-                                          left: 10, right: 10, bottom: 10),
+                                          left: 10, right: 10,top: 5, bottom: 10),
                                       child: Text(
                                         dummyLoremIpsum,
                                         style: TextStyle(
@@ -1357,7 +1356,7 @@ class HomeView extends GetView<HomeController> {
                             ),
                             Divider(
                               height: 1,
-                              color: Colors.black,
+                              color: Colors.grey,
                             )
                           ],
                         ),

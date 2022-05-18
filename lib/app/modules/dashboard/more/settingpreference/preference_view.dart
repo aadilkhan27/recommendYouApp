@@ -110,7 +110,7 @@ class PreferenceView extends GetView<PreferenceController> {
                     buttonHeight: 60,
                     buttonPadding: const EdgeInsets.only(left: 20, right: 10),
                     dropdownDecoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
+                      borderRadius: BorderRadius.circular(5),
                     ),
                     items: languageItems
                         .map((item) => DropdownMenuItem<String>(
@@ -165,7 +165,7 @@ class PreferenceView extends GetView<PreferenceController> {
                     buttonHeight: 60,
                     buttonPadding: const EdgeInsets.only(left: 20, right: 10),
                     dropdownDecoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
+                      borderRadius: BorderRadius.circular(5),
                     ),
                     items: unitItems
                         .map((item) => DropdownMenuItem<String>(
@@ -220,7 +220,7 @@ class PreferenceView extends GetView<PreferenceController> {
                     buttonHeight: 60,
                     buttonPadding: const EdgeInsets.only(left: 20, right: 10),
                     dropdownDecoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
+                      borderRadius: BorderRadius.circular(5),
                     ),
                     items: dateItems
                         .map((item) => DropdownMenuItem<String>(
@@ -275,7 +275,7 @@ class PreferenceView extends GetView<PreferenceController> {
                     buttonHeight: 60,
                     buttonPadding: const EdgeInsets.only(left: 20, right: 10),
                     dropdownDecoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
+                      borderRadius: BorderRadius.circular(5),
                     ),
                     items: unitItems
                         .map((item) => DropdownMenuItem<String>(
@@ -330,7 +330,7 @@ class PreferenceView extends GetView<PreferenceController> {
                     buttonHeight: 60,
                     buttonPadding: const EdgeInsets.only(left: 20, right: 10),
                     dropdownDecoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
+                      borderRadius: BorderRadius.circular(5),
                     ),
                     items: currencyItems
                         .map((item) => DropdownMenuItem<String>(
@@ -385,7 +385,7 @@ class PreferenceView extends GetView<PreferenceController> {
                     buttonHeight: 60,
                     buttonPadding: const EdgeInsets.only(left: 20, right: 10),
                     dropdownDecoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
+                      borderRadius: BorderRadius.circular(5),
                     ),
                     items: timeItems
                         .map((item) => DropdownMenuItem<String>(

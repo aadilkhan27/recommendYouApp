@@ -212,7 +212,7 @@ class StepTwoView extends GetView<StepTwoController> {
                       children: [
                         Expanded(
                           child: Container(
-                            margin: EdgeInsets.only(right: 20, left: 10),
+                            margin: EdgeInsets.only(right: 10, left: 10),
                             padding: EdgeInsets.only(
                                 left: 15, top: 10, bottom: 10, right: 15),
                             decoration: BoxDecoration(
@@ -227,9 +227,8 @@ class StepTwoView extends GetView<StepTwoController> {
                         ),
                         Expanded(
                           child: Container(
-                            margin: EdgeInsets.only(right: 20),
-                            padding: EdgeInsets.only(
-                                left: 15, top: 10, bottom: 10, right: 15),
+                            margin: EdgeInsets.only(right: 5),
+                            padding: EdgeInsets.only(left: 15, top: 10, bottom: 10, right: 15),
                             decoration: BoxDecoration(
                                 color: primaryDarkColor,
                                 border: Border.all(color: Colors.grey),
@@ -244,7 +243,7 @@ class StepTwoView extends GetView<StepTwoController> {
                         ),
                         Expanded(
                           child: Container(
-                            margin: EdgeInsets.only(right: 20),
+                            margin: EdgeInsets.only(left: 5),
                             padding: EdgeInsets.only(
                                 left: 15, top: 10, bottom: 10, right: 15),
                             decoration: BoxDecoration(
@@ -279,6 +278,7 @@ class StepTwoView extends GetView<StepTwoController> {
                     child: Padding(
                       padding: EdgeInsets.only(left: 30, right: 30, top: 10),
                       child: TextField(
+                        cursorColor: Colors.black,
                         maxLength: 10,
                         keyboardType: TextInputType.number,
                         decoration: InputDecoration(

@@ -7,18 +7,18 @@ import 'package:recommend_you/app/modules/dashboard/notification/notification_co
 
 class NotificationView extends GetView<NotificationController> {
   List<String> images = [
-    "Anil",
-    "Sunil",
-    "Mukesh",
-    "Ramesh",
-    "Gaurav",
-    "Punit",
-    "Anil",
-    "Sunil",
-    "Mukesh",
-    "Ramesh",
-    "Gaurav",
-    "Punit",
+    user1,
+    user2,
+    user3,
+    user4,
+    user1,
+    user2,
+    user3,
+    user4,
+    user1,
+    user2,
+    user3,
+    user4,
   ];
 
   @override
@@ -32,7 +32,7 @@ class NotificationView extends GetView<NotificationController> {
           child: Container(
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
-            margin: EdgeInsets.all(10),
+            margin: EdgeInsets.all(5),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -46,7 +46,7 @@ class NotificationView extends GetView<NotificationController> {
                 ),
                 Expanded(
                   child: ListView.builder(
-                    itemBuilder: (BuildContext, itemBuilder) {
+                    itemBuilder: (BuildContext, index) {
                       return Container(
                         child: Column(
                           children: [
@@ -62,7 +62,7 @@ class NotificationView extends GetView<NotificationController> {
                                           shape: BoxShape.circle,
                                           image: new DecorationImage(
                                               fit: BoxFit.fill,
-                                              image: AssetImage(profileImage)))),
+                                              image: AssetImage(images[index])))),
                                   SizedBox(
                                     width: 20,
                                   ),
@@ -87,7 +87,7 @@ class NotificationView extends GetView<NotificationController> {
                                               Text(
                                                 'Requested to follow you',
                                                 style: TextStyle(
-                                                    fontSize: 14,
+                                                    fontSize: 12,
                                                     fontWeight:
                                                     FontWeight.normal),
                                               ),

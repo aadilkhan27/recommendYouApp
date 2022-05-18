@@ -6,6 +6,7 @@ import 'package:recommend_you/app/modules/registration/stepthree/step_three_cont
 import 'package:recommend_you/app/routes/pages.dart';
 
 class StepThreeView extends GetView<StepThreeController> {
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -123,6 +124,7 @@ class StepThreeView extends GetView<StepThreeController> {
                             child: Container(
                               margin: EdgeInsets.only(right: 10),
                               child: TextField(
+                                cursorColor: Colors.black,
                                 textAlign: TextAlign.center,
                                 keyboardType: TextInputType.number,
                                 maxLength: 1,
@@ -150,6 +152,7 @@ class StepThreeView extends GetView<StepThreeController> {
                             child: Container(
                               margin: EdgeInsets.only(right: 10),
                               child: TextField(
+                                cursorColor: Colors.black,
                                 textAlign: TextAlign.center,
                                 keyboardType: TextInputType.number,
                                 maxLength: 1,
@@ -177,6 +180,7 @@ class StepThreeView extends GetView<StepThreeController> {
                             child: Container(
                               margin: EdgeInsets.only(right: 10),
                               child: TextField(
+                                cursorColor: Colors.black,
                                 textAlign: TextAlign.center,
                                 keyboardType: TextInputType.number,
                                 maxLength: 1,
@@ -204,6 +208,7 @@ class StepThreeView extends GetView<StepThreeController> {
                             child: Container(
                               margin: EdgeInsets.only(right: 10),
                               child: TextField(
+                                cursorColor: Colors.black,
                                 textAlign: TextAlign.center,
                                 keyboardType: TextInputType.number,
                                 maxLength: 1,
@@ -231,6 +236,7 @@ class StepThreeView extends GetView<StepThreeController> {
                             child: Container(
                               margin: EdgeInsets.only(right: 10),
                               child: TextField(
+                                cursorColor: Colors.black,
                                 textAlign: TextAlign.center,
                                 keyboardType: TextInputType.number,
                                 maxLength: 1,

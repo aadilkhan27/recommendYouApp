@@ -104,6 +104,7 @@ class StepFourView extends GetView<StepFourController> {
                     child: Padding(
                       padding: EdgeInsets.only(left: 30, right: 30, top: 10),
                       child: TextField(
+                        cursorColor: Colors.black,
                         decoration: InputDecoration(
                             border: OutlineInputBorder(),
                             focusedBorder: OutlineInputBorder(
@@ -126,6 +127,7 @@ class StepFourView extends GetView<StepFourController> {
                     child: Padding(
                       padding: EdgeInsets.only(left: 30, right: 30, top: 10),
                       child: TextField(
+                        cursorColor: Colors.black,
                         obscureText: true,
                         obscuringCharacter: "*",
                         decoration: InputDecoration(
@@ -149,6 +151,7 @@ class StepFourView extends GetView<StepFourController> {
                     child: Padding(
                       padding: EdgeInsets.only(left: 30, right: 30, top: 10),
                       child: TextField(
+                        cursorColor: Colors.black,
                         obscureText: true,
                         obscuringCharacter: "*",
                         decoration: InputDecoration(

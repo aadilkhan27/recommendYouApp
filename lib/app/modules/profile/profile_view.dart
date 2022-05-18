@@ -45,7 +45,9 @@ class ProfileView extends GetView<ProfileController> {
                           width: 10,
                         ),
                         InkWell(
-                          child: Image(image: AssetImage(backArrow)),
+                          child: SvgPicture.asset(
+                            icLeftArrow,
+                          ),
                           onTap: () {
                             Get.back();
                           },
@@ -54,20 +56,320 @@ class ProfileView extends GetView<ProfileController> {
                           width: 10,
                         ),
                         Text(
-                          'Ramon Recardo',
+                          'Ram_Ricard',
                           style: TextStyle(color: Colors.black, fontSize: 14),
                         ),
                         Spacer(),
-                        Padding(
-                          padding: const EdgeInsets.only(right: 2.0),
-                          child: RotatedBox(
-                            child: Image(
-                              image: AssetImage(ic_three_dots),
-                              color: Colors.grey,
-                            ),
-                            quarterTurns: 1,
-                          ),
-                        )
+                        InkWell(
+                          child: SvgPicture.asset(icMenuOption),
+                          onTap: () {
+                            showModalBottomSheet(
+                                isScrollControlled: true,
+                                context: context,
+                                builder: (context) {
+                                  return Wrap(
+                                    children: [
+                                      InkWell(
+                                          onTap: () {
+                                            //Get.offNamed(Routes.dashboard);
+                                          },
+                                          child:  Row(
+                                          children: [
+                                          SizedBox(
+                                          width: 20,
+                                          ),
+                                          SvgPicture.asset(
+                                          savedpost,
+                                          ),
+                                          SizedBox(
+                                          width: 20,
+                                          ),
+                                          Text(
+                                          'My Profile',
+                                          style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 14,
+                                          fontWeight:
+                                          FontWeight.normal),
+                                          ),
+                                          ],
+                                          )
+                                      ),
+                                      InkWell(
+                                          onTap: () {
+                                            //Get.offNamed(Routes.dashboard);
+                                          },
+                                          child: ListTile(
+                                            title: Row(
+                                              children: [
+                                                SizedBox(
+                                                  width: 20,
+                                                ),
+                                                SvgPicture.asset(
+                                                  savedpost,
+                                                ),
+                                                SizedBox(
+                                                  width: 20,
+                                                ),
+                                                Text(
+                                                  'Saved Post',
+                                                  style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                      FontWeight.normal),
+                                                ),
+                                              ],
+                                            ),
+                                          )),
+                                      InkWell(
+                                          onTap: () {
+                                            //Get.offNamed(Routes.dashboard);
+                                          },
+                                          child: ListTile(
+                                            title: Row(
+                                              children: [
+                                                SizedBox(
+                                                  width: 20,
+                                                ),
+                                                SvgPicture.asset(
+                                                  followers,
+                                                ),
+                                                SizedBox(
+                                                  width: 20,
+                                                ),
+                                                Text(
+                                                  'Followers',
+                                                  style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                      FontWeight.normal),
+                                                ),
+                                              ],
+                                            ),
+                                          )),
+                                      InkWell(
+                                          onTap: () {
+                                            //Get.offNamed(Routes.dashboard);
+                                          },
+                                          child: ListTile(
+                                            title: Row(
+                                              children: [
+                                                SizedBox(
+                                                  width: 20,
+                                                ),
+                                                SvgPicture.asset(
+                                                  following,
+                                                ),
+                                                SizedBox(
+                                                  width: 20,
+                                                ),
+                                                Text(
+                                                  'Following',
+                                                  style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                      FontWeight.normal),
+                                                ),
+                                              ],
+                                            ),
+                                          )),
+                                      InkWell(
+                                          onTap: () {
+                                            //Get.offNamed(Routes.dashboard);
+                                          },
+                                          child: ListTile(
+                                            title: Row(
+                                              children: [
+                                                SizedBox(
+                                                  width: 20,
+                                                ),
+                                                SvgPicture.asset(
+                                                  inviteafriend,
+                                                ),
+                                                SizedBox(
+                                                  width: 20,
+                                                ),
+                                                Text(
+                                                  'Invite a friend',
+                                                  style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                      FontWeight.normal),
+                                                ),
+                                              ],
+                                            ),
+                                          )),
+                                      InkWell(
+                                          onTap: () {
+                                            //Get.offNamed(Routes.dashboard);
+                                          },
+                                          child: ListTile(
+                                            title: Row(
+                                              children: [
+                                                SizedBox(
+                                                  width: 20,
+                                                ),
+                                                SvgPicture.asset(
+                                                  settings,
+                                                ),
+                                                SizedBox(
+                                                  width: 20,
+                                                ),
+                                                Text(
+                                                  'Settings',
+                                                  style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                      FontWeight.normal),
+                                                ),
+                                              ],
+                                            ),
+                                          )),
+                                      InkWell(
+                                          onTap: () {
+                                            //Get.offNamed(Routes.dashboard);
+                                          },
+                                          child: ListTile(
+                                            title: Row(
+                                              children: [
+                                                SizedBox(
+                                                  width: 20,
+                                                ),
+                                                SvgPicture.asset(
+                                                  faq,
+                                                ),
+                                                SizedBox(
+                                                  width: 20,
+                                                ),
+                                                Text(
+                                                  'Frequently asked questions',
+                                                  style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                      FontWeight.normal),
+                                                ),
+                                              ],
+                                            ),
+                                          )),
+                                      InkWell(
+                                          onTap: () {
+                                            //Get.offNamed(Routes.dashboard);
+                                          },
+                                          child: ListTile(
+                                            title: Row(
+                                              children: [
+                                                SizedBox(
+                                                  width: 20,
+                                                ),
+                                                SvgPicture.asset(
+                                                  termscondition,
+                                                ),
+                                                SizedBox(
+                                                  width: 20,
+                                                ),
+                                                Text(
+                                                  'Terms and condition',
+                                                  style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                      FontWeight.normal),
+                                                ),
+                                              ],
+                                            ),
+                                          )),
+                                      InkWell(
+                                          onTap: () {
+                                            //Get.offNamed(Routes.dashboard);
+                                          },
+                                          child: ListTile(
+                                            title: Row(
+                                              children: [
+                                                SizedBox(
+                                                  width: 20,
+                                                ),
+                                                SvgPicture.asset(
+                                                  privacypolicy,
+                                                ),
+                                                SizedBox(
+                                                  width: 20,
+                                                ),
+                                                Text(
+                                                  'Privacy Policy',
+                                                  style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                      FontWeight.normal),
+                                                ),
+                                              ],
+                                            ),
+                                          )),
+                                      InkWell(
+                                          onTap: () {
+                                            //Get.offNamed(Routes.dashboard);
+                                          },
+                                          child: ListTile(
+                                            title: Row(
+                                              children: [
+                                                SizedBox(
+                                                  width: 20,
+                                                ),
+                                                SvgPicture.asset(
+                                                  contact,
+                                                ),
+                                                SizedBox(
+                                                  width: 20,
+                                                ),
+                                                Text(
+                                                  'Contact us',
+                                                  style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                      FontWeight.normal),
+                                                ),
+                                              ],
+                                            ),
+                                          )),
+                                      InkWell(
+                                          onTap: () {
+                                            //Get.offNamed(Routes.dashboard);
+                                          },
+                                          child: ListTile(
+                                            title: Row(
+                                              children: [
+                                                SizedBox(
+                                                  width: 20,
+                                                ),
+                                                SvgPicture.asset(
+                                                  logout,
+                                                ),
+                                                SizedBox(
+                                                  width: 20,
+                                                ),
+                                                Text(
+                                                  'LogOut',
+                                                  style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                      FontWeight.normal),
+                                                ),
+                                              ],
+                                            ),
+                                          )),
+                                    ],
+                                  );
+                                });
+                          },
+                        ),
                       ],
                     ),
                   ),
@@ -162,13 +464,13 @@ class ProfileView extends GetView<ProfileController> {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(left: 25, right: 25, top: 5),
+                  margin: EdgeInsets.only(left: 25, right: 25, top: 10),
                   child: Row(
                     children: [
                       Text(
                         'Ramon ricardo',
                         style: TextStyle(
-                            fontSize: 12,
+                            fontSize: 14,
                             fontWeight: FontWeight.normal,
                             color: Colors.black54),
                       ),
@@ -185,14 +487,14 @@ class ProfileView extends GetView<ProfileController> {
                   ),
                 ),
                 Container(
-                    margin: EdgeInsets.only(left: 25, right: 25),
+                    margin: EdgeInsets.only(left: 25, right: 25, top: 5),
                     child: Align(
                       alignment: Alignment.topLeft,
                       child: Text(
-                        'Ricard_Romario',
+                        'Ram_Ricard',
                         style: TextStyle(
-                            fontWeight: FontWeight.normal,
-                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14,
                             color: Colors.black),
                       ),
                     )),
@@ -215,7 +517,7 @@ class ProfileView extends GetView<ProfileController> {
                       ),
                     )),
                 Container(
-                  margin: EdgeInsets.only(top: 10, left: 5),
+                  margin: EdgeInsets.only(top: 15, left: 5),
                   child: Row(
                     children: [
                       Container(
@@ -315,7 +617,10 @@ class ProfileView extends GetView<ProfileController> {
                                   color: primaryDarkColor,
                                   fontWeight: FontWeight.bold),
                             ),
-                            Text('----------------------',style:TextStyle(color: primaryDarkColor,fontWeight: FontWeight.bold))
+                            Text('----------------------',
+                                style: TextStyle(
+                                    color: primaryDarkColor,
+                                    fontWeight: FontWeight.bold))
                           ],
                         ),
                       ),
@@ -335,520 +640,512 @@ class ProfileView extends GetView<ProfileController> {
                 Expanded(
                   child: SingleChildScrollView(
                     child: Container(
-                      child: Column(
-                        children: [
-                          Container(
-                            height: 60,
-                            width: MediaQuery.of(context).size.width,
-                            child: Row(
-                              children: [
-                                SizedBox(
-                                  width: 20,
-                                ),
-                                Container(
-                                  width: 40.0,
-                                  height: 40.0,
-                                  decoration: new BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    image: new DecorationImage(
-                                      fit: BoxFit.fill,
-                                      image: AssetImage(profileImage),
-                                    ),
+                        child: Column(
+                      children: [
+                        Container(
+                          height: 60,
+                          width: MediaQuery.of(context).size.width,
+                          child: Row(
+                            children: [
+                              SizedBox(
+                                width: 20,
+                              ),
+                              Container(
+                                width: 40.0,
+                                height: 40.0,
+                                decoration: new BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  image: new DecorationImage(
+                                    fit: BoxFit.fill,
+                                    image: AssetImage(profileImage),
                                   ),
                                 ),
-                                SizedBox(
-                                  width: 20,
-                                ),
-                                Container(
-                                  margin: EdgeInsets.only(top: 10),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                    CrossAxisAlignment.start,
-                                    children: [
-                                      Container(
-                                        child: Row(
-                                          children: [
-                                            Text(
-                                              'Ramon Ricardo',
-                                              style: TextStyle(
-                                                  fontSize: 12,
-                                                  fontWeight:
-                                                  FontWeight.normal),
-                                            ),
-                                            SizedBox(
-                                              width: 150,
-                                            ),
-                                            Text(
-                                              '08-09-2021',
-                                              style: TextStyle(
-                                                  fontWeight: FontWeight.normal,
-                                                  fontSize: 10),
-                                            ),
-                                            SizedBox(
-                                              width: 20,
-                                            ),
-                                            SvgPicture.asset(icMoreHorizontal)
-                                          ],
-                                        ),
+                              ),
+                              SizedBox(
+                                width: 20,
+                              ),
+                              Container(
+                                margin: EdgeInsets.only(top: 10),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      child: Row(
+                                        children: [
+                                          Text(
+                                            'Ramon Ricardo',
+                                            style: TextStyle(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.normal),
+                                          ),
+                                          SizedBox(
+                                            width: 150,
+                                          ),
+                                          Text(
+                                            '08-09-2021',
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.normal,
+                                                fontSize: 10),
+                                          ),
+                                          SizedBox(
+                                            width: 20,
+                                          ),
+                                          SvgPicture.asset(icMoreHorizontal)
+                                        ],
                                       ),
-                                      Container(
-                                        child: Row(
-                                          children: [
-                                            SvgPicture.asset(icTagArrow),
-                                            Text(
-                                              'Category Text Public',
-                                              style: TextStyle(
-                                                  fontSize: 12,
-                                                  fontWeight: FontWeight.bold),
-                                            )
-                                          ],
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Container(
-                            margin: EdgeInsets.only(
-                                left: 20, right: 15, bottom: 10),
-                            child: Text(
-                              dummyLoremIpsum,
-                              style: TextStyle(
-                                  fontSize: 12, fontWeight: FontWeight.normal),
-                            ),
-                          ),
-                          Container(
-                            margin: EdgeInsets.only(
-                                left: 20, right: 20, top: 10, bottom: 20),
-                            child: Row(
-                              children: [
-                                InkWell(
-                                  child: SvgPicture.asset(icHeart),
-                                  onTap: () {
-                                    showModalBottomSheet(
-                                        context: context,
-                                        builder: (context) {
-                                          return Wrap(
-                                            children: [
-                                              ListTile(
-                                                title: Text('Save this post'),
-                                              ),
-                                              ListTile(
-                                                title: Text(
-                                                    'Don\'t show me this again'),
-                                              ),
-                                              ListTile(
-                                                title: Text('Report as spam'),
-                                              ),
-                                              ListTile(
-                                                title: Text(
-                                                    'Report as inappropriate content'),
-                                              ),
-                                            ],
-                                          );
-                                        });
-                                  },
-                                ),
-                                SizedBox(
-                                  width: 20,
-                                ),
-                                SvgPicture.asset(icComment),
-                                SizedBox(
-                                  width: 20,
-                                ),
-                                InkWell(
-                                  child: SvgPicture.asset(icShare),
-                                  onTap: () {
-                                    showModalBottomSheet(
-                                        context: context,
-                                        builder: (context) {
-                                          return Wrap(
-                                            children: [
-                                              ListTile(
-                                                title: Text(
-                                                  'Share:',
-                                                  style: TextStyle(
-                                                      fontWeight:
-                                                      FontWeight.bold),
-                                                ),
-                                                leading: Icon(Icons.share),
-                                              ),
-                                              Divider(
-                                                height: 1,
-                                                color: Colors.grey,
-                                              ),
-                                              ListTile(
-                                                title: Text('Publically'),
-                                              ),
-                                              ListTile(
-                                                title: Text(
-                                                    'With one or more followers'),
-                                              ),
-                                              ListTile(
-                                                title: Text('Using other apps'),
-                                              ),
-                                              ListTile(
-                                                title: Text('With a helper'),
-                                              ),
-                                            ],
-                                          );
-                                        });
-                                  },
-                                ),
-                                Spacer(),
-                                SvgPicture.asset(icCombinedShape),
-                              ],
-                            ),
-                          ),
-                          Divider(
-                            height: 1,
-                            color: Colors.black,
-                          ),
-                          Container(
-                            height: 60,
-                            width: MediaQuery.of(context).size.width,
-                            child: Row(
-                              children: [
-                                SizedBox(
-                                  width: 20,
-                                ),
-                                Container(
-                                  width: 40.0,
-                                  height: 40.0,
-                                  decoration: new BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    image: new DecorationImage(
-                                      fit: BoxFit.fill,
-                                      image: AssetImage(profileImage),
                                     ),
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: 20,
-                                ),
-                                Container(
-                                  margin: EdgeInsets.only(top: 10),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                    CrossAxisAlignment.start,
-                                    children: [
-                                      Container(
-                                        child: Row(
-                                          children: [
-                                            Text(
-                                              'Ramon Ricardo',
-                                              style: TextStyle(
-                                                  fontSize: 12,
-                                                  fontWeight:
-                                                  FontWeight.normal),
-                                            ),
-                                            SizedBox(
-                                              width: 150,
-                                            ),
-                                            Text(
-                                              '08-09-2021',
-                                              style: TextStyle(
-                                                  fontWeight: FontWeight.normal,
-                                                  fontSize: 10),
-                                            ),
-                                            SizedBox(
-                                              width: 20,
-                                            ),
-                                            SvgPicture.asset(icMoreHorizontal)
-                                          ],
-                                        ),
+                                    Container(
+                                      child: Row(
+                                        children: [
+                                          SvgPicture.asset(icTagArrow),
+                                          Text(
+                                            'Category Text Public',
+                                            style: TextStyle(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.bold),
+                                          )
+                                        ],
                                       ),
-                                      Container(
-                                        child: Row(
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          margin:
+                              EdgeInsets.only(left: 20, right: 15, bottom: 10),
+                          child: Text(
+                            dummyLoremIpsum,
+                            style: TextStyle(
+                                fontSize: 12, fontWeight: FontWeight.normal),
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(
+                              left: 20, right: 20, top: 10, bottom: 20),
+                          child: Row(
+                            children: [
+                              InkWell(
+                                child: SvgPicture.asset(icHeart),
+                                onTap: () {
+                                  showModalBottomSheet(
+                                      context: context,
+                                      builder: (context) {
+                                        return Wrap(
                                           children: [
-                                            SvgPicture.asset(icTagArrow),
-                                            Text(
-                                              'Category Text Public',
-                                              style: TextStyle(
-                                                  fontSize: 12,
-                                                  fontWeight: FontWeight.bold),
-                                            )
+                                            ListTile(
+                                              title: Text('Save this post'),
+                                            ),
+                                            ListTile(
+                                              title: Text(
+                                                  'Don\'t show me this again'),
+                                            ),
+                                            ListTile(
+                                              title: Text('Report as spam'),
+                                            ),
+                                            ListTile(
+                                              title: Text(
+                                                  'Report as inappropriate content'),
+                                            ),
                                           ],
-                                        ),
-                                      )
-                                    ],
+                                        );
+                                      });
+                                },
+                              ),
+                              SizedBox(
+                                width: 20,
+                              ),
+                              SvgPicture.asset(icComment),
+                              SizedBox(
+                                width: 20,
+                              ),
+                              InkWell(
+                                child: SvgPicture.asset(icShare),
+                                onTap: () {
+                                  showModalBottomSheet(
+                                      context: context,
+                                      builder: (context) {
+                                        return Wrap(
+                                          children: [
+                                            ListTile(
+                                              title: Text(
+                                                'Share:',
+                                                style: TextStyle(
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
+                                              leading: Icon(Icons.share),
+                                            ),
+                                            Divider(
+                                              height: 1,
+                                              color: Colors.grey,
+                                            ),
+                                            ListTile(
+                                              title: Text('Publically'),
+                                            ),
+                                            ListTile(
+                                              title: Text(
+                                                  'With one or more followers'),
+                                            ),
+                                            ListTile(
+                                              title: Text('Using other apps'),
+                                            ),
+                                            ListTile(
+                                              title: Text('With a helper'),
+                                            ),
+                                          ],
+                                        );
+                                      });
+                                },
+                              ),
+                              Spacer(),
+                              SvgPicture.asset(icCombinedShape),
+                            ],
+                          ),
+                        ),
+                        Divider(
+                          height: 1,
+                          color: Colors.black,
+                        ),
+                        Container(
+                          height: 60,
+                          width: MediaQuery.of(context).size.width,
+                          child: Row(
+                            children: [
+                              SizedBox(
+                                width: 20,
+                              ),
+                              Container(
+                                width: 40.0,
+                                height: 40.0,
+                                decoration: new BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  image: new DecorationImage(
+                                    fit: BoxFit.fill,
+                                    image: AssetImage(profileImage),
                                   ),
                                 ),
-                              ],
-                            ),
-                          ),
-                          Container(
-                            margin: EdgeInsets.only(
-                                left: 20, right: 15, bottom: 10),
-                            child: Text(
-                              dummyLoremIpsum,
-                              style: TextStyle(
-                                  fontSize: 12, fontWeight: FontWeight.normal),
-                            ),
-                          ),
-                          Container(
-                            margin: EdgeInsets.only(
-                                left: 20, right: 20, top: 10, bottom: 20),
-                            child: Row(
-                              children: [
-                                InkWell(
-                                  child: SvgPicture.asset(icHeart),
-                                  onTap: () {
-                                    showModalBottomSheet(
-                                        context: context,
-                                        builder: (context) {
-                                          return Wrap(
-                                            children: [
-                                              ListTile(
-                                                title: Text('Save this post'),
-                                              ),
-                                              ListTile(
-                                                title: Text(
-                                                    'Don\'t show me this again'),
-                                              ),
-                                              ListTile(
-                                                title: Text('Report as spam'),
-                                              ),
-                                              ListTile(
-                                                title: Text(
-                                                    'Report as inappropriate content'),
-                                              ),
-                                            ],
-                                          );
-                                        });
-                                  },
-                                ),
-                                SizedBox(
-                                  width: 20,
-                                ),
-                                SvgPicture.asset(icComment),
-                                SizedBox(
-                                  width: 20,
-                                ),
-                                InkWell(
-                                  child: SvgPicture.asset(icShare),
-                                  onTap: () {
-                                    showModalBottomSheet(
-                                        context: context,
-                                        builder: (context) {
-                                          return Wrap(
-                                            children: [
-                                              ListTile(
-                                                title: Text(
-                                                  'Share:',
-                                                  style: TextStyle(
-                                                      fontWeight:
-                                                      FontWeight.bold),
-                                                ),
-                                                leading: Icon(Icons.share),
-                                              ),
-                                              Divider(
-                                                height: 1,
-                                                color: Colors.grey,
-                                              ),
-                                              ListTile(
-                                                title: Text('Publically'),
-                                              ),
-                                              ListTile(
-                                                title: Text(
-                                                    'With one or more followers'),
-                                              ),
-                                              ListTile(
-                                                title: Text('Using other apps'),
-                                              ),
-                                              ListTile(
-                                                title: Text('With a helper'),
-                                              ),
-                                            ],
-                                          );
-                                        });
-                                  },
-                                ),
-                                Spacer(),
-                                SvgPicture.asset(icCombinedShape),
-                              ],
-                            ),
-                          ),
-                          Divider(
-                            height: 1,
-                            color: Colors.black,
-                          ),
-                          Container(
-                            height: 60,
-                            width: MediaQuery.of(context).size.width,
-                            child: Row(
-                              children: [
-                                SizedBox(
-                                  width: 20,
-                                ),
-                                Container(
-                                  width: 40.0,
-                                  height: 40.0,
-                                  decoration: new BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    image: new DecorationImage(
-                                      fit: BoxFit.fill,
-                                      image: AssetImage(profileImage),
+                              ),
+                              SizedBox(
+                                width: 20,
+                              ),
+                              Container(
+                                margin: EdgeInsets.only(top: 10),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      child: Row(
+                                        children: [
+                                          Text(
+                                            'Ramon Ricardo',
+                                            style: TextStyle(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.normal),
+                                          ),
+                                          SizedBox(
+                                            width: 150,
+                                          ),
+                                          Text(
+                                            '08-09-2021',
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.normal,
+                                                fontSize: 10),
+                                          ),
+                                          SizedBox(
+                                            width: 20,
+                                          ),
+                                          SvgPicture.asset(icMoreHorizontal)
+                                        ],
+                                      ),
                                     ),
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: 20,
-                                ),
-                                Container(
-                                  margin: EdgeInsets.only(top: 10),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                    CrossAxisAlignment.start,
-                                    children: [
-                                      Container(
-                                        child: Row(
-                                          children: [
-                                            Text(
-                                              'Ramon Ricardo',
-                                              style: TextStyle(
-                                                  fontSize: 12,
-                                                  fontWeight:
-                                                  FontWeight.normal),
-                                            ),
-                                            SizedBox(
-                                              width: 150,
-                                            ),
-                                            Text(
-                                              '08-09-2021',
-                                              style: TextStyle(
-                                                  fontWeight: FontWeight.normal,
-                                                  fontSize: 10),
-                                            ),
-                                            SizedBox(
-                                              width: 20,
-                                            ),
-                                            SvgPicture.asset(icMoreHorizontal)
-                                          ],
-                                        ),
+                                    Container(
+                                      child: Row(
+                                        children: [
+                                          SvgPicture.asset(icTagArrow),
+                                          Text(
+                                            'Category Text Public',
+                                            style: TextStyle(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.bold),
+                                          )
+                                        ],
                                       ),
-                                      Container(
-                                        child: Row(
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          margin:
+                              EdgeInsets.only(left: 20, right: 15, bottom: 10),
+                          child: Text(
+                            dummyLoremIpsum,
+                            style: TextStyle(
+                                fontSize: 12, fontWeight: FontWeight.normal),
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(
+                              left: 20, right: 20, top: 10, bottom: 20),
+                          child: Row(
+                            children: [
+                              InkWell(
+                                child: SvgPicture.asset(icHeart),
+                                onTap: () {
+                                  showModalBottomSheet(
+                                      context: context,
+                                      builder: (context) {
+                                        return Wrap(
                                           children: [
-                                            SvgPicture.asset(icTagArrow),
-                                            Text(
-                                              'Category Text Public',
-                                              style: TextStyle(
-                                                  fontSize: 12,
-                                                  fontWeight: FontWeight.bold),
-                                            )
+                                            ListTile(
+                                              title: Text('Save this post'),
+                                            ),
+                                            ListTile(
+                                              title: Text(
+                                                  'Don\'t show me this again'),
+                                            ),
+                                            ListTile(
+                                              title: Text('Report as spam'),
+                                            ),
+                                            ListTile(
+                                              title: Text(
+                                                  'Report as inappropriate content'),
+                                            ),
                                           ],
-                                        ),
-                                      )
-                                    ],
+                                        );
+                                      });
+                                },
+                              ),
+                              SizedBox(
+                                width: 20,
+                              ),
+                              SvgPicture.asset(icComment),
+                              SizedBox(
+                                width: 20,
+                              ),
+                              InkWell(
+                                child: SvgPicture.asset(icShare),
+                                onTap: () {
+                                  showModalBottomSheet(
+                                      context: context,
+                                      builder: (context) {
+                                        return Wrap(
+                                          children: [
+                                            ListTile(
+                                              title: Text(
+                                                'Share:',
+                                                style: TextStyle(
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
+                                              leading: Icon(Icons.share),
+                                            ),
+                                            Divider(
+                                              height: 1,
+                                              color: Colors.grey,
+                                            ),
+                                            ListTile(
+                                              title: Text('Publically'),
+                                            ),
+                                            ListTile(
+                                              title: Text(
+                                                  'With one or more followers'),
+                                            ),
+                                            ListTile(
+                                              title: Text('Using other apps'),
+                                            ),
+                                            ListTile(
+                                              title: Text('With a helper'),
+                                            ),
+                                          ],
+                                        );
+                                      });
+                                },
+                              ),
+                              Spacer(),
+                              SvgPicture.asset(icCombinedShape),
+                            ],
+                          ),
+                        ),
+                        Divider(
+                          height: 1,
+                          color: Colors.black,
+                        ),
+                        Container(
+                          height: 60,
+                          width: MediaQuery.of(context).size.width,
+                          child: Row(
+                            children: [
+                              SizedBox(
+                                width: 20,
+                              ),
+                              Container(
+                                width: 40.0,
+                                height: 40.0,
+                                decoration: new BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  image: new DecorationImage(
+                                    fit: BoxFit.fill,
+                                    image: AssetImage(profileImage),
                                   ),
                                 ),
-                              ],
-                            ),
+                              ),
+                              SizedBox(
+                                width: 20,
+                              ),
+                              Container(
+                                margin: EdgeInsets.only(top: 10),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      child: Row(
+                                        children: [
+                                          Text(
+                                            'Ramon Ricardo',
+                                            style: TextStyle(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.normal),
+                                          ),
+                                          SizedBox(
+                                            width: 150,
+                                          ),
+                                          Text(
+                                            '08-09-2021',
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.normal,
+                                                fontSize: 10),
+                                          ),
+                                          SizedBox(
+                                            width: 20,
+                                          ),
+                                          SvgPicture.asset(icMoreHorizontal)
+                                        ],
+                                      ),
+                                    ),
+                                    Container(
+                                      child: Row(
+                                        children: [
+                                          SvgPicture.asset(icTagArrow),
+                                          Text(
+                                            'Category Text Public',
+                                            style: TextStyle(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.bold),
+                                          )
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ],
                           ),
-                          Container(
-                            margin: EdgeInsets.only(
-                                left: 20, right: 15, bottom: 10),
-                            child: Text(
-                              dummyLoremIpsum,
-                              style: TextStyle(
-                                  fontSize: 12, fontWeight: FontWeight.normal),
-                            ),
+                        ),
+                        Container(
+                          margin:
+                              EdgeInsets.only(left: 20, right: 15, bottom: 10),
+                          child: Text(
+                            dummyLoremIpsum,
+                            style: TextStyle(
+                                fontSize: 12, fontWeight: FontWeight.normal),
                           ),
-                          Container(
-                            margin: EdgeInsets.only(
-                                left: 20, right: 20, top: 10, bottom: 20),
-                            child: Row(
-                              children: [
-                                InkWell(
-                                  child: SvgPicture.asset(icHeart),
-                                  onTap: () {
-                                    showModalBottomSheet(
-                                        context: context,
-                                        builder: (context) {
-                                          return Wrap(
-                                            children: [
-                                              ListTile(
-                                                title: Text('Save this post'),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(
+                              left: 20, right: 20, top: 10, bottom: 20),
+                          child: Row(
+                            children: [
+                              InkWell(
+                                child: SvgPicture.asset(icHeart),
+                                onTap: () {
+                                  showModalBottomSheet(
+                                      context: context,
+                                      builder: (context) {
+                                        return Wrap(
+                                          children: [
+                                            ListTile(
+                                              title: Text('Save this post'),
+                                            ),
+                                            ListTile(
+                                              title: Text(
+                                                  'Don\'t show me this again'),
+                                            ),
+                                            ListTile(
+                                              title: Text('Report as spam'),
+                                            ),
+                                            ListTile(
+                                              title: Text(
+                                                  'Report as inappropriate content'),
+                                            ),
+                                          ],
+                                        );
+                                      });
+                                },
+                              ),
+                              SizedBox(
+                                width: 20,
+                              ),
+                              SvgPicture.asset(icComment),
+                              SizedBox(
+                                width: 20,
+                              ),
+                              InkWell(
+                                child: SvgPicture.asset(icShare),
+                                onTap: () {
+                                  showModalBottomSheet(
+                                      context: context,
+                                      builder: (context) {
+                                        return Wrap(
+                                          children: [
+                                            ListTile(
+                                              title: Text(
+                                                'Share:',
+                                                style: TextStyle(
+                                                    fontWeight:
+                                                        FontWeight.bold),
                                               ),
-                                              ListTile(
-                                                title: Text(
-                                                    'Don\'t show me this again'),
-                                              ),
-                                              ListTile(
-                                                title: Text('Report as spam'),
-                                              ),
-                                              ListTile(
-                                                title: Text(
-                                                    'Report as inappropriate content'),
-                                              ),
-                                            ],
-                                          );
-                                        });
-                                  },
-                                ),
-                                SizedBox(
-                                  width: 20,
-                                ),
-                                SvgPicture.asset(icComment),
-                                SizedBox(
-                                  width: 20,
-                                ),
-                                InkWell(
-                                  child: SvgPicture.asset(icShare),
-                                  onTap: () {
-                                    showModalBottomSheet(
-                                        context: context,
-                                        builder: (context) {
-                                          return Wrap(
-                                            children: [
-                                              ListTile(
-                                                title: Text(
-                                                  'Share:',
-                                                  style: TextStyle(
-                                                      fontWeight:
-                                                      FontWeight.bold),
-                                                ),
-                                                leading: Icon(Icons.share),
-                                              ),
-                                              Divider(
-                                                height: 1,
-                                                color: Colors.grey,
-                                              ),
-                                              ListTile(
-                                                title: Text('Publically'),
-                                              ),
-                                              ListTile(
-                                                title: Text(
-                                                    'With one or more followers'),
-                                              ),
-                                              ListTile(
-                                                title: Text('Using other apps'),
-                                              ),
-                                              ListTile(
-                                                title: Text('With a helper'),
-                                              ),
-                                            ],
-                                          );
-                                        });
-                                  },
-                                ),
-                                Spacer(),
-                                SvgPicture.asset(icCombinedShape),
-                              ],
-                            ),
+                                              leading: Icon(Icons.share),
+                                            ),
+                                            Divider(
+                                              height: 1,
+                                              color: Colors.grey,
+                                            ),
+                                            ListTile(
+                                              title: Text('Publically'),
+                                            ),
+                                            ListTile(
+                                              title: Text(
+                                                  'With one or more followers'),
+                                            ),
+                                            ListTile(
+                                              title: Text('Using other apps'),
+                                            ),
+                                            ListTile(
+                                              title: Text('With a helper'),
+                                            ),
+                                          ],
+                                        );
+                                      });
+                                },
+                              ),
+                              Spacer(),
+                              SvgPicture.asset(icCombinedShape),
+                            ],
                           ),
-                        ],
-                      )
-                    ),
+                        ),
+                      ],
+                    )),
                   ),
                 )
-
               ],
             ),
           ),

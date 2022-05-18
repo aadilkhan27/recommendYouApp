@@ -19,14 +19,12 @@ class SearchView extends GetView<SearchController> {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.white,
-          flexibleSpace: SafeArea(
-            child: TabBar(
-              unselectedLabelColor: primaryLightColor,
-              labelColor: primaryDarkColor,
-              indicatorColor: primaryDarkColor,
-              controller: _tabx.controller,
-              tabs: _tabx.myTabs,
-            ),
+          flexibleSpace: TabBar(
+            unselectedLabelColor: primaryLightColor,
+            labelColor: primaryDarkColor,
+            indicatorColor: primaryDarkColor,
+            controller: _tabx.controller,
+            tabs: _tabx.myTabs,
           ),
         ),
         body: TabBarView(

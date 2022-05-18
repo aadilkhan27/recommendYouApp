@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:recommend_you/app/core/values/colors.dart';
 import 'package:recommend_you/app/core/values/keys.dart';
@@ -42,8 +43,8 @@ class RetrieveUsername extends GetView<RetrieveUsernameController> {
                               onTap: (){
                                 Get.back();
                               },
-                              child: Image(
-                                image: AssetImage(backArrow),
+                              child:  SvgPicture.asset(
+                                icLeftArrow,
                               ),
                             ),
                           ),
@@ -98,14 +99,14 @@ class RetrieveUsername extends GetView<RetrieveUsernameController> {
                         Get.toNamed(Routes.signInView);
                       },
                       child: Container(
-                        margin: const EdgeInsets.all(35),
+                        margin: const EdgeInsets.all(45),
                         height: 50,
                         width: MediaQuery.of(context).size.width,
                         decoration: BoxDecoration(
                             color: primaryDarkColor,
                             border: Border.all(color: primaryDarkColor),
                             borderRadius:
-                                const BorderRadius.all(Radius.circular(5))),
+                                const BorderRadius.all(Radius.circular(10))),
                         alignment: Alignment.center,
                         child: const Text(
                           'CONTINUE TO LOGIN',

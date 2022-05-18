@@ -120,6 +120,7 @@ class StepOneView extends GetView<StepOneController> {
                   Padding(
                     padding: EdgeInsets.only(left: 30, right: 30, top: 10),
                     child: TextField(
+                      cursorColor: Colors.black,
                       decoration: InputDecoration(
                           border: OutlineInputBorder(),
                           focusedBorder: OutlineInputBorder(
@@ -138,6 +139,7 @@ class StepOneView extends GetView<StepOneController> {
                   Padding(
                     padding: EdgeInsets.only(left: 30, right: 30, top: 20),
                     child: TextField(
+                        cursorColor: Colors.black,
                       decoration: InputDecoration(
                           border: OutlineInputBorder(),
                           focusedBorder: OutlineInputBorder(
@@ -208,6 +210,7 @@ class StepOneView extends GetView<StepOneController> {
                   Padding(
                     padding: EdgeInsets.only(left: 30, right: 30, top: 20),
                     child: TextField(
+                      cursorColor: Colors.black,
                       decoration: InputDecoration(
                           border: OutlineInputBorder(),
                           focusedBorder: OutlineInputBorder(

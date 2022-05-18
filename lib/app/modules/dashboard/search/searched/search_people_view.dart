@@ -9,18 +9,18 @@ import 'package:recommend_you/app/modules/dashboard/search/searched/search_peopl
 
 class SearchPeopleView extends GetView<SearchPeopleController> {
   List<String> images = [
-    "Anil",
-    "Sunil",
-    "Mukesh",
-    "Ramesh",
-    "Gaurav",
-    "Punit",
-    "Punits",
-    "PunitHarish",
-    "PunitHarish",
-    "PunitHarish",
-    "PunitHarish",
-    "PunitHarish",
+    user1,
+    user2,
+    user3,
+    user4,
+    user1,
+    user2,
+    user3,
+    user4,
+    user1,
+    user2,
+    user3,
+    user4,
   ];
   @override
   Widget build(BuildContext context) {
@@ -39,7 +39,7 @@ class SearchPeopleView extends GetView<SearchPeopleController> {
             children: [
               Expanded(
                 child: ListView.builder(
-                  itemBuilder: (BuildContext, item) {
+                  itemBuilder: (BuildContext, index) {
                     return Container(
                       child: Column(
                         children: [
@@ -58,7 +58,7 @@ class SearchPeopleView extends GetView<SearchPeopleController> {
                                         shape: BoxShape.circle,
                                         image: new DecorationImage(
                                             fit: BoxFit.fill,
-                                            image: AssetImage(profileImage)))),
+                                            image: AssetImage(images[index])))),
                                 SizedBox(
                                   width: 20,
                                 ),
@@ -75,19 +75,14 @@ class SearchPeopleView extends GetView<SearchPeopleController> {
                                             fontWeight:
                                             FontWeight.normal),
                                       ),
-                                      Container(
-                                        margin: EdgeInsets.only(top: 5),
-                                        child: Row(
-                                          children: [
-                                            SvgPicture.asset(icTagArrow),
-                                            Text(
-                                              'Category Text Public',
-                                              style: TextStyle(
-                                                  fontSize: 14,
-                                                  fontWeight: FontWeight.bold),
-                                            )
-                                          ],
-                                        ),
+                                      SizedBox(
+                                        height : 5,
+                                      ),
+                                      Text(
+                                        'Ramon_Ricardo',
+                                        style: TextStyle(
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.bold),
                                       )
                                     ],
                                   ),
@@ -97,10 +92,6 @@ class SearchPeopleView extends GetView<SearchPeopleController> {
                               ],
                             ),
                           ),
-                          Divider(
-                            height: 1,
-                            color: Colors.black,
-                          )
                         ],
                       ),
                     );

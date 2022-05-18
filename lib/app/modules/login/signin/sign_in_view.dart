@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:recommend_you/app/core/values/colors.dart';
 import 'package:recommend_you/app/core/values/keys.dart';
@@ -44,8 +45,8 @@ class SignInView extends GetView<SignInController> {
                               onTap: (){
                                 Get.back();
                               },
-                              child: Image(
-                                image: AssetImage(backArrow),
+                              child:  SvgPicture.asset(
+                                icLeftArrow,
                               ),
                             ),
                           ),
@@ -78,8 +79,9 @@ class SignInView extends GetView<SignInController> {
                       height: 30,
                     ),
                     Padding(
-                      padding: EdgeInsets.only(left: 30, right: 30, top: 10),
+                      padding: EdgeInsets.only(left: 35, right: 35, top: 10),
                       child: TextField(
+                        cursorColor: Colors.black,
                         decoration: InputDecoration(
                             border: OutlineInputBorder(),
                             focusedBorder: OutlineInputBorder(
@@ -88,17 +90,21 @@ class SignInView extends GetView<SignInController> {
                               borderRadius: BorderRadius.circular(5.0),
                             ),
                             labelText: 'Username',
-                            labelStyle: TextStyle(color: primaryDarkColor),
+                            labelStyle: TextStyle(color: Colors.black),
                             contentPadding: EdgeInsets.all(10),
-                            hintText: 'Username'),
+                            //hintText: 'Username'
+                        ),
                       ),
                     ),
                     SizedBox(
                       height: 10,
                     ),
                     Padding(
-                      padding: EdgeInsets.only(left: 30, right: 30, top: 10),
+                      padding: EdgeInsets.only(left: 35, right: 35, top: 10),
                       child: TextField(
+                        cursorColor: Colors.black,
+                        obscureText: true,
+                        obscuringCharacter: "*",
                         decoration: InputDecoration(
                             border: OutlineInputBorder(),
                             focusedBorder: OutlineInputBorder(
@@ -106,14 +112,15 @@ class SignInView extends GetView<SignInController> {
                                   color: primaryDarkColor, width: 1.0),
                               borderRadius: BorderRadius.circular(5.0),
                             ),
-                            labelStyle: TextStyle(color: primaryDarkColor),
+                            labelStyle: TextStyle(color: Colors.black),
                             labelText: 'Password',
                             contentPadding: EdgeInsets.all(10),
-                            hintText: 'Password'),
+                            //hintText: 'Password'
+                        ),
                       ),
                     ),
                     SizedBox(
-                      height: 30,
+                      height: 20,
                     ),
                     InkWell(
                       onTap: (){
@@ -125,8 +132,8 @@ class SignInView extends GetView<SignInController> {
                         // ));
                       },
                       child: Container(
-                        margin: const EdgeInsets.all(30),
-                        height: 40,
+                        margin: const EdgeInsets.only(left: 35, right: 35, top: 20),
+                        height: 50,
                         width: MediaQuery
                             .of(context)
                             .size
@@ -140,7 +147,7 @@ class SignInView extends GetView<SignInController> {
                         child: const Text('SIGN IN',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
                       ),
                     ),
-                    SizedBox(height: 10,),
+                    SizedBox(height: 30,),
                     InkWell(
                       onTap: (){
                         Get.toNamed(Routes.forgotPassword);
@@ -154,10 +161,10 @@ class SignInView extends GetView<SignInController> {
                             decoration: TextDecoration.underline),
                       ),
                     ),
-                    SizedBox(height: 10,),
+                    SizedBox(height: 15,),
                     InkWell(
                       onTap: (){
-                        Get.toNamed(Routes.otpVerifyUsername);
+                        Get.toNamed(Routes.forgotUsername);
                       },
                       child: Text(
                         'Forgot username?',
