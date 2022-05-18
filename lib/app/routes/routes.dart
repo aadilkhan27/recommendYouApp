@@ -29,4 +29,6 @@ abstract class Routes {
   static const settingPreference= '/settingPreference';
   static const profileView= '/profileView';
   static const deleteAccount= '/deleteAccount';
+  static const helper= '/helper';
+  static const changeLanguage= '/changeLanguage';
 }

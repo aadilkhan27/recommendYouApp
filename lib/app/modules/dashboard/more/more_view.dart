@@ -4,10 +4,15 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:recommend_you/app/core/values/keys.dart';
+import 'package:recommend_you/app/modules/dashboard/more/changecontactdetails/change_contact_view.dart';
+import 'package:recommend_you/app/modules/dashboard/more/changelanguage/change_language_view.dart';
 import 'package:recommend_you/app/modules/dashboard/more/changepassword/change_password_view.dart';
 import 'package:recommend_you/app/modules/dashboard/more/contactus/contact_us_view.dart';
 import 'package:recommend_you/app/modules/dashboard/more/more_controller.dart';
+import 'package:recommend_you/app/modules/dashboard/more/privacypolicy/privacy_policy_view.dart';
 import 'package:recommend_you/app/modules/dashboard/more/settingpreference/preference_view.dart';
+import 'package:recommend_you/app/modules/dashboard/more/termscondition/terms_condition_view.dart';
+import 'package:recommend_you/app/modules/dashboard/more/termscondition/termscondition_binding.dart';
 
 import '../../../routes/pages.dart';
 import 'deletaccount/delete_account_view.dart';
@@ -53,91 +58,71 @@ class MoreView extends GetView<MoreController> {
                 color: Colors.black,
                 height: 1,
               ),
-              Container(
-                padding: EdgeInsets.only(left: 15.0, right: 15.0),
-                child: ListTile(
-                  leading: Icon(Icons.notifications_active_outlined),
-                  title: Text('Notifications'),
-                  onTap: () {
-                    showModalBottomSheet(
-                        context: context,
-                        builder: (context) {
-                          return Wrap(
-                            children: [
-                              ListTile(
-                                title: Text(
-                                  'Receive notifications for :',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                              ListTile(
-                                title: Text('Post shared with me personally'),
-                                trailing: Switch(
-                                  activeColor: Colors.purple,
-                                  activeTrackColor: Colors.purple,
-                                  inactiveThumbColor: Colors.grey,
-                                  inactiveTrackColor: Colors.black12,
-                                  value: true,
-                                  onChanged: (bool value) {},
-                                ),
-                              ),
-                              ListTile(
-                                title: Text('Only posts in chosen categories'),
-                                trailing: Switch(
-                                  activeColor: Colors.purple,
-                                  activeTrackColor: Colors.purple,
-                                  inactiveThumbColor: Colors.grey,
-                                  inactiveTrackColor: Colors.black12,
-                                  value: false,
-                                  onChanged: (bool value) {},
-                                ),
-                              ),
-                              ListTile(
-                                title: Text(
-                                    'Post shared with me in helpers section'),
-                                trailing: Switch(
-                                  activeColor: Colors.purple,
-                                  activeTrackColor: Colors.purple,
-                                  inactiveThumbColor: Colors.grey,
-                                  inactiveTrackColor: Colors.black12,
-                                  value: true,
-                                  onChanged: (bool value) {},
-                                ),
-                              ),
-                              ListTile(
-                                title: Text('message responses to posts'),
-                                trailing: Switch(
-                                  activeColor: Colors.purple,
-                                  activeTrackColor: Colors.purple,
-                                  inactiveThumbColor: Colors.grey,
-                                  inactiveTrackColor: Colors.black12,
-                                  value: true,
-                                  onChanged: (bool value) {},
-                                ),
-                              ),
-                              ListTile(
-                                title:
-                                Text('message responses in helper section'),
-                                trailing: Switch(
-                                  activeColor: Colors.purple,
-                                  activeTrackColor: Colors.purple,
-                                  inactiveThumbColor: Colors.grey,
-                                  inactiveTrackColor: Colors.black12,
-                                  value: false,
-                                  onChanged: (bool value) {},
-                                ),
-                              ),
-                            ],
-                          );
-                        });
-                  },
+              Expanded(
+                  child: SingleChildScrollView(
+                      child: Column(children: [
+                /*Container(
+                  padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                  child: ListTile(
+                      leading: Icon(Icons.privacy_tip_outlined),
+                      title: Text('Privacy'),
+                      onTap: () {
+                        showModalBottomSheet(
+                            context: context,
+                            builder: (context) {
+                              return Wrap(
+                                children: [
+                                  ListTile(
+                                    title: Text(
+                                      'Privacy Settings',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                  ListTile(
+                                    title: Text('Approve all follow requests'),
+                                    trailing: Switch(
+                                      activeColor: Colors.purple,
+                                      activeTrackColor: Colors.purple,
+                                      inactiveThumbColor: Colors.grey,
+                                      inactiveTrackColor: Colors.black12,
+                                      value: true,
+                                      onChanged: (bool value) {},
+                                    ),
+                                  ),
+                                  ListTile(
+                                    title: Text('Show me in search result'),
+                                    trailing: Switch(
+                                      activeColor: Colors.purple,
+                                      activeTrackColor: Colors.purple,
+                                      inactiveThumbColor: Colors.grey,
+                                      inactiveTrackColor: Colors.black12,
+                                      value: false,
+                                      onChanged: (bool value) {},
+                                    ),
+                                  ),
+                                  ListTile(
+                                    title: Text(
+                                        'Show my bio also to non-followers'),
+                                    trailing: Switch(
+                                      activeColor: Colors.purple,
+                                      activeTrackColor: Colors.purple,
+                                      inactiveThumbColor: Colors.grey,
+                                      inactiveTrackColor: Colors.black12,
+                                      value: false,
+                                      onChanged: (bool value) {},
+                                    ),
+                                  ),
+                                ],
+                              );
+                            });
+                      }),
                 ),
-              ),
-              Container(
-                padding: EdgeInsets.only(left: 15.0, right: 15.0),
-                child: ListTile(
-                    leading: Icon(Icons.privacy_tip_outlined),
-                    title: Text('Privacy'),
+                Container(
+                  padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                  child: ListTile(
+                    leading: Icon(Icons.notifications_active_outlined),
+                    title: Text('Notifications'),
                     onTap: () {
                       showModalBottomSheet(
                           context: context,
@@ -146,12 +131,13 @@ class MoreView extends GetView<MoreController> {
                               children: [
                                 ListTile(
                                   title: Text(
-                                    'Privacy Settings',
-                                    style: TextStyle(fontWeight: FontWeight.bold),
+                                    'Receive notifications for :',
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
                                   ),
                                 ),
                                 ListTile(
-                                  title: Text('Approve all follow requests'),
+                                  title: Text('Post shared with me personally'),
                                   trailing: Switch(
                                     activeColor: Colors.purple,
                                     activeTrackColor: Colors.purple,
@@ -162,7 +148,8 @@ class MoreView extends GetView<MoreController> {
                                   ),
                                 ),
                                 ListTile(
-                                  title: Text('Show me in search result'),
+                                  title:
+                                      Text('Only posts in chosen categories'),
                                   trailing: Switch(
                                     activeColor: Colors.purple,
                                     activeTrackColor: Colors.purple,
@@ -173,8 +160,31 @@ class MoreView extends GetView<MoreController> {
                                   ),
                                 ),
                                 ListTile(
-                                  title:
-                                  Text('Show my bio also to non-followers'),
+                                  title: Text(
+                                      'Post shared with me in helpers section'),
+                                  trailing: Switch(
+                                    activeColor: Colors.purple,
+                                    activeTrackColor: Colors.purple,
+                                    inactiveThumbColor: Colors.grey,
+                                    inactiveTrackColor: Colors.black12,
+                                    value: true,
+                                    onChanged: (bool value) {},
+                                  ),
+                                ),
+                                ListTile(
+                                  title: Text('message responses to posts'),
+                                  trailing: Switch(
+                                    activeColor: Colors.purple,
+                                    activeTrackColor: Colors.purple,
+                                    inactiveThumbColor: Colors.grey,
+                                    inactiveTrackColor: Colors.black12,
+                                    value: true,
+                                    onChanged: (bool value) {},
+                                  ),
+                                ),
+                                ListTile(
+                                  title: Text(
+                                      'message responses in helper section'),
                                   trailing: Switch(
                                     activeColor: Colors.purple,
                                     activeTrackColor: Colors.purple,
@@ -187,29 +197,70 @@ class MoreView extends GetView<MoreController> {
                               ],
                             );
                           });
-                    }),
-              ),
-              Container(
-                padding: EdgeInsets.only(left: 15.0, right: 15.0),
-                child: ListTile(
-                  leading: Icon(Icons.phone),
-                  title: Text('Change contact details'),
-                  onTap: () {
-                    Get.offNamed(Routes.changeContact);
-                  },
+                    },
+                  ),
                 ),
-              ),
-              Container(
-                padding: EdgeInsets.only(left: 15.0, right: 15.0),
-                child: ListTile(
-                  leading: Icon(Icons.delete),
-                  title: Text('Delete Account'),
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (builder) => DeleteAccountView()));
-                  },
-                  //TODO
-                  /*showModalBottomSheet<dynamic>(
+                Container(
+                  padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                  child: ListTile(
+                    leading: Icon(Icons.settings),
+                    title: Text('Setting Preference'),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (builder) => PreferenceView()));
+                    },
+                  ),
+                ),
+                */
+
+                        Container(
+                          padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                          child: ListTile(
+                            leading: Icon(Icons.phone),
+                            title: Text('Language Change'),
+                            onTap: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (builder) => ChangeLangugaeView()));
+                            },
+                          ),
+                        ),
+                Container(
+                  padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                  child: ListTile(
+                    leading: Icon(Icons.phone),
+                    title: Text('Change contact details'),
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (builder) => ChangeContactView()));
+                    },
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                  child: ListTile(
+                    leading: Icon(Icons.lock),
+                    title: Text('Change Password'),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (builder) => ChangePasswordView()));
+                    },
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                  child: ListTile(
+                    leading: Icon(Icons.delete),
+                    title: Text('Delete Account'),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (builder) => DeleteAccountView()));
+                    },
+                    //TODO
+                    /*showModalBottomSheet<dynamic>(
                       isScrollControlled: true,
                         context: context,
                         builder: (context) {
@@ -303,34 +354,49 @@ class MoreView extends GetView<MoreController> {
                           );
                         });
                   },*/
+                  ),
                 ),
-              ),
-              Container(
-                padding: EdgeInsets.only(left: 15.0, right: 15.0),
-                child: ListTile(
-                  leading: Icon(Icons.lock),
-                  title: Text('Change Password'),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (builder) => ChangePasswordView()));
-                  },
+                Container(
+                  padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                  child: ListTile(
+                    leading: Icon(Icons.phone),
+                    title: Text('Terms and Conditions'),
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (builder) => TermsConditionView()));
+                    },
+                  ),
                 ),
-              ),
-              Container(
-                padding: EdgeInsets.only(left: 15.0, right: 15.0),
-                child: ListTile(
-                  leading: Icon(Icons.settings),
-                  title: Text('Setting Preference'),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (builder) => PreferenceView()));
-                  },
+                Container(
+                  padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                  child: ListTile(
+                    leading: Icon(Icons.delete),
+                    title: Text('Privacy Policy'),
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (builder) => PrivacyPolicyView()));
+                    },
+                  ),
                 ),
-              ),
+                Container(
+                  padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                  child: ListTile(
+                    leading: Icon(Icons.lock),
+                    title: Text('FAQ'),
+                    onTap: () {
+                      //Navigator.push(context, MaterialPageRoute(builder: (builder) => ChangePasswordView()));
+                    },
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                  child: ListTile(
+                    leading: Icon(Icons.settings),
+                    title: Text('Contact Us'),
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (builder) => ContactUsView()));
+                    },
+                  ),
+                ),
+              ])))
             ],
           ),
         ),

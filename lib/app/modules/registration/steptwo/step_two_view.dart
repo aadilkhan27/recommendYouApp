@@ -106,9 +106,6 @@ class StepTwoView extends GetView<StepTwoController> {
                       ],
                     ),
                   ),
-                  SizedBox(
-                    height: 20,
-                  ),
                   Text(
                     addProfilePicture,
                     style:
@@ -118,8 +115,8 @@ class StepTwoView extends GetView<StepTwoController> {
                     height: 30,
                   ),
                   Container(
-                    width: 80.0,
-                    height: 80.0,
+                    width: 100.0,
+                    height: 100.0,
                     decoration: new BoxDecoration(
                       shape: BoxShape.circle,
                       image: new DecorationImage(
@@ -129,7 +126,7 @@ class StepTwoView extends GetView<StepTwoController> {
                     ),
                   ),
                   SizedBox(
-                    height: 30,
+                    height: 20,
                   ),
                   Text(
                     whatYearBorn,
@@ -138,7 +135,7 @@ class StepTwoView extends GetView<StepTwoController> {
                   ),
                   Container(
                     height: 40,
-                    margin: EdgeInsets.only(right: 95, left: 95, top: 25),
+                    margin: EdgeInsets.only(right: 95, left: 95, top: 20),
                     child: DropdownButtonFormField2(
                       decoration: InputDecoration(
                         isDense: true,
@@ -203,7 +200,7 @@ class StepTwoView extends GetView<StepTwoController> {
                     ),
                   ),
                   SizedBox(
-                    height: 10,
+                    height: 20,
                   ),
                   Container(
                     margin: EdgeInsets.only(left: 50, right: 50),
@@ -260,7 +257,7 @@ class StepTwoView extends GetView<StepTwoController> {
                     ),
                   ),
                   SizedBox(
-                    height: 30,
+                    height: 20,
                   ),
                   Container(
                     margin: EdgeInsets.only(left: 60),
@@ -273,10 +270,13 @@ class StepTwoView extends GetView<StepTwoController> {
                       ),
                     ),
                   ),
+                  SizedBox(
+                    height: 20,
+                  ),
                   Container(
-                    margin: EdgeInsets.only(left: 30, right: 40, top: 10),
+                    margin: EdgeInsets.only(left: 30, right: 40, top: 0),
                     child: Padding(
-                      padding: EdgeInsets.only(left: 30, right: 30, top: 10),
+                      padding: EdgeInsets.only(left: 30, right: 30),
                       child: TextField(
                         cursorColor: Colors.black,
                         maxLength: 10,

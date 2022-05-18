@@ -8,6 +8,8 @@ import 'package:recommend_you/app/core/values/strings.dart';
 import 'package:recommend_you/app/modules/profile/profile_view.dart';
 import 'package:recommend_you/app/widgets/dropdown_button2.dart';
 
+import '../../../core/values/colors.dart';
+import 'helper/helper_view.dart';
 import 'home_controller.dart';
 
 // commend
@@ -78,13 +80,13 @@ class HomeView extends GetView<HomeController> {
                         child: VerticalDivider(
                           color: Colors.black,
                           thickness: 1,
-                          width: 20,
+                          width: 10,
                         ),
                       ),
                       Container(
                         height: 30,
                         width: MediaQuery.of(context).size.width / 2.5,
-                        margin: EdgeInsets.only(right: 15, left: 15),
+                        margin: EdgeInsets.only(right: 0, left: 0),
                         child: DropdownButtonFormField2(
                           decoration: InputDecoration(
                             isDense: true,
@@ -108,18 +110,14 @@ class HomeView extends GetView<HomeController> {
                           iconSize: 30,
                           buttonHeight: 60,
                           buttonPadding:
-                          const EdgeInsets.only(left: 20, right: 10),
+                          const EdgeInsets.only(left: 10, right: 10),
                           dropdownDecoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(5),
+                            color: veryLightGreyColor
                           ),
-                          items: spinnerItems
-                              .map((item) => DropdownMenuItem<String>(
+                          items: spinnerItems.map((item) => DropdownMenuItem<String>(
                             value: item,
-                            child: Text(
-                              item,
-                              style: const TextStyle(
-                                  fontSize: 12, color: Colors.purple),
-                            ),
+                            child: Text(item, style: const TextStyle(fontSize: 12, color: Colors.black),),
                           ))
                               .toList(),
                           validator: (value) {
@@ -140,14 +138,20 @@ class HomeView extends GetView<HomeController> {
                         child: VerticalDivider(
                           color: Colors.black,
                           thickness: 1,
-                          width: 20,
+                          width: 10,
                         ),
                       ),
-                      Image(
+                      InkWell(child: Image(
                         image: AssetImage(icChatDuplicate),
                         width: 20,
                         height: 30,
-                      ),
+                      ),onTap: (){
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (builder) => HelperView()));
+
+                      },),
                       InkWell(child: SvgPicture.asset(icUser),onTap: (){
                         Navigator.push(
                             context,
@@ -173,6 +177,7 @@ class HomeView extends GetView<HomeController> {
                               height: 60,
                               width: MediaQuery.of(context).size.width,
                               child: Row(
+                                //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                 children: [
                                   SizedBox(
                                     width: 20,
@@ -186,44 +191,26 @@ class HomeView extends GetView<HomeController> {
                                               fit: BoxFit.fill,
                                               image: AssetImage(user1)))),
                                   SizedBox(
-                                    width: 20,
+                                    width: 15,
                                   ),
                                   Container(
                                     margin: EdgeInsets.only(top: 10),
                                     child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                      CrossAxisAlignment.start,
-                                      children: [
-                                        Container(
-                                          child: Row(
-                                            children: [
-                                              Text(
-                                                'Ramon Ricardo',
-                                                style: TextStyle(
-                                                    fontSize: 14,
-                                                    fontWeight:
-                                                    FontWeight.bold),
-                                              ),
-                                              SizedBox(
-                                                width: 120,
-                                              ),
-                                              Text(
-                                                '08-09-2021',
-                                                style: TextStyle(
-                                                    fontWeight: FontWeight.normal,
-                                                    fontSize: 12),
-                                              ),
-                                              SizedBox(
-                                                width: 20,
-                                              ),
-                                              SvgPicture.asset(icMoreHorizontal)
-                                            ],
+                                        mainAxisAlignment: MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                        children : [
+                                          Text(
+                                            'Ramon Ricardo',
+                                            style: TextStyle(
+                                                fontSize: 14,
+                                                fontWeight:
+                                                FontWeight.bold),
                                           ),
-                                        ),
-                                        Container(
-                                          margin:  EdgeInsets.only(top: 5),
-                                          child: Row(
+                                          SizedBox(
+                                            height: 5,
+                                          ),
+                                          Row(
                                             children: [
                                               SvgPicture.asset(icTagArrow),
                                               Text(
@@ -234,9 +221,53 @@ class HomeView extends GetView<HomeController> {
                                               )
                                             ],
                                           ),
-                                        )
-                                      ],
+                                        ]
                                     ),
+                                  ),
+                                  Spacer(),
+                                  Container(
+                                      child: Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              '08-09-2021',
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.normal,
+                                                  fontSize: 12),
+                                            ),
+                                            SizedBox(
+                                              width: 10,
+                                            ),
+                                            InkWell(
+                                              child: SvgPicture.asset(icMoreHorizontal),
+                                              onTap: () {
+                                                showModalBottomSheet(
+                                                    context: context,
+                                                    builder: (context) {
+                                                      return Wrap(
+                                                        children: [
+                                                          ListTile(
+                                                            title: Text(
+                                                                'Don\'t show me this again'),
+                                                          ),
+                                                          ListTile(
+                                                            title: Text('Report as spam'),
+                                                          ),
+                                                          ListTile(
+                                                            title: Text(
+                                                                'Report as inappropriate content'),
+                                                          ),
+                                                        ],
+                                                      );
+                                                    });
+                                              },
+                                            ),
+                                          ]
+                                      )
+                                  ),
+                                  SizedBox(
+                                    width: 10,
                                   ),
                                 ],
                               ),
@@ -254,34 +285,8 @@ class HomeView extends GetView<HomeController> {
                                   left: 20, right: 20, top: 10, bottom: 20),
                               child: Row(
                                 children: [
-                                  InkWell(
-                                    child: SvgPicture.asset(icHeart),
-                                    onTap: () {
-                                      showModalBottomSheet(
-                                          context: context,
-                                          builder: (context) {
-                                            return Wrap(
-                                              children: [
-                                                ListTile(
-                                                  title: Text('Save this post'),
-                                                ),
-                                                ListTile(
-                                                  title: Text(
-                                                      'Don\'t show me this again'),
-                                                ),
-                                                ListTile(
-                                                  title: Text('Report as spam'),
-                                                ),
-                                                ListTile(
-                                                  title: Text(
-                                                      'Report as inappropriate content'),
-                                                ),
-                                              ],
-                                            );
-                                          });
-                                    },
-                                  ),
-                                  SizedBox(
+                                  SvgPicture.asset(icHeart),
+                                  /*SizedBox(
                                     width: 20,
                                   ),
                                   SvgPicture.asset(icComment),
@@ -326,7 +331,7 @@ class HomeView extends GetView<HomeController> {
                                             );
                                           });
                                     },
-                                  ),
+                                  ),*/
                                   Spacer(),
                                   SvgPicture.asset(icCombinedShape),
                                 ],
@@ -344,6 +349,7 @@ class HomeView extends GetView<HomeController> {
                               height: 60,
                               width: MediaQuery.of(context).size.width,
                               child: Row(
+                                //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                 children: [
                                   SizedBox(
                                     width: 20,
@@ -357,47 +363,74 @@ class HomeView extends GetView<HomeController> {
                                               fit: BoxFit.fill,
                                               image: AssetImage(user2)))),
                                   SizedBox(
-                                    width: 20,
+                                    width: 15,
                                   ),
                                   Container(
                                     margin: EdgeInsets.only(top: 10),
                                     child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                      CrossAxisAlignment.start,
-                                      children: [
-                                        Container(
-                                          child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                        children : [
+                                          Text(
+                                            'Ramon Ricardo',
+                                            style: TextStyle(
+                                                fontSize: 14,
+                                                fontWeight:
+                                                FontWeight.bold),
+                                          ),
+                                          SizedBox(
+                                            height: 5,
+                                          ),
+                                          Row(
                                             children: [
+                                              SvgPicture.asset(icTagArrow),
                                               Text(
-                                                'Alex David Shared',
+                                                'Category Text Public',
                                                 style: TextStyle(
                                                     fontSize: 14,
-                                                    fontWeight:
-                                                    FontWeight.bold),
-                                              ),
-                                              SizedBox(
-                                                width: 120,
-                                              ),
-                                              SizedBox(
-                                                width: 60,
-                                              ),
-                                              SvgPicture.asset(icMoreHorizontal)
+                                                    fontWeight: FontWeight.bold),
+                                              )
                                             ],
                                           ),
-                                        ),
-                                        SizedBox(
-                                          height: 5,
-                                        ),
-                                        Text(
-                                          '6 min',
-                                          style: TextStyle(
-                                              fontSize: 12,
-                                              color: Colors.grey,
-                                              fontWeight: FontWeight.normal),
-                                        )
-                                      ],
+                                        ]
                                     ),
+                                  ),
+                                  Spacer(),
+                                  Container(
+                                      child: Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            InkWell(
+                                              child: SvgPicture.asset(icMoreHorizontal),
+                                              onTap: () {
+                                                showModalBottomSheet(
+                                                    context: context,
+                                                    builder: (context) {
+                                                      return Wrap(
+                                                        children: [
+                                                          ListTile(
+                                                            title: Text(
+                                                                'Don\'t show me this again'),
+                                                          ),
+                                                          ListTile(
+                                                            title: Text('Report as spam'),
+                                                          ),
+                                                          ListTile(
+                                                            title: Text(
+                                                                'Report as inappropriate content'),
+                                                          ),
+                                                        ],
+                                                      );
+                                                    });
+                                              },
+                                            ),
+                                          ]
+                                      )
+                                  ),
+                                  SizedBox(
+                                    width: 10,
                                   ),
                                 ],
                               ),
@@ -500,34 +533,8 @@ class HomeView extends GetView<HomeController> {
                                   left: 20, right: 20, top: 10, bottom: 20),
                               child: Row(
                                 children: [
-                                  InkWell(
-                                    child: SvgPicture.asset(icHeart),
-                                    onTap: () {
-                                      showModalBottomSheet(
-                                          context: context,
-                                          builder: (context) {
-                                            return Wrap(
-                                              children: [
-                                                ListTile(
-                                                  title: Text('Save this post'),
-                                                ),
-                                                ListTile(
-                                                  title: Text(
-                                                      'Don\'t show me this again'),
-                                                ),
-                                                ListTile(
-                                                  title: Text('Report as spam'),
-                                                ),
-                                                ListTile(
-                                                  title: Text(
-                                                      'Report as inappropriate content'),
-                                                ),
-                                              ],
-                                            );
-                                          });
-                                    },
-                                  ),
-                                  SizedBox(
+                                  SvgPicture.asset(icHeart),
+                                  /*SizedBox(
                                     width: 20,
                                   ),
                                   SvgPicture.asset(icComment),
@@ -572,7 +579,7 @@ class HomeView extends GetView<HomeController> {
                                             );
                                           });
                                     },
-                                  ),
+                                  ),*/
                                   Spacer(),
                                   SvgPicture.asset(icCombinedShape),
                                 ],
@@ -590,6 +597,7 @@ class HomeView extends GetView<HomeController> {
                               height: 60,
                               width: MediaQuery.of(context).size.width,
                               child: Row(
+                                //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                 children: [
                                   SizedBox(
                                     width: 20,
@@ -601,46 +609,28 @@ class HomeView extends GetView<HomeController> {
                                           shape: BoxShape.circle,
                                           image: new DecorationImage(
                                               fit: BoxFit.fill,
-                                              image: AssetImage(user4)))),
+                                              image: AssetImage(user3)))),
                                   SizedBox(
-                                    width: 20,
+                                    width: 15,
                                   ),
                                   Container(
                                     margin: EdgeInsets.only(top: 10),
                                     child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                      CrossAxisAlignment.start,
-                                      children: [
-                                        Container(
-                                          child: Row(
-                                            children: [
-                                              Text(
-                                                'Ramon Ricardo',
-                                                style: TextStyle(
-                                                    fontSize: 14,
-                                                    fontWeight:
-                                                    FontWeight.normal),
-                                              ),
-                                              SizedBox(
-                                                width: 120,
-                                              ),
-                                              Text(
-                                                '08-09-2021',
-                                                style: TextStyle(
-                                                    fontWeight: FontWeight.normal,
-                                                    fontSize: 12),
-                                              ),
-                                              SizedBox(
-                                                width: 20,
-                                              ),
-                                              SvgPicture.asset(icMoreHorizontal)
-                                            ],
+                                        mainAxisAlignment: MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                        children : [
+                                          Text(
+                                            'Ramon Ricardo',
+                                            style: TextStyle(
+                                                fontSize: 14,
+                                                fontWeight:
+                                                FontWeight.bold),
                                           ),
-                                        ),
-                                        Container(
-                                          margin: EdgeInsets.only(top : 5),
-                                          child: Row(
+                                          SizedBox(
+                                            height: 5,
+                                          ),
+                                          Row(
                                             children: [
                                               SvgPicture.asset(icTagArrow),
                                               Text(
@@ -651,9 +641,53 @@ class HomeView extends GetView<HomeController> {
                                               )
                                             ],
                                           ),
-                                        )
-                                      ],
+                                        ]
                                     ),
+                                  ),
+                                  Spacer(),
+                                  Container(
+                                      child: Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              '08-09-2021',
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.normal,
+                                                  fontSize: 12),
+                                            ),
+                                            SizedBox(
+                                              width: 10,
+                                            ),
+                                            InkWell(
+                                              child: SvgPicture.asset(icMoreHorizontal),
+                                              onTap: () {
+                                                showModalBottomSheet(
+                                                    context: context,
+                                                    builder: (context) {
+                                                      return Wrap(
+                                                        children: [
+                                                          ListTile(
+                                                            title: Text(
+                                                                'Don\'t show me this again'),
+                                                          ),
+                                                          ListTile(
+                                                            title: Text('Report as spam'),
+                                                          ),
+                                                          ListTile(
+                                                            title: Text(
+                                                                'Report as inappropriate content'),
+                                                          ),
+                                                        ],
+                                                      );
+                                                    });
+                                              },
+                                            ),
+                                          ]
+                                      )
+                                  ),
+                                  SizedBox(
+                                    width: 10,
                                   ),
                                 ],
                               ),
@@ -681,34 +715,8 @@ class HomeView extends GetView<HomeController> {
                                   left: 20, right: 20, top: 10, bottom: 20),
                               child: Row(
                                 children: [
-                                  InkWell(
-                                    child: SvgPicture.asset(icHeart),
-                                    onTap: () {
-                                      showModalBottomSheet(
-                                          context: context,
-                                          builder: (context) {
-                                            return Wrap(
-                                              children: [
-                                                ListTile(
-                                                  title: Text('Save this post'),
-                                                ),
-                                                ListTile(
-                                                  title: Text(
-                                                      'Don\'t show me this again'),
-                                                ),
-                                                ListTile(
-                                                  title: Text('Report as spam'),
-                                                ),
-                                                ListTile(
-                                                  title: Text(
-                                                      'Report as inappropriate content'),
-                                                ),
-                                              ],
-                                            );
-                                          });
-                                    },
-                                  ),
-                                  SizedBox(
+                                  SvgPicture.asset(icHeart),
+                                  /*SizedBox(
                                     width: 20,
                                   ),
                                   SvgPicture.asset(icComment),
@@ -753,7 +761,7 @@ class HomeView extends GetView<HomeController> {
                                             );
                                           });
                                     },
-                                  ),
+                                  ),*/
                                   Spacer(),
                                   SvgPicture.asset(icCombinedShape),
                                 ],
@@ -771,6 +779,7 @@ class HomeView extends GetView<HomeController> {
                               height: 60,
                               width: MediaQuery.of(context).size.width,
                               child: Row(
+                                //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                 children: [
                                   SizedBox(
                                     width: 20,
@@ -782,46 +791,28 @@ class HomeView extends GetView<HomeController> {
                                           shape: BoxShape.circle,
                                           image: new DecorationImage(
                                               fit: BoxFit.fill,
-                                              image: AssetImage(user1)))),
+                                              image: AssetImage(user4)))),
                                   SizedBox(
-                                    width: 20,
+                                    width: 15,
                                   ),
                                   Container(
                                     margin: EdgeInsets.only(top: 10),
                                     child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                      CrossAxisAlignment.start,
-                                      children: [
-                                        Container(
-                                          child: Row(
-                                            children: [
-                                              Text(
-                                                'Ramon Ricardo',
-                                                style: TextStyle(
-                                                    fontSize: 14,
-                                                    fontWeight:
-                                                    FontWeight.bold),
-                                              ),
-                                              SizedBox(
-                                                width: 120,
-                                              ),
-                                              Text(
-                                                '08-09-2021',
-                                                style: TextStyle(
-                                                    fontWeight: FontWeight.normal,
-                                                    fontSize: 12),
-                                              ),
-                                              SizedBox(
-                                                width: 20,
-                                              ),
-                                              SvgPicture.asset(icMoreHorizontal)
-                                            ],
+                                        mainAxisAlignment: MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                        children : [
+                                          Text(
+                                            'Ramon Ricardo',
+                                            style: TextStyle(
+                                                fontSize: 14,
+                                                fontWeight:
+                                                FontWeight.bold),
                                           ),
-                                        ),
-                                        Container(
-                                          margin:  EdgeInsets.only(top: 5),
-                                          child: Row(
+                                          SizedBox(
+                                            height: 5,
+                                          ),
+                                          Row(
                                             children: [
                                               SvgPicture.asset(icTagArrow),
                                               Text(
@@ -832,9 +823,53 @@ class HomeView extends GetView<HomeController> {
                                               )
                                             ],
                                           ),
-                                        )
-                                      ],
+                                        ]
                                     ),
+                                  ),
+                                  Spacer(),
+                                  Container(
+                                      child: Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              '08-09-2021',
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.normal,
+                                                  fontSize: 12),
+                                            ),
+                                            SizedBox(
+                                              width: 10,
+                                            ),
+                                            InkWell(
+                                              child: SvgPicture.asset(icMoreHorizontal),
+                                              onTap: () {
+                                                showModalBottomSheet(
+                                                    context: context,
+                                                    builder: (context) {
+                                                      return Wrap(
+                                                        children: [
+                                                          ListTile(
+                                                            title: Text(
+                                                                'Don\'t show me this again'),
+                                                          ),
+                                                          ListTile(
+                                                            title: Text('Report as spam'),
+                                                          ),
+                                                          ListTile(
+                                                            title: Text(
+                                                                'Report as inappropriate content'),
+                                                          ),
+                                                        ],
+                                                      );
+                                                    });
+                                              },
+                                            ),
+                                          ]
+                                      )
+                                  ),
+                                  SizedBox(
+                                    width: 10,
                                   ),
                                 ],
                               ),
@@ -853,34 +888,8 @@ class HomeView extends GetView<HomeController> {
                                   left: 20, right: 20, top: 10, bottom: 20),
                               child: Row(
                                 children: [
-                                  InkWell(
-                                    child: SvgPicture.asset(icHeart),
-                                    onTap: () {
-                                      showModalBottomSheet(
-                                          context: context,
-                                          builder: (context) {
-                                            return Wrap(
-                                              children: [
-                                                ListTile(
-                                                  title: Text('Save this post'),
-                                                ),
-                                                ListTile(
-                                                  title: Text(
-                                                      'Don\'t show me this again'),
-                                                ),
-                                                ListTile(
-                                                  title: Text('Report as spam'),
-                                                ),
-                                                ListTile(
-                                                  title: Text(
-                                                      'Report as inappropriate content'),
-                                                ),
-                                              ],
-                                            );
-                                          });
-                                    },
-                                  ),
-                                  SizedBox(
+                                  SvgPicture.asset(icHeart),
+                                  /*SizedBox(
                                     width: 20,
                                   ),
                                   SvgPicture.asset(icComment),
@@ -925,7 +934,7 @@ class HomeView extends GetView<HomeController> {
                                             );
                                           });
                                     },
-                                  ),
+                                  ),*/
                                   Spacer(),
                                   SvgPicture.asset(icCombinedShape),
                                 ],
@@ -943,6 +952,7 @@ class HomeView extends GetView<HomeController> {
                               height: 60,
                               width: MediaQuery.of(context).size.width,
                               child: Row(
+                                //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                 children: [
                                   SizedBox(
                                     width: 20,
@@ -954,46 +964,28 @@ class HomeView extends GetView<HomeController> {
                                           shape: BoxShape.circle,
                                           image: new DecorationImage(
                                               fit: BoxFit.fill,
-                                              image: AssetImage(user2)))),
+                                              image: AssetImage(user1)))),
                                   SizedBox(
-                                    width: 20,
+                                    width: 15,
                                   ),
                                   Container(
                                     margin: EdgeInsets.only(top: 10),
                                     child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                      CrossAxisAlignment.start,
-                                      children: [
-                                        Container(
-                                          child: Row(
-                                            children: [
-                                              Text(
-                                                'Ramon Ricardo',
-                                                style: TextStyle(
-                                                    fontSize: 14,
-                                                    fontWeight:
-                                                    FontWeight.normal),
-                                              ),
-                                              SizedBox(
-                                                width: 120,
-                                              ),
-                                              Text(
-                                                '08-09-2021',
-                                                style: TextStyle(
-                                                    fontWeight: FontWeight.normal,
-                                                    fontSize: 12),
-                                              ),
-                                              SizedBox(
-                                                width: 20,
-                                              ),
-                                              SvgPicture.asset(icMoreHorizontal)
-                                            ],
+                                        mainAxisAlignment: MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                        children : [
+                                          Text(
+                                            'Ramon Ricardo',
+                                            style: TextStyle(
+                                                fontSize: 14,
+                                                fontWeight:
+                                                FontWeight.bold),
                                           ),
-                                        ),
-                                        Container(
-                                          margin: EdgeInsets.only(top : 5),
-                                          child: Row(
+                                          SizedBox(
+                                            height: 5,
+                                          ),
+                                          Row(
                                             children: [
                                               SvgPicture.asset(icTagArrow),
                                               Text(
@@ -1004,9 +996,53 @@ class HomeView extends GetView<HomeController> {
                                               )
                                             ],
                                           ),
-                                        )
-                                      ],
+                                        ]
                                     ),
+                                  ),
+                                  Spacer(),
+                                  Container(
+                                      child: Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              '08-09-2021',
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.normal,
+                                                  fontSize: 12),
+                                            ),
+                                            SizedBox(
+                                              width: 10,
+                                            ),
+                                            InkWell(
+                                              child: SvgPicture.asset(icMoreHorizontal),
+                                              onTap: () {
+                                                showModalBottomSheet(
+                                                    context: context,
+                                                    builder: (context) {
+                                                      return Wrap(
+                                                        children: [
+                                                          ListTile(
+                                                            title: Text(
+                                                                'Don\'t show me this again'),
+                                                          ),
+                                                          ListTile(
+                                                            title: Text('Report as spam'),
+                                                          ),
+                                                          ListTile(
+                                                            title: Text(
+                                                                'Report as inappropriate content'),
+                                                          ),
+                                                        ],
+                                                      );
+                                                    });
+                                              },
+                                            ),
+                                          ]
+                                      )
+                                  ),
+                                  SizedBox(
+                                    width: 10,
                                   ),
                                 ],
                               ),
@@ -1034,34 +1070,8 @@ class HomeView extends GetView<HomeController> {
                                   left: 20, right: 20, top: 10, bottom: 20),
                               child: Row(
                                 children: [
-                                  InkWell(
-                                    child: SvgPicture.asset(icHeart),
-                                    onTap: () {
-                                      showModalBottomSheet(
-                                          context: context,
-                                          builder: (context) {
-                                            return Wrap(
-                                              children: [
-                                                ListTile(
-                                                  title: Text('Save this post'),
-                                                ),
-                                                ListTile(
-                                                  title: Text(
-                                                      'Don\'t show me this again'),
-                                                ),
-                                                ListTile(
-                                                  title: Text('Report as spam'),
-                                                ),
-                                                ListTile(
-                                                  title: Text(
-                                                      'Report as inappropriate content'),
-                                                ),
-                                              ],
-                                            );
-                                          });
-                                    },
-                                  ),
-                                  SizedBox(
+                                  SvgPicture.asset(icHeart),
+                                  /*SizedBox(
                                     width: 20,
                                   ),
                                   SvgPicture.asset(icComment),
@@ -1106,7 +1116,7 @@ class HomeView extends GetView<HomeController> {
                                             );
                                           });
                                     },
-                                  ),
+                                  ),*/
                                   Spacer(),
                                   SvgPicture.asset(icCombinedShape),
                                 ],
@@ -1124,6 +1134,7 @@ class HomeView extends GetView<HomeController> {
                               height: 60,
                               width: MediaQuery.of(context).size.width,
                               child: Row(
+                                //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                 children: [
                                   SizedBox(
                                     width: 20,
@@ -1135,49 +1146,79 @@ class HomeView extends GetView<HomeController> {
                                           shape: BoxShape.circle,
                                           image: new DecorationImage(
                                               fit: BoxFit.fill,
-                                              image: AssetImage(user4)))),
+                                              image: AssetImage(user2)))),
                                   SizedBox(
-                                    width: 20,
+                                    width: 15,
                                   ),
                                   Container(
                                     margin: EdgeInsets.only(top: 10),
                                     child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                      CrossAxisAlignment.start,
-                                      children: [
-                                        Container(
-                                          child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                        children : [
+                                          Text(
+                                            'Ramon Ricardo',
+                                            style: TextStyle(
+                                                fontSize: 14,
+                                                fontWeight:
+                                                FontWeight.bold),
+                                          ),
+                                          SizedBox(
+                                            height: 5,
+                                          ),
+                                          Row(
                                             children: [
+                                              SvgPicture.asset(icTagArrow),
                                               Text(
-                                                'Alex David Shared',
+                                                'Category Text Public',
                                                 style: TextStyle(
                                                     fontSize: 14,
-                                                    fontWeight:
-                                                    FontWeight.bold),
-                                              ),
-                                              SizedBox(
-                                                width: 120,
-                                              ),
-                                              SizedBox(
-                                                width: 60,
-                                              ),
-                                              SvgPicture.asset(icMoreHorizontal)
+                                                    fontWeight: FontWeight.bold),
+                                              )
                                             ],
                                           ),
-                                        ),
-                                        SizedBox(
-                                          height: 5,
-                                        ),
-                                        Text(
-                                          '6 min',
-                                          style: TextStyle(
-                                              fontSize: 12,
-                                              color: Colors.grey,
-                                              fontWeight: FontWeight.normal),
-                                        )
-                                      ],
+                                        ]
                                     ),
+                                  ),
+                                  Spacer(),
+                                  Container(
+                                      child: Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            SizedBox(
+                                              width: 10,
+                                            ),
+                                            InkWell(
+                                              child: SvgPicture.asset(icMoreHorizontal),
+                                              onTap: () {
+                                                showModalBottomSheet(
+                                                    context: context,
+                                                    builder: (context) {
+                                                      return Wrap(
+                                                        children: [
+                                                          ListTile(
+                                                            title: Text(
+                                                                'Don\'t show me this again'),
+                                                          ),
+                                                          ListTile(
+                                                            title: Text('Report as spam'),
+                                                          ),
+                                                          ListTile(
+                                                            title: Text(
+                                                                'Report as inappropriate content'),
+                                                          ),
+                                                        ],
+                                                      );
+                                                    });
+                                              },
+                                            ),
+                                          ]
+                                      )
+                                  ),
+                                  SizedBox(
+                                    width: 10,
                                   ),
                                 ],
                               ),
@@ -1279,34 +1320,8 @@ class HomeView extends GetView<HomeController> {
                                   left: 20, right: 20, top: 10, bottom: 20),
                               child: Row(
                                 children: [
-                                  InkWell(
-                                    child: SvgPicture.asset(icHeart),
-                                    onTap: () {
-                                      showModalBottomSheet(
-                                          context: context,
-                                          builder: (context) {
-                                            return Wrap(
-                                              children: [
-                                                ListTile(
-                                                  title: Text('Save this post'),
-                                                ),
-                                                ListTile(
-                                                  title: Text(
-                                                      'Don\'t show me this again'),
-                                                ),
-                                                ListTile(
-                                                  title: Text('Report as spam'),
-                                                ),
-                                                ListTile(
-                                                  title: Text(
-                                                      'Report as inappropriate content'),
-                                                ),
-                                              ],
-                                            );
-                                          });
-                                    },
-                                  ),
-                                  SizedBox(
+                                  SvgPicture.asset(icHeart),
+                                  /*SizedBox(
                                     width: 20,
                                   ),
                                   SvgPicture.asset(icComment),
@@ -1351,7 +1366,7 @@ class HomeView extends GetView<HomeController> {
                                             );
                                           });
                                     },
-                                  ),
+                                  ),*/
                                   Spacer(),
                                   SvgPicture.asset(icCombinedShape),
                                 ],
