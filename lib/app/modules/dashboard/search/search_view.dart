@@ -27,6 +27,7 @@ class SearchView extends GetView<SearchController> {
             tabs: _tabx.myTabs,
           ),
         ),
+
         body: TabBarView(
           controller: _tabx.controller,
           children: [SearchPostView(), SearchPeopleView()],
