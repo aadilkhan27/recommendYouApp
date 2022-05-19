@@ -140,7 +140,7 @@ class ForgotPasswordView extends GetView<ForgotPasswordController> {
                 InkWell(
                   onTap: () {
                     //do something
-                    Get.offNamed(Routes.otpVerify);
+                    Get.toNamed(Routes.otpVerify);
                   },
                   child: Container(
                     margin: const EdgeInsets.only(left: 45,right: 45),

@@ -309,7 +309,7 @@ class StepThreeView extends GetView<StepThreeController> {
                           margin: EdgeInsets.only(left: 10, right: 10),
                           child: TextButton(
                               onPressed: () {
-                                Get.offNamed(Routes.signUpStepFour);
+                                Get.toNamed(Routes.signUpStepFour);
                               },
                               child: Text('NEXT',
                                   style: TextStyle(
