@@ -23,10 +23,10 @@ class ContactUsView extends GetView<ContactUsController> {
       child: Scaffold(
         resizeToAvoidBottomInset: true,
         backgroundColor: whiteColor,
-        body: Stack(
-          children: [
-            SingleChildScrollView(
-              child: SafeArea(
+        body: SingleChildScrollView(
+          child: Stack(
+            children: [
+              SafeArea(
                 child: Container(
                   height: MediaQuery.of(context).size.height,
                   width: MediaQuery.of(context).size.width,
@@ -154,35 +154,38 @@ class ContactUsView extends GetView<ContactUsController> {
                   ),
                 ),
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(bottom: 20),
-              child: Align(
-                alignment: Alignment.bottomCenter,
-                child: InkWell(
-                  onTap: () {
-                    Get.back();
-                  },
-                  child: Container(
-                    margin: const EdgeInsets.all(25),
-                    height: 50,
-                    width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                        color: Colors.purple,
-                        border: Border.all(color: Colors.purple),
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(5))),
-                    alignment: Alignment.center,
-                    child: const Text(
-                      'SUBMIT',
-                      style: TextStyle(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+              Positioned(
+                right: 0,left: 0,bottom: 0,
+                child: Padding(
+                  padding: EdgeInsets.only(bottom: 20),
+                  child: Align(
+                    alignment: Alignment.bottomCenter,
+                    child: InkWell(
+                      onTap: () {
+                        Get.back();
+                      },
+                      child: Container(
+                        margin: const EdgeInsets.all(25),
+                        height: 50,
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(
+                            color: Colors.purple,
+                            border: Border.all(color: Colors.purple),
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(5))),
+                        alignment: Alignment.center,
+                        child: const Text(
+                          'SUBMIT',
+                          style: TextStyle(
+                              color: Colors.white, fontWeight: FontWeight.bold),
+                        ),
+                      ),
                     ),
                   ),
                 ),
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );

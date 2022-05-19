@@ -29,10 +29,10 @@ class StepTwoView extends GetView<StepTwoController> {
       child: Scaffold(
         resizeToAvoidBottomInset: true,
         backgroundColor: whiteColor,
-        body: Stack(
-          children: [
-            SingleChildScrollView(
-              child: Container(
+        body: SingleChildScrollView(
+          child: Stack(
+            children: [
+              Container(
                 height: MediaQuery.of(context).size.height,
                 width: MediaQuery.of(context).size.width,
                 child: Column(
@@ -317,60 +317,63 @@ class StepTwoView extends GetView<StepTwoController> {
                   ],
                 ),
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(bottom: 40, left: 10, right: 10),
-              child: Align(
-                alignment: Alignment.bottomCenter,
-                child: Container(
-                  child: Row(
-                    children: [
-                      Container(
-                        height: 35,
-                        width: 60,
-                        margin: const EdgeInsets.only(left: 10, right: 10),
-                        decoration: BoxDecoration(
-                            color: primaryDarkColor,
-                            border: Border.all(color: primaryDarkColor),
-                            borderRadius:
-                                const BorderRadius.all(Radius.circular(5))),
-                        child: TextButton(
-                            onPressed: () {
-                              Get.back();
-                            },
-                            child: Text(
-                              'BACK',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold),
-                            )),
-                      ),
-                      Spacer(),
-                      Container(
-                          height: 35,
-                          width: 60,
-                          decoration: BoxDecoration(
-                              color: primaryDarkColor,
-                              border: Border.all(color: primaryDarkColor),
-                              borderRadius:
-                                  const BorderRadius.all(Radius.circular(5))),
-                          margin: EdgeInsets.only(left: 10, right: 10),
-                          child: TextButton(
-                              onPressed: () {
-                                Get.toNamed(Routes.signUpStepThree);
-                              },
-                              child: Text('NEXT',
+              Positioned(
+                right: 0,left: 0,bottom: 0,
+                child: Padding(
+                  padding: EdgeInsets.only(bottom: 40, left: 10, right: 10),
+                  child: Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Container(
+                      child: Row(
+                        children: [
+                          Container(
+                            height: 35,
+                            width: 60,
+                            margin: const EdgeInsets.only(left: 10, right: 10),
+                            decoration: BoxDecoration(
+                                color: primaryDarkColor,
+                                border: Border.all(color: primaryDarkColor),
+                                borderRadius:
+                                    const BorderRadius.all(Radius.circular(5))),
+                            child: TextButton(
+                                onPressed: () {
+                                  Get.back();
+                                },
+                                child: Text(
+                                  'BACK',
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 12,
-                                      fontWeight: FontWeight.bold))))
-                    ],
+                                      fontWeight: FontWeight.bold),
+                                )),
+                          ),
+                          Spacer(),
+                          Container(
+                              height: 35,
+                              width: 60,
+                              decoration: BoxDecoration(
+                                  color: primaryDarkColor,
+                                  border: Border.all(color: primaryDarkColor),
+                                  borderRadius:
+                                      const BorderRadius.all(Radius.circular(5))),
+                              margin: EdgeInsets.only(left: 10, right: 10),
+                              child: TextButton(
+                                  onPressed: () {
+                                    Get.toNamed(Routes.signUpStepThree);
+                                  },
+                                  child: Text('NEXT',
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.bold))))
+                        ],
+                      ),
+                    ),
                   ),
                 ),
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );

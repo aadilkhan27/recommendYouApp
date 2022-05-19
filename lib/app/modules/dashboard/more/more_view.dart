@@ -383,6 +383,7 @@ class MoreView extends GetView<MoreController> {
                     title: Text('FAQ'),
                     onTap: () {
                       //Navigator.push(context, MaterialPageRoute(builder: (builder) => ChangePasswordView()));
+                      Get.toNamed(Routes.faq);
                     },
                   ),
                 ),
