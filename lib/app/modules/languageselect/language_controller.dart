@@ -6,6 +6,6 @@ class LanguageController extends GetxController with GetSingleTickerProviderStat
   @override
   void onInit() {
     super.onInit();
-    Get.offNamed(Routes.signUpStepOne);
+    Get.toNamed(Routes.signUpStepOne);
   }
 }

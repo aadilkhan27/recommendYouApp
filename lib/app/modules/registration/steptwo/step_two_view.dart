@@ -358,7 +358,7 @@ class StepTwoView extends GetView<StepTwoController> {
                           margin: EdgeInsets.only(left: 10, right: 10),
                           child: TextButton(
                               onPressed: () {
-                                Get.offNamed(Routes.signUpStepThree);
+                                Get.toNamed(Routes.signUpStepThree);
                               },
                               child: Text('NEXT',
                                   style: TextStyle(

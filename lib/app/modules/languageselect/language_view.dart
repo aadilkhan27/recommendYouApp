@@ -227,7 +227,6 @@ showAlertDialog(BuildContext context) {
       continueButton,
     ],
   );
-
   // show the dialog
   showDialog(
     context: context,

@@ -6,6 +6,6 @@ class ChangeLanguageController extends GetxController with GetSingleTickerProvid
   @override
   void onInit() {
     super.onInit();
-    Get.offNamed(Routes.changeLanguage);
+    Get.toNamed(Routes.changeLanguage);
   }
 }
