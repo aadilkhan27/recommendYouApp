@@ -15,6 +15,8 @@ import 'package:recommend_you/app/modules/dashboard/more/contactus/contact_us_bi
 import 'package:recommend_you/app/modules/dashboard/more/contactus/contact_us_view.dart';
 import 'package:recommend_you/app/modules/dashboard/more/deletaccount/delete_account_binding.dart';
 import 'package:recommend_you/app/modules/dashboard/more/deletaccount/delete_account_view.dart';
+import 'package:recommend_you/app/modules/dashboard/more/faq/faq_binding.dart';
+import 'package:recommend_you/app/modules/dashboard/more/faq/faq_view.dart';
 import 'package:recommend_you/app/modules/dashboard/more/more_binding.dart';
 import 'package:recommend_you/app/modules/dashboard/more/more_view.dart';
 import 'package:recommend_you/app/modules/dashboard/notification/notification_binding.dart';
@@ -98,5 +100,6 @@ class AppPages {
     GetPage(name: Routes.helper, page: () => HelperView(), binding: HelperBinding()),
     GetPage(name: Routes.changeLanguage, page: () => ChangeLangugaeView(), binding: ChangeLanguageBinding()),
     GetPage(name: Routes.editProfile, page: () => EditProfileView(), binding: EditProfileBinding()),
+    GetPage(name: Routes.faq, page: () => FaqView(), binding: FaqBinding()),
   ];
 }

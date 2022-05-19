@@ -23,16 +23,11 @@ class ContactUsView extends GetView<ContactUsController> {
       child: Scaffold(
         resizeToAvoidBottomInset: true,
         backgroundColor: whiteColor,
-        body: SafeArea(
-        child: SingleChildScrollView(
-        child: Column(
-        children: [
-          Container(
-            height: MediaQuery.of(context).size.height,
-            width: MediaQuery.of(context).size.width,
-            child: Column(
-              children: [
-                Container(
+        body: SingleChildScrollView(
+          child: Stack(
+            children: [
+              SafeArea(
+                child: Container(
                   height: MediaQuery.of(context).size.height,
                   width: MediaQuery.of(context).size.width,
                   child: Column(
@@ -71,17 +66,17 @@ class ContactUsView extends GetView<ContactUsController> {
                         color: Colors.black,
                       ),
                       SizedBox(
-                        height: 10,
+                        height: 20,
                       ),
                       Text(
                         'Contact Us',
                         style:
-                        TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                            TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
                       ),
                       SizedBox(
                         height: 10,
                       ),
-                      Text(
+                      const Text(
                         'Lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
                         style: TextStyle(
                             fontSize: 14,
@@ -89,7 +84,7 @@ class ContactUsView extends GetView<ContactUsController> {
                             color: Colors.grey),
                       ),
                       SizedBox(
-                        height: 20,
+                        height: 40,
                       ),
                       Padding(
                         padding: EdgeInsets.only(left: 30, right: 30, top: 10),
@@ -98,7 +93,7 @@ class ContactUsView extends GetView<ContactUsController> {
                               border: OutlineInputBorder(),
                               focusedBorder: OutlineInputBorder(
                                 borderSide:
-                                BorderSide(color: Colors.purple, width: 1.0),
+                                    BorderSide(color: Colors.purple, width: 1.0),
                                 borderRadius: BorderRadius.circular(5.0),
                               ),
                               labelStyle: TextStyle(color: Colors.black),
@@ -114,7 +109,7 @@ class ContactUsView extends GetView<ContactUsController> {
                               border: OutlineInputBorder(),
                               focusedBorder: OutlineInputBorder(
                                 borderSide:
-                                BorderSide(color: Colors.purple, width: 1.0),
+                                    BorderSide(color: Colors.purple, width: 1.0),
                                 borderRadius: BorderRadius.circular(5.0),
                               ),
                               labelStyle: TextStyle(color: Colors.black),
@@ -130,7 +125,7 @@ class ContactUsView extends GetView<ContactUsController> {
                               border: OutlineInputBorder(),
                               focusedBorder: OutlineInputBorder(
                                 borderSide:
-                                BorderSide(color: Colors.purple, width: 1.0),
+                                    BorderSide(color: Colors.purple, width: 1.0),
                                 borderRadius: BorderRadius.circular(5.0),
                               ),
                               labelStyle: TextStyle(color: Colors.black),
@@ -146,7 +141,7 @@ class ContactUsView extends GetView<ContactUsController> {
                               border: OutlineInputBorder(),
                               focusedBorder: OutlineInputBorder(
                                 borderSide:
-                                BorderSide(color: Colors.purple, width: 1.0),
+                                    BorderSide(color: Colors.purple, width: 1.0),
                                 borderRadius: BorderRadius.circular(5.0),
                               ),
                               labelStyle: TextStyle(color: Colors.black),
@@ -155,48 +150,44 @@ class ContactUsView extends GetView<ContactUsController> {
                               hintText: 'Lorem ipsum'),
                         ),
                       ),
-                      Padding(
-                        padding: EdgeInsets.only(bottom: 20),
-                        child: Align(
-                          alignment: Alignment.bottomCenter,
-                          child: InkWell(
-                            onTap: () {
-                              Get.back();
-                            },
-                            child: Container(
-                              margin: const EdgeInsets.all(25),
-                              height: 50,
-                              width: MediaQuery.of(context).size.width,
-                              decoration: BoxDecoration(
-                                  color: Colors.purple,
-                                  border: Border.all(color: Colors.purple),
-                                  borderRadius:
-                                  const BorderRadius.all(Radius.circular(5))),
-                              alignment: Alignment.center,
-                              child: const Text(
-                                'SUBMIT',
-                                style: TextStyle(
-                                    color: Colors.white, fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                          ),
-                        ),
-                      )
                     ],
                   ),
-
                 ),
-
-              ],
-            ),
+              ),
+              Positioned(
+                right: 0,left: 0,bottom: 0,
+                child: Padding(
+                  padding: EdgeInsets.only(bottom: 20),
+                  child: Align(
+                    alignment: Alignment.bottomCenter,
+                    child: InkWell(
+                      onTap: () {
+                        Get.back();
+                      },
+                      child: Container(
+                        margin: const EdgeInsets.all(25),
+                        height: 50,
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(
+                            color: Colors.purple,
+                            border: Border.all(color: Colors.purple),
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(5))),
+                        alignment: Alignment.center,
+                        child: const Text(
+                          'SUBMIT',
+                          style: TextStyle(
+                              color: Colors.white, fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              )
+            ],
           ),
-        ]
-        )
-        )
-        )
-      )
-
-
+        ),
+      ),
     );
   }
 }
