@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:recommend_you/app/modules/dashboard/home/helper/sendemail/sendemail_view.dart';
 import 'package:recommend_you/app/modules/dashboard/more/changecontactdetails/change_contact_controller.dart';
 
 import '../../../../core/values/colors.dart';
@@ -66,7 +67,18 @@ class HelperView extends GetView<ChangeContactController>{
                             SizedBox(
                               width: 10,
                             ),
-                            Text('Helper')
+                            Text('Helper'),
+                            Spacer(),
+                            InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (builder) => SendEmailView()));
+                              },
+                              child: Text('Send'),
+                            ),
+
                           ],
                         ),
                       ),
@@ -79,68 +91,78 @@ class HelperView extends GetView<ChangeContactController>{
                       child: ListView.builder(
                         itemBuilder: (BuildContext, index) {
                           return Container(
-                            child: Column(
-                              children: [
-                                Container(
-                                  height: 60,
-                                  width: MediaQuery.of(context).size.width,
-                                  child: Row(
-                                    children: [
-                                      SizedBox(
-                                        width: 20,
-                                      ),
-                                      Container(
-                                          width: 40.0,
-                                          height: 40.0,
-                                          decoration: new BoxDecoration(
-                                              shape: BoxShape.circle,
-                                              image: new DecorationImage(
-                                                  fit: BoxFit.fill,
-                                                  image: AssetImage(images[index])))),
-                                      SizedBox(
-                                        width: 20,
-                                      ),
-                                      Text(
-                                        'Ramon Ricardo',
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            color: Colors.black,
-                                            fontWeight:
-                                            FontWeight.normal),
-                                      ),
-                                      Spacer(),
-                                      Container(
-                                        height: 30,
-                                        width: 60,
-                                        padding: EdgeInsets.only(left: 5, right: 5),
-                                        decoration: BoxDecoration(
-                                            color: Colors.purple,
-                                            border: Border.all(
-                                                color: Colors.purple),
-                                            borderRadius:
-                                            const BorderRadius.all(
-                                                Radius.circular(5))),
-                                        alignment: Alignment.center,
-                                        child: Text(
-                                          'Submit',
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.normal,
-                                              fontSize: 12),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        width: 10,
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              ],
+                            child:  Column(
+                          children: [
+                          SizedBox(
+                          width: 5,
+                          ),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                          Row(
+                          children: [
+                            Checkbox(
+                              value: false, onChanged: (bool? value) {
+
+                            },
                             ),
+                          Container(
+                          width: 40.0,
+                          height: 40.0,
+                          decoration: new BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: new DecorationImage(
+                          fit: BoxFit.fill,
+                          image: AssetImage(images[index])))),
+                          SizedBox(
+                          width: 10,
+                          ),
+                          Text(
+                          'Ramon Ricardo',
+                          style: TextStyle(
+                          fontSize: 14,
+                          color: Colors.black,
+                          fontWeight:
+                          FontWeight.normal),
+                          ),
+                          ],
+                          ),
+                          Row(
+                            children: [
+                              SizedBox(
+                                width: 45,
+                              ),
+
+                              Padding(
+                                padding: const EdgeInsets.only(top: 5.0),
+                                child: Text(
+                                'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+                                style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.black,
+                                fontWeight:
+                                FontWeight.normal),
+                                ),
+                              ),
+                            ],
+                          ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                          ],
+
+                          ),
+                            Divider(
+                              height: 1,
+                              color: Colors.black,
+                            ),
+                          ],
+                          ),
                           );
                         },
                         itemCount: images.length,
-                        padding: EdgeInsets.all(5),
+                        padding: EdgeInsets.only(top: 10),
                         scrollDirection: Axis.vertical,
                       ),
                     )

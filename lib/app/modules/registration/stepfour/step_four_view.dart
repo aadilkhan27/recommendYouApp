@@ -332,7 +332,7 @@ showAlertDialog(BuildContext context) {
   // set up the AlertDialog
   Dialog alert = Dialog(
     child: Container(
-      height: 380,
+      height: 360,
       padding: EdgeInsets.all(20),
       child: Column(
         children: [
@@ -355,21 +355,21 @@ showAlertDialog(BuildContext context) {
                     text: "Welcome to ",
                     style: TextStyle(
                         color: Colors.black,
-                        fontSize: 13,
+                        fontSize: 11,
                         fontWeight: FontWeight.bold),
                   ),
                   TextSpan(
                     text: "Recommend",
                     style: TextStyle(
                         color: primaryDarkColor,
-                        fontSize: 13,
+                        fontSize: 11,
                         fontWeight: FontWeight.bold),
                   ),
                   TextSpan(
                     text: "You",
                     style: TextStyle(
                         color: primaryLightColor,
-                        fontSize: 13,
+                        fontSize: 12,
                         fontWeight: FontWeight.bold),
                   ),
                 ],
@@ -385,14 +385,14 @@ showAlertDialog(BuildContext context) {
                       text: "Congrates ",
                       style: TextStyle(
                           color: primaryDarkColor,
-                          fontSize: 12,
+                          fontSize: 11,
                           fontWeight: FontWeight.normal),
                     ),
                     TextSpan(
                       text: "You are now a recommendyou member!",
                       style: TextStyle(
                           color: Colors.black,
-                          fontSize: 13,
+                          fontSize: 11,
                           fontWeight: FontWeight.normal),
                     ),
                   ],
@@ -402,11 +402,12 @@ showAlertDialog(BuildContext context) {
                 height: 10,
               ),
               Text(
-                  'Start inviting your friends/contacts, sharing content or check out the messages on your homepage.'),
+                  'Start inviting your friends/contacts, sharing content or check out the messages on your homepage.',
+                  style: TextStyle(fontSize: 13,color: Colors.black),),
               SizedBox(
                 height: 10,
               ),
-              Text('If you have any questions, feel free to contact us.'),
+              Text('If you have any questions, feel free to contact us.', style: TextStyle(fontSize: 13,color: Colors.black),),
               SizedBox(
                 height: 10,
               ),
@@ -426,7 +427,7 @@ showAlertDialog(BuildContext context) {
               ),
             ],
           ),
-          SizedBox(height: 20,),
+          SizedBox(height: 10,),
           Align(
             alignment: Alignment.center,
             child: TextButton(

@@ -42,10 +42,10 @@ class MoreView extends GetView<MoreController> {
                       SizedBox(
                         width: 10,
                       ),
-                      SvgPicture.asset(
+                     /* SvgPicture.asset(
                         icLeftArrow,
                         semanticsLabel: 'logo',
-                      ),
+                      ),*/
                       SizedBox(
                         width: 10,
                       ),
@@ -221,9 +221,37 @@ class MoreView extends GetView<MoreController> {
                             leading: Icon(Icons.phone),
                             title: Text('Language Change'),
                             onTap: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (builder) => ChangeLangugaeView()));
-                            },
-                          ),
+                              //Navigator.push(context, MaterialPageRoute(builder: (builder) => ChangeLangugaeView()));
+                              showModalBottomSheet(
+                                context: context,
+                                builder: (context) {
+                                  return Wrap(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.all(10.0),
+                                          child: Column(
+                                            children: [
+                                              Text(
+                                                'English ',
+                                                style: TextStyle(fontWeight: FontWeight.normal, fontSize: 16),
+                                              ),
+                                              SizedBox(
+                                                height: 15,
+                                              ),
+                                              Text(
+                                                'French ',
+                                                style: TextStyle(fontWeight: FontWeight.normal, fontSize: 16),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+
+                                      ]
+                                  );
+                                },
+                              );
+                            }
+                        ),
                         ),
                 Container(
                   padding: EdgeInsets.only(left: 15.0, right: 15.0),
@@ -369,14 +397,14 @@ class MoreView extends GetView<MoreController> {
                 Container(
                   padding: EdgeInsets.only(left: 15.0, right: 15.0),
                   child: ListTile(
-                    leading: Icon(Icons.delete),
+                    leading: Icon(Icons.privacy_tip),
                     title: Text('Privacy Policy'),
                     onTap: () {
                       Navigator.push(context, MaterialPageRoute(builder: (builder) => PrivacyPolicyView()));
                     },
                   ),
                 ),
-                Container(
+                /*Container(
                   padding: EdgeInsets.only(left: 15.0, right: 15.0),
                   child: ListTile(
                     leading: Icon(Icons.lock),
@@ -385,7 +413,7 @@ class MoreView extends GetView<MoreController> {
                       //Navigator.push(context, MaterialPageRoute(builder: (builder) => ChangePasswordView()));
                     },
                   ),
-                ),
+                ),*/
                 Container(
                   padding: EdgeInsets.only(left: 15.0, right: 15.0),
                   child: ListTile(
@@ -396,6 +424,10 @@ class MoreView extends GetView<MoreController> {
                     },
                   ),
                 ),
+
+
+
+
               ])))
             ],
           ),
@@ -404,3 +436,28 @@ class MoreView extends GetView<MoreController> {
     );
   }
 }
+
+/*
+*  InkWell(
+                            onTap: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (builder) => ContactUsView()));
+                            },
+                            child: Container(
+                              padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                              child: new Row(
+                                children: <Widget>[
+                                  new Container(
+                                    child: new Image.asset(
+                                      termsConditions,
+                                      height: 60.0,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                  new Container(
+                                    child: new Text('long information text'),
+                                  ),
+                                ],
+                              ),
+                            ),
+                        )
+* */

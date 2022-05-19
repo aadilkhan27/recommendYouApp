@@ -57,6 +57,8 @@ import 'package:recommend_you/app/modules/splash/splash_view.dart';
 
 import '../modules/dashboard/home/helper/helper_bindings.dart';
 import '../modules/dashboard/home/helper/helper_view.dart';
+import '../modules/dashboard/home/helper/sendemail/sendemail_bindings.dart';
+import '../modules/dashboard/home/helper/sendemail/sendemail_view.dart';
 import '../modules/dashboard/more/changelanguage/change_language_binding.dart';
 import '../modules/dashboard/more/changelanguage/change_language_view.dart';
 
@@ -95,5 +97,6 @@ class AppPages {
     GetPage(name: Routes.deleteAccount, page: () => DeleteAccountView(), binding: DeleteAccountBinding()),
     GetPage(name: Routes.helper, page: () => HelperView(), binding: HelperBinding()),
     GetPage(name: Routes.changeLanguage, page: () => ChangeLangugaeView(), binding: ChangeLanguageBinding()),
+    GetPage(name: Routes.sendEmail, page: () => SendEmailView(), binding: SendEmailBinding()),
   ];
 }

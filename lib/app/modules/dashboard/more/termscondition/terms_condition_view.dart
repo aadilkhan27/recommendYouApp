@@ -66,21 +66,12 @@ class TermsConditionView extends GetView<TermsConditionController> {
                       height: 1,
                       color: Colors.black,
                     ),
-
-                    SizedBox(
-                      height: 10,
-                    ),
                     Padding(
                       padding: const EdgeInsets.all(20.0),
                       child: Column(
                         children : [
                           Container(
-                              height: 120,
-                              width: MediaQuery.of(context).size.width,
-                              decoration: BoxDecoration(
-                                  image: new DecorationImage(
-                                      image: AssetImage(image6)))
-                          ),
+                              margin: EdgeInsets.only(left: 0,right: 0),child: Image(image: AssetImage(image1))),
                           SizedBox(
                             height: 10,
                           ),

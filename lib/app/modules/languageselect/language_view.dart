@@ -221,7 +221,7 @@ showAlertDialog(BuildContext context) {
     ),
     content: Text(
       dummyLoremIpsum,
-      style: TextStyle(color: Colors.black, fontSize: 12),
+      style: TextStyle(color: Colors.black, fontSize: 12, height: 1.4),
     ),
     actions: [
       continueButton,

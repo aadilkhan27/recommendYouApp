@@ -63,7 +63,7 @@ class ProfileView extends GetView<ProfileController> {
                         InkWell(
                           child: SvgPicture.asset(icMenuOption),
                           onTap: () {
-                            showModalBottomSheet(
+                            /*showModalBottomSheet(
                                 isScrollControlled: true,
                                 context: context,
                                 builder: (context) {
@@ -367,7 +367,7 @@ class ProfileView extends GetView<ProfileController> {
                                           )),
                                     ],
                                   );
-                                });
+                                });*/
                           },
                         ),
                       ],

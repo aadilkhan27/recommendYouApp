@@ -31,4 +31,5 @@ abstract class Routes {
   static const deleteAccount= '/deleteAccount';
   static const helper= '/helper';
   static const changeLanguage= '/changeLanguage';
+  static const sendEmail= '/sendEmail';
 }
