@@ -8,7 +8,7 @@ import 'package:recommend_you/app/modules/dashboard/more/changecontactdetails/ch
 import '../../../../core/values/colors.dart';
 import '../../../../core/values/keys.dart';
 
-class ChangeContactView extends GetView<ChangeContactController>{
+class ChangeContactView extends GetView<ChangeContactController> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -62,18 +62,19 @@ class ChangeContactView extends GetView<ChangeContactController>{
                     SizedBox(
                       height: 20,
                     ),
-
-                Column(
+                    Column(
                       children: [
                         Align(
                           alignment: Alignment.centerLeft,
                           child: Padding(
                             padding: EdgeInsets.only(left: 30, right: 30),
                             child: Text(
-                            'Enter your phone number',
-                            style:
-                            TextStyle(fontSize: 13, fontWeight: FontWeight.bold, ),
-                        ),
+                              'Enter your phone number',
+                              style: TextStyle(
+                                fontSize: 13,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
                           ),
                         ),
                         Padding(
@@ -81,15 +82,14 @@ class ChangeContactView extends GetView<ChangeContactController>{
                           child: TextField(
                             cursorColor: Colors.black,
                             decoration: InputDecoration(
-                              enabledBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(color: Colors.purple),
-                              ),
-                              focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(color: Colors.purple),
-                              ),
-                              hintText: '985-985-9856',
-                              hintStyle: TextStyle(color: Colors.grey)
-                            ),
+                                enabledBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.purple),
+                                ),
+                                focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.purple),
+                                ),
+                                hintText: '985-985-9856',
+                                hintStyle: TextStyle(color: Colors.grey)),
                           ),
                         ),
                         SizedBox(
@@ -101,8 +101,10 @@ class ChangeContactView extends GetView<ChangeContactController>{
                             padding: EdgeInsets.only(left: 30, right: 30),
                             child: Text(
                               'Email Address',
-                              style:
-                              TextStyle(fontSize: 13, fontWeight: FontWeight.bold, ),
+                              style: TextStyle(
+                                fontSize: 13,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                         ),
@@ -118,11 +120,9 @@ class ChangeContactView extends GetView<ChangeContactController>{
                                   borderSide: BorderSide(color: Colors.purple),
                                 ),
                                 hintText: 'ramonoricoda@gmail.com',
-                                hintStyle: TextStyle(color: Colors.grey)
-                            ),
+                                hintStyle: TextStyle(color: Colors.grey)),
                           ),
                         ),
-
                       ],
                     ),
                     Padding(
@@ -140,13 +140,14 @@ class ChangeContactView extends GetView<ChangeContactController>{
                             decoration: BoxDecoration(
                                 color: Colors.purple,
                                 border: Border.all(color: Colors.purple),
-                                borderRadius:
-                                const BorderRadius.all(Radius.circular(10))),
+                                borderRadius: const BorderRadius.all(
+                                    Radius.circular(10))),
                             alignment: Alignment.center,
                             child: const Text(
                               'SAVE',
                               style: TextStyle(
-                                  color: Colors.white, fontWeight: FontWeight.bold),
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
                             ),
                           ),
                         ),
@@ -156,11 +157,9 @@ class ChangeContactView extends GetView<ChangeContactController>{
                 ),
               ),
             ),
-
           ],
         ),
       ),
     );
   }
-
 }

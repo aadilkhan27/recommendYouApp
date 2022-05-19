@@ -42,6 +42,8 @@ import 'package:recommend_you/app/modules/login/signin/sign_in_binding.dart';
 import 'package:recommend_you/app/modules/login/signin/sign_in_view.dart';
 import 'package:recommend_you/app/modules/login/verifyotpretrieveuname/verify_otp_username_binding.dart';
 import 'package:recommend_you/app/modules/login/verifyotpretrieveuname/verify_otp_username_view.dart';
+import 'package:recommend_you/app/modules/profile/edit_profile_binding.dart';
+import 'package:recommend_you/app/modules/profile/edit_profile_view.dart';
 import 'package:recommend_you/app/modules/profile/profile_binding.dart';
 import 'package:recommend_you/app/modules/profile/profile_view.dart';
 import 'package:recommend_you/app/modules/registration/stepfour/step_four_binding.dart';
@@ -95,5 +97,6 @@ class AppPages {
     GetPage(name: Routes.deleteAccount, page: () => DeleteAccountView(), binding: DeleteAccountBinding()),
     GetPage(name: Routes.helper, page: () => HelperView(), binding: HelperBinding()),
     GetPage(name: Routes.changeLanguage, page: () => ChangeLangugaeView(), binding: ChangeLanguageBinding()),
+    GetPage(name: Routes.editProfile, page: () => EditProfileView(), binding: EditProfileBinding()),
   ];
 }
