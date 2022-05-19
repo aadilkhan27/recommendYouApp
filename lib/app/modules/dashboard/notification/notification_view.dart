@@ -36,7 +36,6 @@ class NotificationView extends GetView<NotificationController> {
           child: Container(
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
-            margin: EdgeInsets.all(10),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -53,7 +52,7 @@ class NotificationView extends GetView<NotificationController> {
                         SizedBox(
                           width: 10,
                         ),
-                        InkWell(
+                       /* InkWell(
                           onTap: () {
                             Get.back();
                           },
@@ -61,9 +60,9 @@ class NotificationView extends GetView<NotificationController> {
                             icLeftArrow,
                             semanticsLabel: 'logo',
                           ),
-                        ),
+                        ),*/
                         SizedBox(
-                          width: 10,
+                          width: 20,
                         ),
                         Text('Notification')
                       ],
@@ -76,844 +75,785 @@ class NotificationView extends GetView<NotificationController> {
                 ),
                 Expanded(
                   child: SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        Container(
-                          margin: EdgeInsets.only(left: 10),
-                          child: Container(
-                            child: Column(
-                              children: [
-                                SizedBox(
-                                  height: 20,
-                                ),
-                                Align(
-                                  alignment: Alignment.topLeft,
-                                  child: Text(
-                                    'New',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 12),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left : 10.0, right: 10),
+                      child: Column(
+                        children: [
+                          Container(
+                            margin: EdgeInsets.only(left: 10),
+                            child: Container(
+                              child: Column(
+                                children: [
+                                  SizedBox(
+                                    height: 10,
                                   ),
-                                ),
-                                SizedBox(
-                                  height: 10,
-                                ),
-                                Container(
-                                  child: Column(
-                                    children: [
-                                      Container(
-                                        height: 60,
-                                        width:
-                                            MediaQuery.of(context).size.width,
-                                        child: Row(
-                                          children: [
-                                            InkWell(
-                                              onTap:(){
-                                                showAlertDialog(context);
-                                              },
-                                              child: Container(
-                                                width: 40.0,
-                                                height: 40.0,
-                                                decoration: new BoxDecoration(
-                                                  shape: BoxShape.circle,
-                                                  image: new DecorationImage(
-                                                    fit: BoxFit.fill,
-                                                    image:
-                                                        AssetImage(profileImage),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                            SizedBox(
-                                              width: 20,
-                                            ),
-                                            Container(
-                                              margin: EdgeInsets.only(top: 10),
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.start,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    'Viana Branding',
-                                                    style: TextStyle(
-                                                        fontSize: 14,
-                                                        fontWeight:
-                                                            FontWeight.bold),
-                                                  ),
-                                                  Container(
-                                                    margin:
-                                                        EdgeInsets.only(top: 5),
-                                                    child: Row(
-                                                      children: [
-                                                        Text(
-                                                          'Requested to follow you',
-                                                          style: TextStyle(
-                                                              fontSize: 12,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .normal),
-                                                        ),
-                                                        SizedBox(
-                                                          width: 5,
-                                                        ),
-                                                        Text(
-                                                          '6h',
-                                                          style: TextStyle(
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .normal,
-                                                              fontSize: 12,
-                                                              color:
-                                                                  Colors.grey),
-                                                        )
-                                                      ],
-                                                    ),
-                                                  )
-                                                ],
-                                              ),
-                                            ),
-                                            Spacer(),
-                                            Container(
-                                                child: Row(
-                                              children: [
-                                                Text(
-                                                  'Delete',
-                                                  style: TextStyle(
-                                                      fontSize: 14,
-                                                      fontWeight:
-                                                          FontWeight.normal),
-                                                ),
-                                                SizedBox(
-                                                  width: 10,
-                                                ),
-                                                Container(
-                                                  height: 25,
-                                                  width: 70,
-                                                  padding: EdgeInsets.only(
-                                                      left: 5, right: 5),
-                                                  decoration: BoxDecoration(
-                                                      color: Colors.purple,
-                                                      border: Border.all(
-                                                          color: Colors.purple),
-                                                      borderRadius:
-                                                          const BorderRadius
-                                                                  .all(
-                                                              Radius.circular(
-                                                                  5))),
-                                                  alignment: Alignment.center,
-                                                  child: Text(
-                                                    'Confirm',
-                                                    style: TextStyle(
-                                                        color: Colors.white,
-                                                        fontWeight:
-                                                            FontWeight.normal,
-                                                        fontSize: 14),
-                                                  ),
-                                                ),
-                                              ],
-                                            ))
-                                          ],
-                                        ),
-                                      ),
-                                    ],
+                                  Align(
+                                    alignment: Alignment.topLeft,
+                                    child: Text(
+                                      'New',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 12),
+                                    ),
                                   ),
-                                ),
-                                Container(
-                                  child: Column(
-                                    children: [
-                                      Container(
-                                        height: 60,
-                                        width:
-                                            MediaQuery.of(context).size.width,
-                                        child: Row(
-                                          children: [
-                                            InkWell(
-                                              onTap:(){
-                                                showAlertDialog(context);
-                                              },
-                                              child: Container(
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Container(
+                                    child: Column(
+                                      children: [
+                                        Container(
+                                          height: 60,
+                                          width:
+                                              MediaQuery.of(context).size.width,
+                                          child: Row(
+                                            children: [
+                                              InkWell(
+                                                onTap:(){
+                                                  showAlertDialog(context);
+                                                },
+                                                child: Container(
                                                   width: 40.0,
                                                   height: 40.0,
                                                   decoration: new BoxDecoration(
-                                                      shape: BoxShape.circle,
-                                                      image: new DecorationImage(
-                                                          fit: BoxFit.fill,
-                                                          image: AssetImage(
-                                                              profileImage)))),
-                                            ),
-                                            SizedBox(
-                                              width: 20,
-                                            ),
-                                            Container(
-                                              margin: EdgeInsets.only(top: 10),
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.start,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
+                                                    shape: BoxShape.circle,
+                                                    image: new DecorationImage(
+                                                      fit: BoxFit.fill,
+                                                      image:
+                                                          AssetImage(profileImage),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                              SizedBox(
+                                                width: 20,
+                                              ),
+                                              Container(
+                                                margin: EdgeInsets.only(top: 10),
+                                                child: Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.start,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Text(
+                                                      'Viana Branding',
+                                                      style: TextStyle(
+                                                          fontSize: 14,
+                                                          fontWeight:
+                                                              FontWeight.bold),
+                                                    ),
+                                                    Container(
+                                                      margin:
+                                                          EdgeInsets.only(top: 5),
+                                                      child: Row(
+                                                        children: [
+                                                          Text(
+                                                            'Liked your post',
+                                                            style: TextStyle(
+                                                                fontSize: 12,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .normal),
+                                                          ),
+                                                          SizedBox(
+                                                            width: 5,
+                                                          ),
+                                                          Text(
+                                                            '6h',
+                                                            style: TextStyle(
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .normal,
+                                                                fontSize: 12,
+                                                                color:
+                                                                    Colors.grey),
+                                                          )
+                                                        ],
+                                                      ),
+                                                    )
+                                                  ],
+                                                ),
+                                              ),
+
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    child: Column(
+                                      children: [
+                                        Container(
+                                          height: 60,
+                                          width:
+                                          MediaQuery.of(context).size.width,
+                                          child: Row(
+                                            children: [
+                                              InkWell(
+                                                onTap:(){
+                                                  showAlertDialog(context);
+                                                },
+                                                child: Container(
+                                                    width: 40.0,
+                                                    height: 40.0,
+                                                    decoration: new BoxDecoration(
+                                                        shape: BoxShape.circle,
+                                                        image: new DecorationImage(
+                                                            fit: BoxFit.fill,
+                                                            image: AssetImage(
+                                                                profileImage)))),
+                                              ),
+                                              SizedBox(
+                                                width: 20,
+                                              ),
+                                              Container(
+                                                margin: EdgeInsets.only(top: 10),
+                                                child: Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.start,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Text(
+                                                      'Branding',
+                                                      style: TextStyle(
+                                                          fontSize: 14,
+                                                          fontWeight:
+                                                              FontWeight.bold),
+                                                    ),
+                                                    Container(
+                                                      margin:
+                                                          EdgeInsets.only(top: 5),
+                                                      child: Row(
+                                                        children: [
+                                                          Text(
+                                                            'Started  to following you',
+                                                            style: TextStyle(
+                                                                fontSize: 12,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .normal),
+                                                          ),
+                                                          SizedBox(
+                                                            width: 5,
+                                                          ),
+                                                          Text(
+                                                            '6h',
+                                                            style: TextStyle(
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .normal,
+                                                                fontSize: 12,
+                                                                color:
+                                                                    Colors.grey),
+                                                          )
+                                                        ],
+                                                      ),
+                                                    )
+                                                  ],
+                                                ),
+                                              ),
+                                              Spacer(),
+                                              Container(
+                                                  child: Row(
                                                 children: [
                                                   Text(
-                                                    'Branding',
+                                                    '',
                                                     style: TextStyle(
                                                         fontSize: 14,
                                                         fontWeight:
-                                                            FontWeight.bold),
+                                                            FontWeight.normal),
                                                   ),
-                                                  Container(
-                                                    margin:
-                                                        EdgeInsets.only(top: 5),
-                                                    child: Row(
-                                                      children: [
-                                                        Text(
-                                                          'Started  to following you',
-                                                          style: TextStyle(
-                                                              fontSize: 12,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .normal),
-                                                        ),
-                                                        SizedBox(
-                                                          width: 5,
-                                                        ),
-                                                        Text(
-                                                          '6h',
-                                                          style: TextStyle(
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .normal,
-                                                              fontSize: 12,
-                                                              color:
-                                                                  Colors.grey),
-                                                        )
-                                                      ],
-                                                    ),
-                                                  )
+                                                  SizedBox(
+                                                    width: 10,
+                                                  ),
+
                                                 ],
-                                              ),
-                                            ),
-                                            Spacer(),
-                                            Container(
-                                                child: Row(
-                                              children: [
-                                                Text(
-                                                  '',
-                                                  style: TextStyle(
-                                                      fontSize: 14,
-                                                      fontWeight:
-                                                          FontWeight.normal),
-                                                ),
-                                                SizedBox(
-                                                  width: 10,
-                                                ),
-                                                Container(
-                                                  height: 25,
-                                                  width: 70,
-                                                  padding: EdgeInsets.only(
-                                                      left: 5, right: 5),
-                                                  decoration: BoxDecoration(
-                                                      color: Colors.purple,
-                                                      border: Border.all(
-                                                          color: Colors.purple),
-                                                      borderRadius:
-                                                          const BorderRadius
-                                                                  .all(
-                                                              Radius.circular(
-                                                                  5))),
-                                                  alignment: Alignment.center,
-                                                  child: Text(
-                                                    'Follow',
-                                                    style: TextStyle(
-                                                        color: Colors.white,
-                                                        fontWeight:
-                                                            FontWeight.normal,
-                                                        fontSize: 14),
-                                                  ),
-                                                ),
-                                              ],
-                                            ))
-                                          ],
+                                              ))
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(left: 10),
-                          child: Container(
-                            child: Column(
-                              children: [
-                                SizedBox(
-                                  height: 20,
-                                ),
-                                Align(
-                                  alignment: Alignment.topLeft,
-                                  child: Text(
-                                    'Today',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 12),
+                          Container(
+                            margin: EdgeInsets.only(left: 10),
+                            child: Container(
+                              child: Column(
+                                children: [
+                                  SizedBox(
+                                    height: 20,
                                   ),
-                                ),
-                                SizedBox(
-                                  height: 10,
-                                ),
-                                Container(
-                                  child: Column(
-                                    children: [
-                                      Container(
-                                        height: 60,
-                                        width:
-                                            MediaQuery.of(context).size.width,
-                                        child: Row(
-                                          children: [
-                                            InkWell(
-                                              onTap:(){
-                                                showAlertDialog(context);
-                                              },
-                                              child: Container(
-                                                  width: 40.0,
-                                                  height: 40.0,
-                                                  decoration: new BoxDecoration(
-                                                      shape: BoxShape.circle,
-                                                      image: new DecorationImage(
-                                                          fit: BoxFit.fill,
-                                                          image: AssetImage(
-                                                              profileImage)))),
-                                            ),
-                                            SizedBox(
-                                              width: 20,
-                                            ),
-                                            Container(
-                                              margin: EdgeInsets.only(top: 10),
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.start,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    'Thomas',
-                                                    style: TextStyle(
-                                                        fontSize: 14,
-                                                        fontWeight:
-                                                            FontWeight.bold),
-                                                  ),
-                                                  Container(
-                                                    margin:
-                                                        EdgeInsets.only(top: 5),
-                                                    child: Row(
-                                                      children: [
-                                                        Text(
-                                                          'liked your post',
-                                                          style: TextStyle(
-                                                              fontSize: 12,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .normal),
-                                                        ),
-                                                        SizedBox(
-                                                          width: 5,
-                                                        ),
-                                                        Text(
-                                                          '6h',
-                                                          style: TextStyle(
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .normal,
-                                                              fontSize: 12,
-                                                              color:
-                                                                  Colors.grey),
-                                                        )
-                                                      ],
+                                  Align(
+                                    alignment: Alignment.topLeft,
+                                    child: Text(
+                                      'Today',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 12),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Container(
+                                    child: Column(
+                                      children: [
+                                        Container(
+                                          height: 60,
+                                          width:
+                                              MediaQuery.of(context).size.width,
+                                          child: Row(
+                                            children: [
+                                              InkWell(
+                                                onTap:(){
+                                                  showAlertDialog(context);
+                                                },
+                                                child: Container(
+                                                    width: 40.0,
+                                                    height: 40.0,
+                                                    decoration: new BoxDecoration(
+                                                        shape: BoxShape.circle,
+                                                        image: new DecorationImage(
+                                                            fit: BoxFit.fill,
+                                                            image: AssetImage(
+                                                                profileImage)))),
+                                              ),
+                                              SizedBox(
+                                                width: 20,
+                                              ),
+                                              Container(
+                                                margin: EdgeInsets.only(top: 10),
+                                                child: Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.start,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Text(
+                                                      'Thomas',
+                                                      style: TextStyle(
+                                                          fontSize: 14,
+                                                          fontWeight:
+                                                              FontWeight.bold),
                                                     ),
-                                                  )
-                                                ],
+                                                    Container(
+                                                      margin:
+                                                          EdgeInsets.only(top: 5),
+                                                      child: Row(
+                                                        children: [
+                                                          Text(
+                                                            'liked your post',
+                                                            style: TextStyle(
+                                                                fontSize: 12,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .normal),
+                                                          ),
+                                                          SizedBox(
+                                                            width: 5,
+                                                          ),
+                                                          Text(
+                                                            '6h',
+                                                            style: TextStyle(
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .normal,
+                                                                fontSize: 12,
+                                                                color:
+                                                                    Colors.grey),
+                                                          )
+                                                        ],
+                                                      ),
+                                                    )
+                                                  ],
+                                                ),
                                               ),
-                                            ),
-                                            Spacer(),
-                                            Container(
-                                              child: Image(
-                                                image: AssetImage(image1),
-                                                width: 50,
-                                                height: 50,
-                                              ),
-                                            )
-                                          ],
+                                              Spacer(),
+                                             /* Container(
+                                                child: Image(
+                                                  image: AssetImage(image1),
+                                                  width: 50,
+                                                  height: 50,
+                                                ),
+                                              )*/
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
-                                ),
-                                Container(
-                                  child: Column(
-                                    children: [
-                                      Container(
-                                        height: 60,
-                                        width:
-                                            MediaQuery.of(context).size.width,
-                                        child: Row(
-                                          children: [
-                                            InkWell(
-                                              onTap:(){
-                                                showAlertDialog(context);
-                                              },
-                                              child: Container(
-                                                  width: 40.0,
-                                                  height: 40.0,
-                                                  decoration: new BoxDecoration(
-                                                      shape: BoxShape.circle,
-                                                      image: new DecorationImage(
-                                                          fit: BoxFit.fill,
-                                                          image: AssetImage(
-                                                              profileImage)))),
-                                            ),
-                                            SizedBox(
-                                              width: 20,
-                                            ),
-                                            Container(
-                                              margin: EdgeInsets.only(top: 10),
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.start,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    'Peter Games',
-                                                    style: TextStyle(
-                                                        fontSize: 14,
-                                                        fontWeight:
-                                                            FontWeight.bold),
-                                                  ),
-                                                  Container(
-                                                    margin:
-                                                        EdgeInsets.only(top: 5),
-                                                    child: Row(
-                                                      children: [
-                                                        Text(
-                                                          'liked your video',
-                                                          style: TextStyle(
-                                                              fontSize: 12,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .normal),
-                                                        ),
-                                                        SizedBox(
-                                                          width: 5,
-                                                        ),
-                                                        Text(
-                                                          '6h',
-                                                          style: TextStyle(
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .normal,
-                                                              fontSize: 12,
-                                                              color:
-                                                                  Colors.grey),
-                                                        )
-                                                      ],
+                                  Container(
+                                    child: Column(
+                                      children: [
+                                        Container(
+                                          height: 60,
+                                          width:
+                                              MediaQuery.of(context).size.width,
+                                          child: Row(
+                                            children: [
+                                              InkWell(
+                                                onTap:(){
+                                                  showAlertDialog(context);
+                                                },
+                                                child: Container(
+                                                    width: 40.0,
+                                                    height: 40.0,
+                                                    decoration: new BoxDecoration(
+                                                        shape: BoxShape.circle,
+                                                        image: new DecorationImage(
+                                                            fit: BoxFit.fill,
+                                                            image: AssetImage(
+                                                                profileImage)))),
+                                              ),
+                                              SizedBox(
+                                                width: 20,
+                                              ),
+                                              Container(
+                                                margin: EdgeInsets.only(top: 10),
+                                                child: Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.start,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Text(
+                                                      'Peter Games',
+                                                      style: TextStyle(
+                                                          fontSize: 14,
+                                                          fontWeight:
+                                                              FontWeight.bold),
                                                     ),
-                                                  )
-                                                ],
+                                                    Container(
+                                                      margin:
+                                                          EdgeInsets.only(top: 5),
+                                                      child: Row(
+                                                        children: [
+                                                          Text(
+                                                            'liked your video',
+                                                            style: TextStyle(
+                                                                fontSize: 12,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .normal),
+                                                          ),
+                                                          SizedBox(
+                                                            width: 5,
+                                                          ),
+                                                          Text(
+                                                            '6h',
+                                                            style: TextStyle(
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .normal,
+                                                                fontSize: 12,
+                                                                color:
+                                                                    Colors.grey),
+                                                          )
+                                                        ],
+                                                      ),
+                                                    )
+                                                  ],
+                                                ),
                                               ),
-                                            ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(left: 10),
-                          child: Container(
-                            child: Column(
-                              children: [
-                                SizedBox(
-                                  height: 20,
-                                ),
-                                Align(
-                                  alignment: Alignment.topLeft,
-                                  child: Text(
-                                    'Yesterday',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 12),
+                          Container(
+                            margin: EdgeInsets.only(left: 10),
+                            child: Container(
+                              child: Column(
+                                children: [
+                                  SizedBox(
+                                    height: 20,
                                   ),
-                                ),
-                                SizedBox(
-                                  height: 10,
-                                ),
-                                Container(
-                                  child: Column(
-                                    children: [
-                                      Container(
-                                        height: 60,
-                                        width:
-                                            MediaQuery.of(context).size.width,
-                                        child: Row(
-                                          children: [
-                                            InkWell(
-                                              onTap:(){
-                                                showAlertDialog(context);
-                                              },
-                                              child: Container(
-                                                  width: 40.0,
-                                                  height: 40.0,
-                                                  decoration: new BoxDecoration(
-                                                      shape: BoxShape.circle,
-                                                      image: new DecorationImage(
-                                                          fit: BoxFit.fill,
-                                                          image: AssetImage(
-                                                              profileImage)))),
-                                            ),
-                                            SizedBox(
-                                              width: 20,
-                                            ),
-                                            Container(
-                                              margin: EdgeInsets.only(top: 10),
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.start,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    'Thomas',
-                                                    style: TextStyle(
-                                                        fontSize: 14,
-                                                        fontWeight:
-                                                            FontWeight.bold),
-                                                  ),
-                                                  Container(
-                                                    margin:
-                                                        EdgeInsets.only(top: 5),
-                                                    child: Row(
-                                                      children: [
-                                                        Text(
-                                                          'liked your post',
-                                                          style: TextStyle(
-                                                              fontSize: 12,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .normal),
-                                                        ),
-                                                        SizedBox(
-                                                          width: 5,
-                                                        ),
-                                                        Text(
-                                                          '6h',
-                                                          style: TextStyle(
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .normal,
-                                                              fontSize: 12,
-                                                              color:
-                                                                  Colors.grey),
-                                                        )
-                                                      ],
+                                  Align(
+                                    alignment: Alignment.topLeft,
+                                    child: Text(
+                                      'Yesterday',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 12),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Container(
+                                    child: Column(
+                                      children: [
+                                        Container(
+                                          height: 60,
+                                          width:
+                                              MediaQuery.of(context).size.width,
+                                          child: Row(
+                                            children: [
+                                              InkWell(
+                                                onTap:(){
+                                                  showAlertDialog(context);
+                                                },
+                                                child: Container(
+                                                    width: 40.0,
+                                                    height: 40.0,
+                                                    decoration: new BoxDecoration(
+                                                        shape: BoxShape.circle,
+                                                        image: new DecorationImage(
+                                                            fit: BoxFit.fill,
+                                                            image: AssetImage(
+                                                                profileImage)))),
+                                              ),
+                                              SizedBox(
+                                                width: 20,
+                                              ),
+                                              Container(
+                                                margin: EdgeInsets.only(top: 10),
+                                                child: Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.start,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Text(
+                                                      'Thomas',
+                                                      style: TextStyle(
+                                                          fontSize: 14,
+                                                          fontWeight:
+                                                              FontWeight.bold),
                                                     ),
-                                                  )
-                                                ],
+                                                    Container(
+                                                      margin:
+                                                          EdgeInsets.only(top: 5),
+                                                      child: Row(
+                                                        children: [
+                                                          Text(
+                                                            'liked your post',
+                                                            style: TextStyle(
+                                                                fontSize: 12,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .normal),
+                                                          ),
+                                                          SizedBox(
+                                                            width: 5,
+                                                          ),
+                                                          Text(
+                                                            '6h',
+                                                            style: TextStyle(
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .normal,
+                                                                fontSize: 12,
+                                                                color:
+                                                                    Colors.grey),
+                                                          )
+                                                        ],
+                                                      ),
+                                                    )
+                                                  ],
+                                                ),
                                               ),
-                                            ),
-                                            Spacer(),
-                                            Container(
-                                              child: Image(
-                                                image: AssetImage(image1),
-                                                width: 50,
-                                                height: 50,
-                                              ),
-                                            )
-                                          ],
+                                              Spacer(),
+                                              /*Container(
+                                                child: Image(
+                                                  image: AssetImage(image1),
+                                                  width: 50,
+                                                  height: 50,
+                                                ),
+                                              )*/
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
-                                ),
-                                Container(
-                                  child: Column(
-                                    children: [
-                                      Container(
-                                        height: 60,
-                                        width:
-                                            MediaQuery.of(context).size.width,
-                                        child: Row(
-                                          children: [
-                                            InkWell(
-                                              onTap:(){
-                                                showAlertDialog(context);
-                                              },
-                                              child: Container(
-                                                  width: 40.0,
-                                                  height: 40.0,
-                                                  decoration: new BoxDecoration(
-                                                      shape: BoxShape.circle,
-                                                      image: new DecorationImage(
-                                                          fit: BoxFit.fill,
-                                                          image: AssetImage(
-                                                              profileImage)))),
-                                            ),
-                                            SizedBox(
-                                              width: 20,
-                                            ),
-                                            Container(
-                                              margin: EdgeInsets.only(top: 10),
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.start,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    'Peter Games',
-                                                    style: TextStyle(
-                                                        fontSize: 14,
-                                                        fontWeight:
-                                                            FontWeight.bold),
-                                                  ),
-                                                  Container(
-                                                    margin:
-                                                        EdgeInsets.only(top: 5),
-                                                    child: Row(
-                                                      children: [
-                                                        Text(
-                                                          'liked your video',
-                                                          style: TextStyle(
-                                                              fontSize: 12,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .normal),
-                                                        ),
-                                                        SizedBox(
-                                                          width: 5,
-                                                        ),
-                                                        Text(
-                                                          '6h',
-                                                          style: TextStyle(
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .normal,
-                                                              fontSize: 12,
-                                                              color:
-                                                                  Colors.grey),
-                                                        )
-                                                      ],
+                                  Container(
+                                    child: Column(
+                                      children: [
+                                        Container(
+                                          height: 60,
+                                          width:
+                                              MediaQuery.of(context).size.width,
+                                          child: Row(
+                                            children: [
+                                              InkWell(
+                                                onTap:(){
+                                                  showAlertDialog(context);
+                                                },
+                                                child: Container(
+                                                    width: 40.0,
+                                                    height: 40.0,
+                                                    decoration: new BoxDecoration(
+                                                        shape: BoxShape.circle,
+                                                        image: new DecorationImage(
+                                                            fit: BoxFit.fill,
+                                                            image: AssetImage(
+                                                                profileImage)))),
+                                              ),
+                                              SizedBox(
+                                                width: 20,
+                                              ),
+                                              Container(
+                                                margin: EdgeInsets.only(top: 10),
+                                                child: Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.start,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Text(
+                                                      'Peter Games',
+                                                      style: TextStyle(
+                                                          fontSize: 14,
+                                                          fontWeight:
+                                                              FontWeight.bold),
                                                     ),
-                                                  )
-                                                ],
+                                                    Container(
+                                                      margin:
+                                                          EdgeInsets.only(top: 5),
+                                                      child: Row(
+                                                        children: [
+                                                          Text(
+                                                            'liked your video',
+                                                            style: TextStyle(
+                                                                fontSize: 12,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .normal),
+                                                          ),
+                                                          SizedBox(
+                                                            width: 5,
+                                                          ),
+                                                          Text(
+                                                            '6h',
+                                                            style: TextStyle(
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .normal,
+                                                                fontSize: 12,
+                                                                color:
+                                                                    Colors.grey),
+                                                          )
+                                                        ],
+                                                      ),
+                                                    )
+                                                  ],
+                                                ),
                                               ),
-                                            ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(left: 10),
-                          child: Container(
-                            child: Column(
-                              children: [
-                                SizedBox(
-                                  height: 20,
-                                ),
-                                Align(
-                                  alignment: Alignment.topLeft,
-                                  child: Text(
-                                    'This week',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 12),
+                          Container(
+                            margin: EdgeInsets.only(left: 10),
+                            child: Container(
+                              child: Column(
+                                children: [
+                                  SizedBox(
+                                    height: 20,
                                   ),
-                                ),
-                                SizedBox(
-                                  height: 10,
-                                ),
-                                Container(
-                                  child: Column(
-                                    children: [
-                                      Container(
-                                        height: 60,
-                                        width:
-                                            MediaQuery.of(context).size.width,
-                                        child: Row(
-                                          children: [
-                                            InkWell(
-                                              onTap:(){
-                                                showAlertDialog(context);
-                                              },
-                                              child: Container(
-                                                  width: 40.0,
-                                                  height: 40.0,
-                                                  decoration: new BoxDecoration(
-                                                      shape: BoxShape.circle,
-                                                      image: new DecorationImage(
-                                                          fit: BoxFit.fill,
-                                                          image: AssetImage(
-                                                              profileImage)))),
-                                            ),
-                                            SizedBox(
-                                              width: 20,
-                                            ),
-                                            Container(
-                                              margin: EdgeInsets.only(top: 10),
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.start,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    'Thomas',
-                                                    style: TextStyle(
-                                                        fontSize: 14,
-                                                        fontWeight:
-                                                            FontWeight.bold),
-                                                  ),
-                                                  Container(
-                                                    margin:
-                                                        EdgeInsets.only(top: 5),
-                                                    child: Row(
-                                                      children: [
-                                                        Text(
-                                                          'liked your post',
-                                                          style: TextStyle(
-                                                              fontSize: 12,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .normal),
-                                                        ),
-                                                        SizedBox(
-                                                          width: 5,
-                                                        ),
-                                                        Text(
-                                                          '6h',
-                                                          style: TextStyle(
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .normal,
-                                                              fontSize: 12,
-                                                              color:
-                                                                  Colors.grey),
-                                                        )
-                                                      ],
+                                  Align(
+                                    alignment: Alignment.topLeft,
+                                    child: Text(
+                                      'This week',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 12),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Container(
+                                    child: Column(
+                                      children: [
+                                        Container(
+                                          height: 60,
+                                          width:
+                                              MediaQuery.of(context).size.width,
+                                          child: Row(
+                                            children: [
+                                              InkWell(
+                                                onTap:(){
+                                                  showAlertDialog(context);
+                                                },
+                                                child: Container(
+                                                    width: 40.0,
+                                                    height: 40.0,
+                                                    decoration: new BoxDecoration(
+                                                        shape: BoxShape.circle,
+                                                        image: new DecorationImage(
+                                                            fit: BoxFit.fill,
+                                                            image: AssetImage(
+                                                                profileImage)))),
+                                              ),
+                                              SizedBox(
+                                                width: 20,
+                                              ),
+                                              Container(
+                                                margin: EdgeInsets.only(top: 10),
+                                                child: Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.start,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Text(
+                                                      'Thomas',
+                                                      style: TextStyle(
+                                                          fontSize: 14,
+                                                          fontWeight:
+                                                              FontWeight.bold),
                                                     ),
-                                                  )
-                                                ],
+                                                    Container(
+                                                      margin:
+                                                          EdgeInsets.only(top: 5),
+                                                      child: Row(
+                                                        children: [
+                                                          Text(
+                                                            'liked your post',
+                                                            style: TextStyle(
+                                                                fontSize: 12,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .normal),
+                                                          ),
+                                                          SizedBox(
+                                                            width: 5,
+                                                          ),
+                                                          Text(
+                                                            '6h',
+                                                            style: TextStyle(
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .normal,
+                                                                fontSize: 12,
+                                                                color:
+                                                                    Colors.grey),
+                                                          )
+                                                        ],
+                                                      ),
+                                                    )
+                                                  ],
+                                                ),
                                               ),
-                                            ),
-                                            Spacer(),
-                                            Container(
-                                              child: Image(
-                                                image: AssetImage(image1),
-                                                width: 50,
-                                                height: 50,
-                                              ),
-                                            )
-                                          ],
+                                              Spacer(),
+                                              /*Container(
+                                                child: Image(
+                                                  image: AssetImage(image1),
+                                                  width: 50,
+                                                  height: 50,
+                                                ),
+                                              )*/
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
-                                ),
-                                Container(
-                                  child: Column(
-                                    children: [
-                                      Container(
-                                        height: 60,
-                                        width:
-                                            MediaQuery.of(context).size.width,
-                                        child: Row(
-                                          children: [
-                                            InkWell(
-                                              onTap:(){
-                                                showAlertDialog(context);
-                                              },
-                                              child: Container(
-                                                  width: 40.0,
-                                                  height: 40.0,
-                                                  decoration: new BoxDecoration(
-                                                      shape: BoxShape.circle,
-                                                      image: new DecorationImage(
-                                                          fit: BoxFit.fill,
-                                                          image: AssetImage(
-                                                              profileImage)))),
-                                            ),
-                                            SizedBox(
-                                              width: 20,
-                                            ),
-                                            Container(
-                                              margin: EdgeInsets.only(top: 10),
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.start,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    'Peter Games',
-                                                    style: TextStyle(
-                                                        fontSize: 14,
-                                                        fontWeight:
-                                                            FontWeight.bold),
-                                                  ),
-                                                  Container(
-                                                    margin:
-                                                        EdgeInsets.only(top: 5),
-                                                    child: Row(
-                                                      children: [
-                                                        Text(
-                                                          'liked your video',
-                                                          style: TextStyle(
-                                                              fontSize: 12,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .normal),
-                                                        ),
-                                                        SizedBox(
-                                                          width: 5,
-                                                        ),
-                                                        Text(
-                                                          '6h',
-                                                          style: TextStyle(
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .normal,
-                                                              fontSize: 12,
-                                                              color:
-                                                                  Colors.grey),
-                                                        )
-                                                      ],
+                                  Container(
+                                    child: Column(
+                                      children: [
+                                        Container(
+                                          height: 60,
+                                          width:
+                                              MediaQuery.of(context).size.width,
+                                          child: Row(
+                                            children: [
+                                              InkWell(
+                                                onTap:(){
+                                                  showAlertDialog(context);
+                                                },
+                                                child: Container(
+                                                    width: 40.0,
+                                                    height: 40.0,
+                                                    decoration: new BoxDecoration(
+                                                        shape: BoxShape.circle,
+                                                        image: new DecorationImage(
+                                                            fit: BoxFit.fill,
+                                                            image: AssetImage(
+                                                                profileImage)))),
+                                              ),
+                                              SizedBox(
+                                                width: 20,
+                                              ),
+                                              Container(
+                                                margin: EdgeInsets.only(top: 10),
+                                                child: Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.start,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Text(
+                                                      'Peter Games',
+                                                      style: TextStyle(
+                                                          fontSize: 14,
+                                                          fontWeight:
+                                                              FontWeight.bold),
                                                     ),
-                                                  )
-                                                ],
+                                                    Container(
+                                                      margin:
+                                                          EdgeInsets.only(top: 5),
+                                                      child: Row(
+                                                        children: [
+                                                          Text(
+                                                            'liked your video',
+                                                            style: TextStyle(
+                                                                fontSize: 12,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .normal),
+                                                          ),
+                                                          SizedBox(
+                                                            width: 5,
+                                                          ),
+                                                          Text(
+                                                            '6h',
+                                                            style: TextStyle(
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .normal,
+                                                                fontSize: 12,
+                                                                color:
+                                                                    Colors.grey),
+                                                          )
+                                                        ],
+                                                      ),
+                                                    )
+                                                  ],
+                                                ),
                                               ),
-                                            ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),

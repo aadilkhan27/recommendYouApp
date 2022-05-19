@@ -190,7 +190,7 @@ class StepTwoView extends GetView<StepTwoController> {
                       height: 20,
                     ),
                     Container(
-                      margin: EdgeInsets.only(left: 60),
+                      margin: EdgeInsets.only(left: 50),
                       child: Align(
                         alignment: Alignment.bottomLeft,
                         child: Text(
@@ -210,9 +210,9 @@ class StepTwoView extends GetView<StepTwoController> {
                         children: [
                           Expanded(
                             child: Container(
-                              margin: EdgeInsets.only(right: 10, left: 10),
-                              padding: EdgeInsets.only(
-                                  left: 15, top: 10, bottom: 10, right: 15),
+                              width : 60,
+                              //margin: EdgeInsets.only(right: 10, left: 10),
+                              padding: EdgeInsets.only(left: 10, top: 10, bottom: 10, right: 10),
                               decoration: BoxDecoration(
                                   border: Border.all(color: Colors.grey),
                                   borderRadius:
@@ -225,8 +225,9 @@ class StepTwoView extends GetView<StepTwoController> {
                           ),
                           Expanded(
                             child: Container(
-                              margin: EdgeInsets.only(right: 5),
-                              padding: EdgeInsets.only(left: 15, top: 10, bottom: 10, right: 15),
+                              width : 60,
+                              margin: EdgeInsets.only(right: 5, left: 5),
+                              padding: EdgeInsets.only(left: 10, top: 10, bottom: 10, right: 10),
                               decoration: BoxDecoration(
                                   color: primaryDarkColor,
                                   border: Border.all(color: Colors.grey),
@@ -241,9 +242,9 @@ class StepTwoView extends GetView<StepTwoController> {
                           ),
                           Expanded(
                             child: Container(
-                              margin: EdgeInsets.only(left: 5),
-                              padding: EdgeInsets.only(
-                                  left: 15, top: 10, bottom: 10, right: 15),
+                              width : 60,
+                              //margin: EdgeInsets.only(left: 5),
+                              padding: EdgeInsets.only(left: 10, top: 10, bottom: 10, right: 10),
                               decoration: BoxDecoration(
                                   border: Border.all(color: Colors.grey),
                                   borderRadius:
@@ -261,7 +262,7 @@ class StepTwoView extends GetView<StepTwoController> {
                       height: 20,
                     ),
                     Container(
-                      margin: EdgeInsets.only(left: 60),
+                      margin: EdgeInsets.only(left: 50),
                       child: Align(
                         alignment: Alignment.bottomLeft,
                         child: Text(
@@ -275,9 +276,9 @@ class StepTwoView extends GetView<StepTwoController> {
                       height: 20,
                     ),
                     Container(
-                      margin: EdgeInsets.only(left: 30, right: 40, top: 0),
+                      margin: EdgeInsets.only(left: 40, right: 40, top: 0),
                       child: Padding(
-                        padding: EdgeInsets.only(left: 30, right: 30),
+                        padding: EdgeInsets.only(left: 10, right: 10),
                         child: TextField(
                           cursorColor: Colors.black,
                           maxLength: 10,
@@ -301,19 +302,18 @@ class StepTwoView extends GetView<StepTwoController> {
                     SizedBox(
                       height: 5,
                     ),
-                    Align(
-                      alignment: Alignment.topLeft,
-                      child: Padding(
-                        padding: EdgeInsets.only(left: 60),
-                        child: Text(
-                          readWhatWeWillUseItFor,
-                          style: TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.normal,
-                              color: primaryLightColor),
-                        ),
+                    TextButton(
+                        onPressed: () {
+                          showAlertDialog(context);
+                        },
+                      child: Text(
+                        readWhatWeWillUseItFor,
+                        style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.normal,
+                            color: primaryLightColor),
                       ),
-                    ),
+                    )
                   ],
                 ),
               ),
@@ -376,6 +376,52 @@ class StepTwoView extends GetView<StepTwoController> {
           ),
         ),
       ),
+    );
+  }
+
+  showAlertDialog(BuildContext context) {
+    // set up the buttons
+    Widget continueButton = TextButton(
+      child: Container(
+        height: 40,
+        width: 60,
+        decoration: BoxDecoration(
+            color: primaryDarkColor,
+            border: Border.all(color: primaryDarkColor),
+            borderRadius: const BorderRadius.all(Radius.circular(7))),
+        alignment: Alignment.center,
+        child: const Text(
+          'OK',
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold ),
+        ),
+      ),
+      onPressed: () {
+        Navigator.of(context).pop();
+        Get.toNamed(Routes.signUpStepTwo);
+      },
+    );
+
+    // set up the AlertDialog
+    AlertDialog alert = AlertDialog(
+      title: Text(
+        "Use Of Mobile Number",
+        style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+      ),
+      content: Text(
+        dummyLoremIpsum,
+        style: TextStyle(color: Colors.black, fontSize: 12, height: 1.5),
+      ),
+      actions: [
+        continueButton,
+      ],
+    );
+
+    // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
     );
   }
 }

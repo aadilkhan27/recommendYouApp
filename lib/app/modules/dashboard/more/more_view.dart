@@ -42,10 +42,10 @@ class MoreView extends GetView<MoreController> {
                       SizedBox(
                         width: 10,
                       ),
-                      SvgPicture.asset(
+                     /* SvgPicture.asset(
                         icLeftArrow,
                         semanticsLabel: 'logo',
-                      ),
+                      ),*/
                       SizedBox(
                         width: 10,
                       ),
@@ -218,17 +218,45 @@ class MoreView extends GetView<MoreController> {
                         Container(
                           padding: EdgeInsets.only(left: 15.0, right: 15.0),
                           child: ListTile(
-                            leading: Icon(Icons.phone),
+                              leading: Image(image: AssetImage(changeLanguage), width: 20, height: 20,),
                             title: Text('Language Change'),
                             onTap: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (builder) => ChangeLangugaeView()));
-                            },
-                          ),
+                              //Navigator.push(context, MaterialPageRoute(builder: (builder) => ChangeLangugaeView()));
+                              showModalBottomSheet(
+                                context: context,
+                                builder: (context) {
+                                  return Wrap(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.all(10.0),
+                                          child: Column(
+                                            children: [
+                                              Text(
+                                                'English ',
+                                                style: TextStyle(fontWeight: FontWeight.normal, fontSize: 16),
+                                              ),
+                                              SizedBox(
+                                                height: 15,
+                                              ),
+                                              Text(
+                                                'French ',
+                                                style: TextStyle(fontWeight: FontWeight.normal, fontSize: 16),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+
+                                      ]
+                                  );
+                                },
+                              );
+                            }
+                        ),
                         ),
                 Container(
                   padding: EdgeInsets.only(left: 15.0, right: 15.0),
                   child: ListTile(
-                    leading: Icon(Icons.phone),
+                    leading: Image(image: AssetImage(contactUS), width: 20, height: 20,),
                     title: Text('Change contact details'),
                     onTap: () {
                       Navigator.push(context, MaterialPageRoute(builder: (builder) => ChangeContactView()));
@@ -238,7 +266,7 @@ class MoreView extends GetView<MoreController> {
                 Container(
                   padding: EdgeInsets.only(left: 15.0, right: 15.0),
                   child: ListTile(
-                    leading: Icon(Icons.lock),
+                    leading: Image(image: AssetImage(changePassword), width: 20, height: 20,),
                     title: Text('Change Password'),
                     onTap: () {
                       Navigator.push(
@@ -251,7 +279,7 @@ class MoreView extends GetView<MoreController> {
                 Container(
                   padding: EdgeInsets.only(left: 15.0, right: 15.0),
                   child: ListTile(
-                    leading: Icon(Icons.delete),
+                    leading: Image(image: AssetImage(deleteAcc), width: 20, height: 20,),
                     title: Text('Delete Account'),
                     onTap: () {
                       Navigator.push(
@@ -359,7 +387,7 @@ class MoreView extends GetView<MoreController> {
                 Container(
                   padding: EdgeInsets.only(left: 15.0, right: 15.0),
                   child: ListTile(
-                    leading: Icon(Icons.phone),
+                    leading: Image(image: AssetImage(termsConditions), width: 20, height: 20,),
                     title: Text('Terms and Conditions'),
                     onTap: () {
                       Navigator.push(context, MaterialPageRoute(builder: (builder) => TermsConditionView()));
@@ -369,14 +397,14 @@ class MoreView extends GetView<MoreController> {
                 Container(
                   padding: EdgeInsets.only(left: 15.0, right: 15.0),
                   child: ListTile(
-                    leading: Icon(Icons.delete),
+                    leading: Image(image: AssetImage(privacy), width: 20, height: 20,),
                     title: Text('Privacy Policy'),
                     onTap: () {
                       Navigator.push(context, MaterialPageRoute(builder: (builder) => PrivacyPolicyView()));
                     },
                   ),
                 ),
-                Container(
+                /*Container(
                   padding: EdgeInsets.only(left: 15.0, right: 15.0),
                   child: ListTile(
                     leading: Icon(Icons.lock),
@@ -386,17 +414,30 @@ class MoreView extends GetView<MoreController> {
                       Get.toNamed(Routes.faq);
                     },
                   ),
-                ),
+                ),*/
                 Container(
                   padding: EdgeInsets.only(left: 15.0, right: 15.0),
                   child: ListTile(
-                    leading: Icon(Icons.settings),
+                    leading: Image(image: AssetImage(contactUS), width: 20, height: 20,),
                     title: Text('Contact Us'),
                     onTap: () {
                       Navigator.push(context, MaterialPageRoute(builder: (builder) => ContactUsView()));
                     },
                   ),
                 ),
+                        Container(
+                          padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                          child: ListTile(
+                            leading:Image(image: AssetImage(logout), width: 20, height: 20,),
+                            title: Text('Log Out'),
+                            onTap: () {
+                             // Navigator.push(context, MaterialPageRoute(builder: (builder) => ContactUsView()));
+                            },
+                          ),
+                        ),
+
+
+
               ])))
             ],
           ),
@@ -405,3 +446,28 @@ class MoreView extends GetView<MoreController> {
     );
   }
 }
+
+/*
+*  InkWell(
+                            onTap: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (builder) => ContactUsView()));
+                            },
+                            child: Container(
+                              padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                              child: new Row(
+                                children: <Widget>[
+                                  new Container(
+                                    child: new Image.asset(
+                                      termsConditions,
+                                      height: 60.0,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                  new Container(
+                                    child: new Text('long information text'),
+                                  ),
+                                ],
+                              ),
+                            ),
+                        )
+* */

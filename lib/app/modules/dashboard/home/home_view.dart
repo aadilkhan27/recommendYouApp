@@ -10,6 +10,7 @@ import 'package:recommend_you/app/routes/pages.dart';
 import 'package:recommend_you/app/widgets/dropdown_button2.dart';
 
 import '../../../core/values/colors.dart';
+import '../../imageLarge.dart';
 import 'helper/helper_view.dart';
 import 'home_controller.dart';
 
@@ -23,10 +24,6 @@ class HomeView extends GetView<HomeController> {
     'Categories 2',
     'Categories 3',
     'Categories 4',
-    'Categories 5',
-    'Categories 6',
-    'Categories 7',
-    'Categories 8',
   ];
   String? selectedValue;
   List<String> images = [
@@ -114,7 +111,7 @@ class HomeView extends GetView<HomeController> {
                           const EdgeInsets.only(left: 10, right: 10),
                           dropdownDecoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(5),
-                            color: veryLightGreyColor
+                            color: bonJourColor
                           ),
                           items: spinnerItems.map((item) => DropdownMenuItem<String>(
                             value: item,
@@ -232,17 +229,23 @@ class HomeView extends GetView<HomeController> {
                                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                           crossAxisAlignment: CrossAxisAlignment.start,
                                           children: [
-                                            Text(
-                                              '08-09-2021',
-                                              style: TextStyle(
-                                                  fontWeight: FontWeight.normal,
-                                                  fontSize: 12),
+                                            Padding(
+                                              padding: const EdgeInsets.only(left: 10, top: 0),
+                                              child: Text(
+                                                '08-09-2021',
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.normal,
+                                                    fontSize: 12),
+                                              ),
                                             ),
                                             SizedBox(
                                               width: 10,
                                             ),
                                             InkWell(
-                                              child: SvgPicture.asset(icMoreHorizontal),
+
+                                              child: Container(
+                                                  margin: EdgeInsets.only(right: 10, top: 0),
+                                                  child: SvgPicture.asset(icMoreHorizontal)),
                                               onTap: () {
                                                 showModalBottomSheet(
                                                     context: context,
@@ -279,7 +282,7 @@ class HomeView extends GetView<HomeController> {
                               child: Text(
                                 dummyLoremIpsum,
                                 style: TextStyle(color: Colors.black,
-                                    fontSize: 12, fontWeight: FontWeight.normal),
+                                    fontSize: 12, fontWeight: FontWeight.normal, height: 1.4),
                               ),
                             ),
                             Container(
@@ -345,6 +348,7 @@ class HomeView extends GetView<HomeController> {
                             )
                           ],
                         ),
+
                         Column(
                           children: [
                             Container(
@@ -405,7 +409,10 @@ class HomeView extends GetView<HomeController> {
                                           crossAxisAlignment: CrossAxisAlignment.start,
                                           children: [
                                             InkWell(
-                                              child: SvgPicture.asset(icMoreHorizontal),
+
+                                              child: Container(
+                                                  margin: EdgeInsets.only(right: 10, top: 0),
+                                                  child: SvgPicture.asset(icMoreHorizontal)),
                                               onTap: () {
                                                 showModalBottomSheet(
                                                     context: context,
@@ -517,11 +524,17 @@ class HomeView extends GetView<HomeController> {
                                       child: Text(
                                         dummyLoremIpsum,
                                         style: TextStyle(color: Colors.black,
-                                            fontSize: 12, fontWeight: FontWeight.normal),
+                                            fontSize: 12, fontWeight: FontWeight.normal, height: 1.4),
                                       ),
                                     ),
-                                    Container(
-                                        margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image1))),
+                                    InkWell(
+                                      onTap: () {
+                                        //Navigator.push(context, MaterialPageRoute(builder: (builder) => DetailScreen()));
+                                      },
+                                      child: Container(margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image1))),
+                                    ),
+
+
 
                                   ],
                                 ),
@@ -593,6 +606,7 @@ class HomeView extends GetView<HomeController> {
                             )
                           ],
                         ),
+
                         Column(
                           children: [
                             Container(
@@ -652,17 +666,23 @@ class HomeView extends GetView<HomeController> {
                                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                           crossAxisAlignment: CrossAxisAlignment.start,
                                           children: [
-                                            Text(
-                                              '08-09-2021',
-                                              style: TextStyle(
-                                                  fontWeight: FontWeight.normal,
-                                                  fontSize: 12),
+                                            Padding(
+                                              padding: const EdgeInsets.only(left: 10, top: 0),
+                                              child: Text(
+                                                '08-09-2021',
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.normal,
+                                                    fontSize: 12),
+                                              ),
                                             ),
                                             SizedBox(
                                               width: 10,
                                             ),
                                             InkWell(
-                                              child: SvgPicture.asset(icMoreHorizontal),
+
+                                              child: Container(
+                                                  margin: EdgeInsets.only(right: 10, top: 0),
+                                                  child: SvgPicture.asset(icMoreHorizontal)),
                                               onTap: () {
                                                 showModalBottomSheet(
                                                     context: context,
@@ -703,12 +723,18 @@ class HomeView extends GetView<HomeController> {
                                     dummyLoremIpsum,
                                     style: TextStyle(color: Colors.black,
                                         fontSize: 12,
-                                        fontWeight: FontWeight.normal),
+                                        fontWeight: FontWeight.normal, height: 1.4),
                                   ),
                                   SizedBox(
                                     height: 10,
                                   ),
-                                  Image(image: AssetImage(image2))
+                                  InkWell(
+                                    onTap: () {
+                                      //Navigator.push(context, MaterialPageRoute(builder: (builder) => DetailScreen()));
+                                    },
+                                    child: Container(margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image2))),
+                                  ),
+                                  //Image(image: AssetImage(image2))
                                 ],
                               ),
                             ),
@@ -775,6 +801,7 @@ class HomeView extends GetView<HomeController> {
                             )
                           ],
                         ),
+
                         Column(
                           children: [
                             Container(
@@ -834,17 +861,23 @@ class HomeView extends GetView<HomeController> {
                                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                           crossAxisAlignment: CrossAxisAlignment.start,
                                           children: [
-                                            Text(
-                                              '08-09-2021',
-                                              style: TextStyle(
-                                                  fontWeight: FontWeight.normal,
-                                                  fontSize: 12),
+                                            Padding(
+                                              padding: const EdgeInsets.only(left: 10, top: 0),
+                                              child: Text(
+                                                '08-09-2021',
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.normal,
+                                                    fontSize: 12),
+                                              ),
                                             ),
                                             SizedBox(
                                               width: 10,
                                             ),
                                             InkWell(
-                                              child: SvgPicture.asset(icMoreHorizontal),
+
+                                              child: Container(
+                                                  margin: EdgeInsets.only(right: 10, top: 0),
+                                                  child: SvgPicture.asset(icMoreHorizontal)),
                                               onTap: () {
                                                 showModalBottomSheet(
                                                     context: context,
@@ -882,7 +915,7 @@ class HomeView extends GetView<HomeController> {
                               child: Text(
                                 dummyLoremIpsum,
                                 style: TextStyle(color: Colors.black,
-                                    fontSize: 14, fontWeight: FontWeight.normal),
+                                    fontSize: 14, fontWeight: FontWeight.normal, height: 1.4),
                               ),
                             ),
                             Container(
@@ -948,6 +981,7 @@ class HomeView extends GetView<HomeController> {
                             )
                           ],
                         ),
+
                         Column(
                           children: [
                             Container(
@@ -1007,17 +1041,23 @@ class HomeView extends GetView<HomeController> {
                                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                           crossAxisAlignment: CrossAxisAlignment.start,
                                           children: [
-                                            Text(
-                                              '08-09-2021',
-                                              style: TextStyle(
-                                                  fontWeight: FontWeight.normal,
-                                                  fontSize: 12),
+                                            Padding(
+                                              padding: const EdgeInsets.only(left: 10, top: 0),
+                                              child: Text(
+                                                '08-09-2021',
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.normal,
+                                                    fontSize: 12),
+                                              ),
                                             ),
                                             SizedBox(
                                               width: 10,
                                             ),
                                             InkWell(
-                                              child: SvgPicture.asset(icMoreHorizontal),
+
+                                              child: Container(
+                                                  margin: EdgeInsets.only(right: 10, top: 0),
+                                                  child: SvgPicture.asset(icMoreHorizontal)),
                                               onTap: () {
                                                 showModalBottomSheet(
                                                     context: context,
@@ -1058,7 +1098,7 @@ class HomeView extends GetView<HomeController> {
                                     dummyLoremIpsum,
                                     style: TextStyle(color: Colors.black,
                                         fontSize: 12,
-                                        fontWeight: FontWeight.normal),
+                                        fontWeight: FontWeight.normal, height: 1.4),
                                   ),
                                   SizedBox(
                                     height: 10,
@@ -1130,6 +1170,7 @@ class HomeView extends GetView<HomeController> {
                             )
                           ],
                         ),
+
                         Column(
                           children: [
                             Container(
@@ -1193,7 +1234,10 @@ class HomeView extends GetView<HomeController> {
                                               width: 10,
                                             ),
                                             InkWell(
-                                              child: SvgPicture.asset(icMoreHorizontal),
+
+                                              child: Container(
+                                                  margin: EdgeInsets.only(right: 10, top: 0),
+                                                  child: SvgPicture.asset(icMoreHorizontal)),
                                               onTap: () {
                                                 showModalBottomSheet(
                                                     context: context,
@@ -1305,7 +1349,7 @@ class HomeView extends GetView<HomeController> {
                                       child: Text(
                                         dummyLoremIpsum,
                                         style: TextStyle(
-                                            fontSize: 12, fontWeight: FontWeight.normal),
+                                            fontSize: 12, fontWeight: FontWeight.normal, height: 1.4),
                                       ),
                                     ),
                                     Container(
@@ -1380,6 +1424,7 @@ class HomeView extends GetView<HomeController> {
                             )
                           ],
                         ),
+
                       ],
                     ),
                   )
@@ -1390,4 +1435,6 @@ class HomeView extends GetView<HomeController> {
       ),
     );
   }
+
 }
+

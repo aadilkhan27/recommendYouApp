@@ -303,7 +303,7 @@ showAlertDialog(BuildContext context) {
       alignment: Alignment.center,
       child: const Text(
         'OK',
-        style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold ),
       ),
     ),
     onPressed: () {
@@ -320,7 +320,7 @@ showAlertDialog(BuildContext context) {
     ),
     content: Text(
       dummyLoremIpsum,
-      style: TextStyle(color: Colors.black, fontSize: 12),
+      style: TextStyle(color: Colors.black, fontSize: 12, height: 1.5),
     ),
     actions: [
       continueButton,

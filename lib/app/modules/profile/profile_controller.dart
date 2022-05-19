@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:recommend_you/app/core/values/colors.dart';
 
-class ProfileController extends GetxController
-    with GetSingleTickerProviderStateMixin {
+class ProfileController extends GetxController with GetSingleTickerProviderStateMixin {
   late TabController tabController;
 
   final List<Tab> referralTabs = const <Tab>[

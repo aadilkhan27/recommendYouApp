@@ -10,9 +10,11 @@ const primaryLightColor=Color(0xffB466B4);
 const suvaGreyColor = Color(0xFF919191);
 
 const neroColor = Color(0xff222222);
-const whiteSmokeColor = Color(0xffF6F6F6);
+const whiteSmokeColor = Color(0xFFF6F6F6);
 const veryLightGreyColor = Color(0xFFCCCCCC);
 const veryLightGreyTwoColor = Color(0xFFD3D3D3);
+
+const dropDownGreyColor = Color(0xFFCCCCCC);
 
 const roseWhiteColor = Color(0xFFFEF9F8);
 

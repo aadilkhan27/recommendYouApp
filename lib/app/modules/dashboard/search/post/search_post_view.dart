@@ -45,9 +45,9 @@ class SearchPostView extends GetView<SearchedPostController> {
         body: Container(
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
-          child: Column(
+          /*child: Column(
             children: [
-             /* Container(
+             *//* Container(
                 height: 50,
                 width: MediaQuery.of(context).size.width,
                 padding: EdgeInsets.all(10),
@@ -124,7 +124,7 @@ class SearchPostView extends GetView<SearchedPostController> {
                     ),
                   ],
                 ),
-              ),*/
+              ),*//*
               Expanded(
                   child: SingleChildScrollView(
                     child: Column(
@@ -239,7 +239,7 @@ class SearchPostView extends GetView<SearchedPostController> {
                                     dummyLoremIpsum,
                                     style: TextStyle(color: Colors.black,
                                         fontSize: 12,
-                                        fontWeight: FontWeight.normal),
+                                        fontWeight: FontWeight.normal, height: 1.4),
                                   ),
                                   SizedBox(
                                     height: 10,
@@ -254,7 +254,7 @@ class SearchPostView extends GetView<SearchedPostController> {
                               child: Row(
                                 children: [
                                   SvgPicture.asset(icHeart),
-                                  /*SizedBox(
+                                  *//*SizedBox(
                                     width: 20,
                                   ),
                                   SvgPicture.asset(icComment),
@@ -299,7 +299,7 @@ class SearchPostView extends GetView<SearchedPostController> {
                                             );
                                           });
                                     },
-                                  ),*/
+                                  ),*//*
                                   Spacer(),
                                   SvgPicture.asset(icCombinedShape),
                                 ],
@@ -421,7 +421,7 @@ class SearchPostView extends GetView<SearchedPostController> {
                                     dummyLoremIpsum,
                                     style: TextStyle(color: Colors.black,
                                         fontSize: 12,
-                                        fontWeight: FontWeight.normal),
+                                        fontWeight: FontWeight.normal, height: 1.4),
                                   ),
                                   SizedBox(
                                     height: 10,
@@ -436,7 +436,7 @@ class SearchPostView extends GetView<SearchedPostController> {
                               child: Row(
                                 children: [
                                   SvgPicture.asset(icHeart),
-                                  /*SizedBox(
+                                  *//*SizedBox(
                                     width: 20,
                                   ),
                                   SvgPicture.asset(icComment),
@@ -481,7 +481,7 @@ class SearchPostView extends GetView<SearchedPostController> {
                                             );
                                           });
                                     },
-                                  ),*/
+                                  ),*//*
                                   Spacer(),
                                   SvgPicture.asset(icCombinedShape),
                                 ],
@@ -603,7 +603,7 @@ class SearchPostView extends GetView<SearchedPostController> {
                                     dummyLoremIpsum,
                                     style: TextStyle(color: Colors.black,
                                         fontSize: 12,
-                                        fontWeight: FontWeight.normal),
+                                        fontWeight: FontWeight.normal, height: 1.4),
                                   ),
                                   SizedBox(
                                     height: 10,
@@ -618,7 +618,7 @@ class SearchPostView extends GetView<SearchedPostController> {
                               child: Row(
                                 children: [
                                   SvgPicture.asset(icHeart),
-                                  /*SizedBox(
+                                  *//*SizedBox(
                                     width: 20,
                                   ),
                                   SvgPicture.asset(icComment),
@@ -663,7 +663,7 @@ class SearchPostView extends GetView<SearchedPostController> {
                                             );
                                           });
                                     },
-                                  ),*/
+                                  ),*//*
                                   Spacer(),
                                   SvgPicture.asset(icCombinedShape),
                                 ],
@@ -785,7 +785,7 @@ class SearchPostView extends GetView<SearchedPostController> {
                                     dummyLoremIpsum,
                                     style: TextStyle(color: Colors.black,
                                         fontSize: 12,
-                                        fontWeight: FontWeight.normal),
+                                        fontWeight: FontWeight.normal, height: 1.4),
                                   ),
                                   SizedBox(
                                     height: 10,
@@ -800,7 +800,7 @@ class SearchPostView extends GetView<SearchedPostController> {
                               child: Row(
                                 children: [
                                   SvgPicture.asset(icHeart),
-                                  /*SizedBox(
+                                  *//*SizedBox(
                                     width: 20,
                                   ),
                                   SvgPicture.asset(icComment),
@@ -845,7 +845,7 @@ class SearchPostView extends GetView<SearchedPostController> {
                                             );
                                           });
                                     },
-                                  ),*/
+                                  ),*//*
                                   Spacer(),
                                   SvgPicture.asset(icCombinedShape),
                                 ],
@@ -862,7 +862,7 @@ class SearchPostView extends GetView<SearchedPostController> {
                   )
               ),
             ],
-          ),
+          ),*/
         ),
       ),
     );
