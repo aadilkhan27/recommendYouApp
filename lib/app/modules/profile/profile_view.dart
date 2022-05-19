@@ -17,6 +17,7 @@ class ProfileView extends GetView<ProfileController> {
     'Categories 3',
     'Categories 4',
   ];
+
   String? selectedValue;
 
   @override
