@@ -76,9 +76,14 @@ class HelperView extends GetView<ChangeContactController>{
                                     MaterialPageRoute(
                                         builder: (builder) => SendEmailView()));
                               },
-                              child: Text('Send'),
+                              child: Text(
+                                "Send",
+                                style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                             ),
-
+                            ),
+                              SizedBox(
+                                width: 10,
+                              ),
                           ],
                         ),
                       ),

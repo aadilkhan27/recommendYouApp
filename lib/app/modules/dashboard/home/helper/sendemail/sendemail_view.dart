@@ -8,6 +8,8 @@ import 'package:recommend_you/app/modules/dashboard/more/changecontactdetails/ch
 
 import '../../../../../core/values/colors.dart';
 import '../../../../../core/values/keys.dart';
+import '../../../../../core/values/strings.dart';
+import '../../../../../routes/pages.dart';
 import '../../../../../widgets/dropdown_button2.dart';
 
 class SendEmailView extends GetView<SendEmailController>{
@@ -63,9 +65,12 @@ class SendEmailView extends GetView<SendEmailController>{
                           ),
                           Spacer(),
                           InkWell(
-                            child: Text('Send Email'),
+                            child:  Text(
+                              "Send Email",
+                              style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                            ),
                             onTap: () {
-                              //Get.back();
+                              showAlertDialog(context);
                             },
                           ),
                           SizedBox(
@@ -124,6 +129,41 @@ class SendEmailView extends GetView<SendEmailController>{
                         ),
                       ],
                     ),
+
+                    Divider(
+                      color: Colors.black,
+                      height: 1,
+                    ),
+
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Container(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(left: 15.0, right: 15.0, top: 10, bottom: 10),
+                                child: Text(
+                                  'To : Thomas Dobos',
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                  ),
+                                ),
+                              ),
+
+                            ],
+                          ),
+                        ),
+                        Divider(
+                          color: Colors.black,
+                          height: 1,
+                        ),
+                      ],
+                    ),
+
+
                     Divider(
                       color: Colors.black,
                       height: 1,
@@ -131,6 +171,10 @@ class SendEmailView extends GetView<SendEmailController>{
                     SizedBox(
                       height: 10,
                     ),
+
+
+
+
                     Container(
                       height: 30,
                       width: MediaQuery.of(context).size.width,
@@ -157,7 +201,7 @@ class SendEmailView extends GetView<SendEmailController>{
                         hint: const Text(
                           'Categories',
                           style: TextStyle(
-                              fontSize: 12, color: Colors.black),
+                              fontSize: 14, color: Colors.black),
                         ),
                         icon: const Icon(
                           Icons.arrow_drop_down,
@@ -202,22 +246,23 @@ class SendEmailView extends GetView<SendEmailController>{
                       height: 1,
                     ),
                     SizedBox(
-                      height: 10,
+                      height: 0,
                     ),
                     Container(
-                      margin: EdgeInsets.all(12),
-                      height: 5 * 24,
+                      margin: EdgeInsets.only(right: 12, left: 12, ),
+                      height: 6* 24,
                       child: TextField(
                         cursorColor: Colors.black,
-                        maxLines: 5,
+                        style: TextStyle(fontSize: 16, color: Colors.black, height: 1.4),
+                        maxLines: 15,
                         decoration: InputDecoration(
                           enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.purple),
+                            borderSide: BorderSide(color: Colors.white),
                           ),
                           focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.purple),
+                            borderSide: BorderSide(color: Colors.white),
                           ),
-                          hintText: "How can I help you?",
+                          hintText: "Write a message here.....",
                           hintStyle: TextStyle(color: Colors.black),
                           filled: false,
                         ),
@@ -359,5 +404,49 @@ class SendEmailView extends GetView<SendEmailController>{
       ),
     );
   }
+  showAlertDialog(BuildContext context) {
+    // set up the buttons
+    Widget continueButton = TextButton(
+      child: Container(
+        height: 40,
+        width: 60,
+        decoration: BoxDecoration(
+            color: primaryDarkColor,
+            border: Border.all(color: primaryDarkColor),
+            borderRadius: const BorderRadius.all(Radius.circular(7))),
+        alignment: Alignment.center,
+        child: const Text(
+          'OK',
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold ),
+        ),
+      ),
+      onPressed: () {
+        Navigator.of(context).pop();
+        Get.toNamed(Routes.dashboard);
+      },
+    );
 
+    // set up the AlertDialog
+    AlertDialog alert = AlertDialog(
+      title: Text(
+        "Successfully Email Send",
+        style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+      ),
+      content: Text(
+        dummyLoremIpsum,
+        style: TextStyle(color: Colors.black, fontSize: 12, height: 1.5),
+      ),
+      actions: [
+        continueButton,
+      ],
+    );
+
+    // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    );
+  }
 }

@@ -23,10 +23,6 @@ class HomeView extends GetView<HomeController> {
     'Categories 2',
     'Categories 3',
     'Categories 4',
-    'Categories 5',
-    'Categories 6',
-    'Categories 7',
-    'Categories 8',
   ];
   String? selectedValue;
   List<String> images = [
@@ -114,7 +110,7 @@ class HomeView extends GetView<HomeController> {
                           const EdgeInsets.only(left: 10, right: 10),
                           dropdownDecoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(5),
-                            color: whiteSmokeColor
+                            color: bonJourColor
                           ),
                           items: spinnerItems.map((item) => DropdownMenuItem<String>(
                             value: item,

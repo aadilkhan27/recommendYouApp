@@ -67,12 +67,13 @@ const inviteafriend='assets/profile/inite.svg';
 const settings='assets/profile/Settings.svg';
 const faq='assets/profile/faq.svg';
 const privacypolicy='assets/profile/privacy.svg';
-const logout='assets/profile/Logout.svg';
+
+const logout='assets/settings/logout.png';
 
 
 const changeLanguage='assets/settings/language.png';
 const contactUS='assets/settings/contact-us.png';
-const privacy='assets/settings/privacynew.png';
+const privacy='assets/settings/privacy.png';
 const termsConditions='assets/settings/terms.png';
 const changePassword='assets/settings/Password-change.png';
 const deleteAcc='assets/settings/delete.png';

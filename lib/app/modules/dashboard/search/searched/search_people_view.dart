@@ -88,7 +88,7 @@ class SearchPeopleView extends GetView<SearchPeopleController> {
                                   ),
                                 ),
                                 Spacer(),
-                                Container(child: SvgPicture.asset(icClose),margin: EdgeInsets.only(right: 20),)
+                                //Container(child: SvgPicture.asset(icClose),margin: EdgeInsets.only(right: 20),)
                               ],
                             ),
                           ),

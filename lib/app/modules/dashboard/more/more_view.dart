@@ -424,7 +424,16 @@ class MoreView extends GetView<MoreController> {
                     },
                   ),
                 ),
-
+                        Container(
+                          padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                          child: ListTile(
+                            leading:Image(image: AssetImage(logout), width: 20, height: 20,),
+                            title: Text('Log Out'),
+                            onTap: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (builder) => ContactUsView()));
+                            },
+                          ),
+                        ),
 
 
 

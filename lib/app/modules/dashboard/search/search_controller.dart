@@ -5,14 +5,15 @@ class SearchController extends GetxController with GetSingleTickerProviderStateM
   late TabController tabController;
 
   final List<Tab> referralTabs = const <Tab>[
+
     Tab(
       child: Text(
-        'Posts',
+        'People',
       ),
     ),
     Tab(
       child: Text(
-        'People',
+        'Posts',
       ),
     ),
   ];

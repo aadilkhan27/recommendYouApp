@@ -148,7 +148,7 @@ class NotificationView extends GetView<NotificationController> {
                                                     child: Row(
                                                       children: [
                                                         Text(
-                                                          'Requested to follow you',
+                                                          'Liked your post',
                                                           style: TextStyle(
                                                               fontSize: 12,
                                                               fontWeight:
@@ -174,46 +174,7 @@ class NotificationView extends GetView<NotificationController> {
                                                 ],
                                               ),
                                             ),
-                                            Spacer(),
-                                            Container(
-                                                child: Row(
-                                              children: [
-                                                Text(
-                                                  'Delete',
-                                                  style: TextStyle(
-                                                      fontSize: 14,
-                                                      fontWeight:
-                                                          FontWeight.normal),
-                                                ),
-                                                SizedBox(
-                                                  width: 10,
-                                                ),
-                                                Container(
-                                                  height: 25,
-                                                  width: 70,
-                                                  padding: EdgeInsets.only(
-                                                      left: 5, right: 5),
-                                                  decoration: BoxDecoration(
-                                                      color: Colors.purple,
-                                                      border: Border.all(
-                                                          color: Colors.purple),
-                                                      borderRadius:
-                                                          const BorderRadius
-                                                                  .all(
-                                                              Radius.circular(
-                                                                  5))),
-                                                  alignment: Alignment.center,
-                                                  child: Text(
-                                                    'Confirm',
-                                                    style: TextStyle(
-                                                        color: Colors.white,
-                                                        fontWeight:
-                                                            FontWeight.normal,
-                                                        fontSize: 14),
-                                                  ),
-                                                ),
-                                              ],
-                                            ))
+
                                           ],
                                         ),
                                       ),
@@ -307,30 +268,7 @@ class NotificationView extends GetView<NotificationController> {
                                                 SizedBox(
                                                   width: 10,
                                                 ),
-                                                Container(
-                                                  height: 25,
-                                                  width: 70,
-                                                  padding: EdgeInsets.only(
-                                                      left: 5, right: 5),
-                                                  decoration: BoxDecoration(
-                                                      color: Colors.purple,
-                                                      border: Border.all(
-                                                          color: Colors.purple),
-                                                      borderRadius:
-                                                          const BorderRadius
-                                                                  .all(
-                                                              Radius.circular(
-                                                                  5))),
-                                                  alignment: Alignment.center,
-                                                  child: Text(
-                                                    'Follow',
-                                                    style: TextStyle(
-                                                        color: Colors.white,
-                                                        fontWeight:
-                                                            FontWeight.normal,
-                                                        fontSize: 14),
-                                                  ),
-                                                ),
+
                                               ],
                                             ))
                                           ],
@@ -437,13 +375,13 @@ class NotificationView extends GetView<NotificationController> {
                                               ),
                                             ),
                                             Spacer(),
-                                            Container(
+                                           /* Container(
                                               child: Image(
                                                 image: AssetImage(image1),
                                                 width: 50,
                                                 height: 50,
                                               ),
-                                            )
+                                            )*/
                                           ],
                                         ),
                                       ),
@@ -627,13 +565,13 @@ class NotificationView extends GetView<NotificationController> {
                                               ),
                                             ),
                                             Spacer(),
-                                            Container(
+                                            /*Container(
                                               child: Image(
                                                 image: AssetImage(image1),
                                                 width: 50,
                                                 height: 50,
                                               ),
-                                            )
+                                            )*/
                                           ],
                                         ),
                                       ),
@@ -817,13 +755,13 @@ class NotificationView extends GetView<NotificationController> {
                                               ),
                                             ),
                                             Spacer(),
-                                            Container(
+                                            /*Container(
                                               child: Image(
                                                 image: AssetImage(image1),
                                                 width: 50,
                                                 height: 50,
                                               ),
-                                            )
+                                            )*/
                                           ],
                                         ),
                                       ),

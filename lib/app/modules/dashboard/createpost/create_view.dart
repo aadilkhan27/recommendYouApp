@@ -6,6 +6,7 @@ import 'package:recommend_you/app/core/values/keys.dart';
 import 'package:recommend_you/app/widgets/dropdown_button2.dart';
 
 import '../../../core/values/colors.dart';
+import '../../../core/values/strings.dart';
 import 'create_controller.dart';
 
 class CreateView extends GetView<CreateController> {
@@ -15,10 +16,6 @@ class CreateView extends GetView<CreateController> {
     'Categories 2',
     'Categories 3',
     'Categories 4',
-    'Categories 5',
-    'Categories 6',
-    'Categories 7',
-    'Categories 8',
   ];
   String? selectedValue;
 
@@ -57,9 +54,12 @@ class CreateView extends GetView<CreateController> {
                             ),
                             Spacer(),
                             InkWell(
-                              child: Text('Post'),
+                              child:  Text(
+                                "Post",
+                                style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                              ),
                               onTap: () {
-                                //Get.back();
+                                showAlertDialog(context);
                               },
                             ),
                             SizedBox(
@@ -156,7 +156,7 @@ class CreateView extends GetView<CreateController> {
                           hint: const Text(
                             'Categories',
                             style: TextStyle(
-                                fontSize: 12, color: Colors.black),
+                                fontSize: 14, color: Colors.black),
                           ),
                           icon: const Icon(
                             Icons.arrow_drop_down,
@@ -168,6 +168,7 @@ class CreateView extends GetView<CreateController> {
                           const EdgeInsets.only(left: 20, right: 10),
                           dropdownDecoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(15),
+                              color: bonJourColor
                           ),
                           items: spinnerItems
                               .map((item) => DropdownMenuItem<String>(
@@ -175,7 +176,7 @@ class CreateView extends GetView<CreateController> {
                             child: Text(
                               item,
                               style: const TextStyle(
-                                  fontSize: 12,
+                                  fontSize: 14,
                                   color: Colors.black),
                             ),
                           ))
@@ -201,20 +202,21 @@ class CreateView extends GetView<CreateController> {
                         height: 1,
                       ),
                       SizedBox(
-                        height: 10,
+                        height: 0,
                       ),
                       Container(
-                        margin: EdgeInsets.all(12),
-                        height: 5 * 24,
+                        margin: EdgeInsets.only(right: 12, left: 12, ),
+                        height: 6* 24,
                         child: TextField(
                           cursorColor: Colors.black,
-                          maxLines: 5,
+                          style: TextStyle(fontSize: 16, color: Colors.black, height: 1.4),
+                          maxLines: 15,
                           decoration: InputDecoration(
                             enabledBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(color: Colors.purple),
+                              borderSide: BorderSide(color: Colors.white),
                             ),
                             focusedBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(color: Colors.purple),
+                              borderSide: BorderSide(color: Colors.white),
                             ),
                             hintText: "Write a message here.....",
                             hintStyle: TextStyle(color: Colors.black),
@@ -541,6 +543,52 @@ class CreateView extends GetView<CreateController> {
           ),
         ),
       ),*/
+    );
+  }
+
+  showAlertDialog(BuildContext context) {
+    // set up the buttons
+    Widget continueButton = TextButton(
+      child: Container(
+        height: 40,
+        width: 60,
+        decoration: BoxDecoration(
+            color: primaryDarkColor,
+            border: Border.all(color: primaryDarkColor),
+            borderRadius: const BorderRadius.all(Radius.circular(7))),
+        alignment: Alignment.center,
+        child: const Text(
+          'OK',
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold ),
+        ),
+      ),
+      onPressed: () {
+        /*Navigator.of(context).pop();
+        Get.toNamed(Routes.dashboard);*/
+      },
+    );
+
+    // set up the AlertDialog
+    AlertDialog alert = AlertDialog(
+      title: Text(
+        "Successfully Post",
+        style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+      ),
+      content: Text(
+        dummyLoremIpsum,
+        style: TextStyle(color: Colors.black, fontSize: 12, height: 1.5),
+      ),
+      actions: [
+        //continueButton,
+      ],
+    );
+
+    // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
     );
   }
 }
