@@ -218,7 +218,7 @@ class MoreView extends GetView<MoreController> {
                         Container(
                           padding: EdgeInsets.only(left: 15.0, right: 15.0),
                           child: ListTile(
-                            leading: Icon(Icons.phone),
+                              leading: Image(image: AssetImage(changeLanguage), width: 20, height: 20,),
                             title: Text('Language Change'),
                             onTap: () {
                               //Navigator.push(context, MaterialPageRoute(builder: (builder) => ChangeLangugaeView()));
@@ -256,7 +256,7 @@ class MoreView extends GetView<MoreController> {
                 Container(
                   padding: EdgeInsets.only(left: 15.0, right: 15.0),
                   child: ListTile(
-                    leading: Icon(Icons.phone),
+                    leading: Image(image: AssetImage(contactUS), width: 20, height: 20,),
                     title: Text('Change contact details'),
                     onTap: () {
                       Navigator.push(context, MaterialPageRoute(builder: (builder) => ChangeContactView()));
@@ -266,7 +266,7 @@ class MoreView extends GetView<MoreController> {
                 Container(
                   padding: EdgeInsets.only(left: 15.0, right: 15.0),
                   child: ListTile(
-                    leading: Icon(Icons.lock),
+                    leading: Image(image: AssetImage(changePassword), width: 20, height: 20,),
                     title: Text('Change Password'),
                     onTap: () {
                       Navigator.push(
@@ -279,7 +279,7 @@ class MoreView extends GetView<MoreController> {
                 Container(
                   padding: EdgeInsets.only(left: 15.0, right: 15.0),
                   child: ListTile(
-                    leading: Icon(Icons.delete),
+                    leading: Image(image: AssetImage(deleteAcc), width: 20, height: 20,),
                     title: Text('Delete Account'),
                     onTap: () {
                       Navigator.push(
@@ -387,7 +387,7 @@ class MoreView extends GetView<MoreController> {
                 Container(
                   padding: EdgeInsets.only(left: 15.0, right: 15.0),
                   child: ListTile(
-                    leading: Icon(Icons.phone),
+                    leading: Image(image: AssetImage(termsConditions), width: 20, height: 20,),
                     title: Text('Terms and Conditions'),
                     onTap: () {
                       Navigator.push(context, MaterialPageRoute(builder: (builder) => TermsConditionView()));
@@ -397,7 +397,7 @@ class MoreView extends GetView<MoreController> {
                 Container(
                   padding: EdgeInsets.only(left: 15.0, right: 15.0),
                   child: ListTile(
-                    leading: Icon(Icons.privacy_tip),
+                    leading: Image(image: AssetImage(privacy), width: 20, height: 20,),
                     title: Text('Privacy Policy'),
                     onTap: () {
                       Navigator.push(context, MaterialPageRoute(builder: (builder) => PrivacyPolicyView()));
@@ -417,7 +417,7 @@ class MoreView extends GetView<MoreController> {
                 Container(
                   padding: EdgeInsets.only(left: 15.0, right: 15.0),
                   child: ListTile(
-                    leading: Icon(Icons.settings),
+                    leading: Image(image: AssetImage(contactUS), width: 20, height: 20,),
                     title: Text('Contact Us'),
                     onTap: () {
                       Navigator.push(context, MaterialPageRoute(builder: (builder) => ContactUsView()));

@@ -210,6 +210,7 @@ class StepTwoView extends GetView<StepTwoController> {
                         children: [
                           Expanded(
                             child: Container(
+                              width : 60,
                               margin: EdgeInsets.only(right: 10, left: 10),
                               padding: EdgeInsets.only(
                                   left: 15, top: 10, bottom: 10, right: 15),
@@ -225,6 +226,7 @@ class StepTwoView extends GetView<StepTwoController> {
                           ),
                           Expanded(
                             child: Container(
+                              width : 60,
                               margin: EdgeInsets.only(right: 5),
                               padding: EdgeInsets.only(left: 15, top: 10, bottom: 10, right: 15),
                               decoration: BoxDecoration(
@@ -241,6 +243,7 @@ class StepTwoView extends GetView<StepTwoController> {
                           ),
                           Expanded(
                             child: Container(
+                              width : 60,
                               margin: EdgeInsets.only(left: 5),
                               padding: EdgeInsets.only(
                                   left: 15, top: 10, bottom: 10, right: 15),

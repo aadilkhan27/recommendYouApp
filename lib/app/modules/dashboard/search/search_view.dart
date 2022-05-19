@@ -13,11 +13,12 @@ class SearchView extends GetView<SearchController> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        FocusScope.of(context).unfocus();
-      },
-      child: Scaffold(
-        appBar: AppBar(
+        onTap: ()
+    {
+      FocusScope.of(context).unfocus();
+    },
+    child: Scaffold(
+    /* appBar: AppBar(
           backgroundColor: Colors.white,
           flexibleSpace: TabBar(
             unselectedLabelColor: primaryLightColor,
@@ -31,8 +32,70 @@ class SearchView extends GetView<SearchController> {
         body: TabBarView(
           controller: _tabx.controller,
           children: [SearchPostView(), SearchPeopleView()],
-        ),
-      ),
+        ),*/
+
+      body: SafeArea(
+          child: Container(
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+
+          child: Column(
+            children: [
+
+
+              Container(
+                height: 40,
+                decoration: BoxDecoration(
+                    border: Border.all(color: Colors.purple),
+                    color: Colors.purple,
+                    borderRadius: const BorderRadius.all(
+                      Radius.circular(20),
+                    )
+                ),
+                margin: EdgeInsets.only(left: 20, right: 20, bottom: 10, top: 10),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 10.0, right: 10,bottom: 2, top: 2),
+                  child: TextField(
+                    style: TextStyle(color: Colors.white),
+                    cursorColor: Colors.white,
+                    decoration: const InputDecoration(
+                        enabledBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: Colors.purple),
+                        ),
+                        focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: Colors.purple),
+                        ),
+                        focusColor: Colors.white,
+                        hintStyle: TextStyle(color: Colors.white) ,
+                        hintText: 'Search',
+                        suffixIcon: Icon(Icons.search, color:Colors.white,)),
+                  ),
+                ),
+              ),
+
+                Container(
+                  child: TabBar(
+                  controller: controller.tabController,
+                  tabs: controller.referralTabs,
+                  labelColor: primaryDarkColor,
+                  unselectedLabelColor: primaryLightColor,
+                  indicatorColor: primaryDarkColor),
+                ),
+                Expanded(
+                    child: TabBarView(
+                        controller: controller.tabController,
+                        children: [
+                          SearchPostView(), SearchPeopleView()
+                          ]
+                    ),
+                ),
+        ]
+          )
+      )
+
+
+    ),
+    ),
     );
   }
 }

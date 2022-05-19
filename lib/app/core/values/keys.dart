@@ -72,8 +72,9 @@ const logout='assets/profile/Logout.svg';
 
 const changeLanguage='assets/settings/language.png';
 const contactUS='assets/settings/contact-us.png';
-const privacy='assets/settings/privacy.png';
+const privacy='assets/settings/privacynew.png';
 const termsConditions='assets/settings/terms.png';
 const changePassword='assets/settings/Password-change.png';
+const deleteAcc='assets/settings/delete.png';
 
 

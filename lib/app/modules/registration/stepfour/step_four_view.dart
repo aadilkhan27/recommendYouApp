@@ -332,102 +332,121 @@ showAlertDialog(BuildContext context) {
   // set up the AlertDialog
   Dialog alert = Dialog(
     child: Container(
-      height: 360,
-      padding: EdgeInsets.all(20),
+      height: 340,
+      padding: EdgeInsets.all(15),
       child: Column(
         children: [
-          ListTile(
-            contentPadding: EdgeInsets.all(0),
-            leading: Image(
-              image: AssetImage(welcomeLeft),
-              height: 60,
-              width: 30,
-            ),
-            trailing: Image(
-              image: AssetImage(welcomeRight),
-              height: 60,
-              width: 30,
-            ),
-            title: RichText(
-              text: TextSpan(
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Image(
+                image: AssetImage(welcomeLeft),
+                height: 60,
+                width: 30,
+              ),
+              RichText(
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: "Welcome to ",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 13,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    TextSpan(
+                      text: "Recommend",
+                      style: TextStyle(
+                          color: primaryDarkColor,
+                          fontSize: 13,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    TextSpan(
+                      text: "You",
+                      style: TextStyle(
+                          color: primaryLightColor,
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+              ),
+              Image(
+                image: AssetImage(welcomeLeft),
+                height: 60,
+                width: 30,
+              ),
+            ],
+          ),
+          Align(
+            alignment: Alignment.center,
+            child: Center(
+              child: Column(
                 children: [
-                  TextSpan(
-                    text: "Welcome to ",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 11,
-                        fontWeight: FontWeight.bold),
+                  SizedBox(
+                    height: 5,
                   ),
-                  TextSpan(
-                    text: "Recommend",
-                    style: TextStyle(
-                        color: primaryDarkColor,
-                        fontSize: 11,
-                        fontWeight: FontWeight.bold),
+                  RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                          text: "Congrates ",
+                          style: TextStyle(
+                              color: primaryDarkColor,
+                              fontSize: 12,
+                              fontWeight: FontWeight.normal),
+                        ),
+                        TextSpan(
+                          text: "You are now a recommendyou member!",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 12,
+                              fontWeight: FontWeight.normal),
+                        ),
+                      ],
+                    ),
+                    textAlign: TextAlign.center,
                   ),
-                  TextSpan(
-                    text: "You",
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    'Start inviting your friends/contacts, sharing content or check out the messages on your homepage.',
+                    style: TextStyle(fontSize: 12, color: Colors.black, height: 1.2),
+                    textAlign: TextAlign.center,
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    'If you have any questions, feel free to contact us.',
+                    style: TextStyle(fontSize: 12, color: Colors.black),
+                    textAlign: TextAlign.center,
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    'Greetings,',
+                    style: TextStyle(fontSize: 18, color: Colors.black),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    'The recommendyou team',
                     style: TextStyle(
-                        color: primaryLightColor,
                         fontSize: 12,
-                        fontWeight: FontWeight.bold),
+                        fontWeight: FontWeight.bold,
+                        color: primaryDarkColor),
                   ),
                 ],
               ),
             ),
           ),
-          Column(
-            children: [
-              RichText(
-                text: TextSpan(
-                  children: [
-                    TextSpan(
-                      text: "Congrates ",
-                      style: TextStyle(
-                          color: primaryDarkColor,
-                          fontSize: 11,
-                          fontWeight: FontWeight.normal),
-                    ),
-                    TextSpan(
-                      text: "You are now a recommendyou member!",
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 11,
-                          fontWeight: FontWeight.normal),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Text(
-                  'Start inviting your friends/contacts, sharing content or check out the messages on your homepage.',
-                  style: TextStyle(fontSize: 13,color: Colors.black),),
-              SizedBox(
-                height: 10,
-              ),
-              Text('If you have any questions, feel free to contact us.', style: TextStyle(fontSize: 13,color: Colors.black),),
-              SizedBox(
-                height: 10,
-              ),
-              Text(
-                'Greetings,',
-                style: TextStyle(fontSize: 18,color: Colors.black),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Text(
-                'The recommendyou team',
-                style: TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.bold,
-                    color: primaryDarkColor),
-              ),
-            ],
+          SizedBox(
+            height: 10,
           ),
-          SizedBox(height: 10,),
           Align(
             alignment: Alignment.center,
             child: TextButton(
@@ -441,8 +460,8 @@ showAlertDialog(BuildContext context) {
                 alignment: Alignment.center,
                 child: const Text(
                   'OK',
-                  style:
-                      TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.bold),
                 ),
               ),
               onPressed: () {
