@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:recommend_you/app/core/values/keys.dart';
 import 'package:recommend_you/app/core/values/strings.dart';
 import 'package:recommend_you/app/modules/profile/profile_view.dart';
+import 'package:recommend_you/app/routes/pages.dart';
 import 'package:recommend_you/app/widgets/dropdown_button2.dart';
 
 import '../../../core/values/colors.dart';
@@ -153,10 +154,11 @@ class HomeView extends GetView<HomeController> {
 
                       },),
                       InkWell(child: SvgPicture.asset(icUser),onTap: (){
-                        Navigator.push(
+                        /*Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (builder) => ProfileView()));
+                                builder: (builder) => ProfileView()));*/
+                        Get.toNamed(Routes.profileView);
 
                       },)
                     ],
