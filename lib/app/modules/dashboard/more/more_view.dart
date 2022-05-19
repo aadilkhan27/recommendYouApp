@@ -430,7 +430,7 @@ class MoreView extends GetView<MoreController> {
                             leading:Image(image: AssetImage(logout), width: 20, height: 20,),
                             title: Text('Log Out'),
                             onTap: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (builder) => ContactUsView()));
+                             // Navigator.push(context, MaterialPageRoute(builder: (builder) => ContactUsView()));
                             },
                           ),
                         ),

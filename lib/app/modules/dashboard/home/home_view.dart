@@ -10,6 +10,7 @@ import 'package:recommend_you/app/routes/pages.dart';
 import 'package:recommend_you/app/widgets/dropdown_button2.dart';
 
 import '../../../core/values/colors.dart';
+import '../../imageLarge.dart';
 import 'helper/helper_view.dart';
 import 'home_controller.dart';
 
@@ -526,8 +527,14 @@ class HomeView extends GetView<HomeController> {
                                             fontSize: 12, fontWeight: FontWeight.normal, height: 1.4),
                                       ),
                                     ),
-                                    Container(
-                                        margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image1))),
+                                    InkWell(
+                                      onTap: () {
+                                        //Navigator.push(context, MaterialPageRoute(builder: (builder) => DetailScreen()));
+                                      },
+                                      child: Container(margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image1))),
+                                    ),
+
+
 
                                   ],
                                 ),
@@ -721,7 +728,13 @@ class HomeView extends GetView<HomeController> {
                                   SizedBox(
                                     height: 10,
                                   ),
-                                  Image(image: AssetImage(image2))
+                                  InkWell(
+                                    onTap: () {
+                                      //Navigator.push(context, MaterialPageRoute(builder: (builder) => DetailScreen()));
+                                    },
+                                    child: Container(margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image2))),
+                                  ),
+                                  //Image(image: AssetImage(image2))
                                 ],
                               ),
                             ),
@@ -1411,6 +1424,7 @@ class HomeView extends GetView<HomeController> {
                             )
                           ],
                         ),
+
                       ],
                     ),
                   )
@@ -1421,4 +1435,6 @@ class HomeView extends GetView<HomeController> {
       ),
     );
   }
+
 }
+

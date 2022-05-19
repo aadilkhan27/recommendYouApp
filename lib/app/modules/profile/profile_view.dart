@@ -62,9 +62,11 @@ class ProfileView extends GetView<ProfileController> {
                         ),
                         Spacer(),
                         InkWell(
-                          child: SvgPicture.asset(icMenuOption),
+                          child: SvgPicture.asset(icEdit, width: 15,
+                            height: 15,
+                            color: primaryDarkColor,),
                           onTap: () {
-                            showPopupMenu(context);
+                            Get.toNamed(Routes.editProfile);
                           },
                         ),
                       ],
@@ -78,6 +80,7 @@ class ProfileView extends GetView<ProfileController> {
                 Container(
                   margin: EdgeInsets.only(left: 10, right: 10, top: 10),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Container(
                         width: (MediaQuery.of(context).size.width / 4) - 10,
@@ -95,17 +98,41 @@ class ProfileView extends GetView<ProfileController> {
                       ),
                       Container(
                         width: (MediaQuery.of(context).size.width / 4) - 10,
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 20.0),
+                          child: Column(
+                            children: [
+                              Text(
+                                '152',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Text(
+                                'Likes',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 12,
+                                    color: Colors.grey),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                      /*Container(
+                        width: (MediaQuery.of(context).size.width / 4) - 10,
                         child: Column(
                           children: [
                             Text(
-                              '152',
+                              '1584',
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                             SizedBox(
                               height: 5,
                             ),
                             Text(
-                              'Likes',
+                              'Followers',
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 12,
@@ -114,6 +141,27 @@ class ProfileView extends GetView<ProfileController> {
                           ],
                         ),
                       ),
+                      Container(
+                        width: (MediaQuery.of(context).size.width / 4) - 10,
+                        child: Column(
+                          children: [
+                            Text(
+                              '15 M',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              'Following',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 12,
+                                  color: Colors.grey),
+                            )
+                          ],
+                        ),
+                      )*/
                     ],
                   ),
                 ),
@@ -131,12 +179,12 @@ class ProfileView extends GetView<ProfileController> {
                       SizedBox(
                         width: 10,
                       ),
-                      SvgPicture.asset(
+                      /*SvgPicture.asset(
                         icEdit,
                         width: 15,
                         height: 15,
                         color: primaryDarkColor,
-                      )
+                      )*/
                     ],
                   ),
                 ),
@@ -153,14 +201,14 @@ class ProfileView extends GetView<ProfileController> {
                       ),
                     )),
                 Container(
-                    margin: EdgeInsets.only(left: 25, right: 25, top: 20),
+                    margin: EdgeInsets.only(left: 25, right: 25, top: 10),
                     child: Align(
                       alignment: Alignment.topLeft,
                       child: RichText(
                         text: TextSpan(children: [
                           TextSpan(
-                            text: dummyLoremIpsum,
-                            style: TextStyle(fontSize: 14, color: Colors.black),
+                            text: dummyLoremIpsum2,
+                            style: TextStyle(fontSize: 12, color: Colors.black, height: 1.4),
                           ),
                           TextSpan(
                             text: ' View more',
@@ -171,68 +219,67 @@ class ProfileView extends GetView<ProfileController> {
                       ),
                     )),
                 Container(
-                  margin: EdgeInsets.only(top: 15, left: 5),
+                  margin: EdgeInsets.only(top: 20, left: 5, right: 5),
                   child: Row(
                     children: [
                       Container(
                         height: 30,
-                        width: (MediaQuery.of(context).size.width / 2) - 15,
+                        width: 170,
+                        /* width: (MediaQuery.of(context).size.width / 2) +
+                            (MediaQuery.of(context).size.width / 5) - 15,*/
                         margin: EdgeInsets.only(right: 15, left: 15),
-                        child: Theme(
-                          data: Theme.of(context)
-                              .copyWith(canvasColor: remyColor),
-                          child: DropdownButtonFormField2(
-                            decoration: InputDecoration(
-                              isDense: true,
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                    color: primaryDarkColor, width: 1.0),
-                                borderRadius: BorderRadius.circular(15.0),
-                              ),
-                              contentPadding: EdgeInsets.zero,
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(15),
-                              ),
+                        child: DropdownButtonFormField2(
+                          decoration: InputDecoration(
+                            isDense: true,
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                  color: primaryDarkColor, width: 1.0),
+                              borderRadius: BorderRadius.circular(15.0),
                             ),
-                            isExpanded: true,
-                            hint: const Text(
-                              'RecommendYou',
-                              style: TextStyle(
-                                  fontSize: 12,
-                                  color: primaryDarkColor,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            icon: SvgPicture.asset(icDownArrow),
-                            iconSize: 30,
-                            buttonHeight: 60,
-                            buttonPadding:
-                                const EdgeInsets.only(left: 20, right: 10),
-                            dropdownDecoration: BoxDecoration(
+                            contentPadding: EdgeInsets.zero,
+                            border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(15),
                             ),
-                            items: spinnerItems
-                                .map((item) => DropdownMenuItem<String>(
-                                      value: item,
-                                      child: Text(
-                                        item,
-                                        style: const TextStyle(
-                                            fontSize: 10,
-                                            color: primaryDarkColor),
-                                      ),
-                                    ))
-                                .toList(),
-                            validator: (value) {
-                              if (value == null) {
-                                return 'RecommendYou';
-                              }
-                            },
-                            onChanged: (value) {
-                              //Do something when changing the item if you want.
-                            },
-                            onSaved: (value) {
-                              selectedValue = value.toString();
-                            },
                           ),
+                          isExpanded: true,
+                          hint: const Text(
+                            'RecommendYou',
+                            style: TextStyle(
+                                fontSize: 14,
+                                color: primaryDarkColor,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          icon: SvgPicture.asset(icDownArrow),
+                          iconSize: 30,
+                          buttonHeight: 60,
+                          buttonPadding:
+                          const EdgeInsets.only(left: 20, right: 10),
+                          dropdownDecoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              color: bonJourColor
+                          ),
+                          items: spinnerItems
+                              .map((item) => DropdownMenuItem<String>(
+                            value: item,
+                            child: Text(
+                              item,
+                              style: const TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.black),
+                            ),
+                          ))
+                              .toList(),
+                          validator: (value) {
+                            if (value == null) {
+                              return 'RecommendYou';
+                            }
+                          },
+                          onChanged: (value) {
+                            //Do something when changing the item if you want.
+                          },
+                          onSaved: (value) {
+                            selectedValue = value.toString();
+                          },
                         ),
                       ),
                       Spacer(),
@@ -247,9 +294,11 @@ class ProfileView extends GetView<ProfileController> {
                     ],
                   ),
                 ),
-                SizedBox(
-                  height: 20,
-                ),
+
+
+                SizedBox(height: 20,),
+
+
                 Container(
                   child: TabBar(
                       controller: controller.tabController,
@@ -266,574 +315,827 @@ class ProfileView extends GetView<ProfileController> {
                         child: Column(
                           children: [
                             Container(
-                              height: 60,
-                              width: MediaQuery.of(context).size.width,
-                              child: Row(
+                              margin: EdgeInsets.only(left: 10, right: 10, bottom: 10),
+                              child: Column(
                                 children: [
-                                  SizedBox(
-                                    width: 20,
-                                  ),
                                   Container(
-                                    width: 40.0,
-                                    height: 40.0,
-                                    decoration: new BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      image: new DecorationImage(
-                                        fit: BoxFit.fill,
-                                        image: AssetImage(profileImage),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 20,
-                                  ),
-                                  Container(
-                                    margin: EdgeInsets.only(top: 10),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                    height: 60,
+                                    width: MediaQuery.of(context).size.width,
+                                    child: Row(
                                       children: [
-                                        Container(
-                                          child: Row(
-                                            children: [
-                                              Text(
-                                                'Ramon Ricardo',
-                                                style: TextStyle(
-                                                    fontSize: 12,
-                                                    fontWeight:
-                                                        FontWeight.normal),
-                                              ),
-                                              SizedBox(
-                                                width: 130,
-                                              ),
-                                              Text(
-                                                '08-09-2021',
-                                                style: TextStyle(
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                    fontSize: 10),
-                                              ),
-                                              SizedBox(
-                                                width: 20,
-                                              ),
-                                              SvgPicture.asset(icMoreHorizontal)
-                                            ],
-                                          ),
+                                        SizedBox(
+                                          width: 20,
                                         ),
                                         Container(
-                                          child: Row(
+                                            width: 40.0,
+                                            height: 40.0,
+                                            decoration: new BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                image: new DecorationImage(
+                                                    fit: BoxFit.fill,
+                                                    image: AssetImage(user3)))),
+                                        SizedBox(
+                                          width: 20,
+                                        ),
+                                        Container(
+                                          margin: EdgeInsets.only(top: 10),
+                                          child: Column(
+                                            mainAxisAlignment: MainAxisAlignment.start,
+                                            crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                             children: [
-                                              SvgPicture.asset(icTagArrow),
-                                              Text(
-                                                'Category Text Public',
-                                                style: TextStyle(
-                                                    fontSize: 12,
-                                                    fontWeight:
-                                                        FontWeight.bold),
+                                              Container(
+                                                child: Row(
+                                                  children: [
+                                                    Text(
+                                                      'Ramon Ricardo',
+                                                      style: TextStyle(
+                                                          fontSize: 14,
+                                                          fontWeight:
+                                                          FontWeight.bold),
+                                                    ),
+                                                    SizedBox(
+                                                      width: 120,
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              Container(
+                                                margin: EdgeInsets.only(top: 5),
+                                                child: Row(
+                                                  children: [
+                                                    SvgPicture.asset(icTagArrow),
+                                                    Text(
+                                                      'Category Text Public',
+                                                      style: TextStyle(
+                                                          fontSize: 14,
+                                                          fontWeight: FontWeight.bold),
+                                                    )
+                                                  ],
+                                                ),
                                               )
                                             ],
                                           ),
-                                        )
+                                        ),
                                       ],
                                     ),
                                   ),
+                                  Container(
+                                    margin: EdgeInsets.only(
+                                        left: 10, right: 10,top: 5, bottom: 10),
+                                    child: Text(
+                                      dummyLoremIpsum2,
+                                      style: TextStyle(color: Colors.black,
+                                          fontSize: 12, fontWeight: FontWeight.normal, height: 1.4),
+                                    ),
+                                  ),
+                                  Container(
+                                      margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image1))),
+
                                 ],
                               ),
                             ),
                             Container(
-                              decoration: BoxDecoration(
-                                border: Border.all(color: Colors.grey),
-                                borderRadius: const BorderRadius.all(
-                                  Radius.circular(1),
-                                ),
+                              margin: EdgeInsets.only(left: 10, right: 10, bottom: 10),
+                              child: Column(
+                                children: [
+                                  Container(
+                                    height: 60,
+                                    width: MediaQuery.of(context).size.width,
+                                    child: Row(
+                                      children: [
+                                        SizedBox(
+                                          width: 20,
+                                        ),
+                                        Container(
+                                            width: 40.0,
+                                            height: 40.0,
+                                            decoration: new BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                image: new DecorationImage(
+                                                    fit: BoxFit.fill,
+                                                    image: AssetImage(user3)))),
+                                        SizedBox(
+                                          width: 20,
+                                        ),
+                                        Container(
+                                          margin: EdgeInsets.only(top: 10),
+                                          child: Column(
+                                            mainAxisAlignment: MainAxisAlignment.start,
+                                            crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                            children: [
+                                              Container(
+                                                child: Row(
+                                                  children: [
+                                                    Text(
+                                                      'Ramon Ricardo',
+                                                      style: TextStyle(
+                                                          fontSize: 14,
+                                                          fontWeight:
+                                                          FontWeight.bold),
+                                                    ),
+                                                    SizedBox(
+                                                      width: 120,
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              Container(
+                                                margin: EdgeInsets.only(top: 5),
+                                                child: Row(
+                                                  children: [
+                                                    SvgPicture.asset(icTagArrow),
+                                                    Text(
+                                                      'Category Text Public',
+                                                      style: TextStyle(
+                                                          fontSize: 14,
+                                                          fontWeight: FontWeight.bold),
+                                                    )
+                                                  ],
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    margin: EdgeInsets.only(
+                                        left: 10, right: 10,top: 5, bottom: 10),
+                                    child: Text(
+                                      dummyLoremIpsum2,
+                                      style: TextStyle(color: Colors.black,
+                                          fontSize: 12, fontWeight: FontWeight.normal, height: 1.4),
+                                    ),
+                                  ),
+                                  Container(
+                                      margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image1))),
+
+                                ],
                               ),
-                              margin: EdgeInsets.only(
-                                  left: 20, right: 20, bottom: 10),
-                              child: Container(
-                                margin: EdgeInsets.only(
-                                    left: 10, right: 10, bottom: 10),
-                                child: Column(
-                                  children: [
-                                    Container(
-                                      height: 60,
-                                      width: MediaQuery.of(context).size.width,
-                                      child: Row(
-                                        children: [
-                                          SizedBox(
-                                            width: 20,
-                                          ),
-                                          Container(
-                                              width: 40.0,
-                                              height: 40.0,
-                                              decoration: new BoxDecoration(
-                                                  shape: BoxShape.circle,
-                                                  image: new DecorationImage(
-                                                      fit: BoxFit.fill,
-                                                      image:
-                                                          AssetImage(user3)))),
-                                          SizedBox(
-                                            width: 20,
-                                          ),
-                                          Container(
-                                            margin: EdgeInsets.only(top: 10),
-                                            child: Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              crossAxisAlignment:
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(left: 10, right: 10, bottom: 10),
+                              child: Column(
+                                children: [
+                                  Container(
+                                    margin: EdgeInsets.only(left: 10, right: 10, bottom: 10),
+                                    child: Column(
+                                      children: [
+                                        Container(
+                                          height: 60,
+                                          width: MediaQuery.of(context).size.width,
+                                          child: Row(
+                                            children: [
+                                              SizedBox(
+                                                width: 20,
+                                              ),
+                                              Container(
+                                                  width: 40.0,
+                                                  height: 40.0,
+                                                  decoration: new BoxDecoration(
+                                                      shape: BoxShape.circle,
+                                                      image: new DecorationImage(
+                                                          fit: BoxFit.fill,
+                                                          image: AssetImage(user1)))),
+                                              SizedBox(
+                                                width: 20,
+                                              ),
+                                              Container(
+                                                margin: EdgeInsets.only(top: 10),
+                                                child: Column(
+                                                  mainAxisAlignment: MainAxisAlignment.start,
+                                                  crossAxisAlignment:
                                                   CrossAxisAlignment.start,
-                                              children: [
-                                                Container(
-                                                  child: Row(
-                                                    children: [
-                                                      Text(
-                                                        'Ramon Ricardo',
-                                                        style: TextStyle(
-                                                            fontSize: 14,
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .bold),
+                                                  children: [
+                                                    Container(
+                                                      child: Row(
+                                                        children: [
+                                                          Text(
+                                                            'Ramon Ricardo',
+                                                            style: TextStyle(
+                                                                fontSize: 14,
+                                                                fontWeight:
+                                                                FontWeight.bold),
+                                                          ),
+                                                          SizedBox(
+                                                            width: 120,
+                                                          ),
+                                                        ],
                                                       ),
-                                                      SizedBox(
-                                                        width: 120,
+                                                    ),
+                                                    Container(
+                                                      margin: EdgeInsets.only(top: 5),
+                                                      child: Row(
+                                                        children: [
+                                                          SvgPicture.asset(icTagArrow),
+                                                          Text(
+                                                            'Category Text Public',
+                                                            style: TextStyle(
+                                                                fontSize: 14,
+                                                                fontWeight: FontWeight.bold),
+                                                          )
+                                                        ],
                                                       ),
-                                                    ],
-                                                  ),
+                                                    )
+                                                  ],
                                                 ),
-                                                Container(
-                                                  margin:
-                                                      EdgeInsets.only(top: 5),
-                                                  child: Row(
-                                                    children: [
-                                                      SvgPicture.asset(
-                                                          icTagArrow),
-                                                      Text(
-                                                        'Category Text Public',
-                                                        style: TextStyle(
-                                                            fontSize: 14,
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .bold),
-                                                      )
-                                                    ],
-                                                  ),
-                                                )
-                                              ],
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    Container(
-                                      margin: EdgeInsets.only(
-                                          left: 10,
-                                          right: 10,
-                                          top: 5,
-                                          bottom: 10),
-                                      child: Text(
-                                        dummyLoremIpsum,
-                                        style: TextStyle(
-                                            color: Colors.black,
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.normal),
-                                      ),
-                                    ),
-                                    Container(
-                                        margin: EdgeInsets.only(
-                                            left: 10, right: 10),
-                                        child:
-                                            Image(image: AssetImage(image1))),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            Container(
-                              margin: EdgeInsets.only(
-                                  left: 20, right: 20, top: 10, bottom: 20),
-                              child: Row(
-                                children: [
-                                  InkWell(
-                                    child: SvgPicture.asset(icHeart),
-                                    onTap: () {
-                                      showModalBottomSheet(
-                                          context: context,
-                                          builder: (context) {
-                                            return Wrap(
-                                              children: [
-                                                ListTile(
-                                                  title: Text('Save this post'),
-                                                ),
-                                                ListTile(
-                                                  title: Text(
-                                                      'Don\'t show me this again'),
-                                                ),
-                                                ListTile(
-                                                  title: Text('Report as spam'),
-                                                ),
-                                                ListTile(
-                                                  title: Text(
-                                                      'Report as inappropriate content'),
-                                                ),
-                                              ],
-                                            );
-                                          });
-                                    },
-                                  ),
-                                  Spacer(),
-                                  SvgPicture.asset(icCombinedShape),
-                                ],
-                              ),
-                            ),
-                            Divider(
-                              height: 1,
-                              color: Colors.black,
-                            ),
-                            Container(
-                              height: 60,
-                              width: MediaQuery.of(context).size.width,
-                              child: Row(
-                                children: [
-                                  SizedBox(
-                                    width: 20,
-                                  ),
-                                  Container(
-                                    width: 40.0,
-                                    height: 40.0,
-                                    decoration: new BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      image: new DecorationImage(
-                                        fit: BoxFit.fill,
-                                        image: AssetImage(profileImage),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 20,
-                                  ),
-                                  Container(
-                                    margin: EdgeInsets.only(top: 10),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Container(
-                                          child: Row(
-                                            children: [
-                                              Text(
-                                                'Ramon Ricardo',
-                                                style: TextStyle(
-                                                    fontSize: 12,
-                                                    fontWeight:
-                                                        FontWeight.normal),
                                               ),
-                                              SizedBox(
-                                                width: 130,
-                                              ),
-                                              Text(
-                                                '08-09-2021',
-                                                style: TextStyle(
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                    fontSize: 10),
-                                              ),
-                                              SizedBox(
-                                                width: 20,
-                                              ),
-                                              SvgPicture.asset(icMoreHorizontal)
                                             ],
                                           ),
                                         ),
                                         Container(
-                                          child: Row(
-                                            children: [
-                                              SvgPicture.asset(icTagArrow),
-                                              Text(
-                                                'Category Text Public',
-                                                style: TextStyle(
-                                                    fontSize: 12,
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              )
-                                            ],
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Container(
-                              margin: EdgeInsets.only(
-                                  left: 20, right: 15, bottom: 10),
-                              child: Text(
-                                dummyLoremIpsum,
-                                style: TextStyle(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.normal),
-                              ),
-                            ),
-                            Container(
-                              margin: EdgeInsets.only(
-                                  left: 20, right: 20, top: 10, bottom: 20),
-                              child: Row(
-                                children: [
-                                  InkWell(
-                                    child: SvgPicture.asset(icHeart),
-                                    onTap: () {
-                                      showModalBottomSheet(
-                                          context: context,
-                                          builder: (context) {
-                                            return Wrap(
-                                              children: [
-                                                ListTile(
-                                                  title: Text('Save this post'),
-                                                ),
-                                                ListTile(
-                                                  title: Text(
-                                                      'Don\'t show me this again'),
-                                                ),
-                                                ListTile(
-                                                  title: Text('Report as spam'),
-                                                ),
-                                                ListTile(
-                                                  title: Text(
-                                                      'Report as inappropriate content'),
-                                                ),
-                                              ],
-                                            );
-                                          });
-                                    },
-                                  ),
-                                  Spacer(),
-                                  SvgPicture.asset(icCombinedShape),
-                                ],
-                              ),
-                            ),
-                            Divider(
-                              height: 1,
-                              color: Colors.black,
-                            ),
-                            Container(
-                              height: 60,
-                              width: MediaQuery.of(context).size.width,
-                              child: Row(
-                                children: [
-                                  SizedBox(
-                                    width: 20,
-                                  ),
-                                  Container(
-                                    width: 40.0,
-                                    height: 40.0,
-                                    decoration: new BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      image: new DecorationImage(
-                                        fit: BoxFit.fill,
-                                        image: AssetImage(profileImage),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 20,
-                                  ),
-                                  Container(
-                                    margin: EdgeInsets.only(top: 10),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Container(
-                                          child: Row(
-                                            children: [
-                                              Text(
-                                                'Ramon Ricardo',
-                                                style: TextStyle(
-                                                    fontSize: 12,
-                                                    fontWeight:
-                                                        FontWeight.normal),
-                                              ),
-                                              SizedBox(
-                                                width: 130,
-                                              ),
-                                              Text(
-                                                '08-09-2021',
-                                                style: TextStyle(
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                    fontSize: 10),
-                                              ),
-                                              SizedBox(
-                                                width: 20,
-                                              ),
-                                              SvgPicture.asset(icMoreHorizontal)
-                                            ],
+                                          margin: EdgeInsets.only(
+                                              left: 10, right: 10,top: 5, bottom: 10),
+                                          child: Text(
+                                            dummyLoremIpsum2,
+                                            style: TextStyle(color: Colors.black,
+                                                fontSize: 12, fontWeight: FontWeight.normal, height: 1.4),
                                           ),
                                         ),
                                         Container(
-                                          child: Row(
-                                            children: [
-                                              SvgPicture.asset(icTagArrow),
-                                              Text(
-                                                'Category Text Public',
-                                                style: TextStyle(
-                                                    fontSize: 12,
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              )
-                                            ],
-                                          ),
-                                        )
+                                            margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image1))),
+
                                       ],
                                     ),
                                   ),
-                                ],
-                              ),
-                            ),
-                            Container(
-                              decoration: BoxDecoration(
-                                border: Border.all(color: Colors.grey),
-                                borderRadius: const BorderRadius.all(
-                                  Radius.circular(1),
-                                ),
-                              ),
-                              margin: EdgeInsets.only(
-                                  left: 20, right: 20, bottom: 10),
-                              child: Container(
-                                margin: EdgeInsets.only(
-                                    left: 10, right: 10, bottom: 10),
-                                child: Column(
-                                  children: [
-                                    Container(
-                                      height: 60,
-                                      width: MediaQuery.of(context).size.width,
-                                      child: Row(
-                                        children: [
-                                          SizedBox(
-                                            width: 20,
-                                          ),
-                                          Container(
-                                              width: 40.0,
-                                              height: 40.0,
-                                              decoration: new BoxDecoration(
-                                                  shape: BoxShape.circle,
-                                                  image: new DecorationImage(
-                                                      fit: BoxFit.fill,
-                                                      image:
-                                                          AssetImage(user3)))),
-                                          SizedBox(
-                                            width: 20,
-                                          ),
-                                          Container(
-                                            margin: EdgeInsets.only(top: 10),
-                                            child: Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              crossAxisAlignment:
+                                  Container(
+                                    margin: EdgeInsets.only(left: 10, right: 10, bottom: 10),
+                                    child: Column(
+                                      children: [
+                                        Container(
+                                          height: 60,
+                                          width: MediaQuery.of(context).size.width,
+                                          child: Row(
+                                            children: [
+                                              SizedBox(
+                                                width: 20,
+                                              ),
+                                              Container(
+                                                  width: 40.0,
+                                                  height: 40.0,
+                                                  decoration: new BoxDecoration(
+                                                      shape: BoxShape.circle,
+                                                      image: new DecorationImage(
+                                                          fit: BoxFit.fill,
+                                                          image: AssetImage(user3)))),
+                                              SizedBox(
+                                                width: 20,
+                                              ),
+                                              Container(
+                                                margin: EdgeInsets.only(top: 10),
+                                                child: Column(
+                                                  mainAxisAlignment: MainAxisAlignment.start,
+                                                  crossAxisAlignment:
                                                   CrossAxisAlignment.start,
-                                              children: [
-                                                Container(
-                                                  child: Row(
-                                                    children: [
-                                                      Text(
-                                                        'Ramon Ricardo',
-                                                        style: TextStyle(
-                                                            fontSize: 14,
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .bold),
+                                                  children: [
+                                                    Container(
+                                                      child: Row(
+                                                        children: [
+                                                          Text(
+                                                            'Ramon Ricardo',
+                                                            style: TextStyle(
+                                                                fontSize: 14,
+                                                                fontWeight:
+                                                                FontWeight.bold),
+                                                          ),
+                                                          SizedBox(
+                                                            width: 120,
+                                                          ),
+                                                        ],
                                                       ),
-                                                      SizedBox(
-                                                        width: 120,
+                                                    ),
+                                                    Container(
+                                                      margin: EdgeInsets.only(top: 5),
+                                                      child: Row(
+                                                        children: [
+                                                          SvgPicture.asset(icTagArrow),
+                                                          Text(
+                                                            'Category Text Public',
+                                                            style: TextStyle(
+                                                                fontSize: 14,
+                                                                fontWeight: FontWeight.bold),
+                                                          )
+                                                        ],
                                                       ),
-                                                    ],
-                                                  ),
+                                                    )
+                                                  ],
                                                 ),
-                                                Container(
-                                                  margin:
-                                                      EdgeInsets.only(top: 5),
-                                                  child: Row(
-                                                    children: [
-                                                      SvgPicture.asset(
-                                                          icTagArrow),
-                                                      Text(
-                                                        'Category Text Public',
-                                                        style: TextStyle(
-                                                            fontSize: 14,
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .bold),
-                                                      )
-                                                    ],
-                                                  ),
-                                                )
-                                              ],
-                                            ),
+                                              ),
+                                            ],
                                           ),
-                                        ],
-                                      ),
+                                        ),
+                                        Container(
+                                          margin: EdgeInsets.only(
+                                              left: 10, right: 10,top: 5, bottom: 10),
+                                          child: Text(
+                                            dummyLoremIpsum2,
+                                            style: TextStyle(color: Colors.black,
+                                                fontSize: 12, fontWeight: FontWeight.normal, height: 1.4),
+                                          ),
+                                        ),
+                                        Container(
+                                            margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image1))),
+
+                                      ],
                                     ),
-                                    Container(
-                                      margin: EdgeInsets.only(
-                                          left: 10,
-                                          right: 10,
-                                          top: 5,
-                                          bottom: 10),
-                                      child: Text(
-                                        dummyLoremIpsum,
-                                        style: TextStyle(
-                                            color: Colors.black,
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.normal),
-                                      ),
+                                  ),
+                                  Container(
+                                    margin: EdgeInsets.only(left: 10, right: 10, bottom: 10),
+                                    child: Column(
+                                      children: [
+                                        Container(
+                                          height: 60,
+                                          width: MediaQuery.of(context).size.width,
+                                          child: Row(
+                                            children: [
+                                              SizedBox(
+                                                width: 20,
+                                              ),
+                                              Container(
+                                                  width: 40.0,
+                                                  height: 40.0,
+                                                  decoration: new BoxDecoration(
+                                                      shape: BoxShape.circle,
+                                                      image: new DecorationImage(
+                                                          fit: BoxFit.fill,
+                                                          image: AssetImage(user2)))),
+                                              SizedBox(
+                                                width: 20,
+                                              ),
+                                              Container(
+                                                margin: EdgeInsets.only(top: 10),
+                                                child: Column(
+                                                  mainAxisAlignment: MainAxisAlignment.start,
+                                                  crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                                  children: [
+                                                    Container(
+                                                      child: Row(
+                                                        children: [
+                                                          Text(
+                                                            'Ramon Ricardo',
+                                                            style: TextStyle(
+                                                                fontSize: 14,
+                                                                fontWeight:
+                                                                FontWeight.bold),
+                                                          ),
+                                                          SizedBox(
+                                                            width: 120,
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                    Container(
+                                                      margin: EdgeInsets.only(top: 5),
+                                                      child: Row(
+                                                        children: [
+                                                          SvgPicture.asset(icTagArrow),
+                                                          Text(
+                                                            'Category Text Public',
+                                                            style: TextStyle(
+                                                                fontSize: 14,
+                                                                fontWeight: FontWeight.bold),
+                                                          )
+                                                        ],
+                                                      ),
+                                                    )
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Container(
+                                          margin: EdgeInsets.only(
+                                              left: 10, right: 10,top: 5, bottom: 10),
+                                          child: Text(
+                                            dummyLoremIpsum2,
+                                            style: TextStyle(color: Colors.black,
+                                                fontSize: 12, fontWeight: FontWeight.normal, height: 1.4),
+                                          ),
+                                        ),
+                                        Container(
+                                            margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image1))),
+
+                                      ],
                                     ),
-                                    Container(
-                                        margin: EdgeInsets.only(
-                                            left: 10, right: 10),
-                                        child:
-                                            Image(image: AssetImage(image1))),
-                                  ],
-                                ),
+                                  ),
+                                  Container(
+                                    margin: EdgeInsets.only(left: 10, right: 10, bottom: 10),
+                                    child: Column(
+                                      children: [
+                                        Container(
+                                          height: 60,
+                                          width: MediaQuery.of(context).size.width,
+                                          child: Row(
+                                            children: [
+                                              SizedBox(
+                                                width: 20,
+                                              ),
+                                              Container(
+                                                  width: 40.0,
+                                                  height: 40.0,
+                                                  decoration: new BoxDecoration(
+                                                      shape: BoxShape.circle,
+                                                      image: new DecorationImage(
+                                                          fit: BoxFit.fill,
+                                                          image: AssetImage(user4)))),
+                                              SizedBox(
+                                                width: 20,
+                                              ),
+                                              Container(
+                                                margin: EdgeInsets.only(top: 10),
+                                                child: Column(
+                                                  mainAxisAlignment: MainAxisAlignment.start,
+                                                  crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                                  children: [
+                                                    Container(
+                                                      child: Row(
+                                                        children: [
+                                                          Text(
+                                                            'Ramon Ricardo',
+                                                            style: TextStyle(
+                                                                fontSize: 14,
+                                                                fontWeight:
+                                                                FontWeight.bold),
+                                                          ),
+                                                          SizedBox(
+                                                            width: 120,
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                    Container(
+                                                      margin: EdgeInsets.only(top: 5),
+                                                      child: Row(
+                                                        children: [
+                                                          SvgPicture.asset(icTagArrow),
+                                                          Text(
+                                                            'Category Text Public',
+                                                            style: TextStyle(
+                                                                fontSize: 14,
+                                                                fontWeight: FontWeight.bold),
+                                                          )
+                                                        ],
+                                                      ),
+                                                    )
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Container(
+                                          margin: EdgeInsets.only(
+                                              left: 10, right: 10,top: 5, bottom: 10),
+                                          child: Text(
+                                            dummyLoremIpsum2,
+                                            style: TextStyle(color: Colors.black,
+                                                fontSize: 12, fontWeight: FontWeight.normal, height: 1.4),
+                                          ),
+                                        ),
+                                        Container(
+                                            margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image1))),
+
+                                      ],
+                                    ),
+                                  ),
+
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SingleChildScrollView(
+                        child: Column(
+                          children: [
+
+                            Container(
+                              margin: EdgeInsets.only(left: 10, right: 10, bottom: 10),
+                              child: Column(
+                                children: [
+                                  Container(
+                                    height: 60,
+                                    width: MediaQuery.of(context).size.width,
+                                    child: Row(
+                                      children: [
+                                        SizedBox(
+                                          width: 20,
+                                        ),
+                                        Container(
+                                            width: 40.0,
+                                            height: 40.0,
+                                            decoration: new BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                image: new DecorationImage(
+                                                    fit: BoxFit.fill,
+                                                    image: AssetImage(user1)))),
+                                        SizedBox(
+                                          width: 20,
+                                        ),
+                                        Container(
+                                          margin: EdgeInsets.only(top: 10),
+                                          child: Column(
+                                            mainAxisAlignment: MainAxisAlignment.start,
+                                            crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                            children: [
+                                              Container(
+                                                child: Row(
+                                                  children: [
+                                                    Text(
+                                                      'Ramon Ricardo',
+                                                      style: TextStyle(
+                                                          fontSize: 14,
+                                                          fontWeight:
+                                                          FontWeight.bold),
+                                                    ),
+                                                    SizedBox(
+                                                      width: 120,
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              Container(
+                                                margin: EdgeInsets.only(top: 5),
+                                                child: Row(
+                                                  children: [
+                                                    SvgPicture.asset(icTagArrow),
+                                                    Text(
+                                                      'Category Text Public',
+                                                      style: TextStyle(
+                                                          fontSize: 14,
+                                                          fontWeight: FontWeight.bold),
+                                                    )
+                                                  ],
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    margin: EdgeInsets.only(
+                                        left: 10, right: 10,top: 5, bottom: 10),
+                                    child: Text(
+                                      dummyLoremIpsum2,
+                                      style: TextStyle(color: Colors.black,
+                                          fontSize: 12, fontWeight: FontWeight.normal, height: 1.4),
+                                    ),
+                                  ),
+                                  Container(
+                                      margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image1))),
+
+                                ],
                               ),
                             ),
                             Container(
-                              margin: EdgeInsets.only(
-                                  left: 20, right: 20, top: 10, bottom: 20),
-                              child: Row(
+                              margin: EdgeInsets.only(left: 10, right: 10, bottom: 10),
+                              child: Column(
                                 children: [
-                                  InkWell(
-                                    child: SvgPicture.asset(icHeart),
-                                    onTap: () {
-                                      showModalBottomSheet(
-                                          context: context,
-                                          builder: (context) {
-                                            return Wrap(
-                                              children: [
-                                                ListTile(
-                                                  title: Text('Save this post'),
+                                  Container(
+                                    height: 60,
+                                    width: MediaQuery.of(context).size.width,
+                                    child: Row(
+                                      children: [
+                                        SizedBox(
+                                          width: 20,
+                                        ),
+                                        Container(
+                                            width: 40.0,
+                                            height: 40.0,
+                                            decoration: new BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                image: new DecorationImage(
+                                                    fit: BoxFit.fill,
+                                                    image: AssetImage(user3)))),
+                                        SizedBox(
+                                          width: 20,
+                                        ),
+                                        Container(
+                                          margin: EdgeInsets.only(top: 10),
+                                          child: Column(
+                                            mainAxisAlignment: MainAxisAlignment.start,
+                                            crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                            children: [
+                                              Container(
+                                                child: Row(
+                                                  children: [
+                                                    Text(
+                                                      'Ramon Ricardo',
+                                                      style: TextStyle(
+                                                          fontSize: 14,
+                                                          fontWeight:
+                                                          FontWeight.bold),
+                                                    ),
+                                                    SizedBox(
+                                                      width: 120,
+                                                    ),
+                                                  ],
                                                 ),
-                                                ListTile(
-                                                  title: Text(
-                                                      'Don\'t show me this again'),
+                                              ),
+                                              Container(
+                                                margin: EdgeInsets.only(top: 5),
+                                                child: Row(
+                                                  children: [
+                                                    SvgPicture.asset(icTagArrow),
+                                                    Text(
+                                                      'Category Text Public',
+                                                      style: TextStyle(
+                                                          fontSize: 14,
+                                                          fontWeight: FontWeight.bold),
+                                                    )
+                                                  ],
                                                 ),
-                                                ListTile(
-                                                  title: Text('Report as spam'),
-                                                ),
-                                                ListTile(
-                                                  title: Text(
-                                                      'Report as inappropriate content'),
-                                                ),
-                                              ],
-                                            );
-                                          });
-                                    },
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
-                                  Spacer(),
-                                  SvgPicture.asset(icCombinedShape),
+                                  Container(
+                                    margin: EdgeInsets.only(
+                                        left: 10, right: 10,top: 5, bottom: 10),
+                                    child: Text(
+                                      dummyLoremIpsum2,
+                                      style: TextStyle(color: Colors.black,
+                                          fontSize: 12, fontWeight: FontWeight.normal, height: 1.4),
+                                    ),
+                                  ),
+                                  Container(
+                                      margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image1))),
+
+                                ],
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(left: 10, right: 10, bottom: 10),
+                              child: Column(
+                                children: [
+                                  Container(
+                                    height: 60,
+                                    width: MediaQuery.of(context).size.width,
+                                    child: Row(
+                                      children: [
+                                        SizedBox(
+                                          width: 20,
+                                        ),
+                                        Container(
+                                            width: 40.0,
+                                            height: 40.0,
+                                            decoration: new BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                image: new DecorationImage(
+                                                    fit: BoxFit.fill,
+                                                    image: AssetImage(user2)))),
+                                        SizedBox(
+                                          width: 20,
+                                        ),
+                                        Container(
+                                          margin: EdgeInsets.only(top: 10),
+                                          child: Column(
+                                            mainAxisAlignment: MainAxisAlignment.start,
+                                            crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                            children: [
+                                              Container(
+                                                child: Row(
+                                                  children: [
+                                                    Text(
+                                                      'Ramon Ricardo',
+                                                      style: TextStyle(
+                                                          fontSize: 14,
+                                                          fontWeight:
+                                                          FontWeight.bold),
+                                                    ),
+                                                    SizedBox(
+                                                      width: 120,
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              Container(
+                                                margin: EdgeInsets.only(top: 5),
+                                                child: Row(
+                                                  children: [
+                                                    SvgPicture.asset(icTagArrow),
+                                                    Text(
+                                                      'Category Text Public',
+                                                      style: TextStyle(
+                                                          fontSize: 14,
+                                                          fontWeight: FontWeight.bold),
+                                                    )
+                                                  ],
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    margin: EdgeInsets.only(
+                                        left: 10, right: 10,top: 5, bottom: 10),
+                                    child: Text(
+                                      dummyLoremIpsum2,
+                                      style: TextStyle(color: Colors.black,
+                                          fontSize: 12, fontWeight: FontWeight.normal, height: 1.4),
+                                    ),
+                                  ),
+                                  Container(
+                                      margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image1))),
+
+                                ],
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(left: 10, right: 10, bottom: 10),
+                              child: Column(
+                                children: [
+                                  Container(
+                                    height: 60,
+                                    width: MediaQuery.of(context).size.width,
+                                    child: Row(
+                                      children: [
+                                        SizedBox(
+                                          width: 20,
+                                        ),
+                                        Container(
+                                            width: 40.0,
+                                            height: 40.0,
+                                            decoration: new BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                image: new DecorationImage(
+                                                    fit: BoxFit.fill,
+                                                    image: AssetImage(user4)))),
+                                        SizedBox(
+                                          width: 20,
+                                        ),
+                                        Container(
+                                          margin: EdgeInsets.only(top: 10),
+                                          child: Column(
+                                            mainAxisAlignment: MainAxisAlignment.start,
+                                            crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                            children: [
+                                              Container(
+                                                child: Row(
+                                                  children: [
+                                                    Text(
+                                                      'Ramon Ricardo',
+                                                      style: TextStyle(
+                                                          fontSize: 14,
+                                                          fontWeight:
+                                                          FontWeight.bold),
+                                                    ),
+                                                    SizedBox(
+                                                      width: 120,
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              Container(
+                                                margin: EdgeInsets.only(top: 5),
+                                                child: Row(
+                                                  children: [
+                                                    SvgPicture.asset(icTagArrow),
+                                                    Text(
+                                                      'Category Text Public',
+                                                      style: TextStyle(
+                                                          fontSize: 14,
+                                                          fontWeight: FontWeight.bold),
+                                                    )
+                                                  ],
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    margin: EdgeInsets.only(
+                                        left: 10, right: 10,top: 5, bottom: 10),
+                                    child: Text(
+                                      dummyLoremIpsum2,
+                                      style: TextStyle(color: Colors.black,
+                                          fontSize: 12, fontWeight: FontWeight.normal, height: 1.4),
+                                    ),
+                                  ),
+                                  Container(
+                                      margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image1))),
+
                                 ],
                               ),
                             ),
@@ -844,891 +1146,326 @@ class ProfileView extends GetView<ProfileController> {
                         child: Column(
                           children: [
                             Container(
-                              height: 60,
-                              width: MediaQuery.of(context).size.width,
-                              child: Row(
-                                children: [
-                                  SizedBox(
-                                    width: 20,
-                                  ),
-                                  Container(
-                                    width: 40.0,
-                                    height: 40.0,
-                                    decoration: new BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      image: new DecorationImage(
-                                        fit: BoxFit.fill,
-                                        image: AssetImage(profileImage),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 20,
-                                  ),
-                                  Container(
-                                    margin: EdgeInsets.only(top: 10),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Container(
-                                          child: Row(
-                                            children: [
-                                              Text(
-                                                'Ramon Ricardo',
-                                                style: TextStyle(
-                                                    fontSize: 12,
-                                                    fontWeight:
-                                                        FontWeight.normal),
-                                              ),
-                                              SizedBox(
-                                                width: 130,
-                                              ),
-                                              Text(
-                                                '08-09-2021',
-                                                style: TextStyle(
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                    fontSize: 10),
-                                              ),
-                                              SizedBox(
-                                                width: 20,
-                                              ),
-                                              SvgPicture.asset(icMoreHorizontal)
-                                            ],
-                                          ),
-                                        ),
-                                        Container(
-                                          child: Row(
-                                            children: [
-                                              SvgPicture.asset(icTagArrow),
-                                              Text(
-                                                'Category Text Public',
-                                                style: TextStyle(
-                                                    fontSize: 12,
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              )
-                                            ],
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Container(
-                              margin: EdgeInsets.only(
-                                  left: 20, right: 15, bottom: 10),
-                              child: Text(
-                                dummyLoremIpsum,
-                                style: TextStyle(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.normal),
-                              ),
-                            ),
-                            Container(
-                              margin: EdgeInsets.only(
-                                  left: 20, right: 20, top: 10, bottom: 20),
-                              child: Row(
-                                children: [
-                                  InkWell(
-                                    child: SvgPicture.asset(icHeart),
-                                    onTap: () {
-                                      showModalBottomSheet(
-                                          context: context,
-                                          builder: (context) {
-                                            return Wrap(
-                                              children: [
-                                                ListTile(
-                                                  title: Text('Save this post'),
-                                                ),
-                                                ListTile(
-                                                  title: Text(
-                                                      'Don\'t show me this again'),
-                                                ),
-                                                ListTile(
-                                                  title: Text('Report as spam'),
-                                                ),
-                                                ListTile(
-                                                  title: Text(
-                                                      'Report as inappropriate content'),
-                                                ),
-                                              ],
-                                            );
-                                          });
-                                    },
-                                  ),
-                                  Spacer(),
-                                  SvgPicture.asset(icCombinedShape),
-                                ],
-                              ),
-                            ),
-                            Divider(
-                              height: 1,
-                              color: Colors.black,
-                            ),
-                            Container(
-                              height: 60,
-                              width: MediaQuery.of(context).size.width,
-                              child: Row(
-                                children: [
-                                  SizedBox(
-                                    width: 20,
-                                  ),
-                                  Container(
-                                    width: 40.0,
-                                    height: 40.0,
-                                    decoration: new BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      image: new DecorationImage(
-                                        fit: BoxFit.fill,
-                                        image: AssetImage(profileImage),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 20,
-                                  ),
-                                  Container(
-                                    margin: EdgeInsets.only(top: 10),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Container(
-                                          child: Row(
-                                            children: [
-                                              Text(
-                                                'Ramon Ricardo',
-                                                style: TextStyle(
-                                                    fontSize: 12,
-                                                    fontWeight:
-                                                        FontWeight.normal),
-                                              ),
-                                              SizedBox(
-                                                width: 130,
-                                              ),
-                                              Text(
-                                                '08-09-2021',
-                                                style: TextStyle(
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                    fontSize: 10),
-                                              ),
-                                              SizedBox(
-                                                width: 20,
-                                              ),
-                                              SvgPicture.asset(icMoreHorizontal)
-                                            ],
-                                          ),
-                                        ),
-                                        Container(
-                                          child: Row(
-                                            children: [
-                                              SvgPicture.asset(icTagArrow),
-                                              Text(
-                                                'Category Text Public',
-                                                style: TextStyle(
-                                                    fontSize: 12,
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              )
-                                            ],
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Container(
-                              margin: EdgeInsets.only(
-                                  left: 20, right: 20, top: 5, bottom: 10),
+                              margin: EdgeInsets.only(left: 10, right: 10, bottom: 10),
                               child: Column(
                                 children: [
-                                  Text(
-                                    dummyLoremIpsum,
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.normal),
-                                  ),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  Image(image: AssetImage(image2))
-                                ],
-                              ),
-                            ),
-                            Container(
-                              margin: EdgeInsets.only(
-                                  left: 20, right: 20, top: 10, bottom: 20),
-                              child: Row(
-                                children: [
-                                  InkWell(
-                                    child: SvgPicture.asset(icHeart),
-                                    onTap: () {
-                                      showModalBottomSheet(
-                                          context: context,
-                                          builder: (context) {
-                                            return Wrap(
-                                              children: [
-                                                ListTile(
-                                                  title: Text('Save this post'),
-                                                ),
-                                                ListTile(
-                                                  title: Text(
-                                                      'Don\'t show me this again'),
-                                                ),
-                                                ListTile(
-                                                  title: Text('Report as spam'),
-                                                ),
-                                                ListTile(
-                                                  title: Text(
-                                                      'Report as inappropriate content'),
-                                                ),
-                                              ],
-                                            );
-                                          });
-                                    },
-                                  ),
-                                  Spacer(),
-                                  SvgPicture.asset(icCombinedShape),
-                                ],
-                              ),
-                            ),
-                            Divider(
-                              height: 1,
-                              color: Colors.black,
-                            ),
-                            Container(
-                              height: 60,
-                              width: MediaQuery.of(context).size.width,
-                              child: Row(
-                                children: [
-                                  SizedBox(
-                                    width: 20,
-                                  ),
                                   Container(
-                                    width: 40.0,
-                                    height: 40.0,
-                                    decoration: new BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      image: new DecorationImage(
-                                        fit: BoxFit.fill,
-                                        image: AssetImage(profileImage),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 20,
-                                  ),
-                                  Container(
-                                    margin: EdgeInsets.only(top: 10),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                    height: 60,
+                                    width: MediaQuery.of(context).size.width,
+                                    child: Row(
                                       children: [
-                                        Container(
-                                          child: Row(
-                                            children: [
-                                              Text(
-                                                'Ramon Ricardo',
-                                                style: TextStyle(
-                                                    fontSize: 12,
-                                                    fontWeight:
-                                                        FontWeight.normal),
-                                              ),
-                                              SizedBox(
-                                                width: 130,
-                                              ),
-                                              Text(
-                                                '08-09-2021',
-                                                style: TextStyle(
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                    fontSize: 10),
-                                              ),
-                                              SizedBox(
-                                                width: 20,
-                                              ),
-                                              SvgPicture.asset(icMoreHorizontal)
-                                            ],
-                                          ),
+                                        SizedBox(
+                                          width: 20,
                                         ),
                                         Container(
-                                          child: Row(
+                                            width: 40.0,
+                                            height: 40.0,
+                                            decoration: new BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                image: new DecorationImage(
+                                                    fit: BoxFit.fill,
+                                                    image: AssetImage(user1)))),
+                                        SizedBox(
+                                          width: 20,
+                                        ),
+                                        Container(
+                                          margin: EdgeInsets.only(top: 10),
+                                          child: Column(
+                                            mainAxisAlignment: MainAxisAlignment.start,
+                                            crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                             children: [
-                                              SvgPicture.asset(icTagArrow),
-                                              Text(
-                                                'Category Text Public',
-                                                style: TextStyle(
-                                                    fontSize: 12,
-                                                    fontWeight:
-                                                        FontWeight.bold),
+                                              Container(
+                                                child: Row(
+                                                  children: [
+                                                    Text(
+                                                      'Ramon Ricardo',
+                                                      style: TextStyle(
+                                                          fontSize: 14,
+                                                          fontWeight:
+                                                          FontWeight.bold),
+                                                    ),
+                                                    SizedBox(
+                                                      width: 120,
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              Container(
+                                                margin: EdgeInsets.only(top: 5),
+                                                child: Row(
+                                                  children: [
+                                                    SvgPicture.asset(icTagArrow),
+                                                    Text(
+                                                      'Category Text Public',
+                                                      style: TextStyle(
+                                                          fontSize: 14,
+                                                          fontWeight: FontWeight.bold),
+                                                    )
+                                                  ],
+                                                ),
                                               )
                                             ],
                                           ),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Container(
-                              decoration: BoxDecoration(
-                                border: Border.all(color: Colors.grey),
-                                borderRadius: const BorderRadius.all(
-                                  Radius.circular(1),
-                                ),
-                              ),
-                              margin: EdgeInsets.only(
-                                  left: 20, right: 20, bottom: 10),
-                              child: Container(
-                                margin: EdgeInsets.only(
-                                    left: 10, right: 10, bottom: 10),
-                                child: Column(
-                                  children: [
-                                    Container(
-                                      height: 60,
-                                      width: MediaQuery.of(context).size.width,
-                                      child: Row(
-                                        children: [
-                                          SizedBox(
-                                            width: 20,
-                                          ),
-                                          Container(
-                                              width: 40.0,
-                                              height: 40.0,
-                                              decoration: new BoxDecoration(
-                                                  shape: BoxShape.circle,
-                                                  image: new DecorationImage(
-                                                      fit: BoxFit.fill,
-                                                      image:
-                                                          AssetImage(user3)))),
-                                          SizedBox(
-                                            width: 20,
-                                          ),
-                                          Container(
-                                            margin: EdgeInsets.only(top: 10),
-                                            child: Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Container(
-                                                  child: Row(
-                                                    children: [
-                                                      Text(
-                                                        'Ramon Ricardo',
-                                                        style: TextStyle(
-                                                            fontSize: 14,
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .bold),
-                                                      ),
-                                                      SizedBox(
-                                                        width: 120,
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
-                                                Container(
-                                                  margin:
-                                                      EdgeInsets.only(top: 5),
-                                                  child: Row(
-                                                    children: [
-                                                      SvgPicture.asset(
-                                                          icTagArrow),
-                                                      Text(
-                                                        'Category Text Public',
-                                                        style: TextStyle(
-                                                            fontSize: 14,
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .bold),
-                                                      )
-                                                    ],
-                                                  ),
-                                                )
-                                              ],
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    Container(
-                                      margin: EdgeInsets.only(
-                                          left: 10,
-                                          right: 10,
-                                          top: 5,
-                                          bottom: 10),
-                                      child: Text(
-                                        dummyLoremIpsum,
-                                        style: TextStyle(
-                                            color: Colors.black,
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.normal),
-                                      ),
-                                    ),
-                                    Container(
-                                        margin: EdgeInsets.only(
-                                            left: 10, right: 10),
-                                        child:
-                                            Image(image: AssetImage(image1))),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            Container(
-                              margin: EdgeInsets.only(
-                                  left: 20, right: 20, top: 10, bottom: 20),
-                              child: Row(
-                                children: [
-                                  InkWell(
-                                    child: SvgPicture.asset(icHeart),
-                                    onTap: () {
-                                      showModalBottomSheet(
-                                          context: context,
-                                          builder: (context) {
-                                            return Wrap(
-                                              children: [
-                                                ListTile(
-                                                  title: Text('Save this post'),
-                                                ),
-                                                ListTile(
-                                                  title: Text(
-                                                      'Don\'t show me this again'),
-                                                ),
-                                                ListTile(
-                                                  title: Text('Report as spam'),
-                                                ),
-                                                ListTile(
-                                                  title: Text(
-                                                      'Report as inappropriate content'),
-                                                ),
-                                              ],
-                                            );
-                                          });
-                                    },
-                                  ),
-                                  Spacer(),
-                                  SvgPicture.asset(icCombinedShape),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      SingleChildScrollView(
-                        child: Column(
-                          children: [
-                            Container(
-                              height: 60,
-                              width: MediaQuery.of(context).size.width,
-                              child: Row(
-                                children: [
-                                  SizedBox(
-                                    width: 20,
-                                  ),
-                                  Container(
-                                    width: 40.0,
-                                    height: 40.0,
-                                    decoration: new BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      image: new DecorationImage(
-                                        fit: BoxFit.fill,
-                                        image: AssetImage(profileImage),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 20,
-                                  ),
-                                  Container(
-                                    margin: EdgeInsets.only(top: 10),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Container(
-                                          child: Row(
-                                            children: [
-                                              Text(
-                                                'Ramon Ricardo',
-                                                style: TextStyle(
-                                                    fontSize: 12,
-                                                    fontWeight:
-                                                        FontWeight.normal),
-                                              ),
-                                              SizedBox(
-                                                width: 130,
-                                              ),
-                                              Text(
-                                                '08-09-2021',
-                                                style: TextStyle(
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                    fontSize: 10),
-                                              ),
-                                              SizedBox(
-                                                width: 20,
-                                              ),
-                                              SvgPicture.asset(icMoreHorizontal)
-                                            ],
-                                          ),
                                         ),
-                                        Container(
-                                          child: Row(
-                                            children: [
-                                              SvgPicture.asset(icTagArrow),
-                                              Text(
-                                                'Category Text Public',
-                                                style: TextStyle(
-                                                    fontSize: 12,
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              )
-                                            ],
-                                          ),
-                                        )
                                       ],
                                     ),
                                   ),
+                                  Container(
+                                    margin: EdgeInsets.only(
+                                        left: 10, right: 10,top: 5, bottom: 10),
+                                    child: Text(
+                                      dummyLoremIpsum2,
+                                      style: TextStyle(color: Colors.black,
+                                          fontSize: 12, fontWeight: FontWeight.normal, height: 1.4),
+                                    ),
+                                  ),
+                                  Container(
+                                      margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image1))),
+
                                 ],
                               ),
                             ),
                             Container(
-                              margin: EdgeInsets.only(
-                                  left: 20, right: 20, top: 5, bottom: 10),
+                              margin: EdgeInsets.only(left: 10, right: 10, bottom: 10),
                               child: Column(
                                 children: [
-                                  Text(
-                                    dummyLoremIpsum,
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.normal),
-                                  ),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  Image(image: AssetImage(image2))
-                                ],
-                              ),
-                            ),
-                            Container(
-                              margin: EdgeInsets.only(
-                                  left: 20, right: 20, top: 10, bottom: 20),
-                              child: Row(
-                                children: [
-                                  InkWell(
-                                    child: SvgPicture.asset(icHeart),
-                                    onTap: () {
-                                      showModalBottomSheet(
-                                          context: context,
-                                          builder: (context) {
-                                            return Wrap(
-                                              children: [
-                                                ListTile(
-                                                  title: Text('Save this post'),
-                                                ),
-                                                ListTile(
-                                                  title: Text(
-                                                      'Don\'t show me this again'),
-                                                ),
-                                                ListTile(
-                                                  title: Text('Report as spam'),
-                                                ),
-                                                ListTile(
-                                                  title: Text(
-                                                      'Report as inappropriate content'),
-                                                ),
-                                              ],
-                                            );
-                                          });
-                                    },
-                                  ),
-                                  Spacer(),
-                                  SvgPicture.asset(icCombinedShape),
-                                ],
-                              ),
-                            ),
-                            Divider(
-                              height: 1,
-                              color: Colors.black,
-                            ),
-                            Container(
-                              height: 60,
-                              width: MediaQuery.of(context).size.width,
-                              child: Row(
-                                children: [
-                                  SizedBox(
-                                    width: 20,
-                                  ),
                                   Container(
-                                    width: 40.0,
-                                    height: 40.0,
-                                    decoration: new BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      image: new DecorationImage(
-                                        fit: BoxFit.fill,
-                                        image: AssetImage(profileImage),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 20,
-                                  ),
-                                  Container(
-                                    margin: EdgeInsets.only(top: 10),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                    height: 60,
+                                    width: MediaQuery.of(context).size.width,
+                                    child: Row(
                                       children: [
-                                        Container(
-                                          child: Row(
-                                            children: [
-                                              Text(
-                                                'Ramon Ricardo',
-                                                style: TextStyle(
-                                                    fontSize: 12,
-                                                    fontWeight:
-                                                        FontWeight.normal),
-                                              ),
-                                              SizedBox(
-                                                width: 130,
-                                              ),
-                                              Text(
-                                                '08-09-2021',
-                                                style: TextStyle(
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                    fontSize: 10),
-                                              ),
-                                              SizedBox(
-                                                width: 20,
-                                              ),
-                                              SvgPicture.asset(icMoreHorizontal)
-                                            ],
-                                          ),
+                                        SizedBox(
+                                          width: 20,
                                         ),
                                         Container(
-                                          child: Row(
+                                            width: 40.0,
+                                            height: 40.0,
+                                            decoration: new BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                image: new DecorationImage(
+                                                    fit: BoxFit.fill,
+                                                    image: AssetImage(user3)))),
+                                        SizedBox(
+                                          width: 20,
+                                        ),
+                                        Container(
+                                          margin: EdgeInsets.only(top: 10),
+                                          child: Column(
+                                            mainAxisAlignment: MainAxisAlignment.start,
+                                            crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                             children: [
-                                              SvgPicture.asset(icTagArrow),
-                                              Text(
-                                                'Category Text Public',
-                                                style: TextStyle(
-                                                    fontSize: 12,
-                                                    fontWeight:
-                                                        FontWeight.bold),
+                                              Container(
+                                                child: Row(
+                                                  children: [
+                                                    Text(
+                                                      'Ramon Ricardo',
+                                                      style: TextStyle(
+                                                          fontSize: 14,
+                                                          fontWeight:
+                                                          FontWeight.bold),
+                                                    ),
+                                                    SizedBox(
+                                                      width: 120,
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              Container(
+                                                margin: EdgeInsets.only(top: 5),
+                                                child: Row(
+                                                  children: [
+                                                    SvgPicture.asset(icTagArrow),
+                                                    Text(
+                                                      'Category Text Public',
+                                                      style: TextStyle(
+                                                          fontSize: 14,
+                                                          fontWeight: FontWeight.bold),
+                                                    )
+                                                  ],
+                                                ),
                                               )
                                             ],
                                           ),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Container(
-                              margin: EdgeInsets.only(
-                                  left: 20, right: 15, bottom: 10),
-                              child: Text(
-                                dummyLoremIpsum,
-                                style: TextStyle(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.normal),
-                              ),
-                            ),
-                            Container(
-                              margin: EdgeInsets.only(
-                                  left: 20, right: 20, top: 10, bottom: 20),
-                              child: Row(
-                                children: [
-                                  InkWell(
-                                    child: SvgPicture.asset(icHeart),
-                                    onTap: () {
-                                      showModalBottomSheet(
-                                          context: context,
-                                          builder: (context) {
-                                            return Wrap(
-                                              children: [
-                                                ListTile(
-                                                  title: Text('Save this post'),
-                                                ),
-                                                ListTile(
-                                                  title: Text(
-                                                      'Don\'t show me this again'),
-                                                ),
-                                                ListTile(
-                                                  title: Text('Report as spam'),
-                                                ),
-                                                ListTile(
-                                                  title: Text(
-                                                      'Report as inappropriate content'),
-                                                ),
-                                              ],
-                                            );
-                                          });
-                                    },
-                                  ),
-                                  Spacer(),
-                                  SvgPicture.asset(icCombinedShape),
-                                ],
-                              ),
-                            ),
-                            Divider(
-                              height: 1,
-                              color: Colors.black,
-                            ),
-                            Container(
-                              height: 60,
-                              width: MediaQuery.of(context).size.width,
-                              child: Row(
-                                children: [
-                                  SizedBox(
-                                    width: 20,
-                                  ),
-                                  Container(
-                                    width: 40.0,
-                                    height: 40.0,
-                                    decoration: new BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      image: new DecorationImage(
-                                        fit: BoxFit.fill,
-                                        image: AssetImage(profileImage),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 20,
-                                  ),
-                                  Container(
-                                    margin: EdgeInsets.only(top: 10),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Container(
-                                          child: Row(
-                                            children: [
-                                              Text(
-                                                'Ramon Ricardo',
-                                                style: TextStyle(
-                                                    fontSize: 12,
-                                                    fontWeight:
-                                                        FontWeight.normal),
-                                              ),
-                                              SizedBox(
-                                                width: 130,
-                                              ),
-                                              Text(
-                                                '08-09-2021',
-                                                style: TextStyle(
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                    fontSize: 10),
-                                              ),
-                                              SizedBox(
-                                                width: 20,
-                                              ),
-                                              SvgPicture.asset(icMoreHorizontal)
-                                            ],
-                                          ),
                                         ),
-                                        Container(
-                                          child: Row(
-                                            children: [
-                                              SvgPicture.asset(icTagArrow),
-                                              Text(
-                                                'Category Text Public',
-                                                style: TextStyle(
-                                                    fontSize: 12,
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              )
-                                            ],
-                                          ),
-                                        )
                                       ],
                                     ),
                                   ),
+                                  Container(
+                                    margin: EdgeInsets.only(
+                                        left: 10, right: 10,top: 5, bottom: 10),
+                                    child: Text(
+                                      dummyLoremIpsum2,
+                                      style: TextStyle(color: Colors.black,
+                                          fontSize: 12, fontWeight: FontWeight.normal, height: 1.4),
+                                    ),
+                                  ),
+                                  Container(
+                                      margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image1))),
+
                                 ],
                               ),
                             ),
                             Container(
-                              margin: EdgeInsets.only(
-                                  left: 20, right: 20, top: 5, bottom: 10),
+                              margin: EdgeInsets.only(left: 10, right: 10, bottom: 10),
                               child: Column(
                                 children: [
-                                  Text(
-                                    dummyLoremIpsum,
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.normal),
+                                  Container(
+                                    height: 60,
+                                    width: MediaQuery.of(context).size.width,
+                                    child: Row(
+                                      children: [
+                                        SizedBox(
+                                          width: 20,
+                                        ),
+                                        Container(
+                                            width: 40.0,
+                                            height: 40.0,
+                                            decoration: new BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                image: new DecorationImage(
+                                                    fit: BoxFit.fill,
+                                                    image: AssetImage(user2)))),
+                                        SizedBox(
+                                          width: 20,
+                                        ),
+                                        Container(
+                                          margin: EdgeInsets.only(top: 10),
+                                          child: Column(
+                                            mainAxisAlignment: MainAxisAlignment.start,
+                                            crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                            children: [
+                                              Container(
+                                                child: Row(
+                                                  children: [
+                                                    Text(
+                                                      'Ramon Ricardo',
+                                                      style: TextStyle(
+                                                          fontSize: 14,
+                                                          fontWeight:
+                                                          FontWeight.bold),
+                                                    ),
+                                                    SizedBox(
+                                                      width: 120,
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              Container(
+                                                margin: EdgeInsets.only(top: 5),
+                                                child: Row(
+                                                  children: [
+                                                    SvgPicture.asset(icTagArrow),
+                                                    Text(
+                                                      'Category Text Public',
+                                                      style: TextStyle(
+                                                          fontSize: 14,
+                                                          fontWeight: FontWeight.bold),
+                                                    )
+                                                  ],
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
-                                  SizedBox(
-                                    height: 10,
+                                  Container(
+                                    margin: EdgeInsets.only(
+                                        left: 10, right: 10,top: 5, bottom: 10),
+                                    child: Text(
+                                      dummyLoremIpsum2,
+                                      style: TextStyle(color: Colors.black,
+                                          fontSize: 12, fontWeight: FontWeight.normal, height: 1.4),
+                                    ),
                                   ),
-                                  Image(image: AssetImage(image2))
+                                  Container(
+                                      margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image1))),
+
                                 ],
                               ),
                             ),
                             Container(
-                              margin: EdgeInsets.only(
-                                  left: 20, right: 20, top: 10, bottom: 20),
-                              child: Row(
+                              margin: EdgeInsets.only(left: 10, right: 10, bottom: 10),
+                              child: Column(
                                 children: [
-                                  InkWell(
-                                    child: SvgPicture.asset(icHeart),
-                                    onTap: () {
-                                      showModalBottomSheet(
-                                          context: context,
-                                          builder: (context) {
-                                            return Wrap(
-                                              children: [
-                                                ListTile(
-                                                  title: Text('Save this post'),
+                                  Container(
+                                    height: 60,
+                                    width: MediaQuery.of(context).size.width,
+                                    child: Row(
+                                      children: [
+                                        SizedBox(
+                                          width: 20,
+                                        ),
+                                        Container(
+                                            width: 40.0,
+                                            height: 40.0,
+                                            decoration: new BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                image: new DecorationImage(
+                                                    fit: BoxFit.fill,
+                                                    image: AssetImage(user4)))),
+                                        SizedBox(
+                                          width: 20,
+                                        ),
+                                        Container(
+                                          margin: EdgeInsets.only(top: 10),
+                                          child: Column(
+                                            mainAxisAlignment: MainAxisAlignment.start,
+                                            crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                            children: [
+                                              Container(
+                                                child: Row(
+                                                  children: [
+                                                    Text(
+                                                      'Ramon Ricardo',
+                                                      style: TextStyle(
+                                                          fontSize: 14,
+                                                          fontWeight:
+                                                          FontWeight.bold),
+                                                    ),
+                                                    SizedBox(
+                                                      width: 120,
+                                                    ),
+                                                  ],
                                                 ),
-                                                ListTile(
-                                                  title: Text(
-                                                      'Don\'t show me this again'),
+                                              ),
+                                              Container(
+                                                margin: EdgeInsets.only(top: 5),
+                                                child: Row(
+                                                  children: [
+                                                    SvgPicture.asset(icTagArrow),
+                                                    Text(
+                                                      'Category Text Public',
+                                                      style: TextStyle(
+                                                          fontSize: 14,
+                                                          fontWeight: FontWeight.bold),
+                                                    )
+                                                  ],
                                                 ),
-                                                ListTile(
-                                                  title: Text('Report as spam'),
-                                                ),
-                                                ListTile(
-                                                  title: Text(
-                                                      'Report as inappropriate content'),
-                                                ),
-                                              ],
-                                            );
-                                          });
-                                    },
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
-                                  Spacer(),
-                                  SvgPicture.asset(icCombinedShape),
+                                  Container(
+                                    margin: EdgeInsets.only(
+                                        left: 10, right: 10,top: 5, bottom: 10),
+                                    child: Text(
+                                      dummyLoremIpsum2,
+                                      style: TextStyle(color: Colors.black,
+                                          fontSize: 12, fontWeight: FontWeight.normal, height: 1.4),
+                                    ),
+                                  ),
+                                  Container(
+                                      margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image1))),
+
                                 ],
                               ),
                             ),
