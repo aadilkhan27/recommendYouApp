@@ -43,18 +43,23 @@ const icVoice = 'assets/icons/ic_voice.svg';
 const icLeftArrow = 'assets/icons/ic_left_arrow.svg';
 const icBell = 'assets/icons/ic_bell_icon.svg';
 const icEdit = 'assets/icons/ic_edit.svg';
-const image1='assets/images/image1.jpeg';
-const image2='assets/images/image2.jpeg';
-const image3='assets/images/image3.jpeg';
-const image4='assets/images/image4.jpeg';
-const image5='assets/images/image5.jpeg';
-const image6='assets/images/image6.jpeg';
+
+const image1='assets/images/images1.jpg';
+const image2='assets/images/images2.jpg';
+const image3='assets/images/images3.jpg';
+const image4='assets/images/images4.jpg';
+const image5='assets/images/images5.jpg';
+const image6='assets/images/images6.jpg';
+
 const profileImage='assets/images/profile_img.jpeg';
 
+/*
 const user1='assets/images/user1.png';
 const user2='assets/images/user2.png';
 const user3='assets/images/user3.png';
 const user4='assets/images/user4.png';
+*/
+
 const welcomeLeft='assets/images/ic_welcome_left.png';
 const welcomeRight='assets/images/ic_welcome_right.png';
 
@@ -77,5 +82,18 @@ const privacy='assets/settings/privacy.png';
 const termsConditions='assets/settings/terms.png';
 const changePassword='assets/settings/Password-change.png';
 const deleteAcc='assets/settings/delete.png';
+const userImage='assets/settings/downloadUsers.png';
+const faqIcon='assets/settings/faqIcon.png';
+
+
+const profileImage1='assets/profileImage/profileImage1.jpg';
+const profileImage2='assets/profileImage/profileImage2.jpg';
+const profileImage3='assets/profileImage/profileImage3.jpg';
+const profileImage4='assets/profileImage/profileImage4.jpg';
+const profileImage5='assets/profileImage/profileImage5.jpg';
+const profileImage6='assets/profileImage/profileImage6.jpg';
+
+const chatHome='assets/profileImage/chat.png';
+const faqbanner='assets/images/faqbanner.png';
 
 

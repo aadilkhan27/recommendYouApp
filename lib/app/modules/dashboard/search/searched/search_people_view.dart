@@ -9,18 +9,19 @@ import 'package:recommend_you/app/modules/dashboard/search/searched/search_peopl
 
 class SearchPeopleView extends GetView<SearchPeopleController> {
   List<String> images = [
-    user1,
-    user2,
-    user3,
-    user4,
-    user1,
-    user2,
-    user3,
-    user4,
-    user1,
-    user2,
-    user3,
-    user4,
+    profileImage1,
+    profileImage2,
+    profileImage3,
+    profileImage4,
+    profileImage5,
+    profileImage1,
+    profileImage2,
+    profileImage3,
+    profileImage4,
+    profileImage5,
+    profileImage1,
+    profileImage2,
+    profileImage3,
   ];
   @override
   Widget build(BuildContext context) {

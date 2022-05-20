@@ -10,18 +10,19 @@ class SearchView extends GetView<SearchController> {
   final SearchController _tabx = Get.put(SearchController());
 
   List<String> images = [
-    user1,
-    user2,
-    user3,
-    user4,
-    user1,
-    user2,
-    user3,
-    user4,
-    user1,
-    user2,
-    user3,
-    user4,
+    profileImage1,
+    profileImage2,
+    profileImage3,
+    profileImage4,
+    profileImage5,
+    profileImage1,
+    profileImage2,
+    profileImage3,
+    profileImage4,
+    profileImage5,
+    profileImage1,
+    profileImage2,
+    profileImage3,
   ];
 
   @override
@@ -35,6 +36,7 @@ class SearchView extends GetView<SearchController> {
               child: Container(
                   height: MediaQuery.of(context).size.height,
                   width: MediaQuery.of(context).size.width,
+                  margin: EdgeInsets.only(top: 10),
                   child: Column(
                       children: [
                         Container(
@@ -42,14 +44,11 @@ class SearchView extends GetView<SearchController> {
                       decoration: BoxDecoration(
                           border: Border.all(color: Colors.purple),
                           color: Colors.purple,
-                          borderRadius: const BorderRadius.all(
-                            Radius.circular(20),
+                          borderRadius: const BorderRadius.all(Radius.circular(20),
                           )),
-                      margin: EdgeInsets.only(
-                          left: 20, right: 20, bottom: 10, top: 10),
+                      margin: EdgeInsets.only(left: 20, right: 20, bottom: 10, top: 10),
                       child: Padding(
-                        padding: const EdgeInsets.only(
-                            left: 10.0, right: 0, bottom: 2, top: 2),
+                        padding: const EdgeInsets.only(left: 10.0, right: 10, bottom: 2, top: 2),
                         child: TextField(
                           style: TextStyle(color: Colors.white),
                           cursorColor: Colors.white,
@@ -58,7 +57,7 @@ class SearchView extends GetView<SearchController> {
                                 borderSide: BorderSide(color: Colors.purple),
                               ),
                               focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(color: Colors.purple),
+                                borderSide: BorderSide(color: Colors.white),
                               ),
                               focusColor: Colors.white,
                               hintStyle: TextStyle(color: Colors.white),
@@ -84,14 +83,20 @@ class SearchView extends GetView<SearchController> {
                                           SizedBox(
                                             width: 20,
                                           ),
-                                          Container(
-                                              width: 40.0,
-                                              height: 40.0,
-                                              decoration: new BoxDecoration(
-                                                  shape: BoxShape.circle,
-                                                  image: new DecorationImage(
-                                                      fit: BoxFit.fill,
-                                                      image: AssetImage(images[index])))),
+                                          InkWell(
+
+                                            child: Container(
+                                                width: 50.0,
+                                                height: 50.0,
+                                                decoration: new BoxDecoration(
+                                                    shape: BoxShape.circle,
+                                                    image: new DecorationImage(
+                                                        fit: BoxFit.fill,
+                                                        image: AssetImage(images[index])))),
+                                            onTap: () {
+                                              showAlertDialog(context, images[index]);
+                                            },
+                                          ),
                                           SizedBox(
                                             width: 20,
                                           ),
@@ -104,7 +109,7 @@ class SearchView extends GetView<SearchController> {
                                                 Text(
                                                   'Ramon Ricardo',
                                                   style: TextStyle(
-                                                      fontSize: 14,
+                                                      fontSize: 16,
                                                       fontWeight:
                                                       FontWeight.normal),
                                                 ),
@@ -141,6 +146,39 @@ class SearchView extends GetView<SearchController> {
         )
     );
   }
+
+  showAlertDialog(BuildContext context, String image) {
+//image: Image(image: AssetImage(user1),
+    Dialog alert = Dialog(
+      child: Stack(children: [
+        Container(
+          height: 300,
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: ExactAssetImage(image), fit: BoxFit.cover)),
+        ),
+        Positioned(
+          top: 15, right: 15, //give the values according to your requirement
+          child:
+          InkWell(
+            onTap: () {
+              Navigator.of(context).pop();
+            },
+            child: Icon(Icons.close, color : Colors.black),
+          ),
+        ),
+      ]),
+    );
+
+    // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    );
+  }
+
 }
 
 /* Container(

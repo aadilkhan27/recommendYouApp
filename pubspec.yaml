@@ -53,6 +53,7 @@ flutter:
     - assets/icons/
     - assets/images/
     - assets/settings/
+    - assets/profileImage/
 
   fonts:
     - family: PlayfairDisplay

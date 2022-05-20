@@ -16,6 +16,7 @@ import 'package:recommend_you/app/modules/dashboard/more/termscondition/termscon
 
 import '../../../routes/pages.dart';
 import 'deletaccount/delete_account_view.dart';
+import 'faq/faq_view.dart';
 
 class MoreView extends GetView<MoreController> {
   @override
@@ -49,7 +50,10 @@ class MoreView extends GetView<MoreController> {
                       SizedBox(
                         width: 10,
                       ),
-                      Text('Settings')
+                      Text(
+                        "Settings",
+                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
+                      ),
                     ],
                   ),
                 ),
@@ -226,27 +230,19 @@ class MoreView extends GetView<MoreController> {
                                 context: context,
                                 builder: (context) {
                                   return Wrap(
-                                      children: [
-                                        Padding(
-                                          padding: const EdgeInsets.all(10.0),
-                                          child: Column(
-                                            children: [
-                                              Text(
-                                                'English ',
-                                                style: TextStyle(fontWeight: FontWeight.normal, fontSize: 16),
-                                              ),
-                                              SizedBox(
-                                                height: 15,
-                                              ),
-                                              Text(
-                                                'French ',
-                                                style: TextStyle(fontWeight: FontWeight.normal, fontSize: 16),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
+                                    children: [
+                                      ListTile(
+                                        title: Text(
+                                            'English',
+                                    style: TextStyle(fontSize: 16),),
+                                      ),
+                                      ListTile(
+                                        title:
+                                        Text('French',
+                                        style: TextStyle(fontSize: 16),),
+                                      ),
 
-                                      ]
+                                    ],
                                   );
                                 },
                               );
@@ -425,6 +421,16 @@ class MoreView extends GetView<MoreController> {
                     },
                   ),
                 ),
+                        Container(
+                          padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                          child: ListTile(
+                            leading: Image(image: AssetImage(faqIcon), width: 20, height: 20,),
+                            title: Text('FAQ'),
+                            onTap: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (builder) => FaqView()));
+                            },
+                          ),
+                        ),
                         Container(
                           padding: EdgeInsets.only(left: 15.0, right: 15.0),
                           child: ListTile(

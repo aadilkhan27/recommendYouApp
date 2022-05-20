@@ -12,11 +12,11 @@ import 'package:recommend_you/app/widgets/dropdown_button2.dart';
 
 class ProfileView extends GetView<ProfileController> {
   final List<String> spinnerItems = [
-    'RecommendYou',
-    'RecommendYous',
-    'RecommenYou',
-    'RecommndYou',
-    'RecmmendYou',
+    'All Categories',
+    'Categories 1',
+    'Categories 2',
+    'Categories 3',
+    'Categories 4',
   ];
   String? selectedValue;
 
@@ -34,7 +34,7 @@ class ProfileView extends GetView<ProfileController> {
             child: Column(
               children: [
                 Container(
-                  height: 40,
+                  height: 50,
                   width: MediaQuery.of(context).size.width,
                   padding: EdgeInsets.all(10),
                   child: Align(
@@ -54,7 +54,7 @@ class ProfileView extends GetView<ProfileController> {
                           },
                         ),
                         SizedBox(
-                          width: 10,
+                          width: 20,
                         ),
                         Text(
                           'Ram_Ricard',
@@ -62,9 +62,12 @@ class ProfileView extends GetView<ProfileController> {
                         ),
                         Spacer(),
                         InkWell(
-                          child: SvgPicture.asset(icEdit, width: 15,
-                            height: 15,
-                            color: primaryDarkColor,),
+                          child: Container(
+                            margin: EdgeInsets.only(left: 10, right: 10, top: 0),
+                            child: SvgPicture.asset(icEdit, width: 20,
+                              height: 20,
+                              color: primaryDarkColor,),
+                          ),
                           onTap: () {
                             Get.toNamed(Routes.editProfile);
                           },
@@ -84,18 +87,23 @@ class ProfileView extends GetView<ProfileController> {
                     children: [
                       Container(
                         width: (MediaQuery.of(context).size.width / 4) - 10,
-                        child: Container(
-                          width: 60.0,
-                          height: 60.0,
-                          decoration: new BoxDecoration(
-                            shape: BoxShape.circle,
-                            image: new DecorationImage(
-                              fit: BoxFit.fill,
-                              image: AssetImage(profileImage),
-                            ),
-                          ),
+                        child: InkWell(
+
+                          child: Container(
+                              width: 60.0,
+                              height: 60.0,
+                              decoration: new BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  image: new DecorationImage(
+                                      fit: BoxFit.fill,
+                                      image: AssetImage(profileImage4)))),
+                          onTap: () {
+                            showAlertDialog(context, profileImage4);
+                          },
                         ),
                       ),
+
+
                       Container(
                         width: (MediaQuery.of(context).size.width / 4) - 10,
                         child: Padding(
@@ -208,12 +216,12 @@ class ProfileView extends GetView<ProfileController> {
                         text: TextSpan(children: [
                           TextSpan(
                             text: dummyLoremIpsum2,
-                            style: TextStyle(fontSize: 12, color: Colors.black, height: 1.4),
+                            style: TextStyle(fontSize: 16, color: Colors.black, height: 1.4),
                           ),
                           TextSpan(
                             text: ' View more',
                             style: TextStyle(
-                                fontSize: 14, color: primaryDarkColor),
+                                fontSize: 16, color: primaryDarkColor),
                           )
                         ]),
                       ),
@@ -282,7 +290,7 @@ class ProfileView extends GetView<ProfileController> {
                           },
                         ),
                       ),
-                      Spacer(),
+                     /* Spacer(),
                       SvgPicture.asset(icA),
                       SizedBox(
                         width: 25,
@@ -290,7 +298,7 @@ class ProfileView extends GetView<ProfileController> {
                       SvgPicture.asset(icB),
                       SizedBox(
                         width: 25,
-                      )
+                      )*/
                     ],
                   ),
                 ),
@@ -333,7 +341,7 @@ class ProfileView extends GetView<ProfileController> {
                                                 shape: BoxShape.circle,
                                                 image: new DecorationImage(
                                                     fit: BoxFit.fill,
-                                                    image: AssetImage(user3)))),
+                                                    image: AssetImage(profileImage3)))),
                                         SizedBox(
                                           width: 20,
                                         ),
@@ -386,7 +394,7 @@ class ProfileView extends GetView<ProfileController> {
                                     child: Text(
                                       dummyLoremIpsum2,
                                       style: TextStyle(color: Colors.black,
-                                          fontSize: 12, fontWeight: FontWeight.normal, height: 1.4),
+                                          fontSize: 16, fontWeight: FontWeight.normal, height: 1.4),
                                     ),
                                   ),
                                   Container(
@@ -414,7 +422,7 @@ class ProfileView extends GetView<ProfileController> {
                                                 shape: BoxShape.circle,
                                                 image: new DecorationImage(
                                                     fit: BoxFit.fill,
-                                                    image: AssetImage(user3)))),
+                                                    image: AssetImage(profileImage3)))),
                                         SizedBox(
                                           width: 20,
                                         ),
@@ -467,11 +475,11 @@ class ProfileView extends GetView<ProfileController> {
                                     child: Text(
                                       dummyLoremIpsum2,
                                       style: TextStyle(color: Colors.black,
-                                          fontSize: 12, fontWeight: FontWeight.normal, height: 1.4),
+                                          fontSize: 16, fontWeight: FontWeight.normal, height: 1.4),
                                     ),
                                   ),
                                   Container(
-                                      margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image1))),
+                                      margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image2))),
 
                                 ],
                               ),
@@ -499,7 +507,7 @@ class ProfileView extends GetView<ProfileController> {
                                                       shape: BoxShape.circle,
                                                       image: new DecorationImage(
                                                           fit: BoxFit.fill,
-                                                          image: AssetImage(user1)))),
+                                                          image: AssetImage(profileImage3)))),
                                               SizedBox(
                                                 width: 20,
                                               ),
@@ -552,11 +560,11 @@ class ProfileView extends GetView<ProfileController> {
                                           child: Text(
                                             dummyLoremIpsum2,
                                             style: TextStyle(color: Colors.black,
-                                                fontSize: 12, fontWeight: FontWeight.normal, height: 1.4),
+                                                fontSize: 16, fontWeight: FontWeight.normal, height: 1.4),
                                           ),
                                         ),
                                         Container(
-                                            margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image1))),
+                                            margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image4))),
 
                                       ],
                                     ),
@@ -580,7 +588,7 @@ class ProfileView extends GetView<ProfileController> {
                                                       shape: BoxShape.circle,
                                                       image: new DecorationImage(
                                                           fit: BoxFit.fill,
-                                                          image: AssetImage(user3)))),
+                                                          image: AssetImage(profileImage3)))),
                                               SizedBox(
                                                 width: 20,
                                               ),
@@ -633,11 +641,11 @@ class ProfileView extends GetView<ProfileController> {
                                           child: Text(
                                             dummyLoremIpsum2,
                                             style: TextStyle(color: Colors.black,
-                                                fontSize: 12, fontWeight: FontWeight.normal, height: 1.4),
+                                                fontSize: 16, fontWeight: FontWeight.normal, height: 1.4),
                                           ),
                                         ),
                                         Container(
-                                            margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image1))),
+                                            margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image6))),
 
                                       ],
                                     ),
@@ -661,7 +669,7 @@ class ProfileView extends GetView<ProfileController> {
                                                       shape: BoxShape.circle,
                                                       image: new DecorationImage(
                                                           fit: BoxFit.fill,
-                                                          image: AssetImage(user2)))),
+                                                          image: AssetImage(profileImage2)))),
                                               SizedBox(
                                                 width: 20,
                                               ),
@@ -714,11 +722,11 @@ class ProfileView extends GetView<ProfileController> {
                                           child: Text(
                                             dummyLoremIpsum2,
                                             style: TextStyle(color: Colors.black,
-                                                fontSize: 12, fontWeight: FontWeight.normal, height: 1.4),
+                                                fontSize: 16, fontWeight: FontWeight.normal, height: 1.4),
                                           ),
                                         ),
                                         Container(
-                                            margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image1))),
+                                            margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image5))),
 
                                       ],
                                     ),
@@ -742,7 +750,7 @@ class ProfileView extends GetView<ProfileController> {
                                                       shape: BoxShape.circle,
                                                       image: new DecorationImage(
                                                           fit: BoxFit.fill,
-                                                          image: AssetImage(user4)))),
+                                                          image: AssetImage(profileImage4)))),
                                               SizedBox(
                                                 width: 20,
                                               ),
@@ -795,11 +803,11 @@ class ProfileView extends GetView<ProfileController> {
                                           child: Text(
                                             dummyLoremIpsum2,
                                             style: TextStyle(color: Colors.black,
-                                                fontSize: 12, fontWeight: FontWeight.normal, height: 1.4),
+                                                fontSize: 16, fontWeight: FontWeight.normal, height: 1.4),
                                           ),
                                         ),
                                         Container(
-                                            margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image1))),
+                                            margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image6))),
 
                                       ],
                                     ),
@@ -811,6 +819,7 @@ class ProfileView extends GetView<ProfileController> {
                           ],
                         ),
                       ),
+                      
                       SingleChildScrollView(
                         child: Column(
                           children: [
@@ -834,7 +843,7 @@ class ProfileView extends GetView<ProfileController> {
                                                 shape: BoxShape.circle,
                                                 image: new DecorationImage(
                                                     fit: BoxFit.fill,
-                                                    image: AssetImage(user1)))),
+                                                    image: AssetImage(profileImage1)))),
                                         SizedBox(
                                           width: 20,
                                         ),
@@ -887,11 +896,11 @@ class ProfileView extends GetView<ProfileController> {
                                     child: Text(
                                       dummyLoremIpsum2,
                                       style: TextStyle(color: Colors.black,
-                                          fontSize: 12, fontWeight: FontWeight.normal, height: 1.4),
+                                          fontSize: 16, fontWeight: FontWeight.normal, height: 1.4),
                                     ),
                                   ),
                                   Container(
-                                      margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image1))),
+                                      margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image5))),
 
                                 ],
                               ),
@@ -915,7 +924,7 @@ class ProfileView extends GetView<ProfileController> {
                                                 shape: BoxShape.circle,
                                                 image: new DecorationImage(
                                                     fit: BoxFit.fill,
-                                                    image: AssetImage(user3)))),
+                                                    image: AssetImage(profileImage3)))),
                                         SizedBox(
                                           width: 20,
                                         ),
@@ -968,11 +977,11 @@ class ProfileView extends GetView<ProfileController> {
                                     child: Text(
                                       dummyLoremIpsum2,
                                       style: TextStyle(color: Colors.black,
-                                          fontSize: 12, fontWeight: FontWeight.normal, height: 1.4),
+                                          fontSize: 16, fontWeight: FontWeight.normal, height: 1.4),
                                     ),
                                   ),
                                   Container(
-                                      margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image1))),
+                                      margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image2))),
 
                                 ],
                               ),
@@ -996,7 +1005,7 @@ class ProfileView extends GetView<ProfileController> {
                                                 shape: BoxShape.circle,
                                                 image: new DecorationImage(
                                                     fit: BoxFit.fill,
-                                                    image: AssetImage(user2)))),
+                                                    image: AssetImage(profileImage2)))),
                                         SizedBox(
                                           width: 20,
                                         ),
@@ -1049,11 +1058,11 @@ class ProfileView extends GetView<ProfileController> {
                                     child: Text(
                                       dummyLoremIpsum2,
                                       style: TextStyle(color: Colors.black,
-                                          fontSize: 12, fontWeight: FontWeight.normal, height: 1.4),
+                                          fontSize: 16, fontWeight: FontWeight.normal, height: 1.4),
                                     ),
                                   ),
                                   Container(
-                                      margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image1))),
+                                      margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image6))),
 
                                 ],
                               ),
@@ -1077,7 +1086,7 @@ class ProfileView extends GetView<ProfileController> {
                                                 shape: BoxShape.circle,
                                                 image: new DecorationImage(
                                                     fit: BoxFit.fill,
-                                                    image: AssetImage(user4)))),
+                                                    image: AssetImage(profileImage4)))),
                                         SizedBox(
                                           width: 20,
                                         ),
@@ -1130,11 +1139,11 @@ class ProfileView extends GetView<ProfileController> {
                                     child: Text(
                                       dummyLoremIpsum2,
                                       style: TextStyle(color: Colors.black,
-                                          fontSize: 12, fontWeight: FontWeight.normal, height: 1.4),
+                                          fontSize: 16, fontWeight: FontWeight.normal, height: 1.4),
                                     ),
                                   ),
                                   Container(
-                                      margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image1))),
+                                      margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image4))),
 
                                 ],
                               ),
@@ -1142,9 +1151,11 @@ class ProfileView extends GetView<ProfileController> {
                           ],
                         ),
                       ),
+
                       SingleChildScrollView(
                         child: Column(
                           children: [
+
                             Container(
                               margin: EdgeInsets.only(left: 10, right: 10, bottom: 10),
                               child: Column(
@@ -1164,7 +1175,7 @@ class ProfileView extends GetView<ProfileController> {
                                                 shape: BoxShape.circle,
                                                 image: new DecorationImage(
                                                     fit: BoxFit.fill,
-                                                    image: AssetImage(user1)))),
+                                                    image: AssetImage(profileImage1)))),
                                         SizedBox(
                                           width: 20,
                                         ),
@@ -1217,11 +1228,11 @@ class ProfileView extends GetView<ProfileController> {
                                     child: Text(
                                       dummyLoremIpsum2,
                                       style: TextStyle(color: Colors.black,
-                                          fontSize: 12, fontWeight: FontWeight.normal, height: 1.4),
+                                          fontSize: 16, fontWeight: FontWeight.normal, height: 1.4),
                                     ),
                                   ),
                                   Container(
-                                      margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image1))),
+                                      margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image5))),
 
                                 ],
                               ),
@@ -1245,7 +1256,7 @@ class ProfileView extends GetView<ProfileController> {
                                                 shape: BoxShape.circle,
                                                 image: new DecorationImage(
                                                     fit: BoxFit.fill,
-                                                    image: AssetImage(user3)))),
+                                                    image: AssetImage(profileImage3)))),
                                         SizedBox(
                                           width: 20,
                                         ),
@@ -1298,11 +1309,11 @@ class ProfileView extends GetView<ProfileController> {
                                     child: Text(
                                       dummyLoremIpsum2,
                                       style: TextStyle(color: Colors.black,
-                                          fontSize: 12, fontWeight: FontWeight.normal, height: 1.4),
+                                          fontSize: 16, fontWeight: FontWeight.normal, height: 1.4),
                                     ),
                                   ),
                                   Container(
-                                      margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image1))),
+                                      margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image2))),
 
                                 ],
                               ),
@@ -1326,7 +1337,7 @@ class ProfileView extends GetView<ProfileController> {
                                                 shape: BoxShape.circle,
                                                 image: new DecorationImage(
                                                     fit: BoxFit.fill,
-                                                    image: AssetImage(user2)))),
+                                                    image: AssetImage(profileImage2)))),
                                         SizedBox(
                                           width: 20,
                                         ),
@@ -1379,11 +1390,11 @@ class ProfileView extends GetView<ProfileController> {
                                     child: Text(
                                       dummyLoremIpsum2,
                                       style: TextStyle(color: Colors.black,
-                                          fontSize: 12, fontWeight: FontWeight.normal, height: 1.4),
+                                          fontSize: 16, fontWeight: FontWeight.normal, height: 1.4),
                                     ),
                                   ),
                                   Container(
-                                      margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image1))),
+                                      margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image6))),
 
                                 ],
                               ),
@@ -1407,7 +1418,7 @@ class ProfileView extends GetView<ProfileController> {
                                                 shape: BoxShape.circle,
                                                 image: new DecorationImage(
                                                     fit: BoxFit.fill,
-                                                    image: AssetImage(user4)))),
+                                                    image: AssetImage(profileImage4)))),
                                         SizedBox(
                                           width: 20,
                                         ),
@@ -1460,11 +1471,11 @@ class ProfileView extends GetView<ProfileController> {
                                     child: Text(
                                       dummyLoremIpsum2,
                                       style: TextStyle(color: Colors.black,
-                                          fontSize: 12, fontWeight: FontWeight.normal, height: 1.4),
+                                          fontSize: 16, fontWeight: FontWeight.normal, height: 1.4),
                                     ),
                                   ),
                                   Container(
-                                      margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image1))),
+                                      margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image4))),
 
                                 ],
                               ),
@@ -1482,6 +1493,39 @@ class ProfileView extends GetView<ProfileController> {
       ),
     );
   }
+
+  showAlertDialog(BuildContext context, String image) {
+//image: Image(image: AssetImage(user1),
+    Dialog alert = Dialog(
+      child: Stack(children: [
+        Container(
+          height: 300,
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: ExactAssetImage(image), fit: BoxFit.cover)),
+        ),
+        Positioned(
+          top: 15, right: 15, //give the values according to your requirement
+          child:
+          InkWell(
+            onTap: () {
+              Navigator.of(context).pop();
+            },
+            child: Icon(Icons.close, color : Colors.black),
+          ),
+        ),
+      ]),
+    );
+
+    // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    );
+  }
+
 }
 
 showPopupMenu(BuildContext buildContext) {

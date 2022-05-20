@@ -49,7 +49,7 @@ class ChangeContactView extends GetView<ChangeContactController> {
                                         ),
                                       ),
                                       SizedBox(
-                                        width: 10,
+                                        width: 20,
                                       ),
                                       Text('Change contact details')
                                     ],

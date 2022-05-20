@@ -33,6 +33,7 @@ class DeleteAccountView extends GetView<ContactUsController> {
                     children: [
                       Column(
                         children: [
+
                           Container(
                             height: 50,
                             width: MediaQuery.of(context).size.width,
@@ -42,59 +43,72 @@ class DeleteAccountView extends GetView<ContactUsController> {
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-                                  SizedBox(width: 10,),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
                                   InkWell(
-                                    onTap: (){
-                                      Get.back();
-                                    },
                                     child: SvgPicture.asset(
                                       icLeftArrow,
-                                      semanticsLabel: 'logo',
                                     ),
+                                    onTap: () {
+                                      Get.back();
+                                    },
                                   ),
-                                  SizedBox(width: 10,),
-                                  Text('Delete Account')
+                                  SizedBox(
+                                    width: 20,
+                                  ),
+                                  Text('Delete Account'),
+
                                 ],
                               ),
                             ),
                           ),
+                          Divider(
+                            color: Colors.black,
+                            height: 1,
+                          ),
+
                           Padding(
-                            padding:
-                                const EdgeInsets.only(top: 25.0, left: 30, right: 30),
+                            padding: const EdgeInsets.only(
+                                top: 25.0, left: 30, right: 30),
                             child: Text(
                               'We are sorry you want to leave. Can you tell us why? We would like to learn from any mistakes we may have made.',
-                              style: TextStyle(color: Colors.black, fontSize: 14),
+                              style:
+                                  TextStyle(color: Colors.black, fontSize: 14),
                               textAlign: TextAlign.center,
-
                             ),
                           ),
                           Container(
-                            margin: EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 10),
-                            child: Column(
-                              children: [
+                            margin: EdgeInsets.only(
+                                left: 10, right: 10, top: 10, bottom: 10),
+                            child: Column(children: [
                               CheckboxListTile(
                                 value: false,
                                 onChanged: (value) {},
                                 title: Text('The content is not interesting'),
-                                controlAffinity: ListTileControlAffinity.leading,
+                                controlAffinity:
+                                    ListTileControlAffinity.leading,
                               ),
                               CheckboxListTile(
                                 value: false,
                                 onChanged: (value) {},
                                 title: Text('There are too much spam'),
-                                controlAffinity: ListTileControlAffinity.leading,
+                                controlAffinity:
+                                    ListTileControlAffinity.leading,
                               ),
                               CheckboxListTile(
                                 value: false,
                                 onChanged: (value) {},
                                 title: Text('I don\'t trust this platform'),
-                                controlAffinity: ListTileControlAffinity.leading,
+                                controlAffinity:
+                                    ListTileControlAffinity.leading,
                               ),
                               CheckboxListTile(
                                 value: false,
                                 onChanged: (value) {},
                                 title: Text('Other'),
-                                controlAffinity: ListTileControlAffinity.leading,
+                                controlAffinity:
+                                    ListTileControlAffinity.leading,
                               ),
                               SizedBox(
                                 height: 10,
@@ -104,7 +118,8 @@ class DeleteAccountView extends GetView<ContactUsController> {
                                 child: Align(
                                   child: Text(
                                     'Please give us additional explanation',
-                                    style: TextStyle(color: Colors.grey, fontSize: 14.0),
+                                    style: TextStyle(
+                                        color: Colors.grey, fontSize: 14.0),
                                     textAlign: TextAlign.start,
                                   ),
                                   alignment: Alignment.topLeft,
@@ -122,41 +137,44 @@ class DeleteAccountView extends GetView<ContactUsController> {
                                   ),
                                 ),
                               ),
-                              Align(
-                                alignment: Alignment.bottomRight,
-                                child: InkWell(
-                                  onTap: (){
-                                    Get.back();
-                                  },
-                                  child: Container(
-                                    height: 40,
-                                    width: 100,
-                                    margin: EdgeInsets.only(right: 30),
-                                    decoration: BoxDecoration(
-                                        color: Colors.purple,
-                                        border: Border.all(color: Colors.purple),
-                                        borderRadius:
-                                        const BorderRadius.all(Radius.circular(5))),
-                                    alignment: Alignment.center,
-                                    child: Text(
-                                      'SUBMIT',
-                                      style: TextStyle(
-                                          color: Colors.white, fontWeight: FontWeight.bold),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                  ]
-                            ),
-                          )
 
+                            ]),
+                          )
                         ],
                       ),
-
                     ],
                   ),
                 ),
-              )
+              ),
+              Positioned(
+                right: 0,
+                left: 0,
+                bottom: 0,
+                child: Align(
+                  alignment: Alignment.bottomRight,
+                  child: InkWell(
+                    onTap: () {
+                      Get.back();
+                    },
+                    child: Container(
+                      height: 40,
+                      width: 100,
+                      margin: EdgeInsets.only(right: 30),
+                      decoration: BoxDecoration(
+                          color: Colors.purple,
+                          border: Border.all(color: Colors.purple),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(5))),
+                      alignment: Alignment.center,
+                      child: Text(
+                        'SUBMIT',
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),

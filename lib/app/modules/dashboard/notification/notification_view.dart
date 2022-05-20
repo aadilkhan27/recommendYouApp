@@ -11,18 +11,19 @@ import 'package:recommend_you/app/routes/pages.dart';
 
 class NotificationView extends GetView<NotificationController> {
   List<String> images = [
-    user1,
-    user2,
-    user3,
-    user4,
-    user1,
-    user2,
-    user3,
-    user4,
-    user1,
-    user2,
-    user3,
-    user4,
+    profileImage1,
+    profileImage2,
+    profileImage3,
+    profileImage4,
+    profileImage5,
+    profileImage1,
+    profileImage2,
+    profileImage3,
+    profileImage4,
+    profileImage5,
+    profileImage1,
+    profileImage2,
+    profileImage3,
   ];
 
   @override
@@ -62,7 +63,7 @@ class NotificationView extends GetView<NotificationController> {
                           ),
                         ),*/
                         SizedBox(
-                          width: 20,
+                          width: 15,
                         ),
                         Text('Notification')
                       ],
@@ -76,7 +77,7 @@ class NotificationView extends GetView<NotificationController> {
                 Expanded(
                   child: SingleChildScrollView(
                     child: Padding(
-                      padding: const EdgeInsets.only(left : 10.0, right: 10),
+                      padding: const EdgeInsets.only(left : 20.0, right: 20),
                       child: Column(
                         children: [
                           Container(
@@ -110,17 +111,17 @@ class NotificationView extends GetView<NotificationController> {
                                             children: [
                                               InkWell(
                                                 onTap:(){
-                                                  showAlertDialog(context);
+                                                  showAlertDialog(context,profileImage1 );
                                                 },
                                                 child: Container(
-                                                  width: 40.0,
-                                                  height: 40.0,
+                                                  width: 50.0,
+                                                  height: 50.0,
                                                   decoration: new BoxDecoration(
                                                     shape: BoxShape.circle,
                                                     image: new DecorationImage(
                                                       fit: BoxFit.fill,
                                                       image:
-                                                          AssetImage(profileImage),
+                                                          AssetImage(profileImage1),
                                                     ),
                                                   ),
                                                 ),
@@ -193,17 +194,17 @@ class NotificationView extends GetView<NotificationController> {
                                             children: [
                                               InkWell(
                                                 onTap:(){
-                                                  showAlertDialog(context);
+                                                  showAlertDialog(context, profileImage2);
                                                 },
                                                 child: Container(
-                                                    width: 40.0,
-                                                    height: 40.0,
+                                                    width: 50.0,
+                                                    height: 50.0,
                                                     decoration: new BoxDecoration(
                                                         shape: BoxShape.circle,
                                                         image: new DecorationImage(
                                                             fit: BoxFit.fill,
                                                             image: AssetImage(
-                                                                profileImage)))),
+                                                                profileImage2)))),
                                               ),
                                               SizedBox(
                                                 width: 20,
@@ -282,6 +283,7 @@ class NotificationView extends GetView<NotificationController> {
                               ),
                             ),
                           ),
+
                           Container(
                             margin: EdgeInsets.only(left: 10),
                             child: Container(
@@ -313,17 +315,17 @@ class NotificationView extends GetView<NotificationController> {
                                             children: [
                                               InkWell(
                                                 onTap:(){
-                                                  showAlertDialog(context);
+                                                  showAlertDialog(context, profileImage3);
                                                 },
                                                 child: Container(
-                                                    width: 40.0,
-                                                    height: 40.0,
+                                                    width: 50.0,
+                                                    height: 50.0,
                                                     decoration: new BoxDecoration(
                                                         shape: BoxShape.circle,
                                                         image: new DecorationImage(
                                                             fit: BoxFit.fill,
                                                             image: AssetImage(
-                                                                profileImage)))),
+                                                                profileImage3)))),
                                               ),
                                               SizedBox(
                                                 width: 20,
@@ -400,17 +402,17 @@ class NotificationView extends GetView<NotificationController> {
                                             children: [
                                               InkWell(
                                                 onTap:(){
-                                                  showAlertDialog(context);
+                                                  showAlertDialog(context, profileImage4);
                                                 },
                                                 child: Container(
-                                                    width: 40.0,
-                                                    height: 40.0,
+                                                    width: 50.0,
+                                                    height: 50.0,
                                                     decoration: new BoxDecoration(
                                                         shape: BoxShape.circle,
                                                         image: new DecorationImage(
                                                             fit: BoxFit.fill,
                                                             image: AssetImage(
-                                                                profileImage)))),
+                                                                profileImage4)))),
                                               ),
                                               SizedBox(
                                                 width: 20,
@@ -472,6 +474,7 @@ class NotificationView extends GetView<NotificationController> {
                               ),
                             ),
                           ),
+
                           Container(
                             margin: EdgeInsets.only(left: 10),
                             child: Container(
@@ -503,17 +506,17 @@ class NotificationView extends GetView<NotificationController> {
                                             children: [
                                               InkWell(
                                                 onTap:(){
-                                                  showAlertDialog(context);
+                                                  showAlertDialog(context, profileImage5);
                                                 },
                                                 child: Container(
-                                                    width: 40.0,
-                                                    height: 40.0,
+                                                    width: 50.0,
+                                                    height: 50.0,
                                                     decoration: new BoxDecoration(
                                                         shape: BoxShape.circle,
                                                         image: new DecorationImage(
                                                             fit: BoxFit.fill,
                                                             image: AssetImage(
-                                                                profileImage)))),
+                                                                profileImage5)))),
                                               ),
                                               SizedBox(
                                                 width: 20,
@@ -590,17 +593,17 @@ class NotificationView extends GetView<NotificationController> {
                                             children: [
                                               InkWell(
                                                 onTap:(){
-                                                  showAlertDialog(context);
+                                                  showAlertDialog(context, profileImage6);
                                                 },
                                                 child: Container(
-                                                    width: 40.0,
-                                                    height: 40.0,
+                                                    width: 50.0,
+                                                    height: 50.0,
                                                     decoration: new BoxDecoration(
                                                         shape: BoxShape.circle,
                                                         image: new DecorationImage(
                                                             fit: BoxFit.fill,
                                                             image: AssetImage(
-                                                                profileImage)))),
+                                                                profileImage6)))),
                                               ),
                                               SizedBox(
                                                 width: 20,
@@ -662,6 +665,7 @@ class NotificationView extends GetView<NotificationController> {
                               ),
                             ),
                           ),
+
                           Container(
                             margin: EdgeInsets.only(left: 10),
                             child: Container(
@@ -693,17 +697,17 @@ class NotificationView extends GetView<NotificationController> {
                                             children: [
                                               InkWell(
                                                 onTap:(){
-                                                  showAlertDialog(context);
+                                                  showAlertDialog(context, profileImage5);
                                                 },
                                                 child: Container(
-                                                    width: 40.0,
-                                                    height: 40.0,
+                                                    width: 50.0,
+                                                    height: 50.0,
                                                     decoration: new BoxDecoration(
                                                         shape: BoxShape.circle,
                                                         image: new DecorationImage(
                                                             fit: BoxFit.fill,
                                                             image: AssetImage(
-                                                                profileImage)))),
+                                                                profileImage5)))),
                                               ),
                                               SizedBox(
                                                 width: 20,
@@ -780,17 +784,17 @@ class NotificationView extends GetView<NotificationController> {
                                             children: [
                                               InkWell(
                                                 onTap:(){
-                                                  showAlertDialog(context);
+                                                  showAlertDialog(context, profileImage1);
                                                 },
                                                 child: Container(
-                                                    width: 40.0,
-                                                    height: 40.0,
+                                                    width: 50.0,
+                                                    height: 50.0,
                                                     decoration: new BoxDecoration(
                                                         shape: BoxShape.circle,
                                                         image: new DecorationImage(
                                                             fit: BoxFit.fill,
                                                             image: AssetImage(
-                                                                profileImage)))),
+                                                                profileImage1)))),
                                               ),
                                               SizedBox(
                                                 width: 20,
@@ -866,7 +870,7 @@ class NotificationView extends GetView<NotificationController> {
   }
 }
 
-showAlertDialog(BuildContext context) {
+showAlertDialog(BuildContext context, String profileImage) {
 
   // set up the AlertDialog
   Dialog alert = Dialog(
@@ -878,8 +882,8 @@ showAlertDialog(BuildContext context) {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-            width: 40.0,
-            height: 40.0,
+            width: 60.0,
+            height: 60.0,
             decoration: new BoxDecoration(
               shape: BoxShape.circle,
               image: new DecorationImage(

@@ -54,7 +54,7 @@ class PrivacyPolicyView extends GetView<PrivacyPolicyController> {
                               ),
                             ),
                             SizedBox(
-                              width: 10,
+                              width: 20,
                             ),
                             Text('Privacy Policy')
                           ],

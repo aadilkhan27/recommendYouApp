@@ -44,7 +44,7 @@ class ChangePasswordView extends GetView<ChangePasswordController> {
                             ),
                           ),
                           SizedBox(
-                            width: 10,
+                            width: 20,
                           ),
                           Text('Change your password')
                         ],

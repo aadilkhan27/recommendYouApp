@@ -54,4 +54,4 @@ const logInInfo='What will be your log in info?';
 const passwordValidMsg='Your password needs to have at least 6 characters';
 const privacyPolicyMsg='By creating this account you confirm you have read and accept the user agreement and the privacy policy of RecommendYou';
 
-const dummyLoremIpsum2='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tellus sit arcu blandit cras urna, Last name diam ut.';
+const dummyLoremIpsum2='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tellus sit arcu blandit cras Last name diam ut.';

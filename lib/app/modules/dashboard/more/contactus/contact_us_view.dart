@@ -54,7 +54,7 @@ class ContactUsView extends GetView<ContactUsController> {
                                 ),
                               ),
                               SizedBox(
-                                width: 10,
+                                width: 20,
                               ),
                               Text('Contact Us')
                             ],
