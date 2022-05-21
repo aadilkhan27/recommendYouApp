@@ -30,12 +30,12 @@ class HelperView extends GetView<ChangeContactController> {
 
   static List<HelperModel> helperList = <HelperModel>[
 
-    HelperModel(userImage: profileImage1, itemSelect: false),
+    HelperModel(userImage: profileImage1, itemSelect: true),
     HelperModel(userImage: profileImage2, itemSelect: false),
     HelperModel(userImage: profileImage3, itemSelect: true),
-    HelperModel(userImage: profileImage4, itemSelect: false),
+    HelperModel(userImage: profileImage4, itemSelect: true),
     HelperModel(userImage: profileImage5, itemSelect: false),
-    HelperModel(userImage: profileImage1, itemSelect: false),
+    HelperModel(userImage: profileImage1, itemSelect: true),
     HelperModel(userImage: profileImage2, itemSelect: false),
     HelperModel(userImage: profileImage3, itemSelect: false),
     HelperModel(userImage: profileImage4, itemSelect: false),

@@ -1,3 +1,6 @@
+
+
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -43,7 +46,7 @@ class MoreView extends GetView<MoreController> {
                       SizedBox(
                         width: 10,
                       ),
-                     /* SvgPicture.asset(
+                      /* SvgPicture.asset(
                         icLeftArrow,
                         semanticsLabel: 'logo',
                       ),*/
@@ -65,7 +68,7 @@ class MoreView extends GetView<MoreController> {
               Expanded(
                   child: SingleChildScrollView(
                       child: Column(children: [
-                /*Container(
+                        /*Container(
                   padding: EdgeInsets.only(left: 15.0, right: 15.0),
                   child: ListTile(
                       leading: Icon(Icons.privacy_tip_outlined),
@@ -223,68 +226,68 @@ class MoreView extends GetView<MoreController> {
                           padding: EdgeInsets.only(left: 15.0, right: 15.0),
                           child: ListTile(
                               leading: Image(image: AssetImage(changeLanguage), width: 20, height: 20,),
-                            title: Text('Language Change'),
-                            onTap: () {
-                              //Navigator.push(context, MaterialPageRoute(builder: (builder) => ChangeLangugaeView()));
-                              showModalBottomSheet(
-                                context: context,
-                                builder: (context) {
-                                  return Wrap(
-                                    children: [
-                                      ListTile(
-                                        title: Text(
+                              title: Text('Language Change'),
+                              onTap: () {
+                                //Navigator.push(context, MaterialPageRoute(builder: (builder) => ChangeLangugaeView()));
+                                showModalBottomSheet(
+                                  context: context,
+                                  builder: (context) {
+                                    return Wrap(
+                                      children: [
+                                        ListTile(
+                                          title: Text(
                                             'English',
-                                    style: TextStyle(fontSize: 16),),
-                                      ),
-                                      ListTile(
-                                        title:
-                                        Text('French',
-                                        style: TextStyle(fontSize: 16),),
-                                      ),
+                                            style: TextStyle(fontSize: 16),),
+                                        ),
+                                        ListTile(
+                                          title:
+                                          Text('French',
+                                            style: TextStyle(fontSize: 16),),
+                                        ),
 
-                                    ],
-                                  );
-                                },
-                              );
-                            }
+                                      ],
+                                    );
+                                  },
+                                );
+                              }
+                          ),
                         ),
+                        Container(
+                          padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                          child: ListTile(
+                            leading: Image(image: AssetImage(contactUS), width: 20, height: 20,),
+                            title: Text('Change contact details'),
+                            onTap: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (builder) => ChangeContactView()));
+                            },
+                          ),
                         ),
-                Container(
-                  padding: EdgeInsets.only(left: 15.0, right: 15.0),
-                  child: ListTile(
-                    leading: Image(image: AssetImage(contactUS), width: 20, height: 20,),
-                    title: Text('Change contact details'),
-                    onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (builder) => ChangeContactView()));
-                    },
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.only(left: 15.0, right: 15.0),
-                  child: ListTile(
-                    leading: Image(image: AssetImage(changePassword), width: 20, height: 20,),
-                    title: Text('Change Password'),
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (builder) => ChangePasswordView()));
-                    },
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.only(left: 15.0, right: 15.0),
-                  child: ListTile(
-                    leading: Image(image: AssetImage(deleteAcc), width: 20, height: 20,),
-                    title: Text('Delete Account'),
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (builder) => DeleteAccountView()));
-                    },
-                    //TODO
-                    /*showModalBottomSheet<dynamic>(
+                        Container(
+                          padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                          child: ListTile(
+                            leading: Image(image: AssetImage(changePassword), width: 20, height: 20,),
+                            title: Text('Change Password'),
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (builder) => ChangePasswordView()));
+                            },
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                          child: ListTile(
+                            leading: Image(image: AssetImage(deleteAcc), width: 20, height: 20,),
+                            title: Text('Delete Account'),
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (builder) => DeleteAccountView()));
+                            },
+                            //TODO
+                            /*showModalBottomSheet<dynamic>(
                       isScrollControlled: true,
                         context: context,
                         builder: (context) {
@@ -378,29 +381,29 @@ class MoreView extends GetView<MoreController> {
                           );
                         });
                   },*/
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.only(left: 15.0, right: 15.0),
-                  child: ListTile(
-                    leading: Image(image: AssetImage(termsConditions), width: 20, height: 20,),
-                    title: Text('Terms and Conditions'),
-                    onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (builder) => TermsConditionView()));
-                    },
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.only(left: 15.0, right: 15.0),
-                  child: ListTile(
-                    leading: Image(image: AssetImage(privacy), width: 20, height: 20,),
-                    title: Text('Privacy Policy'),
-                    onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (builder) => PrivacyPolicyView()));
-                    },
-                  ),
-                ),
-                /*Container(
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                          child: ListTile(
+                            leading: Image(image: AssetImage(termsConditions), width: 20, height: 20,),
+                            title: Text('Terms and Conditions'),
+                            onTap: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (builder) => TermsConditionView()));
+                            },
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                          child: ListTile(
+                            leading: Image(image: AssetImage(privacy), width: 20, height: 20,),
+                            title: Text('Privacy Policy'),
+                            onTap: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (builder) => PrivacyPolicyView()));
+                            },
+                          ),
+                        ),
+                        /*Container(
                   padding: EdgeInsets.only(left: 15.0, right: 15.0),
                   child: ListTile(
                     leading: Icon(Icons.lock),
@@ -411,16 +414,16 @@ class MoreView extends GetView<MoreController> {
                     },
                   ),
                 ),*/
-                Container(
-                  padding: EdgeInsets.only(left: 15.0, right: 15.0),
-                  child: ListTile(
-                    leading: Image(image: AssetImage(contactUS), width: 20, height: 20,),
-                    title: Text('Contact Us'),
-                    onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (builder) => ContactUsView()));
-                    },
-                  ),
-                ),
+                        Container(
+                          padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                          child: ListTile(
+                            leading: Image(image: AssetImage(contactUS), width: 20, height: 20,),
+                            title: Text('Contact Us'),
+                            onTap: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (builder) => ContactUsView()));
+                            },
+                          ),
+                        ),
                         Container(
                           padding: EdgeInsets.only(left: 15.0, right: 15.0),
                           child: ListTile(
@@ -437,14 +440,14 @@ class MoreView extends GetView<MoreController> {
                             leading:Image(image: AssetImage(logout), width: 20, height: 20,),
                             title: Text('Log Out'),
                             onTap: () {
-                             // Navigator.push(context, MaterialPageRoute(builder: (builder) => ContactUsView()));
+                              // Navigator.push(context, MaterialPageRoute(builder: (builder) => ContactUsView()));
                             },
                           ),
                         ),
 
 
 
-              ])))
+                      ])))
             ],
           ),
         ),

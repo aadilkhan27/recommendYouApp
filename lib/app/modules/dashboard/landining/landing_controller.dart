@@ -19,7 +19,7 @@ class LandingController extends GetxController
     ),
     Tab(
         child: SvgPicture.asset(
-          icHome,
+          icBell,
       color: primaryLightColor,
       height: 20,
       width: 20,
