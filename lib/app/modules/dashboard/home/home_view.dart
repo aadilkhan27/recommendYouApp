@@ -66,6 +66,9 @@ class HomeView extends GetView<HomeController> {
                         icA,
                         semanticsLabel: 'logo',
                       ),*/
+                      SizedBox(
+                        width: 20,
+                      ),
                       InkWell(
                         child: SvgPicture.asset(icUser),
                         onTap: () {
@@ -84,7 +87,7 @@ class HomeView extends GetView<HomeController> {
                         semanticsLabel: 'logo',
                       ),*/
                       SizedBox(
-                        width: 20,
+                        width: 10,
                       ),
                       SizedBox(
                         height: 20,
@@ -191,7 +194,7 @@ class HomeView extends GetView<HomeController> {
                         ),
                       ),
                       SizedBox(
-                        width: 20,
+                        width: 10,
                       ),
                       InkWell(
                         child: Image(
@@ -206,6 +209,10 @@ class HomeView extends GetView<HomeController> {
                                   builder: (builder) => HelperView()));
                         },
                       ),
+                      SizedBox(
+                        width: 20,
+                      ),
+
                       /*InkWell(child: SvgPicture.asset(icUser), onTap: () {
                         */ /*Navigator.push(
                             context,

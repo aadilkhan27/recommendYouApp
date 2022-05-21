@@ -131,7 +131,6 @@ class HelperView extends GetView<ChangeContactController> {
                                           value: helperList[index].itemSelect,
                                           onChanged: (bool? value) {
                                             helperList[index].itemSelect = value!;
-
                                           },
 
                                         ),
