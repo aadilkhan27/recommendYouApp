@@ -92,7 +92,8 @@ class LandingView extends GetView<LandingController> {
                                   ),
                                 ),
                                 Container(
-                                  height: 30,
+                                  height: 25,
+                                  padding: EdgeInsets.only(left: 2, right: 2),
                                   width:
                                       MediaQuery.of(context).size.width / 2.5,
                                   margin: EdgeInsets.only(right: 0, left: 0),
@@ -104,26 +105,44 @@ class LandingView extends GetView<LandingController> {
                                         borderSide: BorderSide(
                                             color: Colors.purple, width: 1.0),
                                         borderRadius:
-                                            BorderRadius.circular(5.0),
+                                            BorderRadius.circular(15.0),
                                       ),
                                       border: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(5),
+                                        borderRadius: BorderRadius.circular(15),
                                       ),
                                     ),
                                     isExpanded: true,
-                                    hint: const Text(
-                                      'RecommendYou',
-                                      style: TextStyle(
-                                          fontSize: 14, color: Colors.purple),
+                                    hint: RichText(
+                                      text: TextSpan(
+                                        children: [
+                                          TextSpan(
+                                            text: 'Recommend',
+                                            style: TextStyle(
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.bold,
+                                                color: primaryDarkColor),
+                                          ),
+                                          TextSpan(
+                                            text: 'You',
+                                            style: TextStyle(
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.bold,
+                                                color: primaryLightColor),
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                     icon: SvgPicture.asset(icDownArrow),
                                     iconSize: 30,
                                     buttonHeight: 60,
+                                    iconEnabledColor: Colors.white,
+                                    selectedItemHighlightColor:
+                                        primaryLightColor,
                                     buttonPadding: const EdgeInsets.only(
                                         left: 10, right: 10),
                                     dropdownDecoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(5),
-                                        color: bonJourColor),
+                                        color: veryLightWhite),
                                     items: spinnerItems
                                         .map((item) => DropdownMenuItem<String>(
                                               value: item,
@@ -202,13 +221,16 @@ class LandingView extends GetView<LandingController> {
                                         width: 20,
                                       ),
                                       Container(
-                                          width: 40.0,
-                                          height: 40.0,
-                                          decoration: new BoxDecoration(
-                                              shape: BoxShape.circle,
-                                              image: new DecorationImage(
-                                                  fit: BoxFit.fill,
-                                                  image: AssetImage(user1),),),),
+                                        width: 40.0,
+                                        height: 40.0,
+                                        decoration: new BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          image: new DecorationImage(
+                                            fit: BoxFit.fill,
+                                            image: AssetImage(user1),
+                                          ),
+                                        ),
+                                      ),
                                       SizedBox(
                                         width: 15,
                                       ),
@@ -1569,7 +1591,7 @@ class LandingView extends GetView<LandingController> {
                           height: 1,
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left : 20.0, right: 20),
+                          padding: const EdgeInsets.only(left: 20.0, right: 20),
                           child: Column(
                             children: [
                               Container(
@@ -1597,23 +1619,28 @@ class LandingView extends GetView<LandingController> {
                                           children: [
                                             Container(
                                               height: 60,
-                                              width:
-                                              MediaQuery.of(context).size.width,
+                                              width: MediaQuery.of(context)
+                                                  .size
+                                                  .width,
                                               child: Row(
                                                 children: [
                                                   InkWell(
-                                                    onTap:(){
-                                                      showAlertDialogForProfile(context,profileImage1 );
+                                                    onTap: () {
+                                                      showAlertDialogForProfile(
+                                                          context,
+                                                          profileImage1);
                                                     },
                                                     child: Container(
                                                       width: 50.0,
                                                       height: 50.0,
-                                                      decoration: new BoxDecoration(
+                                                      decoration:
+                                                          new BoxDecoration(
                                                         shape: BoxShape.circle,
-                                                        image: new DecorationImage(
+                                                        image:
+                                                            new DecorationImage(
                                                           fit: BoxFit.fill,
-                                                          image:
-                                                          AssetImage(profileImage1),
+                                                          image: AssetImage(
+                                                              profileImage1),
                                                         ),
                                                       ),
                                                     ),
@@ -1622,32 +1649,38 @@ class LandingView extends GetView<LandingController> {
                                                     width: 20,
                                                   ),
                                                   Container(
-                                                    margin: EdgeInsets.only(top: 10),
+                                                    margin: EdgeInsets.only(
+                                                        top: 10),
                                                     child: Column(
                                                       mainAxisAlignment:
-                                                      MainAxisAlignment.start,
+                                                          MainAxisAlignment
+                                                              .start,
                                                       crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
+                                                          CrossAxisAlignment
+                                                              .start,
                                                       children: [
                                                         Text(
                                                           'Viana Branding',
                                                           style: TextStyle(
                                                               fontSize: 14,
                                                               fontWeight:
-                                                              FontWeight.bold),
+                                                                  FontWeight
+                                                                      .bold),
                                                         ),
                                                         Container(
                                                           margin:
-                                                          EdgeInsets.only(top: 5),
+                                                              EdgeInsets.only(
+                                                                  top: 5),
                                                           child: Row(
                                                             children: [
                                                               Text(
                                                                 'Liked your post',
                                                                 style: TextStyle(
-                                                                    fontSize: 12,
+                                                                    fontSize:
+                                                                        12,
                                                                     fontWeight:
-                                                                    FontWeight
-                                                                        .normal),
+                                                                        FontWeight
+                                                                            .normal),
                                                               ),
                                                               SizedBox(
                                                                 width: 5,
@@ -1656,11 +1689,12 @@ class LandingView extends GetView<LandingController> {
                                                                 '6h',
                                                                 style: TextStyle(
                                                                     fontWeight:
-                                                                    FontWeight
-                                                                        .normal,
-                                                                    fontSize: 12,
-                                                                    color:
-                                                                    Colors.grey),
+                                                                        FontWeight
+                                                                            .normal,
+                                                                    fontSize:
+                                                                        12,
+                                                                    color: Colors
+                                                                        .grey),
                                                               )
                                                             ],
                                                           ),
@@ -1668,7 +1702,6 @@ class LandingView extends GetView<LandingController> {
                                                       ],
                                                     ),
                                                   ),
-
                                                 ],
                                               ),
                                             ),
@@ -1680,21 +1713,26 @@ class LandingView extends GetView<LandingController> {
                                           children: [
                                             Container(
                                               height: 60,
-                                              width:
-                                              MediaQuery.of(context).size.width,
+                                              width: MediaQuery.of(context)
+                                                  .size
+                                                  .width,
                                               child: Row(
                                                 children: [
                                                   InkWell(
-                                                    onTap:(){
-                                                      showAlertDialogForProfile(context, profileImage2);
+                                                    onTap: () {
+                                                      showAlertDialogForProfile(
+                                                          context,
+                                                          profileImage2);
                                                     },
                                                     child: Container(
                                                         width: 50.0,
                                                         height: 50.0,
                                                         decoration: new BoxDecoration(
-                                                            shape: BoxShape.circle,
+                                                            shape:
+                                                                BoxShape.circle,
                                                             image: new DecorationImage(
-                                                                fit: BoxFit.fill,
+                                                                fit:
+                                                                    BoxFit.fill,
                                                                 image: AssetImage(
                                                                     profileImage2)))),
                                                   ),
@@ -1702,32 +1740,38 @@ class LandingView extends GetView<LandingController> {
                                                     width: 20,
                                                   ),
                                                   Container(
-                                                    margin: EdgeInsets.only(top: 10),
+                                                    margin: EdgeInsets.only(
+                                                        top: 10),
                                                     child: Column(
                                                       mainAxisAlignment:
-                                                      MainAxisAlignment.start,
+                                                          MainAxisAlignment
+                                                              .start,
                                                       crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
+                                                          CrossAxisAlignment
+                                                              .start,
                                                       children: [
                                                         Text(
                                                           'Branding',
                                                           style: TextStyle(
                                                               fontSize: 14,
                                                               fontWeight:
-                                                              FontWeight.bold),
+                                                                  FontWeight
+                                                                      .bold),
                                                         ),
                                                         Container(
                                                           margin:
-                                                          EdgeInsets.only(top: 5),
+                                                              EdgeInsets.only(
+                                                                  top: 5),
                                                           child: Row(
                                                             children: [
                                                               Text(
                                                                 'Started  to following you',
                                                                 style: TextStyle(
-                                                                    fontSize: 12,
+                                                                    fontSize:
+                                                                        12,
                                                                     fontWeight:
-                                                                    FontWeight
-                                                                        .normal),
+                                                                        FontWeight
+                                                                            .normal),
                                                               ),
                                                               SizedBox(
                                                                 width: 5,
@@ -1736,11 +1780,12 @@ class LandingView extends GetView<LandingController> {
                                                                 '6h',
                                                                 style: TextStyle(
                                                                     fontWeight:
-                                                                    FontWeight
-                                                                        .normal,
-                                                                    fontSize: 12,
-                                                                    color:
-                                                                    Colors.grey),
+                                                                        FontWeight
+                                                                            .normal,
+                                                                    fontSize:
+                                                                        12,
+                                                                    color: Colors
+                                                                        .grey),
                                                               )
                                                             ],
                                                           ),
@@ -1751,20 +1796,20 @@ class LandingView extends GetView<LandingController> {
                                                   Spacer(),
                                                   Container(
                                                       child: Row(
-                                                        children: [
-                                                          Text(
-                                                            '',
-                                                            style: TextStyle(
-                                                                fontSize: 14,
-                                                                fontWeight:
-                                                                FontWeight.normal),
-                                                          ),
-                                                          SizedBox(
-                                                            width: 10,
-                                                          ),
-
-                                                        ],
-                                                      ))
+                                                    children: [
+                                                      Text(
+                                                        '',
+                                                        style: TextStyle(
+                                                            fontSize: 14,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .normal),
+                                                      ),
+                                                      SizedBox(
+                                                        width: 10,
+                                                      ),
+                                                    ],
+                                                  ))
                                                 ],
                                               ),
                                             ),
@@ -1775,7 +1820,6 @@ class LandingView extends GetView<LandingController> {
                                   ),
                                 ),
                               ),
-
                               Container(
                                 margin: EdgeInsets.only(left: 10),
                                 child: Container(
@@ -1801,21 +1845,26 @@ class LandingView extends GetView<LandingController> {
                                           children: [
                                             Container(
                                               height: 60,
-                                              width:
-                                              MediaQuery.of(context).size.width,
+                                              width: MediaQuery.of(context)
+                                                  .size
+                                                  .width,
                                               child: Row(
                                                 children: [
                                                   InkWell(
-                                                    onTap:(){
-                                                      showAlertDialogForProfile(context, profileImage3);
+                                                    onTap: () {
+                                                      showAlertDialogForProfile(
+                                                          context,
+                                                          profileImage3);
                                                     },
                                                     child: Container(
                                                         width: 50.0,
                                                         height: 50.0,
                                                         decoration: new BoxDecoration(
-                                                            shape: BoxShape.circle,
+                                                            shape:
+                                                                BoxShape.circle,
                                                             image: new DecorationImage(
-                                                                fit: BoxFit.fill,
+                                                                fit:
+                                                                    BoxFit.fill,
                                                                 image: AssetImage(
                                                                     profileImage3)))),
                                                   ),
@@ -1823,32 +1872,38 @@ class LandingView extends GetView<LandingController> {
                                                     width: 20,
                                                   ),
                                                   Container(
-                                                    margin: EdgeInsets.only(top: 10),
+                                                    margin: EdgeInsets.only(
+                                                        top: 10),
                                                     child: Column(
                                                       mainAxisAlignment:
-                                                      MainAxisAlignment.start,
+                                                          MainAxisAlignment
+                                                              .start,
                                                       crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
+                                                          CrossAxisAlignment
+                                                              .start,
                                                       children: [
                                                         Text(
                                                           'Thomas',
                                                           style: TextStyle(
                                                               fontSize: 14,
                                                               fontWeight:
-                                                              FontWeight.bold),
+                                                                  FontWeight
+                                                                      .bold),
                                                         ),
                                                         Container(
                                                           margin:
-                                                          EdgeInsets.only(top: 5),
+                                                              EdgeInsets.only(
+                                                                  top: 5),
                                                           child: Row(
                                                             children: [
                                                               Text(
                                                                 'liked your post',
                                                                 style: TextStyle(
-                                                                    fontSize: 12,
+                                                                    fontSize:
+                                                                        12,
                                                                     fontWeight:
-                                                                    FontWeight
-                                                                        .normal),
+                                                                        FontWeight
+                                                                            .normal),
                                                               ),
                                                               SizedBox(
                                                                 width: 5,
@@ -1857,11 +1912,12 @@ class LandingView extends GetView<LandingController> {
                                                                 '6h',
                                                                 style: TextStyle(
                                                                     fontWeight:
-                                                                    FontWeight
-                                                                        .normal,
-                                                                    fontSize: 12,
-                                                                    color:
-                                                                    Colors.grey),
+                                                                        FontWeight
+                                                                            .normal,
+                                                                    fontSize:
+                                                                        12,
+                                                                    color: Colors
+                                                                        .grey),
                                                               )
                                                             ],
                                                           ),
@@ -1888,21 +1944,26 @@ class LandingView extends GetView<LandingController> {
                                           children: [
                                             Container(
                                               height: 60,
-                                              width:
-                                              MediaQuery.of(context).size.width,
+                                              width: MediaQuery.of(context)
+                                                  .size
+                                                  .width,
                                               child: Row(
                                                 children: [
                                                   InkWell(
-                                                    onTap:(){
-                                                      showAlertDialogForProfile(context, profileImage4);
+                                                    onTap: () {
+                                                      showAlertDialogForProfile(
+                                                          context,
+                                                          profileImage4);
                                                     },
                                                     child: Container(
                                                         width: 50.0,
                                                         height: 50.0,
                                                         decoration: new BoxDecoration(
-                                                            shape: BoxShape.circle,
+                                                            shape:
+                                                                BoxShape.circle,
                                                             image: new DecorationImage(
-                                                                fit: BoxFit.fill,
+                                                                fit:
+                                                                    BoxFit.fill,
                                                                 image: AssetImage(
                                                                     profileImage4)))),
                                                   ),
@@ -1910,32 +1971,38 @@ class LandingView extends GetView<LandingController> {
                                                     width: 20,
                                                   ),
                                                   Container(
-                                                    margin: EdgeInsets.only(top: 10),
+                                                    margin: EdgeInsets.only(
+                                                        top: 10),
                                                     child: Column(
                                                       mainAxisAlignment:
-                                                      MainAxisAlignment.start,
+                                                          MainAxisAlignment
+                                                              .start,
                                                       crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
+                                                          CrossAxisAlignment
+                                                              .start,
                                                       children: [
                                                         Text(
                                                           'Peter Games',
                                                           style: TextStyle(
                                                               fontSize: 14,
                                                               fontWeight:
-                                                              FontWeight.bold),
+                                                                  FontWeight
+                                                                      .bold),
                                                         ),
                                                         Container(
                                                           margin:
-                                                          EdgeInsets.only(top: 5),
+                                                              EdgeInsets.only(
+                                                                  top: 5),
                                                           child: Row(
                                                             children: [
                                                               Text(
                                                                 'liked your video',
                                                                 style: TextStyle(
-                                                                    fontSize: 12,
+                                                                    fontSize:
+                                                                        12,
                                                                     fontWeight:
-                                                                    FontWeight
-                                                                        .normal),
+                                                                        FontWeight
+                                                                            .normal),
                                                               ),
                                                               SizedBox(
                                                                 width: 5,
@@ -1944,11 +2011,12 @@ class LandingView extends GetView<LandingController> {
                                                                 '6h',
                                                                 style: TextStyle(
                                                                     fontWeight:
-                                                                    FontWeight
-                                                                        .normal,
-                                                                    fontSize: 12,
-                                                                    color:
-                                                                    Colors.grey),
+                                                                        FontWeight
+                                                                            .normal,
+                                                                    fontSize:
+                                                                        12,
+                                                                    color: Colors
+                                                                        .grey),
                                                               )
                                                             ],
                                                           ),
@@ -1966,7 +2034,6 @@ class LandingView extends GetView<LandingController> {
                                   ),
                                 ),
                               ),
-
                               Container(
                                 margin: EdgeInsets.only(left: 10),
                                 child: Container(
@@ -1992,21 +2059,26 @@ class LandingView extends GetView<LandingController> {
                                           children: [
                                             Container(
                                               height: 60,
-                                              width:
-                                              MediaQuery.of(context).size.width,
+                                              width: MediaQuery.of(context)
+                                                  .size
+                                                  .width,
                                               child: Row(
                                                 children: [
                                                   InkWell(
-                                                    onTap:(){
-                                                      showAlertDialogForProfile(context, profileImage5);
+                                                    onTap: () {
+                                                      showAlertDialogForProfile(
+                                                          context,
+                                                          profileImage5);
                                                     },
                                                     child: Container(
                                                         width: 50.0,
                                                         height: 50.0,
                                                         decoration: new BoxDecoration(
-                                                            shape: BoxShape.circle,
+                                                            shape:
+                                                                BoxShape.circle,
                                                             image: new DecorationImage(
-                                                                fit: BoxFit.fill,
+                                                                fit:
+                                                                    BoxFit.fill,
                                                                 image: AssetImage(
                                                                     profileImage5)))),
                                                   ),
@@ -2014,32 +2086,38 @@ class LandingView extends GetView<LandingController> {
                                                     width: 20,
                                                   ),
                                                   Container(
-                                                    margin: EdgeInsets.only(top: 10),
+                                                    margin: EdgeInsets.only(
+                                                        top: 10),
                                                     child: Column(
                                                       mainAxisAlignment:
-                                                      MainAxisAlignment.start,
+                                                          MainAxisAlignment
+                                                              .start,
                                                       crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
+                                                          CrossAxisAlignment
+                                                              .start,
                                                       children: [
                                                         Text(
                                                           'Thomas',
                                                           style: TextStyle(
                                                               fontSize: 14,
                                                               fontWeight:
-                                                              FontWeight.bold),
+                                                                  FontWeight
+                                                                      .bold),
                                                         ),
                                                         Container(
                                                           margin:
-                                                          EdgeInsets.only(top: 5),
+                                                              EdgeInsets.only(
+                                                                  top: 5),
                                                           child: Row(
                                                             children: [
                                                               Text(
                                                                 'liked your post',
                                                                 style: TextStyle(
-                                                                    fontSize: 12,
+                                                                    fontSize:
+                                                                        12,
                                                                     fontWeight:
-                                                                    FontWeight
-                                                                        .normal),
+                                                                        FontWeight
+                                                                            .normal),
                                                               ),
                                                               SizedBox(
                                                                 width: 5,
@@ -2048,11 +2126,12 @@ class LandingView extends GetView<LandingController> {
                                                                 '6h',
                                                                 style: TextStyle(
                                                                     fontWeight:
-                                                                    FontWeight
-                                                                        .normal,
-                                                                    fontSize: 12,
-                                                                    color:
-                                                                    Colors.grey),
+                                                                        FontWeight
+                                                                            .normal,
+                                                                    fontSize:
+                                                                        12,
+                                                                    color: Colors
+                                                                        .grey),
                                                               )
                                                             ],
                                                           ),
@@ -2079,21 +2158,26 @@ class LandingView extends GetView<LandingController> {
                                           children: [
                                             Container(
                                               height: 60,
-                                              width:
-                                              MediaQuery.of(context).size.width,
+                                              width: MediaQuery.of(context)
+                                                  .size
+                                                  .width,
                                               child: Row(
                                                 children: [
                                                   InkWell(
-                                                    onTap:(){
-                                                      showAlertDialogForProfile(context, profileImage6);
+                                                    onTap: () {
+                                                      showAlertDialogForProfile(
+                                                          context,
+                                                          profileImage6);
                                                     },
                                                     child: Container(
                                                         width: 50.0,
                                                         height: 50.0,
                                                         decoration: new BoxDecoration(
-                                                            shape: BoxShape.circle,
+                                                            shape:
+                                                                BoxShape.circle,
                                                             image: new DecorationImage(
-                                                                fit: BoxFit.fill,
+                                                                fit:
+                                                                    BoxFit.fill,
                                                                 image: AssetImage(
                                                                     profileImage6)))),
                                                   ),
@@ -2101,32 +2185,38 @@ class LandingView extends GetView<LandingController> {
                                                     width: 20,
                                                   ),
                                                   Container(
-                                                    margin: EdgeInsets.only(top: 10),
+                                                    margin: EdgeInsets.only(
+                                                        top: 10),
                                                     child: Column(
                                                       mainAxisAlignment:
-                                                      MainAxisAlignment.start,
+                                                          MainAxisAlignment
+                                                              .start,
                                                       crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
+                                                          CrossAxisAlignment
+                                                              .start,
                                                       children: [
                                                         Text(
                                                           'Peter Games',
                                                           style: TextStyle(
                                                               fontSize: 14,
                                                               fontWeight:
-                                                              FontWeight.bold),
+                                                                  FontWeight
+                                                                      .bold),
                                                         ),
                                                         Container(
                                                           margin:
-                                                          EdgeInsets.only(top: 5),
+                                                              EdgeInsets.only(
+                                                                  top: 5),
                                                           child: Row(
                                                             children: [
                                                               Text(
                                                                 'liked your video',
                                                                 style: TextStyle(
-                                                                    fontSize: 12,
+                                                                    fontSize:
+                                                                        12,
                                                                     fontWeight:
-                                                                    FontWeight
-                                                                        .normal),
+                                                                        FontWeight
+                                                                            .normal),
                                                               ),
                                                               SizedBox(
                                                                 width: 5,
@@ -2135,11 +2225,12 @@ class LandingView extends GetView<LandingController> {
                                                                 '6h',
                                                                 style: TextStyle(
                                                                     fontWeight:
-                                                                    FontWeight
-                                                                        .normal,
-                                                                    fontSize: 12,
-                                                                    color:
-                                                                    Colors.grey),
+                                                                        FontWeight
+                                                                            .normal,
+                                                                    fontSize:
+                                                                        12,
+                                                                    color: Colors
+                                                                        .grey),
                                                               )
                                                             ],
                                                           ),
@@ -2157,7 +2248,6 @@ class LandingView extends GetView<LandingController> {
                                   ),
                                 ),
                               ),
-
                               Container(
                                 margin: EdgeInsets.only(left: 10),
                                 child: Container(
@@ -2183,21 +2273,26 @@ class LandingView extends GetView<LandingController> {
                                           children: [
                                             Container(
                                               height: 60,
-                                              width:
-                                              MediaQuery.of(context).size.width,
+                                              width: MediaQuery.of(context)
+                                                  .size
+                                                  .width,
                                               child: Row(
                                                 children: [
                                                   InkWell(
-                                                    onTap:(){
-                                                      showAlertDialogForProfile(context, profileImage5);
+                                                    onTap: () {
+                                                      showAlertDialogForProfile(
+                                                          context,
+                                                          profileImage5);
                                                     },
                                                     child: Container(
                                                         width: 50.0,
                                                         height: 50.0,
                                                         decoration: new BoxDecoration(
-                                                            shape: BoxShape.circle,
+                                                            shape:
+                                                                BoxShape.circle,
                                                             image: new DecorationImage(
-                                                                fit: BoxFit.fill,
+                                                                fit:
+                                                                    BoxFit.fill,
                                                                 image: AssetImage(
                                                                     profileImage5)))),
                                                   ),
@@ -2205,32 +2300,38 @@ class LandingView extends GetView<LandingController> {
                                                     width: 20,
                                                   ),
                                                   Container(
-                                                    margin: EdgeInsets.only(top: 10),
+                                                    margin: EdgeInsets.only(
+                                                        top: 10),
                                                     child: Column(
                                                       mainAxisAlignment:
-                                                      MainAxisAlignment.start,
+                                                          MainAxisAlignment
+                                                              .start,
                                                       crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
+                                                          CrossAxisAlignment
+                                                              .start,
                                                       children: [
                                                         Text(
                                                           'Thomas',
                                                           style: TextStyle(
                                                               fontSize: 14,
                                                               fontWeight:
-                                                              FontWeight.bold),
+                                                                  FontWeight
+                                                                      .bold),
                                                         ),
                                                         Container(
                                                           margin:
-                                                          EdgeInsets.only(top: 5),
+                                                              EdgeInsets.only(
+                                                                  top: 5),
                                                           child: Row(
                                                             children: [
                                                               Text(
                                                                 'liked your post',
                                                                 style: TextStyle(
-                                                                    fontSize: 12,
+                                                                    fontSize:
+                                                                        12,
                                                                     fontWeight:
-                                                                    FontWeight
-                                                                        .normal),
+                                                                        FontWeight
+                                                                            .normal),
                                                               ),
                                                               SizedBox(
                                                                 width: 5,
@@ -2239,11 +2340,12 @@ class LandingView extends GetView<LandingController> {
                                                                 '6h',
                                                                 style: TextStyle(
                                                                     fontWeight:
-                                                                    FontWeight
-                                                                        .normal,
-                                                                    fontSize: 12,
-                                                                    color:
-                                                                    Colors.grey),
+                                                                        FontWeight
+                                                                            .normal,
+                                                                    fontSize:
+                                                                        12,
+                                                                    color: Colors
+                                                                        .grey),
                                                               )
                                                             ],
                                                           ),
@@ -2270,21 +2372,26 @@ class LandingView extends GetView<LandingController> {
                                           children: [
                                             Container(
                                               height: 60,
-                                              width:
-                                              MediaQuery.of(context).size.width,
+                                              width: MediaQuery.of(context)
+                                                  .size
+                                                  .width,
                                               child: Row(
                                                 children: [
                                                   InkWell(
-                                                    onTap:(){
-                                                      showAlertDialogForProfile(context, profileImage1);
+                                                    onTap: () {
+                                                      showAlertDialogForProfile(
+                                                          context,
+                                                          profileImage1);
                                                     },
                                                     child: Container(
                                                         width: 50.0,
                                                         height: 50.0,
                                                         decoration: new BoxDecoration(
-                                                            shape: BoxShape.circle,
+                                                            shape:
+                                                                BoxShape.circle,
                                                             image: new DecorationImage(
-                                                                fit: BoxFit.fill,
+                                                                fit:
+                                                                    BoxFit.fill,
                                                                 image: AssetImage(
                                                                     profileImage1)))),
                                                   ),
@@ -2292,32 +2399,38 @@ class LandingView extends GetView<LandingController> {
                                                     width: 20,
                                                   ),
                                                   Container(
-                                                    margin: EdgeInsets.only(top: 10),
+                                                    margin: EdgeInsets.only(
+                                                        top: 10),
                                                     child: Column(
                                                       mainAxisAlignment:
-                                                      MainAxisAlignment.start,
+                                                          MainAxisAlignment
+                                                              .start,
                                                       crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
+                                                          CrossAxisAlignment
+                                                              .start,
                                                       children: [
                                                         Text(
                                                           'Peter Games',
                                                           style: TextStyle(
                                                               fontSize: 14,
                                                               fontWeight:
-                                                              FontWeight.bold),
+                                                                  FontWeight
+                                                                      .bold),
                                                         ),
                                                         Container(
                                                           margin:
-                                                          EdgeInsets.only(top: 5),
+                                                              EdgeInsets.only(
+                                                                  top: 5),
                                                           child: Row(
                                                             children: [
                                                               Text(
                                                                 'liked your video',
                                                                 style: TextStyle(
-                                                                    fontSize: 12,
+                                                                    fontSize:
+                                                                        12,
                                                                     fontWeight:
-                                                                    FontWeight
-                                                                        .normal),
+                                                                        FontWeight
+                                                                            .normal),
                                                               ),
                                                               SizedBox(
                                                                 width: 5,
@@ -2326,11 +2439,12 @@ class LandingView extends GetView<LandingController> {
                                                                 '6h',
                                                                 style: TextStyle(
                                                                     fontWeight:
-                                                                    FontWeight
-                                                                        .normal,
-                                                                    fontSize: 12,
-                                                                    color:
-                                                                    Colors.grey),
+                                                                        FontWeight
+                                                                            .normal,
+                                                                    fontSize:
+                                                                        12,
+                                                                    color: Colors
+                                                                        .grey),
                                                               )
                                                             ],
                                                           ),
@@ -2618,10 +2732,12 @@ class LandingView extends GetView<LandingController> {
                               cursorColor: Colors.white,
                               decoration: const InputDecoration(
                                   enabledBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(color: Colors.purple),
+                                    borderSide:
+                                        BorderSide(color: Colors.purple),
                                   ),
                                   focusedBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(color: Colors.purple),
+                                    borderSide:
+                                        BorderSide(color: Colors.purple),
                                   ),
                                   focusColor: Colors.white,
                                   hintStyle: TextStyle(color: Colors.white),
@@ -2652,25 +2768,28 @@ class LandingView extends GetView<LandingController> {
                                               shape: BoxShape.circle,
                                               image: new DecorationImage(
                                                   fit: BoxFit.fill,
-                                                  image: AssetImage(profileImage)))),
+                                                  image: AssetImage(
+                                                      profileImage)))),
                                       SizedBox(
                                         width: 20,
                                       ),
                                       Container(
                                         margin: EdgeInsets.only(top: 10),
                                         child: Column(
-                                          mainAxisAlignment: MainAxisAlignment.start,
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Text(
                                               'Ramon Ricardo',
                                               style: TextStyle(
                                                   fontSize: 14,
                                                   fontWeight:
-                                                  FontWeight.normal),
+                                                      FontWeight.normal),
                                             ),
                                             SizedBox(
-                                              height : 5,
+                                              height: 5,
                                             ),
                                             Text(
                                               'Ramon_Ricardo',
@@ -2701,25 +2820,28 @@ class LandingView extends GetView<LandingController> {
                                               shape: BoxShape.circle,
                                               image: new DecorationImage(
                                                   fit: BoxFit.fill,
-                                                  image: AssetImage(profileImage)))),
+                                                  image: AssetImage(
+                                                      profileImage)))),
                                       SizedBox(
                                         width: 20,
                                       ),
                                       Container(
                                         margin: EdgeInsets.only(top: 10),
                                         child: Column(
-                                          mainAxisAlignment: MainAxisAlignment.start,
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Text(
                                               'Ramon Ricardo',
                                               style: TextStyle(
                                                   fontSize: 14,
                                                   fontWeight:
-                                                  FontWeight.normal),
+                                                      FontWeight.normal),
                                             ),
                                             SizedBox(
-                                              height : 5,
+                                              height: 5,
                                             ),
                                             Text(
                                               'Ramon_Ricardo',
@@ -2750,25 +2872,28 @@ class LandingView extends GetView<LandingController> {
                                               shape: BoxShape.circle,
                                               image: new DecorationImage(
                                                   fit: BoxFit.fill,
-                                                  image: AssetImage(profileImage)))),
+                                                  image: AssetImage(
+                                                      profileImage)))),
                                       SizedBox(
                                         width: 20,
                                       ),
                                       Container(
                                         margin: EdgeInsets.only(top: 10),
                                         child: Column(
-                                          mainAxisAlignment: MainAxisAlignment.start,
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Text(
                                               'Ramon Ricardo',
                                               style: TextStyle(
                                                   fontSize: 14,
                                                   fontWeight:
-                                                  FontWeight.normal),
+                                                      FontWeight.normal),
                                             ),
                                             SizedBox(
-                                              height : 5,
+                                              height: 5,
                                             ),
                                             Text(
                                               'Ramon_Ricardo',
@@ -2799,25 +2924,28 @@ class LandingView extends GetView<LandingController> {
                                               shape: BoxShape.circle,
                                               image: new DecorationImage(
                                                   fit: BoxFit.fill,
-                                                  image: AssetImage(profileImage)))),
+                                                  image: AssetImage(
+                                                      profileImage)))),
                                       SizedBox(
                                         width: 20,
                                       ),
                                       Container(
                                         margin: EdgeInsets.only(top: 10),
                                         child: Column(
-                                          mainAxisAlignment: MainAxisAlignment.start,
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Text(
                                               'Ramon Ricardo',
                                               style: TextStyle(
                                                   fontSize: 14,
                                                   fontWeight:
-                                                  FontWeight.normal),
+                                                      FontWeight.normal),
                                             ),
                                             SizedBox(
-                                              height : 5,
+                                              height: 5,
                                             ),
                                             Text(
                                               'Ramon_Ricardo',
@@ -2848,25 +2976,28 @@ class LandingView extends GetView<LandingController> {
                                               shape: BoxShape.circle,
                                               image: new DecorationImage(
                                                   fit: BoxFit.fill,
-                                                  image: AssetImage(profileImage)))),
+                                                  image: AssetImage(
+                                                      profileImage)))),
                                       SizedBox(
                                         width: 20,
                                       ),
                                       Container(
                                         margin: EdgeInsets.only(top: 10),
                                         child: Column(
-                                          mainAxisAlignment: MainAxisAlignment.start,
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Text(
                                               'Ramon Ricardo',
                                               style: TextStyle(
                                                   fontSize: 14,
                                                   fontWeight:
-                                                  FontWeight.normal),
+                                                      FontWeight.normal),
                                             ),
                                             SizedBox(
-                                              height : 5,
+                                              height: 5,
                                             ),
                                             Text(
                                               'Ramon_Ricardo',
@@ -2897,25 +3028,28 @@ class LandingView extends GetView<LandingController> {
                                               shape: BoxShape.circle,
                                               image: new DecorationImage(
                                                   fit: BoxFit.fill,
-                                                  image: AssetImage(profileImage)))),
+                                                  image: AssetImage(
+                                                      profileImage)))),
                                       SizedBox(
                                         width: 20,
                                       ),
                                       Container(
                                         margin: EdgeInsets.only(top: 10),
                                         child: Column(
-                                          mainAxisAlignment: MainAxisAlignment.start,
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Text(
                                               'Ramon Ricardo',
                                               style: TextStyle(
                                                   fontSize: 14,
                                                   fontWeight:
-                                                  FontWeight.normal),
+                                                      FontWeight.normal),
                                             ),
                                             SizedBox(
-                                              height : 5,
+                                              height: 5,
                                             ),
                                             Text(
                                               'Ramon_Ricardo',
@@ -2946,25 +3080,28 @@ class LandingView extends GetView<LandingController> {
                                               shape: BoxShape.circle,
                                               image: new DecorationImage(
                                                   fit: BoxFit.fill,
-                                                  image: AssetImage(profileImage)))),
+                                                  image: AssetImage(
+                                                      profileImage)))),
                                       SizedBox(
                                         width: 20,
                                       ),
                                       Container(
                                         margin: EdgeInsets.only(top: 10),
                                         child: Column(
-                                          mainAxisAlignment: MainAxisAlignment.start,
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Text(
                                               'Ramon Ricardo',
                                               style: TextStyle(
                                                   fontSize: 14,
                                                   fontWeight:
-                                                  FontWeight.normal),
+                                                      FontWeight.normal),
                                             ),
                                             SizedBox(
-                                              height : 5,
+                                              height: 5,
                                             ),
                                             Text(
                                               'Ramon_Ricardo',
@@ -2995,25 +3132,28 @@ class LandingView extends GetView<LandingController> {
                                               shape: BoxShape.circle,
                                               image: new DecorationImage(
                                                   fit: BoxFit.fill,
-                                                  image: AssetImage(profileImage)))),
+                                                  image: AssetImage(
+                                                      profileImage)))),
                                       SizedBox(
                                         width: 20,
                                       ),
                                       Container(
                                         margin: EdgeInsets.only(top: 10),
                                         child: Column(
-                                          mainAxisAlignment: MainAxisAlignment.start,
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Text(
                                               'Ramon Ricardo',
                                               style: TextStyle(
                                                   fontSize: 14,
                                                   fontWeight:
-                                                  FontWeight.normal),
+                                                      FontWeight.normal),
                                             ),
                                             SizedBox(
-                                              height : 5,
+                                              height: 5,
                                             ),
                                             Text(
                                               'Ramon_Ricardo',
@@ -3044,25 +3184,28 @@ class LandingView extends GetView<LandingController> {
                                               shape: BoxShape.circle,
                                               image: new DecorationImage(
                                                   fit: BoxFit.fill,
-                                                  image: AssetImage(profileImage)))),
+                                                  image: AssetImage(
+                                                      profileImage)))),
                                       SizedBox(
                                         width: 20,
                                       ),
                                       Container(
                                         margin: EdgeInsets.only(top: 10),
                                         child: Column(
-                                          mainAxisAlignment: MainAxisAlignment.start,
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Text(
                                               'Ramon Ricardo',
                                               style: TextStyle(
                                                   fontSize: 14,
                                                   fontWeight:
-                                                  FontWeight.normal),
+                                                      FontWeight.normal),
                                             ),
                                             SizedBox(
-                                              height : 5,
+                                              height: 5,
                                             ),
                                             Text(
                                               'Ramon_Ricardo',
@@ -3093,25 +3236,28 @@ class LandingView extends GetView<LandingController> {
                                               shape: BoxShape.circle,
                                               image: new DecorationImage(
                                                   fit: BoxFit.fill,
-                                                  image: AssetImage(profileImage)))),
+                                                  image: AssetImage(
+                                                      profileImage)))),
                                       SizedBox(
                                         width: 20,
                                       ),
                                       Container(
                                         margin: EdgeInsets.only(top: 10),
                                         child: Column(
-                                          mainAxisAlignment: MainAxisAlignment.start,
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Text(
                                               'Ramon Ricardo',
                                               style: TextStyle(
                                                   fontSize: 14,
                                                   fontWeight:
-                                                  FontWeight.normal),
+                                                      FontWeight.normal),
                                             ),
                                             SizedBox(
-                                              height : 5,
+                                              height: 5,
                                             ),
                                             Text(
                                               'Ramon_Ricardo',
@@ -3142,25 +3288,28 @@ class LandingView extends GetView<LandingController> {
                                               shape: BoxShape.circle,
                                               image: new DecorationImage(
                                                   fit: BoxFit.fill,
-                                                  image: AssetImage(profileImage)))),
+                                                  image: AssetImage(
+                                                      profileImage)))),
                                       SizedBox(
                                         width: 20,
                                       ),
                                       Container(
                                         margin: EdgeInsets.only(top: 10),
                                         child: Column(
-                                          mainAxisAlignment: MainAxisAlignment.start,
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Text(
                                               'Ramon Ricardo',
                                               style: TextStyle(
                                                   fontSize: 14,
                                                   fontWeight:
-                                                  FontWeight.normal),
+                                                      FontWeight.normal),
                                             ),
                                             SizedBox(
-                                              height : 5,
+                                              height: 5,
                                             ),
                                             Text(
                                               'Ramon_Ricardo',
@@ -3191,25 +3340,28 @@ class LandingView extends GetView<LandingController> {
                                               shape: BoxShape.circle,
                                               image: new DecorationImage(
                                                   fit: BoxFit.fill,
-                                                  image: AssetImage(profileImage)))),
+                                                  image: AssetImage(
+                                                      profileImage)))),
                                       SizedBox(
                                         width: 20,
                                       ),
                                       Container(
                                         margin: EdgeInsets.only(top: 10),
                                         child: Column(
-                                          mainAxisAlignment: MainAxisAlignment.start,
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Text(
                                               'Ramon Ricardo',
                                               style: TextStyle(
                                                   fontSize: 14,
                                                   fontWeight:
-                                                  FontWeight.normal),
+                                                      FontWeight.normal),
                                             ),
                                             SizedBox(
-                                              height : 5,
+                                              height: 5,
                                             ),
                                             Text(
                                               'Ramon_Ricardo',
@@ -3240,25 +3392,28 @@ class LandingView extends GetView<LandingController> {
                                               shape: BoxShape.circle,
                                               image: new DecorationImage(
                                                   fit: BoxFit.fill,
-                                                  image: AssetImage(profileImage)))),
+                                                  image: AssetImage(
+                                                      profileImage)))),
                                       SizedBox(
                                         width: 20,
                                       ),
                                       Container(
                                         margin: EdgeInsets.only(top: 10),
                                         child: Column(
-                                          mainAxisAlignment: MainAxisAlignment.start,
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Text(
                                               'Ramon Ricardo',
                                               style: TextStyle(
                                                   fontSize: 14,
                                                   fontWeight:
-                                                  FontWeight.normal),
+                                                      FontWeight.normal),
                                             ),
                                             SizedBox(
-                                              height : 5,
+                                              height: 5,
                                             ),
                                             Text(
                                               'Ramon_Ricardo',
@@ -3289,25 +3444,28 @@ class LandingView extends GetView<LandingController> {
                                               shape: BoxShape.circle,
                                               image: new DecorationImage(
                                                   fit: BoxFit.fill,
-                                                  image: AssetImage(profileImage)))),
+                                                  image: AssetImage(
+                                                      profileImage)))),
                                       SizedBox(
                                         width: 20,
                                       ),
                                       Container(
                                         margin: EdgeInsets.only(top: 10),
                                         child: Column(
-                                          mainAxisAlignment: MainAxisAlignment.start,
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Text(
                                               'Ramon Ricardo',
                                               style: TextStyle(
                                                   fontSize: 14,
                                                   fontWeight:
-                                                  FontWeight.normal),
+                                                      FontWeight.normal),
                                             ),
                                             SizedBox(
-                                              height : 5,
+                                              height: 5,
                                             ),
                                             Text(
                                               'Ramon_Ricardo',
@@ -3338,25 +3496,28 @@ class LandingView extends GetView<LandingController> {
                                               shape: BoxShape.circle,
                                               image: new DecorationImage(
                                                   fit: BoxFit.fill,
-                                                  image: AssetImage(profileImage)))),
+                                                  image: AssetImage(
+                                                      profileImage)))),
                                       SizedBox(
                                         width: 20,
                                       ),
                                       Container(
                                         margin: EdgeInsets.only(top: 10),
                                         child: Column(
-                                          mainAxisAlignment: MainAxisAlignment.start,
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Text(
                                               'Ramon Ricardo',
                                               style: TextStyle(
                                                   fontSize: 14,
                                                   fontWeight:
-                                                  FontWeight.normal),
+                                                      FontWeight.normal),
                                             ),
                                             SizedBox(
-                                              height : 5,
+                                              height: 5,
                                             ),
                                             Text(
                                               'Ramon_Ricardo',
@@ -3387,25 +3548,28 @@ class LandingView extends GetView<LandingController> {
                                               shape: BoxShape.circle,
                                               image: new DecorationImage(
                                                   fit: BoxFit.fill,
-                                                  image: AssetImage(profileImage)))),
+                                                  image: AssetImage(
+                                                      profileImage)))),
                                       SizedBox(
                                         width: 20,
                                       ),
                                       Container(
                                         margin: EdgeInsets.only(top: 10),
                                         child: Column(
-                                          mainAxisAlignment: MainAxisAlignment.start,
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Text(
                                               'Ramon Ricardo',
                                               style: TextStyle(
                                                   fontSize: 14,
                                                   fontWeight:
-                                                  FontWeight.normal),
+                                                      FontWeight.normal),
                                             ),
                                             SizedBox(
-                                              height : 5,
+                                              height: 5,
                                             ),
                                             Text(
                                               'Ramon_Ricardo',
@@ -3460,8 +3624,8 @@ class LandingView extends GetView<LandingController> {
                           height: 1,
                         ),
                         Column(
-                            children: [
-                              /*Container(
+                          children: [
+                            /*Container(
                   padding: EdgeInsets.only(left: 15.0, right: 15.0),
                   child: ListTile(
                       leading: Icon(Icons.privacy_tip_outlined),
@@ -3614,99 +3778,104 @@ class LandingView extends GetView<LandingController> {
                   ),
                 ),
                 */
-                              Container(
-                                padding: EdgeInsets.only(left: 15.0, right: 15.0),
-                                child: ListTile(
-                                    leading: Image(
-                                      image: AssetImage(changeLanguage),
-                                      width: 20,
-                                      height: 20,
-                                    ),
-                                    title: Text('Language Change'),
-                                    onTap: () {
-                                      //Navigator.push(context, MaterialPageRoute(builder: (builder) => ChangeLangugaeView()));
-                                      showModalBottomSheet(
-                                        context: context,
-                                        builder: (context) {
-                                          return Wrap(children: [
-                                            Padding(
-                                              padding: const EdgeInsets.all(10.0),
-                                              child: Column(
-                                                children: [
-                                                  Text(
-                                                    'English ',
-                                                    style: TextStyle(
-                                                        fontWeight: FontWeight.normal,
-                                                        fontSize: 16),
-                                                  ),
-                                                  SizedBox(
-                                                    height: 15,
-                                                  ),
-                                                  Text(
-                                                    'French ',
-                                                    style: TextStyle(
-                                                        fontWeight: FontWeight.normal,
-                                                        fontSize: 16),
-                                                  ),
-                                                ],
-                                              ),
+                            Container(
+                              padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                              child: ListTile(
+                                  leading: Image(
+                                    image: AssetImage(changeLanguage),
+                                    width: 20,
+                                    height: 20,
+                                  ),
+                                  title: Text('Language Change'),
+                                  onTap: () {
+                                    //Navigator.push(context, MaterialPageRoute(builder: (builder) => ChangeLangugaeView()));
+                                    showModalBottomSheet(
+                                      context: context,
+                                      builder: (context) {
+                                        return Wrap(children: [
+                                          Padding(
+                                            padding: const EdgeInsets.all(10.0),
+                                            child: Column(
+                                              children: [
+                                                Text(
+                                                  'English ',
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.normal,
+                                                      fontSize: 16),
+                                                ),
+                                                SizedBox(
+                                                  height: 15,
+                                                ),
+                                                Text(
+                                                  'French ',
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.normal,
+                                                      fontSize: 16),
+                                                ),
+                                              ],
                                             ),
-                                          ]);
-                                        },
-                                      );
-                                    }),
-                              ),
-                              Container(
-                                padding: EdgeInsets.only(left: 15.0, right: 15.0),
-                                child: ListTile(
-                                  leading: Image(
-                                    image: AssetImage(contactUS),
-                                    width: 20,
-                                    height: 20,
-                                  ),
-                                  title: Text('Change contact details'),
-                                  onTap: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (builder) => ChangeContactView()));
-                                  },
+                                          ),
+                                        ]);
+                                      },
+                                    );
+                                  }),
+                            ),
+                            Container(
+                              padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                              child: ListTile(
+                                leading: Image(
+                                  image: AssetImage(contactUS),
+                                  width: 20,
+                                  height: 20,
                                 ),
+                                title: Text('Change contact details'),
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (builder) =>
+                                              ChangeContactView()));
+                                },
                               ),
-                              Container(
-                                padding: EdgeInsets.only(left: 15.0, right: 15.0),
-                                child: ListTile(
-                                  leading: Image(
-                                    image: AssetImage(changePassword),
-                                    width: 20,
-                                    height: 20,
-                                  ),
-                                  title: Text('Change Password'),
-                                  onTap: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (builder) => ChangePasswordView()));
-                                  },
+                            ),
+                            Container(
+                              padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                              child: ListTile(
+                                leading: Image(
+                                  image: AssetImage(changePassword),
+                                  width: 20,
+                                  height: 20,
                                 ),
+                                title: Text('Change Password'),
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (builder) =>
+                                              ChangePasswordView()));
+                                },
                               ),
-                              Container(
-                                padding: EdgeInsets.only(left: 15.0, right: 15.0),
-                                child: ListTile(
-                                  leading: Image(
-                                    image: AssetImage(deleteAcc),
-                                    width: 20,
-                                    height: 20,
-                                  ),
-                                  title: Text('Delete Account'),
-                                  onTap: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (builder) => DeleteAccountView()));
-                                  },
-                                  //TODO
-                                  /*showModalBottomSheet<dynamic>(
+                            ),
+                            Container(
+                              padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                              child: ListTile(
+                                leading: Image(
+                                  image: AssetImage(deleteAcc),
+                                  width: 20,
+                                  height: 20,
+                                ),
+                                title: Text('Delete Account'),
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (builder) =>
+                                              DeleteAccountView()));
+                                },
+                                //TODO
+                                /*showModalBottomSheet<dynamic>(
                       isScrollControlled: true,
                         context: context,
                         builder: (context) {
@@ -3800,43 +3969,45 @@ class LandingView extends GetView<LandingController> {
                           );
                         });
                   },*/
-                                ),
                               ),
-                              Container(
-                                padding: EdgeInsets.only(left: 15.0, right: 15.0),
-                                child: ListTile(
-                                  leading: Image(
-                                    image: AssetImage(termsConditions),
-                                    width: 20,
-                                    height: 20,
-                                  ),
-                                  title: Text('Terms and Conditions'),
-                                  onTap: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (builder) => TermsConditionView()));
-                                  },
+                            ),
+                            Container(
+                              padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                              child: ListTile(
+                                leading: Image(
+                                  image: AssetImage(termsConditions),
+                                  width: 20,
+                                  height: 20,
                                 ),
+                                title: Text('Terms and Conditions'),
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (builder) =>
+                                              TermsConditionView()));
+                                },
                               ),
-                              Container(
-                                padding: EdgeInsets.only(left: 15.0, right: 15.0),
-                                child: ListTile(
-                                  leading: Image(
-                                    image: AssetImage(privacy),
-                                    width: 20,
-                                    height: 20,
-                                  ),
-                                  title: Text('Privacy Policy'),
-                                  onTap: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (builder) => PrivacyPolicyView()));
-                                  },
+                            ),
+                            Container(
+                              padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                              child: ListTile(
+                                leading: Image(
+                                  image: AssetImage(privacy),
+                                  width: 20,
+                                  height: 20,
                                 ),
+                                title: Text('Privacy Policy'),
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (builder) =>
+                                              PrivacyPolicyView()));
+                                },
                               ),
-                              /*Container(
+                            ),
+                            /*Container(
                   padding: EdgeInsets.only(left: 15.0, right: 15.0),
                   child: ListTile(
                     leading: Icon(Icons.lock),
@@ -3847,38 +4018,39 @@ class LandingView extends GetView<LandingController> {
                     },
                   ),
                 ),*/
-                              Container(
-                                padding: EdgeInsets.only(left: 15.0, right: 15.0),
-                                child: ListTile(
-                                  leading: Image(
-                                    image: AssetImage(contactUS),
-                                    width: 20,
-                                    height: 20,
-                                  ),
-                                  title: Text('Contact Us'),
-                                  onTap: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (builder) => ContactUsView()));
-                                  },
+                            Container(
+                              padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                              child: ListTile(
+                                leading: Image(
+                                  image: AssetImage(contactUS),
+                                  width: 20,
+                                  height: 20,
                                 ),
+                                title: Text('Contact Us'),
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (builder) =>
+                                              ContactUsView()));
+                                },
                               ),
-                              Container(
-                                padding: EdgeInsets.only(left: 15.0, right: 15.0),
-                                child: ListTile(
-                                  leading: Image(
-                                    image: AssetImage(logout),
-                                    width: 20,
-                                    height: 20,
-                                  ),
-                                  title: Text('Log Out'),
-                                  onTap: () {
-                                    // Navigator.push(context, MaterialPageRoute(builder: (builder) => ContactUsView()));
-                                  },
+                            ),
+                            Container(
+                              padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                              child: ListTile(
+                                leading: Image(
+                                  image: AssetImage(logout),
+                                  width: 20,
+                                  height: 20,
                                 ),
+                                title: Text('Log Out'),
+                                onTap: () {
+                                  // Navigator.push(context, MaterialPageRoute(builder: (builder) => ContactUsView()));
+                                },
                               ),
-                            ],
+                            ),
+                          ],
                         )
                       ],
                     ),
@@ -3888,7 +4060,7 @@ class LandingView extends GetView<LandingController> {
             ),
           ),
         ),
-          debugShowCheckedModeBanner: false,
+        debugShowCheckedModeBanner: false,
       ),
     );
   }
@@ -3941,7 +4113,6 @@ showAlertDialog(BuildContext context) {
 }
 
 showAlertDialogForProfile(BuildContext context, String profileImage) {
-
   // set up the AlertDialog
   Dialog alert = Dialog(
     child: Container(
@@ -3962,12 +4133,17 @@ showAlertDialogForProfile(BuildContext context, String profileImage) {
               ),
             ),
           ),
-          SizedBox(height: 10,),
+          SizedBox(
+            height: 10,
+          ),
           Column(
             children: [
               Text(
                 'Ramon Ricardo',
-                style: TextStyle(color: Colors.black, fontSize: 14,),
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 14,
+                ),
               ),
               SizedBox(
                 height: 5,
@@ -3979,7 +4155,10 @@ showAlertDialogForProfile(BuildContext context, String profileImage) {
               SizedBox(
                 height: 20,
               ),
-              Text(dummyLoremIpsum,style: TextStyle(fontSize: 12,color: Colors.black),),
+              Text(
+                dummyLoremIpsum,
+                style: TextStyle(fontSize: 12, color: Colors.black),
+              ),
               SizedBox(
                 height: 10,
               ),
@@ -4024,4 +4203,3 @@ showAlertDialogForProfile(BuildContext context, String profileImage) {
     },
   );
 }
-
