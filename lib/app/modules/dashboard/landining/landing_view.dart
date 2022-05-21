@@ -47,7 +47,6 @@ class LandingView extends GetView<LandingController> {
         FocusScope.of(context).unfocus();
       },
       child: MaterialApp(
-
         home: SafeArea(
           child: DefaultTabController(
             length: controller.referralTabs.length,
@@ -209,7 +208,7 @@ class LandingView extends GetView<LandingController> {
                                               shape: BoxShape.circle,
                                               image: new DecorationImage(
                                                   fit: BoxFit.fill,
-                                                  image: AssetImage(user1)))),
+                                                  image: AssetImage(user1),),),),
                                       SizedBox(
                                         width: 15,
                                       ),
@@ -1570,7 +1569,7 @@ class LandingView extends GetView<LandingController> {
                           height: 1,
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left : 10.0, right: 10),
+                          padding: const EdgeInsets.only(left : 20.0, right: 20),
                           child: Column(
                             children: [
                               Container(
@@ -1604,17 +1603,17 @@ class LandingView extends GetView<LandingController> {
                                                 children: [
                                                   InkWell(
                                                     onTap:(){
-                                                      showAlertDialogForProfile(context);
+                                                      showAlertDialogForProfile(context,profileImage1 );
                                                     },
                                                     child: Container(
-                                                      width: 40.0,
-                                                      height: 40.0,
+                                                      width: 50.0,
+                                                      height: 50.0,
                                                       decoration: new BoxDecoration(
                                                         shape: BoxShape.circle,
                                                         image: new DecorationImage(
                                                           fit: BoxFit.fill,
                                                           image:
-                                                          AssetImage(profileImage),
+                                                          AssetImage(profileImage1),
                                                         ),
                                                       ),
                                                     ),
@@ -1687,17 +1686,17 @@ class LandingView extends GetView<LandingController> {
                                                 children: [
                                                   InkWell(
                                                     onTap:(){
-                                                      showAlertDialogForProfile(context);
+                                                      showAlertDialogForProfile(context, profileImage2);
                                                     },
                                                     child: Container(
-                                                        width: 40.0,
-                                                        height: 40.0,
+                                                        width: 50.0,
+                                                        height: 50.0,
                                                         decoration: new BoxDecoration(
                                                             shape: BoxShape.circle,
                                                             image: new DecorationImage(
                                                                 fit: BoxFit.fill,
                                                                 image: AssetImage(
-                                                                    profileImage)))),
+                                                                    profileImage2)))),
                                                   ),
                                                   SizedBox(
                                                     width: 20,
@@ -1776,6 +1775,7 @@ class LandingView extends GetView<LandingController> {
                                   ),
                                 ),
                               ),
+
                               Container(
                                 margin: EdgeInsets.only(left: 10),
                                 child: Container(
@@ -1807,17 +1807,17 @@ class LandingView extends GetView<LandingController> {
                                                 children: [
                                                   InkWell(
                                                     onTap:(){
-                                                      showAlertDialogForProfile(context);
+                                                      showAlertDialogForProfile(context, profileImage3);
                                                     },
                                                     child: Container(
-                                                        width: 40.0,
-                                                        height: 40.0,
+                                                        width: 50.0,
+                                                        height: 50.0,
                                                         decoration: new BoxDecoration(
                                                             shape: BoxShape.circle,
                                                             image: new DecorationImage(
                                                                 fit: BoxFit.fill,
                                                                 image: AssetImage(
-                                                                    profileImage)))),
+                                                                    profileImage3)))),
                                                   ),
                                                   SizedBox(
                                                     width: 20,
@@ -1894,17 +1894,17 @@ class LandingView extends GetView<LandingController> {
                                                 children: [
                                                   InkWell(
                                                     onTap:(){
-                                                      showAlertDialogForProfile(context);
+                                                      showAlertDialogForProfile(context, profileImage4);
                                                     },
                                                     child: Container(
-                                                        width: 40.0,
-                                                        height: 40.0,
+                                                        width: 50.0,
+                                                        height: 50.0,
                                                         decoration: new BoxDecoration(
                                                             shape: BoxShape.circle,
                                                             image: new DecorationImage(
                                                                 fit: BoxFit.fill,
                                                                 image: AssetImage(
-                                                                    profileImage)))),
+                                                                    profileImage4)))),
                                                   ),
                                                   SizedBox(
                                                     width: 20,
@@ -1966,6 +1966,7 @@ class LandingView extends GetView<LandingController> {
                                   ),
                                 ),
                               ),
+
                               Container(
                                 margin: EdgeInsets.only(left: 10),
                                 child: Container(
@@ -1997,17 +1998,17 @@ class LandingView extends GetView<LandingController> {
                                                 children: [
                                                   InkWell(
                                                     onTap:(){
-                                                      showAlertDialogForProfile(context);
+                                                      showAlertDialogForProfile(context, profileImage5);
                                                     },
                                                     child: Container(
-                                                        width: 40.0,
-                                                        height: 40.0,
+                                                        width: 50.0,
+                                                        height: 50.0,
                                                         decoration: new BoxDecoration(
                                                             shape: BoxShape.circle,
                                                             image: new DecorationImage(
                                                                 fit: BoxFit.fill,
                                                                 image: AssetImage(
-                                                                    profileImage)))),
+                                                                    profileImage5)))),
                                                   ),
                                                   SizedBox(
                                                     width: 20,
@@ -2084,17 +2085,17 @@ class LandingView extends GetView<LandingController> {
                                                 children: [
                                                   InkWell(
                                                     onTap:(){
-                                                      showAlertDialogForProfile(context);
+                                                      showAlertDialogForProfile(context, profileImage6);
                                                     },
                                                     child: Container(
-                                                        width: 40.0,
-                                                        height: 40.0,
+                                                        width: 50.0,
+                                                        height: 50.0,
                                                         decoration: new BoxDecoration(
                                                             shape: BoxShape.circle,
                                                             image: new DecorationImage(
                                                                 fit: BoxFit.fill,
                                                                 image: AssetImage(
-                                                                    profileImage)))),
+                                                                    profileImage6)))),
                                                   ),
                                                   SizedBox(
                                                     width: 20,
@@ -2156,6 +2157,7 @@ class LandingView extends GetView<LandingController> {
                                   ),
                                 ),
                               ),
+
                               Container(
                                 margin: EdgeInsets.only(left: 10),
                                 child: Container(
@@ -2187,17 +2189,17 @@ class LandingView extends GetView<LandingController> {
                                                 children: [
                                                   InkWell(
                                                     onTap:(){
-                                                      showAlertDialogForProfile(context);
+                                                      showAlertDialogForProfile(context, profileImage5);
                                                     },
                                                     child: Container(
-                                                        width: 40.0,
-                                                        height: 40.0,
+                                                        width: 50.0,
+                                                        height: 50.0,
                                                         decoration: new BoxDecoration(
                                                             shape: BoxShape.circle,
                                                             image: new DecorationImage(
                                                                 fit: BoxFit.fill,
                                                                 image: AssetImage(
-                                                                    profileImage)))),
+                                                                    profileImage5)))),
                                                   ),
                                                   SizedBox(
                                                     width: 20,
@@ -2274,17 +2276,17 @@ class LandingView extends GetView<LandingController> {
                                                 children: [
                                                   InkWell(
                                                     onTap:(){
-                                                      showAlertDialog(context);
+                                                      showAlertDialogForProfile(context, profileImage1);
                                                     },
                                                     child: Container(
-                                                        width: 40.0,
-                                                        height: 40.0,
+                                                        width: 50.0,
+                                                        height: 50.0,
                                                         decoration: new BoxDecoration(
                                                             shape: BoxShape.circle,
                                                             image: new DecorationImage(
                                                                 fit: BoxFit.fill,
                                                                 image: AssetImage(
-                                                                    profileImage)))),
+                                                                    profileImage1)))),
                                                   ),
                                                   SizedBox(
                                                     width: 20,
@@ -3938,7 +3940,8 @@ showAlertDialog(BuildContext context) {
   );
 }
 
-showAlertDialogForProfile(BuildContext context) {
+showAlertDialogForProfile(BuildContext context, String profileImage) {
+
   // set up the AlertDialog
   Dialog alert = Dialog(
     child: Container(
@@ -3949,8 +3952,8 @@ showAlertDialogForProfile(BuildContext context) {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-            width: 40.0,
-            height: 40.0,
+            width: 60.0,
+            height: 60.0,
             decoration: new BoxDecoration(
               shape: BoxShape.circle,
               image: new DecorationImage(
