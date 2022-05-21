@@ -20,10 +20,6 @@ class SendEmailView extends GetView<SendEmailController>{
     'Categories 2',
     'Categories 3',
     'Categories 4',
-    'Categories 5',
-    'Categories 6',
-    'Categories 7',
-    'Categories 8',
   ];
   String? selectedValue;
 
@@ -37,238 +33,251 @@ class SendEmailView extends GetView<SendEmailController>{
         resizeToAvoidBottomInset: true,
         backgroundColor: whiteColor,
         body: Stack(
-          children: [
-            SingleChildScrollView(
-              child: Container(
-                height: MediaQuery.of(context).size.height,
-                width: MediaQuery.of(context).size.width,
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: 30,
-                    ),
-                    Container(
+            children: [
+              SingleChildScrollView(
+                child: Container(
+                  height: MediaQuery.of(context).size.height,
+                  width: MediaQuery.of(context).size.width,
+                  child: Column(
+                    children: [
+                       SizedBox(
                       height: 40,
-                      width: MediaQuery.of(context).size.width,
-                      padding: EdgeInsets.all(10),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          SizedBox(
-                            width: 10,
-                          ),
-                          InkWell(
-                            child: Text('Cancel'),
-                            onTap: () {
-                              Get.back();
-                            },
-                          ),
-                          Spacer(),
-                          InkWell(
-                            child:  Text(
-                              "Send Email",
-                              style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                    ),
+
+                      Container(
+                        height: 50,
+                        width: MediaQuery.of(context).size.width,
+                        padding: EdgeInsets.only(right: 10),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            SizedBox(
+                              width: 10,
                             ),
-                            onTap: () {
-                              showAlertDialog(context);
-                            },
+
+                            InkWell(
+                              child:  Padding(
+                                padding: const EdgeInsets.only(left: 8.0),
+                                child: Text(
+                                  "Cancel",
+                                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                              onTap: () {
+                                Get.back();
+                              },
+                            ),
+                            Spacer(),
+                            InkWell(
+                              child:  Padding(
+                                padding: const EdgeInsets.only(right: 8.0),
+                                child: Text(
+                                  "Send Email",
+                                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                              onTap: () {
+                                showAlertDialog(context);
+                              },
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                          ],
+                        ),
+                      ),
+                      Divider(
+                        color: Colors.black,
+                        height: 1,
+                      ),
+
+
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Container(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 15.0, right: 15.0, top: 10, bottom: 10),
+                                  child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'From : Arash Dajbani',
+                                          style: TextStyle(
+                                            fontSize: 14,
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          height: 5,
+                                        ),
+                                        Text(
+                                          'Email : arash.dajbani@gmail.com',
+                                          style: TextStyle(
+                                            fontSize: 14,
+                                          ),
+                                        ),
+                                      ]
+                                  ),
+                                ),
+
+                              ],
+                            ),
                           ),
-                          SizedBox(
-                            width: 10,
+                          Divider(
+                            color: Colors.black,
+                            height: 1,
                           ),
                         ],
                       ),
-                    ),
-                    Divider(
-                      color: Colors.black,
-                      height: 1,
-                    ),
 
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Container(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 15.0, right: 15.0, top: 10, bottom: 10),
-                                child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'From : Arash Dajbani',
-                                        style: TextStyle(
-                                          fontSize: 14,
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: 5,
-                                      ),
-                                      Text(
-                                        'Email : arash.dajbani@gmail.com',
-                                        style: TextStyle(
-                                          fontSize: 14,
-                                        ),
-                                      ),
-                                    ]
-                                ),
-                              ),
+                      Divider(
+                        color: Colors.black,
+                        height: 1,
+                      ),
 
-                            ],
-                          ),
-                        ),
-                        Divider(
-                          color: Colors.black,
-                          height: 1,
-                        ),
-                      ],
-                    ),
-
-                    Divider(
-                      color: Colors.black,
-                      height: 1,
-                    ),
-
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Container(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(left: 15.0, right: 15.0, top: 10, bottom: 10),
-                                child: Text(
-                                  'To : Thomas Dobos',
-                                  style: TextStyle(
-                                    fontSize: 14,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Container(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 15.0, right: 15.0, top: 10, bottom: 10),
+                                  child: Text(
+                                    'To : Thomas Dobos',
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                    ),
                                   ),
                                 ),
-                              ),
 
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
-                        Divider(
-                          color: Colors.black,
-                          height: 1,
-                        ),
-                      ],
-                    ),
-
-
-                    Divider(
-                      color: Colors.black,
-                      height: 1,
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-
-
-
-
-                    Container(
-                      height: 30,
-                      width: MediaQuery.of(context).size.width,
-
-                      //margin: EdgeInsets.only(right: 15, left: 5),
-                      child: DropdownButtonFormField2(
-                        decoration: InputDecoration(
-                          isDense: true,
-                          contentPadding: EdgeInsets.zero,
-                          enabledBorder: const OutlineInputBorder(
-                            // width: 0.0 produces a thin "hairline" border
-                            borderSide: const BorderSide(color: Colors.white, width: 0.0),
+                          Divider(
+                            color: Colors.black,
+                            height: 1,
                           ),
-                          focusedBorder: const OutlineInputBorder(
-                            // width: 0.0 produces a thin "hairline" border
-                            borderSide: const BorderSide(color: Colors.white, width: 0.0),
-                          ),
-                          border: OutlineInputBorder(
-                            borderSide: const BorderSide(color: Colors.black, width: 0.0),
-                            borderRadius: BorderRadius.circular(0),
-                          ),
-                        ),
-                        isExpanded: true,
-                        hint: const Text(
-                          'Categories',
-                          style: TextStyle(
-                              fontSize: 14, color: Colors.black),
-                        ),
-                        icon: const Icon(
-                          Icons.arrow_drop_down,
-                          color: Colors.black,
-                        ),
-                        iconSize: 30,
-                        buttonHeight: 60,
-                        buttonPadding:
-                        const EdgeInsets.only(left: 20, right: 10),
-                        dropdownDecoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        items: spinnerItems
-                            .map((item) => DropdownMenuItem<String>(
-                          value: item,
-                          child: Text(
-                            item,
-                            style: const TextStyle(
-                                fontSize: 12,
-                                color: Colors.black),
-                          ),
-                        ))
-                            .toList(),
-                        validator: (value) {
-                          if (value == null) {
-                            return 'RecommendYou';
-                          }
-                        },
-                        onChanged: (value) {
-                          //Do something when changing the item if you want.
-                        },
-                        onSaved: (value) {
-                          selectedValue = value.toString();
-                        },
+                        ],
                       ),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Divider(
-                      color: Colors.black,
-                      height: 1,
-                    ),
-                    SizedBox(
-                      height: 0,
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(right: 12, left: 12, ),
-                      height: 6* 24,
-                      child: TextField(
-                        cursorColor: Colors.black,
-                        style: TextStyle(fontSize: 16, color: Colors.black, height: 1.4),
-                        maxLines: 15,
-                        decoration: InputDecoration(
-                          enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white),
+
+
+                      Divider(
+                        color: Colors.black,
+                        height: 1,
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+
+
+
+
+                      Container(
+                        height: 30,
+                        width: MediaQuery.of(context).size.width,
+
+                        //margin: EdgeInsets.only(right: 15, left: 5),
+                        child: DropdownButtonFormField2(
+                          decoration: InputDecoration(
+                            isDense: true,
+                            contentPadding: EdgeInsets.zero,
+                            enabledBorder: const OutlineInputBorder(
+                              // width: 0.0 produces a thin "hairline" border
+                              borderSide: const BorderSide(color: Colors.white, width: 0.0),
+                            ),
+                            focusedBorder: const OutlineInputBorder(
+                              // width: 0.0 produces a thin "hairline" border
+                              borderSide: const BorderSide(color: Colors.white, width: 0.0),
+                            ),
+                            border: OutlineInputBorder(
+                              borderSide: const BorderSide(color: Colors.black, width: 0.0),
+                              borderRadius: BorderRadius.circular(0),
+                            ),
                           ),
-                          focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white),
+                          isExpanded: true,
+                          hint: const Text(
+                            'Categories',
+                            style: TextStyle(
+                                fontSize: 14, color: Colors.black),
                           ),
-                          hintText: "Write a message here.....",
-                          hintStyle: TextStyle(color: Colors.black),
-                          filled: false,
+                          icon: const Icon(
+                            Icons.arrow_drop_down,
+                            color: Colors.black,
+                          ),
+                          iconSize: 30,
+                          buttonHeight: 60,
+                          buttonPadding:
+                          const EdgeInsets.only(left: 20, right: 10),
+                          dropdownDecoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              color: bonJourColor
+                          ),
+                          items: spinnerItems
+                              .map((item) => DropdownMenuItem<String>(
+                            value: item,
+                            child: Text(
+                              item,
+                              style: const TextStyle(
+                                  fontSize: 12,
+                                  color: Colors.black),
+                            ),
+                          ))
+                              .toList(),
+                          validator: (value) {
+                            if (value == null) {
+                              return 'RecommendYou';
+                            }
+                          },
+                          onChanged: (value) {
+                            //Do something when changing the item if you want.
+                          },
+                          onSaved: (value) {
+                            selectedValue = value.toString();
+                          },
                         ),
                       ),
-                    ),
-                    /*Padding(
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Divider(
+                        color: Colors.black,
+                        height: 1,
+                      ),
+                      SizedBox(
+                        height: 0,
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(right: 12, left: 12, ),
+                        height: 6* 24,
+                        child: TextField(
+                          cursorColor: Colors.black,
+                          style: TextStyle(fontSize: 16, color: Colors.black, height: 1.4),
+                          maxLines: 15,
+                          decoration: InputDecoration(
+                            enabledBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white),
+                            ),
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white),
+                            ),
+                            hintText: "Write a message here.....",
+                            hintStyle: TextStyle(color: Colors.black),
+                            filled: false,
+                          ),
+                        ),
+                      ),
+                      /*Padding(
                     padding: const EdgeInsets.only(right: 20.0),
                     child: Align(
                         alignment: Alignment.bottomRight,
@@ -366,40 +375,40 @@ class SendEmailView extends GetView<SendEmailController>{
                                   color: Colors.purple),
                             ))),
                   )*/
-                  ],
-                ),
-              ),
-            ),
-
-            Padding(
-              padding: EdgeInsets.only(bottom: 0, left: 0, right: 0),
-              child: Align(
-                alignment: Alignment.bottomCenter,
-                child: Container(
-                  height: 50,
-                  color: veryLightGreyTwoColor,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Row(
-                        children: [
-                          Icon(Icons.camera_alt_rounded),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Text(
-                            'Add an image or video',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ],
-                      ),
                     ],
                   ),
                 ),
               ),
-            )
-          ]
+
+              Padding(
+                padding: EdgeInsets.only(bottom: 0, left: 0, right: 0),
+                child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Container(
+                    height: 50,
+                    color: veryLightGreyTwoColor,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Row(
+                          children: [
+                            Icon(Icons.camera_alt_rounded),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              'Add an image or video',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              )
+            ]
         ),
       ),
     );

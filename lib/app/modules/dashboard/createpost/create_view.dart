@@ -37,26 +37,36 @@ class CreateView extends GetView<CreateController> {
                   child: Column(
                     children: [
                       Container(
-                        height: 40,
+                        height: 50,
                         width: MediaQuery.of(context).size.width,
-                        padding: EdgeInsets.all(10),
+                        padding: EdgeInsets.only(right: 10),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             SizedBox(
                               width: 10,
                             ),
+
                             InkWell(
-                              child: Text('Cancel'),
+                              child:  Padding(
+                                padding: const EdgeInsets.only(left: 8.0),
+                                child: Text(
+                                  "Cancel",
+                                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                                ),
+                              ),
                               onTap: () {
                                 //Get.back();
                               },
                             ),
                             Spacer(),
                             InkWell(
-                              child:  Text(
-                                "Post",
-                                style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                              child:  Padding(
+                                padding: const EdgeInsets.only(right: 8.0),
+                                child: Text(
+                                  "Post",
+                                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                                ),
                               ),
                               onTap: () {
                                 showAlertDialog(context);
@@ -72,6 +82,8 @@ class CreateView extends GetView<CreateController> {
                         color: Colors.black,
                         height: 1,
                       ),
+
+
                       Container(
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -106,7 +118,7 @@ class CreateView extends GetView<CreateController> {
                                     child: Text(
                                       'Roman Ricardo',
                                       style: TextStyle(
-                                        fontSize: 14,
+                                        fontSize: 16,
                                       ),
                                     ),
                                   ),
@@ -156,7 +168,7 @@ class CreateView extends GetView<CreateController> {
                           hint: const Text(
                             'Categories',
                             style: TextStyle(
-                                fontSize: 14, color: Colors.black),
+                                fontSize: 16, color: Colors.black),
                           ),
                           icon: const Icon(
                             Icons.arrow_drop_down,
@@ -165,7 +177,7 @@ class CreateView extends GetView<CreateController> {
                           iconSize: 30,
                           buttonHeight: 60,
                           buttonPadding:
-                          const EdgeInsets.only(left: 20, right: 10),
+                          const EdgeInsets.only(left: 15, right: 10),
                           dropdownDecoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(15),
                               color: bonJourColor

@@ -26,7 +26,7 @@ class EditProfileView extends GetView<EditProfileController> {
                     child: Column(
                       children: [
                         Container(
-                          height: 60,
+                          height: 50,
                           width: MediaQuery.of(context).size.width,
                           padding: EdgeInsets.all(10),
                           child: Align(
@@ -46,34 +46,26 @@ class EditProfileView extends GetView<EditProfileController> {
                                   },
                                 ),
                                 SizedBox(
-                                  width: 10,
+                                  width: 20,
                                 ),
                                 Text(
                                   'Ram Ricard',
                                   style: TextStyle(color: Colors.black, fontSize: 14),
                                 ),
                                 Spacer(),
-                                TextButton(
-                                  child: Container(
-                                    height: 30,
-                                    width: 60,
-                                    decoration: BoxDecoration(
-                                        color: primaryDarkColor,
-                                        border: Border.all(color: primaryDarkColor),
-                                        borderRadius:
-                                        const BorderRadius.all(Radius.circular(7))),
-                                    alignment: Alignment.center,
-                                    child: const Text(
-                                      'SAVE',
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                  ),
-                                  onPressed: () {
+                                InkWell(
+                                  onTap: () {
                                     Get.back();
                                   },
+                                  child: Text(
+                                    "SAVE",
+                                    style: TextStyle(
+                                        fontSize: 16, fontWeight: FontWeight.bold),
+                                  ),
                                 ),
+                                SizedBox(
+                                  width: 10,
+                                )
                               ],
                             ),
                           ),

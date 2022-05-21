@@ -16,6 +16,7 @@ class FaqView extends GetView<FaqController> {
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
+        resizeToAvoidBottomInset: true,
         body: SafeArea(
           child: Container(
             height: MediaQuery.of(context).size.height,
@@ -43,14 +44,14 @@ class FaqView extends GetView<FaqController> {
                           },
                         ),
                         SizedBox(
-                          width: 10,
+                          width: 20,
                         ),
                         Text(
                           'Frequently Asked Question',
                           style: TextStyle(
                               color: Colors.black,
                               fontSize: 14,
-                              fontWeight: FontWeight.bold),
+                              fontWeight: FontWeight.normal),
                         ),
                       ],
                     ),
@@ -60,94 +61,254 @@ class FaqView extends GetView<FaqController> {
                   color: Colors.black,
                   height: 1,
                 ),
-                Container(
-                  child: Expanded(
+                Expanded(
+                    child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      Column(children: [
+                        SizedBox(
+                          height: 10,
+                        ),
+
+                        Padding(
+                          padding: const EdgeInsets.only(right: 15, left: 15, top: 10, bottom: 0),
+                          child: Container(
+                              height: 150,
+                              width: MediaQuery.of(context).size.width,
+                              decoration: new BoxDecoration(
+                                  image: new DecorationImage(
+                                      fit: BoxFit.fill,
+                                      image: AssetImage(faqbanner)
+                                  )
+                              )
+                          ),
+                        ),
+
+                        SizedBox(
+                          height: 10,
+                        ),
+
+                        Padding(
+                          padding: const EdgeInsets.only(right: 15, left: 15, top: 10, bottom:10),
+                          child: Column(
+                            children: [
+                              Text(
+                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                                style: TextStyle(
+
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black),
+                              ),
+                              SizedBox(height: 20,),
+                              Divider(color: Colors.grey, height: 1,),
+                            ],
+                          ),
+                        ),
+                      ]),
+
+
+                  Theme(
+                    data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
                     child: Column(
                       children: [
                         ExpansionTile(
-                          title: Text('What is your privacy policy?',style: TextStyle(color: Colors.black),),
+                          iconColor: Colors.black,
+                          title: Text(
+                            'What is your privacy policy?',
+                            style: TextStyle(color: Colors.black),
+                          ),
                           children: [
                             Align(
                               child: Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding: const EdgeInsets.only(
+                                    right: 15, left: 15, top: 0, bottom: 5),
                                 child: Text(
                                   dummyLoremIpsum,
-                                  style:
-                                      TextStyle(color: Colors.grey, fontSize: 12),
+                                  style: TextStyle(
+                                      color: Colors.grey,
+                                      fontSize: 14,
+                                      height: 1.4),
                                 ),
                               ),
                               alignment: Alignment.topLeft,
                             ),
                           ],
                         ),
+                        Padding(
+                          padding: const EdgeInsets.only(right: 15, left: 15, top: 10, bottom: 0),
+                          child: Divider(color: Colors.grey, height: 1,),
+                        ),
+                        SizedBox(height: 10,),
                         ExpansionTile(
-                          title: Text('What is your privacy policy?',style: TextStyle(color: Colors.black),),
+                          iconColor: Colors.black,
+                          title: Text(
+                            'What is your privacy policy?',
+                            style: TextStyle(color: Colors.black),
+                          ),
                           children: [
                             Align(
                               child: Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding: const EdgeInsets.only(
+                                    right: 15, left: 15, top: 0, bottom: 5),
                                 child: Text(
                                   dummyLoremIpsum,
-                                  style:
-                                      TextStyle(color: Colors.grey, fontSize: 12),
+                                  style: TextStyle(
+                                      color: Colors.grey,
+                                      fontSize: 14,
+                                      height: 1.4),
                                 ),
                               ),
                               alignment: Alignment.topLeft,
                             ),
                           ],
                         ),
+                        Padding(
+                          padding: const EdgeInsets.only(right: 15, left: 15, top: 10, bottom: 0),
+                          child: Divider(
+                            color: Colors.grey,
+                            thickness: 1,
+                            height: 0,
+                          ),
+                        ),
+                        SizedBox(height: 10,),
                         ExpansionTile(
-                          title: Text('What is your privacy policy?',style: TextStyle(color: Colors.black),),
+                          iconColor: Colors.black,
+                          title: Text(
+                            'What is your privacy policy?',
+                            style: TextStyle(color: Colors.black),
+                          ),
                           children: [
                             Align(
                               child: Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding: const EdgeInsets.only(
+                                    right: 15, left: 15, top: 0, bottom: 5),
                                 child: Text(
                                   dummyLoremIpsum,
-                                  style:
-                                      TextStyle(color: Colors.grey, fontSize: 12),
+                                  style: TextStyle(
+                                      color: Colors.grey,
+                                      fontSize: 14,
+                                      height: 1.4),
                                 ),
                               ),
                               alignment: Alignment.topLeft,
                             ),
                           ],
                         ),
+                        Padding(
+                          padding: const EdgeInsets.only(right: 15, left: 15, top: 10, bottom: 0),
+                          child: Divider(
+                            color: Colors.grey,
+                            thickness: 1,
+                            height: 0,
+                          ),
+                        ),
+                        SizedBox(height: 10,),
                         ExpansionTile(
-                          title: Text('What is your privacy policy?',style: TextStyle(color: Colors.black),),
+                          iconColor: Colors.black,
+                          title: Text(
+                            'What is your privacy policy?',
+                            style: TextStyle(color: Colors.black),
+                          ),
                           children: [
                             Align(
                               child: Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding: const EdgeInsets.only(
+                                    right: 15, left: 15, top: 0, bottom: 5),
                                 child: Text(
                                   dummyLoremIpsum,
-                                  style:
-                                      TextStyle(color: Colors.grey, fontSize: 12),
+                                  style: TextStyle(
+                                      color: Colors.grey,
+                                      fontSize: 14,
+                                      height: 1.4),
                                 ),
                               ),
                               alignment: Alignment.topLeft,
                             ),
                           ],
                         ),
+                        Padding(
+                          padding: const EdgeInsets.only(right: 15, left: 15, top: 10, bottom: 0),
+                          child: Divider(
+                            color: Colors.grey,
+                            thickness: 1,
+                            height: 0,
+                          ),
+                        ),
+                        SizedBox(height: 10,),
                         ExpansionTile(
-                          title: Text('What is your privacy policy?',style: TextStyle(color: Colors.black),),
+                          iconColor: Colors.black,
+                          title: Text(
+                            'What is your privacy policy?',
+                            style: TextStyle(color: Colors.black),
+                          ),
                           children: [
                             Align(
                               child: Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding: const EdgeInsets.only(
+                                    right: 15, left: 15, top: 0, bottom: 5),
                                 child: Text(
                                   dummyLoremIpsum,
-                                  style:
-                                      TextStyle(color: Colors.grey, fontSize: 12),
+                                  style: TextStyle(
+                                      color: Colors.grey,
+                                      fontSize: 14,
+                                      height: 1.4),
                                 ),
                               ),
                               alignment: Alignment.topLeft,
                             ),
                           ],
                         ),
+                        Padding(
+                          padding: const EdgeInsets.only(right: 15, left: 15, top: 10, bottom: 0),
+                          child: Divider(
+                            color: Colors.grey,
+                            thickness: 1,
+                            height: 0,
+                          ),
+                        ),
+                        SizedBox(height: 10,),
+                        ExpansionTile(
+                          iconColor: Colors.black,
+                          title: Text(
+                            'What is your privacy policy?',
+                            style: TextStyle(color: Colors.black),
+                          ),
+                          children: [
+                            Align(
+                              child: Padding(
+                                padding: const EdgeInsets.only(
+                                    right: 15, left: 15, top: 0, bottom: 5),
+                                child: Text(
+                                  dummyLoremIpsum,
+                                  style: TextStyle(
+                                      color: Colors.grey,
+                                      fontSize: 14,
+                                      height: 1.4),
+                                ),
+                              ),
+                              alignment: Alignment.topLeft,
+                            ),
+                          ],
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(right: 15, left: 15, top: 10, bottom: 0),
+                          child: Divider(
+                            color: Colors.grey,
+                            thickness: 1,
+                            height: 0,
+                          ),
+                        ),
+                        SizedBox(height: 10,),
                       ],
                     ),
                   ),
-                )
+
+
+
+                    ],
+                  ),
+                )),
               ],
             ),
           ),

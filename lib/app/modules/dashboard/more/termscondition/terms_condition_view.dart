@@ -55,7 +55,7 @@ class TermsConditionView extends GetView<TermsConditionController> {
                               ),
                             ),
                             SizedBox(
-                              width: 10,
+                              width: 20,
                             ),
                             Text('Terms & Condition')
                           ],

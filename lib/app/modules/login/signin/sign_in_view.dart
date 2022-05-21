@@ -53,9 +53,7 @@ class SignInView extends GetView<SignInController> {
                         ],
                       ),
                     ),
-                    Expanded(
-                        child: SingleChildScrollView(
-                            child: Column(children: [
+                    Column(children: [
                       Container(
                         width: 60,
                         height: 60,
@@ -64,7 +62,7 @@ class SignInView extends GetView<SignInController> {
                         ),
                       ),
                       SizedBox(
-                        height: 20,
+                        height: 10,
                       ),
                       Text(
                         'Login to your account',
@@ -134,7 +132,6 @@ class SignInView extends GetView<SignInController> {
                           // ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                           //   content: Text('Coming soon'),
                           // ));
-
                         },
                         child: Container(
                           margin: const EdgeInsets.only(
@@ -155,7 +152,7 @@ class SignInView extends GetView<SignInController> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      /*  SizedBox(
                         height: 30,
                       ),
                       InkWell(
@@ -186,8 +183,8 @@ class SignInView extends GetView<SignInController> {
                               color: primaryDarkColor,
                               decoration: TextDecoration.underline),
                         ),
-                      ),
-                    ])))
+                      ),*/
+                    ])
                   ],
                 ),
               )
@@ -198,5 +195,3 @@ class SignInView extends GetView<SignInController> {
     );
   }
 }
-
-
