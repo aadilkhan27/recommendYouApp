@@ -128,7 +128,7 @@ class SignInView extends GetView<SignInController> {
                         onTap: () {
                           //do something
                           //do something
-                          Get.offNamed(Routes.dashboard);
+                          Get.offNamed(Routes.landing);
                           // ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                           //   content: Text('Coming soon'),
                           // ));

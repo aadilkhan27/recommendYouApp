@@ -7,6 +7,8 @@ import 'package:recommend_you/app/modules/dashboard/dashboard_controller.dart';
 import 'package:recommend_you/app/modules/dashboard/dashboard_view.dart';
 import 'package:recommend_you/app/modules/dashboard/home/home_bindings.dart';
 import 'package:recommend_you/app/modules/dashboard/home/home_view.dart';
+import 'package:recommend_you/app/modules/dashboard/landining/landing_binding.dart';
+import 'package:recommend_you/app/modules/dashboard/landining/landing_view.dart';
 import 'package:recommend_you/app/modules/dashboard/more/changecontactdetails/change_contact_binding.dart';
 import 'package:recommend_you/app/modules/dashboard/more/changecontactdetails/change_contact_view.dart';
 import 'package:recommend_you/app/modules/dashboard/more/changepassword/change_password_binding.dart';
@@ -101,5 +103,6 @@ class AppPages {
     GetPage(name: Routes.changeLanguage, page: () => ChangeLangugaeView(), binding: ChangeLanguageBinding()),
     GetPage(name: Routes.editProfile, page: () => EditProfileView(), binding: EditProfileBinding()),
     GetPage(name: Routes.faq, page: () => FaqView(), binding: FaqBinding()),
+    GetPage(name: Routes.landing, page: () => LandingView(), binding: LandingBinding()),
   ];
 }

@@ -53,12 +53,10 @@ const image6='assets/images/images6.jpg';
 
 const profileImage='assets/images/profile_img.jpeg';
 
-/*
 const user1='assets/images/user1.png';
 const user2='assets/images/user2.png';
 const user3='assets/images/user3.png';
 const user4='assets/images/user4.png';
-*/
 
 const welcomeLeft='assets/images/ic_welcome_left.png';
 const welcomeRight='assets/images/ic_welcome_right.png';
