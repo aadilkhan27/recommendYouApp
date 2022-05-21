@@ -33,4 +33,5 @@ abstract class Routes {
   static const changeLanguage= '/changeLanguage';
   static const editProfile= '/editProfile';
   static const faq= '/faq';
+  static const landing= '/landing';
 }

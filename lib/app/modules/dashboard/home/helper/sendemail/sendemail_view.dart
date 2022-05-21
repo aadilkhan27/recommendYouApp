@@ -422,7 +422,7 @@ class SendEmailView extends GetView<SendEmailController>{
       ),
       onPressed: () {
         Navigator.of(context).pop();
-        Get.toNamed(Routes.dashboard);
+        Get.toNamed(Routes.landing);
       },
     );
 

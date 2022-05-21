@@ -328,7 +328,7 @@ showAlertDialog(BuildContext context) {
     ),
     onPressed: () {
       Navigator.of(context).pop();
-      Get.toNamed(Routes.dashboard);
+      Get.toNamed(Routes.landing);
     },
   );
 
@@ -469,7 +469,7 @@ showAlertDialog(BuildContext context) {
               ),
               onPressed: () {
                 Navigator.of(context).pop();
-                Get.toNamed(Routes.dashboard);
+                Get.toNamed(Routes.landing);
               },
             ),
           )

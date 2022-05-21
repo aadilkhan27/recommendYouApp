@@ -867,7 +867,6 @@ class NotificationView extends GetView<NotificationController> {
 }
 
 showAlertDialog(BuildContext context) {
-
   // set up the AlertDialog
   Dialog alert = Dialog(
     child: Container(
