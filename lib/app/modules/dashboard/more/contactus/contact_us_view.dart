@@ -41,16 +41,17 @@ class ContactUsView extends GetView<ContactUsController> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              SizedBox(
-                                width: 10,
-                              ),
                               InkWell(
                                 onTap: () {
                                   Get.back();
                                 },
-                                child: SvgPicture.asset(
-                                  icLeftArrow,
-                                  semanticsLabel: 'logo',
+                                child: Container(
+                                  height: 50,
+                                  padding: EdgeInsets.only(left: 10),
+                                  child: SvgPicture.asset(
+                                    icLeftArrow,
+                                    semanticsLabel: 'logo',
+                                  ),
                                 ),
                               ),
                               SizedBox(
@@ -86,7 +87,7 @@ class ContactUsView extends GetView<ContactUsController> {
                       SizedBox(
                         height: 40,
                       ),
-                      Padding(
+                     /* Padding(
                         padding: EdgeInsets.only(left: 30, right: 30, top: 10),
                         child: TextField(
                           decoration: InputDecoration(
@@ -99,7 +100,8 @@ class ContactUsView extends GetView<ContactUsController> {
                               labelStyle: TextStyle(color: Colors.black),
                               labelText: 'Name',
                               contentPadding: EdgeInsets.all(10),
-                              hintText: 'Ramon Doe'),
+                              //hintText: 'Ramon Doe'
+                          ),
                         ),
                       ),
                       Padding(
@@ -115,12 +117,14 @@ class ContactUsView extends GetView<ContactUsController> {
                               labelStyle: TextStyle(color: Colors.black),
                               labelText: 'Email',
                               contentPadding: EdgeInsets.all(10),
-                              hintText: 'last name'),
+                              //hintText: 'last name'
+                          ),
                         ),
                       ),
                       Padding(
                         padding: EdgeInsets.only(left: 30, right: 30, top: 20),
                         child: TextField(
+                          keyboardType: TextInputType.number,
                           decoration: InputDecoration(
                               border: OutlineInputBorder(),
                               focusedBorder: OutlineInputBorder(
@@ -131,12 +135,17 @@ class ContactUsView extends GetView<ContactUsController> {
                               labelStyle: TextStyle(color: Colors.black),
                               labelText: 'Mobile number',
                               contentPadding: EdgeInsets.all(10),
-                              hintText: '01234567890'),
+                              //hintText: '01234567890'
+                          ),
                         ),
                       ),
-                      Padding(
-                        padding: EdgeInsets.only(left: 30, right: 30, top: 20),
+                      */
+                      /*Container(
+                        height: 15 * 24,
+                        margin: EdgeInsets.only(left: 30, right: 30, top: 20),
                         child: TextField(
+                          keyboardType: TextInputType.multiline,
+                          maxLines: null,
                           decoration: InputDecoration(
                               border: OutlineInputBorder(),
                               focusedBorder: OutlineInputBorder(
@@ -147,9 +156,221 @@ class ContactUsView extends GetView<ContactUsController> {
                               labelStyle: TextStyle(color: Colors.black),
                               labelText: 'Message',
                               contentPadding: EdgeInsets.all(10),
-                              hintText: 'Lorem ipsum'),
+                              //hintText: 'Lorem ipsum'
+                            ),
                         ),
+                      ),*//*
+                      Container(
+                        margin: EdgeInsets.only(left: 30, right: 30, top: 20),
+                        height: 15 * 24,
+                        child: TextField(
+                          cursorColor: Colors.purple,
+                          maxLines: 15,
+                          decoration: InputDecoration(
+                            enabledBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(color: Colors.purple),
+                            ),
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(color: Colors.purple),
+                            ),
+                            focusColor: Colors.purple,
+                            hintText: "Message",
+                            fillColor: Colors.grey[300],
+                            filled: true,
+                          ),
+                        ),
+                      )*/
+
+
+
+                      Column(
+
+                        children: [
+
+                          SizedBox(
+                            height: 0,
+                          ),
+                          Align(
+                              alignment: Alignment.topLeft,
+                              child: Padding(
+                                  padding: const EdgeInsets.only(right: 10, left: 30, top: 10, bottom: 10),
+                                  child: Text(
+                                  'Fill the detail',
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold))
+                              )
+
+                          ),
+
+                          Container(
+                              width: MediaQuery.of(context).size.width,
+                              child: Padding(
+                                padding: const EdgeInsets.only(right: 10, left: 10, top: 0, bottom: 10),
+                                child: Column(
+                                  children: [
+                                    Align(
+                                      alignment: Alignment.centerLeft,
+                                      child: Padding(
+                                        padding: const EdgeInsets.only(left: 20,right: 10),
+                                        child: Text(
+                                          'Name',
+                                          style: TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.only(left: 20, right: 10),
+                                      child: TextField(
+                                        cursorColor: Colors.black,
+                                        decoration: InputDecoration(
+                                            enabledBorder: UnderlineInputBorder(
+                                              borderSide: BorderSide(color: Colors.black),
+                                            ),
+                                            focusedBorder: UnderlineInputBorder(
+                                              borderSide: BorderSide(color: Colors.purple),
+                                            ),
+                                            //hintText: 'Richard',
+                                            hintStyle: TextStyle(color: Colors.grey)),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )
+                          ),
+
+                          Container(
+                              width: MediaQuery.of(context).size.width,
+                              child: Padding(
+                                padding: const EdgeInsets.only(right: 10, left: 10, top: 10, bottom: 10),
+                                child: Column(
+                                  children: [
+                                    Align(
+                                      alignment: Alignment.centerLeft,
+                                      child: Padding(
+                                        padding: const EdgeInsets.only(left: 20,right: 10),
+                                        child: Text(
+                                          'Email',
+                                          style: TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.only(left: 20, right: 10),
+                                      child: TextField(
+                                        cursorColor: Colors.black,
+                                        decoration: InputDecoration(
+                                            enabledBorder: UnderlineInputBorder(
+                                              borderSide: BorderSide(color: Colors.black),
+                                            ),
+                                            focusedBorder: UnderlineInputBorder(
+                                              borderSide: BorderSide(color: Colors.purple),
+                                            ),
+                                            //hintText: 'Richard',
+                                            hintStyle: TextStyle(color: Colors.grey)),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )
+                          ),
+
+                          Container(
+                              width: MediaQuery.of(context).size.width,
+                              child: Padding(
+                                padding: const EdgeInsets.only(right: 10, left: 10, top: 10, bottom: 10),
+                                child: Column(
+                                  children: [
+                                    Align(
+                                      alignment: Alignment.centerLeft,
+                                      child: Padding(
+                                        padding: const EdgeInsets.only(left: 20,right: 10),
+                                        child: Text(
+                                          'Mobile Number',
+                                          style: TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.only(left: 20, right: 10),
+                                      child: TextField(
+                                        keyboardType: TextInputType.number,
+                                        cursorColor: Colors.black,
+                                        decoration: InputDecoration(
+                                            enabledBorder: UnderlineInputBorder(
+                                              borderSide: BorderSide(color: Colors.black),
+                                            ),
+                                            focusedBorder: UnderlineInputBorder(
+                                              borderSide: BorderSide(color: Colors.purple),
+                                            ),
+                                            //hintText: 'Richard',
+                                            hintStyle: TextStyle(color: Colors.grey)),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )
+                          ),
+
+                          Container(
+                              width: MediaQuery.of(context).size.width,
+                              child: Padding(
+                                padding: const EdgeInsets.only(right: 10, left: 10, top: 10, bottom: 10),
+                                child: Column(
+                                  children: [
+                                    Align(
+                                      alignment: Alignment.centerLeft,
+                                      child: Padding(
+                                        padding: const EdgeInsets.only(left: 20,right: 10),
+                                        child: Text(
+                                          'Message',
+                                          style: TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      margin: EdgeInsets.all(12),
+                                      height: 150,
+                                      child: TextField(
+                                        cursorColor: Colors.purple,
+                                        maxLines: 15,
+                                        decoration: InputDecoration(
+                                          enabledBorder: UnderlineInputBorder(
+                                            borderSide: BorderSide(color: Colors.black),
+                                          ),
+                                          focusedBorder: UnderlineInputBorder(
+                                            borderSide: BorderSide(color: Colors.purple),
+                                          ),
+                                          focusColor: Colors.purple,
+                                          hintText: "Reason",
+                                          fillColor: Colors.white,
+                                          filled: true,
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              )
+                          ),
+
+
+                        ],
                       ),
+
+
                     ],
                   ),
                 ),
@@ -157,7 +378,7 @@ class ContactUsView extends GetView<ContactUsController> {
               Positioned(
                 right: 0,left: 0,bottom: 0,
                 child: Padding(
-                  padding: EdgeInsets.only(bottom: 20),
+                  padding: EdgeInsets.only(bottom: 10),
                   child: Align(
                     alignment: Alignment.bottomCenter,
                     child: InkWell(

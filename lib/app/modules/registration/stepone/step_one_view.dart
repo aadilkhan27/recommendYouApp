@@ -109,11 +109,16 @@ class StepOneView extends GetView<StepOneController> {
                     SizedBox(
                       height: 10,
                     ),
-                    const Text(
-                      readPolicyMsg,
-                      style:
-                          TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
-                    ),
+                    InkWell(
+                      onTap: (){
+                        showAlertDialogPrivacyPolicy(context);
+                      },
+                      child: Text(
+                        readPolicyMsg,
+                        style:
+                        TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
+                      ),
+                      ),
                     SizedBox(
                       height: 40,
                     ),
@@ -269,7 +274,8 @@ class StepOneView extends GetView<StepOneController> {
                               margin: EdgeInsets.only(left: 10, right: 10),
                               child: TextButton(
                                   onPressed: () {
-                                    showAlertDialog(context);
+                                    //showAlertDialog(context);
+                                    Get.toNamed(Routes.signUpStepTwo);
                                   },
                                   child: Text('NEXT',
                                       style: TextStyle(
@@ -289,6 +295,8 @@ class StepOneView extends GetView<StepOneController> {
     );
   }
 }
+
+
 
 showAlertDialog(BuildContext context) {
   // set up the buttons
@@ -327,6 +335,51 @@ showAlertDialog(BuildContext context) {
     ],
   );
 
+  // show the dialog
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return alert;
+    },
+  );
+}
+
+showAlertDialogPrivacyPolicy(BuildContext context) {
+  // set up the buttons
+  Widget continueButton = TextButton(
+    child: Container(
+      height: 40,
+      width: 130,
+      decoration: BoxDecoration(
+          color: primaryDarkColor,
+          border: Border.all(color: primaryDarkColor),
+          borderRadius: const BorderRadius.all(Radius.circular(7))),
+      alignment: Alignment.center,
+      child: const Text(
+        'CONFIRM',
+        style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+      ),
+    ),
+    onPressed: () {
+      Navigator.of(context).pop();
+      //Get.toNamed(Routes.signUpStepOne);
+    },
+  );
+
+  // set up the AlertDialog
+  AlertDialog alert = AlertDialog(
+    title: Text(
+      "Privacy Info",
+      style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+    ),
+    content: Text(
+      dummyLoremIpsum,
+      style: TextStyle(color: Colors.black, fontSize: 12, height: 1.4),
+    ),
+    actions: [
+      continueButton,
+    ],
+  );
   // show the dialog
   showDialog(
     context: context,

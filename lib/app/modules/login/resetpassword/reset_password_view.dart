@@ -18,7 +18,7 @@ class ResetPasswordView extends GetView<ResetPasswordController>{
       child: Scaffold(
         resizeToAvoidBottomInset: true,
         backgroundColor: whiteColor,
-        body: SafeArea(
+        body: SingleChildScrollView(
           child: Stack(
             children: [
               Container(
@@ -27,37 +27,35 @@ class ResetPasswordView extends GetView<ResetPasswordController>{
                 child: Column(
                   children: [
                     Container(
-                      margin: EdgeInsets.only(top: 20),
-                      height: 40,
+                      margin: EdgeInsets.only(top: 50),
+                      height: 50,
                       width: MediaQuery.of(context).size.width,
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          SizedBox(
-                            height: 0,
-                            width: 10,
-                          ),
+
                           Container(
-                            margin: EdgeInsets.only(left: 20),
-                            child:  SvgPicture.asset(
-                              icLeftArrow,
+                            margin: EdgeInsets.only(left: 30, top: 20),
+                            child: InkWell(
+                              onTap: (){
+                                Get.back();
+                              },
+                              child:  SvgPicture.asset(
+                                icLeftArrow,
+                              ),
                             ),
                           ),
                         ],
                       ),
                     ),
-                    InkWell(
-                      onTap: (){
-                       Get.back();
-                      },
-                      child: Container(
-                        width: 60,
-                        height: 60,
-                        child: Image(
-                          image: AssetImage(bgSplash),
-                        ),
+                    Container(
+                      width: 60,
+                      height: 60,
+                      child: Image(
+                        image: AssetImage(bgSplash),
                       ),
                     ),
+
                     SizedBox(
                       height: 20,
                     ),
@@ -112,30 +110,45 @@ class ResetPasswordView extends GetView<ResetPasswordController>{
                       ),
                     ),
                     Spacer(),
-                    InkWell(
-                      onTap: () {
-                        //do something
-                        Get.toNamed(Routes.signInView);
-                      },
-                      child: Container(
-                        margin: const EdgeInsets.only(left: 35, right: 35, bottom: 100),
-                        height: 50,
-                        width: MediaQuery.of(context).size.width,
-                        decoration: BoxDecoration(
-                            color: primaryDarkColor,
-                            border: Border.all(color: primaryDarkColor),
-                            borderRadius:
-                            const BorderRadius.all(Radius.circular(10))),
-                        alignment: Alignment.center,
-                        child: const Text(
-                          'RESET',
-                          style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                    ),
 
                   ],
+                ),
+              ),
+              Positioned(
+                right: 0,left: 0,bottom: 0,
+                child: Padding(
+                  padding: EdgeInsets.only(bottom: 40, left: 10, right: 10),
+                  child: Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Container(
+                      child: Column(
+                        children: [
+                          InkWell(
+                            onTap: () {
+//do something
+                              Get.toNamed(Routes.signInView);
+                            },
+                            child: Container(
+                              margin: const EdgeInsets.only(left: 35, right: 35, bottom: 100),
+                              height: 50,
+                              width: MediaQuery.of(context).size.width,
+                              decoration: BoxDecoration(
+                                  color: primaryDarkColor,
+                                  border: Border.all(color: primaryDarkColor),
+                                  borderRadius:
+                                  const BorderRadius.all(Radius.circular(10))),
+                              alignment: Alignment.center,
+                              child: const Text(
+                                'RESET',
+                                style: TextStyle(
+                                    color: Colors.white, fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                 ),
               )
             ],
@@ -146,3 +159,4 @@ class ResetPasswordView extends GetView<ResetPasswordController>{
   }
 
 }
+

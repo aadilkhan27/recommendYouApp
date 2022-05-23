@@ -31,16 +31,17 @@ class ChangePasswordView extends GetView<ChangePasswordController> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          SizedBox(
-                            width: 10,
-                          ),
                           InkWell(
                             onTap: () {
                               Get.back();
                             },
-                            child: SvgPicture.asset(
-                              icLeftArrow,
-                              semanticsLabel: 'logo',
+                            child: Container(
+                              height: 50,
+                              padding: EdgeInsets.only(left: 10),
+                              child: SvgPicture.asset(
+                                icLeftArrow,
+                                semanticsLabel: 'logo',
+                              ),
                             ),
                           ),
                           SizedBox(

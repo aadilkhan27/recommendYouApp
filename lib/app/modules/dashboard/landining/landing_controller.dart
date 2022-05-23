@@ -7,55 +7,82 @@ import 'package:recommend_you/app/core/values/keys.dart';
 
 class LandingController extends GetxController
     with GetSingleTickerProviderStateMixin {
+
   late TabController tabController;
   String? selectedItemValue="";
 
 
 
 
-  final List<Tab> referralTabs = <Tab>[
+ /* final List<Tab> referralTabs = <Tab>[
+
     Tab(
-      child: SvgPicture.asset(
-        icHome,
-        color: primaryLightColor,
-        height: 20,
-        width: 20,
-      ),
+      child:
+      SvgPicture.asset(bottomNotification, color: primaryLightColor, height: 20, width: 20,),    *//*SvgPicture.asset(bottomHome, color: primaryLightColor, height: 20, width: 20,),*//*
     ),
     Tab(
         child: SvgPicture.asset(
-          icHome,
+          bottomNotification,
       color: primaryLightColor,
       height: 20,
       width: 20,
     )),
     Tab(
         child: SvgPicture.asset(
-      icAdd,
+          bottomAdd,
       color: primaryLightColor,
       height: 20,
       width: 20,
     )),
     Tab(
         child: SvgPicture.asset(
-      icSearch,
+      bottomSearch,
       color: primaryLightColor,
       height: 20,
       width: 20,
     )),
     Tab(
         child: SvgPicture.asset(
-      icMoreHorizontal,
+          bottomMenu,
       color: primaryLightColor,
       height: 20,
       width: 20,
     )),
-  ];
+  ];*/
+
+  /*final List<Tab> refferredTab = <Tab>[
+    Tab(
+      child:  tabController.index == 0?
+      SvgPicture.asset(bottomHomeFill,  height: 20, width: 20,):
+      SvgPicture.asset(bottomHome,  height: 20, width: 20,),
+    ),
+    Tab(
+      child:  tabController.index == 1?
+      SvgPicture.asset(bottomNotificationFill, height: 20, width: 20,):
+      SvgPicture.asset(bottomNotification,  height: 20, width: 20,),
+    ),
+    Tab(
+      child:  tabController.index == 2?
+      SvgPicture.asset(bottomAddFill,  height: 20, width: 20,):
+      SvgPicture.asset(bottomAdd, height: 20, width: 20,),
+    ),
+    Tab(
+      child:  tabController.index == 3?
+      SvgPicture.asset(bottomSearchFill,  height: 20, width: 20,):
+      SvgPicture.asset(bottomSearch,  height: 20, width: 20,),
+    ),
+    Tab(
+      child:  tabController.index == 4?
+      SvgPicture.asset(bottomMenu,  height: 20, width: 20,):
+      SvgPicture.asset(bottomMenu,  height: 20, width: 20,),
+    )
+  ];*/
 
   @override
   void onInit() {
     super.onInit();
-    tabController = TabController(vsync: this, length: referralTabs.length);
+    tabController = TabController(vsync: this, length: 5);
+
   }
 
   @override
@@ -65,3 +92,4 @@ class LandingController extends GetxController
   }
 
 }
+

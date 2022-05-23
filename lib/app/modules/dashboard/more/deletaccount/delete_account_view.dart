@@ -43,16 +43,18 @@ class DeleteAccountView extends GetView<ContactUsController> {
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-                                  SizedBox(
-                                    width: 10,
-                                  ),
                                   InkWell(
-                                    child: SvgPicture.asset(
-                                      icLeftArrow,
-                                    ),
                                     onTap: () {
                                       Get.back();
                                     },
+                                    child: Container(
+                                      height: 50,
+                                      padding: EdgeInsets.only(left: 10),
+                                      child: SvgPicture.asset(
+                                        icLeftArrow,
+                                        semanticsLabel: 'logo',
+                                      ),
+                                    ),
                                   ),
                                   SizedBox(
                                     width: 20,
@@ -125,18 +127,49 @@ class DeleteAccountView extends GetView<ContactUsController> {
                                   alignment: Alignment.topLeft,
                                 ),
                               ),
-                              Container(
+                             /* Container(
                                 margin: EdgeInsets.all(12),
                                 height: 15 * 24,
                                 child: TextField(
-                                  maxLines: 15,
+                                  cursorColor: Colors.purple,
+                                  keyboardType: TextInputType.multiline,
+                                  maxLines: null,
                                   decoration: InputDecoration(
+                                    enabledBorder: UnderlineInputBorder(
+                                      borderSide: BorderSide(color: Colors.purple),
+                                    ),
+                                    focusedBorder: UnderlineInputBorder(
+                                      borderSide: BorderSide(color: Colors.purple),
+                                    ),
+                                    focusColor: Colors.purple,
+
                                     hintText: "Enter a message",
                                     fillColor: Colors.grey[300],
                                     filled: true,
                                   ),
                                 ),
-                              ),
+                              ),*/
+
+                            Container(
+                                margin: EdgeInsets.all(12),
+                                height: 15 * 24,
+                                child: TextField(
+                                  cursorColor: Colors.purple,
+                                  maxLines: 15,
+                                  decoration: InputDecoration(
+                                      enabledBorder: UnderlineInputBorder(
+                                        borderSide: BorderSide(color: Colors.purple),
+                                      ),
+                                      focusedBorder: UnderlineInputBorder(
+                                        borderSide: BorderSide(color: Colors.purple),
+                                      ),
+                                      focusColor: Colors.purple,
+                                    hintText: "Enter a message",
+                                    fillColor: Colors.grey[300],
+                                    filled: true,
+                                  ),
+                                ),
+                            )
 
                             ]),
                           )
@@ -149,7 +182,7 @@ class DeleteAccountView extends GetView<ContactUsController> {
               Positioned(
                 right: 0,
                 left: 0,
-                bottom: 0,
+                bottom: 10,
                 child: Align(
                   alignment: Alignment.bottomRight,
                   child: InkWell(

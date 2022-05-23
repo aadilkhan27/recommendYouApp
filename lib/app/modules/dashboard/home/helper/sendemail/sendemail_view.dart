@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:recommend_you/app/modules/dashboard/home/helper/sendemail/sendemail_controller.dart';
+import 'package:recommend_you/app/modules/dashboard/landining/landing_view.dart';
 import 'package:recommend_you/app/modules/dashboard/more/changecontactdetails/change_contact_controller.dart';
 
 import '../../../../../core/values/colors.dart';
@@ -51,21 +52,18 @@ class SendEmailView extends GetView<SendEmailController>{
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            SizedBox(
-                              width: 10,
-                            ),
 
                             InkWell(
-                              child:  Padding(
-                                padding: const EdgeInsets.only(left: 8.0),
+                              onTap: () {
+                                Get.back();
+                              },
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 15.0),
                                 child: Text(
                                   "Cancel",
                                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                                 ),
                               ),
-                              onTap: () {
-                                Get.back();
-                              },
                             ),
                             Spacer(),
                             InkWell(
@@ -92,6 +90,7 @@ class SendEmailView extends GetView<SendEmailController>{
                       ),
 
 
+
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
@@ -112,7 +111,7 @@ class SendEmailView extends GetView<SendEmailController>{
                                         Text(
                                           'From : Arash Dajbani',
                                           style: TextStyle(
-                                            fontSize: 14,
+                                            fontSize: 16,
                                           ),
                                         ),
                                         SizedBox(
@@ -121,7 +120,7 @@ class SendEmailView extends GetView<SendEmailController>{
                                         Text(
                                           'Email : arash.dajbani@gmail.com',
                                           style: TextStyle(
-                                            fontSize: 14,
+                                            fontSize: 16,
                                           ),
                                         ),
                                       ]
@@ -156,7 +155,7 @@ class SendEmailView extends GetView<SendEmailController>{
                                   child: Text(
                                     'To : Thomas Dobos',
                                     style: TextStyle(
-                                      fontSize: 14,
+                                      fontSize: 16,
                                     ),
                                   ),
                                 ),
@@ -183,7 +182,7 @@ class SendEmailView extends GetView<SendEmailController>{
 
 
 
-                      Container(
+                    /*  Container(
                         height: 30,
                         width: MediaQuery.of(context).size.width,
 
@@ -246,7 +245,91 @@ class SendEmailView extends GetView<SendEmailController>{
                             selectedValue = value.toString();
                           },
                         ),
+                      ),*/
+
+                      Container(
+                        height: 30,
+                        width: MediaQuery.of(context).size.width,
+                        //padding: EdgeInsets.only(left: 2, right: 2),
+                        // margin: EdgeInsets.only(right: 15, left: 15),
+                        child: DropdownButtonFormField2(
+                          decoration: InputDecoration(
+                            isDense: true,
+                            contentPadding: EdgeInsets.zero,
+                            enabledBorder: const OutlineInputBorder(
+                              // width: 0.0 produces a thin "hairline" border
+                              borderSide: const BorderSide(color: Colors.white, width: 0.0),
+                            ),
+                            focusedBorder: const OutlineInputBorder(
+                              // width: 0.0 produces a thin "hairline" border
+                              borderSide: const BorderSide(color: Colors.white, width: 0.0),
+                            ),
+                            border: OutlineInputBorder(
+                              borderSide: const BorderSide(color: Colors.black, width: 0.0),
+                              borderRadius: BorderRadius.circular(0),
+                            ),
+                          ),
+                          isExpanded: true,
+                          hint: RichText(
+                            text: TextSpan(
+                              children: [
+                                TextSpan(
+                                  text: 'Recommend',
+                                  style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                      color: primaryDarkColor),
+                                ),
+                                TextSpan(
+                                  text: 'You',
+                                  style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                      color: primaryLightColor),
+                                ),
+                              ],
+                            ),
+                          ),
+
+
+                          icon: SvgPicture.asset(icDownArrow),
+                          iconSize: 30,
+                          buttonHeight: 60,
+                          iconEnabledColor: Colors.white,
+                          selectedItemHighlightColor:
+                          primaryLightColor,
+
+                          buttonPadding: const EdgeInsets.only(left: 15, right: 20),
+                          dropdownDecoration: BoxDecoration(
+                              borderRadius:
+                              BorderRadius.circular(5),
+                              color: veryLightWhite),
+                          items: spinnerItems
+                              .map((item) =>
+                              DropdownMenuItem<String>(
+                                value: item,
+                                child: Text(
+                                  item,
+                                  style: const TextStyle(
+                                      fontSize: 14,
+                                      color: Colors.black),
+                                ),
+                              ))
+                              .toList(),
+                          validator: (value) {
+                            if (value == null) {
+                              return 'RecommendYou';
+                            }
+                          },
+                          onChanged: (value) {
+                            //Do something when changing the item if you want.
+                          },
+                          onSaved: (value) {
+                            selectedValue = value.toString();
+                          },
+                        ),
                       ),
+
                       SizedBox(
                         height: 10,
                       ),
@@ -258,12 +341,14 @@ class SendEmailView extends GetView<SendEmailController>{
                         height: 0,
                       ),
                       Container(
+                        height: 150,
+                        width: MediaQuery.of(context).size.width,
                         margin: EdgeInsets.only(right: 12, left: 12, ),
-                        height: 6* 24,
                         child: TextField(
+                          keyboardType: TextInputType.multiline,
+                          maxLines: null,
                           cursorColor: Colors.black,
                           style: TextStyle(fontSize: 16, color: Colors.black, height: 1.4),
-                          maxLines: 15,
                           decoration: InputDecoration(
                             enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(color: Colors.white),
@@ -271,8 +356,35 @@ class SendEmailView extends GetView<SendEmailController>{
                             focusedBorder: UnderlineInputBorder(
                               borderSide: BorderSide(color: Colors.white),
                             ),
-                            hintText: "Write a message here.....",
-                            hintStyle: TextStyle(color: Colors.black),
+                            hintText: "How can I help you?",
+                            hintStyle: TextStyle(color: Colors.grey),
+                            filled: false,
+                          ),
+                        ),
+                      ),
+                      Divider(
+                        color: Colors.black,
+                        height: 1,
+                      ),
+
+                      Container(
+                        height: 150,
+                        width: MediaQuery.of(context).size.width,
+                        margin: EdgeInsets.only(right: 12, left: 12, ),
+                        child: TextField(
+                          keyboardType: TextInputType.multiline,
+                          maxLines: null,
+                          cursorColor: Colors.black,
+                          style: TextStyle(fontSize: 16, color: Colors.black, height: 1.4),
+                          decoration: InputDecoration(
+                            enabledBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white),
+                            ),
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white),
+                            ),
+                            hintText: "What are something you like or don't like?",
+                            hintStyle: TextStyle(color: Colors.grey),
                             filled: false,
                           ),
                         ),
@@ -413,6 +525,8 @@ class SendEmailView extends GetView<SendEmailController>{
       ),
     );
   }
+
+
   showAlertDialog(BuildContext context) {
     // set up the buttons
     Widget continueButton = TextButton(
@@ -431,7 +545,11 @@ class SendEmailView extends GetView<SendEmailController>{
       ),
       onPressed: () {
         Navigator.of(context).pop();
-        Get.toNamed(Routes.landing);
+        //Get.toNamed(Routes.landing);
+        Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+                builder: (builder) => LandingView()));
       },
     );
 

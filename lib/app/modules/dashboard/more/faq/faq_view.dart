@@ -32,16 +32,18 @@ class FaqView extends GetView<FaqController> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        SizedBox(
-                          width: 10,
-                        ),
                         InkWell(
-                          child: SvgPicture.asset(
-                            icLeftArrow,
-                          ),
                           onTap: () {
                             Get.back();
                           },
+                          child: Container(
+                            height: 50,
+                            padding: EdgeInsets.only(left: 10),
+                            child: SvgPicture.asset(
+                              icLeftArrow,
+                              semanticsLabel: 'logo',
+                            ),
+                          ),
                         ),
                         SizedBox(
                           width: 20,

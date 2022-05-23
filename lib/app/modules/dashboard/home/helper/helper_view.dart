@@ -30,12 +30,12 @@ class HelperView extends GetView<ChangeContactController> {
 
   static List<HelperModel> helperList = <HelperModel>[
 
-    HelperModel(userImage: profileImage1, itemSelect: false),
+    HelperModel(userImage: profileImage1, itemSelect: true),
     HelperModel(userImage: profileImage2, itemSelect: false),
     HelperModel(userImage: profileImage3, itemSelect: true),
-    HelperModel(userImage: profileImage4, itemSelect: false),
+    HelperModel(userImage: profileImage4, itemSelect: true),
     HelperModel(userImage: profileImage5, itemSelect: false),
-    HelperModel(userImage: profileImage1, itemSelect: false),
+    HelperModel(userImage: profileImage1, itemSelect: true),
     HelperModel(userImage: profileImage2, itemSelect: false),
     HelperModel(userImage: profileImage3, itemSelect: false),
     HelperModel(userImage: profileImage4, itemSelect: false),
@@ -69,22 +69,23 @@ class HelperView extends GetView<ChangeContactController> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            SizedBox(
-                              width: 10,
-                            ),
                             InkWell(
                               onTap: () {
                                 Get.back();
                               },
-                              child: SvgPicture.asset(
-                                icLeftArrow,
-                                semanticsLabel: 'logo',
+                              child: Container(
+                                height: 50,
+                                padding: EdgeInsets.only(left: 10),
+                                child: SvgPicture.asset(
+                                  icLeftArrow,
+                                  semanticsLabel: 'logo',
+                                ),
                               ),
                             ),
                             SizedBox(
                               width: 20,
                             ),
-                            Text('Helper'),
+                            Text('Ask an expert fot recomendations'),
                             Spacer(),
                             InkWell(
                               onTap: () {
@@ -93,11 +94,15 @@ class HelperView extends GetView<ChangeContactController> {
                                     MaterialPageRoute(
                                         builder: (builder) => SendEmailView()));
                               },
-                              child: Text(
-                                "Send",
-                                style: TextStyle(
-                                    fontSize: 16, fontWeight: FontWeight.bold),
+                              child: Container(
+                                height: 50,
+                                padding: EdgeInsets.only(left: 10),
+                                child: SvgPicture.asset(
+                                  nextArrows,
+                                  semanticsLabel: 'logo',
+                                ),
                               ),
+
                             ),
                             SizedBox(
                               width: 10,
@@ -131,7 +136,6 @@ class HelperView extends GetView<ChangeContactController> {
                                           value: helperList[index].itemSelect,
                                           onChanged: (bool? value) {
                                             helperList[index].itemSelect = value!;
-
                                           },
 
                                         ),

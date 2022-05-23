@@ -43,6 +43,7 @@ const icVoice = 'assets/icons/ic_voice.svg';
 const icLeftArrow = 'assets/icons/ic_left_arrow.svg';
 const icBell = 'assets/icons/ic_bell_icon.svg';
 const icEdit = 'assets/icons/ic_edit.svg';
+const nextArrows = 'assets/icons/nextArrow.svg';
 
 const image1='assets/images/images1.jpg';
 const image2='assets/images/images2.jpg';
@@ -95,3 +96,14 @@ const chatHome='assets/profileImage/chat.png';
 const faqbanner='assets/images/faqbanner.png';
 
 
+const bottomHome='assets/bottomIcons/home.svg';
+const bottomAdd='assets/bottomIcons/add.svg';
+const bottomMenu='assets/bottomIcons/Menu.svg';
+const bottomNotification='assets/bottomIcons/Notification.svg';
+const bottomSearch='assets/bottomIcons/search.svg';
+
+
+const bottomSearchFill='assets/bottomIcons/search_fill.svg';
+const bottomAddFill='assets/bottomIcons/add_fill.svg';
+const bottomNotificationFill='assets/bottomIcons/notification_fill.svg';
+const bottomHomeFill='assets/bottomIcons/home_fill.svg';

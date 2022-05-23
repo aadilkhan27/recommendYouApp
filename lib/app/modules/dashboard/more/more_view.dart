@@ -1,3 +1,6 @@
+
+
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -14,6 +17,8 @@ import 'package:recommend_you/app/modules/dashboard/more/settingpreference/prefe
 import 'package:recommend_you/app/modules/dashboard/more/termscondition/terms_condition_view.dart';
 import 'package:recommend_you/app/modules/dashboard/more/termscondition/termscondition_binding.dart';
 
+import '../../../core/values/colors.dart';
+import '../../../core/values/strings.dart';
 import '../../../routes/pages.dart';
 import 'deletaccount/delete_account_view.dart';
 import 'faq/faq_view.dart';
@@ -43,7 +48,7 @@ class MoreView extends GetView<MoreController> {
                       SizedBox(
                         width: 10,
                       ),
-                     /* SvgPicture.asset(
+                      /* SvgPicture.asset(
                         icLeftArrow,
                         semanticsLabel: 'logo',
                       ),*/
@@ -65,7 +70,7 @@ class MoreView extends GetView<MoreController> {
               Expanded(
                   child: SingleChildScrollView(
                       child: Column(children: [
-                /*Container(
+                        /*Container(
                   padding: EdgeInsets.only(left: 15.0, right: 15.0),
                   child: ListTile(
                       leading: Icon(Icons.privacy_tip_outlined),
@@ -223,68 +228,68 @@ class MoreView extends GetView<MoreController> {
                           padding: EdgeInsets.only(left: 15.0, right: 15.0),
                           child: ListTile(
                               leading: Image(image: AssetImage(changeLanguage), width: 20, height: 20,),
-                            title: Text('Language Change'),
-                            onTap: () {
-                              //Navigator.push(context, MaterialPageRoute(builder: (builder) => ChangeLangugaeView()));
-                              showModalBottomSheet(
-                                context: context,
-                                builder: (context) {
-                                  return Wrap(
-                                    children: [
-                                      ListTile(
-                                        title: Text(
+                              title: Text('Language Change'),
+                              onTap: () {
+                                //Navigator.push(context, MaterialPageRoute(builder: (builder) => ChangeLangugaeView()));
+                                showModalBottomSheet(
+                                  context: context,
+                                  builder: (context) {
+                                    return Wrap(
+                                      children: [
+                                        ListTile(
+                                          title: Text(
                                             'English',
-                                    style: TextStyle(fontSize: 16),),
-                                      ),
-                                      ListTile(
-                                        title:
-                                        Text('French',
-                                        style: TextStyle(fontSize: 16),),
-                                      ),
+                                            style: TextStyle(fontSize: 16),),
+                                        ),
+                                        ListTile(
+                                          title:
+                                          Text('French',
+                                            style: TextStyle(fontSize: 16),),
+                                        ),
 
-                                    ],
-                                  );
-                                },
-                              );
-                            }
+                                      ],
+                                    );
+                                  },
+                                );
+                              }
+                          ),
                         ),
+                        Container(
+                          padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                          child: ListTile(
+                            leading: Image(image: AssetImage(contactUS), width: 20, height: 20,),
+                            title: Text('Change contact details'),
+                            onTap: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (builder) => ChangeContactView()));
+                            },
+                          ),
                         ),
-                Container(
-                  padding: EdgeInsets.only(left: 15.0, right: 15.0),
-                  child: ListTile(
-                    leading: Image(image: AssetImage(contactUS), width: 20, height: 20,),
-                    title: Text('Change contact details'),
-                    onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (builder) => ChangeContactView()));
-                    },
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.only(left: 15.0, right: 15.0),
-                  child: ListTile(
-                    leading: Image(image: AssetImage(changePassword), width: 20, height: 20,),
-                    title: Text('Change Password'),
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (builder) => ChangePasswordView()));
-                    },
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.only(left: 15.0, right: 15.0),
-                  child: ListTile(
-                    leading: Image(image: AssetImage(deleteAcc), width: 20, height: 20,),
-                    title: Text('Delete Account'),
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (builder) => DeleteAccountView()));
-                    },
-                    //TODO
-                    /*showModalBottomSheet<dynamic>(
+                        Container(
+                          padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                          child: ListTile(
+                            leading: Image(image: AssetImage(changePassword), width: 20, height: 20,),
+                            title: Text('Change Password'),
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (builder) => ChangePasswordView()));
+                            },
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                          child: ListTile(
+                            leading: Image(image: AssetImage(deleteAcc), width: 20, height: 20,),
+                            title: Text('Delete Account'),
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (builder) => DeleteAccountView()));
+                            },
+                            //TODO
+                            /*showModalBottomSheet<dynamic>(
                       isScrollControlled: true,
                         context: context,
                         builder: (context) {
@@ -378,29 +383,29 @@ class MoreView extends GetView<MoreController> {
                           );
                         });
                   },*/
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.only(left: 15.0, right: 15.0),
-                  child: ListTile(
-                    leading: Image(image: AssetImage(termsConditions), width: 20, height: 20,),
-                    title: Text('Terms and Conditions'),
-                    onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (builder) => TermsConditionView()));
-                    },
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.only(left: 15.0, right: 15.0),
-                  child: ListTile(
-                    leading: Image(image: AssetImage(privacy), width: 20, height: 20,),
-                    title: Text('Privacy Policy'),
-                    onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (builder) => PrivacyPolicyView()));
-                    },
-                  ),
-                ),
-                /*Container(
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                          child: ListTile(
+                            leading: Image(image: AssetImage(termsConditions), width: 20, height: 20,),
+                            title: Text('Terms and Conditions'),
+                            onTap: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (builder) => TermsConditionView()));
+                            },
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                          child: ListTile(
+                            leading: Image(image: AssetImage(privacy), width: 20, height: 20,),
+                            title: Text('Privacy Policy'),
+                            onTap: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (builder) => PrivacyPolicyView()));
+                            },
+                          ),
+                        ),
+                        /*Container(
                   padding: EdgeInsets.only(left: 15.0, right: 15.0),
                   child: ListTile(
                     leading: Icon(Icons.lock),
@@ -411,16 +416,16 @@ class MoreView extends GetView<MoreController> {
                     },
                   ),
                 ),*/
-                Container(
-                  padding: EdgeInsets.only(left: 15.0, right: 15.0),
-                  child: ListTile(
-                    leading: Image(image: AssetImage(contactUS), width: 20, height: 20,),
-                    title: Text('Contact Us'),
-                    onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (builder) => ContactUsView()));
-                    },
-                  ),
-                ),
+                        Container(
+                          padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                          child: ListTile(
+                            leading: Image(image: AssetImage(contactUS), width: 20, height: 20,),
+                            title: Text('Contact Us'),
+                            onTap: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (builder) => ContactUsView()));
+                            },
+                          ),
+                        ),
                         Container(
                           padding: EdgeInsets.only(left: 15.0, right: 15.0),
                           child: ListTile(
@@ -434,23 +439,109 @@ class MoreView extends GetView<MoreController> {
                         Container(
                           padding: EdgeInsets.only(left: 15.0, right: 15.0),
                           child: ListTile(
-                            leading:Image(image: AssetImage(logout), width: 20, height: 20,),
-                            title: Text('Log Out'),
+                            leading: Image(image: AssetImage(faqIcon), width: 20, height: 20,),
+                            title: Text('FAQ'),
                             onTap: () {
-                             // Navigator.push(context, MaterialPageRoute(builder: (builder) => ContactUsView()));
+                              showAlertDialog(context);
+                             // Navigator.push(context, MaterialPageRoute(builder: (builder) => FaqView()));
                             },
                           ),
                         ),
 
 
 
-              ])))
+                      ])))
             ],
           ),
         ),
       ),
     );
   }
+}
+
+
+showAlertDialog(BuildContext context) {
+  // set up the buttons
+  Widget cancelButton = TextButton(
+    child: Row(
+      children: [
+        Container(
+          height: 40,
+          width: 60,
+          decoration: BoxDecoration(
+              color: primaryDarkColor,
+              border: Border.all(color: primaryDarkColor),
+              borderRadius: const BorderRadius.all(Radius.circular(7))),
+          alignment: Alignment.center,
+          child: const Text(
+            'Cancel',
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold ),
+          ),
+        ),
+      ],
+    ),
+    onPressed: () {
+      Navigator.of(context).pop();
+      //Get.toNamed(Routes.signUpStepTwo);
+    },
+  );
+
+  Widget confirmButton = TextButton(
+    child: Row(
+      children: [
+        Container(
+          height: 40,
+          width: 60,
+          decoration: BoxDecoration(
+              color: primaryDarkColor,
+              border: Border.all(color: primaryDarkColor),
+              borderRadius: const BorderRadius.all(Radius.circular(7))),
+          alignment: Alignment.center,
+          child: const Text(
+            'Yes',
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold ),
+          ),
+        ),
+      ],
+    ),
+    onPressed: () {
+      Navigator.of(context).pop();
+
+      //Get.toNamed(Routes.signUpStepTwo);
+    },
+  );
+
+  // set up the AlertDialog
+  AlertDialog alert = AlertDialog(
+    title: Text(
+      "Log Out?",
+      style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+    ),
+    content: Text(
+      "Do you really want to logout from app",
+      style: TextStyle(color: Colors.black, fontSize: 14, height: 1.5),
+    ),
+    actions: [
+      Container(
+        child: Row(
+          children: [
+            cancelButton,
+            Spacer(),
+            confirmButton,
+          ],
+        ),
+      ),
+
+    ],
+  );
+
+  // show the dialog
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return alert;
+    },
+  );
 }
 
 /*

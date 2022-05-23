@@ -18,7 +18,7 @@ class OtpVerificationView extends GetView<OtpVerificationController> {
       child: Scaffold(
         resizeToAvoidBottomInset: true,
         backgroundColor: whiteColor,
-    body: SafeArea(
+    body: SingleChildScrollView(
         child: Stack(
           children: [
             Container(
@@ -27,18 +27,15 @@ class OtpVerificationView extends GetView<OtpVerificationController> {
               child: Column(
                 children: [
                   Container(
-                    margin: EdgeInsets.only(top: 20),
-                    height: 40,
+                    margin: EdgeInsets.only(top: 50),
+                    height: 50,
                     width: MediaQuery.of(context).size.width,
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(
-                          height: 0,
-                          width: 10,
-                        ),
+
                         Container(
-                          margin: EdgeInsets.only(left: 20),
+                          margin: EdgeInsets.only(left: 30, top: 20),
                           child: InkWell(
                             onTap: (){
                               Get.back();
@@ -115,7 +112,145 @@ class OtpVerificationView extends GetView<OtpVerificationController> {
                         Expanded(
                           child: Container(
                             margin: EdgeInsets.only(right: 10),
+                            child: TextFormField(
+                                textInputAction: TextInputAction.next,
+                                cursorColor: Colors.black,
+                                textAlign: TextAlign.center,
+                                keyboardType: TextInputType.number,
+                                maxLength: 1,
+                                decoration: InputDecoration(
+                                  counterText: "",
+                                  border: OutlineInputBorder(),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: const BorderSide(
+                                        color: primaryDarkColor, width: 1.0),
+                                    borderRadius: BorderRadius.circular(5.0),
+                                  ),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(5.0),
+                                    borderSide: BorderSide(
+                                      color: primaryDarkColor,
+                                      width: 1.0,
+                                    ),
+                                  ),
+                                  contentPadding: EdgeInsets.all(10),
+
+                                ),
+                                onChanged: (value) {
+                                  if (value.length == 1) {
+                                    FocusScope.of(context).nextFocus();
+                                  }
+                                }
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: Container(
+                            margin: EdgeInsets.only(right: 10),
                             child: TextField(
+                                textInputAction: TextInputAction.next,
+                                cursorColor: Colors.black,
+                                textAlign: TextAlign.center,
+                                keyboardType: TextInputType.number,
+                                maxLength: 1,
+                                decoration: InputDecoration(
+                                  counterText: "",
+                                  border: OutlineInputBorder(),
+                                  contentPadding: EdgeInsets.all(10),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: const BorderSide(
+                                        color: primaryDarkColor, width: 1.0),
+                                    borderRadius: BorderRadius.circular(5.0),
+                                  ),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(5.0),
+                                    borderSide: BorderSide(
+                                      color: primaryDarkColor,
+                                      width: 1.0,
+                                    ),
+                                  ),
+                                ),
+                                onChanged: (value) {
+                                  if (value.length == 1) {
+                                    FocusScope.of(context).nextFocus();
+                                  }
+                                }
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: Container(
+                            margin: EdgeInsets.only(right: 10),
+                            child: TextField(
+                                textInputAction: TextInputAction.next,
+                                cursorColor: Colors.black,
+                                textAlign: TextAlign.center,
+                                keyboardType: TextInputType.number,
+                                maxLength: 1,
+                                decoration: InputDecoration(
+                                  counterText: "",
+                                  border: OutlineInputBorder(),
+                                  contentPadding: EdgeInsets.all(10),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: const BorderSide(
+                                        color: primaryDarkColor, width: 1.0),
+                                    borderRadius: BorderRadius.circular(5.0),
+                                  ),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(5.0),
+                                    borderSide: BorderSide(
+                                      color: primaryDarkColor,
+                                      width: 1.0,
+                                    ),
+                                  ),
+                                ),
+                                onChanged: (value) {
+                                  if (value.length == 1) {
+                                    FocusScope.of(context).nextFocus();
+                                  }
+                                }
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: Container(
+                            margin: EdgeInsets.only(right: 10),
+                            child: TextField(
+                                textInputAction: TextInputAction.next,
+                                cursorColor: Colors.black,
+                                textAlign: TextAlign.center,
+                                keyboardType: TextInputType.number,
+                                maxLength: 1,
+                                decoration: InputDecoration(
+                                  counterText: "",
+                                  border: OutlineInputBorder(),
+                                  contentPadding: EdgeInsets.all(10),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: const BorderSide(
+                                        color: primaryDarkColor, width: 1.0),
+                                    borderRadius: BorderRadius.circular(5.0),
+                                  ),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(5.0),
+                                    borderSide: BorderSide(
+                                      color: primaryDarkColor,
+                                      width: 1.0,
+                                    ),
+                                  ),
+                                ),
+                                onChanged: (value) {
+                                  if (value.length == 1) {
+                                    FocusScope.of(context).nextFocus();
+                                  }
+                                }
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: Container(
+                            margin: EdgeInsets.only(right: 10),
+                            child: TextField(
+                              textInputAction: TextInputAction.done,
                               cursorColor: Colors.black,
                               textAlign: TextAlign.center,
                               keyboardType: TextInputType.number,
@@ -129,117 +264,6 @@ class OtpVerificationView extends GetView<OtpVerificationController> {
                                       color: primaryDarkColor, width: 1.0),
                                   borderRadius: BorderRadius.circular(5.0),
                                 ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(5.0),
-                                  borderSide: BorderSide(
-                                    color: primaryDarkColor,
-                                    width: 1.0,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                          child: Container(
-                            margin: EdgeInsets.only(right: 10),
-                            child: TextField(
-                              cursorColor: Colors.black,
-                              textAlign: TextAlign.center,
-                              keyboardType: TextInputType.number,
-                              maxLength: 1,
-                              decoration: InputDecoration(
-                                counterText: "",
-                                border: OutlineInputBorder(),
-                                contentPadding: EdgeInsets.all(10),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
-                                      color: primaryDarkColor, width: 1.0),
-                                  borderRadius: BorderRadius.circular(5.0),
-                                ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(5.0),
-                                  borderSide: BorderSide(
-                                    color: primaryDarkColor,
-                                    width: 1.0,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                          child: Container(
-                            margin: EdgeInsets.only(right: 10),
-                            child: TextField(
-                              cursorColor: Colors.black,
-                              textAlign: TextAlign.center,
-                              keyboardType: TextInputType.number,
-                              maxLength: 1,
-                              decoration: InputDecoration(
-                                counterText: "",
-                                border: OutlineInputBorder(),
-                                contentPadding: EdgeInsets.all(10),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
-                                      color: primaryDarkColor, width: 1.0),
-                                  borderRadius: BorderRadius.circular(5.0),
-                                ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(5.0),
-                                  borderSide: BorderSide(
-                                    color: primaryDarkColor,
-                                    width: 1.0,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                          child: Container(
-                            margin: EdgeInsets.only(right: 10),
-                            child: TextField(
-                              cursorColor: Colors.black,
-                              textAlign: TextAlign.center,
-                              keyboardType: TextInputType.number,
-                              maxLength: 1,
-                              decoration: InputDecoration(
-                                counterText: "",
-                                border: OutlineInputBorder(),
-                                contentPadding: EdgeInsets.all(10),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
-                                      color: primaryDarkColor, width: 1.0),
-                                  borderRadius: BorderRadius.circular(5.0),
-                                ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(5.0),
-                                  borderSide: BorderSide(
-                                    color: primaryDarkColor,
-                                    width: 1.0,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                          child: Container(
-                            margin: EdgeInsets.only(right: 10),
-                            child: TextField(
-                              cursorColor: Colors.black,
-                              textAlign: TextAlign.center,
-                              keyboardType: TextInputType.number,
-                              maxLength: 1,
-                              decoration: InputDecoration(
-                                counterText: "",
-                                border: OutlineInputBorder(),
-                                contentPadding: EdgeInsets.all(10),focusedBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                    color: primaryDarkColor, width: 1.0),
-                                borderRadius: BorderRadius.circular(5.0),
-                              ),
                                 enabledBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(5.0),
                                   borderSide: BorderSide(
@@ -268,6 +292,7 @@ class OtpVerificationView extends GetView<OtpVerificationController> {
                   SizedBox(
                     height: 30,
                   ),
+
                   InkWell(
                     onTap: () {
                       // Get.offNamed(Routes.forgotPassword);
@@ -282,67 +307,83 @@ class OtpVerificationView extends GetView<OtpVerificationController> {
                     ),
                   ),
                   Spacer(),
-                  InkWell(
-                    onTap: () {
-                      //do something
-                      Get.toNamed(Routes.resetPassword);
-                    },
-                    child: Container(
-                      margin: const EdgeInsets.only(left: 45, right: 45),
-                      height: 50,
-                      width: MediaQuery.of(context).size.width,
-                      decoration: BoxDecoration(
-                          color: primaryDarkColor,
-                          border: Border.all(color: primaryDarkColor),
-                          borderRadius:
-                              const BorderRadius.all(Radius.circular(10))),
-                      alignment: Alignment.center,
-                      child: const Text(
-                        'VERIFY',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 50,
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(left: 40, right: 40),
-                    padding: EdgeInsets.only(bottom: 20),
-                    child: Center(
-                      child: RichText(
-                        textAlign: TextAlign.center,
-                        text: TextSpan(children: [
-                          TextSpan(
-                            text:
-                                'Haven\'t received the OTP? send a message to ',
-                            style: TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.normal,
-                                color: Colors.black),
-                          ),
-                          TextSpan(
-                            text: 'contact@recommendyou.nl',
-                            style: TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.normal,
-                                color: primaryDarkColor),
-                          ),
-                          TextSpan(
-                            text: ' using the email address registered with us',
-                            style: TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.normal,
-                                color: Colors.black),
-                          ),
-                        ]),
-                      ),
-                    ),
-                  ),
+
                 ],
+              ),
+            ),
+            Positioned(
+              right: 0,left: 0,bottom: 0,
+              child: Padding(
+                padding: EdgeInsets.only(bottom: 40, left: 10, right: 10),
+                child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Container(
+                    child: Column(
+                      children: [
+                        InkWell(
+                          onTap: () {
+                            //do something
+                            Get.toNamed(Routes.resetPassword);
+                          },
+                          child: Container(
+                            margin: const EdgeInsets.only(left: 45, right: 45),
+                            height: 50,
+                            width: MediaQuery.of(context).size.width,
+                            decoration: BoxDecoration(
+                                color: primaryDarkColor,
+                                border: Border.all(color: primaryDarkColor),
+                                borderRadius:
+                                const BorderRadius.all(Radius.circular(10))),
+                            alignment: Alignment.center,
+                            child: const Text(
+                              'VERIFY',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 50,
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(left: 40, right: 40),
+                          padding: EdgeInsets.only(bottom: 20),
+                          child: Center(
+                            child: RichText(
+                              textAlign: TextAlign.center,
+                              text: TextSpan(children: [
+                                TextSpan(
+                                  text:
+                                  'Haven\'t received the OTP? send a message to ',
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.normal,
+                                      color: Colors.black),
+                                ),
+                                TextSpan(
+                                  text: 'contact@recommendyou.nl',
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.normal,
+                                      color: primaryDarkColor),
+                                ),
+                                TextSpan(
+                                  text: ' using the email address registered with us',
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.normal,
+                                      color: Colors.black),
+                                ),
+                              ]),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ),
             )
           ],
@@ -352,3 +393,4 @@ class OtpVerificationView extends GetView<OtpVerificationController> {
     );
   }
 }
+

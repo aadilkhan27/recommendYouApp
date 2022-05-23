@@ -414,7 +414,7 @@ class StepTwoView extends GetView<StepTwoController> {
     // set up the AlertDialog
     AlertDialog alert = AlertDialog(
       title: Text(
-        "Use Of Mobile number",
+        "Mobile Number", //Use Of
         style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
       ),
       content: Text(

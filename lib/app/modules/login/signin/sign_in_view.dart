@@ -29,23 +29,20 @@ class SignInView extends GetView<SignInController> {
                 child: Column(
                   children: [
                     Container(
-                      margin: EdgeInsets.only(top: 20),
-                      height: 40,
+                      margin: EdgeInsets.only(top: 0),
+                      height: 50,
                       width: MediaQuery.of(context).size.width,
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          SizedBox(
-                            height: 0,
-                            width: 10,
-                          ),
+
                           Container(
-                            margin: EdgeInsets.only(left: 20),
+                            margin: EdgeInsets.only(left: 30, top: 20),
                             child: InkWell(
-                              onTap: () {
+                              onTap: (){
                                 Get.back();
                               },
-                              child: SvgPicture.asset(
+                              child:  SvgPicture.asset(
                                 icLeftArrow,
                               ),
                             ),
@@ -152,7 +149,7 @@ class SignInView extends GetView<SignInController> {
                           ),
                         ),
                       ),
-                      /*  SizedBox(
+                        SizedBox(
                         height: 30,
                       ),
                       InkWell(
@@ -183,7 +180,7 @@ class SignInView extends GetView<SignInController> {
                               color: primaryDarkColor,
                               decoration: TextDecoration.underline),
                         ),
-                      ),*/
+                      ),
                     ])
                   ],
                 ),

@@ -28,7 +28,7 @@ dependencies:
   flutter_screenutil:
 
   #for custom toast
-  fluttertoast:
+  fluttertoast: ^8.0.7
 
   #for custom fonts
   google_fonts:
@@ -53,6 +53,7 @@ flutter:
     - assets/images/
     - assets/settings/
     - assets/profileImage/
+    - assets/bottomIcons/
 
   fonts:
     - family: PlayfairDisplay
