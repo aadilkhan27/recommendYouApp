@@ -139,7 +139,8 @@ class ContactUsView extends GetView<ContactUsController> {
                           ),
                         ),
                       ),
-                      *//*Container(
+                      */
+                      /*Container(
                         height: 15 * 24,
                         margin: EdgeInsets.only(left: 30, right: 30, top: 20),
                         child: TextField(
@@ -186,10 +187,27 @@ class ContactUsView extends GetView<ContactUsController> {
 
                         children: [
 
+                          SizedBox(
+                            height: 0,
+                          ),
+                          Align(
+                              alignment: Alignment.topLeft,
+                              child: Padding(
+                                  padding: const EdgeInsets.only(right: 10, left: 30, top: 10, bottom: 10),
+                                  child: Text(
+                                  'Fill the detail',
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold))
+                              )
+
+                          ),
+
                           Container(
                               width: MediaQuery.of(context).size.width,
                               child: Padding(
-                                padding: const EdgeInsets.only(right: 10, left: 10, top: 10, bottom: 10),
+                                padding: const EdgeInsets.only(right: 10, left: 10, top: 0, bottom: 10),
                                 child: Column(
                                   children: [
                                     Align(
@@ -197,7 +215,7 @@ class ContactUsView extends GetView<ContactUsController> {
                                       child: Padding(
                                         padding: const EdgeInsets.only(left: 20,right: 10),
                                         child: Text(
-                                          'First name',
+                                          'Name',
                                           style: TextStyle(
                                             fontSize: 16,
                                             fontWeight: FontWeight.bold,
@@ -325,7 +343,7 @@ class ContactUsView extends GetView<ContactUsController> {
                                     ),
                                     Container(
                                       margin: EdgeInsets.all(12),
-                                      height: 10 * 24,
+                                      height: 150,
                                       child: TextField(
                                         cursorColor: Colors.purple,
                                         maxLines: 15,
@@ -360,7 +378,7 @@ class ContactUsView extends GetView<ContactUsController> {
               Positioned(
                 right: 0,left: 0,bottom: 0,
                 child: Padding(
-                  padding: EdgeInsets.only(bottom: 20),
+                  padding: EdgeInsets.only(bottom: 10),
                   child: Align(
                     alignment: Alignment.bottomCenter,
                     child: InkWell(
