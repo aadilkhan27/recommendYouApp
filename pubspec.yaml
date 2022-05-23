@@ -24,7 +24,6 @@ dependencies:
 
   #for Notification
   flutter_local_notifications:
-
   #for dynamic ui
   flutter_screenutil:
 

@@ -40,6 +40,7 @@ class LandingView extends GetView<LandingController> {
     "PunitHarish",
   ];
 
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -146,11 +147,17 @@ class LandingView extends GetView<LandingController> {
                                     items: spinnerItems
                                         .map((item) => DropdownMenuItem<String>(
                                               value: item,
-                                              child: Text(
+                                              child: item == controller.selectedItemValue ? Text(
+                                                controller.selectedItemValue.toString(),
+                                                style: const TextStyle(
+                                                    fontSize: 12,
+                                                    color: Colors.white),
+                                              ):Text(
                                                 item,
                                                 style: const TextStyle(
                                                     fontSize: 12,
-                                                    color: Colors.black),
+                                                    color: Colors.black
+                                                ),
                                               ),
                                             ))
                                         .toList(),
@@ -161,9 +168,13 @@ class LandingView extends GetView<LandingController> {
                                     },
                                     onChanged: (value) {
                                       //Do something when changing the item if you want.
+                                      controller.selectedItemValue=value.toString();
+                                      print(value.toString());
+                                      print(controller.selectedItemValue.toString());
+
                                     },
                                     onSaved: (value) {
-                                      selectedValue = value.toString();
+                                      controller.selectedItemValue = value.toString();
                                     },
                                   ),
                                 ),

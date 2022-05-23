@@ -953,7 +953,7 @@ class DropdownButton2<T> extends StatefulWidget {
     this.openWithLongPress = false,
     this.dropdownOverButton = false,
     this.dropdownFullScreen = false,
-    this.onMenuStateChange,
+    this.onMenuStateChange, this.selectedItemColor,
     // When adding new arguments, consider adding similar arguments to
     // DropdownButtonFormField.
   })  : assert(
@@ -1020,7 +1020,7 @@ class DropdownButton2<T> extends StatefulWidget {
     this.dropdownOverButton = false,
     this.dropdownFullScreen = false,
     required InputDecoration inputDecoration,
-    required bool isEmpty,
+    required bool isEmpty,  this.selectedItemColor,
   })  : assert(
   items == null ||
       items.isEmpty ||
@@ -1254,6 +1254,8 @@ class DropdownButton2<T> extends StatefulWidget {
 
   /// The color for the button's [Material] when it has the input focus.
   final Color? focusColor;
+
+  final Color? selectedItemColor;
 
   /// {@macro flutter.widgets.Focus.focusNode}
   final FocusNode? focusNode;
@@ -1766,6 +1768,7 @@ class DropdownButtonFormField2<T> extends FormField<T> {
     bool openWithLongPress = false,
     bool dropdownOverButton = false,
     bool dropdownFullScreen = false,
+    Color? selectedItemColor,
     void Function(bool isOpen)? onMenuStateChange,
   })  : assert(
   items == null ||
@@ -1866,6 +1869,7 @@ class DropdownButtonFormField2<T> extends FormField<T> {
                   dropdownOverButton: dropdownOverButton,
                   dropdownFullScreen: dropdownFullScreen,
                   onMenuStateChange: onMenuStateChange,
+                  selectedItemColor:selectedItemColor,
                   inputDecoration: effectiveDecoration.copyWith(
                     errorText: field.errorText,
                   ),
