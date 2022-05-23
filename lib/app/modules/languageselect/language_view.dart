@@ -145,7 +145,8 @@ class LanguageView extends GetView<LanguageController> {
               ),
               InkWell(
                 onTap: (){
-                  showAlertDialog(context);
+                  //showAlertDialog(context);
+                  Get.toNamed(Routes.signUpStepOne);
                 },
                 child: Container(
                   margin: const EdgeInsets.only(right: 45,left: 45,top: 25),

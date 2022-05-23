@@ -142,6 +142,8 @@ class CreateView extends GetView<CreateController> {
                       SizedBox(
                         height: 10,
                       ),
+
+
                       Container(
                         height: 30,
                         width: MediaQuery.of(context).size.width,
@@ -166,7 +168,7 @@ class CreateView extends GetView<CreateController> {
                           ),
                           isExpanded: true,
                           hint: const Text(
-                            'Categories',
+                            'Categoriess',
                             style: TextStyle(
                                 fontSize: 16, color: Colors.black),
                           ),
@@ -206,6 +208,9 @@ class CreateView extends GetView<CreateController> {
                           },
                         ),
                       ),
+
+
+
                       SizedBox(
                         height: 10,
                       ),
@@ -218,11 +223,11 @@ class CreateView extends GetView<CreateController> {
                       ),
                       Container(
                         margin: EdgeInsets.only(right: 12, left: 12, ),
-                        height: 6* 24,
                         child: TextField(
+                          keyboardType: TextInputType.multiline,
+                          maxLines: null,
                           cursorColor: Colors.black,
                           style: TextStyle(fontSize: 16, color: Colors.black, height: 1.4),
-                          maxLines: 15,
                           decoration: InputDecoration(
                             enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(color: Colors.white),
@@ -231,7 +236,7 @@ class CreateView extends GetView<CreateController> {
                               borderSide: BorderSide(color: Colors.white),
                             ),
                             hintText: "Write a message here.....",
-                            hintStyle: TextStyle(color: Colors.black),
+                            hintStyle: TextStyle(color: Colors.grey),
                             filled: false,
                           ),
                         ),

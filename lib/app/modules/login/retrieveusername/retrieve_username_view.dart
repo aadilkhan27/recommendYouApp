@@ -18,7 +18,7 @@ class RetrieveUsername extends GetView<RetrieveUsernameController> {
       child: Scaffold(
         resizeToAvoidBottomInset: true,
         backgroundColor: whiteColor,
-        body: SafeArea(
+        body: SingleChildScrollView(
           child: Stack(
             children: [
               Container(
@@ -27,18 +27,15 @@ class RetrieveUsername extends GetView<RetrieveUsernameController> {
                 child: Column(
                   children: [
                     Container(
-                      margin: EdgeInsets.only(top: 20),
-                      height: 40,
+                      margin: EdgeInsets.only(top: 50),
+                      height: 50,
                       width: MediaQuery.of(context).size.width,
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          SizedBox(
-                            height: 0,
-                            width: 10,
-                          ),
+
                           Container(
-                            margin: EdgeInsets.only(left: 20),
+                            margin: EdgeInsets.only(left: 30, top: 20),
                             child: InkWell(
                               onTap: (){
                                 Get.back();
@@ -92,31 +89,45 @@ class RetrieveUsername extends GetView<RetrieveUsernameController> {
                         ],
                       ),
                     ),
-                    Spacer(),
-                    InkWell(
-                      onTap: () {
-                        //do something
-                        Get.toNamed(Routes.signInView);
-                      },
-                      child: Container(
-                        margin: const EdgeInsets.all(45),
-                        height: 50,
-                        width: MediaQuery.of(context).size.width,
-                        decoration: BoxDecoration(
-                            color: primaryDarkColor,
-                            border: Border.all(color: primaryDarkColor),
-                            borderRadius:
-                                const BorderRadius.all(Radius.circular(10))),
-                        alignment: Alignment.center,
-                        child: const Text(
-                          'CONTINUE TO LOGIN',
-                          style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.bold),
-                        ),
+                  ],
+                ),
+              ),
+              Positioned(
+                right: 0,left: 0,bottom: 0,
+                child: Padding(
+                  padding: EdgeInsets.only(bottom: 40, left: 10, right: 10),
+                  child: Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Container(
+                      child: Column(
+                        children: [
+                          InkWell(
+                            onTap: () {
+//do something
+                              Get.toNamed(Routes.signInView);
+                            },
+                            child: Container(
+                              margin: const EdgeInsets.all(45),
+                              height: 50,
+                              width: MediaQuery.of(context).size.width,
+                              decoration: BoxDecoration(
+                                  color: primaryDarkColor,
+                                  border: Border.all(color: primaryDarkColor),
+                                  borderRadius:
+                                  const BorderRadius.all(Radius.circular(10))),
+                              alignment: Alignment.center,
+                              child: const Text(
+                                'CONTINUE TO LOGIN',
+                                style: TextStyle(
+                                    color: Colors.white, fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ),
+                          SizedBox(height: 40,)
+                        ],
                       ),
                     ),
-                    SizedBox(height: 40,)
-                  ],
+                  ),
                 ),
               )
             ],

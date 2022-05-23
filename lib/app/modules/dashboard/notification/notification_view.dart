@@ -63,7 +63,7 @@ class NotificationView extends GetView<NotificationController> {
                           ),
                         ),*/
                         SizedBox(
-                          width: 15,
+                          width: 5,
                         ),
                         Text('Notification')
                       ],

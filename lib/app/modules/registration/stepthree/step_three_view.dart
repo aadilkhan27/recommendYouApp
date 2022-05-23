@@ -127,7 +127,8 @@ class StepThreeView extends GetView<StepThreeController> {
                             Expanded(
                               child: Container(
                                 margin: EdgeInsets.only(right: 10),
-                                child: TextField(
+                                child: TextFormField(
+                                  textInputAction: TextInputAction.next,
                                   cursorColor: Colors.black,
                                   textAlign: TextAlign.center,
                                   keyboardType: TextInputType.number,
@@ -148,7 +149,13 @@ class StepThreeView extends GetView<StepThreeController> {
                                       ),
                                     ),
                                     contentPadding: EdgeInsets.all(10),
+
                                   ),
+                                  onChanged: (value) {
+                                    if (value.length == 1) {
+                                      FocusScope.of(context).nextFocus();
+                                    }
+                                  }
                                 ),
                               ),
                             ),
@@ -156,34 +163,7 @@ class StepThreeView extends GetView<StepThreeController> {
                               child: Container(
                                 margin: EdgeInsets.only(right: 10),
                                 child: TextField(
-                                  cursorColor: Colors.black,
-                                  textAlign: TextAlign.center,
-                                  keyboardType: TextInputType.number,
-                                  maxLength: 1,
-                                  decoration: InputDecoration(
-                                    counterText: "",
-                                    border: OutlineInputBorder(),
-                                    contentPadding: EdgeInsets.all(10),
-                                    focusedBorder: OutlineInputBorder(
-                                      borderSide: const BorderSide(
-                                          color: primaryDarkColor, width: 1.0),
-                                      borderRadius: BorderRadius.circular(5.0),
-                                    ),
-                                    enabledBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(5.0),
-                                      borderSide: BorderSide(
-                                        color: primaryDarkColor,
-                                        width: 1.0,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Expanded(
-                              child: Container(
-                                margin: EdgeInsets.only(right: 10),
-                                child: TextField(
+                                  textInputAction: TextInputAction.next,
                                   cursorColor: Colors.black,
                                   textAlign: TextAlign.center,
                                   keyboardType: TextInputType.number,
@@ -205,6 +185,11 @@ class StepThreeView extends GetView<StepThreeController> {
                                       ),
                                     ),
                                   ),
+                                    onChanged: (value) {
+                                      if (value.length == 1) {
+                                        FocusScope.of(context).nextFocus();
+                                      }
+                                    }
                                 ),
                               ),
                             ),
@@ -212,6 +197,7 @@ class StepThreeView extends GetView<StepThreeController> {
                               child: Container(
                                 margin: EdgeInsets.only(right: 10),
                                 child: TextField(
+                                  textInputAction: TextInputAction.next,
                                   cursorColor: Colors.black,
                                   textAlign: TextAlign.center,
                                   keyboardType: TextInputType.number,
@@ -233,6 +219,11 @@ class StepThreeView extends GetView<StepThreeController> {
                                       ),
                                     ),
                                   ),
+                                    onChanged: (value) {
+                                      if (value.length == 1) {
+                                        FocusScope.of(context).nextFocus();
+                                      }
+                                    }
                                 ),
                               ),
                             ),
@@ -240,6 +231,41 @@ class StepThreeView extends GetView<StepThreeController> {
                               child: Container(
                                 margin: EdgeInsets.only(right: 10),
                                 child: TextField(
+                                  textInputAction: TextInputAction.next,
+                                  cursorColor: Colors.black,
+                                  textAlign: TextAlign.center,
+                                  keyboardType: TextInputType.number,
+                                  maxLength: 1,
+                                  decoration: InputDecoration(
+                                    counterText: "",
+                                    border: OutlineInputBorder(),
+                                    contentPadding: EdgeInsets.all(10),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: const BorderSide(
+                                          color: primaryDarkColor, width: 1.0),
+                                      borderRadius: BorderRadius.circular(5.0),
+                                    ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(5.0),
+                                      borderSide: BorderSide(
+                                        color: primaryDarkColor,
+                                        width: 1.0,
+                                      ),
+                                    ),
+                                  ),
+                                    onChanged: (value) {
+                                      if (value.length == 1) {
+                                        FocusScope.of(context).nextFocus();
+                                      }
+                                    }
+                                ),
+                              ),
+                            ),
+                            Expanded(
+                              child: Container(
+                                margin: EdgeInsets.only(right: 10),
+                                child: TextField(
+                                  textInputAction: TextInputAction.done,
                                   cursorColor: Colors.black,
                                   textAlign: TextAlign.center,
                                   keyboardType: TextInputType.number,

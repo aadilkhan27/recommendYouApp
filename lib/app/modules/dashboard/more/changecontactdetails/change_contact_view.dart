@@ -36,16 +36,17 @@ class ChangeContactView extends GetView<ChangeContactController> {
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
-                                      SizedBox(
-                                        width: 10,
-                                      ),
                                       InkWell(
                                         onTap: () {
                                           Get.back();
                                         },
-                                        child: SvgPicture.asset(
-                                          icLeftArrow,
-                                          semanticsLabel: 'logo',
+                                        child: Container(
+                                          height: 50,
+                                          padding: EdgeInsets.only(left: 10),
+                                          child: SvgPicture.asset(
+                                            icLeftArrow,
+                                            semanticsLabel: 'logo',
+                                          ),
                                         ),
                                       ),
                                       SizedBox(
@@ -89,7 +90,7 @@ class ChangeContactView extends GetView<ChangeContactController> {
                                           focusedBorder: UnderlineInputBorder(
                                             borderSide: BorderSide(color: Colors.purple),
                                           ),
-                                          hintText: '985-985-9856',
+                                          //hintText: '985-985-9856',
                                           hintStyle: TextStyle(color: Colors.grey)),
                                     ),
                                   ),
@@ -120,7 +121,7 @@ class ChangeContactView extends GetView<ChangeContactController> {
                                           focusedBorder: UnderlineInputBorder(
                                             borderSide: BorderSide(color: Colors.purple),
                                           ),
-                                          hintText: 'ramonoricoda@gmail.com',
+                                          //hintText: 'ramonoricoda@gmail.com',
                                           hintStyle: TextStyle(color: Colors.grey)),
                                     ),
                                   ),
