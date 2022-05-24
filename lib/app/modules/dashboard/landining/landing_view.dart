@@ -380,11 +380,7 @@ class LandingView extends GetView<LandingController> {
                                       ],
                                     ),
                                     onTap: () {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (builder) =>
-                                                  HelperView()));
+                                      Get.toNamed(Routes.helper);
                                     },
                                   ),
                                   SizedBox(

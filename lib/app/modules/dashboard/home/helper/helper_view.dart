@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:recommend_you/app/modules/dashboard/home/helper/helper_controller.dart';
 import 'package:recommend_you/app/modules/dashboard/home/helper/sendemail/sendemail_view.dart';
 import 'package:recommend_you/app/modules/dashboard/more/changecontactdetails/change_contact_controller.dart';
 
@@ -11,7 +12,7 @@ import '../../../../core/values/colors.dart';
 import '../../../../core/values/keys.dart';
 import '../../../../core/values/strings.dart';
 
-class HelperView extends GetView<ChangeContactController> {
+class HelperView extends GetView<HelperController> {
   List<String> images = [
     profileImage1,
     profileImage2,
@@ -28,20 +29,7 @@ class HelperView extends GetView<ChangeContactController> {
     profileImage3,
   ];
 
-  static List<HelperModel> helperList = <HelperModel>[
 
-    HelperModel(userImage: profileImage1, itemSelect: true),
-    HelperModel(userImage: profileImage2, itemSelect: false),
-    HelperModel(userImage: profileImage3, itemSelect: true),
-    HelperModel(userImage: profileImage4, itemSelect: true),
-    HelperModel(userImage: profileImage5, itemSelect: false),
-    HelperModel(userImage: profileImage1, itemSelect: true),
-    HelperModel(userImage: profileImage2, itemSelect: false),
-    HelperModel(userImage: profileImage3, itemSelect: false),
-    HelperModel(userImage: profileImage4, itemSelect: false),
-    HelperModel(userImage: profileImage5, itemSelect: false),
-
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -130,14 +118,18 @@ class HelperView extends GetView<ChangeContactController> {
                                   children: [
                                     Row(
                                       children: [
-                                        Checkbox(
-                                          checkColor: Colors.white,
-                                          activeColor: Colors.purple,
-                                          value: helperList[index].itemSelect,
-                                          onChanged: (bool? value) {
-                                            helperList[index].itemSelect = value!;
-                                          },
+                                        GetBuilder<HelperController>(
+                                          builder:(_)=>
+                                           Checkbox(
+                                            checkColor: Colors.white,
+                                            activeColor: Colors.purple,
+                                            value: controller.helperList[index].itemSelect,
+                                            onChanged: (bool? value) {
+                                              controller.itemChange(value!, index);
+                                              controller.update();
+                                            },
 
+                                          ),
                                         ),
                                         Container(
                                             width: 40.0,
@@ -146,7 +138,7 @@ class HelperView extends GetView<ChangeContactController> {
                                                 shape: BoxShape.circle,
                                                 image: new DecorationImage(
                                                     fit: BoxFit.fill,
-                                                    image: AssetImage(helperList[index].userImage)))),
+                                                    image: AssetImage(controller.helperList[index].userImage)))),
                                                         //images[index])))),
                                         SizedBox(
                                           width: 10,
@@ -208,7 +200,7 @@ class HelperView extends GetView<ChangeContactController> {
                             ),
                           );
                         },
-                        itemCount: helperList.length,
+                        itemCount: controller.helperList.length,
                         padding: EdgeInsets.only(top: 10),
                         scrollDirection: Axis.vertical,
                       ),
