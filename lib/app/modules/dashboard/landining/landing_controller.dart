@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:recommend_you/app/core/values/colors.dart';
 import 'package:recommend_you/app/core/values/keys.dart';
+import 'package:recommend_you/dataModel/HomeListModel.dart';
 
 class LandingController extends GetxController
     with GetSingleTickerProviderStateMixin {
@@ -24,6 +25,7 @@ class LandingController extends GetxController
   final isSavedSelected5 = false.obs;
   final isSavedSelected6 = false.obs;
 
+  var homeList = <HomeListModel>[].obs;
 
  /* final List<Tab> referralTabs = <Tab>[
 
@@ -89,6 +91,29 @@ class LandingController extends GetxController
       SvgPicture.asset(bottomMenu,  height: 20, width: 20,),
     )
   ];*/
+
+  void fetHelperData() {
+
+    homeList.add(HomeListModel(profileImage: profileImage1, feedImage: image1, clickLike : false, clickSave : false));
+    homeList.add(HomeListModel(profileImage: profileImage2, feedImage: image2, clickLike : false, clickSave : false));
+    homeList.add(HomeListModel(profileImage: profileImage3, feedImage: image3, clickLike : false, clickSave : false));
+    homeList.add(HomeListModel(profileImage: profileImage4, feedImage: image4, clickLike : false, clickSave : false));
+    homeList.add(HomeListModel(profileImage: profileImage5, feedImage: image5, clickLike : false, clickSave : false));
+    homeList.add(HomeListModel(profileImage: profileImage6, feedImage: image6, clickLike : false, clickSave : false));
+
+  }
+
+  void itemHeartChange (bool value, int index) {
+
+    homeList[index].clickLike= value;
+    update();
+  }
+
+  void itemSaveChange (bool value, int index) {
+
+    homeList[index].clickSave= value;
+    update();
+  }
 
   @override
   void onInit() {

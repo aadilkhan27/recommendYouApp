@@ -378,7 +378,7 @@ class ContactUsView extends GetView<ContactUsController> {
               Positioned(
                 right: 0,left: 0,bottom: 0,
                 child: Padding(
-                  padding: EdgeInsets.only(bottom: 10),
+                  padding: EdgeInsets.only(bottom: 40),
                   child: Align(
                     alignment: Alignment.bottomCenter,
                     child: InkWell(

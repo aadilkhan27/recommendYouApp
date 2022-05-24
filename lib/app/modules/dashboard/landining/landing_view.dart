@@ -404,200 +404,201 @@ class LandingView extends GetView<LandingController> {
                           ),
                           Expanded(
                               child: SingleChildScrollView(
-                            child: Column(
-                              children: [
-                                Column(
+                                child: Column(
                                   children: [
-                                    Container(
-                                      height: 60,
-                                      width: MediaQuery.of(context).size.width,
-                                      child: Row(
-                                        //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                        children: [
-                                          SizedBox(
-                                            width: 20,
-                                          ),
-                                          InkWell(
-                                            child: Container(
-                                                width: 40.0,
-                                                height: 40.0,
-                                                decoration: new BoxDecoration(
-                                                    shape: BoxShape.circle,
-                                                    image: new DecorationImage(
-                                                        fit: BoxFit.fill,
-                                                        image: AssetImage(
-                                                            profileImage1)))),
-                                            onTap: () {
-                                              showAlertDialogImage(
-                                                  context, profileImage1);
-                                            },
-                                          ),
-                                          SizedBox(
-                                            width: 15,
-                                          ),
-                                          Container(
-                                            margin: EdgeInsets.only(top: 10),
-                                            child: Column(
-                                                mainAxisAlignment:
+
+                                    Column(
+                                      children: [
+                                        Container(
+                                          height: 60,
+                                          width: MediaQuery.of(context).size.width,
+                                          child: Row(
+                                            //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                            children: [
+                                              SizedBox(
+                                                width: 20,
+                                              ),
+                                              InkWell(
+                                                child: Container(
+                                                    width: 40.0,
+                                                    height: 40.0,
+                                                    decoration: new BoxDecoration(
+                                                        shape: BoxShape.circle,
+                                                        image: new DecorationImage(
+                                                            fit: BoxFit.fill,
+                                                            image: AssetImage(
+                                                                profileImage1)))),
+                                                onTap: () {
+                                                  showAlertDialogImage(
+                                                      context, profileImage1);
+                                                },
+                                              ),
+                                              SizedBox(
+                                                width: 15,
+                                              ),
+                                              Container(
+                                                margin: EdgeInsets.only(top: 10),
+                                                child: Column(
+                                                    mainAxisAlignment:
                                                     MainAxisAlignment.start,
-                                                crossAxisAlignment:
+                                                    crossAxisAlignment:
                                                     CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    'Ramon Ricardo',
-                                                    style: TextStyle(
-                                                        fontSize: 14,
-                                                        fontWeight:
-                                                            FontWeight.bold),
-                                                  ),
-                                                  SizedBox(
-                                                    height: 5,
-                                                  ),
-                                                  Row(
                                                     children: [
-                                                      SvgPicture.asset(
-                                                          icTagArrow),
                                                       Text(
-                                                        'Category Text Public',
+                                                        'Ramon Ricardo',
                                                         style: TextStyle(
                                                             fontSize: 14,
                                                             fontWeight:
+                                                            FontWeight.bold),
+                                                      ),
+                                                      SizedBox(
+                                                        height: 5,
+                                                      ),
+                                                      Row(
+                                                        children: [
+                                                          SvgPicture.asset(
+                                                              icTagArrow),
+                                                          Text(
+                                                            'Category Text Public',
+                                                            style: TextStyle(
+                                                                fontSize: 14,
+                                                                fontWeight:
                                                                 FontWeight
                                                                     .bold),
-                                                      )
-                                                    ],
-                                                  ),
-                                                ]),
-                                          ),
-                                          Spacer(),
-                                          Container(
-                                              child: Row(
-                                                  mainAxisAlignment:
+                                                          )
+                                                        ],
+                                                      ),
+                                                    ]),
+                                              ),
+                                              Spacer(),
+                                              Container(
+                                                  child: Row(
+                                                      mainAxisAlignment:
                                                       MainAxisAlignment
                                                           .spaceBetween,
-                                                  crossAxisAlignment:
+                                                      crossAxisAlignment:
                                                       CrossAxisAlignment.start,
-                                                  children: [
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsets.only(
-                                                          left: 10, top: 0),
-                                                  child: Text(
-                                                    '08-09-2021',
-                                                    style: TextStyle(
-                                                        fontWeight:
-                                                            FontWeight.normal,
-                                                        fontSize: 12),
-                                                  ),
-                                                ),
-                                                SizedBox(
-                                                  width: 10,
-                                                ),
-                                                InkWell(
-                                                  child: Container(
-                                                      margin: EdgeInsets.only(
-                                                          right: 10, top: 0),
-                                                      child: SvgPicture.asset(
-                                                          icMoreHorizontal)),
-                                                  onTap: () {
-                                                    showModalBottomSheet(
-                                                        context: context,
-                                                        builder: (context) {
-                                                          return Wrap(
-                                                            children: [
-                                                              ListTile(
-                                                                title: Text(
-                                                                    'Don\'t show me this again'),
-                                                              ),
-                                                              ListTile(
-                                                                title: Text(
-                                                                    'Report as spam'),
-                                                              ),
-                                                              ListTile(
-                                                                title: Text(
-                                                                    'Report as inappropriate content'),
-                                                              ),
-                                                            ],
-                                                          );
-                                                        });
-                                                  },
-                                                ),
-                                              ])),
-                                          SizedBox(
-                                            width: 10,
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                          const EdgeInsets.only(
+                                                              left: 10, top: 0),
+                                                          child: Text(
+                                                            '08-09-2021',
+                                                            style: TextStyle(
+                                                                fontWeight:
+                                                                FontWeight.normal,
+                                                                fontSize: 12),
+                                                          ),
+                                                        ),
+                                                        SizedBox(
+                                                          width: 10,
+                                                        ),
+                                                        InkWell(
+                                                          child: Container(
+                                                              margin: EdgeInsets.only(
+                                                                  right: 10, top: 0),
+                                                              child: SvgPicture.asset(
+                                                                  icMoreHorizontal)),
+                                                          onTap: () {
+                                                            showModalBottomSheet(
+                                                                context: context,
+                                                                builder: (context) {
+                                                                  return Wrap(
+                                                                    children: [
+                                                                      ListTile(
+                                                                        title: Text(
+                                                                            'Don\'t show me this again'),
+                                                                      ),
+                                                                      ListTile(
+                                                                        title: Text(
+                                                                            'Report as spam'),
+                                                                      ),
+                                                                      ListTile(
+                                                                        title: Text(
+                                                                            'Report as inappropriate content'),
+                                                                      ),
+                                                                    ],
+                                                                  );
+                                                                });
+                                                          },
+                                                        ),
+                                                      ])),
+                                              SizedBox(
+                                                width: 10,
+                                              ),
+                                            ],
                                           ),
-                                        ],
-                                      ),
-                                    ),
-                                    Container(
-                                      margin: EdgeInsets.only(
-                                          left: 20,
-                                          right: 20,
-                                          top: 5,
-                                          bottom: 10),
-                                      child: Column(
-                                        children: [
-                                          Text(
-                                            dummyLoremIpsum2,
-                                            style: TextStyle(
-                                                color: Colors.black,
-                                                fontSize: 16,
-                                                fontWeight: FontWeight.normal,
-                                                height: 1.4),
-                                          ),
-                                          SizedBox(
-                                            height: 10,
-                                          ),
-                                          InkWell(
-                                            onTap: () {
-                                              //Navigator.push(context, MaterialPageRoute(builder: (builder) => DetailScreen()));
-                                            },
-                                            child: Container(
-                                                height: 250,
-                                                width: MediaQuery.of(context)
-                                                    .size
-                                                    .width,
-                                                decoration: new BoxDecoration(
-                                                    image: new DecorationImage(
-                                                        fit: BoxFit.fill,
-                                                        image: AssetImage(
-                                                            image1)))),
-                                          ),
-                                          //Image(image: AssetImage(image2))
-                                        ],
-                                      ),
-                                    ),
-                                    Container(
-                                      margin: EdgeInsets.only(
-                                          left: 20,
-                                          right: 20,
-                                          top: 10,
-                                          bottom: 20),
-                                      child: Row(
-                                        children: [
-                                          Obx(
-                                          ()=> InkWell(
-                                                onTap:(){
-                                                  if(controller.isSelected1.value) {
-                                                    controller.isSelected1.value=false;
-                                                  } else {
-                                                    controller.isSelected1.value=true;
-                                                  }
-                                                  // Get.toNamed(Routes.landing);
+                                        ),
+                                        Container(
+                                          margin: EdgeInsets.only(
+                                              left: 20,
+                                              right: 20,
+                                              top: 5,
+                                              bottom: 10),
+                                          child: Column(
+                                            children: [
+                                              Text(
+                                                dummyLoremIpsum2,
+                                                style: TextStyle(
+                                                    color: Colors.black,
+                                                    fontSize: 16,
+                                                    fontWeight: FontWeight.normal,
+                                                    height: 1.4),
+                                              ),
+                                              SizedBox(
+                                                height: 10,
+                                              ),
+                                              InkWell(
+                                                onTap: () {
+                                                  //Navigator.push(context, MaterialPageRoute(builder: (builder) => DetailScreen()));
                                                 },
-                                                child: ((controller.isSelected1.value)? SvgPicture.asset(icHeartClick): SvgPicture.asset(icHeart))),
+                                                child: Container(
+                                                    height: 250,
+                                                    width: MediaQuery.of(context)
+                                                        .size
+                                                        .width,
+                                                    decoration: new BoxDecoration(
+                                                        image: new DecorationImage(
+                                                            fit: BoxFit.fill,
+                                                            image: AssetImage(
+                                                                image1)))),
+                                              ),
+                                              //Image(image: AssetImage(image2))
+                                            ],
                                           ),
-                                          Spacer(),
-                                          Obx(
-                                                ()=> InkWell(
-                                                onTap:(){
-                                                  if(controller.isSavedSelected1.value) {
-                                                    controller.isSavedSelected1.value=false;
-                                                  } else {
-                                                    controller.isSavedSelected1.value=true;
-                                                  }
-                                                  // Get.toNamed(Routes.landing);
-                                                },
+                                        ),
+                                        Container(
+                                          margin: EdgeInsets.only(
+                                              left: 20,
+                                              right: 20,
+                                              top: 10,
+                                              bottom: 20),
+                                          child: Row(
+                                            children: [
+                                              Obx(
+                                                    ()=> InkWell(
+                                                    onTap:(){
+                                                      if(controller.isSelected1.value) {
+                                                        controller.isSelected1.value=false;
+                                                      } else {
+                                                        controller.isSelected1.value=true;
+                                                      }
+                                                      // Get.toNamed(Routes.landing);
+                                                    },
+                                                    child: ((controller.isSelected1.value)? SvgPicture.asset(icHeartClick): SvgPicture.asset(icHeart))),
+                                              ),
+                                              Spacer(),
+                                              Obx(
+                                                    ()=> InkWell(
+                                                    onTap:(){
+                                                      if(controller.isSavedSelected1.value) {
+                                                        controller.isSavedSelected1.value=false;
+                                                      } else {
+                                                        controller.isSavedSelected1.value=true;
+                                                      }
+                                                      // Get.toNamed(Routes.landing);
+                                                    },
                                                     child:
                                                     ((controller.isSavedSelected1.value)?
                                                     SvgPicture.asset(
@@ -606,210 +607,212 @@ class LandingView extends GetView<LandingController> {
                                                     SvgPicture.asset(
                                                       icCombinedShape,
                                                     ))),
-                                          ),
+                                              ),
 
-                                        ],
-                                      ),
+                                            ],
+                                          ),
+                                        ),
+                                        Divider(
+                                          height: 1,
+                                          color: Colors.black,
+                                        )
+                                      ],
                                     ),
-                                    Divider(
-                                      height: 1,
-                                      color: Colors.black,
-                                    )
-                                  ],
-                                ),
-                                Column(
-                                  children: [
-                                    Container(
-                                      height: 60,
-                                      width: MediaQuery.of(context).size.width,
-                                      child: Row(
-                                        //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                        children: [
-                                          SizedBox(
-                                            width: 20,
-                                          ),
-                                          InkWell(
-                                            child: Container(
-                                                width: 40.0,
-                                                height: 40.0,
-                                                decoration: new BoxDecoration(
-                                                    shape: BoxShape.circle,
-                                                    image: new DecorationImage(
-                                                        fit: BoxFit.fill,
-                                                        image: AssetImage(
-                                                            profileImage2)))),
-                                            onTap: () {
-                                              showAlertDialogImage(
-                                                  context, profileImage2);
-                                            },
-                                          ),
-                                          SizedBox(
-                                            width: 15,
-                                          ),
-                                          Container(
-                                            margin: EdgeInsets.only(top: 10),
-                                            child: Column(
-                                                mainAxisAlignment:
+
+
+                                    Column(
+                                      children: [
+                                        Container(
+                                          height: 60,
+                                          width: MediaQuery.of(context).size.width,
+                                          child: Row(
+                                            //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                            children: [
+                                              SizedBox(
+                                                width: 20,
+                                              ),
+                                              InkWell(
+                                                child: Container(
+                                                    width: 40.0,
+                                                    height: 40.0,
+                                                    decoration: new BoxDecoration(
+                                                        shape: BoxShape.circle,
+                                                        image: new DecorationImage(
+                                                            fit: BoxFit.fill,
+                                                            image: AssetImage(
+                                                                profileImage2)))),
+                                                onTap: () {
+                                                  showAlertDialogImage(
+                                                      context, profileImage2);
+                                                },
+                                              ),
+                                              SizedBox(
+                                                width: 15,
+                                              ),
+                                              Container(
+                                                margin: EdgeInsets.only(top: 10),
+                                                child: Column(
+                                                    mainAxisAlignment:
                                                     MainAxisAlignment.start,
-                                                crossAxisAlignment:
+                                                    crossAxisAlignment:
                                                     CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    'Ramon Ricardo',
-                                                    style: TextStyle(
-                                                        fontSize: 14,
-                                                        fontWeight:
-                                                            FontWeight.bold),
-                                                  ),
-                                                  SizedBox(
-                                                    height: 5,
-                                                  ),
-                                                  Row(
                                                     children: [
-                                                      SvgPicture.asset(
-                                                          icTagArrow),
                                                       Text(
-                                                        'Category Text Public',
+                                                        'Ramon Ricardo',
                                                         style: TextStyle(
                                                             fontSize: 14,
                                                             fontWeight:
+                                                            FontWeight.bold),
+                                                      ),
+                                                      SizedBox(
+                                                        height: 5,
+                                                      ),
+                                                      Row(
+                                                        children: [
+                                                          SvgPicture.asset(
+                                                              icTagArrow),
+                                                          Text(
+                                                            'Category Text Public',
+                                                            style: TextStyle(
+                                                                fontSize: 14,
+                                                                fontWeight:
                                                                 FontWeight
                                                                     .bold),
-                                                      )
-                                                    ],
-                                                  ),
-                                                ]),
-                                          ),
-                                          Spacer(),
-                                          Container(
-                                              child: Row(
-                                                  mainAxisAlignment:
+                                                          )
+                                                        ],
+                                                      ),
+                                                    ]),
+                                              ),
+                                              Spacer(),
+                                              Container(
+                                                  child: Row(
+                                                      mainAxisAlignment:
                                                       MainAxisAlignment
                                                           .spaceBetween,
-                                                  crossAxisAlignment:
+                                                      crossAxisAlignment:
                                                       CrossAxisAlignment.start,
-                                                  children: [
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsets.only(
-                                                          left: 10, top: 0),
-                                                  child: Text(
-                                                    '08-09-2021',
-                                                    style: TextStyle(
-                                                        fontWeight:
-                                                            FontWeight.normal,
-                                                        fontSize: 12),
-                                                  ),
-                                                ),
-                                                SizedBox(
-                                                  width: 10,
-                                                ),
-                                                InkWell(
-                                                  child: Container(
-                                                      margin: EdgeInsets.only(
-                                                          right: 10, top: 0),
-                                                      child: SvgPicture.asset(
-                                                          icMoreHorizontal)),
-                                                  onTap: () {
-                                                    showModalBottomSheet(
-                                                        context: context,
-                                                        builder: (context) {
-                                                          return Wrap(
-                                                            children: [
-                                                              ListTile(
-                                                                title: Text(
-                                                                    'Don\'t show me this again'),
-                                                              ),
-                                                              ListTile(
-                                                                title: Text(
-                                                                    'Report as spam'),
-                                                              ),
-                                                              ListTile(
-                                                                title: Text(
-                                                                    'Report as inappropriate content'),
-                                                              ),
-                                                            ],
-                                                          );
-                                                        });
-                                                  },
-                                                ),
-                                              ])),
-                                          SizedBox(
-                                            width: 10,
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                          const EdgeInsets.only(
+                                                              left: 10, top: 0),
+                                                          child: Text(
+                                                            '08-09-2021',
+                                                            style: TextStyle(
+                                                                fontWeight:
+                                                                FontWeight.normal,
+                                                                fontSize: 12),
+                                                          ),
+                                                        ),
+                                                        SizedBox(
+                                                          width: 10,
+                                                        ),
+                                                        InkWell(
+                                                          child: Container(
+                                                              margin: EdgeInsets.only(
+                                                                  right: 10, top: 0),
+                                                              child: SvgPicture.asset(
+                                                                  icMoreHorizontal)),
+                                                          onTap: () {
+                                                            showModalBottomSheet(
+                                                                context: context,
+                                                                builder: (context) {
+                                                                  return Wrap(
+                                                                    children: [
+                                                                      ListTile(
+                                                                        title: Text(
+                                                                            'Don\'t show me this again'),
+                                                                      ),
+                                                                      ListTile(
+                                                                        title: Text(
+                                                                            'Report as spam'),
+                                                                      ),
+                                                                      ListTile(
+                                                                        title: Text(
+                                                                            'Report as inappropriate content'),
+                                                                      ),
+                                                                    ],
+                                                                  );
+                                                                });
+                                                          },
+                                                        ),
+                                                      ])),
+                                              SizedBox(
+                                                width: 10,
+                                              ),
+                                            ],
                                           ),
-                                        ],
-                                      ),
-                                    ),
-                                    Container(
-                                      margin: EdgeInsets.only(
-                                          left: 20,
-                                          right: 20,
-                                          top: 5,
-                                          bottom: 10),
-                                      child: Column(
-                                        children: [
-                                          Text(
-                                            dummyLoremIpsum2,
-                                            style: TextStyle(
-                                                color: Colors.black,
-                                                fontSize: 16,
-                                                fontWeight: FontWeight.normal,
-                                                height: 1.4),
-                                          ),
-                                          SizedBox(
-                                            height: 10,
-                                          ),
-                                          InkWell(
-                                            onTap: () {
-                                              //Navigator.push(context, MaterialPageRoute(builder: (builder) => DetailScreen()));
-                                            },
-                                            child: Container(
-                                                height: 250,
-                                                width: MediaQuery.of(context)
-                                                    .size
-                                                    .width,
-                                                decoration: new BoxDecoration(
-                                                    image: new DecorationImage(
-                                                        fit: BoxFit.fill,
-                                                        image: AssetImage(
-                                                            image3)))),
-                                          ),
-                                          //Image(image: AssetImage(image2))
-                                        ],
-                                      ),
-                                    ),
-                                    Container(
-                                      margin: EdgeInsets.only(
-                                          left: 20,
-                                          right: 20,
-                                          top: 10,
-                                          bottom: 20),
-                                      child: Row(
-                                        children: [
-                                          Obx(
-                                                ()=> InkWell(
-                                                onTap:(){
-                                                  if(controller.isSelected2.value) {
-                                                    controller.isSelected2.value=false;
-                                                  } else {
-                                                    controller.isSelected2.value=true;
-                                                  }
-                                                  // Get.toNamed(Routes.landing);
+                                        ),
+                                        Container(
+                                          margin: EdgeInsets.only(
+                                              left: 20,
+                                              right: 20,
+                                              top: 5,
+                                              bottom: 10),
+                                          child: Column(
+                                            children: [
+                                              Text(
+                                                dummyLoremIpsum2,
+                                                style: TextStyle(
+                                                    color: Colors.black,
+                                                    fontSize: 16,
+                                                    fontWeight: FontWeight.normal,
+                                                    height: 1.4),
+                                              ),
+                                              SizedBox(
+                                                height: 10,
+                                              ),
+                                              InkWell(
+                                                onTap: () {
+                                                  //Navigator.push(context, MaterialPageRoute(builder: (builder) => DetailScreen()));
                                                 },
-                                                child: ((controller.isSelected2.value)? SvgPicture.asset(icHeartClick): SvgPicture.asset(icHeart))),
+                                                child: Container(
+                                                    height: 250,
+                                                    width: MediaQuery.of(context)
+                                                        .size
+                                                        .width,
+                                                    decoration: new BoxDecoration(
+                                                        image: new DecorationImage(
+                                                            fit: BoxFit.fill,
+                                                            image: AssetImage(
+                                                                image3)))),
+                                              ),
+                                              //Image(image: AssetImage(image2))
+                                            ],
                                           ),
+                                        ),
+                                        Container(
+                                          margin: EdgeInsets.only(
+                                              left: 20,
+                                              right: 20,
+                                              top: 10,
+                                              bottom: 20),
+                                          child: Row(
+                                            children: [
+                                              Obx(
+                                                    ()=> InkWell(
+                                                    onTap:(){
+                                                      if(controller.isSelected2.value) {
+                                                        controller.isSelected2.value=false;
+                                                      } else {
+                                                        controller.isSelected2.value=true;
+                                                      }
+                                                      // Get.toNamed(Routes.landing);
+                                                    },
+                                                    child: ((controller.isSelected2.value)? SvgPicture.asset(icHeartClick): SvgPicture.asset(icHeart))),
+                                              ),
 
-                                          Spacer(),
-                                          Obx(
-                                                ()=> InkWell(
-                                                onTap:(){
-                                                  if(controller.isSavedSelected2.value) {
-                                                    controller.isSavedSelected2.value=false;
-                                                  } else {
-                                                    controller.isSavedSelected2.value=true;
-                                                  }
-                                                  // Get.toNamed(Routes.landing);
-                                                },
+                                              Spacer(),
+                                              Obx(
+                                                    ()=> InkWell(
+                                                    onTap:(){
+                                                      if(controller.isSavedSelected2.value) {
+                                                        controller.isSavedSelected2.value=false;
+                                                      } else {
+                                                        controller.isSavedSelected2.value=true;
+                                                      }
+                                                      // Get.toNamed(Routes.landing);
+                                                    },
                                                     child:
                                                     ((controller.isSavedSelected2.value)?
                                                     SvgPicture.asset(
@@ -818,209 +821,209 @@ class LandingView extends GetView<LandingController> {
                                                     SvgPicture.asset(
                                                       icCombinedShape,
                                                     ))),
+                                              ),
+                                            ],
                                           ),
-                                        ],
-                                      ),
+                                        ),
+                                        Divider(
+                                          height: 1,
+                                          color: Colors.black,
+                                        )
+                                      ],
                                     ),
-                                    Divider(
-                                      height: 1,
-                                      color: Colors.black,
-                                    )
-                                  ],
-                                ),
-                                Column(
-                                  children: [
-                                    Container(
-                                      height: 60,
-                                      width: MediaQuery.of(context).size.width,
-                                      child: Row(
-                                        //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                        children: [
-                                          SizedBox(
-                                            width: 20,
-                                          ),
-                                          InkWell(
-                                            child: Container(
-                                                width: 40.0,
-                                                height: 40.0,
-                                                decoration: new BoxDecoration(
-                                                    shape: BoxShape.circle,
-                                                    image: new DecorationImage(
-                                                        fit: BoxFit.fill,
-                                                        image: AssetImage(
-                                                            profileImage4)))),
-                                            onTap: () {
-                                              showAlertDialogImage(
-                                                  context, profileImage4);
-                                            },
-                                          ),
-                                          SizedBox(
-                                            width: 15,
-                                          ),
-                                          Container(
-                                            margin: EdgeInsets.only(top: 10),
-                                            child: Column(
-                                                mainAxisAlignment:
+                                    Column(
+                                      children: [
+                                        Container(
+                                          height: 60,
+                                          width: MediaQuery.of(context).size.width,
+                                          child: Row(
+                                            //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                            children: [
+                                              SizedBox(
+                                                width: 20,
+                                              ),
+                                              InkWell(
+                                                child: Container(
+                                                    width: 40.0,
+                                                    height: 40.0,
+                                                    decoration: new BoxDecoration(
+                                                        shape: BoxShape.circle,
+                                                        image: new DecorationImage(
+                                                            fit: BoxFit.fill,
+                                                            image: AssetImage(
+                                                                profileImage4)))),
+                                                onTap: () {
+                                                  showAlertDialogImage(
+                                                      context, profileImage4);
+                                                },
+                                              ),
+                                              SizedBox(
+                                                width: 15,
+                                              ),
+                                              Container(
+                                                margin: EdgeInsets.only(top: 10),
+                                                child: Column(
+                                                    mainAxisAlignment:
                                                     MainAxisAlignment.start,
-                                                crossAxisAlignment:
+                                                    crossAxisAlignment:
                                                     CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    'Ramon Ricardo',
-                                                    style: TextStyle(
-                                                        fontSize: 14,
-                                                        fontWeight:
-                                                            FontWeight.bold),
-                                                  ),
-                                                  SizedBox(
-                                                    height: 5,
-                                                  ),
-                                                  Row(
                                                     children: [
-                                                      SvgPicture.asset(
-                                                          icTagArrow),
                                                       Text(
-                                                        'Category Text Public',
+                                                        'Ramon Ricardo',
                                                         style: TextStyle(
                                                             fontSize: 14,
                                                             fontWeight:
+                                                            FontWeight.bold),
+                                                      ),
+                                                      SizedBox(
+                                                        height: 5,
+                                                      ),
+                                                      Row(
+                                                        children: [
+                                                          SvgPicture.asset(
+                                                              icTagArrow),
+                                                          Text(
+                                                            'Category Text Public',
+                                                            style: TextStyle(
+                                                                fontSize: 14,
+                                                                fontWeight:
                                                                 FontWeight
                                                                     .bold),
-                                                      )
-                                                    ],
-                                                  ),
-                                                ]),
-                                          ),
-                                          Spacer(),
-                                          Container(
-                                              child: Row(
-                                                  mainAxisAlignment:
+                                                          )
+                                                        ],
+                                                      ),
+                                                    ]),
+                                              ),
+                                              Spacer(),
+                                              Container(
+                                                  child: Row(
+                                                      mainAxisAlignment:
                                                       MainAxisAlignment
                                                           .spaceBetween,
-                                                  crossAxisAlignment:
+                                                      crossAxisAlignment:
                                                       CrossAxisAlignment.start,
-                                                  children: [
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsets.only(
-                                                          left: 10, top: 0),
-                                                  child: Text(
-                                                    '08-09-2021',
-                                                    style: TextStyle(
-                                                        fontWeight:
-                                                            FontWeight.normal,
-                                                        fontSize: 12),
-                                                  ),
-                                                ),
-                                                SizedBox(
-                                                  width: 10,
-                                                ),
-                                                InkWell(
-                                                  child: Container(
-                                                      margin: EdgeInsets.only(
-                                                          right: 10, top: 0),
-                                                      child: SvgPicture.asset(
-                                                          icMoreHorizontal)),
-                                                  onTap: () {
-                                                    showModalBottomSheet(
-                                                        context: context,
-                                                        builder: (context) {
-                                                          return Wrap(
-                                                            children: [
-                                                              ListTile(
-                                                                title: Text(
-                                                                    'Don\'t show me this again'),
-                                                              ),
-                                                              ListTile(
-                                                                title: Text(
-                                                                    'Report as spam'),
-                                                              ),
-                                                              ListTile(
-                                                                title: Text(
-                                                                    'Report as inappropriate content'),
-                                                              ),
-                                                            ],
-                                                          );
-                                                        });
-                                                  },
-                                                ),
-                                              ])),
-                                          SizedBox(
-                                            width: 10,
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                          const EdgeInsets.only(
+                                                              left: 10, top: 0),
+                                                          child: Text(
+                                                            '08-09-2021',
+                                                            style: TextStyle(
+                                                                fontWeight:
+                                                                FontWeight.normal,
+                                                                fontSize: 12),
+                                                          ),
+                                                        ),
+                                                        SizedBox(
+                                                          width: 10,
+                                                        ),
+                                                        InkWell(
+                                                          child: Container(
+                                                              margin: EdgeInsets.only(
+                                                                  right: 10, top: 0),
+                                                              child: SvgPicture.asset(
+                                                                  icMoreHorizontal)),
+                                                          onTap: () {
+                                                            showModalBottomSheet(
+                                                                context: context,
+                                                                builder: (context) {
+                                                                  return Wrap(
+                                                                    children: [
+                                                                      ListTile(
+                                                                        title: Text(
+                                                                            'Don\'t show me this again'),
+                                                                      ),
+                                                                      ListTile(
+                                                                        title: Text(
+                                                                            'Report as spam'),
+                                                                      ),
+                                                                      ListTile(
+                                                                        title: Text(
+                                                                            'Report as inappropriate content'),
+                                                                      ),
+                                                                    ],
+                                                                  );
+                                                                });
+                                                          },
+                                                        ),
+                                                      ])),
+                                              SizedBox(
+                                                width: 10,
+                                              ),
+                                            ],
                                           ),
-                                        ],
-                                      ),
-                                    ),
-                                    Container(
-                                      margin: EdgeInsets.only(
-                                          left: 20,
-                                          right: 20,
-                                          top: 5,
-                                          bottom: 10),
-                                      child: Column(
-                                        children: [
-                                          Text(
-                                            dummyLoremIpsum2,
-                                            style: TextStyle(
-                                                color: Colors.black,
-                                                fontSize: 16,
-                                                fontWeight: FontWeight.normal,
-                                                height: 1.4),
-                                          ),
-                                          SizedBox(
-                                            height: 10,
-                                          ),
-                                          InkWell(
-                                            onTap: () {
-                                              //Navigator.push(context, MaterialPageRoute(builder: (builder) => DetailScreen()));
-                                            },
-                                            child: Container(
-                                                height: 250,
-                                                width: MediaQuery.of(context)
-                                                    .size
-                                                    .width,
-                                                decoration: new BoxDecoration(
-                                                    image: new DecorationImage(
-                                                        fit: BoxFit.fill,
-                                                        image: AssetImage(
-                                                            image2)))),
-                                          ),
-                                          //Image(image: AssetImage(image2))
-                                        ],
-                                      ),
-                                    ),
-                                    Container(
-                                      margin: EdgeInsets.only(
-                                          left: 20,
-                                          right: 20,
-                                          top: 10,
-                                          bottom: 20),
-                                      child: Row(
-                                        children: [
-                                          Obx(
-                                                ()=> InkWell(
-                                                onTap:(){
-                                                  if(controller.isSelected3.value) {
-                                                    controller.isSelected3.value=false;
-                                                  } else {
-                                                    controller.isSelected3.value=true;
-                                                  }
-                                                  // Get.toNamed(Routes.landing);
+                                        ),
+                                        Container(
+                                          margin: EdgeInsets.only(
+                                              left: 20,
+                                              right: 20,
+                                              top: 5,
+                                              bottom: 10),
+                                          child: Column(
+                                            children: [
+                                              Text(
+                                                dummyLoremIpsum2,
+                                                style: TextStyle(
+                                                    color: Colors.black,
+                                                    fontSize: 16,
+                                                    fontWeight: FontWeight.normal,
+                                                    height: 1.4),
+                                              ),
+                                              SizedBox(
+                                                height: 10,
+                                              ),
+                                              InkWell(
+                                                onTap: () {
+                                                  //Navigator.push(context, MaterialPageRoute(builder: (builder) => DetailScreen()));
                                                 },
-                                                child: ((controller.isSelected3.value)? SvgPicture.asset(icHeartClick): SvgPicture.asset(icHeart))),
+                                                child: Container(
+                                                    height: 250,
+                                                    width: MediaQuery.of(context)
+                                                        .size
+                                                        .width,
+                                                    decoration: new BoxDecoration(
+                                                        image: new DecorationImage(
+                                                            fit: BoxFit.fill,
+                                                            image: AssetImage(
+                                                                image2)))),
+                                              ),
+                                              //Image(image: AssetImage(image2))
+                                            ],
                                           ),
+                                        ),
+                                        Container(
+                                          margin: EdgeInsets.only(
+                                              left: 20,
+                                              right: 20,
+                                              top: 10,
+                                              bottom: 20),
+                                          child: Row(
+                                            children: [
+                                              Obx(
+                                                    ()=> InkWell(
+                                                    onTap:(){
+                                                      if(controller.isSelected3.value) {
+                                                        controller.isSelected3.value=false;
+                                                      } else {
+                                                        controller.isSelected3.value=true;
+                                                      }
+                                                      // Get.toNamed(Routes.landing);
+                                                    },
+                                                    child: ((controller.isSelected3.value)? SvgPicture.asset(icHeartClick): SvgPicture.asset(icHeart))),
+                                              ),
 
-                                          Spacer(),
-                                          Obx(
-                                                ()=> InkWell(
-                                                onTap:(){
-                                                  if(controller.isSavedSelected3.value) {
-                                                    controller.isSavedSelected3.value=false;
-                                                  } else {
-                                                    controller.isSavedSelected3.value=true;
-                                                  }
-                                                  // Get.toNamed(Routes.landing);
-                                                },
+                                              Spacer(),
+                                              Obx(
+                                                    ()=> InkWell(
+                                                    onTap:(){
+                                                      if(controller.isSavedSelected3.value) {
+                                                        controller.isSavedSelected3.value=false;
+                                                      } else {
+                                                        controller.isSavedSelected3.value=true;
+                                                      }
+                                                      // Get.toNamed(Routes.landing);
+                                                    },
                                                     child:
                                                     ((controller.isSavedSelected3.value)?
                                                     SvgPicture.asset(
@@ -1029,208 +1032,208 @@ class LandingView extends GetView<LandingController> {
                                                     SvgPicture.asset(
                                                       icCombinedShape,
                                                     ))),
+                                              ),
+                                            ],
                                           ),
-                                        ],
-                                      ),
+                                        ),
+                                        Divider(
+                                          height: 1,
+                                          color: Colors.black,
+                                        )
+                                      ],
                                     ),
-                                    Divider(
-                                      height: 1,
-                                      color: Colors.black,
-                                    )
-                                  ],
-                                ),
-                                Column(
-                                  children: [
-                                    Container(
-                                      height: 60,
-                                      width: MediaQuery.of(context).size.width,
-                                      child: Row(
-                                        //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                        children: [
-                                          SizedBox(
-                                            width: 20,
-                                          ),
-                                          InkWell(
-                                            child: Container(
-                                                width: 40.0,
-                                                height: 40.0,
-                                                decoration: new BoxDecoration(
-                                                    shape: BoxShape.circle,
-                                                    image: new DecorationImage(
-                                                        fit: BoxFit.fill,
-                                                        image: AssetImage(
-                                                            profileImage5)))),
-                                            onTap: () {
-                                              showAlertDialogImage(
-                                                  context, profileImage5);
-                                            },
-                                          ),
-                                          SizedBox(
-                                            width: 15,
-                                          ),
-                                          Container(
-                                            margin: EdgeInsets.only(top: 10),
-                                            child: Column(
-                                                mainAxisAlignment:
+                                    Column(
+                                      children: [
+                                        Container(
+                                          height: 60,
+                                          width: MediaQuery.of(context).size.width,
+                                          child: Row(
+                                            //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                            children: [
+                                              SizedBox(
+                                                width: 20,
+                                              ),
+                                              InkWell(
+                                                child: Container(
+                                                    width: 40.0,
+                                                    height: 40.0,
+                                                    decoration: new BoxDecoration(
+                                                        shape: BoxShape.circle,
+                                                        image: new DecorationImage(
+                                                            fit: BoxFit.fill,
+                                                            image: AssetImage(
+                                                                profileImage5)))),
+                                                onTap: () {
+                                                  showAlertDialogImage(
+                                                      context, profileImage5);
+                                                },
+                                              ),
+                                              SizedBox(
+                                                width: 15,
+                                              ),
+                                              Container(
+                                                margin: EdgeInsets.only(top: 10),
+                                                child: Column(
+                                                    mainAxisAlignment:
                                                     MainAxisAlignment.start,
-                                                crossAxisAlignment:
+                                                    crossAxisAlignment:
                                                     CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    'Ramon Ricardo',
-                                                    style: TextStyle(
-                                                        fontSize: 14,
-                                                        fontWeight:
-                                                            FontWeight.bold),
-                                                  ),
-                                                  SizedBox(
-                                                    height: 5,
-                                                  ),
-                                                  Row(
                                                     children: [
-                                                      SvgPicture.asset(
-                                                          icTagArrow),
                                                       Text(
-                                                        'Category Text Public',
+                                                        'Ramon Ricardo',
                                                         style: TextStyle(
                                                             fontSize: 14,
                                                             fontWeight:
+                                                            FontWeight.bold),
+                                                      ),
+                                                      SizedBox(
+                                                        height: 5,
+                                                      ),
+                                                      Row(
+                                                        children: [
+                                                          SvgPicture.asset(
+                                                              icTagArrow),
+                                                          Text(
+                                                            'Category Text Public',
+                                                            style: TextStyle(
+                                                                fontSize: 14,
+                                                                fontWeight:
                                                                 FontWeight
                                                                     .bold),
-                                                      )
-                                                    ],
-                                                  ),
-                                                ]),
-                                          ),
-                                          Spacer(),
-                                          Container(
-                                              child: Row(
-                                                  mainAxisAlignment:
+                                                          )
+                                                        ],
+                                                      ),
+                                                    ]),
+                                              ),
+                                              Spacer(),
+                                              Container(
+                                                  child: Row(
+                                                      mainAxisAlignment:
                                                       MainAxisAlignment
                                                           .spaceBetween,
-                                                  crossAxisAlignment:
+                                                      crossAxisAlignment:
                                                       CrossAxisAlignment.start,
-                                                  children: [
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsets.only(
-                                                          left: 10, top: 0),
-                                                  child: Text(
-                                                    '08-09-2021',
-                                                    style: TextStyle(
-                                                        fontWeight:
-                                                            FontWeight.normal,
-                                                        fontSize: 12),
-                                                  ),
-                                                ),
-                                                SizedBox(
-                                                  width: 10,
-                                                ),
-                                                InkWell(
-                                                  child: Container(
-                                                      margin: EdgeInsets.only(
-                                                          right: 10, top: 0),
-                                                      child: SvgPicture.asset(
-                                                          icMoreHorizontal)),
-                                                  onTap: () {
-                                                    showModalBottomSheet(
-                                                        context: context,
-                                                        builder: (context) {
-                                                          return Wrap(
-                                                            children: [
-                                                              ListTile(
-                                                                title: Text(
-                                                                    'Don\'t show me this again'),
-                                                              ),
-                                                              ListTile(
-                                                                title: Text(
-                                                                    'Report as spam'),
-                                                              ),
-                                                              ListTile(
-                                                                title: Text(
-                                                                    'Report as inappropriate content'),
-                                                              ),
-                                                            ],
-                                                          );
-                                                        });
-                                                  },
-                                                ),
-                                              ])),
-                                          SizedBox(
-                                            width: 10,
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                          const EdgeInsets.only(
+                                                              left: 10, top: 0),
+                                                          child: Text(
+                                                            '08-09-2021',
+                                                            style: TextStyle(
+                                                                fontWeight:
+                                                                FontWeight.normal,
+                                                                fontSize: 12),
+                                                          ),
+                                                        ),
+                                                        SizedBox(
+                                                          width: 10,
+                                                        ),
+                                                        InkWell(
+                                                          child: Container(
+                                                              margin: EdgeInsets.only(
+                                                                  right: 10, top: 0),
+                                                              child: SvgPicture.asset(
+                                                                  icMoreHorizontal)),
+                                                          onTap: () {
+                                                            showModalBottomSheet(
+                                                                context: context,
+                                                                builder: (context) {
+                                                                  return Wrap(
+                                                                    children: [
+                                                                      ListTile(
+                                                                        title: Text(
+                                                                            'Don\'t show me this again'),
+                                                                      ),
+                                                                      ListTile(
+                                                                        title: Text(
+                                                                            'Report as spam'),
+                                                                      ),
+                                                                      ListTile(
+                                                                        title: Text(
+                                                                            'Report as inappropriate content'),
+                                                                      ),
+                                                                    ],
+                                                                  );
+                                                                });
+                                                          },
+                                                        ),
+                                                      ])),
+                                              SizedBox(
+                                                width: 10,
+                                              ),
+                                            ],
                                           ),
-                                        ],
-                                      ),
-                                    ),
-                                    Container(
-                                      margin: EdgeInsets.only(
-                                          left: 20,
-                                          right: 20,
-                                          top: 5,
-                                          bottom: 10),
-                                      child: Column(
-                                        children: [
-                                          Text(
-                                            dummyLoremIpsum2,
-                                            style: TextStyle(
-                                                color: Colors.black,
-                                                fontSize: 16,
-                                                fontWeight: FontWeight.normal,
-                                                height: 1.4),
-                                          ),
-                                          SizedBox(
-                                            height: 10,
-                                          ),
-                                          InkWell(
-                                            onTap: () {
-                                              //Navigator.push(context, MaterialPageRoute(builder: (builder) => DetailScreen()));
-                                            },
-                                            child: Container(
-                                                height: 250,
-                                                width: MediaQuery.of(context)
-                                                    .size
-                                                    .width,
-                                                decoration: new BoxDecoration(
-                                                    image: new DecorationImage(
-                                                        fit: BoxFit.fill,
-                                                        image: AssetImage(
-                                                            image4)))),
-                                          ),
-                                          //Image(image: AssetImage(image2))
-                                        ],
-                                      ),
-                                    ),
-                                    Container(
-                                      margin: EdgeInsets.only(
-                                          left: 20,
-                                          right: 20,
-                                          top: 10,
-                                          bottom: 20),
-                                      child: Row(
-                                        children: [
-                                          Obx(
-                                                ()=> InkWell(
-                                                onTap:(){
-                                                  if(controller.isSelected4.value) {
-                                                    controller.isSelected4.value=false;
-                                                  } else {
-                                                    controller.isSelected4.value=true;
-                                                  }
-                                                  // Get.toNamed(Routes.landing);
+                                        ),
+                                        Container(
+                                          margin: EdgeInsets.only(
+                                              left: 20,
+                                              right: 20,
+                                              top: 5,
+                                              bottom: 10),
+                                          child: Column(
+                                            children: [
+                                              Text(
+                                                dummyLoremIpsum2,
+                                                style: TextStyle(
+                                                    color: Colors.black,
+                                                    fontSize: 16,
+                                                    fontWeight: FontWeight.normal,
+                                                    height: 1.4),
+                                              ),
+                                              SizedBox(
+                                                height: 10,
+                                              ),
+                                              InkWell(
+                                                onTap: () {
+                                                  //Navigator.push(context, MaterialPageRoute(builder: (builder) => DetailScreen()));
                                                 },
-                                                child: ((controller.isSelected4.value)? SvgPicture.asset(icHeartClick): SvgPicture.asset(icHeart))),
+                                                child: Container(
+                                                    height: 250,
+                                                    width: MediaQuery.of(context)
+                                                        .size
+                                                        .width,
+                                                    decoration: new BoxDecoration(
+                                                        image: new DecorationImage(
+                                                            fit: BoxFit.fill,
+                                                            image: AssetImage(
+                                                                image4)))),
+                                              ),
+                                              //Image(image: AssetImage(image2))
+                                            ],
                                           ),
-                                          Spacer(),
-                                          Obx(
-                                                ()=> InkWell(
-                                                onTap:(){
-                                                  if(controller.isSavedSelected4.value) {
-                                                    controller.isSavedSelected4.value=false;
-                                                  } else {
-                                                    controller.isSavedSelected4.value=true;
-                                                  }
-                                                  // Get.toNamed(Routes.landing);
-                                                },
+                                        ),
+                                        Container(
+                                          margin: EdgeInsets.only(
+                                              left: 20,
+                                              right: 20,
+                                              top: 10,
+                                              bottom: 20),
+                                          child: Row(
+                                            children: [
+                                              Obx(
+                                                    ()=> InkWell(
+                                                    onTap:(){
+                                                      if(controller.isSelected4.value) {
+                                                        controller.isSelected4.value=false;
+                                                      } else {
+                                                        controller.isSelected4.value=true;
+                                                      }
+                                                      // Get.toNamed(Routes.landing);
+                                                    },
+                                                    child: ((controller.isSelected4.value)? SvgPicture.asset(icHeartClick): SvgPicture.asset(icHeart))),
+                                              ),
+                                              Spacer(),
+                                              Obx(
+                                                    ()=> InkWell(
+                                                    onTap:(){
+                                                      if(controller.isSavedSelected4.value) {
+                                                        controller.isSavedSelected4.value=false;
+                                                      } else {
+                                                        controller.isSavedSelected4.value=true;
+                                                      }
+                                                      // Get.toNamed(Routes.landing);
+                                                    },
                                                     child:
                                                     ((controller.isSavedSelected4.value)?
                                                     SvgPicture.asset(
@@ -1239,208 +1242,208 @@ class LandingView extends GetView<LandingController> {
                                                     SvgPicture.asset(
                                                       icCombinedShape,
                                                     ))),
+                                              ),
+                                            ],
                                           ),
-                                        ],
-                                      ),
+                                        ),
+                                        Divider(
+                                          height: 1,
+                                          color: Colors.black,
+                                        )
+                                      ],
                                     ),
-                                    Divider(
-                                      height: 1,
-                                      color: Colors.black,
-                                    )
-                                  ],
-                                ),
-                                Column(
-                                  children: [
-                                    Container(
-                                      height: 60,
-                                      width: MediaQuery.of(context).size.width,
-                                      child: Row(
-                                        //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                        children: [
-                                          SizedBox(
-                                            width: 20,
-                                          ),
-                                          InkWell(
-                                            child: Container(
-                                                width: 40.0,
-                                                height: 40.0,
-                                                decoration: new BoxDecoration(
-                                                    shape: BoxShape.circle,
-                                                    image: new DecorationImage(
-                                                        fit: BoxFit.fill,
-                                                        image: AssetImage(
-                                                            profileImage6)))),
-                                            onTap: () {
-                                              showAlertDialogImage(
-                                                  context, profileImage6);
-                                            },
-                                          ),
-                                          SizedBox(
-                                            width: 15,
-                                          ),
-                                          Container(
-                                            margin: EdgeInsets.only(top: 10),
-                                            child: Column(
-                                                mainAxisAlignment:
+                                    Column(
+                                      children: [
+                                        Container(
+                                          height: 60,
+                                          width: MediaQuery.of(context).size.width,
+                                          child: Row(
+                                            //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                            children: [
+                                              SizedBox(
+                                                width: 20,
+                                              ),
+                                              InkWell(
+                                                child: Container(
+                                                    width: 40.0,
+                                                    height: 40.0,
+                                                    decoration: new BoxDecoration(
+                                                        shape: BoxShape.circle,
+                                                        image: new DecorationImage(
+                                                            fit: BoxFit.fill,
+                                                            image: AssetImage(
+                                                                profileImage6)))),
+                                                onTap: () {
+                                                  showAlertDialogImage(
+                                                      context, profileImage6);
+                                                },
+                                              ),
+                                              SizedBox(
+                                                width: 15,
+                                              ),
+                                              Container(
+                                                margin: EdgeInsets.only(top: 10),
+                                                child: Column(
+                                                    mainAxisAlignment:
                                                     MainAxisAlignment.start,
-                                                crossAxisAlignment:
+                                                    crossAxisAlignment:
                                                     CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    'Ramon Ricardo',
-                                                    style: TextStyle(
-                                                        fontSize: 14,
-                                                        fontWeight:
-                                                            FontWeight.bold),
-                                                  ),
-                                                  SizedBox(
-                                                    height: 5,
-                                                  ),
-                                                  Row(
                                                     children: [
-                                                      SvgPicture.asset(
-                                                          icTagArrow),
                                                       Text(
-                                                        'Category Text Public',
+                                                        'Ramon Ricardo',
                                                         style: TextStyle(
                                                             fontSize: 14,
                                                             fontWeight:
+                                                            FontWeight.bold),
+                                                      ),
+                                                      SizedBox(
+                                                        height: 5,
+                                                      ),
+                                                      Row(
+                                                        children: [
+                                                          SvgPicture.asset(
+                                                              icTagArrow),
+                                                          Text(
+                                                            'Category Text Public',
+                                                            style: TextStyle(
+                                                                fontSize: 14,
+                                                                fontWeight:
                                                                 FontWeight
                                                                     .bold),
-                                                      )
-                                                    ],
-                                                  ),
-                                                ]),
-                                          ),
-                                          Spacer(),
-                                          Container(
-                                              child: Row(
-                                                  mainAxisAlignment:
+                                                          )
+                                                        ],
+                                                      ),
+                                                    ]),
+                                              ),
+                                              Spacer(),
+                                              Container(
+                                                  child: Row(
+                                                      mainAxisAlignment:
                                                       MainAxisAlignment
                                                           .spaceBetween,
-                                                  crossAxisAlignment:
+                                                      crossAxisAlignment:
                                                       CrossAxisAlignment.start,
-                                                  children: [
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsets.only(
-                                                          left: 10, top: 0),
-                                                  child: Text(
-                                                    '08-09-2021',
-                                                    style: TextStyle(
-                                                        fontWeight:
-                                                            FontWeight.normal,
-                                                        fontSize: 12),
-                                                  ),
-                                                ),
-                                                SizedBox(
-                                                  width: 10,
-                                                ),
-                                                InkWell(
-                                                  child: Container(
-                                                      margin: EdgeInsets.only(
-                                                          right: 10, top: 0),
-                                                      child: SvgPicture.asset(
-                                                          icMoreHorizontal)),
-                                                  onTap: () {
-                                                    showModalBottomSheet(
-                                                        context: context,
-                                                        builder: (context) {
-                                                          return Wrap(
-                                                            children: [
-                                                              ListTile(
-                                                                title: Text(
-                                                                    'Don\'t show me this again'),
-                                                              ),
-                                                              ListTile(
-                                                                title: Text(
-                                                                    'Report as spam'),
-                                                              ),
-                                                              ListTile(
-                                                                title: Text(
-                                                                    'Report as inappropriate content'),
-                                                              ),
-                                                            ],
-                                                          );
-                                                        });
-                                                  },
-                                                ),
-                                              ])),
-                                          SizedBox(
-                                            width: 10,
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                          const EdgeInsets.only(
+                                                              left: 10, top: 0),
+                                                          child: Text(
+                                                            '08-09-2021',
+                                                            style: TextStyle(
+                                                                fontWeight:
+                                                                FontWeight.normal,
+                                                                fontSize: 12),
+                                                          ),
+                                                        ),
+                                                        SizedBox(
+                                                          width: 10,
+                                                        ),
+                                                        InkWell(
+                                                          child: Container(
+                                                              margin: EdgeInsets.only(
+                                                                  right: 10, top: 0),
+                                                              child: SvgPicture.asset(
+                                                                  icMoreHorizontal)),
+                                                          onTap: () {
+                                                            showModalBottomSheet(
+                                                                context: context,
+                                                                builder: (context) {
+                                                                  return Wrap(
+                                                                    children: [
+                                                                      ListTile(
+                                                                        title: Text(
+                                                                            'Don\'t show me this again'),
+                                                                      ),
+                                                                      ListTile(
+                                                                        title: Text(
+                                                                            'Report as spam'),
+                                                                      ),
+                                                                      ListTile(
+                                                                        title: Text(
+                                                                            'Report as inappropriate content'),
+                                                                      ),
+                                                                    ],
+                                                                  );
+                                                                });
+                                                          },
+                                                        ),
+                                                      ])),
+                                              SizedBox(
+                                                width: 10,
+                                              ),
+                                            ],
                                           ),
-                                        ],
-                                      ),
-                                    ),
-                                    Container(
-                                      margin: EdgeInsets.only(
-                                          left: 20,
-                                          right: 20,
-                                          top: 5,
-                                          bottom: 10),
-                                      child: Column(
-                                        children: [
-                                          Text(
-                                            dummyLoremIpsum2,
-                                            style: TextStyle(
-                                                color: Colors.black,
-                                                fontSize: 16,
-                                                fontWeight: FontWeight.normal,
-                                                height: 1.4),
-                                          ),
-                                          SizedBox(
-                                            height: 10,
-                                          ),
-                                          InkWell(
-                                            onTap: () {
-                                              //Navigator.push(context, MaterialPageRoute(builder: (builder) => DetailScreen()));
-                                            },
-                                            child: Container(
-                                                height: 250,
-                                                width: MediaQuery.of(context)
-                                                    .size
-                                                    .width,
-                                                decoration: new BoxDecoration(
-                                                    image: new DecorationImage(
-                                                        fit: BoxFit.fill,
-                                                        image: AssetImage(
-                                                            image5)))),
-                                          ),
-                                          //Image(image: AssetImage(image2))
-                                        ],
-                                      ),
-                                    ),
-                                    Container(
-                                      margin: EdgeInsets.only(
-                                          left: 20,
-                                          right: 20,
-                                          top: 10,
-                                          bottom: 20),
-                                      child: Row(
-                                        children: [
-                                          Obx(
-                                                ()=> InkWell(
-                                                onTap:(){
-                                                  if(controller.isSelected5.value) {
-                                                    controller.isSelected5.value=false;
-                                                  } else {
-                                                    controller.isSelected5.value=true;
-                                                  }
-                                                  // Get.toNamed(Routes.landing);
+                                        ),
+                                        Container(
+                                          margin: EdgeInsets.only(
+                                              left: 20,
+                                              right: 20,
+                                              top: 5,
+                                              bottom: 10),
+                                          child: Column(
+                                            children: [
+                                              Text(
+                                                dummyLoremIpsum2,
+                                                style: TextStyle(
+                                                    color: Colors.black,
+                                                    fontSize: 16,
+                                                    fontWeight: FontWeight.normal,
+                                                    height: 1.4),
+                                              ),
+                                              SizedBox(
+                                                height: 10,
+                                              ),
+                                              InkWell(
+                                                onTap: () {
+                                                  //Navigator.push(context, MaterialPageRoute(builder: (builder) => DetailScreen()));
                                                 },
-                                                child: ((controller.isSelected5.value)? SvgPicture.asset(icHeartClick): SvgPicture.asset(icHeart))),
+                                                child: Container(
+                                                    height: 250,
+                                                    width: MediaQuery.of(context)
+                                                        .size
+                                                        .width,
+                                                    decoration: new BoxDecoration(
+                                                        image: new DecorationImage(
+                                                            fit: BoxFit.fill,
+                                                            image: AssetImage(
+                                                                image5)))),
+                                              ),
+                                              //Image(image: AssetImage(image2))
+                                            ],
                                           ),
-                                          Spacer(),
-                                          Obx(
-                                                ()=> InkWell(
-                                                onTap:(){
-                                                  if(controller.isSavedSelected5.value) {
-                                                    controller.isSavedSelected5.value=false;
-                                                  } else {
-                                                    controller.isSavedSelected5.value=true;
-                                                  }
-                                                  // Get.toNamed(Routes.landing);
-                                                },
+                                        ),
+                                        Container(
+                                          margin: EdgeInsets.only(
+                                              left: 20,
+                                              right: 20,
+                                              top: 10,
+                                              bottom: 20),
+                                          child: Row(
+                                            children: [
+                                              Obx(
+                                                    ()=> InkWell(
+                                                    onTap:(){
+                                                      if(controller.isSelected5.value) {
+                                                        controller.isSelected5.value=false;
+                                                      } else {
+                                                        controller.isSelected5.value=true;
+                                                      }
+                                                      // Get.toNamed(Routes.landing);
+                                                    },
+                                                    child: ((controller.isSelected5.value)? SvgPicture.asset(icHeartClick): SvgPicture.asset(icHeart))),
+                                              ),
+                                              Spacer(),
+                                              Obx(
+                                                    ()=> InkWell(
+                                                    onTap:(){
+                                                      if(controller.isSavedSelected5.value) {
+                                                        controller.isSavedSelected5.value=false;
+                                                      } else {
+                                                        controller.isSavedSelected5.value=true;
+                                                      }
+                                                      // Get.toNamed(Routes.landing);
+                                                    },
                                                     child:
                                                     ((controller.isSavedSelected5.value)?
                                                     SvgPicture.asset(
@@ -1449,208 +1452,208 @@ class LandingView extends GetView<LandingController> {
                                                     SvgPicture.asset(
                                                       icCombinedShape,
                                                     ))),
+                                              ),
+                                            ],
                                           ),
-                                        ],
-                                      ),
+                                        ),
+                                        Divider(
+                                          height: 1,
+                                          color: Colors.black,
+                                        )
+                                      ],
                                     ),
-                                    Divider(
-                                      height: 1,
-                                      color: Colors.black,
-                                    )
-                                  ],
-                                ),
-                                Column(
-                                  children: [
-                                    Container(
-                                      height: 60,
-                                      width: MediaQuery.of(context).size.width,
-                                      child: Row(
-                                        //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                        children: [
-                                          SizedBox(
-                                            width: 20,
-                                          ),
-                                          InkWell(
-                                            child: Container(
-                                                width: 40.0,
-                                                height: 40.0,
-                                                decoration: new BoxDecoration(
-                                                    shape: BoxShape.circle,
-                                                    image: new DecorationImage(
-                                                        fit: BoxFit.fill,
-                                                        image: AssetImage(
-                                                            profileImage6)))),
-                                            onTap: () {
-                                              showAlertDialogImage(
-                                                  context, profileImage6);
-                                            },
-                                          ),
-                                          SizedBox(
-                                            width: 15,
-                                          ),
-                                          Container(
-                                            margin: EdgeInsets.only(top: 10),
-                                            child: Column(
-                                                mainAxisAlignment:
+                                    Column(
+                                      children: [
+                                        Container(
+                                          height: 60,
+                                          width: MediaQuery.of(context).size.width,
+                                          child: Row(
+                                            //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                            children: [
+                                              SizedBox(
+                                                width: 20,
+                                              ),
+                                              InkWell(
+                                                child: Container(
+                                                    width: 40.0,
+                                                    height: 40.0,
+                                                    decoration: new BoxDecoration(
+                                                        shape: BoxShape.circle,
+                                                        image: new DecorationImage(
+                                                            fit: BoxFit.fill,
+                                                            image: AssetImage(
+                                                                profileImage6)))),
+                                                onTap: () {
+                                                  showAlertDialogImage(
+                                                      context, profileImage6);
+                                                },
+                                              ),
+                                              SizedBox(
+                                                width: 15,
+                                              ),
+                                              Container(
+                                                margin: EdgeInsets.only(top: 10),
+                                                child: Column(
+                                                    mainAxisAlignment:
                                                     MainAxisAlignment.start,
-                                                crossAxisAlignment:
+                                                    crossAxisAlignment:
                                                     CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    'Ramon Ricardo',
-                                                    style: TextStyle(
-                                                        fontSize: 14,
-                                                        fontWeight:
-                                                            FontWeight.bold),
-                                                  ),
-                                                  SizedBox(
-                                                    height: 5,
-                                                  ),
-                                                  Row(
                                                     children: [
-                                                      SvgPicture.asset(
-                                                          icTagArrow),
                                                       Text(
-                                                        'Category Text Public',
+                                                        'Ramon Ricardo',
                                                         style: TextStyle(
                                                             fontSize: 14,
                                                             fontWeight:
+                                                            FontWeight.bold),
+                                                      ),
+                                                      SizedBox(
+                                                        height: 5,
+                                                      ),
+                                                      Row(
+                                                        children: [
+                                                          SvgPicture.asset(
+                                                              icTagArrow),
+                                                          Text(
+                                                            'Category Text Public',
+                                                            style: TextStyle(
+                                                                fontSize: 14,
+                                                                fontWeight:
                                                                 FontWeight
                                                                     .bold),
-                                                      )
-                                                    ],
-                                                  ),
-                                                ]),
-                                          ),
-                                          Spacer(),
-                                          Container(
-                                              child: Row(
-                                                  mainAxisAlignment:
+                                                          )
+                                                        ],
+                                                      ),
+                                                    ]),
+                                              ),
+                                              Spacer(),
+                                              Container(
+                                                  child: Row(
+                                                      mainAxisAlignment:
                                                       MainAxisAlignment
                                                           .spaceBetween,
-                                                  crossAxisAlignment:
+                                                      crossAxisAlignment:
                                                       CrossAxisAlignment.start,
-                                                  children: [
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsets.only(
-                                                          left: 10, top: 0),
-                                                  child: Text(
-                                                    '08-09-2021',
-                                                    style: TextStyle(
-                                                        fontWeight:
-                                                            FontWeight.normal,
-                                                        fontSize: 12),
-                                                  ),
-                                                ),
-                                                SizedBox(
-                                                  width: 10,
-                                                ),
-                                                InkWell(
-                                                  child: Container(
-                                                      margin: EdgeInsets.only(
-                                                          right: 10, top: 0),
-                                                      child: SvgPicture.asset(
-                                                          icMoreHorizontal)),
-                                                  onTap: () {
-                                                    showModalBottomSheet(
-                                                        context: context,
-                                                        builder: (context) {
-                                                          return Wrap(
-                                                            children: [
-                                                              ListTile(
-                                                                title: Text(
-                                                                    'Don\'t show me this again'),
-                                                              ),
-                                                              ListTile(
-                                                                title: Text(
-                                                                    'Report as spam'),
-                                                              ),
-                                                              ListTile(
-                                                                title: Text(
-                                                                    'Report as inappropriate content'),
-                                                              ),
-                                                            ],
-                                                          );
-                                                        });
-                                                  },
-                                                ),
-                                              ])),
-                                          SizedBox(
-                                            width: 10,
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                          const EdgeInsets.only(
+                                                              left: 10, top: 0),
+                                                          child: Text(
+                                                            '08-09-2021',
+                                                            style: TextStyle(
+                                                                fontWeight:
+                                                                FontWeight.normal,
+                                                                fontSize: 12),
+                                                          ),
+                                                        ),
+                                                        SizedBox(
+                                                          width: 10,
+                                                        ),
+                                                        InkWell(
+                                                          child: Container(
+                                                              margin: EdgeInsets.only(
+                                                                  right: 10, top: 0),
+                                                              child: SvgPicture.asset(
+                                                                  icMoreHorizontal)),
+                                                          onTap: () {
+                                                            showModalBottomSheet(
+                                                                context: context,
+                                                                builder: (context) {
+                                                                  return Wrap(
+                                                                    children: [
+                                                                      ListTile(
+                                                                        title: Text(
+                                                                            'Don\'t show me this again'),
+                                                                      ),
+                                                                      ListTile(
+                                                                        title: Text(
+                                                                            'Report as spam'),
+                                                                      ),
+                                                                      ListTile(
+                                                                        title: Text(
+                                                                            'Report as inappropriate content'),
+                                                                      ),
+                                                                    ],
+                                                                  );
+                                                                });
+                                                          },
+                                                        ),
+                                                      ])),
+                                              SizedBox(
+                                                width: 10,
+                                              ),
+                                            ],
                                           ),
-                                        ],
-                                      ),
-                                    ),
-                                    Container(
-                                      margin: EdgeInsets.only(
-                                          left: 20,
-                                          right: 20,
-                                          top: 5,
-                                          bottom: 10),
-                                      child: Column(
-                                        children: [
-                                          Text(
-                                            dummyLoremIpsum2,
-                                            style: TextStyle(
-                                                color: Colors.black,
-                                                fontSize: 16,
-                                                fontWeight: FontWeight.normal,
-                                                height: 1.4),
-                                          ),
-                                          SizedBox(
-                                            height: 10,
-                                          ),
-                                          InkWell(
-                                            onTap: () {
-                                              //Navigator.push(context, MaterialPageRoute(builder: (builder) => DetailScreen()));
-                                            },
-                                            child: Container(
-                                                height: 250,
-                                                width: MediaQuery.of(context)
-                                                    .size
-                                                    .width,
-                                                decoration: new BoxDecoration(
-                                                    image: new DecorationImage(
-                                                        fit: BoxFit.fill,
-                                                        image: AssetImage(
-                                                            image6)))),
-                                          ),
-                                          //Image(image: AssetImage(image2))
-                                        ],
-                                      ),
-                                    ),
-                                    Container(
-                                      margin: EdgeInsets.only(
-                                          left: 20,
-                                          right: 20,
-                                          top: 10,
-                                          bottom: 20),
-                                      child: Row(
-                                        children: [
-                                          Obx(
-                                                ()=> InkWell(
-                                                onTap:(){
-                                                  if(controller.isSelected6.value) {
-                                                    controller.isSelected6.value=false;
-                                                  } else {
-                                                    controller.isSelected6.value=true;
-                                                  }
-                                                  // Get.toNamed(Routes.landing);
+                                        ),
+                                        Container(
+                                          margin: EdgeInsets.only(
+                                              left: 20,
+                                              right: 20,
+                                              top: 5,
+                                              bottom: 10),
+                                          child: Column(
+                                            children: [
+                                              Text(
+                                                dummyLoremIpsum2,
+                                                style: TextStyle(
+                                                    color: Colors.black,
+                                                    fontSize: 16,
+                                                    fontWeight: FontWeight.normal,
+                                                    height: 1.4),
+                                              ),
+                                              SizedBox(
+                                                height: 10,
+                                              ),
+                                              InkWell(
+                                                onTap: () {
+                                                  //Navigator.push(context, MaterialPageRoute(builder: (builder) => DetailScreen()));
                                                 },
-                                                child: ((controller.isSelected6.value)? SvgPicture.asset(icHeartClick): SvgPicture.asset(icHeart))),
+                                                child: Container(
+                                                    height: 250,
+                                                    width: MediaQuery.of(context)
+                                                        .size
+                                                        .width,
+                                                    decoration: new BoxDecoration(
+                                                        image: new DecorationImage(
+                                                            fit: BoxFit.fill,
+                                                            image: AssetImage(
+                                                                image6)))),
+                                              ),
+                                              //Image(image: AssetImage(image2))
+                                            ],
                                           ),
-                                          Spacer(),
-                                          Obx(
-                                                ()=> InkWell(
-                                                onTap:(){
-                                                  if(controller.isSavedSelected6.value) {
-                                                    controller.isSavedSelected6.value=false;
-                                                  } else {
-                                                    controller.isSavedSelected6.value=true;
-                                                  }
-                                                  // Get.toNamed(Routes.landing);
-                                                },
+                                        ),
+                                        Container(
+                                          margin: EdgeInsets.only(
+                                              left: 20,
+                                              right: 20,
+                                              top: 10,
+                                              bottom: 20),
+                                          child: Row(
+                                            children: [
+                                              Obx(
+                                                    ()=> InkWell(
+                                                    onTap:(){
+                                                      if(controller.isSelected6.value) {
+                                                        controller.isSelected6.value=false;
+                                                      } else {
+                                                        controller.isSelected6.value=true;
+                                                      }
+                                                      // Get.toNamed(Routes.landing);
+                                                    },
+                                                    child: ((controller.isSelected6.value)? SvgPicture.asset(icHeartClick): SvgPicture.asset(icHeart))),
+                                              ),
+                                              Spacer(),
+                                              Obx(
+                                                    ()=> InkWell(
+                                                    onTap:(){
+                                                      if(controller.isSavedSelected6.value) {
+                                                        controller.isSavedSelected6.value=false;
+                                                      } else {
+                                                        controller.isSavedSelected6.value=true;
+                                                      }
+                                                      // Get.toNamed(Routes.landing);
+                                                    },
                                                     child:
                                                     ((controller.isSavedSelected6.value)?
                                                     SvgPicture.asset(
@@ -1659,29 +1662,33 @@ class LandingView extends GetView<LandingController> {
                                                     SvgPicture.asset(
                                                       icCombinedShape,
                                                     ))),
+                                              ),
+                                            ],
                                           ),
-                                        ],
-                                      ),
-                                    ),
-                                    Divider(
-                                      height: 1,
-                                      color: Colors.black,
+                                        ),
+                                        Divider(
+                                          height: 1,
+                                          color: Colors.black,
+                                        ),
+
+                                      ],
                                     ),
 
+
+                                    SizedBox(
+                                      height: 100,
+                                    )
                                   ],
                                 ),
+                              )),
 
-
-                                  SizedBox(
-                                  height: 100,
-                                )
-                              ],
-                            ),
-                          )),
                         ],
                       ),
                     ),
                   ),
+
+
+
                   SingleChildScrollView(
                     child: Container(
                       child: Column(

@@ -67,35 +67,67 @@ class TermsConditionView extends GetView<TermsConditionController> {
                       height: 1,
                       color: Colors.black,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Column(
-                        children : [
-                          Container(
-                              margin: EdgeInsets.only(left: 0,right: 0),child: Image(image: AssetImage(image1))),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Text(
-                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                            style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Text(
-                            "Lorem ipsum dolor sit amet, consectetur adipiscingelit. Non a leo felis, amet adipiscing gravida eget.Montes, amet turpis non neque venenatis in sed.Mauris venenatis sed et, cras. Quisque fermentumfaucibus eget sit et nulla sodales. Telluspellentesque dignissim malesuada in netus odiosed congue. Arcu, tempor ut posuere urna mauris.Est a risus, nisi nisi. Odio at vitae in massa diamhabitant ullamcorper volutpat non.Lorem quam semper felis id quis laoreet pulvinarnunc proin. Ac ultrices imperdiet dictum aliqueteros egestas ultrices. Pellentesque lorem nunc quisposuere posuere. In volutpat",
-                            style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.normal,
-                                color: Colors.grey),
-                          ),
-                        ]
+                    Expanded(
+                      child: SingleChildScrollView(
+                        child: Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Column(
+                                children : [
+                                  Container(
+                                      child: Image(image: AssetImage(termsbanner))),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text(
+                                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                                    style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black),
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
 
-                      )
+                                  Text(
+                                    "Lorem ipsum dolor sit amet, consectetur adipiscingelit. Non a leo felis, amet adipiscing gravida eget.Montes, amet turpis non neque venenatis in sed.Mauris venenatis sed et, cras. Quisque fermentumfaucibus eget sit et nulla sodales. Telluspellentesque dignissim malesuada in netus odiosed congue. Arcu, tempor ut posuere urna mauris.Est a risus, nisi nisi. Odio at vitae in massa diamhabitant ullamcorper volutpat non.Lorem quam semper felis id quis laoreet pulvinarnunc proin. Ac ultrices imperdiet dictum aliqueteros egestas ultrices. Pellentesque lorem nunc quisposuere posuere. In volutpat",
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.normal,
+                                        color: Colors.grey,
+                                    height: 1.2),
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+
+                                  Text(
+                                    "Lorem ipsum dolor sit amet, consectetur adipiscingelit. Non a leo felis, amet adipiscing gravida eget.Montes, amet turpis non neque venenatis in sed.Mauris venenatis sed et, cras. Quisque fermentumfaucibus eget sit et nulla sodales. Telluspellentesque dignissim malesuada in netus odiosed congue. Arcu, tempor ut posuere urna mauris.Est a risus, nisi nisi. Odio at vitae in massa diamhabitant ullamcorper volutpat non.Lorem quam semper felis id quis laoreet pulvinarnunc proin. Ac ultrices imperdiet dictum aliqueteros egestas ultrices. Pellentesque lorem nunc quisposuere posuere. In volutpat",
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.normal,
+                                        color: Colors.grey,
+                                        height: 1.2),
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text(
+                                    "Lorem ipsum dolor sit amet, consectetur adipiscingelit. Non a leo felis, amet adipiscing gravida eget.Montes, amet turpis non neque venenatis in sed.Mauris venenatis sed et, cras. Quisque fermentumfaucibus eget sit et nulla sodales. Telluspellentesque dignissim malesuada in netus odiosed congue. Arcu, tempor ut posuere urna mauris.Est a risus, nisi nisi. Odio at vitae in massa diamhabitant ullamcorper volutpat non.Lorem quam semper felis id quis laoreet pulvinarnunc proin. Ac ultrices imperdiet dictum aliqueteros egestas ultrices. Pellentesque lorem nunc quisposuere posuere. In volutpat",
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.normal,
+                                        color: Colors.grey,
+                                        height: 1.2),
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                ]
+
+                            )
+                        ),
+                      ),
                     ),
 
                   ],

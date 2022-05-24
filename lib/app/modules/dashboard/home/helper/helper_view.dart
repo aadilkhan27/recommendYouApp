@@ -13,22 +13,6 @@ import '../../../../core/values/keys.dart';
 import '../../../../core/values/strings.dart';
 
 class HelperView extends GetView<HelperController> {
-  List<String> images = [
-    profileImage1,
-    profileImage2,
-    profileImage3,
-    profileImage4,
-    profileImage5,
-    profileImage1,
-    profileImage2,
-    profileImage3,
-    profileImage4,
-    profileImage5,
-    profileImage1,
-    profileImage2,
-    profileImage3,
-  ];
-
 
 
   @override
