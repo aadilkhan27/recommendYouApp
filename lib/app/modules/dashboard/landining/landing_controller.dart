@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:multi_select_item/multi_select_item.dart';
 import 'package:recommend_you/app/core/values/colors.dart';
 import 'package:recommend_you/app/core/values/keys.dart';
 
@@ -10,6 +9,7 @@ class LandingController extends GetxController
 
   late TabController tabController;
   String? selectedItemValue="";
+  final isSelected=false.obs;
 
 
 
@@ -18,7 +18,8 @@ class LandingController extends GetxController
 
     Tab(
       child:
-      SvgPicture.asset(bottomNotification, color: primaryLightColor, height: 20, width: 20,),    *//*SvgPicture.asset(bottomHome, color: primaryLightColor, height: 20, width: 20,),*//*
+      SvgPicture.asset(bottomNotification, color: primaryLightColor, height: 20, width: 20,),    */
+  /*SvgPicture.asset(bottomHome, color: primaryLightColor, height: 20, width: 20,),*//*
     ),
     Tab(
         child: SvgPicture.asset(

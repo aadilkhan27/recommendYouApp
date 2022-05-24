@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:recommend_you/app/core/values/colors.dart';
 import 'package:recommend_you/app/core/values/keys.dart';
@@ -18,7 +19,6 @@ import 'package:recommend_you/app/widgets/dropdown_button2.dart';
 
 import '../../login/signin/sign_in_view.dart';
 import '../more/faq/faq_view.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
 class LandingView extends GetView<LandingController> {
   final List<String> spinnerItems = [
@@ -47,8 +47,6 @@ class LandingView extends GetView<LandingController> {
     profileImage3,
   ];
 
-
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -58,38 +56,77 @@ class LandingView extends GetView<LandingController> {
       child: MaterialApp(
         home: SafeArea(
           child: DefaultTabController(
-            length: 5,//controller.referralTabs.length,
+            length: 5, //controller.referralTabs.length,
             child: Scaffold(
               bottomNavigationBar: TabBar(
                   controller: controller.tabController,
-                 //tabs: controller.referralTabs,
-                   tabs: [
+                  //tabs: controller.referralTabs,
+                  tabs: [
                     Tab(
-                      child:  controller.tabController.index == 0?
-                      SvgPicture.asset(bottomHomeFill,  height: 20, width: 20,):
-                      SvgPicture.asset(bottomHome,  height: 20, width: 20,),
+                      child: controller.tabController.index == 0
+                          ? SvgPicture.asset(
+                              bottomHomeFill,
+                              height: 20,
+                              width: 20,
+                            )
+                          : SvgPicture.asset(
+                              bottomHome,
+                              height: 20,
+                              width: 20,
+                            ),
                     ),
-                     Tab(
-                       child:  controller.tabController.index == 1?
-                       SvgPicture.asset(bottomNotificationFill, height: 20, width: 20,):
-                       SvgPicture.asset(bottomNotification,  height: 20, width: 20,),
-                     ),
-                     Tab(
-                       child:  controller.tabController.index == 2?
-                       SvgPicture.asset(bottomAddFill,  height: 20, width: 20,):
-                       SvgPicture.asset(bottomAdd, height: 20, width: 20,),
-                     ),
-                     Tab(
-                       child:  controller.tabController.index == 3?
-                       SvgPicture.asset(bottomSearchFill,  height: 20, width: 20,):
-                       SvgPicture.asset(bottomSearch,  height: 20, width: 20,),
-                     ),
-                     Tab(
-                       child:  controller.tabController.index == 4?
-                       SvgPicture.asset(bottomMenu,  height: 20, width: 20,):
-                       SvgPicture.asset(bottomMenu,  height: 20, width: 20,),
-                     )
-
+                    Tab(
+                      child: controller.tabController.index == 1
+                          ? SvgPicture.asset(
+                              bottomNotificationFill,
+                              height: 20,
+                              width: 20,
+                            )
+                          : SvgPicture.asset(
+                              bottomNotification,
+                              height: 20,
+                              width: 20,
+                            ),
+                    ),
+                    Tab(
+                      child: controller.tabController.index == 2
+                          ? SvgPicture.asset(
+                              bottomAddFill,
+                              height: 20,
+                              width: 20,
+                            )
+                          : SvgPicture.asset(
+                              bottomAdd,
+                              height: 20,
+                              width: 20,
+                            ),
+                    ),
+                    Tab(
+                      child: controller.tabController.index == 3
+                          ? SvgPicture.asset(
+                              bottomSearchFill,
+                              height: 20,
+                              width: 20,
+                            )
+                          : SvgPicture.asset(
+                              bottomSearch,
+                              height: 20,
+                              width: 20,
+                            ),
+                    ),
+                    Tab(
+                      child: controller.tabController.index == 4
+                          ? SvgPicture.asset(
+                              bottomMenu,
+                              height: 20,
+                              width: 20,
+                            )
+                          : SvgPicture.asset(
+                              bottomMenu,
+                              height: 20,
+                              width: 20,
+                            ),
+                    )
                   ],
                   //labelColor: primaryDarkColor,
                   //unselectedLabelColor: primaryLightColor,
@@ -119,7 +156,6 @@ class LandingView extends GetView<LandingController> {
                       ),*/
 
                                   InkWell(
-
                                     child: Row(
                                       children: [
                                         SizedBox(
@@ -322,8 +358,6 @@ class LandingView extends GetView<LandingController> {
                                       },
                                     ),
                                   ),
-
-
                                   SizedBox(
                                     height: 20,
                                     child: VerticalDivider(
@@ -332,7 +366,6 @@ class LandingView extends GetView<LandingController> {
                                       width: 0,
                                     ),
                                   ),
-
                                   InkWell(
                                     child: Row(
                                       children: [
@@ -546,7 +579,18 @@ class LandingView extends GetView<LandingController> {
                                           bottom: 20),
                                       child: Row(
                                         children: [
-                                          SvgPicture.asset(icHeart),
+                                          Obx(
+                                          ()=> InkWell(
+                                                onTap:(){
+                                                  if(controller.isSelected.value) {
+                                                    controller.isSelected.value=false;
+                                                  } else {
+                                                    controller.isSelected.value=true;
+                                                  }
+                                                  // Get.toNamed(Routes.landing);
+                                                },
+                                                child: ((controller.isSelected.value)? SvgPicture.asset(icHeartClick): SvgPicture.asset(icHeart))),
+                                          ),
                                           /*SizedBox(
                                     width: 20,
                                   ),
@@ -1761,7 +1805,6 @@ class LandingView extends GetView<LandingController> {
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-
                                   /* InkWell(
                             onTap: () {
                               Get.back();
@@ -1774,7 +1817,10 @@ class LandingView extends GetView<LandingController> {
                                   SizedBox(
                                     width: 20,
                                   ),
-                                  Text('Notification', style: TextStyle(fontSize: 16),)
+                                  Text(
+                                    'Notification',
+                                    style: TextStyle(fontSize: 16),
+                                  )
                                 ],
                               ),
                             ),
@@ -1786,11 +1832,10 @@ class LandingView extends GetView<LandingController> {
                           Container(
                               height: MediaQuery.of(context).size.height,
                               width: MediaQuery.of(context).size.width,
-
                               child: Expanded(
                                 child: ListView.builder(
                                   itemBuilder: (BuildContext, index) {
-                                    return   Container(
+                                    return Container(
                                       child: Column(
                                         children: [
                                           Container(
@@ -1798,23 +1843,26 @@ class LandingView extends GetView<LandingController> {
                                             width: MediaQuery.of(context)
                                                 .size
                                                 .width,
-                                            margin: EdgeInsets.only(top : 10, bottom: 10, right: 10,left: 10),
+                                            margin: EdgeInsets.only(
+                                                top: 10,
+                                                bottom: 10,
+                                                right: 10,
+                                                left: 10),
                                             child: Row(
                                               children: [
                                                 InkWell(
                                                   onTap: () {
                                                     showAlertDialogForProfile(
-                                                        context,
-                                                        images[index]);
+                                                        context, images[index]);
                                                   },
                                                   child: Container(
                                                     width: 50.0,
                                                     height: 50.0,
                                                     decoration:
-                                                    new BoxDecoration(
+                                                        new BoxDecoration(
                                                       shape: BoxShape.rectangle,
                                                       image:
-                                                      new DecorationImage(
+                                                          new DecorationImage(
                                                         fit: BoxFit.fill,
                                                         image: AssetImage(
                                                             images[index]),
@@ -1826,27 +1874,41 @@ class LandingView extends GetView<LandingController> {
                                                   width: 20,
                                                 ),
                                                 Container(
-                                                  margin: EdgeInsets.only(top: 0),
+                                                  margin:
+                                                      EdgeInsets.only(top: 0),
                                                   child: Column(
-                                                    mainAxisAlignment: MainAxisAlignment.center,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
                                                     //crossAxisAlignment: CrossAxisAlignment.start,
                                                     children: [
                                                       Container(
                                                         //margin: EdgeInsets.only(left: 35, right: 35),
                                                         child: Center(
                                                           child: RichText(
-                                                            textAlign: TextAlign.center,
-                                                            text: TextSpan(children: [
-                                                              TextSpan(
-                                                                  text: 'New Likes ',
-                                                                  style:
-                                                                  TextStyle(color: Colors.black, fontSize: 14, fontWeight : FontWeight.bold)),
-                                                              TextSpan(
-                                                                  text: 'for your message.',
-                                                                  style: TextStyle(
-                                                                      color: Colors.black, fontSize: 14)),
-
-                                                            ]),
+                                                            textAlign: TextAlign
+                                                                .center,
+                                                            text: TextSpan(
+                                                                children: [
+                                                                  TextSpan(
+                                                                      text:
+                                                                          'New Likes ',
+                                                                      style: TextStyle(
+                                                                          color: Colors
+                                                                              .black,
+                                                                          fontSize:
+                                                                              14,
+                                                                          fontWeight:
+                                                                              FontWeight.bold)),
+                                                                  TextSpan(
+                                                                      text:
+                                                                          'for your message.',
+                                                                      style: TextStyle(
+                                                                          color: Colors
+                                                                              .black,
+                                                                          fontSize:
+                                                                              14)),
+                                                                ]),
                                                           ),
                                                         ),
                                                       ),
@@ -1859,10 +1921,12 @@ class LandingView extends GetView<LandingController> {
                                         ],
                                       ),
                                     );
-
                                   },
                                   itemCount: images.length,
-                                  padding: EdgeInsets.only(right: 20, left : 20,),
+                                  padding: EdgeInsets.only(
+                                    right: 20,
+                                    left: 20,
+                                  ),
                                   scrollDirection: Axis.vertical,
                                 ),
                               )),
@@ -2001,14 +2065,17 @@ class LandingView extends GetView<LandingController> {
                                   contentPadding: EdgeInsets.zero,
                                   enabledBorder: const OutlineInputBorder(
                                     // width: 0.0 produces a thin "hairline" border
-                                    borderSide: const BorderSide(color: Colors.white, width: 0.0),
+                                    borderSide: const BorderSide(
+                                        color: Colors.white, width: 0.0),
                                   ),
                                   focusedBorder: const OutlineInputBorder(
                                     // width: 0.0 produces a thin "hairline" border
-                                    borderSide: const BorderSide(color: Colors.white, width: 0.0),
+                                    borderSide: const BorderSide(
+                                        color: Colors.white, width: 0.0),
                                   ),
                                   border: OutlineInputBorder(
-                                    borderSide: const BorderSide(color: Colors.black, width: 0.0),
+                                    borderSide: const BorderSide(
+                                        color: Colors.black, width: 0.0),
                                     borderRadius: BorderRadius.circular(0),
                                   ),
                                 ),
@@ -2033,31 +2100,26 @@ class LandingView extends GetView<LandingController> {
                                     ],
                                   ),
                                 ),
-
-
                                 icon: SvgPicture.asset(icDownArrow),
                                 iconSize: 30,
                                 buttonHeight: 60,
                                 iconEnabledColor: Colors.white,
-                                selectedItemHighlightColor:
-                                primaryLightColor,
-
-                                buttonPadding: const EdgeInsets.only(left: 15, right: 20),
+                                selectedItemHighlightColor: primaryLightColor,
+                                buttonPadding:
+                                    const EdgeInsets.only(left: 15, right: 20),
                                 dropdownDecoration: BoxDecoration(
-                                    borderRadius:
-                                    BorderRadius.circular(5),
+                                    borderRadius: BorderRadius.circular(5),
                                     color: veryLightWhite),
                                 items: spinnerItems
-                                    .map((item) =>
-                                    DropdownMenuItem<String>(
-                                      value: item,
-                                      child: Text(
-                                        item,
-                                        style: const TextStyle(
-                                            fontSize: 14,
-                                            color: Colors.black),
-                                      ),
-                                    ))
+                                    .map((item) => DropdownMenuItem<String>(
+                                          value: item,
+                                          child: Text(
+                                            item,
+                                            style: const TextStyle(
+                                                fontSize: 14,
+                                                color: Colors.black),
+                                          ),
+                                        ))
                                     .toList(),
                                 validator: (value) {
                                   if (value == null) {
@@ -2154,9 +2216,11 @@ class LandingView extends GetView<LandingController> {
                               borderRadius: const BorderRadius.all(
                                 Radius.circular(20),
                               )),
-                          margin: EdgeInsets.only(left: 20, right: 20, bottom: 10, top: 10),
+                          margin: EdgeInsets.only(
+                              left: 20, right: 20, bottom: 10, top: 10),
                           child: Padding(
-                            padding: const EdgeInsets.only(left: 20.0, right: 10, bottom: 2, top: 2),
+                            padding: const EdgeInsets.only(
+                                left: 20.0, right: 10, bottom: 2, top: 2),
                             child: TextField(
                               style: TextStyle(color: Colors.white),
                               cursorColor: Colors.white,
@@ -2460,7 +2524,7 @@ class LandingView extends GetView<LandingController> {
                                   title: Text('Language Change'),
                                   onTap: () {
                                     //Navigator.push(context, MaterialPageRoute(builder: (builder) => ChangeLangugaeView()));
-                                   /* showModalBottomSheet(
+                                    /* showModalBottomSheet(
                                       context: context,
                                       builder: (context) {
                                         return Wrap(
@@ -2943,7 +3007,7 @@ showLogOutAlertDialog(BuildContext context) {
           alignment: Alignment.center,
           child: const Text(
             'Cancel',
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold ),
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
           ),
         ),
       ],
@@ -2967,7 +3031,7 @@ showLogOutAlertDialog(BuildContext context) {
           alignment: Alignment.center,
           child: const Text(
             'Yes',
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold ),
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
           ),
         ),
       ],
@@ -2975,9 +3039,7 @@ showLogOutAlertDialog(BuildContext context) {
     onPressed: () {
       Navigator.of(context).pop();
       Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-              builder: (builder) => SignInView()));
+          context, MaterialPageRoute(builder: (builder) => SignInView()));
 
       //Get.toNamed(Routes.signInView);
     },
@@ -3003,7 +3065,6 @@ showLogOutAlertDialog(BuildContext context) {
           ],
         ),
       ),
-
     ],
   );
 
@@ -3031,7 +3092,7 @@ showLanguageAlertDialog(BuildContext context) {
           alignment: Alignment.center,
           child: const Text(
             'English',
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold ),
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
           ),
         ),
       ],
@@ -3057,7 +3118,7 @@ showLanguageAlertDialog(BuildContext context) {
           alignment: Alignment.center,
           child: const Text(
             'French',
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold ),
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
           ),
         ),
       ],
@@ -3079,7 +3140,6 @@ showLanguageAlertDialog(BuildContext context) {
       textAlign: TextAlign.center,
       style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
     ),
-
     actions: [
       Center(
         child: Column(
@@ -3092,7 +3152,6 @@ showLanguageAlertDialog(BuildContext context) {
           ],
         ),
       ),
-
     ],
   );
 
