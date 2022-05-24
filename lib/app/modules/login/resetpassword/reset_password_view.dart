@@ -65,7 +65,7 @@ class ResetPasswordView extends GetView<ResetPasswordController>{
                       TextStyle(fontSize: 18, fontWeight: FontWeight.normal),
                     ),
                     SizedBox(
-                      height: 50,
+                      height: 35,
                     ),
                     Padding(
                       padding: EdgeInsets.only(left: 35, right: 35, top: 10),
@@ -109,7 +109,6 @@ class ResetPasswordView extends GetView<ResetPasswordController>{
                         ),
                       ),
                     ),
-                    Spacer(),
 
                   ],
                 ),

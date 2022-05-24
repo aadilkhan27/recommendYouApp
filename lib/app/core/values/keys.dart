@@ -96,7 +96,7 @@ const profileImage6='assets/profileImage/profileImage6.jpg';
 const chatHome='assets/profileImage/chat.png';
 const faqbanner='assets/images/faqbanner.png';
 const privacybanner='assets/images/privacybanner.jpg';
-const termsbanner='assets/images/termsbanner.jpg';
+const termsbanner='assets/images/termbanner.jpg';
 
 
 const bottomHome='assets/bottomIcons/home.svg';

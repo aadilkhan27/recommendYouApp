@@ -128,6 +128,7 @@ class LandingView extends GetView<LandingController> {
                             ),
                     )
                   ],
+
                   //labelColor: primaryDarkColor,
                   //unselectedLabelColor: primaryLightColor,
                   indicatorColor: Colors.white),
@@ -1687,8 +1688,6 @@ class LandingView extends GetView<LandingController> {
                     ),
                   ),
 
-
-
                   SingleChildScrollView(
                     child: Container(
                       child: Column(
@@ -1833,6 +1832,8 @@ class LandingView extends GetView<LandingController> {
                       ),
                     ),
                   ),
+
+
                   Stack(children: [
                     SingleChildScrollView(
                       child: Container(
@@ -1915,7 +1916,7 @@ class LandingView extends GetView<LandingController> {
                                               shape: BoxShape.circle,
                                               image: new DecorationImage(
                                                 fit: BoxFit.fill,
-                                                image: AssetImage(profileImage),
+                                                image: AssetImage(profileImage3),
                                               ),
                                             ),
                                           ),
@@ -2102,6 +2103,8 @@ class LandingView extends GetView<LandingController> {
                       ),
                     )
                   ]),
+
+
                   Container(
                       height: MediaQuery.of(context).size.height,
                       width: MediaQuery.of(context).size.width,
@@ -2129,7 +2132,7 @@ class LandingView extends GetView<LandingController> {
                                         BorderSide(color: Colors.purple),
                                   ),
                                   focusedBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(color: Colors.white),
+                                    borderSide: BorderSide(color: Colors.purple),
                                   ),
                                   focusColor: Colors.white,
                                   hintStyle: TextStyle(color: Colors.white),
@@ -2216,6 +2219,8 @@ class LandingView extends GetView<LandingController> {
                           ),
                         )
                       ])),
+
+
                   SingleChildScrollView(
                     child: Container(
                       height: MediaQuery.of(context).size.height,
@@ -2711,6 +2716,8 @@ class LandingView extends GetView<LandingController> {
                       ),
                     ),
                   ),
+
+
                 ],
               ),
             ),
@@ -2983,7 +2990,7 @@ showLanguageAlertDialog(BuildContext context) {
       children: [
         Container(
           height: 40,
-          width: 250,
+          width: 240,
           decoration: BoxDecoration(
               color: primaryDarkColor,
               border: Border.all(color: primaryDarkColor),
@@ -3009,15 +3016,15 @@ showLanguageAlertDialog(BuildContext context) {
       children: [
         Container(
           height: 40,
-          width: 250,
+          width: 240,
           decoration: BoxDecoration(
-              color: primaryDarkColor,
+              color: Colors.white,
               border: Border.all(color: primaryDarkColor),
               borderRadius: const BorderRadius.all(Radius.circular(7))),
           alignment: Alignment.center,
           child: const Text(
             'French',
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+            style: TextStyle(color: Colors.purple, fontWeight: FontWeight.bold),
           ),
         ),
       ],
@@ -3044,9 +3051,7 @@ showLanguageAlertDialog(BuildContext context) {
         child: Column(
           children: [
             englishButton,
-            SizedBox(
-              height: 10,
-            ),
+
             frenchButton,
           ],
         ),

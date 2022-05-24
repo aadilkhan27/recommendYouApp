@@ -93,7 +93,7 @@ class StepFourView extends GetView<StepFourController> {
                       ),
                     ),
                     SizedBox(
-                      height: 30,
+                      height: 15,
                     ),
                     Text(
                       logInInfo,
@@ -103,7 +103,7 @@ class StepFourView extends GetView<StepFourController> {
                           color: Colors.black),
                     ),
                     SizedBox(
-                      height: 40,
+                      height: 25,
                     ),
                     Container(
                       margin: EdgeInsets.only(left: 10, right: 10),
