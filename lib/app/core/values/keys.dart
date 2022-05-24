@@ -22,6 +22,7 @@ const icChatDuplicate = 'assets/icons/ic_chat_2.jpg';
 const icCheckMark = 'assets/icons/ic_check_mark.svg';
 const icClose = 'assets/icons/ic_close.svg';
 const icCombinedShape = 'assets/icons/ic_combined_shape.svg';
+const icCombinedShapeFill = 'assets/icons/ic_combined_shape_fill.svg';
 const icComment = 'assets/icons/ic_comment.svg';
 const icDownArrow = 'assets/icons/ic_down_arrow.svg';
 const icHeartClick = 'assets/icons/ic_heart_click.svg';

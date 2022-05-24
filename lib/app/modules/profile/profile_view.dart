@@ -1370,8 +1370,7 @@ class ProfileView extends GetView<ProfileController> {
                                     ),
                                     Spacer(),
                                     SvgPicture.asset(
-                                      icCombinedShape,
-                                      color: Colors.purple,
+                                      icCombinedShapeFill
                                     ),
                                   ],
                                 ),
@@ -1525,8 +1524,7 @@ class ProfileView extends GetView<ProfileController> {
                                     ),
                                     Spacer(),
                                     SvgPicture.asset(
-                                      icCombinedShape,
-                                      color: Colors.purple,
+                                      icCombinedShapeFill
                                     ),
                                   ],
                                 ),
@@ -1680,8 +1678,7 @@ class ProfileView extends GetView<ProfileController> {
                                     ),
                                     Spacer(),
                                     SvgPicture.asset(
-                                      icCombinedShape,
-                                      color: Colors.purple,
+                                      icCombinedShapeFill,
                                     ),
                                   ],
                                 ),

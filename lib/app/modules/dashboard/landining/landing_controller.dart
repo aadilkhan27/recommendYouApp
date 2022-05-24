@@ -9,9 +9,20 @@ class LandingController extends GetxController
 
   late TabController tabController;
   String? selectedItemValue="";
-  final isSelected=false.obs;
 
+  final isSelected1 = false.obs;
+  final isSelected2 = false.obs;
+  final isSelected3 = false.obs;
+  final isSelected4 = false.obs;
+  final isSelected5 = false.obs;
+  final isSelected6 = false.obs;
 
+  final isSavedSelected1 = false.obs;
+  final isSavedSelected2 = false.obs;
+  final isSavedSelected3 = false.obs;
+  final isSavedSelected4 = false.obs;
+  final isSavedSelected5 = false.obs;
+  final isSavedSelected6 = false.obs;
 
 
  /* final List<Tab> referralTabs = <Tab>[

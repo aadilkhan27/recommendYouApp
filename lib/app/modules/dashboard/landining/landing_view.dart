@@ -582,63 +582,36 @@ class LandingView extends GetView<LandingController> {
                                           Obx(
                                           ()=> InkWell(
                                                 onTap:(){
-                                                  if(controller.isSelected.value) {
-                                                    controller.isSelected.value=false;
+                                                  if(controller.isSelected1.value) {
+                                                    controller.isSelected1.value=false;
                                                   } else {
-                                                    controller.isSelected.value=true;
+                                                    controller.isSelected1.value=true;
                                                   }
                                                   // Get.toNamed(Routes.landing);
                                                 },
-                                                child: ((controller.isSelected.value)? SvgPicture.asset(icHeartClick): SvgPicture.asset(icHeart))),
+                                                child: ((controller.isSelected1.value)? SvgPicture.asset(icHeartClick): SvgPicture.asset(icHeart))),
                                           ),
-                                          /*SizedBox(
-                                    width: 20,
-                                  ),
-                                  SvgPicture.asset(icComment),
-                                  SizedBox(
-                                    width: 20,
-                                  ),
-                                  InkWell(
-                                    child: SvgPicture.asset(icShare),
-                                    onTap: () {
-                                      showModalBottomSheet(
-                                          context: context,
-                                          builder: (context) {
-                                            return Wrap(
-                                              children: [
-                                                ListTile(
-                                                  title: Text(
-                                                    'Share:',
-                                                    style: TextStyle(
-                                                        fontWeight:
-                                                        FontWeight.bold),
-                                                  ),
-                                                  leading: Icon(Icons.share),
-                                                ),
-                                                Divider(
-                                                  height: 1,
-                                                  color: Colors.grey,
-                                                ),
-                                                ListTile(
-                                                  title: Text('Publically'),
-                                                ),
-                                                ListTile(
-                                                  title: Text(
-                                                      'With one or more followers'),
-                                                ),
-                                                ListTile(
-                                                  title: Text('Using other apps'),
-                                                ),
-                                                ListTile(
-                                                  title: Text('With a helper'),
-                                                ),
-                                              ],
-                                            );
-                                          });
-                                    },
-                                  ),*/
                                           Spacer(),
-                                          SvgPicture.asset(icCombinedShape),
+                                          Obx(
+                                                ()=> InkWell(
+                                                onTap:(){
+                                                  if(controller.isSavedSelected1.value) {
+                                                    controller.isSavedSelected1.value=false;
+                                                  } else {
+                                                    controller.isSavedSelected1.value=true;
+                                                  }
+                                                  // Get.toNamed(Routes.landing);
+                                                },
+                                                    child:
+                                                    ((controller.isSavedSelected1.value)?
+                                                    SvgPicture.asset(
+                                                      icCombinedShapeFill,
+                                                    ):
+                                                    SvgPicture.asset(
+                                                      icCombinedShape,
+                                                    ))),
+                                          ),
+
                                         ],
                                       ),
                                     ),
@@ -817,55 +790,39 @@ class LandingView extends GetView<LandingController> {
                                           bottom: 20),
                                       child: Row(
                                         children: [
-                                          SvgPicture.asset(icHeart),
-                                          /*SizedBox(
-                                    width: 20,
-                                  ),
-                                  SvgPicture.asset(icComment),
-                                  SizedBox(
-                                    width: 20,
-                                  ),
-                                  InkWell(
-                                    child: SvgPicture.asset(icShare),
-                                    onTap: () {
-                                      showModalBottomSheet(
-                                          context: context,
-                                          builder: (context) {
-                                            return Wrap(
-                                              children: [
-                                                ListTile(
-                                                  title: Text(
-                                                    'Share:',
-                                                    style: TextStyle(
-                                                        fontWeight:
-                                                        FontWeight.bold),
-                                                  ),
-                                                  leading: Icon(Icons.share),
-                                                ),
-                                                Divider(
-                                                  height: 1,
-                                                  color: Colors.grey,
-                                                ),
-                                                ListTile(
-                                                  title: Text('Publically'),
-                                                ),
-                                                ListTile(
-                                                  title: Text(
-                                                      'With one or more followers'),
-                                                ),
-                                                ListTile(
-                                                  title: Text('Using other apps'),
-                                                ),
-                                                ListTile(
-                                                  title: Text('With a helper'),
-                                                ),
-                                              ],
-                                            );
-                                          });
-                                    },
-                                  ),*/
+                                          Obx(
+                                                ()=> InkWell(
+                                                onTap:(){
+                                                  if(controller.isSelected2.value) {
+                                                    controller.isSelected2.value=false;
+                                                  } else {
+                                                    controller.isSelected2.value=true;
+                                                  }
+                                                  // Get.toNamed(Routes.landing);
+                                                },
+                                                child: ((controller.isSelected2.value)? SvgPicture.asset(icHeartClick): SvgPicture.asset(icHeart))),
+                                          ),
+
                                           Spacer(),
-                                          SvgPicture.asset(icCombinedShape),
+                                          Obx(
+                                                ()=> InkWell(
+                                                onTap:(){
+                                                  if(controller.isSavedSelected2.value) {
+                                                    controller.isSavedSelected2.value=false;
+                                                  } else {
+                                                    controller.isSavedSelected2.value=true;
+                                                  }
+                                                  // Get.toNamed(Routes.landing);
+                                                },
+                                                    child:
+                                                    ((controller.isSavedSelected2.value)?
+                                                    SvgPicture.asset(
+                                                      icCombinedShapeFill,
+                                                    ):
+                                                    SvgPicture.asset(
+                                                      icCombinedShape,
+                                                    ))),
+                                          ),
                                         ],
                                       ),
                                     ),
@@ -1044,55 +1001,39 @@ class LandingView extends GetView<LandingController> {
                                           bottom: 20),
                                       child: Row(
                                         children: [
-                                          SvgPicture.asset(icHeart),
-                                          /*SizedBox(
-                                    width: 20,
-                                  ),
-                                  SvgPicture.asset(icComment),
-                                  SizedBox(
-                                    width: 20,
-                                  ),
-                                  InkWell(
-                                    child: SvgPicture.asset(icShare),
-                                    onTap: () {
-                                      showModalBottomSheet(
-                                          context: context,
-                                          builder: (context) {
-                                            return Wrap(
-                                              children: [
-                                                ListTile(
-                                                  title: Text(
-                                                    'Share:',
-                                                    style: TextStyle(
-                                                        fontWeight:
-                                                        FontWeight.bold),
-                                                  ),
-                                                  leading: Icon(Icons.share),
-                                                ),
-                                                Divider(
-                                                  height: 1,
-                                                  color: Colors.grey,
-                                                ),
-                                                ListTile(
-                                                  title: Text('Publically'),
-                                                ),
-                                                ListTile(
-                                                  title: Text(
-                                                      'With one or more followers'),
-                                                ),
-                                                ListTile(
-                                                  title: Text('Using other apps'),
-                                                ),
-                                                ListTile(
-                                                  title: Text('With a helper'),
-                                                ),
-                                              ],
-                                            );
-                                          });
-                                    },
-                                  ),*/
+                                          Obx(
+                                                ()=> InkWell(
+                                                onTap:(){
+                                                  if(controller.isSelected3.value) {
+                                                    controller.isSelected3.value=false;
+                                                  } else {
+                                                    controller.isSelected3.value=true;
+                                                  }
+                                                  // Get.toNamed(Routes.landing);
+                                                },
+                                                child: ((controller.isSelected3.value)? SvgPicture.asset(icHeartClick): SvgPicture.asset(icHeart))),
+                                          ),
+
                                           Spacer(),
-                                          SvgPicture.asset(icCombinedShape),
+                                          Obx(
+                                                ()=> InkWell(
+                                                onTap:(){
+                                                  if(controller.isSavedSelected3.value) {
+                                                    controller.isSavedSelected3.value=false;
+                                                  } else {
+                                                    controller.isSavedSelected3.value=true;
+                                                  }
+                                                  // Get.toNamed(Routes.landing);
+                                                },
+                                                    child:
+                                                    ((controller.isSavedSelected3.value)?
+                                                    SvgPicture.asset(
+                                                      icCombinedShapeFill,
+                                                    ):
+                                                    SvgPicture.asset(
+                                                      icCombinedShape,
+                                                    ))),
+                                          ),
                                         ],
                                       ),
                                     ),
@@ -1271,55 +1212,38 @@ class LandingView extends GetView<LandingController> {
                                           bottom: 20),
                                       child: Row(
                                         children: [
-                                          SvgPicture.asset(icHeart),
-                                          /*SizedBox(
-                                    width: 20,
-                                  ),
-                                  SvgPicture.asset(icComment),
-                                  SizedBox(
-                                    width: 20,
-                                  ),
-                                  InkWell(
-                                    child: SvgPicture.asset(icShare),
-                                    onTap: () {
-                                      showModalBottomSheet(
-                                          context: context,
-                                          builder: (context) {
-                                            return Wrap(
-                                              children: [
-                                                ListTile(
-                                                  title: Text(
-                                                    'Share:',
-                                                    style: TextStyle(
-                                                        fontWeight:
-                                                        FontWeight.bold),
-                                                  ),
-                                                  leading: Icon(Icons.share),
-                                                ),
-                                                Divider(
-                                                  height: 1,
-                                                  color: Colors.grey,
-                                                ),
-                                                ListTile(
-                                                  title: Text('Publically'),
-                                                ),
-                                                ListTile(
-                                                  title: Text(
-                                                      'With one or more followers'),
-                                                ),
-                                                ListTile(
-                                                  title: Text('Using other apps'),
-                                                ),
-                                                ListTile(
-                                                  title: Text('With a helper'),
-                                                ),
-                                              ],
-                                            );
-                                          });
-                                    },
-                                  ),*/
+                                          Obx(
+                                                ()=> InkWell(
+                                                onTap:(){
+                                                  if(controller.isSelected4.value) {
+                                                    controller.isSelected4.value=false;
+                                                  } else {
+                                                    controller.isSelected4.value=true;
+                                                  }
+                                                  // Get.toNamed(Routes.landing);
+                                                },
+                                                child: ((controller.isSelected4.value)? SvgPicture.asset(icHeartClick): SvgPicture.asset(icHeart))),
+                                          ),
                                           Spacer(),
-                                          SvgPicture.asset(icCombinedShape),
+                                          Obx(
+                                                ()=> InkWell(
+                                                onTap:(){
+                                                  if(controller.isSavedSelected4.value) {
+                                                    controller.isSavedSelected4.value=false;
+                                                  } else {
+                                                    controller.isSavedSelected4.value=true;
+                                                  }
+                                                  // Get.toNamed(Routes.landing);
+                                                },
+                                                    child:
+                                                    ((controller.isSavedSelected4.value)?
+                                                    SvgPicture.asset(
+                                                      icCombinedShapeFill,
+                                                    ):
+                                                    SvgPicture.asset(
+                                                      icCombinedShape,
+                                                    ))),
+                                          ),
                                         ],
                                       ),
                                     ),
@@ -1498,55 +1422,38 @@ class LandingView extends GetView<LandingController> {
                                           bottom: 20),
                                       child: Row(
                                         children: [
-                                          SvgPicture.asset(icHeart),
-                                          /*SizedBox(
-                                    width: 20,
-                                  ),
-                                  SvgPicture.asset(icComment),
-                                  SizedBox(
-                                    width: 20,
-                                  ),
-                                  InkWell(
-                                    child: SvgPicture.asset(icShare),
-                                    onTap: () {
-                                      showModalBottomSheet(
-                                          context: context,
-                                          builder: (context) {
-                                            return Wrap(
-                                              children: [
-                                                ListTile(
-                                                  title: Text(
-                                                    'Share:',
-                                                    style: TextStyle(
-                                                        fontWeight:
-                                                        FontWeight.bold),
-                                                  ),
-                                                  leading: Icon(Icons.share),
-                                                ),
-                                                Divider(
-                                                  height: 1,
-                                                  color: Colors.grey,
-                                                ),
-                                                ListTile(
-                                                  title: Text('Publically'),
-                                                ),
-                                                ListTile(
-                                                  title: Text(
-                                                      'With one or more followers'),
-                                                ),
-                                                ListTile(
-                                                  title: Text('Using other apps'),
-                                                ),
-                                                ListTile(
-                                                  title: Text('With a helper'),
-                                                ),
-                                              ],
-                                            );
-                                          });
-                                    },
-                                  ),*/
+                                          Obx(
+                                                ()=> InkWell(
+                                                onTap:(){
+                                                  if(controller.isSelected5.value) {
+                                                    controller.isSelected5.value=false;
+                                                  } else {
+                                                    controller.isSelected5.value=true;
+                                                  }
+                                                  // Get.toNamed(Routes.landing);
+                                                },
+                                                child: ((controller.isSelected5.value)? SvgPicture.asset(icHeartClick): SvgPicture.asset(icHeart))),
+                                          ),
                                           Spacer(),
-                                          SvgPicture.asset(icCombinedShape),
+                                          Obx(
+                                                ()=> InkWell(
+                                                onTap:(){
+                                                  if(controller.isSavedSelected5.value) {
+                                                    controller.isSavedSelected5.value=false;
+                                                  } else {
+                                                    controller.isSavedSelected5.value=true;
+                                                  }
+                                                  // Get.toNamed(Routes.landing);
+                                                },
+                                                    child:
+                                                    ((controller.isSavedSelected5.value)?
+                                                    SvgPicture.asset(
+                                                      icCombinedShapeFill,
+                                                    ):
+                                                    SvgPicture.asset(
+                                                      icCombinedShape,
+                                                    ))),
+                                          ),
                                         ],
                                       ),
                                     ),
@@ -1725,64 +1632,53 @@ class LandingView extends GetView<LandingController> {
                                           bottom: 20),
                                       child: Row(
                                         children: [
-                                          SvgPicture.asset(icHeart),
-                                          /*SizedBox(
-                                    width: 20,
-                                  ),
-                                  SvgPicture.asset(icComment),
-                                  SizedBox(
-                                    width: 20,
-                                  ),
-                                  InkWell(
-                                    child: SvgPicture.asset(icShare),
-                                    onTap: () {
-                                      showModalBottomSheet(
-                                          context: context,
-                                          builder: (context) {
-                                            return Wrap(
-                                              children: [
-                                                ListTile(
-                                                  title: Text(
-                                                    'Share:',
-                                                    style: TextStyle(
-                                                        fontWeight:
-                                                        FontWeight.bold),
-                                                  ),
-                                                  leading: Icon(Icons.share),
-                                                ),
-                                                Divider(
-                                                  height: 1,
-                                                  color: Colors.grey,
-                                                ),
-                                                ListTile(
-                                                  title: Text('Publically'),
-                                                ),
-                                                ListTile(
-                                                  title: Text(
-                                                      'With one or more followers'),
-                                                ),
-                                                ListTile(
-                                                  title: Text('Using other apps'),
-                                                ),
-                                                ListTile(
-                                                  title: Text('With a helper'),
-                                                ),
-                                              ],
-                                            );
-                                          });
-                                    },
-                                  ),*/
+                                          Obx(
+                                                ()=> InkWell(
+                                                onTap:(){
+                                                  if(controller.isSelected6.value) {
+                                                    controller.isSelected6.value=false;
+                                                  } else {
+                                                    controller.isSelected6.value=true;
+                                                  }
+                                                  // Get.toNamed(Routes.landing);
+                                                },
+                                                child: ((controller.isSelected6.value)? SvgPicture.asset(icHeartClick): SvgPicture.asset(icHeart))),
+                                          ),
                                           Spacer(),
-                                          SvgPicture.asset(icCombinedShape),
+                                          Obx(
+                                                ()=> InkWell(
+                                                onTap:(){
+                                                  if(controller.isSavedSelected6.value) {
+                                                    controller.isSavedSelected6.value=false;
+                                                  } else {
+                                                    controller.isSavedSelected6.value=true;
+                                                  }
+                                                  // Get.toNamed(Routes.landing);
+                                                },
+                                                    child:
+                                                    ((controller.isSavedSelected6.value)?
+                                                    SvgPicture.asset(
+                                                      icCombinedShapeFill,
+                                                    ):
+                                                    SvgPicture.asset(
+                                                      icCombinedShape,
+                                                    ))),
+                                          ),
                                         ],
                                       ),
                                     ),
                                     Divider(
                                       height: 1,
                                       color: Colors.black,
-                                    )
+                                    ),
+
                                   ],
                                 ),
+
+
+                                  SizedBox(
+                                  height: 100,
+                                )
                               ],
                             ),
                           )),
