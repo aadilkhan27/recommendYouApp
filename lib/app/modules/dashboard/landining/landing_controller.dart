@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:recommend_you/app/core/values/colors.dart';
 import 'package:recommend_you/app/core/values/keys.dart';
 import 'package:recommend_you/dataModel/HomeListModel.dart';
+import 'package:recommend_you/dataModel/SpinnerItemModel.dart';
 
 class LandingController extends GetxController
     with GetSingleTickerProviderStateMixin {
@@ -26,6 +27,14 @@ class LandingController extends GetxController
   final isSavedSelected6 = false.obs;
 
   var homeList = <HomeListModel>[].obs;
+
+  var spinnerItems1 = <SpinnerItemModel>[
+    SpinnerItemModel(userLabel: 'All Categories',itemSelect: false),
+    SpinnerItemModel(userLabel: 'Categories 1',itemSelect: false),
+    SpinnerItemModel(userLabel: 'Categories 2',itemSelect: false),
+    SpinnerItemModel(userLabel: 'Categories 3',itemSelect: false),
+    SpinnerItemModel(userLabel: 'Categories 4',itemSelect: false),
+  ].obs;
 
 /*
   final List<Tab> referralTab = <Tab>[
