@@ -64,7 +64,8 @@ class HelperView extends GetView<HelperController> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (builder) => SendEmailView()));
+                                        builder: (builder) => SendEmailView())
+                                );
                               },
                               child: Container(
                                 height: 50,
@@ -199,5 +200,7 @@ class HelperView extends GetView<HelperController> {
     );
   }
 }
+
+
 
 

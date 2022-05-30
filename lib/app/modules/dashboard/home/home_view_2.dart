@@ -19,7 +19,8 @@ import 'home_controller.dart';
 // commend
 
 //Commit
-class HomeView extends GetView<HomeController> {
+class HomeView2 extends StatelessWidget  {
+
   final List<String> spinnerItems = [
     'All Categories',
     'Categories 1',
@@ -27,7 +28,9 @@ class HomeView extends GetView<HomeController> {
     'Categories 3',
     'Categories 4',
   ];
+
   String? selectedValue;
+
   List<String> images = [
     "Anil",
     "Sunil",
@@ -43,10 +46,33 @@ class HomeView extends GetView<HomeController> {
     "PunitHarish",
   ];
 
+  List<Animal> animals = [
+    Animal(id: 2, name: "Category 1"),
+    Animal(id: 3, name: "Category 2"),
+    Animal(id: 4, name: "Category 3"),
+    Animal(id: 5, name: "Category 4"),
+    Animal(id: 6, name: "Category 5"),
+
+  ];
+
+  final isSelected1 = false.obs;
+  final isSelected2 = false.obs;
+  final isSelected3 = false.obs;
+  final isSelected4 = false.obs;
+  final isSelected5 = false.obs;
+  final isSelected6 = false.obs;
+
+  final isSavedSelected1 = false.obs;
+  final isSavedSelected2 = false.obs;
+  final isSavedSelected3 = false.obs;
+  final isSavedSelected4 = false.obs;
+  final isSavedSelected5 = false.obs;
+  final isSavedSelected6 = false.obs;
+
   @override
   Widget build(BuildContext context) {
 
-    final _items = controller.animals
+    final _items = animals
         .map((animal) => MultiSelectItem<Animal>(animal, animal.name))
         .toList();
 
@@ -61,6 +87,11 @@ class HomeView extends GetView<HomeController> {
           print('swipe in right direction');
           //write code which u want to change page
           //Get.toNamed(Routes.profileView);
+          //Navigator.push(context, SlideRightRoute(page: ProfileView()));
+        /*  Get.to(
+              ProfileView(),
+              transition: Transition.leftToRight
+          );*/
           Navigator.push(context, SlideRightRoute(page: ProfileView()));
         }
 
@@ -69,15 +100,15 @@ class HomeView extends GetView<HomeController> {
           print('swipe in left  direction');
           //write code which u want to change page
           //Get.toNamed(Routes.helper);
-          GetPage(
+         /* GetPage(
               name: Routes.helper,
               page: () => HelperView(),
               transition: Transition.rightToLeft
-          );
-         /* Get.to(
+          );*/
+          Get.to(
               HelperView(),
               transition: Transition.rightToLeft
-          );*/
+          );
         }
       },
       child: Scaffold(
@@ -428,18 +459,16 @@ class HomeView extends GetView<HomeController> {
                                         Obx(
                                           () => InkWell(
                                               onTap: () {
-                                                if (controller
-                                                    .isSelected1.value) {
-                                                  controller.isSelected1.value =
+                                                if (isSelected1.value) {
+                                                  isSelected1.value =
                                                       false;
                                                 } else {
-                                                  controller.isSelected1.value =
+                                                  isSelected1.value =
                                                       true;
                                                 }
                                                 // Get.toNamed(Routes.landing);
                                               },
-                                              child: ((controller
-                                                      .isSelected1.value)
+                                              child: ((isSelected1.value)
                                                   ? SvgPicture.asset(
                                                       icHeartClick)
                                                   : SvgPicture.asset(icHeart))),
@@ -448,18 +477,16 @@ class HomeView extends GetView<HomeController> {
                                         Obx(
                                           () => InkWell(
                                               onTap: () {
-                                                if (controller
-                                                    .isSavedSelected1.value) {
-                                                  controller.isSavedSelected1
+                                                if (isSavedSelected1.value) {
+                                                 isSavedSelected1
                                                       .value = false;
                                                 } else {
-                                                  controller.isSavedSelected1
+                                                  isSavedSelected1
                                                       .value = true;
                                                 }
                                                 // Get.toNamed(Routes.landing);
                                               },
-                                              child: ((controller
-                                                      .isSavedSelected1.value)
+                                              child: ((isSavedSelected1.value)
                                                   ? SvgPicture.asset(
                                                       icCombinedShapeFill,
                                                     )
@@ -635,18 +662,16 @@ class HomeView extends GetView<HomeController> {
                                         Obx(
                                           () => InkWell(
                                               onTap: () {
-                                                if (controller
-                                                    .isSelected2.value) {
-                                                  controller.isSelected2.value =
+                                                if (isSelected2.value) {
+                                                  isSelected2.value =
                                                       false;
                                                 } else {
-                                                  controller.isSelected2.value =
+                                                  isSelected2.value =
                                                       true;
                                                 }
                                                 // Get.toNamed(Routes.landing);
                                               },
-                                              child: ((controller
-                                                      .isSelected2.value)
+                                              child: ((isSelected2.value)
                                                   ? SvgPicture.asset(
                                                       icHeartClick)
                                                   : SvgPicture.asset(icHeart))),
@@ -655,18 +680,16 @@ class HomeView extends GetView<HomeController> {
                                         Obx(
                                           () => InkWell(
                                               onTap: () {
-                                                if (controller
-                                                    .isSavedSelected2.value) {
-                                                  controller.isSavedSelected2
+                                                if (isSavedSelected2.value) {
+                                                  isSavedSelected2
                                                       .value = false;
                                                 } else {
-                                                  controller.isSavedSelected2
+                                                  isSavedSelected2
                                                       .value = true;
                                                 }
                                                 // Get.toNamed(Routes.landing);
                                               },
-                                              child: ((controller
-                                                      .isSavedSelected2.value)
+                                              child: ((isSavedSelected2.value)
                                                   ? SvgPicture.asset(
                                                       icCombinedShapeFill,
                                                     )
@@ -842,18 +865,16 @@ class HomeView extends GetView<HomeController> {
                                         Obx(
                                           () => InkWell(
                                               onTap: () {
-                                                if (controller
-                                                    .isSelected3.value) {
-                                                  controller.isSelected3.value =
+                                                if (isSelected3.value) {
+                                                  isSelected3.value =
                                                       false;
                                                 } else {
-                                                  controller.isSelected3.value =
+                                                 isSelected3.value =
                                                       true;
                                                 }
                                                 // Get.toNamed(Routes.landing);
                                               },
-                                              child: ((controller
-                                                      .isSelected3.value)
+                                              child: ((isSelected3.value)
                                                   ? SvgPicture.asset(
                                                       icHeartClick)
                                                   : SvgPicture.asset(icHeart))),
@@ -862,18 +883,16 @@ class HomeView extends GetView<HomeController> {
                                         Obx(
                                           () => InkWell(
                                               onTap: () {
-                                                if (controller
-                                                    .isSavedSelected3.value) {
-                                                  controller.isSavedSelected3
+                                                if (isSavedSelected3.value) {
+                                                  isSavedSelected3
                                                       .value = false;
                                                 } else {
-                                                  controller.isSavedSelected3
+                                                  isSavedSelected3
                                                       .value = true;
                                                 }
                                                 // Get.toNamed(Routes.landing);
                                               },
-                                              child: ((controller
-                                                      .isSavedSelected3.value)
+                                              child: ((isSavedSelected3.value)
                                                   ? SvgPicture.asset(
                                                       icCombinedShapeFill,
                                                     )
@@ -1049,18 +1068,16 @@ class HomeView extends GetView<HomeController> {
                                         Obx(
                                           () => InkWell(
                                               onTap: () {
-                                                if (controller
-                                                    .isSelected4.value) {
-                                                  controller.isSelected4.value =
+                                                if (isSelected4.value) {
+                                                  isSelected4.value =
                                                       false;
                                                 } else {
-                                                  controller.isSelected4.value =
+                                                  isSelected4.value =
                                                       true;
                                                 }
                                                 // Get.toNamed(Routes.landing);
                                               },
-                                              child: ((controller
-                                                      .isSelected4.value)
+                                              child: ((isSelected4.value)
                                                   ? SvgPicture.asset(
                                                       icHeartClick)
                                                   : SvgPicture.asset(icHeart))),
@@ -1069,18 +1086,16 @@ class HomeView extends GetView<HomeController> {
                                         Obx(
                                           () => InkWell(
                                               onTap: () {
-                                                if (controller
-                                                    .isSavedSelected4.value) {
-                                                  controller.isSavedSelected4
+                                                if (isSavedSelected4.value) {
+                                                  isSavedSelected4
                                                       .value = false;
                                                 } else {
-                                                  controller.isSavedSelected4
+                                                  isSavedSelected4
                                                       .value = true;
                                                 }
                                                 // Get.toNamed(Routes.landing);
                                               },
-                                              child: ((controller
-                                                      .isSavedSelected4.value)
+                                              child: ((isSavedSelected4.value)
                                                   ? SvgPicture.asset(
                                                       icCombinedShapeFill,
                                                     )
@@ -1256,18 +1271,16 @@ class HomeView extends GetView<HomeController> {
                                         Obx(
                                           () => InkWell(
                                               onTap: () {
-                                                if (controller
-                                                    .isSelected5.value) {
-                                                  controller.isSelected5.value =
+                                                if (isSelected5.value) {
+                                                  isSelected5.value =
                                                       false;
                                                 } else {
-                                                  controller.isSelected5.value =
+                                                 isSelected5.value =
                                                       true;
                                                 }
                                                 // Get.toNamed(Routes.landing);
                                               },
-                                              child: ((controller
-                                                      .isSelected5.value)
+                                              child: ((isSelected5.value)
                                                   ? SvgPicture.asset(
                                                       icHeartClick)
                                                   : SvgPicture.asset(icHeart))),
@@ -1276,18 +1289,16 @@ class HomeView extends GetView<HomeController> {
                                         Obx(
                                           () => InkWell(
                                               onTap: () {
-                                                if (controller
-                                                    .isSavedSelected5.value) {
-                                                  controller.isSavedSelected5
+                                                if (isSavedSelected5.value) {
+                                                  isSavedSelected5
                                                       .value = false;
                                                 } else {
-                                                  controller.isSavedSelected5
+                                                  isSavedSelected5
                                                       .value = true;
                                                 }
                                                 // Get.toNamed(Routes.landing);
                                               },
-                                              child: ((controller
-                                                      .isSavedSelected5.value)
+                                              child: ((isSavedSelected5.value)
                                                   ? SvgPicture.asset(
                                                       icCombinedShapeFill,
                                                     )
@@ -1463,18 +1474,16 @@ class HomeView extends GetView<HomeController> {
                                         Obx(
                                           () => InkWell(
                                               onTap: () {
-                                                if (controller
-                                                    .isSelected6.value) {
-                                                  controller.isSelected6.value =
+                                                if (isSelected6.value) {
+                                                  isSelected6.value =
                                                       false;
                                                 } else {
-                                                  controller.isSelected6.value =
+                                                  isSelected6.value =
                                                       true;
                                                 }
                                                 // Get.toNamed(Routes.landing);
                                               },
-                                              child: ((controller
-                                                      .isSelected6.value)
+                                              child: ((isSelected6.value)
                                                   ? SvgPicture.asset(
                                                       icHeartClick)
                                                   : SvgPicture.asset(icHeart))),
@@ -1483,18 +1492,16 @@ class HomeView extends GetView<HomeController> {
                                         Obx(
                                           () => InkWell(
                                               onTap: () {
-                                                if (controller
-                                                    .isSavedSelected6.value) {
-                                                  controller.isSavedSelected6
+                                                if (isSavedSelected6.value) {
+                                                  isSavedSelected6
                                                       .value = false;
                                                 } else {
-                                                  controller.isSavedSelected6
+                                                 isSavedSelected6
                                                       .value = true;
                                                 }
                                                 // Get.toNamed(Routes.landing);
                                               },
-                                              child: ((controller
-                                                      .isSavedSelected6.value)
+                                              child: ((isSavedSelected6.value)
                                                   ? SvgPicture.asset(
                                                       icCombinedShapeFill,
                                                     )

@@ -103,7 +103,7 @@ const termsbanner='assets/images/termbanner.jpg';
 const bottomHome='assets/bottomIcons/home.svg';
 const bottomAdd='assets/bottomIcons/add.svg';
 const bottomMenu='assets/bottomIcons/Menu.svg';
-const bottomNotification='assets/bottomIcons/Notification.svg';
+const bottomNotification='assets/bottomIcons/notification_badge.svg';
 const bottomSearch='assets/bottomIcons/search.svg';
 
 

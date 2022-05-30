@@ -9,6 +9,7 @@ import 'package:recommend_you/app/modules/dashboard/notification/notification_vi
 import 'package:recommend_you/app/modules/dashboard/search/search_view.dart';
 
 import 'dashboard_controller.dart';
+import 'home/home_view_2.dart';
 import 'more/changecontactdetails/change_contact_view.dart';
 import 'more/changepassword/change_password_view.dart';
 import 'more/contactus/contact_us_view.dart';
@@ -34,7 +35,10 @@ class DashboardView extends StatelessWidget {
                 NotificationView(),
                 CreateView(),
                 SearchView(),
-                controller.tabIndex == 4
+                MoreView()
+
+
+                /*controller.tabIndex == 4
                     ? Scaffold(
                         body: AlertDialog(
                           content: Container(
@@ -42,7 +46,7 @@ class DashboardView extends StatelessWidget {
                               child: SingleChildScrollView(
                                 child: Column(
                                   children: [
-                                    /*Container(
+                                    *//*Container(
                   padding: EdgeInsets.only(left: 15.0, right: 15.0),
                   child: ListTile(
                       leading: Icon(Icons.privacy_tip_outlined),
@@ -194,7 +198,7 @@ class DashboardView extends StatelessWidget {
                     },
                   ),
                 ),
-                */
+                *//*
 
                                     Container(
                                       padding: EdgeInsets.only(
@@ -208,7 +212,7 @@ class DashboardView extends StatelessWidget {
                                           title: Text('Language Change'),
                                           onTap: () {
                                             //Navigator.push(context, MaterialPageRoute(builder: (builder) => ChangeLangugaeView()));
-                                            /* showModalBottomSheet(
+                                            *//* showModalBottomSheet(
                                       context: context,
                                       builder: (context) {
                                         return Wrap(
@@ -240,7 +244,7 @@ class DashboardView extends StatelessWidget {
                                           ],
                                         );
                                       },
-                                    );*/
+                                    );*//*
 
                                             showLanguageAlertDialog(context);
                                           }),
@@ -401,7 +405,7 @@ class DashboardView extends StatelessWidget {
                           ),
                         ),
                       )
-                    : MoreView()
+                    : MoreView()*/
               ],
             ),
           ),
