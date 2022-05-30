@@ -126,18 +126,15 @@ class HomeView extends GetView<HomeController> {
                                       width: 10,
                                     ),
                                     Container(
-                                      padding:
-                                          EdgeInsets.only(left: 2, right: 2),
 
-                                      margin:
-                                          EdgeInsets.only(right: 0, left: 0),
+                                      margin: EdgeInsets.only(top: 0, bottom: 0),
                                       child: Container(
                                         child: MultiSelectDialogField(
                                           items: _items,
                                           searchable: true,
                                           selectedColor: primaryLightColor,
-                                          decoration: BoxDecoration(
-                                            color: primaryLightColor.withOpacity(0.1),
+                                          decoration: BoxDecoration(//primaryLightColor.withOpacity(0.1)
+                                            color: Colors.white,
                                             borderRadius:
                                             BorderRadius.all(Radius.circular(40)),
                                             border: Border.all(
@@ -146,8 +143,8 @@ class HomeView extends GetView<HomeController> {
                                             ),
                                           ),
                                           buttonIcon: Icon(
-                                            Icons.arrow_drop_down,
-                                            color: Colors.grey,
+                                            Icons.keyboard_arrow_down_rounded,
+                                            color: Colors.black,
                                           ),
                                           buttonText: Text(
                                             "RecommendYou",
