@@ -77,13 +77,14 @@ const logout='assets/settings/logout.png';
 
 
 const changeLanguage='assets/settings/language.png';
-const contactUS='assets/settings/contact-us.png';
+const contactUS='assets/settings/email_contactus.png';
 const privacy='assets/settings/privacy.png';
 const termsConditions='assets/settings/terms.png';
 const changePassword='assets/settings/Password-change.png';
 const deleteAcc='assets/settings/delete.png';
 const userImage='assets/settings/downloadUsers.png';
 const faqIcon='assets/settings/faqIcon.png';
+const changeContact='assets/settings/contact-us.png';
 
 
 const profileImage1='assets/profileImage/profileImage1.jpg';

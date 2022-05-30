@@ -34,4 +34,6 @@ abstract class Routes {
   static const editProfile= '/editProfile';
   static const faq= '/faq';
   static const landing= '/landing';
+  static const likes= '/likes';
+  static const userProfile= '/userProfile';
 }

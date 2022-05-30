@@ -666,13 +666,18 @@ class CreateView extends GetView<CreateController> {
 
     // set up the AlertDialog
     AlertDialog alert = AlertDialog(
-      title: Text(
-        "Successfully Post",
-        style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-      ),
-      content: Text(
-        dummyLoremIpsum,
-        style: TextStyle(color: Colors.black, fontSize: 12, height: 1.5),
+      title: Row(
+        children: [
+          Text(
+            "Successfully posted",
+            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+          ),
+          SizedBox(width: 10,),
+          SvgPicture.asset(
+            icCheckMark,
+            semanticsLabel: 'logo',
+          ),
+        ],
       ),
       actions: [
         //continueButton,

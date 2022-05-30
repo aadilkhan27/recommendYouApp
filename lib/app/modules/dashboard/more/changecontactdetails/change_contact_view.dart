@@ -66,7 +66,7 @@ class ChangeContactView extends GetView<ChangeContactController> {
                               ),
                               Column(
                                 children: [
-                                  Align(
+                                  /*Align(
                                     alignment: Alignment.centerLeft,
                                     child: Padding(
                                       padding: EdgeInsets.only(left: 30, right: 30),
@@ -98,7 +98,7 @@ class ChangeContactView extends GetView<ChangeContactController> {
                                   ),
                                   SizedBox(
                                     height: 20,
-                                  ),
+                                  ),*/
                                   Align(
                                     alignment: Alignment.centerLeft,
                                     child: Padding(
@@ -114,7 +114,8 @@ class ChangeContactView extends GetView<ChangeContactController> {
                                   ),
                                   Padding(
                                     padding: EdgeInsets.only(left: 30, right: 30),
-                                    child: TextField(
+                                    child: TextFormField (
+                                      initialValue: "ramonoricoda@gmail.com",
                                       cursorColor: Colors.black,
                                       decoration: InputDecoration(
                                           enabledBorder: UnderlineInputBorder(

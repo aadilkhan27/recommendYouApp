@@ -182,7 +182,7 @@ class StepFourView extends GetView<StepFourController> {
                       height: 10,
                     ),
                     Container(
-                      margin: EdgeInsets.only(left: 40),
+                      margin: EdgeInsets.only(left: 40, right: 40),
                       child: Align(
                         alignment: Alignment.topLeft,
                         child: Text(

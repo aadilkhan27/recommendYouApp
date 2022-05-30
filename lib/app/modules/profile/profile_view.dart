@@ -124,26 +124,31 @@ class ProfileView extends GetView<ProfileController> {
                             ),
                             Container(
                               width: (MediaQuery.of(context).size.width / 4) - 10,
-                              child: Padding(
-                                padding: const EdgeInsets.only(left: 20.0),
-                                child: Column(
-                                  children: [
-                                    Text(
-                                      '152',
-                                      style: TextStyle(fontWeight: FontWeight.bold),
-                                    ),
-                                    SizedBox(
-                                      height: 5,
-                                    ),
-                                    Text(
-                                      'Likes',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 12,
-                                          color: Colors.grey),
-                                    )
-                                  ],
+                              child: InkWell(
+                                child:  Padding(
+                                  padding: const EdgeInsets.only(left: 20.0),
+                                  child: Column(
+                                    children: [
+                                      Text(
+                                        '152',
+                                        style: TextStyle(fontWeight: FontWeight.bold),
+                                      ),
+                                      SizedBox(
+                                        height: 5,
+                                      ),
+                                      Text(
+                                        'Likes',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 12,
+                                            color: Colors.grey),
+                                      )
+                                    ],
+                                  ),
                                 ),
+                                onTap: () {
+                                  Get.toNamed(Routes.likes);
+                                },
                               ),
                             ),
                             /*Container(
@@ -425,41 +430,41 @@ class ProfileView extends GetView<ProfileController> {
                                           ]),
                                     ),
                                     Spacer(),
-                                    Container(
-                                        child: Row(
-                                            mainAxisAlignment:
-                                            MainAxisAlignment
-                                                .spaceBetween,
-                                            crossAxisAlignment:
-                                            CrossAxisAlignment
-                                                .start,
-                                            children: [
-                                              Padding(
-                                                padding:
-                                                const EdgeInsets.only(
-                                                    left: 10, top: 0),
-                                                child: Text(
-                                                  '08-09-2021',
-                                                  style: TextStyle(
-                                                      fontWeight:
-                                                      FontWeight.normal,
-                                                      fontSize: 12),
-                                                ),
+                                    Align(
+                                      alignment: Alignment.topRight,
+                                      child: Row(
+                                          mainAxisAlignment:
+                                          MainAxisAlignment.end,
+                                          crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                          children: [
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  left: 10, top: 10),
+                                              child: Text(
+
+                                                '08-09-2021',
+                                                style: TextStyle(
+                                                    fontWeight:
+                                                    FontWeight.normal,
+                                                    fontSize: 12),
                                               ),
-                                              SizedBox(
-                                                width: 10,
-                                              ),
-                                              InkWell(
-                                                child: Container(
-                                                    margin: EdgeInsets.only(
-                                                        right: 0, top: 0),
-                                                    child: SvgPicture.asset(
-                                                        icMoreHorizontal)),
-                                                onTap: () {
-                                                  showPopupMenu(context);
-                                                },
-                                              ),
-                                            ])),
+                                            ),
+                                            SizedBox(
+                                              width: 10,
+                                            ),
+                                            InkWell(
+                                              child: Container(
+                                                  margin: EdgeInsets.only(
+                                                      right: 10, top: 10),
+                                                  child: SvgPicture.asset(
+                                                      icMoreHorizontal)),
+                                              onTap: () {
+                                                showPopupMenu(context);
+                                              },
+                                            ),
+                                          ]),
+                                    ),
                                     SizedBox(
                                       width: 10,
                                     ),
@@ -611,41 +616,41 @@ class ProfileView extends GetView<ProfileController> {
                                           ]),
                                     ),
                                     Spacer(),
-                                    Container(
-                                        child: Row(
-                                            mainAxisAlignment:
-                                            MainAxisAlignment
-                                                .spaceBetween,
-                                            crossAxisAlignment:
-                                            CrossAxisAlignment
-                                                .start,
-                                            children: [
-                                              Padding(
-                                                padding:
-                                                const EdgeInsets.only(
-                                                    left: 10, top: 0),
-                                                child: Text(
-                                                  '08-09-2021',
-                                                  style: TextStyle(
-                                                      fontWeight:
-                                                      FontWeight.normal,
-                                                      fontSize: 12),
-                                                ),
+                                    Align(
+                                      alignment: Alignment.topRight,
+                                      child: Row(
+                                          mainAxisAlignment:
+                                          MainAxisAlignment.end,
+                                          crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                          children: [
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  left: 10, top: 10),
+                                              child: Text(
+
+                                                '08-09-2021',
+                                                style: TextStyle(
+                                                    fontWeight:
+                                                    FontWeight.normal,
+                                                    fontSize: 12),
                                               ),
-                                              SizedBox(
-                                                width: 10,
-                                              ),
-                                              InkWell(
-                                                child: Container(
-                                                    margin: EdgeInsets.only(
-                                                        right: 0, top: 0),
-                                                    child: SvgPicture.asset(
-                                                        icMoreHorizontal)),
-                                                onTap: () {
-                                                  showPopupMenu(context);
-                                                },
-                                              ),
-                                            ])),
+                                            ),
+                                            SizedBox(
+                                              width: 10,
+                                            ),
+                                            InkWell(
+                                              child: Container(
+                                                  margin: EdgeInsets.only(
+                                                      right: 10, top: 10),
+                                                  child: SvgPicture.asset(
+                                                      icMoreHorizontal)),
+                                              onTap: () {
+                                                showPopupMenu(context);
+                                              },
+                                            ),
+                                          ]),
+                                    ),
                                     SizedBox(
                                       width: 10,
                                     ),
@@ -797,41 +802,41 @@ class ProfileView extends GetView<ProfileController> {
                                           ]),
                                     ),
                                     Spacer(),
-                                    Container(
-                                        child: Row(
-                                            mainAxisAlignment:
-                                            MainAxisAlignment
-                                                .spaceBetween,
-                                            crossAxisAlignment:
-                                            CrossAxisAlignment
-                                                .start,
-                                            children: [
-                                              Padding(
-                                                padding:
-                                                const EdgeInsets.only(
-                                                    left: 10, top: 0),
-                                                child: Text(
-                                                  '08-09-2021',
-                                                  style: TextStyle(
-                                                      fontWeight:
-                                                      FontWeight.normal,
-                                                      fontSize: 12),
-                                                ),
+                                    Align(
+                                      alignment: Alignment.topRight,
+                                      child: Row(
+                                          mainAxisAlignment:
+                                          MainAxisAlignment.end,
+                                          crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                          children: [
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  left: 10, top: 10),
+                                              child: Text(
+
+                                                '08-09-2021',
+                                                style: TextStyle(
+                                                    fontWeight:
+                                                    FontWeight.normal,
+                                                    fontSize: 12),
                                               ),
-                                              SizedBox(
-                                                width: 10,
-                                              ),
-                                              InkWell(
-                                                child: Container(
-                                                    margin: EdgeInsets.only(
-                                                        right: 0, top: 0),
-                                                    child: SvgPicture.asset(
-                                                        icMoreHorizontal)),
-                                                onTap: () {
-                                                  showPopupMenu(context);
-                                                },
-                                              ),
-                                            ])),
+                                            ),
+                                            SizedBox(
+                                              width: 10,
+                                            ),
+                                            InkWell(
+                                              child: Container(
+                                                  margin: EdgeInsets.only(
+                                                      right: 10, top: 10),
+                                                  child: SvgPicture.asset(
+                                                      icMoreHorizontal)),
+                                              onTap: () {
+                                                showPopupMenu(context);
+                                              },
+                                            ),
+                                          ]),
+                                    ),
                                     SizedBox(
                                       width: 10,
                                     ),
@@ -920,311 +925,6 @@ class ProfileView extends GetView<ProfileController> {
                       ],
                     ),
 
-                    /* Container(
-                    margin: EdgeInsets.only(left: 10, right: 10, bottom: 10),
-                    child: Column(
-                      children: [
-                        Container(
-                          height: 60,
-                          width: MediaQuery.of(context).size.width,
-                          child: Row(
-                            //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Container(
-                                  width: 40.0,
-                                  height: 40.0,
-                                  decoration: new BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      image: new DecorationImage(
-                                          fit: BoxFit.fill,
-                                          image: AssetImage(profileImage2)))),
-                              SizedBox(
-                                width: 15,
-                              ),
-                              Container(
-                                margin: EdgeInsets.only(top: 10),
-                                child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                    CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'Ramon Ricardo',
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      SizedBox(
-                                        height: 5,
-                                      ),
-                                      Row(
-                                        children: [
-                                          SvgPicture.asset(icTagArrow),
-                                          Text(
-                                            'Category Text Public',
-                                            style: TextStyle(
-                                                fontSize: 14,
-                                                fontWeight: FontWeight.bold),
-                                          )
-                                        ],
-                                      ),
-                                    ]),
-                              ),
-                              Spacer(),
-                              Container(
-                                  child: Row(
-                                      mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                      crossAxisAlignment:
-                                      CrossAxisAlignment.start,
-                                      children: [
-                                        Padding(
-                                          padding: const EdgeInsets.only(
-                                              left: 10, top: 0),
-                                          child: Text(
-                                            '08-09-2021',
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.normal,
-                                                fontSize: 12),
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          width: 10,
-                                        ),
-                                        InkWell(
-                                          child: Container(
-                                              margin: EdgeInsets.only(
-                                                  right: 10, top: 0),
-                                              child: SvgPicture.asset(
-                                                  icMoreHorizontal)),
-                                          onTap: () {
-                                            showPopupMenu(context);
-                                          },
-                                        ),
-                                      ])),
-                              SizedBox(
-                                width: 10,
-                              ),
-                            ],
-                          ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(
-                              left: 10, right: 10,top: 5, bottom: 10),
-                          child: Text(
-                            dummyLoremIpsum2,
-                            style: TextStyle(color: Colors.black,
-                                fontSize: 16, fontWeight: FontWeight.normal, height: 1.4),
-                          ),
-                        ),
-                        Container(
-                            margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image2))),
-                        Container(
-                          margin: EdgeInsets.only(
-                              left: 10, right: 10,top: 10, bottom: 10),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-
-                              SvgPicture.asset(
-                                icHeart,
-                              ),
-
-                              SizedBox(
-                                width: 5,
-                              ),
-                              Text(
-                                '420',
-                                style: TextStyle(color: Colors.grey, fontSize: 12),
-                              ),
-                              Spacer(),
-                              Container(
-                                width: 100,
-                                margin: EdgeInsets.only(
-                                    left: 0, right: 10,top: 0, bottom: 0),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    Text(
-                                      '254 views',
-                                      style: TextStyle(color: Colors.grey, fontSize: 12),
-                                    ),
-
-
-                                    SizedBox(
-                                      width: 5,
-                                    ),
-
-                                    SvgPicture.asset(
-                                      icDownArrow,
-                                    ),
-
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(left: 10, right: 10, bottom: 10),
-                    child: Column(
-                      children: [
-                        Container(
-                          height: 60,
-                          width: MediaQuery.of(context).size.width,
-                          child: Row(
-                            //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Container(
-                                  width: 40.0,
-                                  height: 40.0,
-                                  decoration: new BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      image: new DecorationImage(
-                                          fit: BoxFit.fill,
-                                          image: AssetImage(profileImage1)))),
-                              SizedBox(
-                                width: 15,
-                              ),
-                              Container(
-                                margin: EdgeInsets.only(top: 10),
-                                child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                    CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'Ramon Ricardo',
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      SizedBox(
-                                        height: 5,
-                                      ),
-                                      Row(
-                                        children: [
-                                          SvgPicture.asset(icTagArrow),
-                                          Text(
-                                            'Category Text Public',
-                                            style: TextStyle(
-                                                fontSize: 14,
-                                                fontWeight: FontWeight.bold),
-                                          )
-                                        ],
-                                      ),
-                                    ]),
-                              ),
-                              Spacer(),
-                              Container(
-                                  child: Row(
-                                      mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                      crossAxisAlignment:
-                                      CrossAxisAlignment.start,
-                                      children: [
-                                        Padding(
-                                          padding: const EdgeInsets.only(
-                                              left: 10, top: 0),
-                                          child: Text(
-                                            '08-09-2021',
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.normal,
-                                                fontSize: 12),
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          width: 10,
-                                        ),
-                                        InkWell(
-                                          child: Container(
-                                              margin: EdgeInsets.only(
-                                                  right: 10, top: 0),
-                                              child: SvgPicture.asset(
-                                                  icMoreHorizontal)),
-                                          onTap: () {
-                                            showPopupMenu(context);
-                                          },
-                                        ),
-                                      ])),
-                              SizedBox(
-                                width: 10,
-                              ),
-                            ],
-                          ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(
-                              left: 10, right: 10,top: 5, bottom: 10),
-                          child: Text(
-                            dummyLoremIpsum2,
-                            style: TextStyle(color: Colors.black,
-                                fontSize: 16, fontWeight: FontWeight.normal, height: 1.4),
-                          ),
-                        ),
-                        Container(
-                            margin: EdgeInsets.only(left: 10,right: 10),child: Image(image: AssetImage(image3))),
-                        Container(
-                          margin: EdgeInsets.only(
-                              left: 10, right: 10,top: 10, bottom: 10),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-
-                              SvgPicture.asset(
-                                icHeart,
-                              ),
-
-                              SizedBox(
-                                width: 5,
-                              ),
-                              Text(
-                                '420',
-                                style: TextStyle(color: Colors.grey, fontSize: 12),
-                              ),
-                              Spacer(),
-                              Container(
-                                width: 100,
-                                margin: EdgeInsets.only(
-                                    left: 0, right: 10,top: 0, bottom: 0),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    Text(
-                                      '254 views',
-                                      style: TextStyle(color: Colors.grey, fontSize: 12),
-                                    ),
-
-
-                                    SizedBox(
-                                      width: 5,
-                                    ),
-
-                                    SvgPicture.asset(
-                                      icDownArrow,
-                                    ),
-
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-
-                      ],
-
-                    ),
-                  ),*/
                   ],
                 ),
               ),
@@ -1295,41 +995,41 @@ class ProfileView extends GetView<ProfileController> {
                                           ]),
                                     ),
                                     Spacer(),
-                                    Container(
-                                        child: Row(
-                                            mainAxisAlignment:
-                                            MainAxisAlignment
-                                                .spaceBetween,
-                                            crossAxisAlignment:
-                                            CrossAxisAlignment
-                                                .start,
-                                            children: [
-                                              Padding(
-                                                padding:
-                                                const EdgeInsets.only(
-                                                    left: 10, top: 0),
-                                                child: Text(
-                                                  '08-09-2021',
-                                                  style: TextStyle(
-                                                      fontWeight:
-                                                      FontWeight.normal,
-                                                      fontSize: 12),
-                                                ),
+                                    Align(
+                                      alignment: Alignment.topRight,
+                                      child: Row(
+                                          mainAxisAlignment:
+                                          MainAxisAlignment.end,
+                                          crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                          children: [
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  left: 10, top: 10),
+                                              child: Text(
+
+                                                '08-09-2021',
+                                                style: TextStyle(
+                                                    fontWeight:
+                                                    FontWeight.normal,
+                                                    fontSize: 12),
                                               ),
-                                              SizedBox(
-                                                width: 10,
-                                              ),
-                                              InkWell(
-                                                child: Container(
-                                                    margin: EdgeInsets.only(
-                                                        right: 0, top: 0),
-                                                    child: SvgPicture.asset(
-                                                        icMoreHorizontal)),
-                                                onTap: () {
-                                                  showPopupMenu(context);
-                                                },
-                                              ),
-                                            ])),
+                                            ),
+                                            SizedBox(
+                                              width: 10,
+                                            ),
+                                            InkWell(
+                                              child: Container(
+                                                  margin: EdgeInsets.only(
+                                                      right: 10, top: 10),
+                                                  child: SvgPicture.asset(
+                                                      icMoreHorizontal)),
+                                              onTap: () {
+                                                showPopupMenu(context);
+                                              },
+                                            ),
+                                          ]),
+                                    ),
                                     SizedBox(
                                       width: 10,
                                     ),
@@ -1449,41 +1149,41 @@ class ProfileView extends GetView<ProfileController> {
                                           ]),
                                     ),
                                     Spacer(),
-                                    Container(
-                                        child: Row(
-                                            mainAxisAlignment:
-                                            MainAxisAlignment
-                                                .spaceBetween,
-                                            crossAxisAlignment:
-                                            CrossAxisAlignment
-                                                .start,
-                                            children: [
-                                              Padding(
-                                                padding:
-                                                const EdgeInsets.only(
-                                                    left: 10, top: 0),
-                                                child: Text(
-                                                  '08-09-2021',
-                                                  style: TextStyle(
-                                                      fontWeight:
-                                                      FontWeight.normal,
-                                                      fontSize: 12),
-                                                ),
+                                    Align(
+                                      alignment: Alignment.topRight,
+                                      child: Row(
+                                          mainAxisAlignment:
+                                          MainAxisAlignment.end,
+                                          crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                          children: [
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  left: 10, top: 10),
+                                              child: Text(
+
+                                                '08-09-2021',
+                                                style: TextStyle(
+                                                    fontWeight:
+                                                    FontWeight.normal,
+                                                    fontSize: 12),
                                               ),
-                                              SizedBox(
-                                                width: 10,
-                                              ),
-                                              InkWell(
-                                                child: Container(
-                                                    margin: EdgeInsets.only(
-                                                        right: 0, top: 0),
-                                                    child: SvgPicture.asset(
-                                                        icMoreHorizontal)),
-                                                onTap: () {
-                                                  showPopupMenu(context);
-                                                },
-                                              ),
-                                            ])),
+                                            ),
+                                            SizedBox(
+                                              width: 10,
+                                            ),
+                                            InkWell(
+                                              child: Container(
+                                                  margin: EdgeInsets.only(
+                                                      right: 10, top: 10),
+                                                  child: SvgPicture.asset(
+                                                      icMoreHorizontal)),
+                                              onTap: () {
+                                                showPopupMenu(context);
+                                              },
+                                            ),
+                                          ]),
+                                    ),
                                     SizedBox(
                                       width: 10,
                                     ),
@@ -1603,41 +1303,41 @@ class ProfileView extends GetView<ProfileController> {
                                           ]),
                                     ),
                                     Spacer(),
-                                    Container(
-                                        child: Row(
-                                            mainAxisAlignment:
-                                            MainAxisAlignment
-                                                .spaceBetween,
-                                            crossAxisAlignment:
-                                            CrossAxisAlignment
-                                                .start,
-                                            children: [
-                                              Padding(
-                                                padding:
-                                                const EdgeInsets.only(
-                                                    left: 10, top: 0),
-                                                child: Text(
-                                                  '08-09-2021',
-                                                  style: TextStyle(
-                                                      fontWeight:
-                                                      FontWeight.normal,
-                                                      fontSize: 12),
-                                                ),
+                                    Align(
+                                      alignment: Alignment.topRight,
+                                      child: Row(
+                                          mainAxisAlignment:
+                                          MainAxisAlignment.end,
+                                          crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                          children: [
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  left: 10, top: 10),
+                                              child: Text(
+
+                                                '08-09-2021',
+                                                style: TextStyle(
+                                                    fontWeight:
+                                                    FontWeight.normal,
+                                                    fontSize: 12),
                                               ),
-                                              SizedBox(
-                                                width: 10,
-                                              ),
-                                              InkWell(
-                                                child: Container(
-                                                    margin: EdgeInsets.only(
-                                                        right: 0, top: 0),
-                                                    child: SvgPicture.asset(
-                                                        icMoreHorizontal)),
-                                                onTap: () {
-                                                  showPopupMenu(context);
-                                                },
-                                              ),
-                                            ])),
+                                            ),
+                                            SizedBox(
+                                              width: 10,
+                                            ),
+                                            InkWell(
+                                              child: Container(
+                                                  margin: EdgeInsets.only(
+                                                      right: 10, top: 10),
+                                                  child: SvgPicture.asset(
+                                                      icMoreHorizontal)),
+                                              onTap: () {
+                                                showPopupMenu(context);
+                                              },
+                                            ),
+                                          ]),
+                                    ),
                                     SizedBox(
                                       width: 10,
                                     ),
@@ -1763,41 +1463,41 @@ class ProfileView extends GetView<ProfileController> {
                                           ]),
                                     ),
                                     Spacer(),
-                                    Container(
-                                        child: Row(
-                                            mainAxisAlignment:
-                                            MainAxisAlignment
-                                                .spaceBetween,
-                                            crossAxisAlignment:
-                                            CrossAxisAlignment
-                                                .start,
-                                            children: [
-                                              Padding(
-                                                padding:
-                                                const EdgeInsets.only(
-                                                    left: 10, top: 0),
-                                                child: Text(
-                                                  '08-09-2021',
-                                                  style: TextStyle(
-                                                      fontWeight:
-                                                      FontWeight.normal,
-                                                      fontSize: 12),
-                                                ),
+                                    Align(
+                                      alignment: Alignment.topRight,
+                                      child: Row(
+                                          mainAxisAlignment:
+                                          MainAxisAlignment.end,
+                                          crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                          children: [
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  left: 10, top: 10),
+                                              child: Text(
+
+                                                '08-09-2021',
+                                                style: TextStyle(
+                                                    fontWeight:
+                                                    FontWeight.normal,
+                                                    fontSize: 12),
                                               ),
-                                              SizedBox(
-                                                width: 10,
-                                              ),
-                                              InkWell(
-                                                child: Container(
-                                                    margin: EdgeInsets.only(
-                                                        right: 0, top: 0),
-                                                    child: SvgPicture.asset(
-                                                        icMoreHorizontal)),
-                                                onTap: () {
-                                                  showPopupMenu(context);
-                                                },
-                                              ),
-                                            ])),
+                                            ),
+                                            SizedBox(
+                                              width: 10,
+                                            ),
+                                            InkWell(
+                                              child: Container(
+                                                  margin: EdgeInsets.only(
+                                                      right: 10, top: 10),
+                                                  child: SvgPicture.asset(
+                                                      icMoreHorizontal)),
+                                              onTap: () {
+                                                showPopupMenu(context);
+                                              },
+                                            ),
+                                          ]),
+                                    ),
                                     SizedBox(
                                       width: 10,
                                     ),
@@ -1917,41 +1617,41 @@ class ProfileView extends GetView<ProfileController> {
                                           ]),
                                     ),
                                     Spacer(),
-                                    Container(
-                                        child: Row(
-                                            mainAxisAlignment:
-                                            MainAxisAlignment
-                                                .spaceBetween,
-                                            crossAxisAlignment:
-                                            CrossAxisAlignment
-                                                .start,
-                                            children: [
-                                              Padding(
-                                                padding:
-                                                const EdgeInsets.only(
-                                                    left: 10, top: 0),
-                                                child: Text(
-                                                  '08-09-2021',
-                                                  style: TextStyle(
-                                                      fontWeight:
-                                                      FontWeight.normal,
-                                                      fontSize: 12),
-                                                ),
+                                    Align(
+                                      alignment: Alignment.topRight,
+                                      child: Row(
+                                          mainAxisAlignment:
+                                          MainAxisAlignment.end,
+                                          crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                          children: [
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  left: 10, top: 10),
+                                              child: Text(
+
+                                                '08-09-2021',
+                                                style: TextStyle(
+                                                    fontWeight:
+                                                    FontWeight.normal,
+                                                    fontSize: 12),
                                               ),
-                                              SizedBox(
-                                                width: 10,
-                                              ),
-                                              InkWell(
-                                                child: Container(
-                                                    margin: EdgeInsets.only(
-                                                        right: 0, top: 0),
-                                                    child: SvgPicture.asset(
-                                                        icMoreHorizontal)),
-                                                onTap: () {
-                                                  showPopupMenu(context);
-                                                },
-                                              ),
-                                            ])),
+                                            ),
+                                            SizedBox(
+                                              width: 10,
+                                            ),
+                                            InkWell(
+                                              child: Container(
+                                                  margin: EdgeInsets.only(
+                                                      right: 10, top: 10),
+                                                  child: SvgPicture.asset(
+                                                      icMoreHorizontal)),
+                                              onTap: () {
+                                                showPopupMenu(context);
+                                              },
+                                            ),
+                                          ]),
+                                    ),
                                     SizedBox(
                                       width: 10,
                                     ),
@@ -2071,41 +1771,41 @@ class ProfileView extends GetView<ProfileController> {
                                           ]),
                                     ),
                                     Spacer(),
-                                    Container(
-                                        child: Row(
-                                            mainAxisAlignment:
-                                            MainAxisAlignment
-                                                .spaceBetween,
-                                            crossAxisAlignment:
-                                            CrossAxisAlignment
-                                                .start,
-                                            children: [
-                                              Padding(
-                                                padding:
-                                                const EdgeInsets.only(
-                                                    left: 10, top: 0),
-                                                child: Text(
-                                                  '08-09-2021',
-                                                  style: TextStyle(
-                                                      fontWeight:
-                                                      FontWeight.normal,
-                                                      fontSize: 12),
-                                                ),
+                                    Align(
+                                      alignment: Alignment.topRight,
+                                      child: Row(
+                                          mainAxisAlignment:
+                                          MainAxisAlignment.end,
+                                          crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                          children: [
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  left: 10, top: 10),
+                                              child: Text(
+
+                                                '08-09-2021',
+                                                style: TextStyle(
+                                                    fontWeight:
+                                                    FontWeight.normal,
+                                                    fontSize: 12),
                                               ),
-                                              SizedBox(
-                                                width: 10,
-                                              ),
-                                              InkWell(
-                                                child: Container(
-                                                    margin: EdgeInsets.only(
-                                                        right: 0, top: 0),
-                                                    child: SvgPicture.asset(
-                                                        icMoreHorizontal)),
-                                                onTap: () {
-                                                  showPopupMenu(context);
-                                                },
-                                              ),
-                                            ])),
+                                            ),
+                                            SizedBox(
+                                              width: 10,
+                                            ),
+                                            InkWell(
+                                              child: Container(
+                                                  margin: EdgeInsets.only(
+                                                      right: 10, top: 10),
+                                                  child: SvgPicture.asset(
+                                                      icMoreHorizontal)),
+                                              onTap: () {
+                                                showPopupMenu(context);
+                                              },
+                                            ),
+                                          ]),
+                                    ),
                                     SizedBox(
                                       width: 10,
                                     ),
@@ -2211,25 +1911,6 @@ class ProfileView extends GetView<ProfileController> {
 }
 
 showPopupMenu(BuildContext buildContext) {
-/*  showMenu<String>(
-    context: buildContext,
-    position: RelativeRect.fromLTRB(67.0, 67.0, 0.0, 0.0),
-    //position where you want to show the menu on screen
-    items: [
-      PopupMenuItem<String>(child: const Text('View with whome the post was share'), value: '1'),
-      PopupMenuItem<String>(child: const Text('Delete'), value: '2'),
-    ],
-    elevation: 8.0,
-  ).then((itemSelected) => {
-        if (itemSelected == "1")
-          {
-            //Get.toNamed(Routes.editProfile)
-          }
-        else
-          {
-            //code here
-          }
-      });*/
 
   showModalBottomSheet(
       context: buildContext,
