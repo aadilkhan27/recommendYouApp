@@ -60,6 +60,7 @@ class HomeView extends GetView<HomeController> {
                       width: MediaQuery.of(context).size.width,
                       child: Column(
                         children: [
+
                           Container(
                             height: 50,
                             width: MediaQuery.of(context).size.width,
