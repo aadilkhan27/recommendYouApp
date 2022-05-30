@@ -16,6 +16,7 @@ import 'package:recommend_you/app/modules/dashboard/more/privacypolicy/privacy_p
 import 'package:recommend_you/app/modules/dashboard/more/termscondition/terms_condition_view.dart';
 import 'package:recommend_you/app/routes/pages.dart';
 import 'package:recommend_you/app/widgets/dropdown_button2.dart';
+import 'package:recommend_you/dataModel/SpinnerItemModel.dart';
 
 import '../../login/signin/sign_in_view.dart';
 import '../more/faq/faq_view.dart';
@@ -328,6 +329,7 @@ class LandingView extends GetView<LandingController> {
                                       iconEnabledColor: Colors.white,
                                       selectedItemHighlightColor:
                                           primaryLightColor,
+                                      selectedItemColor: Colors.white,
                                       buttonPadding: const EdgeInsets.only(
                                           left: 10, right: 10),
                                       dropdownDecoration: BoxDecoration(
