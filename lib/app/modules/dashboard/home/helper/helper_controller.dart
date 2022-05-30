@@ -12,7 +12,7 @@ class HelperController extends GetxController with GetSingleTickerProviderStateM
 
   void fetHelperData() {
 
-    helperList.add(HelperModel(userImage: profileImage1, itemSelect: true));
+    helperList.add(HelperModel(userImage: profileImage1, itemSelect: false));
     helperList.add(HelperModel(userImage: profileImage2, itemSelect: false));
     helperList.add(HelperModel(userImage: profileImage3, itemSelect: false));
     helperList.add(HelperModel(userImage: profileImage4, itemSelect: false));

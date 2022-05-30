@@ -82,7 +82,9 @@ class ChangeContactView extends GetView<ChangeContactController> {
                                   Padding(
                                     padding: EdgeInsets.only(left: 30, right: 30),
                                     child: TextField(
+                                      maxLength: 10,
                                       cursorColor: Colors.black,
+                                      keyboardType: TextInputType.number,
                                       decoration: InputDecoration(
                                           enabledBorder: UnderlineInputBorder(
                                             borderSide: BorderSide(color: Colors.purple),
@@ -90,7 +92,7 @@ class ChangeContactView extends GetView<ChangeContactController> {
                                           focusedBorder: UnderlineInputBorder(
                                             borderSide: BorderSide(color: Colors.purple),
                                           ),
-                                          //hintText: '985-985-9856',
+                                          hintText: '9859859856',
                                           hintStyle: TextStyle(color: Colors.grey)),
                                     ),
                                   ),
@@ -121,7 +123,7 @@ class ChangeContactView extends GetView<ChangeContactController> {
                                           focusedBorder: UnderlineInputBorder(
                                             borderSide: BorderSide(color: Colors.purple),
                                           ),
-                                          //hintText: 'ramonoricoda@gmail.com',
+                                          hintText: 'ramonoricoda@gmail.com',
                                           hintStyle: TextStyle(color: Colors.grey)),
                                     ),
                                   ),

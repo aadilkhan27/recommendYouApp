@@ -324,7 +324,7 @@ class LandingView extends GetView<LandingController> {
                                         ),
                                       ),
                                       icon: SvgPicture.asset(icDownArrow),
-                                      iconSize: 30,
+                                      iconSize: 15,
                                       buttonHeight: 60,
                                       iconEnabledColor: Colors.white,
                                       selectedItemHighlightColor:
@@ -1730,9 +1730,1460 @@ class LandingView extends GetView<LandingController> {
                             height: 1,
                           ),
                           Container(
-                              height: MediaQuery.of(context).size.height,
-                              width: MediaQuery.of(context).size.width,
-                              child: Expanded(
+                            margin: EdgeInsets.only(
+                                top: 10,
+                                bottom: 10,
+                                right: 10,
+                                left: 10),
+                            child: Column(
+                              children: [
+                                Container(
+                                  height: 60,
+                                  width: MediaQuery.of(context)
+                                      .size
+                                      .width,
+                                  margin: EdgeInsets.only(
+                                      top: 10,
+                                      bottom: 10,
+                                      right: 10,
+                                      left: 10),
+                                  child: Row(
+                                    children: [
+                                      InkWell(
+                                        onTap: () {
+                                          showAlertDialogForProfile(
+                                              context, profileImage1);
+                                        },
+                                        child: Container(
+                                          width: 50.0,
+                                          height: 50.0,
+                                          decoration:
+                                          new BoxDecoration(
+                                            shape: BoxShape.rectangle,
+                                            image:
+                                            new DecorationImage(
+                                              fit: BoxFit.fill,
+                                              image: AssetImage(
+                                                  profileImage1),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 20,
+                                      ),
+                                      Container(
+                                        margin:
+                                        EdgeInsets.only(top: 0),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                          MainAxisAlignment
+                                              .center,
+                                          //crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                              //margin: EdgeInsets.only(left: 35, right: 35),
+                                              child: Center(
+                                                child: RichText(
+                                                  textAlign: TextAlign
+                                                      .center,
+                                                  text: TextSpan(
+                                                      children: [
+                                                        TextSpan(
+                                                            text:
+                                                            'New Likes ',
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .black,
+                                                                fontSize:
+                                                                14,
+                                                                fontWeight:
+                                                                FontWeight.bold)),
+                                                        TextSpan(
+                                                            text:
+                                                            'for your message.',
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .black,
+                                                                fontSize:
+                                                                14)),
+                                                      ]),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  height: 60,
+                                  width: MediaQuery.of(context)
+                                      .size
+                                      .width,
+                                  margin: EdgeInsets.only(
+                                      top: 10,
+                                      bottom: 10,
+                                      right: 10,
+                                      left: 10),
+                                  child: Row(
+                                    children: [
+                                      InkWell(
+                                        onTap: () {
+                                          showAlertDialogForProfile(
+                                              context, profileImage2);
+                                        },
+                                        child: Container(
+                                          width: 50.0,
+                                          height: 50.0,
+                                          decoration:
+                                          new BoxDecoration(
+                                            shape: BoxShape.rectangle,
+                                            image:
+                                            new DecorationImage(
+                                              fit: BoxFit.fill,
+                                              image: AssetImage(
+                                                  profileImage2),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 20,
+                                      ),
+                                      Container(
+                                        margin:
+                                        EdgeInsets.only(top: 0),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                          MainAxisAlignment
+                                              .center,
+                                          //crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                              //margin: EdgeInsets.only(left: 35, right: 35),
+                                              child: Center(
+                                                child: RichText(
+                                                  textAlign: TextAlign
+                                                      .center,
+                                                  text: TextSpan(
+                                                      children: [
+                                                        TextSpan(
+                                                            text:
+                                                            'New Likes ',
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .black,
+                                                                fontSize:
+                                                                14,
+                                                                fontWeight:
+                                                                FontWeight.bold)),
+                                                        TextSpan(
+                                                            text:
+                                                            'for your message.',
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .black,
+                                                                fontSize:
+                                                                14)),
+                                                      ]),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  height: 60,
+                                  width: MediaQuery.of(context)
+                                      .size
+                                      .width,
+                                  margin: EdgeInsets.only(
+                                      top: 10,
+                                      bottom: 10,
+                                      right: 10,
+                                      left: 10),
+                                  child: Row(
+                                    children: [
+                                      InkWell(
+                                        onTap: () {
+                                          showAlertDialogForProfile(
+                                              context, profileImage3);
+                                        },
+                                        child: Container(
+                                          width: 50.0,
+                                          height: 50.0,
+                                          decoration:
+                                          new BoxDecoration(
+                                            shape: BoxShape.rectangle,
+                                            image:
+                                            new DecorationImage(
+                                              fit: BoxFit.fill,
+                                              image: AssetImage(
+                                                  profileImage3),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 20,
+                                      ),
+                                      Container(
+                                        margin:
+                                        EdgeInsets.only(top: 0),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                          MainAxisAlignment
+                                              .center,
+                                          //crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                              //margin: EdgeInsets.only(left: 35, right: 35),
+                                              child: Center(
+                                                child: RichText(
+                                                  textAlign: TextAlign
+                                                      .center,
+                                                  text: TextSpan(
+                                                      children: [
+                                                        TextSpan(
+                                                            text:
+                                                            'New Likes ',
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .black,
+                                                                fontSize:
+                                                                14,
+                                                                fontWeight:
+                                                                FontWeight.bold)),
+                                                        TextSpan(
+                                                            text:
+                                                            'for your message.',
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .black,
+                                                                fontSize:
+                                                                14)),
+                                                      ]),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  height: 60,
+                                  width: MediaQuery.of(context)
+                                      .size
+                                      .width,
+                                  margin: EdgeInsets.only(
+                                      top: 10,
+                                      bottom: 10,
+                                      right: 10,
+                                      left: 10),
+                                  child: Row(
+                                    children: [
+                                      InkWell(
+                                        onTap: () {
+                                          showAlertDialogForProfile(
+                                              context, profileImage4);
+                                        },
+                                        child: Container(
+                                          width: 50.0,
+                                          height: 50.0,
+                                          decoration:
+                                          new BoxDecoration(
+                                            shape: BoxShape.rectangle,
+                                            image:
+                                            new DecorationImage(
+                                              fit: BoxFit.fill,
+                                              image: AssetImage(
+                                                  profileImage4),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 20,
+                                      ),
+                                      Container(
+                                        margin:
+                                        EdgeInsets.only(top: 0),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                          MainAxisAlignment
+                                              .center,
+                                          //crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                              //margin: EdgeInsets.only(left: 35, right: 35),
+                                              child: Center(
+                                                child: RichText(
+                                                  textAlign: TextAlign
+                                                      .center,
+                                                  text: TextSpan(
+                                                      children: [
+                                                        TextSpan(
+                                                            text:
+                                                            'New Likes ',
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .black,
+                                                                fontSize:
+                                                                14,
+                                                                fontWeight:
+                                                                FontWeight.bold)),
+                                                        TextSpan(
+                                                            text:
+                                                            'for your message.',
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .black,
+                                                                fontSize:
+                                                                14)),
+                                                      ]),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  height: 60,
+                                  width: MediaQuery.of(context)
+                                      .size
+                                      .width,
+                                  margin: EdgeInsets.only(
+                                      top: 10,
+                                      bottom: 10,
+                                      right: 10,
+                                      left: 10),
+                                  child: Row(
+                                    children: [
+                                      InkWell(
+                                        onTap: () {
+                                          showAlertDialogForProfile(
+                                              context, profileImage5);
+                                        },
+                                        child: Container(
+                                          width: 50.0,
+                                          height: 50.0,
+                                          decoration:
+                                          new BoxDecoration(
+                                            shape: BoxShape.rectangle,
+                                            image:
+                                            new DecorationImage(
+                                              fit: BoxFit.fill,
+                                              image: AssetImage(
+                                                  profileImage5),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 20,
+                                      ),
+                                      Container(
+                                        margin:
+                                        EdgeInsets.only(top: 0),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                          MainAxisAlignment
+                                              .center,
+                                          //crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                              //margin: EdgeInsets.only(left: 35, right: 35),
+                                              child: Center(
+                                                child: RichText(
+                                                  textAlign: TextAlign
+                                                      .center,
+                                                  text: TextSpan(
+                                                      children: [
+                                                        TextSpan(
+                                                            text:
+                                                            'New Likes ',
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .black,
+                                                                fontSize:
+                                                                14,
+                                                                fontWeight:
+                                                                FontWeight.bold)),
+                                                        TextSpan(
+                                                            text:
+                                                            'for your message.',
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .black,
+                                                                fontSize:
+                                                                14)),
+                                                      ]),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  height: 60,
+                                  width: MediaQuery.of(context)
+                                      .size
+                                      .width,
+                                  margin: EdgeInsets.only(
+                                      top: 10,
+                                      bottom: 10,
+                                      right: 10,
+                                      left: 10),
+                                  child: Row(
+                                    children: [
+                                      InkWell(
+                                        onTap: () {
+                                          showAlertDialogForProfile(
+                                              context, profileImage6);
+                                        },
+                                        child: Container(
+                                          width: 50.0,
+                                          height: 50.0,
+                                          decoration:
+                                          new BoxDecoration(
+                                            shape: BoxShape.rectangle,
+                                            image:
+                                            new DecorationImage(
+                                              fit: BoxFit.fill,
+                                              image: AssetImage(
+                                                  profileImage6),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 20,
+                                      ),
+                                      Container(
+                                        margin:
+                                        EdgeInsets.only(top: 0),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                          MainAxisAlignment
+                                              .center,
+                                          //crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                              //margin: EdgeInsets.only(left: 35, right: 35),
+                                              child: Center(
+                                                child: RichText(
+                                                  textAlign: TextAlign
+                                                      .center,
+                                                  text: TextSpan(
+                                                      children: [
+                                                        TextSpan(
+                                                            text:
+                                                            'New Likes ',
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .black,
+                                                                fontSize:
+                                                                14,
+                                                                fontWeight:
+                                                                FontWeight.bold)),
+                                                        TextSpan(
+                                                            text:
+                                                            'for your message.',
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .black,
+                                                                fontSize:
+                                                                14)),
+                                                      ]),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  height: 60,
+                                  width: MediaQuery.of(context)
+                                      .size
+                                      .width,
+                                  margin: EdgeInsets.only(
+                                      top: 10,
+                                      bottom: 10,
+                                      right: 10,
+                                      left: 10),
+                                  child: Row(
+                                    children: [
+                                      InkWell(
+                                        onTap: () {
+                                          showAlertDialogForProfile(
+                                              context, profileImage1);
+                                        },
+                                        child: Container(
+                                          width: 50.0,
+                                          height: 50.0,
+                                          decoration:
+                                          new BoxDecoration(
+                                            shape: BoxShape.rectangle,
+                                            image:
+                                            new DecorationImage(
+                                              fit: BoxFit.fill,
+                                              image: AssetImage(
+                                                  profileImage1),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 20,
+                                      ),
+                                      Container(
+                                        margin:
+                                        EdgeInsets.only(top: 0),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                          MainAxisAlignment
+                                              .center,
+                                          //crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                              //margin: EdgeInsets.only(left: 35, right: 35),
+                                              child: Center(
+                                                child: RichText(
+                                                  textAlign: TextAlign
+                                                      .center,
+                                                  text: TextSpan(
+                                                      children: [
+                                                        TextSpan(
+                                                            text:
+                                                            'New Likes ',
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .black,
+                                                                fontSize:
+                                                                14,
+                                                                fontWeight:
+                                                                FontWeight.bold)),
+                                                        TextSpan(
+                                                            text:
+                                                            'for your message.',
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .black,
+                                                                fontSize:
+                                                                14)),
+                                                      ]),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  height: 60,
+                                  width: MediaQuery.of(context)
+                                      .size
+                                      .width,
+                                  margin: EdgeInsets.only(
+                                      top: 10,
+                                      bottom: 10,
+                                      right: 10,
+                                      left: 10),
+                                  child: Row(
+                                    children: [
+                                      InkWell(
+                                        onTap: () {
+                                          showAlertDialogForProfile(
+                                              context, profileImage2);
+                                        },
+                                        child: Container(
+                                          width: 50.0,
+                                          height: 50.0,
+                                          decoration:
+                                          new BoxDecoration(
+                                            shape: BoxShape.rectangle,
+                                            image:
+                                            new DecorationImage(
+                                              fit: BoxFit.fill,
+                                              image: AssetImage(
+                                                  profileImage2),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 20,
+                                      ),
+                                      Container(
+                                        margin:
+                                        EdgeInsets.only(top: 0),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                          MainAxisAlignment
+                                              .center,
+                                          //crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                              //margin: EdgeInsets.only(left: 35, right: 35),
+                                              child: Center(
+                                                child: RichText(
+                                                  textAlign: TextAlign
+                                                      .center,
+                                                  text: TextSpan(
+                                                      children: [
+                                                        TextSpan(
+                                                            text:
+                                                            'New Likes ',
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .black,
+                                                                fontSize:
+                                                                14,
+                                                                fontWeight:
+                                                                FontWeight.bold)),
+                                                        TextSpan(
+                                                            text:
+                                                            'for your message.',
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .black,
+                                                                fontSize:
+                                                                14)),
+                                                      ]),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  height: 60,
+                                  width: MediaQuery.of(context)
+                                      .size
+                                      .width,
+                                  margin: EdgeInsets.only(
+                                      top: 10,
+                                      bottom: 10,
+                                      right: 10,
+                                      left: 10),
+                                  child: Row(
+                                    children: [
+                                      InkWell(
+                                        onTap: () {
+                                          showAlertDialogForProfile(
+                                              context, profileImage3);
+                                        },
+                                        child: Container(
+                                          width: 50.0,
+                                          height: 50.0,
+                                          decoration:
+                                          new BoxDecoration(
+                                            shape: BoxShape.rectangle,
+                                            image:
+                                            new DecorationImage(
+                                              fit: BoxFit.fill,
+                                              image: AssetImage(
+                                                  profileImage3),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 20,
+                                      ),
+                                      Container(
+                                        margin:
+                                        EdgeInsets.only(top: 0),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                          MainAxisAlignment
+                                              .center,
+                                          //crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                              //margin: EdgeInsets.only(left: 35, right: 35),
+                                              child: Center(
+                                                child: RichText(
+                                                  textAlign: TextAlign
+                                                      .center,
+                                                  text: TextSpan(
+                                                      children: [
+                                                        TextSpan(
+                                                            text:
+                                                            'New Likes ',
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .black,
+                                                                fontSize:
+                                                                14,
+                                                                fontWeight:
+                                                                FontWeight.bold)),
+                                                        TextSpan(
+                                                            text:
+                                                            'for your message.',
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .black,
+                                                                fontSize:
+                                                                14)),
+                                                      ]),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  height: 60,
+                                  width: MediaQuery.of(context)
+                                      .size
+                                      .width,
+                                  margin: EdgeInsets.only(
+                                      top: 10,
+                                      bottom: 10,
+                                      right: 10,
+                                      left: 10),
+                                  child: Row(
+                                    children: [
+                                      InkWell(
+                                        onTap: () {
+                                          showAlertDialogForProfile(
+                                              context, profileImage4);
+                                        },
+                                        child: Container(
+                                          width: 50.0,
+                                          height: 50.0,
+                                          decoration:
+                                          new BoxDecoration(
+                                            shape: BoxShape.rectangle,
+                                            image:
+                                            new DecorationImage(
+                                              fit: BoxFit.fill,
+                                              image: AssetImage(
+                                                  profileImage4),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 20,
+                                      ),
+                                      Container(
+                                        margin:
+                                        EdgeInsets.only(top: 0),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                          MainAxisAlignment
+                                              .center,
+                                          //crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                              //margin: EdgeInsets.only(left: 35, right: 35),
+                                              child: Center(
+                                                child: RichText(
+                                                  textAlign: TextAlign
+                                                      .center,
+                                                  text: TextSpan(
+                                                      children: [
+                                                        TextSpan(
+                                                            text:
+                                                            'New Likes ',
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .black,
+                                                                fontSize:
+                                                                14,
+                                                                fontWeight:
+                                                                FontWeight.bold)),
+                                                        TextSpan(
+                                                            text:
+                                                            'for your message.',
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .black,
+                                                                fontSize:
+                                                                14)),
+                                                      ]),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  height: 60,
+                                  width: MediaQuery.of(context)
+                                      .size
+                                      .width,
+                                  margin: EdgeInsets.only(
+                                      top: 10,
+                                      bottom: 10,
+                                      right: 10,
+                                      left: 10),
+                                  child: Row(
+                                    children: [
+                                      InkWell(
+                                        onTap: () {
+                                          showAlertDialogForProfile(
+                                              context, profileImage5);
+                                        },
+                                        child: Container(
+                                          width: 50.0,
+                                          height: 50.0,
+                                          decoration:
+                                          new BoxDecoration(
+                                            shape: BoxShape.rectangle,
+                                            image:
+                                            new DecorationImage(
+                                              fit: BoxFit.fill,
+                                              image: AssetImage(
+                                                  profileImage5),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 20,
+                                      ),
+                                      Container(
+                                        margin:
+                                        EdgeInsets.only(top: 0),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                          MainAxisAlignment
+                                              .center,
+                                          //crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                              //margin: EdgeInsets.only(left: 35, right: 35),
+                                              child: Center(
+                                                child: RichText(
+                                                  textAlign: TextAlign
+                                                      .center,
+                                                  text: TextSpan(
+                                                      children: [
+                                                        TextSpan(
+                                                            text:
+                                                            'New Likes ',
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .black,
+                                                                fontSize:
+                                                                14,
+                                                                fontWeight:
+                                                                FontWeight.bold)),
+                                                        TextSpan(
+                                                            text:
+                                                            'for your message.',
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .black,
+                                                                fontSize:
+                                                                14)),
+                                                      ]),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  height: 60,
+                                  width: MediaQuery.of(context)
+                                      .size
+                                      .width,
+                                  margin: EdgeInsets.only(
+                                      top: 10,
+                                      bottom: 10,
+                                      right: 10,
+                                      left: 10),
+                                  child: Row(
+                                    children: [
+                                      InkWell(
+                                        onTap: () {
+                                          showAlertDialogForProfile(
+                                              context, profileImage6);
+                                        },
+                                        child: Container(
+                                          width: 50.0,
+                                          height: 50.0,
+                                          decoration:
+                                          new BoxDecoration(
+                                            shape: BoxShape.rectangle,
+                                            image:
+                                            new DecorationImage(
+                                              fit: BoxFit.fill,
+                                              image: AssetImage(
+                                                  profileImage6),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 20,
+                                      ),
+                                      Container(
+                                        margin:
+                                        EdgeInsets.only(top: 0),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                          MainAxisAlignment
+                                              .center,
+                                          //crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                              //margin: EdgeInsets.only(left: 35, right: 35),
+                                              child: Center(
+                                                child: RichText(
+                                                  textAlign: TextAlign
+                                                      .center,
+                                                  text: TextSpan(
+                                                      children: [
+                                                        TextSpan(
+                                                            text:
+                                                            'New Likes ',
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .black,
+                                                                fontSize:
+                                                                14,
+                                                                fontWeight:
+                                                                FontWeight.bold)),
+                                                        TextSpan(
+                                                            text:
+                                                            'for your message.',
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .black,
+                                                                fontSize:
+                                                                14)),
+                                                      ]),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  height: 60,
+                                  width: MediaQuery.of(context)
+                                      .size
+                                      .width,
+                                  margin: EdgeInsets.only(
+                                      top: 10,
+                                      bottom: 10,
+                                      right: 10,
+                                      left: 10),
+                                  child: Row(
+                                    children: [
+                                      InkWell(
+                                        onTap: () {
+                                          showAlertDialogForProfile(
+                                              context, profileImage1);
+                                        },
+                                        child: Container(
+                                          width: 50.0,
+                                          height: 50.0,
+                                          decoration:
+                                          new BoxDecoration(
+                                            shape: BoxShape.rectangle,
+                                            image:
+                                            new DecorationImage(
+                                              fit: BoxFit.fill,
+                                              image: AssetImage(
+                                                  profileImage1),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 20,
+                                      ),
+                                      Container(
+                                        margin:
+                                        EdgeInsets.only(top: 0),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                          MainAxisAlignment
+                                              .center,
+                                          //crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                              //margin: EdgeInsets.only(left: 35, right: 35),
+                                              child: Center(
+                                                child: RichText(
+                                                  textAlign: TextAlign
+                                                      .center,
+                                                  text: TextSpan(
+                                                      children: [
+                                                        TextSpan(
+                                                            text:
+                                                            'New Likes ',
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .black,
+                                                                fontSize:
+                                                                14,
+                                                                fontWeight:
+                                                                FontWeight.bold)),
+                                                        TextSpan(
+                                                            text:
+                                                            'for your message.',
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .black,
+                                                                fontSize:
+                                                                14)),
+                                                      ]),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  height: 60,
+                                  width: MediaQuery.of(context)
+                                      .size
+                                      .width,
+                                  margin: EdgeInsets.only(
+                                      top: 10,
+                                      bottom: 10,
+                                      right: 10,
+                                      left: 10),
+                                  child: Row(
+                                    children: [
+                                      InkWell(
+                                        onTap: () {
+                                          showAlertDialogForProfile(
+                                              context, profileImage2);
+                                        },
+                                        child: Container(
+                                          width: 50.0,
+                                          height: 50.0,
+                                          decoration:
+                                          new BoxDecoration(
+                                            shape: BoxShape.rectangle,
+                                            image:
+                                            new DecorationImage(
+                                              fit: BoxFit.fill,
+                                              image: AssetImage(
+                                                  profileImage2),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 20,
+                                      ),
+                                      Container(
+                                        margin:
+                                        EdgeInsets.only(top: 0),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                          MainAxisAlignment
+                                              .center,
+                                          //crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                              //margin: EdgeInsets.only(left: 35, right: 35),
+                                              child: Center(
+                                                child: RichText(
+                                                  textAlign: TextAlign
+                                                      .center,
+                                                  text: TextSpan(
+                                                      children: [
+                                                        TextSpan(
+                                                            text:
+                                                            'New Likes ',
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .black,
+                                                                fontSize:
+                                                                14,
+                                                                fontWeight:
+                                                                FontWeight.bold)),
+                                                        TextSpan(
+                                                            text:
+                                                            'for your message.',
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .black,
+                                                                fontSize:
+                                                                14)),
+                                                      ]),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  height: 60,
+                                  width: MediaQuery.of(context)
+                                      .size
+                                      .width,
+                                  margin: EdgeInsets.only(
+                                      top: 10,
+                                      bottom: 10,
+                                      right: 10,
+                                      left: 10),
+                                  child: Row(
+                                    children: [
+                                      InkWell(
+                                        onTap: () {
+                                          showAlertDialogForProfile(
+                                              context, profileImage3);
+                                        },
+                                        child: Container(
+                                          width: 50.0,
+                                          height: 50.0,
+                                          decoration:
+                                          new BoxDecoration(
+                                            shape: BoxShape.rectangle,
+                                            image:
+                                            new DecorationImage(
+                                              fit: BoxFit.fill,
+                                              image: AssetImage(
+                                                  profileImage3),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 20,
+                                      ),
+                                      Container(
+                                        margin:
+                                        EdgeInsets.only(top: 0),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                          MainAxisAlignment
+                                              .center,
+                                          //crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                              //margin: EdgeInsets.only(left: 35, right: 35),
+                                              child: Center(
+                                                child: RichText(
+                                                  textAlign: TextAlign
+                                                      .center,
+                                                  text: TextSpan(
+                                                      children: [
+                                                        TextSpan(
+                                                            text:
+                                                            'New Likes ',
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .black,
+                                                                fontSize:
+                                                                14,
+                                                                fontWeight:
+                                                                FontWeight.bold)),
+                                                        TextSpan(
+                                                            text:
+                                                            'for your message.',
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .black,
+                                                                fontSize:
+                                                                14)),
+                                                      ]),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  height: 60,
+                                  width: MediaQuery.of(context)
+                                      .size
+                                      .width,
+                                  margin: EdgeInsets.only(
+                                      top: 10,
+                                      bottom: 10,
+                                      right: 10,
+                                      left: 10),
+                                  child: Row(
+                                    children: [
+                                      InkWell(
+                                        onTap: () {
+                                          showAlertDialogForProfile(
+                                              context, profileImage4);
+                                        },
+                                        child: Container(
+                                          width: 50.0,
+                                          height: 50.0,
+                                          decoration:
+                                          new BoxDecoration(
+                                            shape: BoxShape.rectangle,
+                                            image:
+                                            new DecorationImage(
+                                              fit: BoxFit.fill,
+                                              image: AssetImage(
+                                                  profileImage4),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 20,
+                                      ),
+                                      Container(
+                                        margin:
+                                        EdgeInsets.only(top: 0),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                          MainAxisAlignment
+                                              .center,
+                                          //crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                              //margin: EdgeInsets.only(left: 35, right: 35),
+                                              child: Center(
+                                                child: RichText(
+                                                  textAlign: TextAlign
+                                                      .center,
+                                                  text: TextSpan(
+                                                      children: [
+                                                        TextSpan(
+                                                            text:
+                                                            'New Likes ',
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .black,
+                                                                fontSize:
+                                                                14,
+                                                                fontWeight:
+                                                                FontWeight.bold)),
+                                                        TextSpan(
+                                                            text:
+                                                            'for your message.',
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .black,
+                                                                fontSize:
+                                                                14)),
+                                                      ]),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  height: 60,
+                                  width: MediaQuery.of(context)
+                                      .size
+                                      .width,
+                                  margin: EdgeInsets.only(
+                                      top: 10,
+                                      bottom: 10,
+                                      right: 10,
+                                      left: 10),
+                                  child: Row(
+                                    children: [
+                                      InkWell(
+                                        onTap: () {
+                                          showAlertDialogForProfile(
+                                              context, profileImage5);
+                                        },
+                                        child: Container(
+                                          width: 50.0,
+                                          height: 50.0,
+                                          decoration:
+                                          new BoxDecoration(
+                                            shape: BoxShape.rectangle,
+                                            image:
+                                            new DecorationImage(
+                                              fit: BoxFit.fill,
+                                              image: AssetImage(
+                                                  profileImage5),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 20,
+                                      ),
+                                      Container(
+                                        margin:
+                                        EdgeInsets.only(top: 0),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                          MainAxisAlignment
+                                              .center,
+                                          //crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                              //margin: EdgeInsets.only(left: 35, right: 35),
+                                              child: Center(
+                                                child: RichText(
+                                                  textAlign: TextAlign
+                                                      .center,
+                                                  text: TextSpan(
+                                                      children: [
+                                                        TextSpan(
+                                                            text:
+                                                            'New Likes ',
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .black,
+                                                                fontSize:
+                                                                14,
+                                                                fontWeight:
+                                                                FontWeight.bold)),
+                                                        TextSpan(
+                                                            text:
+                                                            'for your message.',
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .black,
+                                                                fontSize:
+                                                                14)),
+                                                      ]),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  height: 60,
+                                  width: MediaQuery.of(context)
+                                      .size
+                                      .width,
+                                  margin: EdgeInsets.only(
+                                      top: 10,
+                                      bottom: 10,
+                                      right: 10,
+                                      left: 10),
+                                  child: Row(
+                                    children: [
+                                      InkWell(
+                                        onTap: () {
+                                          showAlertDialogForProfile(
+                                              context, profileImage6);
+                                        },
+                                        child: Container(
+                                          width: 50.0,
+                                          height: 50.0,
+                                          decoration:
+                                          new BoxDecoration(
+                                            shape: BoxShape.rectangle,
+                                            image:
+                                            new DecorationImage(
+                                              fit: BoxFit.fill,
+                                              image: AssetImage(
+                                                  profileImage6),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 20,
+                                      ),
+                                      Container(
+                                        margin:
+                                        EdgeInsets.only(top: 0),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                          MainAxisAlignment
+                                              .center,
+                                          //crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                              //margin: EdgeInsets.only(left: 35, right: 35),
+                                              child: Center(
+                                                child: RichText(
+                                                  textAlign: TextAlign
+                                                      .center,
+                                                  text: TextSpan(
+                                                      children: [
+                                                        TextSpan(
+                                                            text:
+                                                            'New Likes ',
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .black,
+                                                                fontSize:
+                                                                14,
+                                                                fontWeight:
+                                                                FontWeight.bold)),
+                                                        TextSpan(
+                                                            text:
+                                                            'for your message.',
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .black,
+                                                                fontSize:
+                                                                14)),
+                                                      ]),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          /*Expanded(
+                              child: Container(
+                                height: MediaQuery.of(context).size.height,
+                                width: MediaQuery.of(context).size.width,
                                 child: ListView.builder(
                                   itemBuilder: (BuildContext, index) {
                                     return Container(
@@ -1829,7 +3280,7 @@ class LandingView extends GetView<LandingController> {
                                   ),
                                   scrollDirection: Axis.vertical,
                                 ),
-                              )),
+                              )),*/
                         ],
                       ),
                     ),
@@ -1951,11 +3402,80 @@ class LandingView extends GetView<LandingController> {
                             ),
                             Divider(
                               color: Colors.black,
-                              height: 1,
+                              height: 0.5,
                             ),
                             SizedBox(
                               height: 10,
                             ),
+
+
+
+
+                            /*  Container(
+                        height: 30,
+                        width: MediaQuery.of(context).size.width,
+
+                        //margin: EdgeInsets.only(right: 15, left: 5),
+                        child: DropdownButtonFormField2(
+                          decoration: InputDecoration(
+                            isDense: true,
+                            contentPadding: EdgeInsets.zero,
+                            enabledBorder: const OutlineInputBorder(
+                              // width: 0.0 produces a thin "hairline" border
+                              borderSide: const BorderSide(color: Colors.white, width: 0.0),
+                            ),
+                            focusedBorder: const OutlineInputBorder(
+                              // width: 0.0 produces a thin "hairline" border
+                              borderSide: const BorderSide(color: Colors.white, width: 0.0),
+                            ),
+                            border: OutlineInputBorder(
+                              borderSide: const BorderSide(color: Colors.black, width: 0.0),
+                              borderRadius: BorderRadius.circular(0),
+                            ),
+                          ),
+                          isExpanded: true,
+                          hint: const Text(
+                            'Categories',
+                            style: TextStyle(
+                                fontSize: 14, color: Colors.black),
+                          ),
+                          icon: const Icon(
+                            Icons.arrow_drop_down,
+                            color: Colors.black,
+                          ),
+                          iconSize: 30,
+                          buttonHeight: 60,
+                          buttonPadding:
+                          const EdgeInsets.only(left: 20, right: 10),
+                          dropdownDecoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              color: bonJourColor
+                          ),
+                          items: spinnerItems
+                              .map((item) => DropdownMenuItem<String>(
+                            value: item,
+                            child: Text(
+                              item,
+                              style: const TextStyle(
+                                  fontSize: 12,
+                                  color: Colors.black),
+                            ),
+                          ))
+                              .toList(),
+                          validator: (value) {
+                            if (value == null) {
+                              return 'RecommendYou';
+                            }
+                          },
+                          onChanged: (value) {
+                            //Do something when changing the item if you want.
+                          },
+                          onSaved: (value) {
+                            selectedValue = value.toString();
+                          },
+                        ),
+                      ),*/
+
                             Container(
                               height: 30,
                               width: MediaQuery.of(context).size.width,
@@ -1967,65 +3487,53 @@ class LandingView extends GetView<LandingController> {
                                   contentPadding: EdgeInsets.zero,
                                   enabledBorder: const OutlineInputBorder(
                                     // width: 0.0 produces a thin "hairline" border
-                                    borderSide: const BorderSide(
-                                        color: Colors.white, width: 0.0),
+                                    borderSide: const BorderSide(color: Colors.white, width: 0.0),
                                   ),
                                   focusedBorder: const OutlineInputBorder(
                                     // width: 0.0 produces a thin "hairline" border
-                                    borderSide: const BorderSide(
-                                        color: Colors.white, width: 0.0),
+                                    borderSide: const BorderSide(color: Colors.white, width: 0.0),
                                   ),
                                   border: OutlineInputBorder(
-                                    borderSide: const BorderSide(
-                                        color: Colors.black, width: 0.0),
+                                    borderSide: const BorderSide(color: Colors.black, width: 0.0),
                                     borderRadius: BorderRadius.circular(0),
                                   ),
                                 ),
                                 isExpanded: true,
-                                hint: RichText(
-                                  text: TextSpan(
-                                    children: [
-                                      TextSpan(
-                                        text: 'Recommend',
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.bold,
-                                            color: primaryDarkColor),
-                                      ),
-                                      TextSpan(
-                                        text: 'You',
-                                        style: TextStyle(
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.bold,
-                                            color: primaryLightColor),
-                                      ),
-                                    ],
-                                  ),
+                                hint: Text(
+                                  '* Category',
+                                  style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.normal,
+                                      color: Colors.black),
                                 ),
+
                                 icon: SvgPicture.asset(icDownArrow),
                                 iconSize: 30,
                                 buttonHeight: 60,
                                 iconEnabledColor: Colors.white,
-                                selectedItemHighlightColor: primaryLightColor,
-                                buttonPadding:
-                                    const EdgeInsets.only(left: 15, right: 20),
+                                selectedItemHighlightColor:
+                                primaryLightColor,
+
+                                buttonPadding: const EdgeInsets.only(left: 15, right: 20),
                                 dropdownDecoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(5),
+                                    borderRadius:
+                                    BorderRadius.circular(5),
                                     color: veryLightWhite),
                                 items: spinnerItems
-                                    .map((item) => DropdownMenuItem<String>(
-                                          value: item,
-                                          child: Text(
-                                            item,
-                                            style: const TextStyle(
-                                                fontSize: 14,
-                                                color: Colors.black),
-                                          ),
-                                        ))
+                                    .map((item) =>
+                                    DropdownMenuItem<String>(
+                                      value: item,
+                                      child: Text(
+                                        item,
+                                        style: const TextStyle(
+                                            fontSize: 14,
+                                            color: Colors.black),
+                                      ),
+                                    ))
                                     .toList(),
                                 validator: (value) {
                                   if (value == null) {
-                                    return 'RecommendYou';
+                                    return '* Category';
                                   }
                                 },
                                 onChanged: (value) {
@@ -2036,6 +3544,7 @@ class LandingView extends GetView<LandingController> {
                                 },
                               ),
                             ),
+
                             SizedBox(
                               height: 10,
                             ),
@@ -2112,7 +3621,8 @@ class LandingView extends GetView<LandingController> {
                       width: MediaQuery.of(context).size.width,
                       margin: EdgeInsets.only(top: 10),
                       child: Column(children: [
-                        Container(
+
+                        /*Container(
                           height: 40,
                           decoration: BoxDecoration(
                               border: Border.all(color: Colors.purple),
@@ -2126,6 +3636,7 @@ class LandingView extends GetView<LandingController> {
                             padding: const EdgeInsets.only(
                                 left: 20.0, right: 10, bottom: 2, top: 2),
                             child: TextField(
+                              keyboardType: TextInputType.text,
                               style: TextStyle(color: Colors.white),
                               cursorColor: Colors.white,
                               decoration: const InputDecoration(
@@ -2145,7 +3656,47 @@ class LandingView extends GetView<LandingController> {
                                   )),
                             ),
                           ),
+                        ),*/
+
+                        Container(
+                          height : 45,
+                            width: MediaQuery.of(context).size.width,
+                          margin: EdgeInsets.only(
+                              left: 20, right: 20, bottom: 10, top: 10),
+                          decoration: BoxDecoration(
+                              border: Border.all(color: Colors.purple),
+                              color: Colors.purple,
+                              borderRadius: const BorderRadius.all(
+                                Radius.circular(20),
+                              )),
+                            child: Padding(
+                              padding: EdgeInsets.only(left: 20, right: 20),
+                              child: TextField(
+                                  keyboardType: TextInputType.text,
+                                style: TextStyle(color: Colors.white),
+                                cursorColor: Colors.white,
+                                decoration: const InputDecoration(
+                                    enabledBorder: UnderlineInputBorder(
+                                      borderSide:
+                                      BorderSide(color: Colors.purple),
+                                    ),
+                                    focusedBorder: UnderlineInputBorder(
+                                      borderSide: BorderSide(color: Colors.purple),
+                                    ),
+                                    focusColor: Colors.white,
+                                    hintStyle: TextStyle(color: Colors.white),
+                                    hintText: 'Search',
+
+                                  suffixIcon: Icon(
+                                  Icons.search,
+                                  color: Colors.white,
+                                )
+                                ),
+                              ),
+                            ),
                         ),
+
+
                         Expanded(
                           child: ListView.builder(
                             itemBuilder: (BuildContext, index) {
@@ -2475,7 +4026,7 @@ class LandingView extends GetView<LandingController> {
                                   width: 20,
                                   height: 20,
                                 ),
-                                title: Text('Change contact details'),
+                                title: Text('Change Contact Details'),
                                 onTap: () {
                                   Navigator.push(
                                       context,
@@ -2755,14 +4306,23 @@ showAlertDialog(BuildContext context) {
 
   // set up the AlertDialog
   AlertDialog alert = AlertDialog(
-    title: Text(
-      "Successfully Post",
-      style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+    title: Row(
+      children: [
+        Text(
+          "Successfully posted",
+          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+        ),
+        SizedBox(width: 10,),
+        SvgPicture.asset(
+          icCheckMark,
+          semanticsLabel: 'logo',
+        ),
+      ],
     ),
-    content: Text(
+   /* content: Text(
       dummyLoremIpsum,
       style: TextStyle(color: Colors.black, fontSize: 12, height: 1.5),
-    ),
+    ),*/
     actions: [
       //continueButton,
     ],

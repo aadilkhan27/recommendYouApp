@@ -164,7 +164,7 @@ class DeleteAccountView extends GetView<ContactUsController> {
                                         borderSide: BorderSide(color: Colors.purple),
                                       ),
                                       focusColor: Colors.purple,
-                                    hintText: "Enter a message",
+                                    //hintText: "Enter a message",
                                     fillColor: Colors.grey[300],
                                     filled: true,
                                   ),

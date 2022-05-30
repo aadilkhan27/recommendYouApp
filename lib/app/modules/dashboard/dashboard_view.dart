@@ -34,37 +34,43 @@ class DashboardView extends StatelessWidget {
           ),
           bottomNavigationBar: BottomNavigationBar(
             onTap: controller.changeTabIndex,
+            backgroundColor: Colors.white,
             currentIndex: controller.tabIndex,
             showSelectedLabels: true,
             showUnselectedLabels: true,
             type: BottomNavigationBarType.fixed,
             elevation: 10,
             items: [
-              _bottomNavigationBarItem(icon: icHome,
+              _bottomNavigationBarItem(icon: controller.tabIndex == 0 ? bottomHomeFill : bottomHome,
                   iconWidth: 20.0,
                   iconHeight: 20.0,
                   label: '',
-                  iconColor: controller.tabIndex == 0 ? crustaColor : nobelColor),
-              _bottomNavigationBarItem(icon: icBell,
+                  //iconColor: controller.tabIndex == 0 ? crustaColor : nobelColor
+              ),
+              _bottomNavigationBarItem(icon: controller.tabIndex == 1 ? bottomNotificationFill : bottomNotification,
                   iconWidth: 20.0,
                   iconHeight: 20.0,
                   label: '',
-                  iconColor: controller.tabIndex == 1 ? crustaColor : nobelColor),
-              _bottomNavigationBarItem(icon: icAdd,
+                  //iconColor: controller.tabIndex == 1 ? crustaColor : nobelColor
+              ),
+              _bottomNavigationBarItem(icon: controller.tabIndex == 2 ? bottomAddFill : bottomAdd,
                   iconWidth: 20.0,
                   iconHeight: 20.0,
                   label: '',
-                  iconColor: controller.tabIndex == 2 ? crustaColor : nobelColor),
-              _bottomNavigationBarItem(icon: icSearch,
+                  //iconColor: controller.tabIndex == 2 ? crustaColor : nobelColor
+              ),
+              _bottomNavigationBarItem(icon: controller.tabIndex == 3 ? bottomSearchFill : bottomSearch,
                   iconWidth: 20.0,
                   iconHeight: 20.0,
                   label: '',
-                  iconColor: controller.tabIndex == 3 ? crustaColor : nobelColor),
-              _bottomNavigationBarItem(icon: icMenu,
+                  //iconColor: controller.tabIndex == 3 ? crustaColor : nobelColor
+              ),
+              _bottomNavigationBarItem(icon: controller.tabIndex == 4 ? bottomMenu : bottomMenu,
                   iconWidth: 20.0,
                   iconHeight: 20.0,
                   label: '',
-                  iconColor: controller.tabIndex == 4 ? crustaColor : nobelColor),
+                  //iconColor: controller.tabIndex == 4 ? crustaColor : nobelColor
+              ),
             ],
           ),
         );
@@ -80,3 +86,5 @@ _bottomNavigationBarItem({icon, required double iconWidth, required double iconH
       allowDrawingOutsideViewBox: true,
       color: iconColor), label: label);
 }
+
+

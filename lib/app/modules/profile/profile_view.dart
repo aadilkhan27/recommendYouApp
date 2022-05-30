@@ -9,6 +9,7 @@ import 'package:recommend_you/app/core/values/strings.dart';
 import 'package:recommend_you/app/modules/profile/profile_controller.dart';
 import 'package:recommend_you/app/routes/pages.dart';
 import 'package:recommend_you/app/widgets/dropdown_button2.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class ProfileView extends GetView<ProfileController> {
   final List<String> spinnerItems = [
@@ -512,7 +513,7 @@ class ProfileView extends GetView<ProfileController> {
                                       width: 100,
                                       margin: EdgeInsets.only(
                                           left: 0,
-                                          right: 10,
+                                          right: 0,
                                           top: 0,
                                           bottom: 0),
                                       child: Row(
@@ -528,9 +529,9 @@ class ProfileView extends GetView<ProfileController> {
                                           SizedBox(
                                             width: 5,
                                           ),
-                                          SvgPicture.asset(
+                                          /*SvgPicture.asset(
                                             icDownArrow,
-                                          ),
+                                          ),*/
                                         ],
                                       ),
                                     ),
@@ -698,7 +699,7 @@ class ProfileView extends GetView<ProfileController> {
                                       width: 100,
                                       margin: EdgeInsets.only(
                                           left: 0,
-                                          right: 10,
+                                          right: 0,
                                           top: 0,
                                           bottom: 0),
                                       child: Row(
@@ -714,9 +715,9 @@ class ProfileView extends GetView<ProfileController> {
                                           SizedBox(
                                             width: 5,
                                           ),
-                                          SvgPicture.asset(
+                                          /*SvgPicture.asset(
                                             icDownArrow,
-                                          ),
+                                          ),*/
                                         ],
                                       ),
                                     ),
@@ -884,7 +885,7 @@ class ProfileView extends GetView<ProfileController> {
                                       width: 100,
                                       margin: EdgeInsets.only(
                                           left: 0,
-                                          right: 10,
+                                          right: 0,
                                           top: 0,
                                           bottom: 0),
                                       child: Row(
@@ -900,9 +901,9 @@ class ProfileView extends GetView<ProfileController> {
                                           SizedBox(
                                             width: 5,
                                           ),
-                                          SvgPicture.asset(
+                                         /* SvgPicture.asset(
                                             icDownArrow,
-                                          ),
+                                          ),*/
                                         ],
                                       ),
                                     ),
@@ -2235,13 +2236,102 @@ showPopupMenu(BuildContext buildContext) {
       builder: (context) {
         return Wrap(
           children: [
-            ListTile(
-              title: Text('View with whom the post was share'),
+            InkWell(
+              onTap: () {
+                Navigator.of(context).pop();
+                showDeletPostAlertDialog(context);
+              },
+              child: ListTile(
+                title: Text('Delete'),
+
+              ),
             ),
-            ListTile(
-              title: Text('Delete'),
-            ),
+
           ],
         );
       });
+}
+
+showDeletPostAlertDialog(BuildContext context) {
+  // set up the buttons
+  Widget cancelButton = TextButton(
+    child: Container(
+      height: 40,
+      width: 80,
+      decoration: BoxDecoration(
+          color: primaryDarkColor,
+          border: Border.all(color: primaryDarkColor),
+          borderRadius: const BorderRadius.all(Radius.circular(7))),
+      alignment: Alignment.center,
+      child: InkWell(
+        onTap: () {
+          Navigator.of(context).pop();
+        },
+        child: Text(
+          'Cancel',
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
+      ),
+    ),
+    onPressed: () {
+      Navigator.of(context).pop();
+      //Get.toNamed(Routes.signUpStepTwo);
+    },
+  );
+
+  Widget confirmButton = TextButton(
+    child: Container(
+      height: 40,
+      width: 80,
+      decoration: BoxDecoration(
+          color: primaryDarkColor,
+          border: Border.all(color: primaryDarkColor),
+          borderRadius: const BorderRadius.all(Radius.circular(7))),
+      alignment: Alignment.center,
+      child: InkWell(
+        onTap: () {
+          Navigator.of(context).pop();
+        },
+        child: Text(
+          'Delete',
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
+      ),
+    ),
+    onPressed: () {
+      Navigator.of(context).pop();
+      //Get.toNamed(Routes.signUpStepTwo);
+    },
+  );
+
+  // set up the AlertDialog
+  AlertDialog alert = AlertDialog(
+    title: Text(
+      "Delete Post?",
+      style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+    ),
+    content: Text(
+      "Are you sure you want to delete the post?",
+      style: TextStyle(color: Colors.black, fontSize: 13, height: 1.5),
+    ),
+    actions: [
+      Container(
+        child: Row(
+          children: [
+            Spacer(),
+            cancelButton,
+            confirmButton,
+          ],
+        ),
+      ),
+    ],
+  );
+
+  // show the dialog
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return alert;
+    },
+  );
 }
