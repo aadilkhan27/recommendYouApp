@@ -10,6 +10,7 @@ import 'package:recommend_you/app/modules/dashboard/notification/notification_vi
 import 'package:recommend_you/app/modules/dashboard/search/search_view.dart';
 
 import 'dashboard_controller.dart';
+import 'more/more_2_view.dart';
 
 class DashboardView extends StatelessWidget {
   const DashboardView({Key? key}) : super(key: key);
@@ -28,7 +29,7 @@ class DashboardView extends StatelessWidget {
                 NotificationView(),
                 CreateView(),
                 SearchView(),
-                MoreView()
+                More2View()
               ],
             ),
           ),

@@ -1557,7 +1557,7 @@ showOptionMenu(BuildContext buildContext) {
             InkWell(
               onTap: () {
                 Navigator.of(context).pop();
-                showReportPostAlertDialog(context, 'user');
+                showReportPostAlertDialog(buildContext, 'user');
               },
               child: ListTile(
                 title: Text('Report as spam'),
@@ -1566,7 +1566,7 @@ showOptionMenu(BuildContext buildContext) {
             InkWell(
               onTap: () {
                 Navigator.of(context).pop();
-                showReportPostAlertDialog(context, 'content');
+                showReportPostAlertDialog(buildContext, 'content');
               },
               child: ListTile(
                 title: Text('Report as inappropriate content'),

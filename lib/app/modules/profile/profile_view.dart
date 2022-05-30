@@ -547,7 +547,7 @@ class ProfileView extends GetView<ProfileController> {
                           ),
                         ),
                         Divider(
-                          color: Colors.black,
+                          color: Colors.grey,
                           height: 1,
                         ),
                       ],
@@ -733,7 +733,7 @@ class ProfileView extends GetView<ProfileController> {
                           ),
                         ),
                         Divider(
-                          color: Colors.black,
+                          color: Colors.grey,
                           height: 1,
                         ),
                       ],
@@ -919,7 +919,7 @@ class ProfileView extends GetView<ProfileController> {
                           ),
                         ),
                         Divider(
-                          color: Colors.black,
+                          color: Colors.grey,
                           height: 1,
                         ),
                       ],
@@ -1080,7 +1080,7 @@ class ProfileView extends GetView<ProfileController> {
                           ),
                         ),
                         Divider(
-                          color: Colors.black,
+                          color: Colors.grey,
                           height: 1,
                         ),
                       ],
@@ -1234,7 +1234,7 @@ class ProfileView extends GetView<ProfileController> {
                           ),
                         ),
                         Divider(
-                          color: Colors.black,
+                          color: Colors.grey,
                           height: 1,
                         ),
                       ],
@@ -1388,7 +1388,7 @@ class ProfileView extends GetView<ProfileController> {
                           ),
                         ),
                         Divider(
-                          color: Colors.black,
+                          color: Colors.grey,
                           height: 1,
                         ),
                       ],
@@ -1548,7 +1548,7 @@ class ProfileView extends GetView<ProfileController> {
                           ),
                         ),
                         Divider(
-                          color: Colors.black,
+                          color: Colors.grey,
                           height: 1,
                         ),
                       ],
@@ -1702,7 +1702,7 @@ class ProfileView extends GetView<ProfileController> {
                           ),
                         ),
                         Divider(
-                          color: Colors.black,
+                          color: Colors.grey,
                           height: 1,
                         ),
                       ],
@@ -1856,7 +1856,7 @@ class ProfileView extends GetView<ProfileController> {
                           ),
                         ),
                         Divider(
-                          color: Colors.black,
+                          color: Colors.grey,
                           height: 1,
                         ),
                       ],
@@ -1920,7 +1920,7 @@ showPopupMenu(BuildContext buildContext) {
             InkWell(
               onTap: () {
                 Navigator.of(context).pop();
-                showDeletPostAlertDialog(context);
+                showDeletPostAlertDialog(buildContext);
               },
               child: ListTile(
                 title: Text('Delete'),
