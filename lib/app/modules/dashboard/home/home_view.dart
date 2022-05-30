@@ -61,23 +61,16 @@ class HomeView extends GetView<HomeController> {
           print('swipe in right direction');
           //write code which u want to change page
           //Get.toNamed(Routes.profileView);
-          Navigator.push(context, SlideRightRoute(page: ProfileView()));
+          // Navigator.push(context, SlideRightRoute(page: ProfileView()));
+          Get.toNamed(Routes.profileView);
         }
 
         // Swiping in left direction.
         if (details.delta.dx < 0) {
           print('swipe in left  direction');
           //write code which u want to change page
-          //Get.toNamed(Routes.helper);
-          GetPage(
-              name: Routes.helper,
-              page: () => HelperView(),
-              transition: Transition.rightToLeft
-          );
-         /* Get.to(
-              HelperView(),
-              transition: Transition.rightToLeft
-          );*/
+          Get.toNamed(Routes.helper);
+
         }
       },
       child: Scaffold(
