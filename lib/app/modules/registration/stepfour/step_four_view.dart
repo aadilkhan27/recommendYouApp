@@ -469,7 +469,8 @@ showAlertDialog(BuildContext context) {
               ),
               onPressed: () {
                 Navigator.of(context).pop();
-                Get.toNamed(Routes.landing);
+                //Get.toNamed(Routes.landing);
+                Get.toNamed(Routes.dashboard);
               },
             ),
           )

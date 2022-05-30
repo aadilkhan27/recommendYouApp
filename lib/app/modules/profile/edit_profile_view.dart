@@ -181,12 +181,12 @@ class EditProfileView extends GetView<EditProfileController> {
                                           cursorColor: Colors.black,
                                           decoration: InputDecoration(
                                               enabledBorder: UnderlineInputBorder(
-                                                borderSide: BorderSide(color: Colors.purple),
+                                                borderSide: BorderSide(color: Colors.black),
                                               ),
                                               focusedBorder: UnderlineInputBorder(
                                                 borderSide: BorderSide(color: Colors.purple),
                                               ),
-                                              //hintText: 'Richard',
+                                              hintText: 'Ramon',
                                               hintStyle: TextStyle(color: Colors.grey)),
                                         ),
                                       ),
@@ -216,12 +216,12 @@ class EditProfileView extends GetView<EditProfileController> {
                                           cursorColor: Colors.black,
                                           decoration: InputDecoration(
                                               enabledBorder: UnderlineInputBorder(
-                                                borderSide: BorderSide(color: Colors.purple),
+                                                borderSide: BorderSide(color: Colors.black),
                                               ),
                                               focusedBorder: UnderlineInputBorder(
                                                 borderSide: BorderSide(color: Colors.purple),
                                               ),
-                                              //hintText: 'Lian',
+                                              hintText: 'Ricardo',
                                               hintStyle: TextStyle(color: Colors.grey)),
                                         ),
                                       ),
@@ -261,12 +261,12 @@ class EditProfileView extends GetView<EditProfileController> {
                                           cursorColor: Colors.black,
                                           decoration: InputDecoration(
                                               enabledBorder: UnderlineInputBorder(
-                                                borderSide: BorderSide(color: Colors.purple),
+                                                borderSide: BorderSide(color: Colors.black),
                                               ),
                                               focusedBorder: UnderlineInputBorder(
                                                 borderSide: BorderSide(color: Colors.purple),
                                               ),
-                                              //hintText: 'Richard_Biared',
+                                              hintText: 'Ramon_Ricardo',
                                               hintStyle: TextStyle(color: Colors.grey)),
                                         ),
                                       ),
@@ -281,49 +281,44 @@ class EditProfileView extends GetView<EditProfileController> {
                         SizedBox(height: 30,),
                         Container(
                           width: MediaQuery.of(context).size.width,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Container(
-                                  width: MediaQuery.of(context).size.width,
-                                  child: Column(
-                                    children: [
-                                      Align(
-                                        alignment: Alignment.centerLeft,
-                                        child: Padding(
-                                          padding: const EdgeInsets.only(left: 20,right: 10),
-                                          child: Text(
-                                            'Bio',
-                                            style: TextStyle(
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.bold,
+                          child: Container(
+                              width: MediaQuery.of(context).size.width,
+                              child: Column(
+                                children: [
+                                  Align(
+                                    alignment: Alignment.centerLeft,
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(left: 20,right: 10),
+                                      child: Text(
+                                        'Bio',
+                                        style: TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(left: 20, right: 20),
+                                    child: Container(
+                                      child: TextField(
+                                        keyboardType: TextInputType.multiline,
+                                        maxLength: 1000,
+                                        cursorColor: Colors.black,
+                                        decoration: InputDecoration(
+                                            enabledBorder: UnderlineInputBorder(
+                                              borderSide: BorderSide(color: Colors.black),
                                             ),
-                                          ),
-                                        ),
+                                            focusedBorder: UnderlineInputBorder(
+                                              borderSide: BorderSide(color: Colors.purple),
+                                            ),
+                                            hintStyle: TextStyle(color: Colors.grey)),
                                       ),
-                                      Padding(
-                                        padding: EdgeInsets.only(left: 20, right: 20),
-                                        child: TextField(
-                                          keyboardType: TextInputType.multiline,
-                                          maxLines: null,
-                                          cursorColor: Colors.black,
-                                          decoration: InputDecoration(
-                                              enabledBorder: UnderlineInputBorder(
-                                                borderSide: BorderSide(color: Colors.purple),
-                                              ),
-                                              focusedBorder: UnderlineInputBorder(
-                                                borderSide: BorderSide(color: Colors.purple),
-                                              ),
-                                              hintStyle: TextStyle(color: Colors.grey)),
-                                        ),
-                                      ),
-                                    ],
-                                  )
-                              ),
-
-                            ],
-                          ),
+                                    ),
+                                  ),
+                                ],
+                              )
+                          )
                         ),
                       ],
                     ),

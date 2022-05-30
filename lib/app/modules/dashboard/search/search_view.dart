@@ -37,117 +37,164 @@ class SearchView extends GetView<SearchController> {
                   height: MediaQuery.of(context).size.height,
                   width: MediaQuery.of(context).size.width,
                   margin: EdgeInsets.only(top: 10),
-                  child: Column(
-                      children: [
-                        Container(
-                      height: 40,
+                  child: Column(children: [
+
+                    /*Container(
+                          height: 40,
+                          decoration: BoxDecoration(
+                              border: Border.all(color: Colors.purple),
+                              color: Colors.purple,
+                              borderRadius: const BorderRadius.all(
+                                Radius.circular(20),
+                              )),
+                          margin: EdgeInsets.only(
+                              left: 20, right: 20, bottom: 10, top: 10),
+                          child: Padding(
+                            padding: const EdgeInsets.only(
+                                left: 20.0, right: 10, bottom: 2, top: 2),
+                            child: TextField(
+                              keyboardType: TextInputType.text,
+                              style: TextStyle(color: Colors.white),
+                              cursorColor: Colors.white,
+                              decoration: const InputDecoration(
+                                  enabledBorder: UnderlineInputBorder(
+                                    borderSide:
+                                        BorderSide(color: Colors.purple),
+                                  ),
+                                  focusedBorder: UnderlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.purple),
+                                  ),
+                                  focusColor: Colors.white,
+                                  hintStyle: TextStyle(color: Colors.white),
+                                  hintText: 'Search',
+                                  suffixIcon: Icon(
+                                    Icons.search,
+                                    color: Colors.white,
+                                  )),
+                            ),
+                          ),
+                        ),*/
+
+                    Container(
+                      height : 45,
+                      width: MediaQuery.of(context).size.width,
+                      margin: EdgeInsets.only(
+                          left: 20, right: 20, bottom: 10, top: 10),
                       decoration: BoxDecoration(
                           border: Border.all(color: Colors.purple),
                           color: Colors.purple,
-                          borderRadius: const BorderRadius.all(Radius.circular(20),
+                          borderRadius: const BorderRadius.all(
+                            Radius.circular(20),
                           )),
-                      margin: EdgeInsets.only(left: 20, right: 20, bottom: 10, top: 10),
                       child: Padding(
-                        padding: const EdgeInsets.only(left: 10.0, right: 10, bottom: 2, top: 2),
+                        padding: EdgeInsets.only(left: 20, right: 20),
                         child: TextField(
+                          keyboardType: TextInputType.text,
                           style: TextStyle(color: Colors.white),
                           cursorColor: Colors.white,
                           decoration: const InputDecoration(
                               enabledBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(color: Colors.purple),
+                                borderSide:
+                                BorderSide(color: Colors.purple),
                               ),
                               focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(color: Colors.white),
+                                borderSide: BorderSide(color: Colors.purple),
                               ),
                               focusColor: Colors.white,
                               hintStyle: TextStyle(color: Colors.white),
                               hintText: 'Search',
+
                               suffixIcon: Icon(
                                 Icons.search,
                                 color: Colors.white,
-                              )),
+                              )
+                          ),
                         ),
                       ),
                     ),
-                        Expanded(
-                          child: ListView.builder(
-                            itemBuilder: (BuildContext, index) {
-                              return Container(
-                                child: Column(
-                                  children: [
-                                    Container(
-                                      height: 60,
-                                      width: MediaQuery.of(context).size.width,
-                                      child: Row(
-                                        children: [
-                                          SizedBox(
-                                            width: 20,
-                                          ),
-                                          InkWell(
 
-                                            child: Container(
-                                                width: 50.0,
-                                                height: 50.0,
-                                                decoration: new BoxDecoration(
-                                                    shape: BoxShape.circle,
-                                                    image: new DecorationImage(
-                                                        fit: BoxFit.fill,
-                                                        image: AssetImage(images[index])))),
-                                            onTap: () {
-                                              showAlertDialog(context, images[index]);
-                                            },
-                                          ),
-                                          SizedBox(
-                                            width: 20,
-                                          ),
-                                          Container(
-                                            margin: EdgeInsets.only(top: 10),
-                                            child: Column(
-                                              mainAxisAlignment: MainAxisAlignment.start,
-                                              crossAxisAlignment: CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  'Ramon Ricardo',
-                                                  style: TextStyle(
-                                                      fontSize: 16,
-                                                      fontWeight:
-                                                      FontWeight.normal),
-                                                ),
-                                                SizedBox(
-                                                  height : 5,
-                                                ),
-                                                Text(
-                                                  'Ramon_Ricardo',
-                                                  style: TextStyle(
-                                                      fontSize: 12,
-                                                      fontWeight: FontWeight.bold),
-                                                )
-                                              ],
-                                            ),
-                                          ),
-                                          Spacer(),
-                                          //Container(child: SvgPicture.asset(icClose),margin: EdgeInsets.only(right: 20),)
-                                        ],
+
+                    Expanded(
+                      child: ListView.builder(
+                        itemBuilder: (BuildContext, index) {
+                          return Container(
+                            child: Column(
+                              children: [
+                                Container(
+                                  height: 60,
+                                  width: MediaQuery.of(context).size.width,
+                                  child: Row(
+                                    children: [
+                                      SizedBox(
+                                        width: 20,
                                       ),
-                                    ),
-                                  ],
+                                      InkWell(
+                                        child: Container(
+                                            width: 50.0,
+                                            height: 50.0,
+                                            decoration: new BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                image: new DecorationImage(
+                                                    fit: BoxFit.fill,
+                                                    image: AssetImage(
+                                                        images[index])))),
+                                        onTap: () {
+                                          showAlertDialogImage(
+                                              context, images[index]);
+                                        },
+                                      ),
+                                      SizedBox(
+                                        width: 20,
+                                      ),
+                                      Container(
+                                        margin: EdgeInsets.only(top: 10),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              'Ramon Ricardo',
+                                              style: TextStyle(
+                                                  fontSize: 16,
+                                                  fontWeight:
+                                                  FontWeight.normal),
+                                            ),
+                                            SizedBox(
+                                              height: 5,
+                                            ),
+                                            Text(
+                                              'Ramon_Ricardo',
+                                              style: TextStyle(
+                                                  fontSize: 12,
+                                                  fontWeight:
+                                                  FontWeight.bold),
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                      Spacer(),
+                                      //Container(child: SvgPicture.asset(icClose),margin: EdgeInsets.only(right: 20),)
+                                    ],
+                                  ),
                                 ),
-                              );
-                            },
-                            itemCount: images.length,
-                            padding: EdgeInsets.all(5),
-                            scrollDirection: Axis.vertical,
-                          ),
-                        )
-                        ]
-                  )
-              )
+                              ],
+                            ),
+                          );
+                        },
+                        itemCount: images.length,
+                        padding: EdgeInsets.all(5),
+                        scrollDirection: Axis.vertical,
+                      ),
+                    )
+                  ])),
             )
         )
     );
   }
 
-  showAlertDialog(BuildContext context, String image) {
+  showAlertDialogImage(BuildContext context, String image) {
 //image: Image(image: AssetImage(user1),
     Dialog alert = Dialog(
       child: Stack(children: [
@@ -159,12 +206,11 @@ class SearchView extends GetView<SearchController> {
         ),
         Positioned(
           top: 15, right: 15, //give the values according to your requirement
-          child:
-          InkWell(
+          child: InkWell(
             onTap: () {
               Navigator.of(context).pop();
             },
-            child: Icon(Icons.close, color : Colors.black),
+            child: Icon(Icons.close, color: Colors.black),
           ),
         ),
       ]),

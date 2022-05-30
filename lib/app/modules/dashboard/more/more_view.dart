@@ -20,8 +20,10 @@ import 'package:recommend_you/app/modules/dashboard/more/termscondition/termscon
 import '../../../core/values/colors.dart';
 import '../../../core/values/strings.dart';
 import '../../../routes/pages.dart';
+import '../../login/signin/sign_in_view.dart';
 import 'deletaccount/delete_account_view.dart';
 import 'faq/faq_view.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class MoreView extends GetView<MoreController> {
   @override
@@ -31,46 +33,49 @@ class MoreView extends GetView<MoreController> {
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
-        body: Container(
-          height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
-          child: Column(
-            children: [
-              Container(
-                height: 50,
-                width: MediaQuery.of(context).size.width,
-                padding: EdgeInsets.all(10),
-                child: Align(
-                  alignment: Alignment.center,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      SizedBox(
-                        width: 10,
-                      ),
-                      /* SvgPicture.asset(
+        body: SingleChildScrollView(
+          child: Container(
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+            child: Column(
+              children: [
+                Container(
+                  height: 50,
+                  width: MediaQuery.of(context).size.width,
+                  padding: EdgeInsets.all(10),
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          width: 10,
+                        ),
+                        /* SvgPicture.asset(
                         icLeftArrow,
                         semanticsLabel: 'logo',
                       ),*/
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text(
-                        "Settings",
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
-                      ),
-                    ],
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          "Setting",
+                          style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.normal),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              Divider(
-                color: Colors.black,
-                height: 1,
-              ),
-              Expanded(
-                  child: SingleChildScrollView(
-                      child: Column(children: [
-                        /*Container(
+                Divider(
+                  color: Colors.black,
+                  height: 1,
+                ),
+                Expanded(
+                    child: SingleChildScrollView(
+                        child: Column(children: [
+                          /*Container(
                   padding: EdgeInsets.only(left: 15.0, right: 15.0),
                   child: ListTile(
                       leading: Icon(Icons.privacy_tip_outlined),
@@ -224,72 +229,108 @@ class MoreView extends GetView<MoreController> {
                 ),
                 */
 
-                        Container(
-                          padding: EdgeInsets.only(left: 15.0, right: 15.0),
-                          child: ListTile(
-                              leading: Image(image: AssetImage(changeLanguage), width: 20, height: 20,),
-                              title: Text('Language Change'),
-                              onTap: () {
-                                //Navigator.push(context, MaterialPageRoute(builder: (builder) => ChangeLangugaeView()));
-                                showModalBottomSheet(
-                                  context: context,
-                                  builder: (context) {
-                                    return Wrap(
-                                      children: [
-                                        ListTile(
-                                          title: Text(
-                                            'English',
-                                            style: TextStyle(fontSize: 16),),
-                                        ),
-                                        ListTile(
-                                          title:
-                                          Text('French',
-                                            style: TextStyle(fontSize: 16),),
-                                        ),
+                          Container(
+                            padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                            child: ListTile(
+                                leading: Image(
+                                  image: AssetImage(changeLanguage),
+                                  width: 20,
+                                  height: 20,
+                                ),
+                                title: Text('Language Change'),
+                                onTap: () {
+                                  //Navigator.push(context, MaterialPageRoute(builder: (builder) => ChangeLangugaeView()));
+                                  /* showModalBottomSheet(
+                                      context: context,
+                                      builder: (context) {
+                                        return Wrap(
+                                          children: [
+                                            ListTile(
+                                              title: Text(
+                                                'English',
+                                                style: TextStyle(fontSize: 16),
+                                              ),
+                                              onTap: () {
+                                                Navigator.of(context).pop();
+                                                Fluttertoast.showToast(
+                                                  msg: "Language Changed to English",
+                                                );
+                                              },
+                                            ),
+                                            ListTile(
+                                              title: Text(
+                                                'French',
+                                                style: TextStyle(fontSize: 16),
+                                              ),
+                                              onTap: () {
+                                                Navigator.of(context).pop();
+                                                Fluttertoast.showToast(
+                                                  msg: "Language Changed to French",
+                                                );
+                                              },
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    );*/
 
-                                      ],
-                                    );
-                                  },
-                                );
-                              }
+                                  showLanguageAlertDialog(context);
+                                }),
                           ),
-                        ),
-                        Container(
-                          padding: EdgeInsets.only(left: 15.0, right: 15.0),
-                          child: ListTile(
-                            leading: Image(image: AssetImage(contactUS), width: 20, height: 20,),
-                            title: Text('Change contact details'),
-                            onTap: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (builder) => ChangeContactView()));
-                            },
+                          Container(
+                            padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                            child: ListTile(
+                              leading: Image(
+                                image: AssetImage(contactUS),
+                                width: 20,
+                                height: 20,
+                              ),
+                              title: Text('Change Contact Details'),
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (builder) =>
+                                            ChangeContactView()));
+                              },
+                            ),
                           ),
-                        ),
-                        Container(
-                          padding: EdgeInsets.only(left: 15.0, right: 15.0),
-                          child: ListTile(
-                            leading: Image(image: AssetImage(changePassword), width: 20, height: 20,),
-                            title: Text('Change Password'),
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (builder) => ChangePasswordView()));
-                            },
+                          Container(
+                            padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                            child: ListTile(
+                              leading: Image(
+                                image: AssetImage(changePassword),
+                                width: 20,
+                                height: 20,
+                              ),
+                              title: Text('Change Password'),
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (builder) =>
+                                            ChangePasswordView()));
+                              },
+                            ),
                           ),
-                        ),
-                        Container(
-                          padding: EdgeInsets.only(left: 15.0, right: 15.0),
-                          child: ListTile(
-                            leading: Image(image: AssetImage(deleteAcc), width: 20, height: 20,),
-                            title: Text('Delete Account'),
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (builder) => DeleteAccountView()));
-                            },
-                            //TODO
-                            /*showModalBottomSheet<dynamic>(
+                          Container(
+                            padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                            child: ListTile(
+                              leading: Image(
+                                image: AssetImage(deleteAcc),
+                                width: 20,
+                                height: 20,
+                              ),
+                              title: Text('Delete Account'),
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (builder) =>
+                                            DeleteAccountView()));
+                              },
+                              //TODO
+                              /*showModalBottomSheet<dynamic>(
                       isScrollControlled: true,
                         context: context,
                         builder: (context) {
@@ -383,29 +424,45 @@ class MoreView extends GetView<MoreController> {
                           );
                         });
                   },*/
+                            ),
                           ),
-                        ),
-                        Container(
-                          padding: EdgeInsets.only(left: 15.0, right: 15.0),
-                          child: ListTile(
-                            leading: Image(image: AssetImage(termsConditions), width: 20, height: 20,),
-                            title: Text('Terms and Conditions'),
-                            onTap: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (builder) => TermsConditionView()));
-                            },
+                          Container(
+                            padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                            child: ListTile(
+                              leading: Image(
+                                image: AssetImage(termsConditions),
+                                width: 20,
+                                height: 20,
+                              ),
+                              title: Text('Terms and Conditions'),
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (builder) =>
+                                            TermsConditionView()));
+                              },
+                            ),
                           ),
-                        ),
-                        Container(
-                          padding: EdgeInsets.only(left: 15.0, right: 15.0),
-                          child: ListTile(
-                            leading: Image(image: AssetImage(privacy), width: 20, height: 20,),
-                            title: Text('Privacy Policy'),
-                            onTap: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (builder) => PrivacyPolicyView()));
-                            },
+                          Container(
+                            padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                            child: ListTile(
+                              leading: Image(
+                                image: AssetImage(privacy),
+                                width: 20,
+                                height: 20,
+                              ),
+                              title: Text('Privacy Policy'),
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (builder) =>
+                                            PrivacyPolicyView()));
+                              },
+                            ),
                           ),
-                        ),
-                        /*Container(
+                          /*Container(
                   padding: EdgeInsets.only(left: 15.0, right: 15.0),
                   child: ListTile(
                     leading: Icon(Icons.lock),
@@ -416,51 +473,152 @@ class MoreView extends GetView<MoreController> {
                     },
                   ),
                 ),*/
-                        Container(
-                          padding: EdgeInsets.only(left: 15.0, right: 15.0),
-                          child: ListTile(
-                            leading: Image(image: AssetImage(contactUS), width: 20, height: 20,),
-                            title: Text('Contact Us'),
-                            onTap: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (builder) => ContactUsView()));
-                            },
+                          Container(
+                            padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                            child: ListTile(
+                              leading: Image(
+                                image: AssetImage(contactUS),
+                                width: 20,
+                                height: 20,
+                              ),
+                              title: Text('Contact Us'),
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (builder) =>
+                                            ContactUsView()));
+                              },
+                            ),
                           ),
-                        ),
-                        Container(
-                          padding: EdgeInsets.only(left: 15.0, right: 15.0),
-                          child: ListTile(
-                            leading: Image(image: AssetImage(faqIcon), width: 20, height: 20,),
-                            title: Text('FAQ'),
-                            onTap: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (builder) => FaqView()));
-                            },
+                          Container(
+                            padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                            child: ListTile(
+                              leading: Image(
+                                image: AssetImage(faqIcon),
+                                width: 20,
+                                height: 20,
+                              ),
+                              title: Text('FAQ'),
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (builder) => FaqView()));
+                              },
+                            ),
                           ),
-                        ),
-                        Container(
-                          padding: EdgeInsets.only(left: 15.0, right: 15.0),
-                          child: ListTile(
-                            leading: Image(image: AssetImage(faqIcon), width: 20, height: 20,),
-                            title: Text('FAQ'),
-                            onTap: () {
-                              showAlertDialog(context);
-                             // Navigator.push(context, MaterialPageRoute(builder: (builder) => FaqView()));
-                            },
+                          Container(
+                            padding: EdgeInsets.only(left: 15.0, right: 15.0),
+                            child: ListTile(
+                              leading: Image(
+                                image: AssetImage(logout),
+                                width: 20,
+                                height: 20,
+                              ),
+                              title: Text('Log Out'),
+                              onTap: () {
+                                showLogOutAlertDialog(context);
+                                // Navigator.push(context, MaterialPageRoute(builder: (builder) => ContactUsView()));
+                              },
+                            ),
                           ),
-                        ),
-
-
-
-                      ])))
-            ],
+                        ])))
+              ],
+            ),
           ),
-        ),
+        )
       ),
     );
   }
 }
 
+showLanguageAlertDialog(BuildContext context) {
+  // set up the buttons
+  Widget englishButton = TextButton(
+    child: Row(
+      children: [
+        Container(
+          height: 40,
+          width: 240,
+          decoration: BoxDecoration(
+              color: primaryDarkColor,
+              border: Border.all(color: primaryDarkColor),
+              borderRadius: const BorderRadius.all(Radius.circular(7))),
+          alignment: Alignment.center,
+          child: const Text(
+            'English',
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          ),
+        ),
+      ],
+    ),
+    onPressed: () {
+      Navigator.of(context).pop();
+      Fluttertoast.showToast(
+        msg: "Language Changed to English",
+      );
+    },
+  );
 
-showAlertDialog(BuildContext context) {
+  Widget frenchButton = TextButton(
+    child: Row(
+      children: [
+        Container(
+          height: 40,
+          width: 240,
+          decoration: BoxDecoration(
+              color: Colors.white,
+              border: Border.all(color: primaryDarkColor),
+              borderRadius: const BorderRadius.all(Radius.circular(7))),
+          alignment: Alignment.center,
+          child: const Text(
+            'French',
+            style: TextStyle(color: Colors.purple, fontWeight: FontWeight.bold),
+          ),
+        ),
+      ],
+    ),
+    onPressed: () {
+      Navigator.of(context).pop();
+      Fluttertoast.showToast(
+        msg: "Language Changed to French",
+      );
+
+      //Get.toNamed(Routes.signInView);
+    },
+  );
+
+  // set up the AlertDialog
+  AlertDialog alert = AlertDialog(
+    title: Text(
+      "Choose your language",
+      textAlign: TextAlign.center,
+      style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+    ),
+    actions: [
+      Center(
+        child: Column(
+          children: [
+            englishButton,
+
+            frenchButton,
+          ],
+        ),
+      ),
+    ],
+  );
+
+  // show the dialog
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return alert;
+    },
+  );
+}
+
+showLogOutAlertDialog(BuildContext context) {
   // set up the buttons
   Widget cancelButton = TextButton(
     child: Row(
@@ -475,7 +633,7 @@ showAlertDialog(BuildContext context) {
           alignment: Alignment.center,
           child: const Text(
             'Cancel',
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold ),
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
           ),
         ),
       ],
@@ -499,15 +657,17 @@ showAlertDialog(BuildContext context) {
           alignment: Alignment.center,
           child: const Text(
             'Yes',
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold ),
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
           ),
         ),
       ],
     ),
     onPressed: () {
       Navigator.of(context).pop();
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (builder) => SignInView()));
 
-      //Get.toNamed(Routes.signUpStepTwo);
+      //Get.toNamed(Routes.signInView);
     },
   );
 
@@ -519,19 +679,18 @@ showAlertDialog(BuildContext context) {
     ),
     content: Text(
       "Do you really want to logout from app",
-      style: TextStyle(color: Colors.black, fontSize: 14, height: 1.5),
+      style: TextStyle(color: Colors.black, fontSize: 13, height: 1.5),
     ),
     actions: [
       Container(
         child: Row(
           children: [
-            cancelButton,
             Spacer(),
+            cancelButton,
             confirmButton,
           ],
         ),
       ),
-
     ],
   );
 
@@ -543,28 +702,3 @@ showAlertDialog(BuildContext context) {
     },
   );
 }
-
-/*
-*  InkWell(
-                            onTap: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (builder) => ContactUsView()));
-                            },
-                            child: Container(
-                              padding: EdgeInsets.only(left: 15.0, right: 15.0),
-                              child: new Row(
-                                children: <Widget>[
-                                  new Container(
-                                    child: new Image.asset(
-                                      termsConditions,
-                                      height: 60.0,
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                  new Container(
-                                    child: new Text('long information text'),
-                                  ),
-                                ],
-                              ),
-                            ),
-                        )
-* */

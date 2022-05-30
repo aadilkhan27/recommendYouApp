@@ -109,7 +109,7 @@ class SendEmailView extends GetView<SendEmailController>{
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          'From : Arash Dajbani',
+                                          'From : Arash Djabani',
                                           style: TextStyle(
                                             fontSize: 16,
                                           ),
@@ -118,7 +118,7 @@ class SendEmailView extends GetView<SendEmailController>{
                                           height: 5,
                                         ),
                                         Text(
-                                          'Email : arash.dajbani@gmail.com',
+                                          'Email : arash.djabani@gmail.com',
                                           style: TextStyle(
                                             fontSize: 16,
                                           ),
@@ -151,7 +151,7 @@ class SendEmailView extends GetView<SendEmailController>{
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsets.only(left: 15.0, right: 15.0, top: 10, bottom: 10),
+                                  padding: const EdgeInsets.only(left: 15.0, right: 15.0, top: 20, bottom: 20),
                                   child: Text(
                                     'To : Thomas Dobos',
                                     style: TextStyle(
@@ -173,7 +173,7 @@ class SendEmailView extends GetView<SendEmailController>{
 
                       Divider(
                         color: Colors.black,
-                        height: 1,
+                        height: 0.5,
                       ),
                       SizedBox(
                         height: 10,
@@ -270,27 +270,13 @@ class SendEmailView extends GetView<SendEmailController>{
                             ),
                           ),
                           isExpanded: true,
-                          hint: RichText(
-                            text: TextSpan(
-                              children: [
-                                TextSpan(
-                                  text: 'Recommend',
-                                  style: TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.bold,
-                                      color: primaryDarkColor),
-                                ),
-                                TextSpan(
-                                  text: 'You',
-                                  style: TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.bold,
-                                      color: primaryLightColor),
-                                ),
-                              ],
+                          hint: Text(
+                            '* Category',
+                            style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.normal,
+                                color: Colors.black),
                             ),
-                          ),
-
 
                           icon: SvgPicture.asset(icDownArrow),
                           iconSize: 30,
@@ -318,7 +304,7 @@ class SendEmailView extends GetView<SendEmailController>{
                               .toList(),
                           validator: (value) {
                             if (value == null) {
-                              return 'RecommendYou';
+                              return '* Category';
                             }
                           },
                           onChanged: (value) {
@@ -335,58 +321,90 @@ class SendEmailView extends GetView<SendEmailController>{
                       ),
                       Divider(
                         color: Colors.black,
-                        height: 1,
+                        height: 0.5,
                       ),
                       SizedBox(
                         height: 0,
                       ),
-                      Container(
-                        height: 150,
-                        width: MediaQuery.of(context).size.width,
-                        margin: EdgeInsets.only(right: 12, left: 12, ),
-                        child: TextField(
-                          keyboardType: TextInputType.multiline,
-                          maxLines: null,
-                          cursorColor: Colors.black,
-                          style: TextStyle(fontSize: 16, color: Colors.black, height: 1.4),
-                          decoration: InputDecoration(
-                            enabledBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(color: Colors.white),
-                            ),
-                            focusedBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(color: Colors.white),
-                            ),
-                            hintText: "How can I help you?",
-                            hintStyle: TextStyle(color: Colors.grey),
-                            filled: false,
-                          ),
-                        ),
-                      ),
-                      Divider(
-                        color: Colors.black,
-                        height: 1,
-                      ),
 
-                      Container(
-                        height: 150,
-                        width: MediaQuery.of(context).size.width,
-                        margin: EdgeInsets.only(right: 12, left: 12, ),
-                        child: TextField(
-                          keyboardType: TextInputType.multiline,
-                          maxLines: null,
-                          cursorColor: Colors.black,
-                          style: TextStyle(fontSize: 16, color: Colors.black, height: 1.4),
-                          decoration: InputDecoration(
-                            enabledBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(color: Colors.white),
+                      Expanded(
+                        child: Column(
+                          children: [
+                            Container(
+                              height: 150,
+                              width: MediaQuery.of(context).size.width,
+                              margin: EdgeInsets.only(right: 12, left: 12, ),
+                              child: TextField(
+                                keyboardType: TextInputType.multiline,
+                                maxLines: null,
+                                cursorColor: Colors.black,
+                                style: TextStyle(fontSize: 16, color: Colors.black, height: 1.4),
+                                decoration: InputDecoration(
+                                  enabledBorder: UnderlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.white),
+                                  ),
+                                  focusedBorder: UnderlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.white),
+                                  ),
+                                  hintText: "How can I help you?",
+                                  hintStyle: TextStyle(color: Colors.grey),
+                                  filled: false,
+                                ),
+                              ),
                             ),
-                            focusedBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(color: Colors.white),
+                            Divider(
+                              color: Colors.black,
+                              height: 0.5,
                             ),
-                            hintText: "What are something you like or don't like?",
-                            hintStyle: TextStyle(color: Colors.grey),
-                            filled: false,
-                          ),
+                            Container(
+                              height: 150,
+                              width: MediaQuery.of(context).size.width,
+                              margin: EdgeInsets.only(right: 12, left: 12, ),
+                              child: TextField(
+                                keyboardType: TextInputType.multiline,
+                                maxLines: null,
+                                cursorColor: Colors.black,
+                                style: TextStyle(fontSize: 16, color: Colors.black, height: 1.4),
+                                decoration: InputDecoration(
+                                  enabledBorder: UnderlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.white),
+                                  ),
+                                  focusedBorder: UnderlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.white),
+                                  ),
+                                  hintText: "What are some things you like or don't like?",
+                                  hintStyle: TextStyle(color: Colors.grey),
+                                  filled: false,
+                                ),
+                              ),
+                            ),
+                            Divider(
+                              color: Colors.black,
+                              height: 0.5,
+                            ),
+                            /*Container(
+                              height: MediaQuery.of(context).size.height,
+                              width: MediaQuery.of(context).size.width/2,
+                              margin: EdgeInsets.only(right: 12, left: 12, ),
+                              child: TextField(
+                                keyboardType: TextInputType.multiline,
+                                maxLines: null,
+                                cursorColor: Colors.black,
+                                style: TextStyle(fontSize: 16, color: Colors.black, height: 1.4),
+                                decoration: InputDecoration(
+                                  enabledBorder: UnderlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.white),
+                                  ),
+                                  focusedBorder: UnderlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.white),
+                                  ),
+                                  hintText: "What are some things you like or don't like?",
+                                  hintStyle: TextStyle(color: Colors.grey),
+                                  filled: false,
+                                ),
+                              ),
+                            ),*/
+                          ],
                         ),
                       ),
                       /*Padding(

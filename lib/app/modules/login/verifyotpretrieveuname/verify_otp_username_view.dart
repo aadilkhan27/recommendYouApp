@@ -279,7 +279,7 @@ class VerifyOtpUsernameView extends GetView<VerifyOtpUsernameController>{
                     ),
                   ),
                   SizedBox(
-                    height: 40,
+                    height: 20,
                   ),
                   Text(
                     'Didn\'t receive a code',
@@ -343,7 +343,7 @@ class VerifyOtpUsernameView extends GetView<VerifyOtpUsernameController>{
                           ),
                         ),
                         SizedBox(
-                          height: 50,
+                          height: 30,
                         ),
                         Container(
                           margin: EdgeInsets.only(left: 40, right: 40),
