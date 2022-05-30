@@ -47,6 +47,21 @@ class HomeView extends GetView<HomeController> {
       onTap: () {
         FocusScope.of(context).unfocus();
       },
+      onPanUpdate: (details){
+// Swiping in right direction.
+        if (details.delta.dx > 0) {
+          print('swipe in right direction');
+          //write code which u want to change page
+          Get.toNamed(Routes.changeContact);
+        }
+
+        // Swiping in left direction.
+        if (details.delta.dx < 0) {
+          print('swipe in left  direction');
+          //write code which u want to change page
+          Get.toNamed(Routes.changeLanguage);
+        }
+      },
       child: Scaffold(
         body: Container(
           height: MediaQuery.of(context).size.height,
