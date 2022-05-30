@@ -51,7 +51,7 @@ const readWhatWeWillUseItFor='Read what we will use it for';
 const verifyYourNumber='Verify your number';
 const enterBelowCodeMsg='Enter below the code that we \n sent on your mobile number';
 const logInInfo='What will be your log in info?';
-const passwordValidMsg='Your password needs to have at least 6 characters';
+const passwordValidMsg='Use a combination of at least 6 numbers, letters and punctuation (like ! and &), ';
 const privacyPolicyMsg='By creating this account you confirm you have read and accept the user agreement and the privacy policy of RecommendYou';
 
 const dummyLoremIpsum2='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tellus sit arcu blandit cras Last name diam ut.';

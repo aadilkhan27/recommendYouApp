@@ -100,8 +100,8 @@ class NotificationView extends GetView<NotificationController> {
                                   children: [
                                     InkWell(
                                       onTap: () {
-                                        showAlertDialogForProfile(
-                                            context, profileImage1);
+                                        /*showAlertDialogForProfile(
+                                            context, image1);*/
                                       },
                                       child: Container(
                                         width: 50.0,
@@ -113,7 +113,7 @@ class NotificationView extends GetView<NotificationController> {
                                           new DecorationImage(
                                             fit: BoxFit.fill,
                                             image: AssetImage(
-                                                profileImage1),
+                                                image1),
                                           ),
                                         ),
                                       ),
@@ -180,8 +180,8 @@ class NotificationView extends GetView<NotificationController> {
                                   children: [
                                     InkWell(
                                       onTap: () {
-                                        showAlertDialogForProfile(
-                                            context, profileImage2);
+                                        /*showAlertDialogForProfile(
+                                            context, image2);*/
                                       },
                                       child: Container(
                                         width: 50.0,
@@ -193,7 +193,7 @@ class NotificationView extends GetView<NotificationController> {
                                           new DecorationImage(
                                             fit: BoxFit.fill,
                                             image: AssetImage(
-                                                profileImage2),
+                                                image2),
                                           ),
                                         ),
                                       ),
@@ -260,8 +260,8 @@ class NotificationView extends GetView<NotificationController> {
                                   children: [
                                     InkWell(
                                       onTap: () {
-                                        showAlertDialogForProfile(
-                                            context, profileImage3);
+                                        /*showAlertDialogForProfile(
+                                            context, image3);*/
                                       },
                                       child: Container(
                                         width: 50.0,
@@ -273,7 +273,7 @@ class NotificationView extends GetView<NotificationController> {
                                           new DecorationImage(
                                             fit: BoxFit.fill,
                                             image: AssetImage(
-                                                profileImage3),
+                                                image3),
                                           ),
                                         ),
                                       ),
@@ -340,8 +340,8 @@ class NotificationView extends GetView<NotificationController> {
                                   children: [
                                     InkWell(
                                       onTap: () {
-                                        showAlertDialogForProfile(
-                                            context, profileImage4);
+                                        /*showAlertDialogForProfile(
+                                            context, image4);*/
                                       },
                                       child: Container(
                                         width: 50.0,
@@ -353,7 +353,7 @@ class NotificationView extends GetView<NotificationController> {
                                           new DecorationImage(
                                             fit: BoxFit.fill,
                                             image: AssetImage(
-                                                profileImage4),
+                                                image4),
                                           ),
                                         ),
                                       ),
@@ -420,8 +420,8 @@ class NotificationView extends GetView<NotificationController> {
                                   children: [
                                     InkWell(
                                       onTap: () {
-                                        showAlertDialogForProfile(
-                                            context, profileImage5);
+                                        /*showAlertDialogForProfile(
+                                            context, image5);*/
                                       },
                                       child: Container(
                                         width: 50.0,
@@ -433,7 +433,7 @@ class NotificationView extends GetView<NotificationController> {
                                           new DecorationImage(
                                             fit: BoxFit.fill,
                                             image: AssetImage(
-                                                profileImage5),
+                                                image5),
                                           ),
                                         ),
                                       ),
@@ -500,8 +500,8 @@ class NotificationView extends GetView<NotificationController> {
                                   children: [
                                     InkWell(
                                       onTap: () {
-                                        showAlertDialogForProfile(
-                                            context, profileImage6);
+                                        /*showAlertDialogForProfile(
+                                            context, image6);*/
                                       },
                                       child: Container(
                                         width: 50.0,
@@ -513,7 +513,7 @@ class NotificationView extends GetView<NotificationController> {
                                           new DecorationImage(
                                             fit: BoxFit.fill,
                                             image: AssetImage(
-                                                profileImage6),
+                                                image6),
                                           ),
                                         ),
                                       ),
@@ -580,8 +580,8 @@ class NotificationView extends GetView<NotificationController> {
                                   children: [
                                     InkWell(
                                       onTap: () {
-                                        showAlertDialogForProfile(
-                                            context, profileImage1);
+                                        /*showAlertDialogForProfile(
+                                            context, image1);*/
                                       },
                                       child: Container(
                                         width: 50.0,
@@ -593,7 +593,7 @@ class NotificationView extends GetView<NotificationController> {
                                           new DecorationImage(
                                             fit: BoxFit.fill,
                                             image: AssetImage(
-                                                profileImage1),
+                                                image1),
                                           ),
                                         ),
                                       ),
@@ -660,8 +660,8 @@ class NotificationView extends GetView<NotificationController> {
                                   children: [
                                     InkWell(
                                       onTap: () {
-                                        showAlertDialogForProfile(
-                                            context, profileImage2);
+                                        /*showAlertDialogForProfile(
+                                            context, image2);*/
                                       },
                                       child: Container(
                                         width: 50.0,
@@ -673,7 +673,7 @@ class NotificationView extends GetView<NotificationController> {
                                           new DecorationImage(
                                             fit: BoxFit.fill,
                                             image: AssetImage(
-                                                profileImage2),
+                                                image2),
                                           ),
                                         ),
                                       ),
@@ -740,8 +740,8 @@ class NotificationView extends GetView<NotificationController> {
                                   children: [
                                     InkWell(
                                       onTap: () {
-                                        showAlertDialogForProfile(
-                                            context, profileImage3);
+                                        /*showAlertDialogForProfile(
+                                            context, image3);*/
                                       },
                                       child: Container(
                                         width: 50.0,
@@ -753,7 +753,7 @@ class NotificationView extends GetView<NotificationController> {
                                           new DecorationImage(
                                             fit: BoxFit.fill,
                                             image: AssetImage(
-                                                profileImage3),
+                                                image3),
                                           ),
                                         ),
                                       ),
@@ -820,8 +820,8 @@ class NotificationView extends GetView<NotificationController> {
                                   children: [
                                     InkWell(
                                       onTap: () {
-                                        showAlertDialogForProfile(
-                                            context, profileImage4);
+                                        /*showAlertDialogForProfile(
+                                            context, image4);*/
                                       },
                                       child: Container(
                                         width: 50.0,
@@ -833,7 +833,7 @@ class NotificationView extends GetView<NotificationController> {
                                           new DecorationImage(
                                             fit: BoxFit.fill,
                                             image: AssetImage(
-                                                profileImage4),
+                                                image4),
                                           ),
                                         ),
                                       ),
@@ -900,8 +900,8 @@ class NotificationView extends GetView<NotificationController> {
                                   children: [
                                     InkWell(
                                       onTap: () {
-                                        showAlertDialogForProfile(
-                                            context, profileImage5);
+                                        /*showAlertDialogForProfile(
+                                            context, image5);*/
                                       },
                                       child: Container(
                                         width: 50.0,
@@ -913,7 +913,7 @@ class NotificationView extends GetView<NotificationController> {
                                           new DecorationImage(
                                             fit: BoxFit.fill,
                                             image: AssetImage(
-                                                profileImage5),
+                                                image5),
                                           ),
                                         ),
                                       ),
@@ -980,8 +980,8 @@ class NotificationView extends GetView<NotificationController> {
                                   children: [
                                     InkWell(
                                       onTap: () {
-                                        showAlertDialogForProfile(
-                                            context, profileImage6);
+                                        /*showAlertDialogForProfile(
+                                            context, image6);*/
                                       },
                                       child: Container(
                                         width: 50.0,
@@ -993,7 +993,7 @@ class NotificationView extends GetView<NotificationController> {
                                           new DecorationImage(
                                             fit: BoxFit.fill,
                                             image: AssetImage(
-                                                profileImage6),
+                                                image6),
                                           ),
                                         ),
                                       ),
@@ -1046,486 +1046,7 @@ class NotificationView extends GetView<NotificationController> {
                                   ],
                                 ),
                               ),
-                              Container(
-                                height: 60,
-                                width: MediaQuery.of(context)
-                                    .size
-                                    .width,
-                                margin: EdgeInsets.only(
-                                    top: 10,
-                                    bottom: 10,
-                                    right: 10,
-                                    left: 10),
-                                child: Row(
-                                  children: [
-                                    InkWell(
-                                      onTap: () {
-                                        showAlertDialogForProfile(
-                                            context, profileImage1);
-                                      },
-                                      child: Container(
-                                        width: 50.0,
-                                        height: 50.0,
-                                        decoration:
-                                        new BoxDecoration(
-                                          shape: BoxShape.rectangle,
-                                          image:
-                                          new DecorationImage(
-                                            fit: BoxFit.fill,
-                                            image: AssetImage(
-                                                profileImage1),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      width: 20,
-                                    ),
-                                    Container(
-                                      margin:
-                                      EdgeInsets.only(top: 0),
-                                      child: Column(
-                                        mainAxisAlignment:
-                                        MainAxisAlignment
-                                            .center,
-                                        //crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: [
-                                          Container(
-                                            //margin: EdgeInsets.only(left: 35, right: 35),
-                                            child: Center(
-                                              child: RichText(
-                                                textAlign: TextAlign
-                                                    .center,
-                                                text: TextSpan(
-                                                    children: [
-                                                      TextSpan(
-                                                          text:
-                                                          'New Likes ',
-                                                          style: TextStyle(
-                                                              color: Colors
-                                                                  .black,
-                                                              fontSize:
-                                                              14,
-                                                              fontWeight:
-                                                              FontWeight.bold)),
-                                                      TextSpan(
-                                                          text:
-                                                          'for your message.',
-                                                          style: TextStyle(
-                                                              color: Colors
-                                                                  .black,
-                                                              fontSize:
-                                                              14)),
-                                                    ]),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                height: 60,
-                                width: MediaQuery.of(context)
-                                    .size
-                                    .width,
-                                margin: EdgeInsets.only(
-                                    top: 10,
-                                    bottom: 10,
-                                    right: 10,
-                                    left: 10),
-                                child: Row(
-                                  children: [
-                                    InkWell(
-                                      onTap: () {
-                                        showAlertDialogForProfile(
-                                            context, profileImage2);
-                                      },
-                                      child: Container(
-                                        width: 50.0,
-                                        height: 50.0,
-                                        decoration:
-                                        new BoxDecoration(
-                                          shape: BoxShape.rectangle,
-                                          image:
-                                          new DecorationImage(
-                                            fit: BoxFit.fill,
-                                            image: AssetImage(
-                                                profileImage2),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      width: 20,
-                                    ),
-                                    Container(
-                                      margin:
-                                      EdgeInsets.only(top: 0),
-                                      child: Column(
-                                        mainAxisAlignment:
-                                        MainAxisAlignment
-                                            .center,
-                                        //crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: [
-                                          Container(
-                                            //margin: EdgeInsets.only(left: 35, right: 35),
-                                            child: Center(
-                                              child: RichText(
-                                                textAlign: TextAlign
-                                                    .center,
-                                                text: TextSpan(
-                                                    children: [
-                                                      TextSpan(
-                                                          text:
-                                                          'New Likes ',
-                                                          style: TextStyle(
-                                                              color: Colors
-                                                                  .black,
-                                                              fontSize:
-                                                              14,
-                                                              fontWeight:
-                                                              FontWeight.bold)),
-                                                      TextSpan(
-                                                          text:
-                                                          'for your message.',
-                                                          style: TextStyle(
-                                                              color: Colors
-                                                                  .black,
-                                                              fontSize:
-                                                              14)),
-                                                    ]),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                height: 60,
-                                width: MediaQuery.of(context)
-                                    .size
-                                    .width,
-                                margin: EdgeInsets.only(
-                                    top: 10,
-                                    bottom: 10,
-                                    right: 10,
-                                    left: 10),
-                                child: Row(
-                                  children: [
-                                    InkWell(
-                                      onTap: () {
-                                        showAlertDialogForProfile(
-                                            context, profileImage3);
-                                      },
-                                      child: Container(
-                                        width: 50.0,
-                                        height: 50.0,
-                                        decoration:
-                                        new BoxDecoration(
-                                          shape: BoxShape.rectangle,
-                                          image:
-                                          new DecorationImage(
-                                            fit: BoxFit.fill,
-                                            image: AssetImage(
-                                                profileImage3),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      width: 20,
-                                    ),
-                                    Container(
-                                      margin:
-                                      EdgeInsets.only(top: 0),
-                                      child: Column(
-                                        mainAxisAlignment:
-                                        MainAxisAlignment
-                                            .center,
-                                        //crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: [
-                                          Container(
-                                            //margin: EdgeInsets.only(left: 35, right: 35),
-                                            child: Center(
-                                              child: RichText(
-                                                textAlign: TextAlign
-                                                    .center,
-                                                text: TextSpan(
-                                                    children: [
-                                                      TextSpan(
-                                                          text:
-                                                          'New Likes ',
-                                                          style: TextStyle(
-                                                              color: Colors
-                                                                  .black,
-                                                              fontSize:
-                                                              14,
-                                                              fontWeight:
-                                                              FontWeight.bold)),
-                                                      TextSpan(
-                                                          text:
-                                                          'for your message.',
-                                                          style: TextStyle(
-                                                              color: Colors
-                                                                  .black,
-                                                              fontSize:
-                                                              14)),
-                                                    ]),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                height: 60,
-                                width: MediaQuery.of(context)
-                                    .size
-                                    .width,
-                                margin: EdgeInsets.only(
-                                    top: 10,
-                                    bottom: 10,
-                                    right: 10,
-                                    left: 10),
-                                child: Row(
-                                  children: [
-                                    InkWell(
-                                      onTap: () {
-                                        showAlertDialogForProfile(
-                                            context, profileImage4);
-                                      },
-                                      child: Container(
-                                        width: 50.0,
-                                        height: 50.0,
-                                        decoration:
-                                        new BoxDecoration(
-                                          shape: BoxShape.rectangle,
-                                          image:
-                                          new DecorationImage(
-                                            fit: BoxFit.fill,
-                                            image: AssetImage(
-                                                profileImage4),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      width: 20,
-                                    ),
-                                    Container(
-                                      margin:
-                                      EdgeInsets.only(top: 0),
-                                      child: Column(
-                                        mainAxisAlignment:
-                                        MainAxisAlignment
-                                            .center,
-                                        //crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: [
-                                          Container(
-                                            //margin: EdgeInsets.only(left: 35, right: 35),
-                                            child: Center(
-                                              child: RichText(
-                                                textAlign: TextAlign
-                                                    .center,
-                                                text: TextSpan(
-                                                    children: [
-                                                      TextSpan(
-                                                          text:
-                                                          'New Likes ',
-                                                          style: TextStyle(
-                                                              color: Colors
-                                                                  .black,
-                                                              fontSize:
-                                                              14,
-                                                              fontWeight:
-                                                              FontWeight.bold)),
-                                                      TextSpan(
-                                                          text:
-                                                          'for your message.',
-                                                          style: TextStyle(
-                                                              color: Colors
-                                                                  .black,
-                                                              fontSize:
-                                                              14)),
-                                                    ]),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                height: 60,
-                                width: MediaQuery.of(context)
-                                    .size
-                                    .width,
-                                margin: EdgeInsets.only(
-                                    top: 10,
-                                    bottom: 10,
-                                    right: 10,
-                                    left: 10),
-                                child: Row(
-                                  children: [
-                                    InkWell(
-                                      onTap: () {
-                                        showAlertDialogForProfile(
-                                            context, profileImage5);
-                                      },
-                                      child: Container(
-                                        width: 50.0,
-                                        height: 50.0,
-                                        decoration:
-                                        new BoxDecoration(
-                                          shape: BoxShape.rectangle,
-                                          image:
-                                          new DecorationImage(
-                                            fit: BoxFit.fill,
-                                            image: AssetImage(
-                                                profileImage5),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      width: 20,
-                                    ),
-                                    Container(
-                                      margin:
-                                      EdgeInsets.only(top: 0),
-                                      child: Column(
-                                        mainAxisAlignment:
-                                        MainAxisAlignment
-                                            .center,
-                                        //crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: [
-                                          Container(
-                                            //margin: EdgeInsets.only(left: 35, right: 35),
-                                            child: Center(
-                                              child: RichText(
-                                                textAlign: TextAlign
-                                                    .center,
-                                                text: TextSpan(
-                                                    children: [
-                                                      TextSpan(
-                                                          text:
-                                                          'New Likes ',
-                                                          style: TextStyle(
-                                                              color: Colors
-                                                                  .black,
-                                                              fontSize:
-                                                              14,
-                                                              fontWeight:
-                                                              FontWeight.bold)),
-                                                      TextSpan(
-                                                          text:
-                                                          'for your message.',
-                                                          style: TextStyle(
-                                                              color: Colors
-                                                                  .black,
-                                                              fontSize:
-                                                              14)),
-                                                    ]),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                height: 60,
-                                width: MediaQuery.of(context)
-                                    .size
-                                    .width,
-                                margin: EdgeInsets.only(
-                                    top: 10,
-                                    bottom: 10,
-                                    right: 10,
-                                    left: 10),
-                                child: Row(
-                                  children: [
-                                    InkWell(
-                                      onTap: () {
-                                        showAlertDialogForProfile(
-                                            context, profileImage6);
-                                      },
-                                      child: Container(
-                                        width: 50.0,
-                                        height: 50.0,
-                                        decoration:
-                                        new BoxDecoration(
-                                          shape: BoxShape.rectangle,
-                                          image:
-                                          new DecorationImage(
-                                            fit: BoxFit.fill,
-                                            image: AssetImage(
-                                                profileImage6),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      width: 20,
-                                    ),
-                                    Container(
-                                      margin:
-                                      EdgeInsets.only(top: 0),
-                                      child: Column(
-                                        mainAxisAlignment:
-                                        MainAxisAlignment
-                                            .center,
-                                        //crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: [
-                                          Container(
-                                            //margin: EdgeInsets.only(left: 35, right: 35),
-                                            child: Center(
-                                              child: RichText(
-                                                textAlign: TextAlign
-                                                    .center,
-                                                text: TextSpan(
-                                                    children: [
-                                                      TextSpan(
-                                                          text:
-                                                          'New Likes ',
-                                                          style: TextStyle(
-                                                              color: Colors
-                                                                  .black,
-                                                              fontSize:
-                                                              14,
-                                                              fontWeight:
-                                                              FontWeight.bold)),
-                                                      TextSpan(
-                                                          text:
-                                                          'for your message.',
-                                                          style: TextStyle(
-                                                              color: Colors
-                                                                  .black,
-                                                              fontSize:
-                                                              14)),
-                                                    ]),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
+
                             ],
                           ),
                         ),

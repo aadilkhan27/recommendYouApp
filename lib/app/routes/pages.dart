@@ -48,6 +48,7 @@ import 'package:recommend_you/app/modules/login/verifyotpretrieveuname/verify_ot
 import 'package:recommend_you/app/modules/login/verifyotpretrieveuname/verify_otp_username_view.dart';
 import 'package:recommend_you/app/modules/profile/edit_profile_binding.dart';
 import 'package:recommend_you/app/modules/profile/edit_profile_view.dart';
+import 'package:recommend_you/app/modules/profile/like/likes_view.dart';
 import 'package:recommend_you/app/modules/profile/profile_binding.dart';
 import 'package:recommend_you/app/modules/profile/profile_view.dart';
 import 'package:recommend_you/app/modules/registration/stepfour/step_four_binding.dart';
@@ -65,6 +66,9 @@ import '../modules/dashboard/home/helper/helper_bindings.dart';
 import '../modules/dashboard/home/helper/helper_view.dart';
 import '../modules/dashboard/more/changelanguage/change_language_binding.dart';
 import '../modules/dashboard/more/changelanguage/change_language_view.dart';
+import '../modules/profile/like/likes_binding.dart';
+import '../modules/profile/userProfile/user_profile_binding.dart';
+import '../modules/profile/userProfile/user_profile_view.dart';
 
 part 'routes.dart';
 
@@ -104,5 +108,7 @@ class AppPages {
     GetPage(name: Routes.editProfile, page: () => EditProfileView(), binding: EditProfileBinding()),
     GetPage(name: Routes.faq, page: () => FaqView(), binding: FaqBinding()),
     GetPage(name: Routes.landing, page: () => LandingView(), binding: LandingBinding()),
+    GetPage(name: Routes.likes, page: () => LikesView(), binding: LikesBinding()),
+    GetPage(name: Routes.userProfile, page: () => UserProfileView(), binding: UserProfileBinding()),
   ];
 }

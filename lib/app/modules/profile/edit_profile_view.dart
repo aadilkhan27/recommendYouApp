@@ -177,7 +177,8 @@ class EditProfileView extends GetView<EditProfileController> {
                                       ),
                                       Padding(
                                         padding: EdgeInsets.only(left: 20, right: 10),
-                                        child: TextField(
+                                        child: TextFormField (
+                                          initialValue: "Ramon",
                                           cursorColor: Colors.black,
                                           decoration: InputDecoration(
                                               enabledBorder: UnderlineInputBorder(
@@ -186,7 +187,7 @@ class EditProfileView extends GetView<EditProfileController> {
                                               focusedBorder: UnderlineInputBorder(
                                                 borderSide: BorderSide(color: Colors.purple),
                                               ),
-                                              hintText: 'Ramon',
+                                              hintText: '',
                                               hintStyle: TextStyle(color: Colors.grey)),
                                         ),
                                       ),
@@ -212,7 +213,8 @@ class EditProfileView extends GetView<EditProfileController> {
                                       ),
                                       Padding(
                                         padding: EdgeInsets.only(left: 10, right: 20),
-                                        child: TextField(
+                                        child: TextFormField (
+                                          initialValue: "Ricardo",
                                           cursorColor: Colors.black,
                                           decoration: InputDecoration(
                                               enabledBorder: UnderlineInputBorder(
@@ -221,7 +223,7 @@ class EditProfileView extends GetView<EditProfileController> {
                                               focusedBorder: UnderlineInputBorder(
                                                 borderSide: BorderSide(color: Colors.purple),
                                               ),
-                                              hintText: 'Ricardo',
+                                              hintText: '',
                                               hintStyle: TextStyle(color: Colors.grey)),
                                         ),
                                       ),
@@ -258,16 +260,17 @@ class EditProfileView extends GetView<EditProfileController> {
                                       Padding(
                                         padding: EdgeInsets.only(left: 20, right: 20),
                                         child: TextField(
+                                          enabled: false,
                                           cursorColor: Colors.black,
                                           decoration: InputDecoration(
                                               enabledBorder: UnderlineInputBorder(
                                                 borderSide: BorderSide(color: Colors.black),
                                               ),
                                               focusedBorder: UnderlineInputBorder(
-                                                borderSide: BorderSide(color: Colors.purple),
+                                                borderSide: BorderSide(color: Colors.black),
                                               ),
                                               hintText: 'Ramon_Ricardo',
-                                              hintStyle: TextStyle(color: Colors.grey)),
+                                              hintStyle: TextStyle(color: Colors.black)),
                                         ),
                                       ),
                                     ],
@@ -312,6 +315,7 @@ class EditProfileView extends GetView<EditProfileController> {
                                             focusedBorder: UnderlineInputBorder(
                                               borderSide: BorderSide(color: Colors.purple),
                                             ),
+                                            hintText: "Tell others about ypurself including the thinga you like",
                                             hintStyle: TextStyle(color: Colors.grey)),
                                       ),
                                     ),

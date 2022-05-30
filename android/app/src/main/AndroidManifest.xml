@@ -2,7 +2,7 @@
     package="com.asif.recommend_you">
     <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="R-You"
+        android:label="RYou"
        android:usesCleartextTraffic="true"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:recommend_you/app/modules/dashboard/dashboard_view.dart';
 import 'package:recommend_you/app/modules/dashboard/home/helper/sendemail/sendemail_controller.dart';
 import 'package:recommend_you/app/modules/dashboard/landining/landing_view.dart';
 import 'package:recommend_you/app/modules/dashboard/more/changecontactdetails/change_contact_controller.dart';
@@ -567,7 +568,7 @@ class SendEmailView extends GetView<SendEmailController>{
         Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-                builder: (builder) => LandingView()));
+                builder: (builder) => DashboardView()));
       },
     );
 

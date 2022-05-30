@@ -281,7 +281,7 @@ class MoreView extends GetView<MoreController> {
                             padding: EdgeInsets.only(left: 15.0, right: 15.0),
                             child: ListTile(
                               leading: Image(
-                                image: AssetImage(contactUS),
+                                image: AssetImage(changeContact),
                                 width: 20,
                                 height: 20,
                               ),

@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:recommend_you/app/modules/dashboard/search/search_controller.dart';
 
 import '../../../core/values/keys.dart';
+import '../../../routes/pages.dart';
 
 class SearchView extends GetView<SearchController> {
   final SearchController _tabx = Get.put(SearchController());
@@ -154,12 +155,18 @@ class SearchView extends GetView<SearchController> {
                                           crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                           children: [
-                                            Text(
-                                              'Ramon Ricardo',
-                                              style: TextStyle(
-                                                  fontSize: 16,
-                                                  fontWeight:
-                                                  FontWeight.normal),
+                                            InkWell(
+                                              child: Text(
+                                                'Ramon Ricardo',
+                                                style: TextStyle(
+                                                    fontSize: 16,
+                                                    fontWeight:
+                                                    FontWeight.normal),
+                                              ),
+                                              onTap: () {
+                                                Get.toNamed(
+                                                    Routes.userProfile);
+                                              },
                                             ),
                                             SizedBox(
                                               height: 5,
