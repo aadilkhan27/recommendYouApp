@@ -39,6 +39,7 @@ dependencies:
   easy_debounce:
 
   image_picker:
+  multi_select_flutter: ^4.1.2
 dev_dependencies:
   flutter_test:
     sdk: flutter

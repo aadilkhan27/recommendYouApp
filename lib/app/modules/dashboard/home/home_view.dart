@@ -3,15 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:multi_select_flutter/dialog/multi_select_dialog_field.dart';
+import 'package:multi_select_flutter/util/multi_select_item.dart';
 import 'package:recommend_you/app/core/values/keys.dart';
 import 'package:recommend_you/app/core/values/strings.dart';
-import 'package:recommend_you/app/modules/profile/profile_view.dart';
 import 'package:recommend_you/app/routes/pages.dart';
-import 'package:recommend_you/app/widgets/dropdown_button2.dart';
+import 'package:recommend_you/dataModel/Animal.dart';
 
 import '../../../core/values/colors.dart';
-import '../../imageLarge.dart';
-import 'helper/helper_view.dart';
 import 'home_controller.dart';
 
 // commend
@@ -43,12 +42,16 @@ class HomeView extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
+    final _items = controller.animals
+        .map((animal) => MultiSelectItem<Animal>(animal, animal.name))
+        .toList();
+
     return GestureDetector(
       onTap: () {
         FocusScope.of(context).unfocus();
       },
-      onPanUpdate: (details){
-      // Swiping in right direction.
+      onPanUpdate: (details) {
+        // Swiping in right direction.
         if (details.delta.dx > 0) {
           print('swipe in right direction');
           //write code which u want to change page
@@ -76,157 +79,122 @@ class HomeView extends GetView<HomeController> {
                     child: Column(
                       children: [
                         Container(
-                          height: 50,
+                          height: 70,
                           width: MediaQuery.of(context).size.width,
-                          padding: EdgeInsets.only(top: 10, right: 10, bottom: 10),
+                          padding:
+                              EdgeInsets.only(top: 10, right: 10, bottom: 10),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Flexible(child: InkWell(
+                              Flexible(
+                                child: InkWell(
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      /*SvgPicture.asset(icUser),*/
+
+                                      Container(
+                                          width: 40.0,
+                                          height: 40.0,
+                                          decoration: new BoxDecoration(
+                                              shape: BoxShape.circle,
+                                              image: new DecorationImage(
+                                                  fit: BoxFit.fill,
+                                                  image: AssetImage(
+                                                      profileImage2))))
+                                    ],
+                                  ),
+                                  onTap: () {
+                                    Get.toNamed(Routes.profileView);
+                                  },
+                                ),
+                                flex: 1,
+                              ),
+                              Flexible(
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    /*SvgPicture.asset(icUser),*/
-
+                                    SizedBox(
+                                      height: 20,
+                                      child: VerticalDivider(
+                                        color: Colors.black,
+                                        thickness: 1,
+                                        width: 0,
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
                                     Container(
-                                        width: 40.0,
-                                        height: 40.0,
-                                        decoration: new BoxDecoration(
-                                            shape: BoxShape.circle,
-                                            image: new DecorationImage(
-                                                fit: BoxFit.fill,
-                                                image: AssetImage(
-                                                    profileImage2))))
-                                  ],
-                                ),
-                                onTap: () {
+                                      padding:
+                                          EdgeInsets.only(left: 2, right: 2),
 
-                                  Get.toNamed(Routes.profileView);
-
-                                },
-                              ),
-                                flex: 1,),
-
-                              Flexible(child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  SizedBox(
-                                    height: 20,
-                                    child: VerticalDivider(
-                                      color: Colors.black,
-                                      thickness: 1,
-                                      width: 0,
-                                    ),
-                                  ),
-
-                                  SizedBox(width: 10,),
-                                  Container(
-                                    height: 25,
-                                    padding: EdgeInsets.only(left: 2, right: 2),
-                                    width:
-                                    MediaQuery.of(context).size.width / 2.5,
-                                    margin: EdgeInsets.only(right: 0, left: 0),
-                                    child: DropdownButtonFormField2(
-                                      decoration: InputDecoration(
-                                        isDense: true,
-                                        contentPadding: EdgeInsets.zero,
-                                        focusedBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                              color: Colors.black, width: 1.0),
-                                          borderRadius:
-                                          BorderRadius.circular(15.0),
-                                        ),
-                                        border: OutlineInputBorder(
-                                          borderRadius: BorderRadius.circular(15),
-                                        ),
-                                      ),
-                                      isExpanded: true,
-                                      hint: RichText(
-                                        text: TextSpan(
-                                          children: [
-                                            TextSpan(
-                                              text: 'Recommend',
-                                              style: TextStyle(
-                                                  fontSize: 14,
-                                                  fontWeight: FontWeight.bold,
-                                                  color: primaryDarkColor),
+                                      margin:
+                                          EdgeInsets.only(right: 0, left: 0),
+                                      child: Container(
+                                        child: MultiSelectDialogField(
+                                          items: _items,
+                                          searchable: true,
+                                          selectedColor: primaryLightColor,
+                                          decoration: BoxDecoration(
+                                            color: primaryLightColor.withOpacity(0.1),
+                                            borderRadius:
+                                            BorderRadius.all(Radius.circular(40)),
+                                            border: Border.all(
+                                              color: Colors.grey,
+                                              width: 1,
                                             ),
-                                            TextSpan(
-                                              text: 'You',
-                                              style: TextStyle(
-                                                  fontSize: 14,
-                                                  fontWeight: FontWeight.bold,
-                                                  color: primaryLightColor),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                      icon: SvgPicture.asset(icDownArrow),
-                                      iconSize: 10,
-                                      buttonHeight: 30,
-                                      iconEnabledColor: Colors.white,
-                                      selectedItemHighlightColor:
-                                      primaryLightColor,
-                                      buttonPadding: const EdgeInsets.only(
-                                          left: 10, right: 10),
-                                      dropdownDecoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(5),
-                                          color: veryLightWhite),
-                                      items: spinnerItems
-                                          .map((item) => DropdownMenuItem<String>(
-                                        value: item,
-                                        child: Text(
-                                          item,
-                                          style: const TextStyle(
+                                          ),
+                                          buttonIcon: Icon(
+                                            Icons.arrow_drop_down,
+                                            color: Colors.grey,
+                                          ),
+                                          buttonText: Text(
+                                            "RecommendYou",
+                                            style: TextStyle(
+                                              color: primaryDarkColor,
                                               fontSize: 12,
-                                              color: Colors.black),
+                                            ),
+                                          ),
+                                          onConfirm: (results) {
+                                            //_selectedAnimals = results;
+                                          },
                                         ),
-                                      ))
-                                          .toList(),
-                                      validator: (value) {
-                                        if (value == null) {
-                                          return 'RecommendYou';
-                                        }
-                                      },
-                                      onChanged: (value) {
-                                        //Do something when changing the item if you want.
-                                      },
-                                      onSaved: (value) {
-                                        selectedValue = value.toString();
-                                      },
+                                      ),
                                     ),
-                                  ),
-                                  SizedBox(width: 10,),
-                                  SizedBox(
-                                    height: 20,
-                                    child: VerticalDivider(
-                                      color: Colors.black,
-                                      thickness: 1,
-                                      width: 0,
+                                    SizedBox(
+                                      width: 10,
                                     ),
-                                  ),
-                                ],
-                              ),
-                                flex: 2,),
-
-                              Flexible(child: InkWell(
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Image(
-                                      image: AssetImage(chatHome),
-                                      width: 30,
-                                      height: 30,
+                                    SizedBox(
+                                      height: 20,
+                                      child: VerticalDivider(
+                                        color: Colors.black,
+                                        thickness: 1,
+                                        width: 0,
+                                      ),
                                     ),
                                   ],
                                 ),
-                                onTap: () {
-                                  Get.toNamed(Routes.helper);
-                                },
+                                flex: 2,
                               ),
-                                flex: 1,),
-
-
+                              Flexible(
+                                child: InkWell(
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Image(
+                                        image: AssetImage(chatHome),
+                                        width: 30,
+                                        height: 30,
+                                      ),
+                                    ],
+                                  ),
+                                  onTap: () {
+                                    Get.toNamed(Routes.helper);
+                                  },
+                                ),
+                                flex: 1,
+                              ),
 
                               /*InkWell(child: SvgPicture.asset(icUser), onTap: () {
                         */ /*Navigator.push(
@@ -246,6 +214,7 @@ class HomeView extends GetView<HomeController> {
                             child: SingleChildScrollView(
                           child: Column(
                             children: [
+
                               Column(
                                 children: [
                                   Container(
@@ -319,19 +288,19 @@ class HomeView extends GetView<HomeController> {
                                           alignment: Alignment.topRight,
                                           child: Row(
                                               mainAxisAlignment:
-                                              MainAxisAlignment.end,
+                                                  MainAxisAlignment.end,
                                               crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                                                  CrossAxisAlignment.start,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsets.only(
-                                                      left: 10, top: 10),
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          left: 10, top: 10),
                                                   child: Text(
-
                                                     '08-09-2021',
                                                     style: TextStyle(
                                                         fontWeight:
-                                                        FontWeight.normal,
+                                                            FontWeight.normal,
                                                         fontSize: 12),
                                                   ),
                                                 ),
@@ -356,8 +325,6 @@ class HomeView extends GetView<HomeController> {
                                       ],
                                     ),
                                   ),
-
-
                                   Container(
                                     margin: EdgeInsets.only(
                                         left: 20,
@@ -498,7 +465,7 @@ class HomeView extends GetView<HomeController> {
                                                     style: TextStyle(
                                                         fontSize: 14,
                                                         fontWeight:
-                                                        FontWeight.bold),
+                                                            FontWeight.bold),
                                                   ),
                                                   onTap: () {
                                                     Get.toNamed(
@@ -528,19 +495,19 @@ class HomeView extends GetView<HomeController> {
                                           alignment: Alignment.topRight,
                                           child: Row(
                                               mainAxisAlignment:
-                                              MainAxisAlignment.end,
+                                                  MainAxisAlignment.end,
                                               crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                                                  CrossAxisAlignment.start,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsets.only(
-                                                      left: 10, top: 10),
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          left: 10, top: 10),
                                                   child: Text(
-
                                                     '08-09-2021',
                                                     style: TextStyle(
                                                         fontWeight:
-                                                        FontWeight.normal,
+                                                            FontWeight.normal,
                                                         fontSize: 12),
                                                   ),
                                                 ),
@@ -705,7 +672,7 @@ class HomeView extends GetView<HomeController> {
                                                     style: TextStyle(
                                                         fontSize: 14,
                                                         fontWeight:
-                                                        FontWeight.bold),
+                                                            FontWeight.bold),
                                                   ),
                                                   onTap: () {
                                                     Get.toNamed(
@@ -735,19 +702,19 @@ class HomeView extends GetView<HomeController> {
                                           alignment: Alignment.topRight,
                                           child: Row(
                                               mainAxisAlignment:
-                                              MainAxisAlignment.end,
+                                                  MainAxisAlignment.end,
                                               crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                                                  CrossAxisAlignment.start,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsets.only(
-                                                      left: 10, top: 10),
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          left: 10, top: 10),
                                                   child: Text(
-
                                                     '08-09-2021',
                                                     style: TextStyle(
                                                         fontWeight:
-                                                        FontWeight.normal,
+                                                            FontWeight.normal,
                                                         fontSize: 12),
                                                   ),
                                                 ),
@@ -912,7 +879,7 @@ class HomeView extends GetView<HomeController> {
                                                     style: TextStyle(
                                                         fontSize: 14,
                                                         fontWeight:
-                                                        FontWeight.bold),
+                                                            FontWeight.bold),
                                                   ),
                                                   onTap: () {
                                                     Get.toNamed(
@@ -942,19 +909,19 @@ class HomeView extends GetView<HomeController> {
                                           alignment: Alignment.topRight,
                                           child: Row(
                                               mainAxisAlignment:
-                                              MainAxisAlignment.end,
+                                                  MainAxisAlignment.end,
                                               crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                                                  CrossAxisAlignment.start,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsets.only(
-                                                      left: 10, top: 10),
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          left: 10, top: 10),
                                                   child: Text(
-
                                                     '08-09-2021',
                                                     style: TextStyle(
                                                         fontWeight:
-                                                        FontWeight.normal,
+                                                            FontWeight.normal,
                                                         fontSize: 12),
                                                   ),
                                                 ),
@@ -1119,7 +1086,7 @@ class HomeView extends GetView<HomeController> {
                                                     style: TextStyle(
                                                         fontSize: 14,
                                                         fontWeight:
-                                                        FontWeight.bold),
+                                                            FontWeight.bold),
                                                   ),
                                                   onTap: () {
                                                     Get.toNamed(
@@ -1149,19 +1116,19 @@ class HomeView extends GetView<HomeController> {
                                           alignment: Alignment.topRight,
                                           child: Row(
                                               mainAxisAlignment:
-                                              MainAxisAlignment.end,
+                                                  MainAxisAlignment.end,
                                               crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                                                  CrossAxisAlignment.start,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsets.only(
-                                                      left: 10, top: 10),
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          left: 10, top: 10),
                                                   child: Text(
-
                                                     '08-09-2021',
                                                     style: TextStyle(
                                                         fontWeight:
-                                                        FontWeight.normal,
+                                                            FontWeight.normal,
                                                         fontSize: 12),
                                                   ),
                                                 ),
@@ -1326,7 +1293,7 @@ class HomeView extends GetView<HomeController> {
                                                     style: TextStyle(
                                                         fontSize: 14,
                                                         fontWeight:
-                                                        FontWeight.bold),
+                                                            FontWeight.bold),
                                                   ),
                                                   onTap: () {
                                                     Get.toNamed(
@@ -1356,19 +1323,19 @@ class HomeView extends GetView<HomeController> {
                                           alignment: Alignment.topRight,
                                           child: Row(
                                               mainAxisAlignment:
-                                              MainAxisAlignment.end,
+                                                  MainAxisAlignment.end,
                                               crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                                                  CrossAxisAlignment.start,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsets.only(
-                                                      left: 10, top: 10),
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          left: 10, top: 10),
                                                   child: Text(
-
                                                     '08-09-2021',
                                                     style: TextStyle(
                                                         fontWeight:
-                                                        FontWeight.normal,
+                                                            FontWeight.normal,
                                                         fontSize: 12),
                                                   ),
                                                 ),
@@ -1507,6 +1474,36 @@ class HomeView extends GetView<HomeController> {
       ),
     );
   }
+}
+
+showDialogMultiSelection(List<MultiSelectItem<Animal>> _items) {
+  MultiSelectDialogField(
+    items: _items,
+    title: Text("Animals"),
+    selectedColor: Colors.blue,
+    decoration: BoxDecoration(
+      color: Colors.blue.withOpacity(0.1),
+      borderRadius: BorderRadius.all(Radius.circular(40)),
+      border: Border.all(
+        color: Colors.blue,
+        width: 2,
+      ),
+    ),
+    buttonIcon: Icon(
+      Icons.pets,
+      color: Colors.blue,
+    ),
+    buttonText: Text(
+      "Favorite Animals",
+      style: TextStyle(
+        color: Colors.blue[800],
+        fontSize: 16,
+      ),
+    ),
+    onConfirm: (results) {
+      //_selectedAnimals = results;
+    },
+  );
 }
 
 showAlertDialogImage(BuildContext context, String image) {
