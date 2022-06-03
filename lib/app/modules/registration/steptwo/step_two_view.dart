@@ -124,7 +124,7 @@ class StepTwoView extends GetView<StepTwoController> {
                           shape: BoxShape.circle,
                           image: new DecorationImage(
                             fit: BoxFit.fill,
-                            image: AssetImage(profileImage1),
+                            image: AssetImage(profileImage3),
                           ),
                         ),
                       ),

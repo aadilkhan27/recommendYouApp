@@ -14,8 +14,10 @@ import 'package:recommend_you/app/modules/dashboard/more/contactus/contact_us_vi
 import 'package:recommend_you/app/modules/dashboard/more/more_controller.dart';
 import 'package:recommend_you/app/modules/dashboard/more/privacypolicy/privacy_policy_view.dart';
 import 'package:recommend_you/app/modules/dashboard/more/settingpreference/preference_view.dart';
+import 'package:recommend_you/app/modules/dashboard/more/settings/settings_view.dart';
 import 'package:recommend_you/app/modules/dashboard/more/termscondition/terms_condition_view.dart';
 import 'package:recommend_you/app/modules/dashboard/more/termscondition/termscondition_binding.dart';
+import 'package:recommend_you/app/modules/profile/profile_view.dart';
 
 import '../../../core/values/colors.dart';
 import '../../../core/values/strings.dart';
@@ -59,7 +61,7 @@ class MoreView extends GetView<MoreController> {
                           width: 10,
                         ),
                         Text(
-                          "Setting",
+                          "Menu",
                           style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.normal),
@@ -80,164 +82,57 @@ class MoreView extends GetView<MoreController> {
                             padding: EdgeInsets.only(left: 15.0, right: 15.0),
                             child: ListTile(
                                 leading: Image(
-                                  image: AssetImage(changeLanguage),
+                                  image: AssetImage(myProfileIcon),
                                   width: 20,
                                   height: 20,
                                 ),
-                                title: Text('Language Change'),
+                                title: Text('My Profile'),
                                 onTap: () {
-                                  showLanguageAlertDialog(context);
+                                  /*Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (builder) =>
+                                              ProfileView()));*/
+                                  Get.toNamed(Routes.profileView);
                                 }),
                           ),
+
                           Container(
                             padding: EdgeInsets.only(left: 15.0, right: 15.0),
                             child: ListTile(
                               leading: Image(
-                                image: AssetImage(changeContact),
+                                image: AssetImage(settingIcon),
                                 width: 20,
                                 height: 20,
                               ),
-                              title: Text('Change Contact Details'),
+                              title: Text('Setting'),
                               onTap: () {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (builder) =>
-                                            ChangeContactView()));
+                                        builder: (builder) => SettingsView()));
                               },
                             ),
                           ),
+
                           Container(
                             padding: EdgeInsets.only(left: 15.0, right: 15.0),
                             child: ListTile(
                               leading: Image(
-                                image: AssetImage(changePassword),
+                                image: AssetImage(faqIcon),
                                 width: 20,
                                 height: 20,
                               ),
-                              title: Text('Change Password'),
+                              title: Text('Frequently Asked Question'),
                               onTap: () {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (builder) =>
-                                            ChangePasswordView()));
+                                        builder: (builder) => FaqView()));
                               },
                             ),
                           ),
-                          Container(
-                            padding: EdgeInsets.only(left: 15.0, right: 15.0),
-                            child: ListTile(
-                              leading: Image(
-                                image: AssetImage(deleteAcc),
-                                width: 20,
-                                height: 20,
-                              ),
-                              title: Text('Delete Account'),
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (builder) =>
-                                            DeleteAccountView()));
-                              },
-                              //TODO
-                              /*showModalBottomSheet<dynamic>(
-                      isScrollControlled: true,
-                        context: context,
-                        builder: (context) {
-                          return SafeArea(
-                            child: Container(
-                              child: Column(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.only(top: 35.0,left: 35,right: 35),
-                                    child: Text(
-                                      'We are sorry you want to leave. Can you tell us why? We would like to learn from any mistakes we may have made.',
-                                      style: TextStyle(fontSize: 12),
-                                      textAlign: TextAlign.center,
-                                    ),
-                                  ),
-                                  CheckboxListTile(
-                                    value: false,
-                                    onChanged: (value) {},
-                                    title: Text('The content is not interesting'),
-                                    controlAffinity:
-                                        ListTileControlAffinity.leading,
-                                  ),
-                                  CheckboxListTile(
-                                    value: false,
-                                    onChanged: (value) {},
-                                    title: Text('There are too much spam'),
-                                    controlAffinity:
-                                        ListTileControlAffinity.leading,
-                                  ),
-                                  CheckboxListTile(
-                                    value: false,
-                                    onChanged: (value) {},
-                                    title: Text('I don\'t trust this platform'),
-                                    controlAffinity:
-                                        ListTileControlAffinity.leading,
-                                  ),
-                                  CheckboxListTile(
-                                    value: false,
-                                    onChanged: (value) {},
-                                    title: Text('Other'),
-                                    controlAffinity:
-                                        ListTileControlAffinity.leading,
-                                  ),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(left: 16.0),
-                                    child: Align(
-                                      child: Text(
-                                        'Please give us additional explanation',
-                                        style: TextStyle(color: Colors.grey),
-                                        textAlign: TextAlign.start,
-                                      ),
-                                      alignment: Alignment.topLeft,
-                                    ),
-                                  ),
-                                  Container(
-                                    margin: EdgeInsets.all(12),
-                                    height: 5*24,
-                                    child: TextField(
-                                      maxLines: 5,
-                                      decoration: InputDecoration(
-                                        hintText: "Enter a message",
-                                        fillColor: Colors.grey[300],
-                                        filled: true,
-                                      ),
-                                    ),
-                                  ),
-                                  Align(
-                                    alignment: Alignment.bottomRight,
-                                    child: Container(
-                                      height: 40,
-                                      width: 100,
-                                      margin: EdgeInsets.only(right: 30),
-                                      decoration: BoxDecoration(
-                                          color: Colors.purple,
-                                          border: Border.all(color: Colors.purple),
-                                          borderRadius:
-                                          const BorderRadius.all(Radius.circular(5))),
-                                      alignment: Alignment.center,
-                                      child:  Text(
-                                        'SUBMIT',
-                                        style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          );
-                        });
-                  },*/
-                            ),
-                          ),
+
                           Container(
                             padding: EdgeInsets.only(left: 15.0, right: 15.0),
                             child: ListTile(
@@ -256,6 +151,7 @@ class MoreView extends GetView<MoreController> {
                               },
                             ),
                           ),
+
                           Container(
                             padding: EdgeInsets.only(left: 15.0, right: 15.0),
                             child: ListTile(
@@ -274,17 +170,7 @@ class MoreView extends GetView<MoreController> {
                               },
                             ),
                           ),
-                          /*Container(
-                  padding: EdgeInsets.only(left: 15.0, right: 15.0),
-                  child: ListTile(
-                    leading: Icon(Icons.lock),
-                    title: Text('FAQ'),
-                    onTap: () {
-                      //Navigator.push(context, MaterialPageRoute(builder: (builder) => ChangePasswordView()));
-                      Get.toNamed(Routes.faq);
-                    },
-                  ),
-                ),*/
+
                           Container(
                             padding: EdgeInsets.only(left: 15.0, right: 15.0),
                             child: ListTile(
@@ -303,23 +189,7 @@ class MoreView extends GetView<MoreController> {
                               },
                             ),
                           ),
-                          Container(
-                            padding: EdgeInsets.only(left: 15.0, right: 15.0),
-                            child: ListTile(
-                              leading: Image(
-                                image: AssetImage(faqIcon),
-                                width: 20,
-                                height: 20,
-                              ),
-                              title: Text('FAQ'),
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (builder) => FaqView()));
-                              },
-                            ),
-                          ),
+
                           Container(
                             padding: EdgeInsets.only(left: 15.0, right: 15.0),
                             child: ListTile(
@@ -335,7 +205,10 @@ class MoreView extends GetView<MoreController> {
                               },
                             ),
                           ),
-                        ])))
+
+                        ])
+                    )
+                )
               ],
             ),
           ),

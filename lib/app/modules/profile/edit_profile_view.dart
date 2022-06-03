@@ -86,63 +86,66 @@ class EditProfileView extends GetView<EditProfileController> {
                           height: 1,
                         ),
                         SizedBox(
-                          height: 40,
+                          height: 30,
                         ),
-                       /* Container(
-                          width: 100.0,
-                          height: 100.0,
-                          decoration: new BoxDecoration(
-                            shape: BoxShape.circle,
-                            image: new DecorationImage(
-                              fit: BoxFit.fill,
-                              image: AssetImage(profileImage1),
-                            ),
-                          ),
-                        ),*/
-                        Column(
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.only(top: 0.0),
-                              child: new Stack(fit: StackFit.loose, children: <Widget>[
-                                Row(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: <Widget>[
-                                    new Container(
-                                        width: 140.0,
-                                        height: 140.0,
-                                        decoration: new BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          image: new DecorationImage(
-                                            image: new AssetImage(
-                                                profileImage3),
-                                            fit: BoxFit.cover,
-                                          ),
-                                        )),
-                                  ],
-                                ),
-                                Padding(
-                                    padding: EdgeInsets.only(top: 80.0, right: 130.0),
-                                    child: new Row(
-                                      mainAxisAlignment: MainAxisAlignment.end,
-                                      children: <Widget>[
-                                        new CircleAvatar(
-                                          backgroundColor: Colors.purple,
-                                          radius: 25.0,
-                                          child: new Icon(
-                                            Icons.edit,
-                                            color: Colors.white,
-                                          ),
-                                        )
-                                      ],
-                                    )),
-                              ],
+
+                        Container(
+                          height: 120,
+                          width: 120,
+                          child: Column(
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.only(top: 0.0),
+                                child: new Stack(fit: StackFit.loose, children: <Widget>[
+                                  Row(
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: <Widget>[
+                                      new Container(
+                                          width: 100.0,
+                                          height: 100.0,
+                                          decoration: new BoxDecoration(
+                                            shape: BoxShape.circle,
+                                            image: new DecorationImage(
+                                              image: new AssetImage(
+                                                  profileImage3),
+                                              fit: BoxFit.cover,
+                                            ),
+                                          )),
+                                    ],
+                                  ),
+                                  Padding(
+                                      padding: EdgeInsets.only(right: 10.0, top: 70),
+                                      child: new Row(
+                                        mainAxisAlignment: MainAxisAlignment.end,
+                                        children: <Widget>[
+
+                                          Container(
+                                            height: 30,
+                                            width: 30,
+                                              decoration: BoxDecoration(
+                                                  color: Colors.purple,
+                                                  border: Border.all(color: Colors.purple),
+                                                  borderRadius:
+                                                  const BorderRadius.all(Radius.circular(15))),
+                                            padding: EdgeInsets.all(5),
+
+                                            child: Icon(
+                                              Icons.edit,
+                                              color: Colors.white,
+                                              size: 16,
+                                            )
+                                          )
+                                        ],
+                                      )),
+                                ],
+                                )
                               )
-                            )
-                                ]
+                                  ]
+                          ),
                         ),
                         SizedBox(
-                          height: 20,
+                          height: 10,
                         ),
                         Text(
                           'Change your profile photo',
@@ -150,7 +153,7 @@ class EditProfileView extends GetView<EditProfileController> {
                               color: Colors.black, fontWeight: FontWeight.normal, fontSize: 16),
                         ),
                         SizedBox(
-                          height: 30,
+                          height: 40,
                         ),
                         Container(
                           width: MediaQuery.of(context).size.width,
@@ -307,6 +310,7 @@ class EditProfileView extends GetView<EditProfileController> {
                                       child: TextField(
                                         keyboardType: TextInputType.multiline,
                                         maxLength: 1000,
+                                        maxLines: null,
                                         cursorColor: Colors.black,
                                         decoration: InputDecoration(
                                             enabledBorder: UnderlineInputBorder(
@@ -315,7 +319,7 @@ class EditProfileView extends GetView<EditProfileController> {
                                             focusedBorder: UnderlineInputBorder(
                                               borderSide: BorderSide(color: Colors.purple),
                                             ),
-                                            hintText: "Tell others about ypurself including the thinga you like",
+                                            hintText: "Tell others about yourself including the thinga you like",
                                             hintStyle: TextStyle(color: Colors.grey)),
                                       ),
                                     ),

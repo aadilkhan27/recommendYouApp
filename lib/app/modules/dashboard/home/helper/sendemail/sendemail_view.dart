@@ -37,476 +37,472 @@ class SendEmailView extends GetView<SendEmailController>{
         body: Stack(
             children: [
               SingleChildScrollView(
-                child: Container(
-                  height: MediaQuery.of(context).size.height,
-                  width: MediaQuery.of(context).size.width,
-                  child: Column(
-                    children: [
-                       SizedBox(
-                      height: 40,
-                    ),
+                child: SafeArea(
+                  child: Container(
+                    height: MediaQuery.of(context).size.height,
+                    width: MediaQuery.of(context).size.width,
+                    child: Column(
+                      children: [
+                        
+                        Container(
+                          height: 50,
+                          width: MediaQuery.of(context).size.width,
+                          padding: EdgeInsets.only(right: 10),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
 
-                      Container(
-                        height: 50,
-                        width: MediaQuery.of(context).size.width,
-                        padding: EdgeInsets.only(right: 10),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-
-                            InkWell(
-                              onTap: () {
-                                Get.back();
-                              },
-                              child: Padding(
-                                padding: const EdgeInsets.only(left: 15.0),
-                                child: Text(
-                                  "Cancel",
-                                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                            ),
-                            Spacer(),
-                            InkWell(
-                              child:  Padding(
-                                padding: const EdgeInsets.only(right: 8.0),
-                                child: Text(
-                                  "Send Email",
-                                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                              onTap: () {
-                                showAlertDialog(context);
-                              },
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                          ],
-                        ),
-                      ),
-                      Divider(
-                        color: Colors.black,
-                        height: 1,
-                      ),
-
-
-
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Container(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                SizedBox(
-                                  height: 10,
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 15.0, right: 15.0, top: 10, bottom: 10),
-                                  child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.start,
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'From : Arash Djabani',
-                                          style: TextStyle(
-                                            fontSize: 16,
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          height: 5,
-                                        ),
-                                        Text(
-                                          'Email : arash.djabani@gmail.com',
-                                          style: TextStyle(
-                                            fontSize: 16,
-                                          ),
-                                        ),
-                                      ]
+                              InkWell(
+                                onTap: () {
+                                  Get.back();
+                                },
+                                child: Padding(
+                                  padding: const EdgeInsets.only(left: 15.0),
+                                  child: Text(
+                                    "Cancel",
+                                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                                   ),
                                 ),
-
-                              ],
-                            ),
-                          ),
-                          Divider(
-                            color: Colors.black,
-                            height: 1,
-                          ),
-                        ],
-                      ),
-
-                      Divider(
-                        color: Colors.black,
-                        height: 1,
-                      ),
-
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Container(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 15.0, right: 15.0, top: 20, bottom: 20),
+                              ),
+                              Spacer(),
+                              InkWell(
+                                child:  Padding(
+                                  padding: const EdgeInsets.only(right: 8.0),
                                   child: Text(
-                                    'To : Thomas Dobos',
-                                    style: TextStyle(
-                                      fontSize: 16,
+                                    "Send Email",
+                                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                                onTap: () {
+                                  showAlertDialog(context);
+                                },
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                            ],
+                          ),
+                        ),
+                        Divider(
+                          color: Colors.black,
+                          height: 1,
+                        ),
+
+
+
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Container(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 15.0, right: 15.0, top: 10, bottom: 10),
+                                    child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.start,
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            'From : Arash Djabani',
+                                            style: TextStyle(
+                                              fontSize: 16,
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            height: 5,
+                                          ),
+                                          Text(
+                                            'Email : arash.djabani@gmail.com',
+                                            style: TextStyle(
+                                              fontSize: 16,
+                                            ),
+                                          ),
+                                        ]
                                     ),
                                   ),
-                                ),
 
-                              ],
-                            ),
-                          ),
-                          Divider(
-                            color: Colors.black,
-                            height: 1,
-                          ),
-                        ],
-                      ),
-
-
-                      Divider(
-                        color: Colors.black,
-                        height: 0.5,
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-
-
-
-
-                    /*  Container(
-                        height: 30,
-                        width: MediaQuery.of(context).size.width,
-
-                        //margin: EdgeInsets.only(right: 15, left: 5),
-                        child: DropdownButtonFormField2(
-                          decoration: InputDecoration(
-                            isDense: true,
-                            contentPadding: EdgeInsets.zero,
-                            enabledBorder: const OutlineInputBorder(
-                              // width: 0.0 produces a thin "hairline" border
-                              borderSide: const BorderSide(color: Colors.white, width: 0.0),
-                            ),
-                            focusedBorder: const OutlineInputBorder(
-                              // width: 0.0 produces a thin "hairline" border
-                              borderSide: const BorderSide(color: Colors.white, width: 0.0),
-                            ),
-                            border: OutlineInputBorder(
-                              borderSide: const BorderSide(color: Colors.black, width: 0.0),
-                              borderRadius: BorderRadius.circular(0),
-                            ),
-                          ),
-                          isExpanded: true,
-                          hint: const Text(
-                            'Categories',
-                            style: TextStyle(
-                                fontSize: 14, color: Colors.black),
-                          ),
-                          icon: const Icon(
-                            Icons.arrow_drop_down,
-                            color: Colors.black,
-                          ),
-                          iconSize: 30,
-                          buttonHeight: 60,
-                          buttonPadding:
-                          const EdgeInsets.only(left: 20, right: 10),
-                          dropdownDecoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(15),
-                              color: bonJourColor
-                          ),
-                          items: spinnerItems
-                              .map((item) => DropdownMenuItem<String>(
-                            value: item,
-                            child: Text(
-                              item,
-                              style: const TextStyle(
-                                  fontSize: 12,
-                                  color: Colors.black),
-                            ),
-                          ))
-                              .toList(),
-                          validator: (value) {
-                            if (value == null) {
-                              return 'RecommendYou';
-                            }
-                          },
-                          onChanged: (value) {
-                            //Do something when changing the item if you want.
-                          },
-                          onSaved: (value) {
-                            selectedValue = value.toString();
-                          },
-                        ),
-                      ),*/
-
-                      Container(
-                        height: 30,
-                        width: MediaQuery.of(context).size.width,
-                        //padding: EdgeInsets.only(left: 2, right: 2),
-                        // margin: EdgeInsets.only(right: 15, left: 15),
-                        child: DropdownButtonFormField2(
-                          decoration: InputDecoration(
-                            isDense: true,
-                            contentPadding: EdgeInsets.zero,
-                            enabledBorder: const OutlineInputBorder(
-                              // width: 0.0 produces a thin "hairline" border
-                              borderSide: const BorderSide(color: Colors.white, width: 0.0),
-                            ),
-                            focusedBorder: const OutlineInputBorder(
-                              // width: 0.0 produces a thin "hairline" border
-                              borderSide: const BorderSide(color: Colors.white, width: 0.0),
-                            ),
-                            border: OutlineInputBorder(
-                              borderSide: const BorderSide(color: Colors.black, width: 0.0),
-                              borderRadius: BorderRadius.circular(0),
-                            ),
-                          ),
-                          isExpanded: true,
-                          hint: Text(
-                            '* Category',
-                            style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.normal,
-                                color: Colors.black),
-                            ),
-
-                          icon: SvgPicture.asset(icDownArrow),
-                          iconSize: 30,
-                          buttonHeight: 60,
-                          iconEnabledColor: Colors.white,
-                          selectedItemHighlightColor:
-                          primaryLightColor,
-
-                          buttonPadding: const EdgeInsets.only(left: 15, right: 20),
-                          dropdownDecoration: BoxDecoration(
-                              borderRadius:
-                              BorderRadius.circular(5),
-                              color: veryLightWhite),
-                          items: spinnerItems
-                              .map((item) =>
-                              DropdownMenuItem<String>(
-                                value: item,
-                                child: Text(
-                                  item,
-                                  style: const TextStyle(
-                                      fontSize: 14,
-                                      color: Colors.black),
-                                ),
-                              ))
-                              .toList(),
-                          validator: (value) {
-                            if (value == null) {
-                              return '* Category';
-                            }
-                          },
-                          onChanged: (value) {
-                            //Do something when changing the item if you want.
-                          },
-                          onSaved: (value) {
-                            selectedValue = value.toString();
-                          },
-                        ),
-                      ),
-
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Divider(
-                        color: Colors.black,
-                        height: 0.5,
-                      ),
-                      SizedBox(
-                        height: 0,
-                      ),
-
-                      Expanded(
-                        child: Column(
-                          children: [
-                            Container(
-                              height: 150,
-                              width: MediaQuery.of(context).size.width,
-                              margin: EdgeInsets.only(right: 12, left: 12, ),
-                              child: TextField(
-                                keyboardType: TextInputType.multiline,
-                                maxLines: null,
-                                cursorColor: Colors.black,
-                                style: TextStyle(fontSize: 16, color: Colors.black, height: 1.4),
-                                decoration: InputDecoration(
-                                  enabledBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(color: Colors.white),
-                                  ),
-                                  focusedBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(color: Colors.white),
-                                  ),
-                                  hintText: "How can I help you?",
-                                  hintStyle: TextStyle(color: Colors.grey),
-                                  filled: false,
-                                ),
+                                ],
                               ),
                             ),
                             Divider(
-                              color: Colors.black,
-                              height: 0.5,
+                              color: Colors.grey,
+                              height: 1,
                             ),
-                            Container(
-                              height: 150,
-                              width: MediaQuery.of(context).size.width,
-                              margin: EdgeInsets.only(right: 12, left: 12, ),
-                              child: TextField(
-                                keyboardType: TextInputType.multiline,
-                                maxLines: null,
-                                cursorColor: Colors.black,
-                                style: TextStyle(fontSize: 16, color: Colors.black, height: 1.4),
-                                decoration: InputDecoration(
-                                  enabledBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(color: Colors.white),
-                                  ),
-                                  focusedBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(color: Colors.white),
-                                  ),
-                                  hintText: "What are some things you like or don't like?",
-                                  hintStyle: TextStyle(color: Colors.grey),
-                                  filled: false,
-                                ),
-                              ),
-                            ),
-                            Divider(
-                              color: Colors.black,
-                              height: 0.5,
-                            ),
-                            /*Container(
-                              height: MediaQuery.of(context).size.height,
-                              width: MediaQuery.of(context).size.width/2,
-                              margin: EdgeInsets.only(right: 12, left: 12, ),
-                              child: TextField(
-                                keyboardType: TextInputType.multiline,
-                                maxLines: null,
-                                cursorColor: Colors.black,
-                                style: TextStyle(fontSize: 16, color: Colors.black, height: 1.4),
-                                decoration: InputDecoration(
-                                  enabledBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(color: Colors.white),
-                                  ),
-                                  focusedBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(color: Colors.white),
-                                  ),
-                                  hintText: "What are some things you like or don't like?",
-                                  hintStyle: TextStyle(color: Colors.grey),
-                                  filled: false,
-                                ),
-                              ),
-                            ),*/
                           ],
                         ),
-                      ),
-                      /*Padding(
-                    padding: const EdgeInsets.only(right: 20.0),
-                    child: Align(
-                        alignment: Alignment.bottomRight,
-                        child: InkWell(
-                            onTap: () {
-                              showModalBottomSheet(
-                                  isScrollControlled: true,
-                                  context: context,
-                                  builder: (context) {
-                                    return SafeArea(
-                                      child: Wrap(
-                                        children: [
-                                          ListTile(
-                                            leading:
-                                            Icon(Icons.camera_alt_rounded),
-                                            title: Text(
-                                              'Add an image or video',
-                                              style: TextStyle(
-                                                  fontWeight: FontWeight.bold),
-                                            ),
-                                            onTap: () {
-                                              Navigator.of(context).pop();
-                                            },
-                                          ),
-                                          Divider(
-                                            height: 1,
-                                            color: Colors.black,
-                                          ),
-                                          ListTile(
-                                            leading: Icon(Icons.save_outlined),
-                                            title: Text(
-                                              'Save for my self',
-                                              style: TextStyle(
-                                                  fontWeight: FontWeight.bold),
-                                            ),
-                                            onTap: () {
-                                              ScaffoldMessenger.of(context)
-                                                  .showSnackBar(SnackBar(
-                                                content: Text('Saved'),
-                                              ));
-                                              Navigator.of(context).pop();
-                                            },
-                                          ),
-                                          Divider(
-                                            height: 1,
-                                            color: Colors.black,
-                                          ),
-                                          ListTile(
-                                            title: Text(
-                                              'Share :',
-                                              style: TextStyle(
-                                                  fontWeight: FontWeight.bold),
-                                            ),
-                                            leading: Icon(Icons.share),
-                                          ),
-                                          Divider(
-                                            height: 1,
-                                            color: Colors.black,
-                                          ),
-                                          ListTile(
-                                            title: Text('Publically'),
-                                            onTap: () {
-                                              Navigator.of(context).pop();
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text(
-                                                'With one or more followers'),
-                                            onTap: () {
-                                              Navigator.of(context).pop();
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text('Using other apps'),
-                                            onTap: () {
-                                              Navigator.of(context).pop();
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text('With helpers'),
-                                            onTap: () {
-                                              Navigator.of(context).pop();
-                                            },
-                                          ),
-                                        ],
+
+                        Divider(
+                          color: Colors.grey,
+                          height: 1,
+                        ),
+
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Container(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 15.0, right: 15.0, top: 20, bottom: 20),
+                                    child: Text(
+                                      'To : Thomas Dobos',
+                                      style: TextStyle(
+                                        fontSize: 16,
                                       ),
-                                    );
-                                  });
-                            },
-                            child: Text(
-                              '+',
+                                    ),
+                                  ),
+
+                                ],
+                              ),
+                            ),
+                            Divider(
+                              color: Colors.black,
+                              height: 0.5,
+                            ),
+                          ],
+                        ),
+
+
+                        Divider(
+                          color: Colors.black,
+                          height: 0.5,
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+
+
+
+
+                      /*  Container(
+                          height: 30,
+                          width: MediaQuery.of(context).size.width,
+
+                          //margin: EdgeInsets.only(right: 15, left: 5),
+                          child: DropdownButtonFormField2(
+                            decoration: InputDecoration(
+                              isDense: true,
+                              contentPadding: EdgeInsets.zero,
+                              enabledBorder: const OutlineInputBorder(
+                                // width: 0.0 produces a thin "hairline" border
+                                borderSide: const BorderSide(color: Colors.white, width: 0.0),
+                              ),
+                              focusedBorder: const OutlineInputBorder(
+                                // width: 0.0 produces a thin "hairline" border
+                                borderSide: const BorderSide(color: Colors.white, width: 0.0),
+                              ),
+                              border: OutlineInputBorder(
+                                borderSide: const BorderSide(color: Colors.black, width: 0.0),
+                                borderRadius: BorderRadius.circular(0),
+                              ),
+                            ),
+                            isExpanded: true,
+                            hint: const Text(
+                              'Categories',
                               style: TextStyle(
-                                  fontSize: 22,
+                                  fontSize: 14, color: Colors.black),
+                            ),
+                            icon: const Icon(
+                              Icons.arrow_drop_down,
+                              color: Colors.black,
+                            ),
+                            iconSize: 30,
+                            buttonHeight: 60,
+                            buttonPadding:
+                            const EdgeInsets.only(left: 20, right: 10),
+                            dropdownDecoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(15),
+                                color: bonJourColor
+                            ),
+                            items: spinnerItems
+                                .map((item) => DropdownMenuItem<String>(
+                              value: item,
+                              child: Text(
+                                item,
+                                style: const TextStyle(
+                                    fontSize: 12,
+                                    color: Colors.black),
+                              ),
+                            ))
+                                .toList(),
+                            validator: (value) {
+                              if (value == null) {
+                                return 'RecommendYou';
+                              }
+                            },
+                            onChanged: (value) {
+                              //Do something when changing the item if you want.
+                            },
+                            onSaved: (value) {
+                              selectedValue = value.toString();
+                            },
+                          ),
+                        ),*/
+
+                        Container(
+                          height: 30,
+                          width: MediaQuery.of(context).size.width,
+                          //padding: EdgeInsets.only(left: 2, right: 2),
+                          // margin: EdgeInsets.only(right: 15, left: 15),
+                          child: DropdownButtonFormField2(
+                            decoration: InputDecoration(
+                              isDense: true,
+                              contentPadding: EdgeInsets.zero,
+                              enabledBorder: const OutlineInputBorder(
+                                // width: 0.0 produces a thin "hairline" border
+                                borderSide: const BorderSide(color: Colors.white, width: 0.0),
+                              ),
+                              focusedBorder: const OutlineInputBorder(
+                                // width: 0.0 produces a thin "hairline" border
+                                borderSide: const BorderSide(color: Colors.white, width: 0.0),
+                              ),
+                              border: OutlineInputBorder(
+                                borderSide: const BorderSide(color: Colors.black, width: 0.0),
+                                borderRadius: BorderRadius.circular(0),
+                              ),
+                            ),
+                            isExpanded: true,
+                            hint: Text(
+                              '* Category',
+                              style: TextStyle(
+                                  fontSize: 14,
                                   fontWeight: FontWeight.normal,
-                                  color: Colors.purple),
-                            ))),
-                  )*/
-                    ],
+                                  color: Colors.black),
+                              ),
+
+                            icon: SvgPicture.asset(icDownArrow),
+                            iconSize: 30,
+                            buttonHeight: 60,
+                            iconEnabledColor: Colors.white,
+                            selectedItemHighlightColor:
+                            primaryLightColor,
+
+                            buttonPadding: const EdgeInsets.only(left: 15, right: 20),
+                            dropdownDecoration: BoxDecoration(
+                                borderRadius:
+                                BorderRadius.circular(5),
+                                color: veryLightWhite),
+                            items: spinnerItems
+                                .map((item) =>
+                                DropdownMenuItem<String>(
+                                  value: item,
+                                  child: Text(
+                                    item,
+                                    style: const TextStyle(
+                                        fontSize: 14,
+                                        color: Colors.black),
+                                  ),
+                                ))
+                                .toList(),
+                            validator: (value) {
+                              if (value == null) {
+                                return '* Category';
+                              }
+                            },
+                            onChanged: (value) {
+                              //Do something when changing the item if you want.
+                            },
+                            onSaved: (value) {
+                              selectedValue = value.toString();
+                            },
+                          ),
+                        ),
+
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Divider(
+                          color: Colors.black,
+                          height: 0.5,
+                        ),
+
+                        Expanded(
+                          child: Column(
+                            children: [
+                              Container(
+                                height: 150,
+                                width: MediaQuery.of(context).size.width,
+                                margin: EdgeInsets.only(right: 12, left: 12, ),
+                                child: TextField(
+                                  keyboardType: TextInputType.multiline,
+                                  maxLines: null,
+                                  cursorColor: Colors.black,
+                                  style: TextStyle(fontSize: 16, color: Colors.black, height: 1.4),
+                                  decoration: InputDecoration(
+                                    enabledBorder: UnderlineInputBorder(
+                                      borderSide: BorderSide(color: Colors.white),
+                                    ),
+                                    focusedBorder: UnderlineInputBorder(
+                                      borderSide: BorderSide(color: Colors.white),
+                                    ),
+                                    hintText: "How can I help you?",
+                                    hintStyle: TextStyle(color: Colors.grey),
+                                    filled: false,
+                                  ),
+                                ),
+                              ),
+                              Divider(
+                                color: Colors.grey,
+                                height: 1,
+                              ),
+                              Container(
+                                height: 150,
+                                width: MediaQuery.of(context).size.width,
+                                margin: EdgeInsets.only(right: 12, left: 12, ),
+                                child: TextField(
+                                  keyboardType: TextInputType.multiline,
+                                  maxLines: null,
+                                  cursorColor: Colors.black,
+                                  style: TextStyle(fontSize: 16, color: Colors.black, height: 1.4),
+                                  decoration: InputDecoration(
+                                    enabledBorder: UnderlineInputBorder(
+                                      borderSide: BorderSide(color: Colors.white),
+                                    ),
+                                    focusedBorder: UnderlineInputBorder(
+                                      borderSide: BorderSide(color: Colors.white),
+                                    ),
+                                    hintText: "What are some things you like or don't like?",
+                                    hintStyle: TextStyle(color: Colors.grey),
+                                    filled: false,
+                                  ),
+                                ),
+                              ),
+                              Divider(
+                                color: Colors.grey,
+                                height: 1,
+                              ),
+                              /*Container(
+                                height: MediaQuery.of(context).size.height,
+                                width: MediaQuery.of(context).size.width/2,
+                                margin: EdgeInsets.only(right: 12, left: 12, ),
+                                child: TextField(
+                                  keyboardType: TextInputType.multiline,
+                                  maxLines: null,
+                                  cursorColor: Colors.black,
+                                  style: TextStyle(fontSize: 16, color: Colors.black, height: 1.4),
+                                  decoration: InputDecoration(
+                                    enabledBorder: UnderlineInputBorder(
+                                      borderSide: BorderSide(color: Colors.white),
+                                    ),
+                                    focusedBorder: UnderlineInputBorder(
+                                      borderSide: BorderSide(color: Colors.white),
+                                    ),
+                                    hintText: "What are some things you like or don't like?",
+                                    hintStyle: TextStyle(color: Colors.grey),
+                                    filled: false,
+                                  ),
+                                ),
+                              ),*/
+                            ],
+                          ),
+                        ),
+                        /*Padding(
+                      padding: const EdgeInsets.only(right: 20.0),
+                      child: Align(
+                          alignment: Alignment.bottomRight,
+                          child: InkWell(
+                              onTap: () {
+                                showModalBottomSheet(
+                                    isScrollControlled: true,
+                                    context: context,
+                                    builder: (context) {
+                                      return SafeArea(
+                                        child: Wrap(
+                                          children: [
+                                            ListTile(
+                                              leading:
+                                              Icon(Icons.camera_alt_rounded),
+                                              title: Text(
+                                                'Add an image or video',
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.bold),
+                                              ),
+                                              onTap: () {
+                                                Navigator.of(context).pop();
+                                              },
+                                            ),
+                                            Divider(
+                                              height: 1,
+                                              color: Colors.black,
+                                            ),
+                                            ListTile(
+                                              leading: Icon(Icons.save_outlined),
+                                              title: Text(
+                                                'Save for my self',
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.bold),
+                                              ),
+                                              onTap: () {
+                                                ScaffoldMessenger.of(context)
+                                                    .showSnackBar(SnackBar(
+                                                  content: Text('Saved'),
+                                                ));
+                                                Navigator.of(context).pop();
+                                              },
+                                            ),
+                                            Divider(
+                                              height: 1,
+                                              color: Colors.black,
+                                            ),
+                                            ListTile(
+                                              title: Text(
+                                                'Share :',
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.bold),
+                                              ),
+                                              leading: Icon(Icons.share),
+                                            ),
+                                            Divider(
+                                              height: 1,
+                                              color: Colors.black,
+                                            ),
+                                            ListTile(
+                                              title: Text('Publically'),
+                                              onTap: () {
+                                                Navigator.of(context).pop();
+                                              },
+                                            ),
+                                            ListTile(
+                                              title: Text(
+                                                  'With one or more followers'),
+                                              onTap: () {
+                                                Navigator.of(context).pop();
+                                              },
+                                            ),
+                                            ListTile(
+                                              title: Text('Using other apps'),
+                                              onTap: () {
+                                                Navigator.of(context).pop();
+                                              },
+                                            ),
+                                            ListTile(
+                                              title: Text('With helpers'),
+                                              onTap: () {
+                                                Navigator.of(context).pop();
+                                              },
+                                            ),
+                                          ],
+                                        ),
+                                      );
+                                    });
+                              },
+                              child: Text(
+                                '+',
+                                style: TextStyle(
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.normal,
+                                    color: Colors.purple),
+                              ))),
+                    )*/
+                      ],
+                    ),
                   ),
                 ),
               ),

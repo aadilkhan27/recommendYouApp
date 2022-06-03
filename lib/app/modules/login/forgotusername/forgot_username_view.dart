@@ -19,204 +19,206 @@ class ForgotUsername extends GetView<ForgotUsernameController> {
         resizeToAvoidBottomInset: true,
         backgroundColor: whiteColor,
         body: SingleChildScrollView(
-          child: Stack(
-            children: [
-              Container(
-                height: MediaQuery.of(context).size.height,
-                width: MediaQuery.of(context).size.width,
-                child: Column(
-                  children: [
-                    Container(
-                      margin: EdgeInsets.only(top: 50),
-                      height: 50,
-                      width: MediaQuery.of(context).size.width,
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
+          child: SafeArea(
+            child: Stack(
+              children: [
+                Container(
+                  height: MediaQuery.of(context).size.height,
+                  width: MediaQuery.of(context).size.width,
+                  child: Column(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(top: 0),
+                        height: 50,
+                        width: MediaQuery.of(context).size.width,
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
 
-                          Container(
-                            margin: EdgeInsets.only(left: 30, top: 20),
-                            child: InkWell(
-                              onTap: (){
-                                Get.back();
-                              },
-                              child:  SvgPicture.asset(
-                                icLeftArrow,
+                            Container(
+                              margin: EdgeInsets.only(left: 30, top: 20),
+                              child: InkWell(
+                                onTap: (){
+                                  Get.back();
+                                },
+                                child:  SvgPicture.asset(
+                                  icLeftArrow,
+                                ),
                               ),
                             ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      width: 60,
-                      height: 60,
-                      child: Image(
-                        image: AssetImage(bgSplash),
-                      ),
-                    ),
-
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Text(
-                      'Forgot username?',
-                      style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.normal,
-                          color: Colors.black),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Container(
-                      padding: EdgeInsets.only(left: 45, right: 45),
-                      child: Center(
-                        child: RichText(
-                          textAlign: TextAlign.center,
-                          text: TextSpan(children: [
-                            TextSpan(
-                                text: 'Enter your registered ',
-                                style: TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.normal,
-                                    color: Colors.black)),
-                            TextSpan(
-                                text: 'mobile number ',
-                                style: TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.normal,
-                                    color: primaryDarkColor)),
-                            TextSpan(
-                                text: '\n and we will send you an  ',
-                                style: TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.normal,
-                                    color: Colors.black)),
-                            TextSpan(
-                                text: 'OTP  ',
-                                style: TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.normal,
-                                    color: primaryDarkColor)),
-                            TextSpan(
-                                text:
-                                    '\n (Temporary password) to retrieve your username.',
-                                style: TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.normal,
-                                    color: Colors.black))
-                          ]),
+                          ],
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      height: 60,
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(left: 20, right: 20),
-                      child: Padding(
-                        padding: EdgeInsets.only(left: 30, right: 30, top: 10),
-                        child: TextField(
-                          maxLength: 10,
-                          keyboardType: TextInputType.number,
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(
-                                  color: primaryDarkColor, width: 1.0),
-                              borderRadius: BorderRadius.circular(5.0),
+                      Container(
+                        width: 60,
+                        height: 60,
+                        child: Image(
+                          image: AssetImage(bgSplash),
+                        ),
+                      ),
+
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Text(
+                        'Forgot username?',
+                        style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.normal,
+                            color: Colors.black),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(left: 45, right: 45),
+                        child: Center(
+                          child: RichText(
+                            textAlign: TextAlign.center,
+                            text: TextSpan(children: [
+                              TextSpan(
+                                  text: 'Enter your registered ',
+                                  style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.normal,
+                                      color: Colors.black)),
+                              TextSpan(
+                                  text: 'mobile number ',
+                                  style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.normal,
+                                      color: primaryDarkColor)),
+                              TextSpan(
+                                  text: '\n and we will send you an  ',
+                                  style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.normal,
+                                      color: Colors.black)),
+                              TextSpan(
+                                  text: 'OTP  ',
+                                  style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.normal,
+                                      color: primaryDarkColor)),
+                              TextSpan(
+                                  text:
+                                      '\n (Temporary password) to retrieve your username.',
+                                  style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.normal,
+                                      color: Colors.black))
+                            ]),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 60,
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(left: 20, right: 20),
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 30, right: 30, top: 10),
+                          child: TextField(
+                            maxLength: 10,
+                            keyboardType: TextInputType.number,
+                            decoration: InputDecoration(
+                              border: OutlineInputBorder(),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: const BorderSide(
+                                    color: primaryDarkColor, width: 1.0),
+                                borderRadius: BorderRadius.circular(5.0),
+                              ),
+                              labelStyle: TextStyle(color: Colors.black),
+                              labelText: 'Mobile number',
+                              counterText: "",
+                              contentPadding: EdgeInsets.all(10),
+                              //hintText: 'mobile number'
                             ),
-                            labelStyle: TextStyle(color: Colors.black),
-                            labelText: 'Mobile number',
-                            counterText: "",
-                            contentPadding: EdgeInsets.all(10),
-                            //hintText: 'mobile number'
                           ),
                         ),
                       ),
-                    ),
 
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-              Positioned(
-                right: 0,left: 0,bottom: 0,
-                child: Padding(
-                  padding: EdgeInsets.only(bottom: 40, left: 10, right: 10),
-                  child: Align(
-                    alignment: Alignment.bottomCenter,
-                    child: Container(
-                      child: Column(
-                        children: [
-                          InkWell(
-                            onTap: () {
+                Positioned(
+                  right: 0,left: 0,bottom: 0,
+                  child: Padding(
+                    padding: EdgeInsets.only(bottom: 40, left: 10, right: 10),
+                    child: Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Container(
+                        child: Column(
+                          children: [
+                            InkWell(
+                              onTap: () {
 //do something
-                              Get.offNamed(Routes.otpVerifyUsername);
-                            },
-                            child: Container(
-                              margin: const EdgeInsets.only(left: 45, right: 45),
-                              height: 50,
-                              width: MediaQuery.of(context).size.width,
-                              decoration: BoxDecoration(
-                                  color: primaryDarkColor,
-                                  border: Border.all(color: primaryDarkColor),
-                                  borderRadius:
-                                  const BorderRadius.all(Radius.circular(10))),
-                              alignment: Alignment.center,
-                              child: const Text(
-                                'SEND OTP(Temporary password)',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.bold),
+                                Get.offNamed(Routes.otpVerifyUsername);
+                              },
+                              child: Container(
+                                margin: const EdgeInsets.only(left: 45, right: 45),
+                                height: 50,
+                                width: MediaQuery.of(context).size.width,
+                                decoration: BoxDecoration(
+                                    color: primaryDarkColor,
+                                    border: Border.all(color: primaryDarkColor),
+                                    borderRadius:
+                                    const BorderRadius.all(Radius.circular(10))),
+                                alignment: Alignment.center,
+                                child: const Text(
+                                  'SEND OTP(Temporary password)',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.bold),
+                                ),
                               ),
                             ),
-                          ),
-                          SizedBox(
-                            height: 30,
-                          ),
-                          Container(
-                            margin: EdgeInsets.only(left: 45, right: 45),
-                            padding: EdgeInsets.only(bottom: 25),
-                            child: Center(
-                              child: RichText(
-                                textAlign: TextAlign.center,
-                                text: TextSpan(children: [
-                                  TextSpan(
-                                    text:
-                                    'Havn\'t received the OTP? send a message to ',
-                                    style: TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.normal,
-                                        color: Colors.black),
-                                  ),
-                                  TextSpan(
-                                    text: 'contact@recommendyou.nl',
-                                    style: TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.normal,
-                                        color: primaryDarkColor),
-                                  ),
-                                  TextSpan(
-                                    text:
-                                    ' using the email address registered with us',
-                                    style: TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.normal,
-                                        color: Colors.black),
-                                  ),
-                                ]),
+                            SizedBox(
+                              height: 30,
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(left: 45, right: 45),
+                              padding: EdgeInsets.only(bottom: 25),
+                              child: Center(
+                                child: RichText(
+                                  textAlign: TextAlign.center,
+                                  text: TextSpan(children: [
+                                    TextSpan(
+                                      text:
+                                      'Havn\'t received the OTP? send a message to ',
+                                      style: TextStyle(
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.normal,
+                                          color: Colors.black),
+                                    ),
+                                    TextSpan(
+                                      text: 'contact@recommendyou.nl',
+                                      style: TextStyle(
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.normal,
+                                          color: primaryDarkColor),
+                                    ),
+                                    TextSpan(
+                                      text:
+                                      ' using the email address registered with us',
+                                      style: TextStyle(
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.normal,
+                                          color: Colors.black),
+                                    ),
+                                  ]),
+                                ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),
-                ),
-              )
-            ],
+                )
+              ],
+            ),
           ),
         ),
       ),

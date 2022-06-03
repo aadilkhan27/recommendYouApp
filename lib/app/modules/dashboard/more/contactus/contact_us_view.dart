@@ -67,7 +67,7 @@ class ContactUsView extends GetView<ContactUsController> {
                         SizedBox(
                           height: 20,
                         ),
-                    Container(
+                        Container(
                       margin: EdgeInsets.only(
                           left: 0, right: 0, top: 10, bottom: 10),
                       child: Column(children: [
@@ -253,31 +253,27 @@ class ContactUsView extends GetView<ContactUsController> {
                                           ),
                                         ),
                                       ),
-                                      Container(
-                                        margin: EdgeInsets.only(left: 10, right: 20),
-                                        height: 150,
+                                      Padding(
+                                        padding: EdgeInsets.only(left: 20, right: 20),
                                         child: TextField(
-                                          cursorColor: Colors.purple,
-                                          maxLines: 15,
+                                          maxLength: null,
+                                          maxLines: 10,
+                                          cursorColor: Colors.black,
                                           decoration: InputDecoration(
-                                            enabledBorder: UnderlineInputBorder(
-                                              borderSide: BorderSide(color: Colors.black),
-                                            ),
-                                            focusedBorder: UnderlineInputBorder(
-                                              borderSide: BorderSide(color: Colors.purple),
-                                            ),
-                                            focusColor: Colors.purple,
-                                            hintText: "Reason",
-                                            fillColor: Colors.white,
-                                            filled: true,
-                                          ),
+                                              enabledBorder: UnderlineInputBorder(
+                                                borderSide: BorderSide(color: Colors.black),
+                                              ),
+                                              focusedBorder: UnderlineInputBorder(
+                                                borderSide: BorderSide(color: Colors.purple),
+                                              ),
+                                              hintText: 'Reason',
+                                              hintStyle: TextStyle(color: Colors.grey)),
                                         ),
-                                      )
+                                      ),
                                     ],
                                   ),
                                 )
                             ),
-
 
 
                             Align(

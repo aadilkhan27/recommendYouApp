@@ -36,4 +36,5 @@ abstract class Routes {
   static const landing= '/landing';
   static const likes= '/likes';
   static const userProfile= '/userProfile';
+  static const settings= '/settings';
 }

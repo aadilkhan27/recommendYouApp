@@ -26,6 +26,38 @@ class SearchView extends GetView<SearchController> {
     profileImage3,
   ];
 
+  List<String> names = [
+    "Ramon Ricardo",
+    "Tom Cruise",
+    "Michal Clark",
+    "Danial Warm",
+    "Strange",
+    "Simon Ricardo",
+    "Tom Cruise",
+    "Michal Clark",
+    "Danial Warm",
+    "Strange",
+    "Simon Ricardo",
+    "Tom Cruise",
+    "Michal Clark",
+  ];
+
+  List<String> userNames = [
+    "Ramon_Ricardo",
+    "Tom_Cruise",
+    "Michal_Clark",
+    "Danial_Warm",
+    "Strange",
+    "Simon_Ricardo",
+    "Tom_Cruise",
+    "Michal_Clark",
+    "Danial_Warm",
+    "Strange",
+    "Simon_Ricardo",
+    "Tom_Cruise",
+    "Michal_Clark",
+  ];
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -157,7 +189,7 @@ class SearchView extends GetView<SearchController> {
                                           children: [
                                             InkWell(
                                               child: Text(
-                                                'Ramon Ricardo',
+                                                names[index],
                                                 style: TextStyle(
                                                     fontSize: 16,
                                                     fontWeight:
@@ -172,7 +204,7 @@ class SearchView extends GetView<SearchController> {
                                               height: 5,
                                             ),
                                             Text(
-                                              'Ramon_Ricardo',
+                                                userNames[index],
                                               style: TextStyle(
                                                   fontSize: 12,
                                                   fontWeight:

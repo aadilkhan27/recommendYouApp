@@ -66,7 +66,7 @@ class ChangeContactView extends GetView<ChangeContactController> {
                               ),
                               Column(
                                 children: [
-                                  /*Align(
+                                  Align(
                                     alignment: Alignment.centerLeft,
                                     child: Padding(
                                       padding: EdgeInsets.only(left: 30, right: 30),
@@ -79,26 +79,70 @@ class ChangeContactView extends GetView<ChangeContactController> {
                                       ),
                                     ),
                                   ),
-                                  Padding(
-                                    padding: EdgeInsets.only(left: 30, right: 30),
-                                    child: TextField(
-                                      maxLength: 10,
-                                      cursorColor: Colors.black,
-                                      keyboardType: TextInputType.number,
-                                      decoration: InputDecoration(
-                                          enabledBorder: UnderlineInputBorder(
-                                            borderSide: BorderSide(color: Colors.purple),
+
+
+                                  Container(
+                                    margin: EdgeInsets.only(left: 30, right: 30),
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        SizedBox(
+
+                                          child: Container(
+                                            width: 50,
+                                            child: TextField(
+                                              enabled: false,
+                                              cursorColor: Colors.black,
+                                              keyboardType: TextInputType.number,
+                                              decoration: InputDecoration(
+                                                  enabledBorder: UnderlineInputBorder(
+                                                    borderSide: BorderSide(color: Colors.black),
+                                                  ),
+                                                  focusedBorder: UnderlineInputBorder(
+                                                    borderSide: BorderSide(color: Colors.black),
+                                                  ),
+                                                  //suffixIcon: Icon(Icons.keyboard_arrow_down, color: Colors.black,size: 14,),
+                                                  hintText: '+91',
+                                                  hintStyle: TextStyle(color: Colors.black)),
+                                            ),
                                           ),
-                                          focusedBorder: UnderlineInputBorder(
-                                            borderSide: BorderSide(color: Colors.purple),
+                                          //flex: 1,
+                                        ),
+                                        Flexible(
+                                          child: Container(
+                                            width: MediaQuery.of(context).size.width,
+                                            child: Padding(
+                                              padding: const EdgeInsets.only(left: 10),
+                                              child: TextField(
+                                                enabled: false,
+                                                maxLength: 10,
+                                                cursorColor: Colors.black,
+                                                keyboardType: TextInputType.number,
+                                                decoration: InputDecoration(
+                                                    enabledBorder: UnderlineInputBorder(
+                                                      borderSide: BorderSide(color: Colors.black),
+                                                    ),
+                                                    focusedBorder: UnderlineInputBorder(
+                                                      borderSide: BorderSide(color: Colors.black),
+                                                    ),
+                                                    suffixIcon: Icon(Icons.check_circle_outline_outlined, color: Colors.purple,),
+                                                    hintText: '9859859856',
+                                                    hintStyle: TextStyle(color: Colors.black)),
+                                              ),
+                                            ),
                                           ),
-                                          hintText: '9859859856',
-                                          hintStyle: TextStyle(color: Colors.grey)),
+                                          flex: 1,
+                                        ),
+
+                                      ],
                                     ),
                                   ),
+
+
                                   SizedBox(
                                     height: 20,
-                                  ),*/
+                                  ),
                                   Align(
                                     alignment: Alignment.centerLeft,
                                     child: Padding(

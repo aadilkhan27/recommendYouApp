@@ -76,6 +76,8 @@ const privacypolicy='assets/profile/privacy.svg';
 const logout='assets/settings/logout.png';
 
 
+const myProfileIcon='assets/settings/profile_icon.png';
+const settingIcon='assets/settings/setting_icon.png';
 const changeLanguage='assets/settings/language.png';
 const contactUS='assets/settings/email_contactus.png';
 const privacy='assets/settings/privacy.png';
@@ -103,9 +105,16 @@ const termsbanner='assets/images/termbanner.jpg';
 const bottomHome='assets/bottomIcons/home.svg';
 const bottomAdd='assets/bottomIcons/add.svg';
 const bottomMenu='assets/bottomIcons/Menu.svg';
+const bottomMenuFill='assets/bottomIcons/menufill.svg';
 const bottomNotification='assets/bottomIcons/notification_badge.svg';
 const bottomSearch='assets/bottomIcons/search.svg';
 
+const filter='assets/bottomIcons/filter.svg';
+const helperTop='assets/bottomIcons/helperTop.svg';
+
+const recommendYouLogo='assets/icons/ryouLogo.svg';
+
+const recommendYou='assets/images/RecommendYou.png';
 
 const bottomSearchFill='assets/bottomIcons/search_fill.svg';
 const bottomAddFill='assets/bottomIcons/add_fill.svg';

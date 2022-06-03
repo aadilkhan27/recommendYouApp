@@ -5,6 +5,13 @@ import 'package:recommend_you/app/core/values/colors.dart';
 class ProfileController extends GetxController with GetTickerProviderStateMixin {
   late TabController tabController;
 
+  final isSelected1 = false.obs;
+  final isSelected2 = false.obs;
+  final isSelected3 = false.obs;
+
+  final isSavedSelected1 = false.obs;
+  final isSavedSelected2 = false.obs;
+  final isSavedSelected3 = false.obs;
 
   final List<Tab> referralTabs = const <Tab>[
     Tab(

@@ -63,6 +63,8 @@ import '../modules/dashboard/home/helper/helper_bindings.dart';
 import '../modules/dashboard/home/helper/helper_view.dart';
 import '../modules/dashboard/more/changelanguage/change_language_binding.dart';
 import '../modules/dashboard/more/changelanguage/change_language_view.dart';
+import '../modules/dashboard/more/settings/settings_binding.dart';
+import '../modules/dashboard/more/settings/settings_view.dart';
 import '../modules/profile/like/likes_binding.dart';
 import '../modules/profile/userProfile/user_profile_binding.dart';
 import '../modules/profile/userProfile/user_profile_view.dart';
@@ -174,8 +176,8 @@ class AppPages {
         name: Routes.profileView,
         page: () => ProfileView(),
         binding: ProfileBinding(),
-        transition: Transition.leftToRightWithFade,
-        transitionDuration: Duration(seconds: 2)),
+        transition: Transition.leftToRight,
+        transitionDuration: Duration(milliseconds: 500)),
     GetPage(
         name: Routes.deleteAccount,
         page: () => DeleteAccountView(),
@@ -184,8 +186,8 @@ class AppPages {
         name: Routes.helper,
         page: () => HelperView(),
         binding: HelperBinding(),
-        transition: Transition.rightToLeftWithFade,
-        transitionDuration: Duration(seconds: 2)),
+        transition: Transition.rightToLeft,
+        transitionDuration: Duration(milliseconds: 500)),
     GetPage(
         name: Routes.changeLanguage,
         page: () => ChangeLangugaeView(),
@@ -205,5 +207,9 @@ class AppPages {
         name: Routes.userProfile,
         page: () => UserProfileView(),
         binding: UserProfileBinding()),
+    GetPage(
+        name: Routes.settings,
+        page: () => SettingsView(),
+        binding: SettingsBinding()),
   ];
 }

@@ -11,15 +11,23 @@ import '../../../../../dataModel/HelperModel.dart';
 import '../../../../core/values/colors.dart';
 import '../../../../core/values/keys.dart';
 import '../../../../core/values/strings.dart';
+import '../../../../routes/pages.dart';
 
 class HelperView extends GetView<HelperController> {
-
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
         FocusScope.of(context).unfocus();
+      },
+      onPanUpdate: (details) {
+
+        // Swiping in left direction.
+        if (details.delta.dx > 0) {
+         // Get.toNamed(Routes.helper);
+          Get.back();
+        }
       },
       child: Scaffold(
         resizeToAvoidBottomInset: true,

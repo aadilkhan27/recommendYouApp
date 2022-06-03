@@ -78,6 +78,7 @@ class NotificationView extends GetView<NotificationController> {
                           color: Colors.black,
                           height: 1,
                         ),
+
                         Container(
                           margin: EdgeInsets.only(
                               top: 10,
@@ -102,6 +103,7 @@ class NotificationView extends GetView<NotificationController> {
                                       onTap: () {
                                         /*showAlertDialogForProfile(
                                             context, image1);*/
+                                        Get.toNamed(Routes.profileView);
                                       },
                                       child: Container(
                                         width: 50.0,
@@ -125,9 +127,7 @@ class NotificationView extends GetView<NotificationController> {
                                       margin:
                                       EdgeInsets.only(top: 0),
                                       child: Column(
-                                        mainAxisAlignment:
-                                        MainAxisAlignment
-                                            .center,
+                                        mainAxisAlignment: MainAxisAlignment.center,
                                         //crossAxisAlignment: CrossAxisAlignment.start,
                                         children: [
                                           Container(
@@ -182,6 +182,7 @@ class NotificationView extends GetView<NotificationController> {
                                       onTap: () {
                                         /*showAlertDialogForProfile(
                                             context, image2);*/
+                                        //Get.toNamed(Routes.userProfile);
                                       },
                                       child: Container(
                                         width: 50.0,
@@ -262,6 +263,7 @@ class NotificationView extends GetView<NotificationController> {
                                       onTap: () {
                                         /*showAlertDialogForProfile(
                                             context, image3);*/
+                                        //Get.toNamed(Routes.userProfile);
                                       },
                                       child: Container(
                                         width: 50.0,
@@ -342,6 +344,7 @@ class NotificationView extends GetView<NotificationController> {
                                       onTap: () {
                                         /*showAlertDialogForProfile(
                                             context, image4);*/
+                                        //Get.toNamed(Routes.userProfile);
                                       },
                                       child: Container(
                                         width: 50.0,
@@ -422,6 +425,7 @@ class NotificationView extends GetView<NotificationController> {
                                       onTap: () {
                                         /*showAlertDialogForProfile(
                                             context, image5);*/
+                                        //Get.toNamed(Routes.userProfile);
                                       },
                                       child: Container(
                                         width: 50.0,
@@ -502,6 +506,7 @@ class NotificationView extends GetView<NotificationController> {
                                       onTap: () {
                                         /*showAlertDialogForProfile(
                                             context, image6);*/
+                                        //Get.toNamed(Routes.userProfile);
                                       },
                                       child: Container(
                                         width: 50.0,
@@ -581,7 +586,8 @@ class NotificationView extends GetView<NotificationController> {
                                     InkWell(
                                       onTap: () {
                                         /*showAlertDialogForProfile(
-                                            context, image1);*/
+                                          context, image1);*/
+                                        //Get.toNamed(Routes.userProfile);
                                       },
                                       child: Container(
                                         width: 50.0,
@@ -662,6 +668,7 @@ class NotificationView extends GetView<NotificationController> {
                                       onTap: () {
                                         /*showAlertDialogForProfile(
                                             context, image2);*/
+                                        //Get.toNamed(Routes.userProfile);
                                       },
                                       child: Container(
                                         width: 50.0,
@@ -742,6 +749,7 @@ class NotificationView extends GetView<NotificationController> {
                                       onTap: () {
                                         /*showAlertDialogForProfile(
                                             context, image3);*/
+                                        //Get.toNamed(Routes.userProfile);
                                       },
                                       child: Container(
                                         width: 50.0,
@@ -822,6 +830,8 @@ class NotificationView extends GetView<NotificationController> {
                                       onTap: () {
                                         /*showAlertDialogForProfile(
                                             context, image4);*/
+
+                                        Get.toNamed(Routes.userProfile);
                                       },
                                       child: Container(
                                         width: 50.0,
@@ -902,6 +912,8 @@ class NotificationView extends GetView<NotificationController> {
                                       onTap: () {
                                         /*showAlertDialogForProfile(
                                             context, image5);*/
+
+                                        //Get.toNamed(Routes.userProfile);
                                       },
                                       child: Container(
                                         width: 50.0,
@@ -982,6 +994,8 @@ class NotificationView extends GetView<NotificationController> {
                                       onTap: () {
                                         /*showAlertDialogForProfile(
                                             context, image6);*/
+
+                                        //Get.toNamed(Routes.userProfile);
                                       },
                                       child: Container(
                                         width: 50.0,

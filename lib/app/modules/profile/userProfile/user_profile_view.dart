@@ -7,11 +7,12 @@ import 'package:recommend_you/app/core/values/colors.dart';
 import 'package:recommend_you/app/core/values/keys.dart';
 import 'package:recommend_you/app/core/values/strings.dart';
 import 'package:recommend_you/app/modules/profile/profile_controller.dart';
+import 'package:recommend_you/app/modules/profile/userProfile/user_profile_controller.dart';
 import 'package:recommend_you/app/routes/pages.dart';
 import 'package:recommend_you/app/widgets/dropdown_button2.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-class UserProfileView extends GetView<ProfileController> {
+class UserProfileView extends GetView<UserProfileController> {
   final List<String> spinnerItems = [
     'All Categories',
     'Categories 1',
@@ -58,7 +59,7 @@ class UserProfileView extends GetView<ProfileController> {
                           width: 20,
                         ),
                         Text(
-                          'Ram_Ricard',
+                          'Ramon_Ricardo',
                           style: TextStyle(color: Colors.black, fontSize: 14),
                         ),
                         Spacer(),
@@ -93,21 +94,21 @@ class UserProfileView extends GetView<ProfileController> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              Container(
-                                width: (MediaQuery.of(context).size.width / 4) - 10,
-                                child: InkWell(
-                                  child: Container(
-                                      width: 60.0,
-                                      height: 60.0,
-                                      decoration: new BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          image: new DecorationImage(
-                                              fit: BoxFit.fill,
-                                              image: AssetImage(profileImage4)))),
-                                  onTap: () {
-                                    showAlertDialog(context, profileImage4);
-                                  },
-                                ),
+                              InkWell(
+                                child: Container(
+                                    width: 60.0,
+                                    height: 60.0,
+                                    margin:
+                                    EdgeInsets.only(left: 20, right: 10),
+                                    decoration: new BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        image: new DecorationImage(
+                                            fit: BoxFit.fill,
+                                            image: AssetImage(
+                                                profileImage1)))),
+                                onTap: () {
+                                  showAlertDialog(context, profileImage1);
+                                },
                               ),
 
                             ],
@@ -159,16 +160,22 @@ class UserProfileView extends GetView<ProfileController> {
                                 ]),
                               ),
                             )),
-
                         SizedBox(
-                          height: 20,
+                          height: 10,
+                        ),
+                        Divider(
+                          color: Colors.grey,
+                          height: 1,
+                        ),
+                        SizedBox(
+                          height: 10,
                         ),
 
                         Column(
                           children: [
                             Container(
                               margin: EdgeInsets.only(
-                                  left: 10, right: 10, bottom: 10, top: 10),
+                                  left: 10, right: 10, bottom: 10, top: 0),
                               child: Column(
                                 children: [
                                   Container(
@@ -289,72 +296,76 @@ class UserProfileView extends GetView<ProfileController> {
                                           left: 10, right: 10),
                                       child:
                                       Image(image: AssetImage(image1))),
+
                                   Container(
                                     margin: EdgeInsets.only(
                                         left: 10,
                                         right: 10,
                                         top: 10,
-                                        bottom: 0),
+                                        bottom: 20),
                                     child: Row(
-                                      mainAxisAlignment:
-                                      MainAxisAlignment.start,
                                       children: [
-                                        SvgPicture.asset(
-                                          icHeart,
-                                        ),
-                                        SizedBox(
-                                          width: 5,
-                                        ),
-                                        Text(
-                                          '420',
-                                          style: TextStyle(
-                                              color: Colors.grey,
-                                              fontSize: 12),
+                                        Obx(
+                                              () => InkWell(
+                                              onTap: () {
+                                                if (controller
+                                                    .isSelected1.value) {
+                                                  controller.isSelected1.value =
+                                                  false;
+                                                } else {
+                                                  controller.isSelected1.value =
+                                                  true;
+                                                }
+                                                // Get.toNamed(Routes.landing);
+                                              },
+                                              child: ((controller
+                                                  .isSelected1.value)
+                                                  ? SvgPicture.asset(
+                                                  icHeartClick)
+                                                  : SvgPicture.asset(icHeart))),
                                         ),
                                         Spacer(),
-                                        Container(
-                                          width: 100,
-                                          margin: EdgeInsets.only(
-                                              left: 0,
-                                              right: 0,
-                                              top: 0,
-                                              bottom: 0),
-                                          child: Row(
-                                            mainAxisAlignment:
-                                            MainAxisAlignment.end,
-                                            children: [
-                                              Text(
-                                                '254 views',
-                                                style: TextStyle(
-                                                    color: Colors.grey,
-                                                    fontSize: 12),
-                                              ),
-                                              SizedBox(
-                                                width: 5,
-                                              ),
-                                              /*SvgPicture.asset(
-                                                icDownArrow,
-                                              ),*/
-                                            ],
-                                          ),
+                                        Obx(
+                                              () => InkWell(
+                                              onTap: () {
+                                                if (controller
+                                                    .isSavedSelected1.value) {
+                                                  controller.isSavedSelected1
+                                                      .value = false;
+                                                } else {
+                                                  controller.isSavedSelected1
+                                                      .value = true;
+                                                }
+                                                // Get.toNamed(Routes.landing);
+                                              },
+                                              child: ((controller
+                                                  .isSavedSelected1.value)
+                                                  ? SvgPicture.asset(
+                                                icCombinedShapeFill,
+                                              )
+                                                  : SvgPicture.asset(
+                                                icCombinedShape,
+                                              ))),
                                         ),
                                       ],
                                     ),
                                   ),
+
                                 ],
                               ),
                             ),
                             Divider(
-                              color: Colors.black,
+                              color: Colors.grey,
                               height: 1,
                             ),
                           ],
                         ),
+
                         Column(
                           children: [
                             Container(
                               margin: EdgeInsets.only(
-                                  left: 10, right: 10, bottom: 10, top: 10),
+                                  left: 10, right: 10, bottom: 10, top: 0),
                               child: Column(
                                 children: [
                                   Container(
@@ -375,7 +386,7 @@ class UserProfileView extends GetView<ProfileController> {
                                                 image: new DecorationImage(
                                                     fit: BoxFit.fill,
                                                     image: AssetImage(
-                                                        profileImage2)))),
+                                                        profileImage1)))),
                                         SizedBox(
                                           width: 15,
                                         ),
@@ -474,73 +485,77 @@ class UserProfileView extends GetView<ProfileController> {
                                       margin: EdgeInsets.only(
                                           left: 10, right: 10),
                                       child:
-                                      Image(image: AssetImage(image2))),
+                                      Image(image: AssetImage(image1))),
+
                                   Container(
                                     margin: EdgeInsets.only(
                                         left: 10,
                                         right: 10,
                                         top: 10,
-                                        bottom: 0),
+                                        bottom: 20),
                                     child: Row(
-                                      mainAxisAlignment:
-                                      MainAxisAlignment.start,
                                       children: [
-                                        SvgPicture.asset(
-                                          icHeart,
-                                        ),
-                                        SizedBox(
-                                          width: 5,
-                                        ),
-                                        Text(
-                                          '420',
-                                          style: TextStyle(
-                                              color: Colors.grey,
-                                              fontSize: 12),
+                                        Obx(
+                                              () => InkWell(
+                                              onTap: () {
+                                                if (controller
+                                                    .isSelected2.value) {
+                                                  controller.isSelected2.value =
+                                                  false;
+                                                } else {
+                                                  controller.isSelected2.value =
+                                                  true;
+                                                }
+                                                // Get.toNamed(Routes.landing);
+                                              },
+                                              child: ((controller
+                                                  .isSelected2.value)
+                                                  ? SvgPicture.asset(
+                                                  icHeartClick)
+                                                  : SvgPicture.asset(icHeart))),
                                         ),
                                         Spacer(),
-                                        Container(
-                                          width: 100,
-                                          margin: EdgeInsets.only(
-                                              left: 0,
-                                              right: 0,
-                                              top: 0,
-                                              bottom: 0),
-                                          child: Row(
-                                            mainAxisAlignment:
-                                            MainAxisAlignment.end,
-                                            children: [
-                                              Text(
-                                                '254 views',
-                                                style: TextStyle(
-                                                    color: Colors.grey,
-                                                    fontSize: 12),
-                                              ),
-                                              SizedBox(
-                                                width: 5,
-                                              ),
-                                              /*SvgPicture.asset(
-                                                icDownArrow,
-                                              ),*/
-                                            ],
-                                          ),
+                                        Obx(
+                                              () => InkWell(
+                                              onTap: () {
+                                                if (controller
+                                                    .isSavedSelected2.value) {
+                                                  controller.isSavedSelected2
+                                                      .value = false;
+                                                } else {
+                                                  controller.isSavedSelected2
+                                                      .value = true;
+                                                }
+                                                // Get.toNamed(Routes.landing);
+                                              },
+                                              child: ((controller
+                                                  .isSavedSelected2.value)
+                                                  ? SvgPicture.asset(
+                                                icCombinedShapeFill,
+                                              )
+                                                  : SvgPicture.asset(
+                                                icCombinedShape,
+                                              ))),
                                         ),
                                       ],
                                     ),
                                   ),
+
                                 ],
                               ),
                             ),
                             Divider(
-                              color: Colors.black,
+                              color: Colors.grey,
                               height: 1,
                             ),
                           ],
                         ),
+
                         Column(
                           children: [
                             Container(
                               margin: EdgeInsets.only(
-                                  left: 10, right: 10, bottom: 10, top: 10),
+                                  left: 10, right: 10, bottom: 10, top: 0),
                               child: Column(
                                 children: [
                                   Container(
@@ -561,7 +576,7 @@ class UserProfileView extends GetView<ProfileController> {
                                                 image: new DecorationImage(
                                                     fit: BoxFit.fill,
                                                     image: AssetImage(
-                                                        profileImage3)))),
+                                                        profileImage1)))),
                                         SizedBox(
                                           width: 15,
                                         ),
@@ -635,7 +650,6 @@ class UserProfileView extends GetView<ProfileController> {
                                                 ),
                                               ]),
                                         ),
-
                                         SizedBox(
                                           width: 10,
                                         ),
@@ -661,68 +675,72 @@ class UserProfileView extends GetView<ProfileController> {
                                       margin: EdgeInsets.only(
                                           left: 10, right: 10),
                                       child:
-                                      Image(image: AssetImage(image3))),
+                                      Image(image: AssetImage(image1))),
+
                                   Container(
                                     margin: EdgeInsets.only(
                                         left: 10,
                                         right: 10,
                                         top: 10,
-                                        bottom: 0),
+                                        bottom: 20),
                                     child: Row(
-                                      mainAxisAlignment:
-                                      MainAxisAlignment.start,
                                       children: [
-                                        SvgPicture.asset(
-                                          icHeart,
-                                        ),
-                                        SizedBox(
-                                          width: 5,
-                                        ),
-                                        Text(
-                                          '420',
-                                          style: TextStyle(
-                                              color: Colors.grey,
-                                              fontSize: 12),
+                                        Obx(
+                                              () => InkWell(
+                                              onTap: () {
+                                                if (controller
+                                                    .isSelected3.value) {
+                                                  controller.isSelected3.value =
+                                                  false;
+                                                } else {
+                                                  controller.isSelected3.value =
+                                                  true;
+                                                }
+                                                // Get.toNamed(Routes.landing);
+                                              },
+                                              child: ((controller
+                                                  .isSelected3.value)
+                                                  ? SvgPicture.asset(
+                                                  icHeartClick)
+                                                  : SvgPicture.asset(icHeart))),
                                         ),
                                         Spacer(),
-                                        Container(
-                                          width: 100,
-                                          margin: EdgeInsets.only(
-                                              left: 0,
-                                              right: 0,
-                                              top: 0,
-                                              bottom: 0),
-                                          child: Row(
-                                            mainAxisAlignment:
-                                            MainAxisAlignment.end,
-                                            children: [
-                                              Text(
-                                                '254 views',
-                                                style: TextStyle(
-                                                    color: Colors.grey,
-                                                    fontSize: 12),
-                                              ),
-                                              SizedBox(
-                                                width: 5,
-                                              ),
-                                              /* SvgPicture.asset(
-                                                icDownArrow,
-                                              ),*/
-                                            ],
-                                          ),
+                                        Obx(
+                                              () => InkWell(
+                                              onTap: () {
+                                                if (controller
+                                                    .isSavedSelected3.value) {
+                                                  controller.isSavedSelected3
+                                                      .value = false;
+                                                } else {
+                                                  controller.isSavedSelected3
+                                                      .value = true;
+                                                }
+                                                // Get.toNamed(Routes.landing);
+                                              },
+                                              child: ((controller
+                                                  .isSavedSelected3.value)
+                                                  ? SvgPicture.asset(
+                                                icCombinedShapeFill,
+                                              )
+                                                  : SvgPicture.asset(
+                                                icCombinedShape,
+                                              ))),
                                         ),
                                       ],
                                     ),
                                   ),
+
                                 ],
                               ),
                             ),
                             Divider(
-                              color: Colors.black,
+                              color: Colors.grey,
                               height: 1,
                             ),
                           ],
                         ),
+
                       ],
                     ),
                   ),
@@ -770,39 +788,19 @@ class UserProfileView extends GetView<ProfileController> {
 }
 
 showPopupMenu(BuildContext buildContext) {
-/*  showMenu<String>(
-    context: buildContext,
-    position: RelativeRect.fromLTRB(67.0, 67.0, 0.0, 0.0),
-    //position where you want to show the menu on screen
-    items: [
-      PopupMenuItem<String>(child: const Text('View with whome the post was share'), value: '1'),
-      PopupMenuItem<String>(child: const Text('Delete'), value: '2'),
-    ],
-    elevation: 8.0,
-  ).then((itemSelected) => {
-        if (itemSelected == "1")
-          {
-            //Get.toNamed(Routes.editProfile)
-          }
-        else
-          {
-            //code here
-          }
-      });*/
-
   showModalBottomSheet(
       context: buildContext,
       builder: (context) {
         return Wrap(
           children: [
+
             InkWell(
               onTap: () {
                 Navigator.of(context).pop();
-                showDeletPostAlertDialog(context);
+                showReportPostAlertDialog(buildContext, 'user');
               },
               child: ListTile(
-                title: Text('Delete'),
-
+                title: Text('Report'),
               ),
             ),
 
@@ -811,9 +809,9 @@ showPopupMenu(BuildContext buildContext) {
       });
 }
 
-showDeletPostAlertDialog(BuildContext context) {
+showReportPostAlertDialog(BuildContext context, String report) {
   // set up the buttons
-  Widget cancelButton = TextButton(
+  Widget reportButton = TextButton(
     child: Container(
       height: 40,
       width: 80,
@@ -827,7 +825,7 @@ showDeletPostAlertDialog(BuildContext context) {
           Navigator.of(context).pop();
         },
         child: Text(
-          'Cancel',
+          'REPORT',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
       ),
@@ -838,10 +836,10 @@ showDeletPostAlertDialog(BuildContext context) {
     },
   );
 
-  Widget confirmButton = TextButton(
+  Widget dontReportButton = TextButton(
     child: Container(
       height: 40,
-      width: 80,
+      width: 120,
       decoration: BoxDecoration(
           color: primaryDarkColor,
           border: Border.all(color: primaryDarkColor),
@@ -852,7 +850,7 @@ showDeletPostAlertDialog(BuildContext context) {
           Navigator.of(context).pop();
         },
         child: Text(
-          'Delete',
+          'DON\'T REPORT',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
       ),
@@ -866,11 +864,11 @@ showDeletPostAlertDialog(BuildContext context) {
   // set up the AlertDialog
   AlertDialog alert = AlertDialog(
     title: Text(
-      "Delete Post?",
+      "Report $report?",
       style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
     ),
     content: Text(
-      "Are you sure you want to delete the post?",
+      "Please explain what you would like to report",
       style: TextStyle(color: Colors.black, fontSize: 13, height: 1.5),
     ),
     actions: [
@@ -878,8 +876,8 @@ showDeletPostAlertDialog(BuildContext context) {
         child: Row(
           children: [
             Spacer(),
-            cancelButton,
-            confirmButton,
+            reportButton,
+            dontReportButton,
           ],
         ),
       ),
