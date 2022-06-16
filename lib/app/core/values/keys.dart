@@ -102,6 +102,7 @@ const privacybanner='assets/images/privacybanner.jpg';
 const termsbanner='assets/images/termbanner.jpg';
 
 
+
 const bottomHome='assets/bottomIcons/home.svg';
 const bottomAdd='assets/bottomIcons/add.svg';
 const bottomMenu='assets/bottomIcons/Menu.svg';
